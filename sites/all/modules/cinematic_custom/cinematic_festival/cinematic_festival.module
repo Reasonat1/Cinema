@@ -36,6 +36,15 @@ function cinematic_festival_taxonomy_term_load($terms) {
   }
 }
 
+function cinematic_festival_taxonomy_term_view($term, $view_mode, $langcode) {
+  if (empty($term->cinematic_menu)) {
+    return;
+  }
+  $menu = menu_load($term->cinematic_menu);
+  $edit = l($menu['title'], 'admin/structure/menu/manage/' . $menu['menu_name']);
+  $term->content['cinematic_menu'] = array('#markup' => $edit);
+}
+
 function cinematic_festival_form_taxonomy_form_term_alter(&$form, &$form_state, $form_id) {
   if (empty($form_state['term']->cinematic_menu)) {
     $form_state['term']->cinematic_menu = NULL;
