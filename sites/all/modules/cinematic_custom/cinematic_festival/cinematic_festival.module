@@ -19,28 +19,66 @@ function cinematic_festival_field_widget_form_alter(&$element, &$form_state, $co
     unset($element['value']['#size']);
   }
 
-  if ($instance['field_name'] == 'field_menu') {
-    $element['value']['#type'] = 'select';
-    foreach (menu_get_menus() as $menu_name => $menu_title) {
-      $options[$menu_name] = $menu_title;
+}
+
+function cinematic_festival_taxonomy_term_load($terms) {
+  $query = db_select('cinematic_term_menu', 'tm');
+  $query->condition('tid', array_keys($terms), 'IN');
+  $query->fields('tm', array('tid', 'menu_name'));
+  $records = $query->execute()->fetchAllKeyed();
+  foreach ($terms as $tid => &$term) {
+    if (isset($records[$tid])) {
+      $term->cinematic_menu = $records[$tid];
     }
-    $default_menu = $element['value']['#default_value'];
-    if (empty($default_menu) or !isset($options[$default_menu])) {
-      $options = array('new' => t('Dedicated')) + $options;
+    else {
+      $term->cinematic_menu = NULL;
     }
-    $element['value']['#options'] = $options;
-    unset($element['value']['#size']);
   }
 }
 
-function cinematic_festival_taxonomy_term_presave($term) {
-  if ($term->field_menu['und'][0]['value'] == 'new') {
+function cinematic_festival_form_taxonomy_form_term_alter(&$form, &$form_state, $form_id) {
+  if (empty($form_state['term']->cinematic_menu)) {
+    $form_state['term']->cinematic_menu = NULL;
+  }
+
+  $term = $form_state['term'];
+
+  $form['cinematic_menu'] = array( 
+    '#type' => 'select',
+    '#title' => t('Menu'),
+  );
+  $options = array();
+  foreach (menu_get_menus() as $menu_name => $menu_title) {
+    $options[$menu_name] = $menu_title;
+  }
+  if (empty($term->cinematic_menu) or !isset($options[$term->cinematic_menu])) {
+    $options = array('new' => t('Dedicated')) + $options;
+  }
+  else {
+    $form['cinematic_menu']['#default_value'] = $term->cinematic_menu;
+  }
+  $form['cinematic_menu']['#options'] = $options;
+}
+
+function cinematic_festival_taxonomy_term_insert($term) {
+  cinematic_festival_taxonomy_term_update($term);
+}
+
+function cinematic_festival_taxonomy_term_update($term) {
+  if ($term->cinematic_menu == 'new') {
     $menu = array(
-      'menu_name' => 'cinematic-festival-' . $term->name,
+      'menu_name' => 'cinematic-festival-' . $term->tid,
       'title' => t('Dedicated menu for: ' . $term->name),
       'description' => t('festival dedicated menu'),
     );
     menu_save($menu);
-    $term->field_menu['und'][0]['value'] = $menu['menu_name'];
+    $term->cinematic_menu = $menu['menu_name'];
   }
+
+  db_merge('cinematic_term_menu')
+    ->key(array('tid' => $term->tid))
+    ->fields(array(
+      'menu_name' => $term->cinematic_menu,
+    ))
+    ->execute();
 }

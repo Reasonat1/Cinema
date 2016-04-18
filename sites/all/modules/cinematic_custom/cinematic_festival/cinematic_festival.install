@@ -1,0 +1,18 @@
+<?php
+function cinematic_festival_schema() {
+  $schema = array();
+  $schema['cinematic_term_menu'] = array(
+    'fields' => array(
+      'tid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+      ),
+      'menu_name' => array(
+        'type' => 'varchar',
+        'length' => 255,
+      ),
+    ),
+    'primary key' => array('tid'),
+  );
+  return $schema;
+}
