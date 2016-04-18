@@ -1,0 +1,7 @@
+name = cinematic feature taxonomy
+core = 7.x
+package = Cinematic
+dependencies[] = features
+dependencies[] = taxonomy
+features[features_api][] = api:2
+features[taxonomy][] = countries

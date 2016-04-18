@@ -1,0 +1,46 @@
+<?php
+
+function cinematic_festival_field_widget_form_alter(&$element, &$form_state, $context) {
+  $instance = $context['instance'];
+  if (
+    $instance['entity_type'] != 'taxonomy_term' or
+    $instance['bundle'] != 'festival'
+  ) {
+    return;
+  }
+
+  if ($instance['field_name'] == 'field_domain') {
+    $element['value']['#type'] = 'select';
+    $options = array();
+    foreach (domain_domains() as $domain_id => $domain) {
+      $options[$domain_id] = check_plain($domain['sitename']);
+    }
+    $element['value']['#options'] = $options;
+    unset($element['value']['#size']);
+  }
+
+  if ($instance['field_name'] == 'field_menu') {
+    $element['value']['#type'] = 'select';
+    foreach (menu_get_menus() as $menu_name => $menu_title) {
+      $options[$menu_name] = $menu_title;
+    }
+    $default_menu = $element['value']['#default_value'];
+    if (empty($default_menu) or !isset($options[$default_menu])) {
+      $options = array('new' => t('Dedicated')) + $options;
+    }
+    $element['value']['#options'] = $options;
+    unset($element['value']['#size']);
+  }
+}
+
+function cinematic_festival_taxonomy_term_presave($term) {
+  if ($term->field_menu['und'][0]['value'] == 'new') {
+    $menu = array(
+      'menu_name' => 'cinematic-festival-' . $term->name,
+      'title' => t('Dedicated menu for: ' . $term->name),
+      'description' => t('festival dedicated menu'),
+    );
+    menu_save($menu);
+    $term->field_menu['und'][0]['value'] = $menu['menu_name'];
+  }
+}
