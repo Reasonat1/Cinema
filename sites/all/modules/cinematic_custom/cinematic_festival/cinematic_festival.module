@@ -9,7 +9,7 @@ function cinematic_festival_field_widget_form_alter(&$element, &$form_state, $co
     return;
   }
 
-  if ($instance['field_name'] == 'field_domain') {
+  if ($instance['field_name'] == 'field_cm_domain') {
     $element['value']['#type'] = 'select';
     $options = array();
     foreach (domain_domains() as $domain_id => $domain) {
