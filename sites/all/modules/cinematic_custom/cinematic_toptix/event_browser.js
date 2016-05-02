@@ -40,6 +40,7 @@ toptix_dialog.show_results = function(data) {
     if (target.dataset.hasOwnProperty('id')) {
       self.hidden.val(target.dataset.id);
       self.anchor.value = target.textContent;
+      self.win.dialog('close');
     }
   });
 
