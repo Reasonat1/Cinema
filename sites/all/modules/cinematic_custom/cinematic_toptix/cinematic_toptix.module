@@ -80,7 +80,7 @@ function cinematic_toptix_field_formatter_info() {
   return array(
     'toptix_purchase' => array(
       'label' => 'Toptix Purchase button',
-      'field types' => array('text'),
+      'field types' => array('number_integer'),
     ),
   );
 }
@@ -97,9 +97,11 @@ function cinematic_toptix_field_formatter_view(
   $account = user_load($user->uid);
   $field_toptix = field_get_items('user', $account, 'field_toptix');
   $field_toptix = $field_toptix[0]['value'];
+  $host = '199.203.164.53';
 
   foreach ($items as $delta => $item) {
-    $url = $item['url_value'];
+    $event_id = $item['value'];
+    $url = 'http://' . $host . '/loader.aspx/?target=hall.aspx?event=' . $event_id;
     $output = '<button class="toptix-purchase" data-url="' . $url . '">' . t('Puchase') . '</button>';
     $element[$delta] = array(
       '#markup' => $output,
