@@ -27,11 +27,13 @@ stylesheets[all][] = ../MDB/css/mdb.min.css
 
 ; Javascript
 scripts[] = js/cinemateque.script.js
-scripts[] = ../MDB/js/mdb.min.js
-scripts[] = ../MDB/js/bootstrap.min.js
-scripts[] = ../MDB/js/jquery.min.js
-scripts[] = ../MDB/js/modules/forms-basic.js
-scripts[] = ../MDB/js/modules/mdb.js
+;scripts[] = ../MDB/js/mdb.min.js
+;scripts[] = ../MDB/js/bootstrap.min.js
+;scripts[] = ../MDB/js/jquery.min.js
+;scripts[] = ../MDB/js/modules/forms-basic.js
+;scripts[] = ../MDB/js/modules/mdb.js
+scripts[] = ../../libraries/js/esrojsapi.js
+scripts[] = ../../modules/cm_toptix/js/sro_ui.js
 
 ; Information added by Drupal.org packaging script on 2016-02-01
 version = "7.x-3.3"

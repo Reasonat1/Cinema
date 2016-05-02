@@ -10,6 +10,10 @@
  * @see html.tpl.php
  */
 ?>
+<script src="/misc/jquery.js" type="text/javascript"></script>
+	<script type='text/javascript'> 
+     jQuery.noConflict(); 
+    </script> 
 <header id="header" class="header" role="header">
   <div class="container">
     <nav class="navbar navbar-default" role="navigation">

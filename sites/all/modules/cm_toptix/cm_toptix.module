@@ -1,49 +1,132 @@
 <?php
 
-
-function cm_toptix_user_insert(&$edit, $account, $category) {
-    drupal_goto('/ty/'.$account->uid);
-    //echo "<script type='text/javascript'>console.log('".$account->uid."')</script>";
-    /*
-    //$edit['field_toptix_id']['und'][0] = '2222';
-    drupal_set_message($account->mail);
-    drupal_set_message(drupal_get_path('module', 'cm_toptix'));
-    //drupal_add_js(drupal_get_path('module', 'cm_toptix') . '/js/basics.js');
-    //drupal_add_js('http://localhost/public_html/sites/all/modules/cm_toptix'. '/js/basics.js');
-
-
-    db_insert('field_data_field_toptix_id')
-        ->fields(array(
-            'field_toptix_id_value' => '1111',
-            'entity_id' => $account->uid,
-            'revision_id' => $account->uid,
-            'entity_type' => 'user',
-            'bundle' => 'user',
-            'deleted' => 0,
-            'delta' => 0,
-            'language' => 'und',
-        ))
-        ->execute();
-*/
-}
-
-
 function cm_toptix_menu() {
-    $items['ty'] = array(
-        'title' => t('Thank you page'),
-        'description' => t("Thank you page"),
-        'page callback' => 'cm_toptix_ty',
-        'access arguments' => array('access content'),
-        'type' => MENU_CALLBACK
+    $items['toptix_integration'] = array(
+        'title' => t('toptix_integration'),
+        'description' => t("toptix_integration"),
+        'page callback' => 'cm_toptix_ti',
+        'access callback' => TRUE,
+        //'access arguments' => array('access content'),
+        //'type' => MENU_CALLBACK,
     );
     return $items;
 }
 
-function cm_toptix_ty($uid = 0) {
-    global $user;
-    $html = "<h1>Your account has been created.</h1><p>Thank you for registering with Cinematheque. Your account has been created, and a verification email has been sent to your registered email address. Please click on the verification link included in the email to activate your account.</p><h2>Important! Your account will not be activated until you verify your email address.</h2>";
-    $html .= "<script type='text/javascript'>console.log('".$uid."')</script>";
+function cm_toptix_ti() {
 
-    return $html;
+    $insert_toptix_id = $_POST["ajax_toptix_id"];
+    var_dump($insert_toptix_id);
+    $user_email = $_POST["email"];
+    var_dump($user_email);
+    $account = user_load_by_mail($user_email);
+
+    $edit = array(
+        'field_toptix_id' => array(
+            'und' => array(
+                0 => array(
+                    'value' => $insert_toptix_id,
+                ),
+            ),
+        ),
+    );
+
+    user_save($account, $edit);
+
+    exit;
+
+}
+
+function cm_toptix_form_alter(&$form, &$form_state, $form_id)
+{
+    $form['field_toptix_id']['#type'] = 'hidden';
+
+    if ($form_id == 'user_profile_form') {
+        $form['#submit'][] = "cm_toptix_edit_submit_handler";
+    }
+
+    if ($form_id == 'user_register_form') {
+        $form['#submit'][] = "cm_toptix_form_submit_handler";
+    }
+
+}
+
+
+function cm_toptix_form_submit_handler($form, &$form_state) {
+    echo "<pre>";
+    echo "<script type='text/javascript' src='http://jer-cin.tikkewebsites.com/profiles/panopoly/modules/contrib/jquery_update/replace/jquery/1.7/jquery.min.js'></script>";
+    echo "<script type='text/javascript' src='http://jer-cin.tikkewebsites.com/sites/all/libraries/js/esrojsapi.js'></script>";
+    echo "<script type='text/javascript' src='http://jer-cin.tikkewebsites.com/sites/all/modules/cm_toptix/js/sro_ui.js'></script>";
+
+    $lng = field_language('user', $form_state, 'field_toptix_id');
+    $param = "";
+    $param = $param.$form_state['values']['field_first_name'][$lng][0]['value'].";";
+    $param = $param.$form_state['values']['field_last_name'][$lng][0]['value'].";";
+    $param = $param.$form_state['values']['name'].";";
+    $param = $param.$form_state['values']['pass'].";";
+    $param = $param.$form_state['values']['mail'].";";
+    $param = $param.$form_state['values']['field_mobile'][$lng][0]['value'].";";
+    $param = $param.$form_state['values']['field_landline'][$lng][0]['value'].";";
+    $param = $param.$form_state['values']['field_address'][$lng][0]['value'].";";
+    $param = $param.$form_state['values']['field_city'][$lng][0]['value'].";";
+    $param = $param.$form_state['values']['field_zip'][$lng][0]['value'].";";
+
+
+    echo "<script type='text/javascript'>console.log('$param')</script>";
+    echo "<script type='text/javascript'>CreateCustomer(JSON.stringify('$param'))</script>";
+    exit;
+}
+
+function cm_toptix_edit_submit_handler($form, &$form_state) {
+    echo "<script type='text/javascript' src='http://localhost/public_html/profiles/panopoly/modules/contrib/jquery_update/replace/jquery/1.7/jquery.min.js'></script>";
+    echo "<script type='text/javascript' src='http://localhost/public_html/sites/all/libraries/js/esrojsapi.js'></script>";
+    echo "<script type='text/javascript' src='http://localhost/public_html/sites/all/modules/cm_toptix/js/sro_ui.js'></script>";
+
+    $lng = field_language('user', $form_state, 'field_toptix_id');
+    $param = '';
+
+
+    $param = $param.$form_state['values']['field_toptix_id'][$lng][0]['value'].";";
+    $param = $param.$form_state['values']['field_first_name'][$lng][0]['value'].";";
+    $param = $param.$form_state['values']['field_last_name'][$lng][0]['value'].";";
+    $param = $param.$form_state['values']['name'].";";
+    $param = $param.$form_state['values']['pass'].";";
+    $param = $param.$form_state['values']['mail'].";";
+    $param = $param.$form_state['values']['field_mobile'][$lng][0]['value'].";";
+    $param = $param.$form_state['values']['field_landline'][$lng][0]['value'].";";
+    $param = $param.$form_state['values']['field_address'][$lng][0]['value'].";";
+    $param = $param.$form_state['values']['field_city'][$lng][0]['value'].";";
+    $param = $param.$form_state['values']['field_zip'][$lng][0]['value'].";";
+
+
+    echo "<script type='text/javascript'>UpdateClient('$param')</script>";
+
+    //echo "<script type='text/javascript'>console.log('$param')</script>";
+    exit;
+}
+
+function cm_toptix_exit() {
+    global $user;
+	//echo $_GET['q'];
+	
+	//If admin is create the user, the toptix_id is saved our db if the user is logged in.
+	//If the user is registered from form the toptix id saved our db after registration is successful.  
+	
+	if (!(in_array('administrator', $user->roles))) {
+		if (in_array('authenticated user', $user->roles)) {
+			$account = user_load_by_mail($user->mail);
+			$t_arr = $account->field_toptix_id;
+			if (drupal_is_front_page() || $_GET['q'] == "user/".$user->uid) {
+			echo "Ready";
+				if (!array_filter($t_arr)) {
+					echo "Ready";
+					echo "This working";
+					echo "<script type='text/javascript'>GetClient()</script>";
+					//var_dump($account);
+				}
+			}
+		}
+	}
+
+
 }
 ?>

@@ -68,7 +68,7 @@ var eSRO_private = function() {
         function ifrLoaded(e) {
             if (baseURL == null)
                 baseURL = findUrl();
-            //console.log('iframe loaded');
+
             form.remove();
             msgIfr.remove();
 
@@ -350,7 +350,7 @@ var eSRO_private = function() {
                 + callback + '&jsonp=GenericCallback',
                 async: false,
                 //success: onsuccess,
-                dataType: "jsonp",
+                //dataType: "jsonp",
                 jsonp: false,
                 jsonpCallback: "GenericCallback"
             }
@@ -432,7 +432,7 @@ var eSRO_private = function() {
             {
                 url: baseURL + integrationURL + '?action=getemptycustomer' + '&CustomCallback=' + callback + '&jsonp=GenericCallback',
                 async: false,
-                dataType: "jsonp",
+                //dataType: "jsonp",
                 jsonp: false,
                 jsonpCallback: "GenericCallback",
                 success: function(result){
@@ -987,7 +987,6 @@ var $esro = {
 
     //-------------------------------------------------------------------------------------------------------------
     GenericCallback: function(result) {
-        console.log("step4");
         eval(result.EvalMe);
         result.EvalMe = "";
         if (result.CustomCallback.length > 0) {
