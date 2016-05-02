@@ -1,0 +1,16 @@
+<?php
+function my_utilities_init() {
+   drupal_add_css(drupal_get_path('module', 'my_utilities') . '/my_utilities.css');
+   drupal_add_js(drupal_get_path('module', 'my_utilities') . '/my_utilities.js');
+}
+function my_utilities_form_alter(&$form, &$form_state, $form_id) {
+   if($form_id == 'taxonomy_form_term'){
+    $vocb_name = $form['#vocabulary']->machine_name;
+     //drupal_set_message('<pre>'.print_r($form['name']['#title'], 1).'</pre>');
+     if($vocb_name == 'lobby'){
+      $form['name']['#title'] = 'Lobby name';
+      $form['description']['#title'] = 'Lobby description & teaser';
+     }
+   }
+}
+?>

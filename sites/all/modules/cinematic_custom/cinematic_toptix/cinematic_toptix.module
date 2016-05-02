@@ -1,0 +1,32 @@
+<?php
+
+function cinematic_toptix_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id != 'user_register_form' and $form_id != 'user_profile_form') {
+    return;
+  }
+  if (isset($form_state['user'])) {
+    $toptix_id = field_get_items('user', $form_state['user'], 'field_toptix');
+    if ($toptix_id) {
+      return;
+    }
+  }
+  if (!isset($form['#attached']['js'])) {
+    $form['#attached']['js'] = array();
+  }
+  $form['#attached']['js'][] = array(
+    'data' => array('toptix_form' => $form['#id']), 
+    'type' => 'setting'
+  );
+  $form['#attached']['js'][] = drupal_get_path('module', 'cinematic_toptix') . '/create_user.js';
+  $form['#attached']['js'][] = drupal_get_path('module', 'cinematic_toptix') . '/esrojsapi.js';
+}
+
+function cinematic_toptix_field_widget_text_textfield_form_alter(&$element, &$form_state, $context) {
+  if ($context['instance']['field_name'] != 'field_toptix') {
+    return;
+  }
+  if (user_access('administer users')) {
+    return;
+  }
+  $element['value']['#type'] = 'hidden';
+}
