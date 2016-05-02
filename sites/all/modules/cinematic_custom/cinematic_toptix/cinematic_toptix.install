@@ -1,0 +1,56 @@
+<?php
+
+function cinematic_toptix_schema() {
+  $schema = array();
+  $schema['toptix_shows'] = array(
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'external_id' => array(
+        'type' => 'varchar',
+        'length' => 64,
+      ),
+      'title' => array(
+        'type' => 'varchar',
+        'length' => 256,
+      ),
+    ),
+    'primary key' => array('id'),
+    'indexes' => array(
+      'external' => array('external_id'),
+    ),
+  );
+
+  $schema['toptix_events'] = array(
+    'fields' => array(
+      'local_id' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'show_id' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+      ),
+      'external_id' => array(
+        'type' => 'varchar',
+        'length' => 64,
+      ),
+      'event_date' => array(
+        'mysql_type' => 'datetime',
+        'pgsql_type' => 'timestamp',
+      ),
+    ),
+    'primary key' => array('local_id'),
+    'indexes' => array(
+      'external' => array('external_id'),
+      'show' => array('show_id'),
+      'bydate' => array('event_date'),
+    ),
+  );
+
+  return $schema;
+}
