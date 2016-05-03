@@ -1,5 +1,8 @@
 <?php
 
+//define('TOPTIX_HOST', 'demo.toptix.com');
+define('TOPTIX_HOST', '199.203.164.53');
+
 function cinematic_toptix_menu() {
   $items = array();
   $items['admin/content/toptix'] = array(
@@ -85,6 +88,12 @@ function cinematic_toptix_field_formatter_info() {
   );
 }
 
+function cinematic_toptix_rdf_namespaces() {
+  return array(
+    'esro' => 'toptix.com',
+  );
+}
+
 function cinematic_toptix_field_formatter_view(
   $entity_type, $entity, $field, $instance, $langcode, $items, $display) {
   $element = array();
@@ -97,11 +106,10 @@ function cinematic_toptix_field_formatter_view(
   $account = user_load($user->uid);
   $field_toptix = field_get_items('user', $account, 'field_toptix');
   $field_toptix = $field_toptix[0]['value'];
-  $host = '199.203.164.53';
 
   foreach ($items as $delta => $item) {
     $event_id = $item['value'];
-    $url = 'http://' . $host . '/loader.aspx/?target=hall.aspx?event=' . $event_id;
+    $url = 'http://' . TOPTIX_HOST . '/loader.aspx/?target=hall.aspx?event=' . $event_id;
     $output = '<button class="toptix-purchase" data-url="' . $url . '">' . t('Puchase') . '</button>';
     $element[$delta] = array(
       '#markup' => $output,

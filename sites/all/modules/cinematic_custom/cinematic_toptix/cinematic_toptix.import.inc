@@ -47,7 +47,7 @@ function cinematic_toptix_import_submit($form, &$form_state) {
     $last_run = $form_state['values']['custom_run'];
   }
   $lastupdate = $last_run->format('Y-m-d');
-  $url = 'http://199.203.164.53/feed/events/?groupby=show&lastupdate=' . $lastupdate;
+  $url = 'http://' . TOPTIX_HOST . '/feed/events/?groupby=show&lastupdate=' . $lastupdate;
   $context = stream_context_create(array('http' => array('timeout' => 1200)));
   $in = file_get_contents($url, false, $context);
   $xml = new TopTixReader();

@@ -2,43 +2,25 @@
   Drupal.behaviors.toptix = {
     attach: function(context, settings) {
       // closure variable
-      var create_user = this.createUser;
       $('#' + settings.toptix_form).submit(function(event) {
-        if ( $(this).find('input[name^="field_toptix"]').val() ) {
+        toptix_form_data = this;
+        var toptix_id = $(this).find('input[name^="field_toptix"]').val();
+        if (toptix_id) {
           return;
         }
-        event.stopPropagation();
-        create_user(this);
+        else {
+          event.stopPropagation();
+          $esro.getEmptyCustomer('toptix_callback_create');
+        }
         return false;
       });
     },
-
-    createUser: function(form) {
-      Customer = {
-        Login: {
-          Name: 'drupal_' + $(form['name']).val(),
-          Password: Math.random().toString(36).slice(-8), 
-        },
-        Name: {
-          First: $(form['name']).val(),
-          Last: '',
-        },
-        AddressDetails: []
-      };
-      Customer.AddressDetails[0] = {
-        Address: {
-          AddressLine1: "", 
-          AddressLine2: "", 
-          AddressLine3: "",
-        },
-        Usage: 10,
-      };
-      $esro.createCustomer(Customer, 'toptix_callback_save');
-    }
   };
 }) (jQuery);
 
 var toptix_limit_calls = 0;
+var toptix_form_data = null;
+
 function toptix_callback_save(result) {
   if (toptix_limit_calls++ > 10) {
     return;
@@ -52,16 +34,31 @@ function toptix_callback_save(result) {
   if (!('Id' in result.Result)) {
     $esro.getCustomerDetails('toptix_callback_save');
   }
-  var form = jQuery('#' + Drupal.settings.toptix_form);
-  form.find('input[name^="field_toptix"]').val(result.Result.Id);
-  form.submit();
+  else {
+    toptix_validated = true;
+    var form = jQuery('#' + Drupal.settings.toptix_form);
+    form.find('input[name^="field_toptix"]').val(result.Result.Id);
+    form.submit();
+  }
 }
 
 function toptix_callback_create(result) {
+  var form = toptix_form_data;
   var Customer = result.Result;
-  Customer.Login.Name = 'first2';
-  Customer.Login.Password = 'first';
-  Customer.ExternalId = 99;
+  Customer.Login.Name = 'drupal_' + form['name'].value;
+  Customer.Login.Password = 'eqdacz';
+  //Password: Math.random().toString(36).slice(-8), 
+  Customer.Name.First = form['name'].value;
+  Customer.Name.Last = '';
+    /*
+    Customer.AddressDetails[0] = {
+      Address: {
+        AddressLine1: "", 
+        AddressLine2: "", 
+        AddressLine3: "",
+      },
+      Usage: 10,*/
+
   toptix_clean_customer(Customer);
   $esro.createCustomer(Customer, 'toptix_callback_save');
 };
@@ -74,7 +71,9 @@ function toptix_clean_customer(obj) {
   delete obj.AddressDetails[0].Address.ZipCode;
   delete obj.AddressDetails[0].Address.CityId;
   delete obj.AddressDetails[0].Address.CityName;
+  return;
 
+  // ignored
   delete obj.AddressDetailIds;
   delete obj.AssociationIds;
   delete obj.Birthday;
@@ -93,5 +92,4 @@ function toptix_clean_customer(obj) {
   delete obj.Remarks;
   delete obj.StronglyRelatedClients;
 }
-
 
