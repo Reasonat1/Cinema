@@ -1,3 +1,6 @@
+body {
+  font: 120%/1.538em "Lucida Grande","Lucida Sans Unicode",sans-serif !important;
+}
 .tabledrag-toggle-weight-wrapper{
     display: none;
 }
@@ -5,6 +8,7 @@
   display: none;
 }
 .views-field.views-field-field-cm-info-block-icon {
+    border: medium none;
   float: left;
   text-align: center;
   width: 100%;
@@ -15,11 +19,13 @@
   width: 100%; 
 }
 .views-field.views-field-label {
+    border: medium none;
   float: left;
   text-align: center;
   width: 100%;
 }
 .views-field.views-field-field-cm-info-block-text {
+    border: medium none;
   float: left;
   text-align: center;
   width: 100%;
@@ -33,11 +39,15 @@
   background-color: #323232;
   color: #ffffff;
   padding-bottom: 40px;
-  padding-top: 50px;
+/*  padding-top: 50px;*/
 }
 .pane-menu-tree .menu.nav li a {
+     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   color: #ffffff;
   font-size: 14px;
+}
+.pane-menu-tree .menu.nav li a:hover,.pane-menu-tree .menu.nav li a:active {
+     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
 }
 .pane-menu-tree h2 { 
   font-size: 16px;
@@ -88,12 +98,17 @@
   float: left;
   width: auto;
   min-height: 60px;
+  border: medium none;
 }
 .popup.region .views-field.views-field-label ,.popup.region .views-field.views-field-field-cm-info-block-text{
   float: left;
   padding-left: 15px;
   text-align: left;
   width: 185px;
+  border: medium none;
+}
+.view-bean-infomation-block-view table {
+  border: medium none;
 }
 .popup.region .views-field.views-field-label p, .popup.region .views-field.views-field-field-cm-info-block-text p {
   margin-top: 0;
@@ -143,18 +158,33 @@
   width: 100%;
 }
 
-#fadeandscale {
-    -webkit-transform: scale(0.8);
-       -moz-transform: scale(0.8);
-        -ms-transform: scale(0.8);
-            transform: scale(0.8);
+.hamburger .modal-dialog {
+  width: 1200px;
 }
-.popup_visible #fadeandscale {
-    -webkit-transform: scale(1);
-       -moz-transform: scale(1);
-        -ms-transform: scale(1);
-            transform: scale(1);
+.hamburger .modal-body {
+  background: #323232 none repeat scroll 0 0;
+  padding: 0;
+}
+.hamburger .panels-flexible-region.popup.region {
+  width: 100%;
+}
+.hamburger .modal-body .close {
+  float: left;
+  padding: 22px;
+}
+.popup.region .pane-menu-tree .menu.nav li.last {
+  border-bottom: medium none;
+  margin-bottom: 30px;
 }
 /*
  * Direction RTl format
  */
+.hamburger .modal-body .pane-bean-infomation-block-view .handle {
+  display: none;
+}
+.hamburger .modal-body .view-id-bean_infomation_block_view .form-submit {
+  display: none;
+}
+.panels-flexible-row.popup.region {
+  display: none;
+}
