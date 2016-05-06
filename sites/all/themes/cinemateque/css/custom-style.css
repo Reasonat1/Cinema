@@ -57,6 +57,47 @@ body {
   border-bottom: 2px solid #5c5c5c;
   line-height: 40px;
 }
+.pane-menu-menu-site-main-menu  h2 { 
+  display: none;
+} 
+.pane-menu-menu-site-main-menu .menu.nav li.expanded {
+    float: left;
+    padding: 10px 15px 0;
+    width: 33.3%;
+}
+.pane-menu-menu-site-main-menu .menu.nav li.expanded .caret {
+  display: none;
+}
+.pane-menu-menu-site-main-menu .menu.nav li.expanded a{
+    color: #ffffff;
+   font-weight: bold;
+}
+.pane-menu-menu-site-main-menu .menu.nav li.expanded a:hover,.pane-menu-menu-site-main-menu .menu.nav li.expanded a:active{
+   background: none;
+}
+.pane-menu-menu-site-main-menu .menu.nav li.expanded li {
+  border-bottom: 2px solid #5c5c5c;
+  line-height: 40px;
+    background-image: url("http://localhost/localsetup/jercin/sites/all/themes/cinemateque/images/arrow-right.png");
+      background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 20px auto;
+}
+.pane-menu-menu-site-main-menu .menu.nav li.expanded li.last {
+  border-bottom: none;
+}
+.pane-menu-menu-site-main-menu .menu.nav li.expanded li a {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    color: #ffffff;
+    font-size: 14px;
+}
+.pane-menu-menu-site-main-menu .menu.nav li.expanded li a {
+  color: #fff;
+}
+.pane-menu-menu-site-main-menu .menu.nav li.expanded li a:hover,.pane-menu-menu-site-main-menu .menu.nav li.expanded li a:active{
+    background: none;
+}
+
 .popup.region .pane-menu-tree .menu.nav li {
   background-image: url("http://localhost/localsetup/jercin/sites/all/themes/cinemateque/images/arrow-right.png");
   background-position: right center;
@@ -97,13 +138,14 @@ body {
 .popup.region .views-field.views-field-field-cm-info-block-icon {
   float: left;
   width: auto;
-  min-height: 60px;
+  min-height: 80px;
   border: medium none;
 }
 .popup.region .views-field.views-field-label ,.popup.region .views-field.views-field-field-cm-info-block-text{
   float: left;
   padding-left: 15px;
-  text-align: left;
+/*  text-align: left;*/
+text-align: center;
   width: 185px;
   border: medium none;
 }
@@ -245,9 +287,10 @@ body {
   float: left;
   font-size: 16px;
 }
-.footer  .social.icon{
-    float: right;
-    background-color: #b59d70;
+.footer .social.icon {
+  background-color: #b59d70;
+  float: left;
+  padding-top: 40px;
 }
 .footer  .social .pane-content li {
   width: 15%;
@@ -294,6 +337,42 @@ body {
   width: 75px;
   text-align: center;
 }
+.imageblock-image {
+ width: 200px;
+}
+.imageblock-link {
+    float: right;
+}
+.block-image {
+  float: left;
+  width: 47%;
+}
+.block-body {
+  float: left;
+  padding-left: 2%;
+  width: 50%;
+}
+.footer .col-md-12.news-letter {
+    padding-bottom: 20px;
+}
+.footer .news-letter h2 {
+  margin-left: 235px;
+}
+.footer .pane-webform-client-block-18 .pane-content {
+  margin: 0 auto; 
+  width: 700px;
+}
+.footer .webform-client-form.webform-client-form-18 {
+  margin-left: 200px;
+}
+.footer .webform-client-form .webform-component {
+  width: 24%;
+}
+.footer .webform-client-form .webform-component input {
+  font-size: 11px;
+  margin-bottom: 0;
+  padding-left: 10px;
+}
 /*******************************************************************************/
 //flexslide changes
 /*******************************************************************************/
@@ -323,6 +402,18 @@ body {
 }
 .navbar-brand > img {
     height: 55px;
+}
+
+.hambruger.-menu.navbar-toggle {
+  display: block;
+  float: left;
+  margin-left: 5px;
+  margin-top: 25px;
+  border: medium none;
+  margin-right: 0;
+}
+.navbar-default {
+    background-color: #000000;
 }
 
 /*

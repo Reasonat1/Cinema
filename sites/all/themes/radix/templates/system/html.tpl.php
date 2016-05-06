@@ -66,9 +66,7 @@
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
-    
- <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open  hamburger menu</button>
+
 <!-- Modal -->
 <div id="myModal" class="modal fade hamburger" role="dialog">
   <div class="modal-dialog">

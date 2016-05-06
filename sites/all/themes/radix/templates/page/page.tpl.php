@@ -25,6 +25,13 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
+           <!-- Trigger the modal with a button -->
+          <button  class="hambruger -menu navbar-toggle" data-target="#myModal" data-toggle="modal"  type="button">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
         <?php if ($site_name || $logo): ?>
           <a href="<?php print $front_page; ?>" class="navbar-brand" rel="home" title="<?php print t('Home'); ?>">
             <?php if ($logo): ?>
@@ -65,8 +72,8 @@
           <?php print $messages; ?>
         </div>
       <?php endif; ?>
-      <div id="page-header">
-        <?php if ($title): ?>
+      <div id="page-header">        <?php if ($title): ?>
+
           <div class="page-header">
             <h1 class="title"><?php print $title; ?></h1>
           </div>
