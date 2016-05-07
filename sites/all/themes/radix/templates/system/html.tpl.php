@@ -77,7 +77,7 @@
      <h4 class="modal-title">Modal Header</h4>
       </div>-->
       <div class="modal-body">
-          <img src="http://localhost/localsetup/jercin/sites/all/themes/cinemateque/images/close42.png" class="close" data-dismiss="modal"/>
+          <img src="http://localhost/jercin/sites/all/themes/cinemateque/images/close42.png" class="close" data-dismiss="modal"/>
       </div>       
     </div>
   </div>

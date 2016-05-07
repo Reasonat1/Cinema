@@ -65,7 +65,7 @@ body {
     padding: 10px 15px 0;
     width: 33.3%;
 }
-.pane-menu-menu-site-main-menu .menu.nav li.expanded .caret {
+ li.expanded .caret {
   display: none;
 }
 .pane-menu-menu-site-main-menu .menu.nav li.expanded a{
@@ -78,7 +78,7 @@ body {
 .pane-menu-menu-site-main-menu .menu.nav li.expanded li {
   border-bottom: 2px solid #5c5c5c;
   line-height: 40px;
-    background-image: url("http://localhost/localsetup/jercin/sites/all/themes/cinemateque/images/arrow-right.png");
+    background-image: url("http://localhost/jercin/sites/all/themes/cinemateque/images/arrow-right.png");
       background-position: right center;
   background-repeat: no-repeat;
   background-size: 20px auto;
@@ -99,7 +99,7 @@ body {
 }
 
 .popup.region .pane-menu-tree .menu.nav li {
-  background-image: url("http://localhost/localsetup/jercin/sites/all/themes/cinemateque/images/arrow-right.png");
+  background-image: url("http://localhost/jercin/sites/all/themes/cinemateque/images/arrow-right.png");
   background-position: right center;
   background-repeat: no-repeat;
   background-size: 20px auto;
@@ -379,10 +379,10 @@ text-align: center;
 .flex-direction-nav .flex-prev:after {
 }
 .flex-direction-nav .flex-prev {
-  background-image: url("http://localhost/localsetup/jercin/sites/all/themes/cinemateque/images/left.png");
+  background-image: url("http://localhost/jercin/sites/all/themes/cinemateque/images/left.png");
 }
 .flex-direction-nav .flex-next {
-  background-image: url("http://localhost/localsetup/jercin/sites/all/themes/cinemateque/images/right.png");
+  background-image: url("http://localhost/jercin/sites/all/themes/cinemateque/images/right.png");
 }
 .flex-direction-nav a {
   background-repeat: no-repeat;
@@ -407,15 +407,105 @@ text-align: center;
 .hambruger.-menu.navbar-toggle {
   display: block;
   float: left;
-  margin-left: 5px;
-  margin-top: 25px;
+  margin-left: 30px;
+  margin-top: 20px;
   border: medium none;
   margin-right: 0;
 }
-.navbar-default {
-    background-color: #000000;
+.navbar-default{
+    background-color: #B49D6F;
+}
+.header #site-main-menu,.header #site-main-menu li a,.header #site-main-menu li a:hover, .header #site-main-menu li a:active{
+    background-color: #B49D6F;
+     color: #ffffff;
 }
 
+.sticky-header.header .navbar-default {
+    background-color: #000000;
+}
+.sticky-header.header .hambruger.-menu.navbar-toggle {
+  margin-top: 12px;
+   margin-left: 30px;
+}
+.sticky-header.header #site-main-menu{
+  padding-bottom: 0px;
+  padding-top: 5px;
+  background-color: #000000;
+  color: #b69e71;
+}
+ .sticky-header.header #site-main-menu li a{
+  padding-bottom: 12px;
+  padding-top: 12px;
+  background-color: #000000;
+  color: #fff;
+}
+.sticky-header.header #site-main-menu li a:hover, .sticky-header.header #site-main-menu li a:active {
+  padding-bottom: 12px;
+  padding-top: 12px;
+  background-color: #000000;
+  color: #b69e71;
+}
+.sticky-header.header .navbar .navbar-brand {
+  height: 50px;
+  overflow: hidden;
+  padding: 0 0 0 5px;
+}
+.dropdown-menu {
+background-color: transparent;
+padding: 0;
+}
+.admin-menu .sticky-header.header {
+  margin-top: 0px;
+}
+.sticky-header {
+    margin-top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+li.expanded .dropdown-menu {
+  border-top: 2px solid #B69E71;
+}
+.panels-flexible-region-custom_front_panel-footer_region,.panels-flexible-custom_front_panel .panels-flexible-region  {
+    width: 100%;
+}
+.site-custom-menu.menu.nav.navbar-nav {
+    margin-top: 5px;
+}
+.navbar .navbar-brand {
+    padding-top: 10px;
+}
+.pane-block-8 {
+  background-color: #ffffff;
+  float: left;
+  width: 100%;
+}
+.col-md-3.header-right > li {
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 18px;
+}
+.header-right {
+    float: right;
+}
+.festival-site span {
+  color: #ffffff;
+  float: left;
+  font-size: 12px;
+  line-height: 16px;
+  width: 100%;
+}
+.festival-site {
+  float: left;
+  padding-top: 12px;
+}
+.sticky-header .festival-site {
+  padding-left: 12px;
+}
 /*
  * Direction RTl format
  */
