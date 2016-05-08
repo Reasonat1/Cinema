@@ -1,0 +1,16 @@
+
+<?php
+function my_backend_init() {
+    drupal_add_css(drupal_get_path('module', 'my_backend') . '/include/my_backend.css');
+    drupal_add_js(drupal_get_path('module', 'my_backend') . '/include/my_backend.js');
+    /**
+     * External files on local
+     */
+    drupal_add_js(drupal_get_path('module', 'my_backend') . '/include/jquery.flexslider.js');
+    drupal_add_css(drupal_get_path('module', 'my_backend') . '/include/flexslider.css');
+    /**
+     * External files link
+     */
+    drupal_add_css('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', array('type' => 'external'));
+   drupal_add_css('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', array('type' => 'external'));
+}

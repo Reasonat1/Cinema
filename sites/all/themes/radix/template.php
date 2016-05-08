@@ -170,7 +170,50 @@ function radix_preprocess_page(&$variables) {
     'min_depth' => 1,
     'max_depth' => 2,
   ));
+   // Format and add site main menu to theme.
+  $variables['site_main_menu'] = _radix_dropdown_menu_tree(variable_get('menu-site-main-menu_links_source', 'menu-site-main-menu'), array(
+    'min_depth' => 1,
+    'max_depth' => 2,
+  ));
+// if ternonmy page is views
+    global $base_url;
+    $output = "";
+    $variables['festival_site_info']  = "";
+    $term_page = isset($variables['page']['content']['system_main']['taxonomy_terms']) ? $variables['page']['content']['system_main']['taxonomy_terms'] : array();
+    if(!empty($term_page)){
+        foreach ($term_page as $value) {
+            $tid =$value['#term']->tid;
+            break;     
+        }
+        $texonomy = taxonomy_term_load($tid);
+        $menu = $texonomy->cinematic_menu;
+        $name = $texonomy->name;
+        $domain = isset($texonomy->field_cm_domain['und'][0]['value']) ? $texonomy->field_cm_domain['und'][0]['value'] : 1;
+        $logo_image = $texonomy->field_cm_festival_logo;
+        // this is static for now( $domain = 1 means primary domain
+        if($domain != '1' ){
+                if(!empty($logo_image)){
+                    $logo_image =$base_url.'/sites/default/files/'.$logo_image['und'][0]['filename'];	
+                    $variables['festival_site_logo'] = $logo_image;
+                }
+        
+                $output = "<div class='festival-site'>";
+                $output.="   <span class='festive-site-name'>$name</span>";
+                $output.="   <span class='festive-time'>06:12:35</span>";
+                $output.= "</div>";
+                $variables['festival_site_info'] =$output;
+                    
+                // texonomy accssociated menu
+                if($menu != ''){
+                   $menu_source =$menu.'_links_source';
+                   $variables['festival_site_menu'] = _radix_dropdown_menu_tree(variable_get($menu_source, $menu), array(
+                       'min_depth' => 1,
+                       'max_depth' => 2,
+                     ));
+                }
+        }
 
+    }
   // Add a copyright message.
   $variables['copyright'] = t('Drupal is a registered trademark of Dries Buytaert.');
 
