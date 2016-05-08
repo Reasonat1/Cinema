@@ -40,7 +40,7 @@ function toptix_open_frame() {
   frame.attr('width', '1024');
   frame.attr('height', '768');
   frame.dialog({
-    'title': Drupal.t('Puchase tickets'),
+    'title': Drupal.t('Purchase tickets'),
     'width': 1024,
     'height': 768,
     'modal': true,
