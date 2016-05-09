@@ -41,19 +41,19 @@ body {
   padding-bottom: 40px;
 /*  padding-top: 50px;*/
 }
-.pane-menu-tree .menu.nav li a {
+.pane-menu-menu-demo-menu-1 .menu.nav li a {
      background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   color: #ffffff;
   font-size: 14px;
 }
-.pane-menu-tree .menu.nav li a:hover,.pane-menu-tree .menu.nav li a:active {
+.pane-menu-menu-demo-menu-1 .menu.nav li a:hover,.pane-menu-menu-demo-menu-1 .menu.nav li a:active {
      background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
 }
-.pane-menu-tree h2 { 
+.pane-menu-menu-demo-menu-1 h2 { 
   font-size: 16px;
   font-weight: bold;
 } 
-.pane-menu-tree .menu.nav li {
+.pane-menu-menu-demo-menu-1 .menu.nav li {
   border-bottom: 2px solid #5c5c5c;
   line-height: 40px;
 }
@@ -98,7 +98,7 @@ body {
     background: none;
 }
 
-.popup.region .pane-menu-tree .menu.nav li {
+.popup.region .pane-menu-menu-demo-menu-1 .menu.nav li {
   background-image: url("http://localhost/jercin/sites/all/themes/cinemateque/images/arrow-right.png");
   background-position: right center;
   background-repeat: no-repeat;
@@ -106,7 +106,7 @@ body {
   border-bottom: 2px solid #5c5c5c;
   line-height: 40px;
 }
-.pane-menu-tree.col-md-3 {
+.pane-menu-menu-demo-menu-1.col-md-3 {
   padding-left: 50px;
   padding-right: 50px;
   width: 25%;
@@ -189,7 +189,7 @@ text-align: center;
   padding-top: 0;
   width: 65px;
 }
-.news-leter .webform-client-form.webform-client-form-18 {
+.news-leter .webform-client-form.webform-client-form-19 {
   padding-left: 32px;
 }
 .form-item-submitted-approve-recieving-e-mail.radio {
@@ -214,7 +214,7 @@ text-align: center;
   float: left;
   padding: 22px;
 }
-.popup.region .pane-menu-tree .menu.nav li.last {
+.popup.region .pane-menu-menu-demo-menu-1 .menu.nav li.last {
   border-bottom: medium none;
   margin-bottom: 30px;
 }
@@ -346,6 +346,7 @@ text-align: center;
 .block-image {
   float: left;
   width: 47%;
+  text-align: right;
 }
 .block-body {
   float: left;
@@ -358,11 +359,11 @@ text-align: center;
 .footer .news-letter h2 {
   margin-left: 235px;
 }
-.footer .pane-webform-client-block-18 .pane-content {
+.footer .pane-webform-client-block-19 .pane-content {
   margin: 0 auto; 
   width: 700px;
 }
-.footer .webform-client-form.webform-client-form-18 {
+.footer .webform-client-form.webform-client-form-19 {
   margin-left: 200px;
 }
 .footer .webform-client-form .webform-component {
@@ -475,7 +476,7 @@ li.expanded .dropdown-menu {
 .navbar .navbar-brand {
     padding-top: 10px;
 }
-.pane-block-8 {
+.pane-block-4 {
   background-color: #ffffff;
   float: left;
   width: 100%;
@@ -505,6 +506,10 @@ li.expanded .dropdown-menu {
 }
 .sticky-header .festival-site {
   padding-left: 12px;
+}
+.navbar-nav > li {
+    display: inline-block;
+    float: none;
 }
 /*
  * Direction RTl format

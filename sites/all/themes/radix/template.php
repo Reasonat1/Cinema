@@ -123,6 +123,7 @@ function radix_js_alter(&$javascript) {
     $javascript[$radix_progress] = array_merge(
       drupal_js_defaults(), array('group' => JS_THEME, 'data' => $radix_progress));
   }
+  
 }
 
 /**
@@ -229,4 +230,13 @@ function radix_preprocess_page(&$variables) {
 //      '@command' => 'compass watch',
 //    )), 'error');
 //  }
+}
+
+function radix_preprocess(&$vars, $hook) {
+//                    // Get an array of all JavaScripts that have been added
+//                    echo "<pre>"; print_r($hook) ; die(" hree");
+//
+//                    // Remove the original jQuery library and Drupal's JS include
+//                    unset($javascript['core']['misc/jquery.js']);
+
 }

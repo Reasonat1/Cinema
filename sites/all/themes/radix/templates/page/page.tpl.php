@@ -42,7 +42,7 @@
               <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" id="logo" />
             <?php endif; ?>
             <?php if ($site_name): ?>
-              <span class="site-name"><?php// print $site_name; ?></span>
+              <span class="site-name"></span>
             <?php endif; ?>
           </a>
         <?php endif; ?>
@@ -58,12 +58,12 @@
               } 
               ?>
         <?php if ($site_main_menu): ?>
-           <ul id="site-main-menu" class="site-custom-menu menu nav navbar-nav">
+           <ul id="site-main-menu" class="site-custom-menu menu nav navbar-nav col-md-6">
             <?php print render($site_main_menu); ?>
           </ul>
         <?php endif; ?>
         <?php if ($search_form): ?>
-          <?php $block = module_invoke('block', 'block_view', '9');
+          <?php $block = module_invoke('block', 'block_view', '5');
                          print render($block['content']); //print $search_form; ?>
         <?php endif; ?>
       </div><!-- /.navbar-collapse -->
