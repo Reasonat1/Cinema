@@ -1,5 +1,67 @@
 <?php
 
+//define('TOPTIX_HOST', 'demo.toptix.com');
+define('TOPTIX_HOST', '199.203.164.53');
+
+function cinematic_toptix_menu() {
+  $items = array();
+  $items['admin/content/toptix'] = array(
+    'title' => 'toptix',
+    'access arguments' => array('administer nodes'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('cinematic_toptix_import'),
+    'file' => 'cinematic_toptix.import.inc',
+    'type' => MENU_LOCAL_TASK,
+  );
+  $items['content/events-browser'] = array(
+    'title' => 'toptix',
+    'access arguments' => array('administer nodes'),
+    'page callback' => 'cinematic_toptix_browse',
+    'file' => 'cinematic_toptix.browse.inc',
+  );
+  return $items;
+}
+
+function cinematic_toptix_block_info() {
+  $blocks = array();
+  $blocks['cart'] = array(
+    'info' => 'toptix basket',
+  );
+  return $blocks;
+}
+
+function cinematic_toptix_block_view($delta) {
+  if ($delta != 'cart') {
+    return;
+  }
+  global $user;
+  $account = user_load($user->uid);
+  $field_toptix = field_get_items('user', $account, 'field_toptix');
+  $field_toptix = $field_toptix[0]['value'];
+
+  $block = array('title' => '');
+  $path = drupal_get_path('module', 'cinematic_toptix');
+  $block['content'] = array(
+    '#markup' => '<button class="toptix-basket" data-url="http://' . TOPTIX_HOST . '/Order.aspx"> ' . t('My cart') . '</button>',
+    '#attached' => array(),
+  );
+
+  $block['content']['#attached']['library'] = array(
+    array('system', 'ui.dialog'),
+  );
+
+  $block['content']['#attached']['js'] = array(
+    array(
+      'data' => array('toptix_user' => $field_toptix), 
+      'type' => 'setting'
+    ),
+    $path . '/esrojsapi.js',
+    $path . '/basket.js',
+  );
+
+  return $block;
+}
+
 function cinematic_toptix_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id != 'user_register_form' and $form_id != 'user_profile_form') {
     return;
@@ -21,12 +83,90 @@ function cinematic_toptix_form_alter(&$form, &$form_state, $form_id) {
   $form['#attached']['js'][] = drupal_get_path('module', 'cinematic_toptix') . '/esrojsapi.js';
 }
 
-function cinematic_toptix_field_widget_text_textfield_form_alter(&$element, &$form_state, $context) {
-  if ($context['instance']['field_name'] != 'field_toptix') {
-    return;
+function cinematic_toptix_field_widget_form_alter(&$element, &$form_state, $context) {
+  if ($context['instance']['field_name'] == 'field_toptix') {
+    if (user_access('administer users')) {
+      return;
+    }
+    $element['value']['#type'] = 'hidden';
   }
-  if (user_access('administer users')) {
-    return;
+  if ($context['instance']['field_name'] == 'field_toptix_purchase') {
+    $element['value']['#type'] = 'hidden';
+    $element['browser'] = array(
+      '#attributes' => array('class' => array('browser'), 'title' => ''),
+      '#type' => 'textfield',
+      '#title' => t('Event purchase'),
+      '#description' => t('Click top open browser'),
+      '#size' => 16,
+      '#attached' => array(
+        'library' => array(
+          array('system', 'ui.accordion'),
+          array('system', 'ui.dialog')
+        ),
+        'js' => array(
+          drupal_get_path('module', 'cinematic_toptix') . '/event_browser.js',
+        ),
+      ),
+    );
+    if ($element['value']['#default_value']) {
+      $event_id = $element['value']['#default_value'];
+      $event = db_select('toptix_events', 'te')
+        ->condition('te.local_id', $event_id)
+        ->fields('te')
+        ->execute()->fetchObject();
+      $element['browser']['#default_value'] = "$event->event_date : $event->local_id";
+    }
   }
-  $element['value']['#type'] = 'hidden';
+}
+
+function cinematic_toptix_field_formatter_info() {
+  return array(
+    'toptix_purchase' => array(
+      'label' => 'Toptix Purchase button',
+      'field types' => array('number_integer'),
+    ),
+  );
+}
+
+function cinematic_toptix_rdf_namespaces() {
+  return array(
+    'esro' => 'toptix.com',
+  );
+}
+
+function cinematic_toptix_field_formatter_view(
+  $entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = array();
+
+  if ($display['type'] != 'toptix_purchase') {
+    return $element;
+  }
+
+  global $user;
+  $account = user_load($user->uid);
+  $field_toptix = field_get_items('user', $account, 'field_toptix');
+  $field_toptix = $field_toptix[0]['value'];
+
+  foreach ($items as $delta => $item) {
+    $event_id = $item['value'];
+    $url = 'http://' . TOPTIX_HOST . '/loader.aspx/?target=hall.aspx?event=' . $event_id;
+    $output = '<button class="toptix-purchase" data-url="' . $url . '">' . t('Puchase') . '</button>';
+    $element[$delta] = array(
+      '#markup' => $output,
+      '#attached' => array(
+        'js' => array(
+          array(
+            'data' => array('toptix_user' => $field_toptix), 
+            'type' => 'setting'
+          ),
+          drupal_get_path('module', 'cinematic_toptix') . '/esrojsapi.js',
+          drupal_get_path('module', 'cinematic_toptix') . '/frame.js',
+        ),
+        'library' => array(
+          array('system', 'ui.dialog'),
+        ),
+      ),
+    );
+  }
+  return $element;
 }

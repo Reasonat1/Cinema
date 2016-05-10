@@ -66,5 +66,22 @@
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade hamburger" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+<!--      <div class="modal-header">
+        
+     <h4 class="modal-title">Modal Header</h4>
+      </div>-->
+      <div class="modal-body">
+          <img src="http://localhost/jercin/sites/all/themes/cinemateque/images/close42.png" class="close" data-dismiss="modal"/>
+      </div>       
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
