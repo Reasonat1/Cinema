@@ -70,10 +70,18 @@ function _views_slideshow_preprocess_views_slideshow(&$vars) {
     foreach ($addons as $addon_id => $addon_info) {
       foreach ($addon_info['accepts'] as $imp_key => $imp_value) {
         if (is_array($imp_value)) {
-          $methods[$imp_key][] = preg_replace('/_(.?)/e',"strtoupper('$1')", $addon_id);
+//          $methods[$imp_key][] = preg_replace('/_(.?)/e',"strtoupper('$1')", $addon_id);
+               $methods[$imp_key][] = preg_replace_callback(
+                  '/_(.?)/',
+                  'views_slideshow_replace_callback',
+                 $addon_id);
         }
         else {
-          $methods[$imp_value][] = preg_replace('/_(.?)/e',"strtoupper('$1')", $addon_id);
+//          $methods[$imp_value][] = preg_replace('/_(.?)/e',"strtoupper('$1')", $addon_id);
+               $methods[$imp_value][] = preg_replace_callback(
+                  '/_(.?)/',
+                  'views_slideshow_replace_callback',
+                 $addon_id);
         }
       }
     }
@@ -173,6 +181,19 @@ function theme_views_slideshow_main_section($vars) {
   return '<div id="' . $vars['plugin'] . '_main_' . $vars['vss_id'] . '" class="' .  $vars['plugin'] . '_main views_slideshow_main">' . $vars['slides'] . '</div>';
 }
 
+ /**
+   * Callback function for preg_replace.
+   *
+   * @param array $m
+   *   replacement strings
+   *
+   * @return array
+   *   replacement strings
+   */
+function views_slideshow_replace_callback($m) {
+  return strtoupper($m[1]);
+}
+
 /**
  * Views Slideshow: pager.
  *
@@ -184,7 +205,11 @@ function theme_views_slideshow_pager_widget_render($vars) {
     'viewsSlideshowPager' => array(
       $vars['vss_id'] => array(
         $vars['location'] => array(
-          'type' => preg_replace('/_(.?)/e',"strtoupper('$1')", $vars['settings']['type']),
+//          'type' => preg_replace('/_(.?)/e',"strtoupper('$1')", $vars['settings']['type']),
+             'type' => preg_replace_callback(
+                      '/_(.?)/',
+                      'views_slideshow_replace_callback',
+                      $vars['settings']['type'])
         ),
       ),
     ),
@@ -272,7 +297,11 @@ function theme_views_slideshow_controls_widget_render($vars) {
     'viewsSlideshowControls' => array(
       $vars['vss_id'] => array(
         $vars['location'] => array(
-          'type' => preg_replace('/_(.?)/e',"strtoupper('$1')", $vars['settings']['type']),
+//          'type' => preg_replace('/_(.?)/e',"strtoupper('$1')", $vars['settings']['type']),
+                'type' => preg_replace_callback(
+                '/_(.?)/',
+                'views_slideshow_replace_callback',
+                $vars['settings']['type'])
         ),
       ),
     ),

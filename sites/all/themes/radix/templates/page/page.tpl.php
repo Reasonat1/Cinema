@@ -58,7 +58,7 @@
               } 
               ?>
         <?php if ($site_main_menu): ?>
-           <ul id="site-main-menu" class="site-custom-menu menu nav navbar-nav col-md-6">
+           <ul id="site-main-menu" class="site-custom-menu menu nav navbar-nav col-md-5">
             <?php print render($site_main_menu); ?>
           </ul>
         <?php endif; ?>

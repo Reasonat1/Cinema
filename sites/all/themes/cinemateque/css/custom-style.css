@@ -375,21 +375,52 @@ text-align: center;
   padding-left: 10px;
 }
 /*******************************************************************************/
-//flexslide changes
+//slide changes
 /*******************************************************************************/
 .flex-direction-nav .flex-prev:after {
 }
-.flex-direction-nav .flex-prev {
-  background-image: url("http://localhost/jercin/sites/all/themes/cinemateque/images/left.png");
+.pane-slider h2 {
+    display: none;
 }
-.flex-direction-nav .flex-next {
-  background-image: url("http://localhost/jercin/sites/all/themes/cinemateque/images/right.png");
+.views-slideshow-cycle-main-frame {
+    float: left;
+    width: 100% !important;
 }
-.flex-direction-nav a {
-  background-repeat: no-repeat;
-  font-size: 0;
-  height: 32px;
-  width: 32px;
+.views_slideshow_controls_text  a {
+    color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    display: block;
+    height: 40px;
+    margin: -20px 0 0;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    text-decoration: none;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+    top: 50%;
+    transition: all 0.3s ease-in-out 0s;
+    width: 40px;
+    z-index: 10;
+    background-repeat: no-repeat;
+    font-size: 0;
+    height: 32px;
+    width: 32px;
+}
+.views-slideshow-controls-text-pause {
+  display: none;
+}
+.views-slideshow-controls-text-previous a {
+    left: 0;
+     background-image: url("http://localhost/jercin/sites/all/themes/cinemateque/images/left.png");
+      margin-left: 15px;
+}
+.views-slideshow-controls-text-next a{
+    right: 0;
+    background-image: url("http://localhost/jercin/sites/all/themes/cinemateque/images/right.png");
+     margin-right: 15px;
+}
+.view-id-slider:hover .views_slideshow_controls_text a {
+    opacity: 1;
 }
 /**************************************************************************/
 .hamburger .modal-body .pane-bean-infomation-block-view .handle {
@@ -472,9 +503,11 @@ li.expanded .dropdown-menu {
 }
 .site-custom-menu.menu.nav.navbar-nav {
     margin-top: 5px;
+     text-align: center;
 }
 .navbar .navbar-brand {
     padding-top: 10px;
+     overflow: hidden;
 }
 .pane-block-4 {
   background-color: #ffffff;
