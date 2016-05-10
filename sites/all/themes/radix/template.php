@@ -188,10 +188,15 @@ function radix_preprocess_page(&$variables) {
         }
         $texonomy = taxonomy_term_load($tid);
         $menu = $texonomy->cinematic_menu;
+         $festival_date = isset($texonomy->field_cm_festival_date['und'][0]['value']) ? $texonomy->field_cm_festival_date['und'][0]['value'] : '';
         $name = $texonomy->name;
         $domain = isset($texonomy->field_cm_domain['und'][0]['value']) ? $texonomy->field_cm_domain['und'][0]['value'] : 1;
         $logo_image = $texonomy->field_cm_festival_logo;
-        // this is static for now( $domain = 1 means primary domain
+        $date = '';
+        if($festival_date != ''){
+            $date = date('d-m.Y',strtotime($festival_date));
+        }
+        // this is static for now( $domain = 1 means primary domain)
         if($domain != '1' ){
                 if(!empty($logo_image)){
                     $logo_image =$base_url.'/sites/default/files/'.$logo_image['und'][0]['filename'];	
@@ -200,7 +205,7 @@ function radix_preprocess_page(&$variables) {
         
                 $output = "<div class='festival-site'>";
                 $output.="   <span class='festive-site-name'>$name</span>";
-                $output.="   <span class='festive-time'>06:12:35</span>";
+                $output.="   <span class='festive-time'>$date</span>";
                 $output.= "</div>";
                 $variables['festival_site_info'] =$output;
                     
@@ -230,13 +235,4 @@ function radix_preprocess_page(&$variables) {
 //      '@command' => 'compass watch',
 //    )), 'error');
 //  }
-}
-
-function radix_preprocess(&$vars, $hook) {
-//                    // Get an array of all JavaScripts that have been added
-//                    echo "<pre>"; print_r($hook) ; die(" hree");
-//
-//                    // Remove the original jQuery library and Drupal's JS include
-//                    unset($javascript['core']['misc/jquery.js']);
-
 }
