@@ -57,6 +57,39 @@ body {
   border-bottom: 2px solid #5c5c5c;
   line-height: 40px;
 }
+/**/
+.pane-my-backend-festival-menu-block .menu.nav li.expanded {
+  display: none;
+}
+.pane-my-backend-festival-menu-block .menu.nav li a {
+     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  color: #ffffff;
+  font-size: 14px;
+}
+.pane-my-backend-festival-menu-block .menu.nav li a:hover,.pane-my-backend-festival-menu-block .menu.nav li a:active {
+     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+}
+.pane-my-backend-festival-menu-block .menu.nav li {
+  background-image: url("http://localhost/jercin/sites/all/themes/cinemateque/images/arrow-right.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 20px auto;
+  border-bottom: 2px solid #5c5c5c;
+  line-height: 40px;
+}
+.popup.region .pane-my-backend-festival-menu-block .menu.nav li.last{
+    border-bottom: none;
+}
+.pane-my-backend-festival-menu-block .col-md-3 {
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 25%;
+}
+.pane-my-backend-festival-menu-block .pane-content > h2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+/***/
 .pane-menu-menu-site-main-menu  h2 { 
   display: none;
 } 
@@ -298,11 +331,11 @@ text-align: center;
 .pane-footer-mini-panel .carousel {
   padding: 0;
 }
-.pane-footer-mini-panel .copyrignt-block {
+.footer  .copyrignt-block {
   background-color: #ffffff;
   min-height: 57px;
 }
-.pane-footer-mini-panel .design-development-block {
+.footer  .design-development-block {
     background-color: #ffffff;
     min-height: 57px;
 }
@@ -319,7 +352,7 @@ text-align: center;
   float: left;
   max-width: 124px;
 }
-.pane-footer-mini-panel .webform-client-form .webform-submit {
+.footer  .webform-client-form .webform-submit {
   background: #ffffff none repeat scroll 0 0 !important;
   border-radius: 35px;
   box-shadow: none;
@@ -549,6 +582,9 @@ li.expanded .dropdown-menu {
 }
 .header .site-custom-menu li {
     display: none;
+}
+.header .site-custom-menu li ul li {
+  display: block;
 }
 /*
  * Direction RTl format
