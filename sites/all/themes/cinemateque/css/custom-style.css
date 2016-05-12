@@ -349,8 +349,16 @@ text-align: center;
   text-align: right;
 }
 .pane-content li img.carousel-sponser {
+      padding-top: 8px;
+    width: 140px;
+}
+.custom-sponser-pane .pane-content li {
+  display: inline;
+}
+.custom-sponser-pane .pane-content > ul {
   float: left;
-  max-width: 124px;
+  text-align: center;
+  width: 100%;
 }
 .footer  .webform-client-form .webform-submit {
   background: #ffffff none repeat scroll 0 0 !important;
@@ -390,11 +398,11 @@ text-align: center;
     padding-bottom: 20px;
 }
 .footer .news-letter h2 {
-  margin-left: 235px;
+  margin-left: 25%;
 }
 .footer .pane-webform-client-block-19 .pane-content {
   margin: 0 auto; 
-  width: 700px;
+  width: 54%;
 }
 .footer .webform-client-form.webform-client-form-19 {
   margin-left: 200px;
@@ -586,6 +594,78 @@ li.expanded .dropdown-menu {
 .header .site-custom-menu li ul li {
   display: block;
 }
+
+.header .container {
+  padding: 0;
+  width: 100%;
+}
+#main #content {
+  padding: 0;
+  width: 100%;
+}
+.panels-flexible-row.content,.panels-flexible-row.bottom.content {
+  margin: 0 auto;
+  width: 1140px;
+}
 /*
  * Direction RTl format
  */
+[dir="rtl"] .navbar-header {
+  float: right !important;
+}
+[dir="rtl"] .site-custom-menu.menu.nav.navbar-nav {
+  float: right;
+}
+[dir="rtl"] .hambruger.-menu.navbar-toggle {
+  float: right;
+  margin-left: 0;
+  margin-right: 30px;
+}
+[dir="rtl"] .social .pane-content li, [dir="rtl"] .sponser-pane .pane-content li {
+  float: right;
+}
+[dir="rtl"]  .block-image {
+  float: right;
+  text-align: left;
+}
+[dir="rtl"] .footer .copyrignt-block {
+  float: right;
+  text-align: right;
+}
+[dir="rtl"] .design-development > p {
+  text-align: left;
+}
+[dir="rtl"] .footer .news-letter h2 {
+    margin-right: 25%;
+    float: right;
+    margin-left: 0;
+}
+[dir="rtl"] .footer .webform-client-form.webform-client-form-19 {
+    margin-right: 200px;
+    margin-left: 0px;
+}
+[dir="rtl"] .footer .webform-client-form .webform-component {
+  float: right;
+  margin-left: 15px;
+  margin-right: 0;
+  width: 24%;
+}
+[dir="rtl"] .footer .webform-client-form .webform-component input {
+  padding-left: 0;
+  padding-right: 10px;
+} 
+[dir="rtl"] .footer .webform-client-form .webform-component.webform-component-radios {
+  margin-left: 0;
+  margin-right: 15px;
+  width: 100%;
+}
+[dir="rtl"]  .footer .webform-client-form .webform-component input.form-radio{
+    right: 0;
+}
+[dir="rtl"] .footer .webform-client-form .webform-component.webform-component-radios label {
+  padding-right: 20px;
+  padding-left: 0;
+}
+[dir="rtl"] .navbar-brand {
+    float: right;
+}
