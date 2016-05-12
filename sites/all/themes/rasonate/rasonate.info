@@ -1,0 +1,16 @@
+name = Rasonate
+description = New design for rasonate theme.
+core = 7.x
+engine = phptemplate
+
+regions[header] = Header
+regions[header_top_right] = Header Top Right 
+regions[nivo_slideshow] = Nivo slideshow
+regions[sidebar_first] = Right sidebar
+regions[content] = Content
+regions[footer] = Footer
+
+stylesheets[all][] = css/bootstrap.min.css
+stylesheets[all][] = css/font-awesome.min.css
+stylesheets[all][] = css/style.css
+scripts[] = js/bootstrap.js
