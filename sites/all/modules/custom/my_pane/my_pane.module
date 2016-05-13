@@ -1,0 +1,77 @@
+<?php
+
+/**
+ * Implements hook_ctools_plugin_api().
+ */
+function my_pane_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "file_entity" && $api == "file_default_displays") {
+    return array("version" => "1");
+  }
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function my_pane_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+include_once('my_pane.gallery.inc');
+
+/**
+ * The default list of allowed file extensions in file widgets.
+ */
+define('MY_PANE_FILE_EXTENSIONS_DEFAULT', 'txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp');
+
+/**
+ * Implements hook_init()
+ */
+function my_pane_init() {
+  
+  // Load the seven theme CSS for the media browser. This is done
+  // because the seven theme may not be the admin theme, but the
+  // media browser assumes that it is....
+  if (arg(0) == 'media' && arg(1) == 'browser') {
+    if ($GLOBALS['theme'] != 'seven') {
+      drupal_add_css(drupal_get_path('theme', 'seven') . '/reset.css', array('basename' => 'seven_reset', 'group' => CSS_THEME));
+      drupal_add_css(drupal_get_path('theme', 'seven') . '/style.css', array('basename' => 'seven_style', 'group' => CSS_THEME));
+    }
+
+  //  drupal_add_css(drupal_get_path('module', 'my_pane') . '/my-pane-media-browser.css', array('group' => CSS_THEME));
+  }
+}
+
+/**
+ * Implements hook_apps_app_info()
+ */
+//function my_pane_apps_app_info() {
+//  return array(
+//    'configure form' => 'my_pane_configure_form',
+//  );
+//}
+/**
+ * Implementation of hook_ctools_plugin_directory()
+ */
+function my_pane_ctools_plugin_directory($module, $plugin) {
+  return 'plugins/' . $plugin;
+}
+
+/** 
+ * Implementation of hook_entity_info_alter()
+ */
+function my_pane_entity_info_alter(&$entity_info) {
+  // gallery
+  $entity_info['fieldable_panels_pane']['bundles']['gallery'] = array(
+    'label' => t('Main Gallery'),
+    'description' => t('Main Gallery'),
+    'pane category' => t('Custom'),
+    'pane top level' => TRUE,
+    'pane icon' => drupal_get_path('module', 'my_pane') . '/images/icon_spotlight.png',
+    'admin' => array(
+      'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
+      'bundle argument' => 4,
+      'real path' => 'admin/structure/fieldable-panels-panes/manage/gallery',
+     // 'access arguments' => array('administer fieldable panels panes'),
+    ),
+  );
+}
