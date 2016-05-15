@@ -35,10 +35,8 @@ function toptix_callback_login(result) {
 }
 
 function toptix_open_frame() {
-  var frame = jQuery('<iframe></iframe>');
-  frame.attr('src', toptix_event_url);
-  frame.attr('width', '1024');
-  frame.attr('height', '768');
+  var frame = jQuery('#toptix-frame-wrapper');
+  $esro.gotoUrl(toptix_event_url);
   frame.dialog({
     'title': Drupal.t('Purchase tickets'),
     'width': 1024,

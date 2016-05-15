@@ -15,7 +15,7 @@
      jQuery.noConflict(); 
     </script> 
 <header id="header" class="header" role="header">
-  <div class="container">
+  <div class="container-fluid">
     <nav class="navbar navbar-default" role="navigation">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -116,3 +116,4 @@
     <small class="pull-right"><a href="#"><?php print t('Back to Top'); ?></a></small>
   </div>
 </footer>
+>>>>>>> 2822c3e14a510d981b22b196e0ddcd0bd012b227
