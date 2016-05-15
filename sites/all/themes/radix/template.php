@@ -123,6 +123,7 @@ function radix_js_alter(&$javascript) {
     $javascript[$radix_progress] = array_merge(
       drupal_js_defaults(), array('group' => JS_THEME, 'data' => $radix_progress));
   }
+  
 }
 
 /**
@@ -177,21 +178,26 @@ function radix_preprocess_page(&$variables) {
   ));
 // if ternonmy page is views
     global $base_url;
+    global $_domain;
+
     $output = "";
     $variables['festival_site_info']  = "";
-    $term_page = isset($variables['page']['content']['system_main']['taxonomy_terms']) ? $variables['page']['content']['system_main']['taxonomy_terms'] : array();
-    if(!empty($term_page)){
-        foreach ($term_page as $value) {
-            $tid =$value['#term']->tid;
-            break;     
-        }
+    $term_page =  arg(0);
+    if($term_page == 'taxonomy'){
+         $tid =arg(2);
         $texonomy = taxonomy_term_load($tid);
         $menu = $texonomy->cinematic_menu;
+        $festival_date = isset($texonomy->field_cm_festival_date['und'][0]['value']) ? $texonomy->field_cm_festival_date['und'][0]['value'] : '';
         $name = $texonomy->name;
         $domain = isset($texonomy->field_cm_domain['und'][0]['value']) ? $texonomy->field_cm_domain['und'][0]['value'] : 1;
         $logo_image = $texonomy->field_cm_festival_logo;
-        // this is static for now( $domain = 1 means primary domain
-        if($domain != '1' ){
+        // this is static for now( $domain = 1 means primary domain)
+        $date = '';
+        if($festival_date != ''){
+            $date = date('d-m.Y',strtotime($festival_date));
+        }
+       
+        if($_domain['is_default'] != '1'  && $domain == $_domain['domain_id']){
                 if(!empty($logo_image)){
                     $logo_image =$base_url.'/sites/default/files/'.$logo_image['und'][0]['filename'];	
                     $variables['festival_site_logo'] = $logo_image;
@@ -199,7 +205,7 @@ function radix_preprocess_page(&$variables) {
         
                 $output = "<div class='festival-site'>";
                 $output.="   <span class='festive-site-name'>$name</span>";
-                $output.="   <span class='festive-time'>06:12:35</span>";
+                $output.="   <span class='festive-time'>$date</span>";
                 $output.= "</div>";
                 $variables['festival_site_info'] =$output;
                     

@@ -41,22 +41,55 @@ body {
   padding-bottom: 40px;
 /*  padding-top: 50px;*/
 }
-.pane-menu-tree .menu.nav li a {
+.pane-menu-menu-demo-menu-1 .menu.nav li a {
      background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   color: #ffffff;
   font-size: 14px;
 }
-.pane-menu-tree .menu.nav li a:hover,.pane-menu-tree .menu.nav li a:active {
+.pane-menu-menu-demo-menu-1 .menu.nav li a:hover,.pane-menu-menu-demo-menu-1 .menu.nav li a:active {
      background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
 }
-.pane-menu-tree h2 { 
+.pane-menu-menu-demo-menu-1 h2 { 
   font-size: 16px;
   font-weight: bold;
 } 
-.pane-menu-tree .menu.nav li {
+.pane-menu-menu-demo-menu-1 .menu.nav li {
   border-bottom: 2px solid #5c5c5c;
   line-height: 40px;
 }
+/**/
+.pane-my-backend-festival-menu-block .menu.nav li.expanded {
+  display: none;
+}
+.pane-my-backend-festival-menu-block .menu.nav li a {
+     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  color: #ffffff;
+  font-size: 14px;
+}
+.pane-my-backend-festival-menu-block .menu.nav li a:hover,.pane-my-backend-festival-menu-block .menu.nav li a:active {
+     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+}
+.pane-my-backend-festival-menu-block .menu.nav li {
+  background-image: url("http://jer-cin.tikkewebsites.com/sites/all/themes/cinemateque/images/arrow-right.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 20px auto;
+  border-bottom: 2px solid #5c5c5c;
+  line-height: 40px;
+}
+.popup.region .pane-my-backend-festival-menu-block .menu.nav li.last{
+    border-bottom: none;
+}
+.pane-my-backend-festival-menu-block .col-md-3 {
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 25%;
+}
+.pane-my-backend-festival-menu-block .pane-content > h2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+/***/
 .pane-menu-menu-site-main-menu  h2 { 
   display: none;
 } 
@@ -78,7 +111,7 @@ body {
 .pane-menu-menu-site-main-menu .menu.nav li.expanded li {
   border-bottom: 2px solid #5c5c5c;
   line-height: 40px;
-    background-image: url("http://localhost/jercin/sites/all/themes/cinemateque/images/arrow-right.png");
+    background-image: url("http://jer-cin.tikkewebsites.com/sites/all/themes/cinemateque/images/arrow-right.png");
       background-position: right center;
   background-repeat: no-repeat;
   background-size: 20px auto;
@@ -98,15 +131,15 @@ body {
     background: none;
 }
 
-.popup.region .pane-menu-tree .menu.nav li {
-  background-image: url("http://localhost/jercin/sites/all/themes/cinemateque/images/arrow-right.png");
+.popup.region .pane-menu-menu-demo-menu-1 .menu.nav li {
+  background-image: url("http://jer-cin.tikkewebsites.com/sites/all/themes/cinemateque/images/arrow-right.png");
   background-position: right center;
   background-repeat: no-repeat;
   background-size: 20px auto;
   border-bottom: 2px solid #5c5c5c;
   line-height: 40px;
 }
-.pane-menu-tree.col-md-3 {
+.pane-menu-menu-demo-menu-1.col-md-3 {
   padding-left: 50px;
   padding-right: 50px;
   width: 25%;
@@ -189,7 +222,7 @@ text-align: center;
   padding-top: 0;
   width: 65px;
 }
-.news-leter .webform-client-form.webform-client-form-18 {
+.news-leter .webform-client-form.webform-client-form-19 {
   padding-left: 32px;
 }
 .form-item-submitted-approve-recieving-e-mail.radio {
@@ -214,7 +247,7 @@ text-align: center;
   float: left;
   padding: 22px;
 }
-.popup.region .pane-menu-tree .menu.nav li.last {
+.popup.region .pane-menu-menu-demo-menu-1 .menu.nav li.last {
   border-bottom: medium none;
   margin-bottom: 30px;
 }
@@ -298,11 +331,11 @@ text-align: center;
 .pane-footer-mini-panel .carousel {
   padding: 0;
 }
-.pane-footer-mini-panel .copyrignt-block {
+.footer .copyrignt-block {
   background-color: #ffffff;
   min-height: 57px;
 }
-.pane-footer-mini-panel .design-development-block {
+.footer .design-development-block {
     background-color: #ffffff;
     min-height: 57px;
 }
@@ -315,11 +348,19 @@ text-align: center;
   padding: 15px 0;
   text-align: right;
 }
-.pane-content li img.carousel-sponser {
-  float: left;
-  max-width: 124px;
+.custom-sponser-pane  .pane-content li img.carousel-sponser {
+    padding-top: 8px;
+    width: 140px;
 }
-.pane-footer-mini-panel .webform-client-form .webform-submit {
+.custom-sponser-pane .pane-content li {
+  display: inline;
+}
+.custom-sponser-pane .pane-content > ul {
+  float: left;
+  text-align: center;
+  width: 100%;
+}
+.footer .webform-client-form .webform-submit {
   background: #ffffff none repeat scroll 0 0 !important;
   border-radius: 35px;
   box-shadow: none;
@@ -346,6 +387,7 @@ text-align: center;
 .block-image {
   float: left;
   width: 47%;
+  text-align: right;
 }
 .block-body {
   float: left;
@@ -356,13 +398,13 @@ text-align: center;
     padding-bottom: 20px;
 }
 .footer .news-letter h2 {
-  margin-left: 235px;
+  margin-left: 25%;
 }
-.footer .pane-webform-client-block-18 .pane-content {
+.footer .pane-webform-client-block-19 .pane-content {
   margin: 0 auto; 
-  width: 700px;
+  width: 54%;
 }
-.footer .webform-client-form.webform-client-form-18 {
+.footer .webform-client-form.webform-client-form-19 {
   margin-left: 200px;
 }
 .footer .webform-client-form .webform-component {
@@ -374,21 +416,52 @@ text-align: center;
   padding-left: 10px;
 }
 /*******************************************************************************/
-//flexslide changes
+//slide changes
 /*******************************************************************************/
 .flex-direction-nav .flex-prev:after {
 }
-.flex-direction-nav .flex-prev {
-  background-image: url("http://localhost/jercin/sites/all/themes/cinemateque/images/left.png");
+.pane-slider h2 {
+    display: none;
 }
-.flex-direction-nav .flex-next {
-  background-image: url("http://localhost/jercin/sites/all/themes/cinemateque/images/right.png");
+.views-slideshow-cycle-main-frame {
+    float: left;
+    width: 100% !important;
 }
-.flex-direction-nav a {
-  background-repeat: no-repeat;
-  font-size: 0;
-  height: 32px;
-  width: 32px;
+.views_slideshow_controls_text  a {
+    color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    display: block;
+    height: 40px;
+    margin: -20px 0 0;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    text-decoration: none;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+    top: 50%;
+    transition: all 0.3s ease-in-out 0s;
+    width: 40px;
+    z-index: 10;
+    background-repeat: no-repeat;
+    font-size: 0;
+    height: 32px;
+    width: 32px;
+}
+.views-slideshow-controls-text-pause {
+  display: none;
+}
+.views-slideshow-controls-text-previous a {
+    left: 0;
+     background-image: url("http://jer-cin.tikkewebsites.com/sites/all/themes/cinemateque/images/left.png");
+      margin-left: 15px;
+}
+.views-slideshow-controls-text-next a{
+    right: 0;
+    background-image: url("http://jer-cin.tikkewebsites.com/sites/all/themes/cinemateque/images/right.png");
+     margin-right: 15px;
+}
+.view-id-slider:hover .views_slideshow_controls_text a {
+    opacity: 1;
 }
 /**************************************************************************/
 .hamburger .modal-body .pane-bean-infomation-block-view .handle {
@@ -461,7 +534,7 @@ padding: 0;
     margin-top: 0;
     position: fixed;
     width: 100%;
-    z-index: 9999;
+    z-index: 100;
 }
 li.expanded .dropdown-menu {
   border-top: 2px solid #B69E71;
@@ -471,11 +544,13 @@ li.expanded .dropdown-menu {
 }
 .site-custom-menu.menu.nav.navbar-nav {
     margin-top: 5px;
+     text-align: center;
 }
 .navbar .navbar-brand {
     padding-top: 10px;
+    overflow: hidden;
 }
-.pane-block-8 {
+.pane-block-4 {
   background-color: #ffffff;
   float: left;
   width: 100%;
@@ -506,6 +581,91 @@ li.expanded .dropdown-menu {
 .sticky-header .festival-site {
   padding-left: 12px;
 }
+.navbar-nav > li {
+    display: inline-block;
+    float: none;
+}
+.header .site-custom-menu li.expanded {
+    display: inline-block;
+}
+.header .site-custom-menu li {
+    display: none;
+}
+.header .site-custom-menu li ul li {
+  display: block;
+}
+
+.header .container {
+  padding: 0;
+  width: 100%;
+}
+#main #content {
+  padding: 0;
+  width: 100%;
+}
+.panels-flexible-row.content,.panels-flexible-row.bottom.content {
+  margin: 0 auto;
+  width: 1140px;
+}
 /*
  * Direction RTl format
  */
+[dir="rtl"] .navbar-header {
+  float: right !important;
+}
+[dir="rtl"] .site-custom-menu.menu.nav.navbar-nav {
+  float: right;
+}
+[dir="rtl"] .hambruger.-menu.navbar-toggle {
+  float: right;
+  margin-left: 0;
+  margin-right: 30px;
+}
+[dir="rtl"] .social .pane-content li, [dir="rtl"] .sponser-pane .pane-content li {
+  float: right;
+}
+[dir="rtl"]  .block-image {
+  float: right;
+  text-align: left;
+}
+[dir="rtl"] .footer .copyrignt-block {
+  float: right;
+  text-align: right;
+}
+[dir="rtl"] .design-development > p {
+  text-align: left;
+}
+[dir="rtl"] .footer .news-letter h2 {
+    margin-right: 25%;
+    float: right;
+    margin-left: 0;
+}
+[dir="rtl"] .footer .webform-client-form.webform-client-form-19 {
+    margin-right: 200px;
+    margin-left: 0px;
+}
+[dir="rtl"] .footer .webform-client-form .webform-component {
+  float: right;
+  margin-left: 15px;
+  margin-right: 0;
+  width: 24%;
+}
+[dir="rtl"] .footer .webform-client-form .webform-component input {
+  padding-left: 0;
+  padding-right: 10px;
+}
+[dir="rtl"] .footer .webform-client-form .webform-component.webform-component-radios {
+  margin-left: 0;
+  margin-right: 15px;
+  width: 100%;
+}
+[dir="rtl"]  .footer .webform-client-form .webform-component input.form-radio{
+    right: 0;
+}
+[dir="rtl"] .footer .webform-client-form .webform-component.webform-component-radios label {
+  padding-right: 20px;
+  padding-left: 0;
+}
+[dir="rtl"] .navbar-brand {
+    float: right;
+}
