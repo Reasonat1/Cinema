@@ -116,4 +116,3 @@
     <small class="pull-right"><a href="#"><?php print t('Back to Top'); ?></a></small>
   </div>
 </footer>
->>>>>>> 2822c3e14a510d981b22b196e0ddcd0bd012b227
