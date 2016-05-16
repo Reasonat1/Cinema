@@ -1,0 +1,136 @@
+<?php
+
+/**
+ * @file
+ * An installation file for Panopoly Widgets
+ */
+
+/**
+ * Implementation of hook_install().
+ */
+function my_panes_install() {
+
+}
+
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function my_panes_uninstall() {
+
+  // Retrieve the file IDs for default files
+  $fids = array(
+    'my_panes_default_gallery_fid' => variable_get('my_panes_default_gallery_fid', NULL), 
+  );
+
+  foreach($fids as $variable_name => $fid) {
+
+    // Deletes the file
+    if (!empty($fid) && $file = file_load($fid)) {
+      file_delete($file);
+    }
+
+    // Deletes the variable
+    variable_del($variable_name);
+  }
+
+  variable_del('my_panes_gallery_pause_play_buttons');
+  variable_del('my_panes_gallery_rotation_time');
+}
+
+/**
+ * Implementation of hook_field_schema().
+ */
+function my_panes_field_schema($field) {
+  if ($field['type'] == 'panopoly_gallery') {
+    $schema['columns']['title'] = array(
+      'type' => 'varchar',
+      'length' => '255',
+      'not null' => FALSE,
+    );
+
+    $schema['columns']['description'] = array(
+      'type' => 'text',
+      'size' => 'big',
+      'not null' => FALSE,
+    );
+
+    $schema['columns']['fid'] = array(
+      'type' => 'int', 
+      'not null' => FALSE,
+      'unsigned' => TRUE,
+    );
+
+    $schema['columns']['link'] = array(
+      'type' => 'varchar',
+      'length' => '255',
+      'not null' => FALSE,
+    );
+
+    $schema['columns']['alt'] = array(
+      'type' => 'varchar',
+      'length' => '255',
+      'not null' => FALSE,
+    );
+
+    $schema['indexes'] = array(
+      'fid' => array('fid'),
+    );
+
+    $schema['foreign keys'] = array(
+      'fid' => array(
+        'table' => 'file_managed',
+        'columns' => array('fid' => 'fid'),
+      ),
+    );
+
+    return $schema;
+  }
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Removes the default content from the database and file system
+ */
+function my_panes_update_7005(&$sandbox) {
+
+  // Retrieve the file IDs for default files
+  $fids = array(
+    'my_panes_default_gallery_fid' => variable_get('my_panes_default_gallery_fid', NULL),
+
+  );
+
+  foreach($fids as $variable_name => $fid) {
+
+    // Deletes the file
+    if (!empty($fid) && $file = file_load($fid)) {
+      file_delete($file);
+    }
+
+    // Deletes the variable
+    variable_del($variable_name);
+  }
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Add an "alt" field for gallery items.
+ */
+function my_panes_update_7007(&$sandbox) {
+  $spec = array(
+    'type' => 'varchar',
+    'length' => 255,
+    'not null' => FALSE,
+  );
+  $data_table_name = 'field_data_field_basic_gallery_items';
+  $revision_table_name = 'field_revision_field_basic_gallery_items';
+  $field_name = 'field_basic_gallery_items_alt';
+  if (!db_field_exists($data_table_name, $field_name)) {
+    db_add_field($data_table_name, $field_name, $spec);
+  }
+  if (!db_field_exists($revision_table_name, $field_name)) {
+    db_add_field($revision_table_name, $field_name, $spec);
+  }
+}

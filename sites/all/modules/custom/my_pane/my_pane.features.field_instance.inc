@@ -12,8 +12,8 @@ function my_pane_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
-  // 'fieldable_panels_pane-spotlight-field_basic_gallery_duration'
-  $field_instances['fieldable_panels_pane-gallery-field_basic_gallery_duration'] = array(
+  // 'fieldable_panels_pane-spotlight-field_slide_duration'
+  $field_instances['fieldable_panels_pane-gallery-field_slide_duration'] = array(
     'bundle' => 'gallery',
     'default_value' => NULL,
     'deleted' => 0,
@@ -27,7 +27,7 @@ function my_pane_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'fieldable_panels_pane',
-    'field_name' => 'field_basic_gallery_duration',
+    'field_name' => 'field_slide_duration',
     'label' => 'Slide Duration',
     'required' => 0,
     'settings' => array(
@@ -45,9 +45,44 @@ function my_pane_field_default_field_instances() {
       'weight' => 1,
     ),
   );
+  
+  // Exported field_instance:
+  // 'fieldable_panels_pane-spotlight-field_basic_gallery_pager'
+  $field_instances['fieldable_panels_pane-gallery-field_basic_gallery_pager'] = array(
+    'bundle' => 'gallery',
+    'default_value' => array(
+      0 => array(
+        'value' => 'full',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'How would you like the pager to appear?',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'fieldable_panels_pane',
+    'field_name' => 'field_basic_gallery_pager',
+    'label' => 'Pager Style',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 1,
+    ),
+  );
 
   // Exported field_instance:
-  // 'fieldable_panels_pane-spotlight-field_basic_spotlight_items'
+  // 'fieldable_panels_pane-spotlight-field_basic_gallery_items'
   $field_instances['fieldable_panels_pane-gallery-field_basic_gallery_items'] = array(
     'bundle' => 'gallery',
     'default_value' => NULL,
@@ -87,47 +122,6 @@ function my_pane_field_default_field_instances() {
       'weight' => 3,
     ),
   );
-
-  // Exported field_instance:
-  // 'fieldable_panels_pane-spotlight-field_basic_gallery_pager'
-  $field_instances['fieldable_panels_pane-gallery-field_basic_gallery_pager'] = array(
-    'bundle' => 'gallery',
-    'default_value' => array(
-      0 => array(
-        'value' => 'full',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => 'How would you like the pager to appear?',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
-      ),
-    ),
-    'entity_type' => 'fieldable_panels_pane',
-    'field_name' => 'field_basic_gallery_pager',
-    'label' => 'Pager Style',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 1,
-    ),
-  );
-
-  // Translatables
-  // Included for use with string extractors like potx.
-  t('Slide Duration');
-  t('Pager Style');
-  t('How would you like the pager to appear?');
 
   return $field_instances;
 }

@@ -10,13 +10,13 @@
 function my_pane_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_basic_gallery_duration'
-  $field_bases['field_basic_gallery_duration'] = array(
+  // Exported field_base: 'field_basic_spotlight_duration'
+  $field_bases['field_slide_duration'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_basic_gallery_duration',
+    'field_name' => 'field_slide_duration',
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -25,7 +25,7 @@ function my_pane_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_basic_gallery_items'
+  // Exported field_base: 'field_basic_spotlight_items'
   $field_bases['field_basic_gallery_items'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -47,7 +47,7 @@ function my_pane_field_default_field_bases() {
     'type' => 'panopoly_gallery',
   );
 
-  // Exported field_base: 'field_basic_gallery_pager'
+  // Exported field_base: 'field_basic_spotlight_pager'
   $field_bases['field_basic_gallery_pager'] = array(
     'active' => 1,
     'cardinality' => 1,
