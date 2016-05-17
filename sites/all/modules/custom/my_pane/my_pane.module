@@ -27,7 +27,8 @@ define('MY_PANE_FILE_EXTENSIONS_DEFAULT', 'txt doc docx xls xlsx pdf ppt pptx pp
  * Implements hook_init()
  */
 function my_pane_init() {
-  drupal_add_css(drupal_get_path('module', 'my_pane') . '/my-pane-media-browser.css', array('group' => CSS_THEME));
+    drupal_add_js(libraries_get_path('jquery.cycle', $base_path = FALSE) . '/jquery.cycle.all.min.js');
+
   // Load the seven theme CSS for the media browser. This is done
   // because the seven theme may not be the admin theme, but the
   // media browser assumes that it is....
@@ -106,12 +107,35 @@ function my_pane_ctools_plugin_directory($module, $plugin) {
 }
 
 /**
+ * Implement the "Content Settings" fieldset in a pre-render. This fixes issues with image caused by initially
+ * doing this in a form_alter.
+ *
+ * @see http://drupal.org/node/1567704
+ */
+function my_pane_fieldable_panel_pane_pre_render($element) {
+  // Add a content settings fieldset.
+  $element['content_settings'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Content Settings'),
+    '#weight' => 1,
+  );
+
+  // Add any remaining fields to the content settings fieldset.
+  foreach ($element as $key => $value) {
+    if (substr($key, 0, 6) == 'field_' || $key == 'body') {
+      $element['content_settings'][$key] = $value;
+      unset($element[$key]);
+    }
+  }
+
+  return $element;
+}
+/**
  * Implements hook_page_build()
  */
 function my_pane_page_build(&$page) {
 
   // Add our custom javascript to the footer to override other things.
-  drupal_add_css(drupal_get_path('module', 'my_pane') . '/my-pane.gallery.css');
   drupal_add_js(drupal_get_path('module', 'my_pane') . '/my-pane.js', array('scope' => 'footer'));
   drupal_add_js(drupal_get_path('module', 'my_pane') . '/my-pane-gallery.js', array('scope' => 'footer'));
 }

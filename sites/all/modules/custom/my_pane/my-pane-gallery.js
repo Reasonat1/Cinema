@@ -1,14 +1,14 @@
-Drupal.settings.spotlight_settings = Drupal.settings.spotlight_settings || {};
+Drupal.settings.gallery_settings = Drupal.settings.gallery_settings || {};
 
 (function ($) {
-    
+
   /**
    * Form behavior for Spotlight
    */
-  Drupal.behaviors.panopolySpotlight = {
+  Drupal.behaviors.panopolyGallery = {
     attach: function (context, settings) {
-      if ($('.field-name-field-basic-gallery-items', context).length) {
-        $('.field-name-field-basic-gallery-items', context).each(function() {
+      if ($('.field-name-field-custom-gallery-items', context).length) {
+        $('.field-name-field-custom-gallery-items', context).each(function() {
           var rotation_time = $(this).find('.panopoly-spotlight-buttons-wrapper').data('rotation-time'),
               $widget = $(this),
               $slides = $widget.find('.panopoly-spotlight'),
@@ -37,7 +37,7 @@ Drupal.settings.spotlight_settings = Drupal.settings.spotlight_settings || {};
             }
 
             // Click the control for the next slide.
-            $controls.eq(current).children('a').trigger('click.panopoly-widgets-spotlight');
+            $controls.eq(current).children('a').trigger('click.panopoly-custom-widgets-gallery');
           }
 
           // Navigation is hidden by default, display it if JavaScript is enabled.
@@ -49,7 +49,7 @@ Drupal.settings.spotlight_settings = Drupal.settings.spotlight_settings || {};
           $controls.eq(0).addClass('active');
 
           // Bind the event for the slide numbers.
-          $controls.once('panopoly-spotlight').children('a').bind('click.panopoly-widgets-spotlight', function (event) {
+          $controls.once('panopoly-spotlight').children('a').bind('click.panopoly-custom-widgets-gallery', function (event) {
             var selector = $(this).attr('href');
             if (selector.indexOf('#') === 0) {
               event.preventDefault();
@@ -73,7 +73,7 @@ Drupal.settings.spotlight_settings = Drupal.settings.spotlight_settings || {};
           });
 
           // Bind events to all the extra buttonts.
-          $widget.find('.panopoly-spotlight-pause-play').once('panopoly-spotlight').bind('click.panopoly-widgets-spotlight', function(event) {
+          $widget.find('.panopoly-spotlight-pause-play').once('panopoly-spotlight').bind('click.panopoly-custom-widgets-gallery', function(event) {
             event.preventDefault();
             if ($(this).hasClass('paused')) {
               start();
@@ -87,35 +87,49 @@ Drupal.settings.spotlight_settings = Drupal.settings.spotlight_settings || {};
             }
           });
           if ($widget.find('.panopoly-spotlight-previous').length && $widget.find('.panopoly-spotlight-next').length) {
-            $widget.find('.panopoly-spotlight-previous').once('panopoly-spotlight').bind('click.panopoly-widgets-spotlight', function (event) {
+            $widget.find('.panopoly-spotlight-previous').once('panopoly-spotlight').bind('click.panopoly-custom-widgets-gallery', function (event) {
               event.preventDefault();
-              $widget.find('.panopoly-spotlight-pause-play:not(.paused)').trigger('click.panopoly-widgets-spotlight');
+              $widget.find('.panopoly-spotlight-pause-play:not(.paused)').trigger('click.panopoly-custom-widgets-gallery');
               var activeControl = $($controls.filter('.active'));
 
               if (activeControl.prev().length != 0) {
-                activeControl.prev().children('a').trigger('click.panopoly-widgets-spotlight');
+                activeControl.prev().children('a').trigger('click.panopoly-custom-widgets-gallery');
               }
               else {
-                $controls.last().children('a').trigger('click.panopoly-widgets-spotlight');
+                $controls.last().children('a').trigger('click.panopoly-custom-widgets-gallery');
               }
             });
-            $widget.find('.panopoly-spotlight-next').once('panopoly-spotlight').bind('click.panopoly-widgets-spotlight', function (event) {
+            $widget.find('.panopoly-spotlight-next').once('panopoly-spotlight').bind('click.panopoly-custom-widgets-gallery', function (event) {
               event.preventDefault();
-              $widget.find('.panopoly-spotlight-pause-play:not(.paused)').trigger('click.panopoly-widgets-spotlight');
+              $widget.find('.panopoly-spotlight-pause-play:not(.paused)').trigger('click.panopoly-custom-widgets-gallery');
               var activeControl = $($controls.filter('.active'));
 
               if (activeControl.next().length != 0) {
-                activeControl.next().children('a').trigger('click.panopoly-widgets-spotlight');
+                activeControl.next().children('a').trigger('click.panopoly-custom-widgets-gallery');
               }
               else {
-                $controls.first().children('a').trigger('click.panopoly-widgets-spotlight');
+                $controls.first().children('a').trigger('click.panopoly-custom-widgets-gallery');
               }
             });
           }
+
           start();
         });
       }
     }
   };
 
+$('.custom-slideshow').cycle({
+    fx: 'scrollLeft',
+    prev:    '#prev2', 
+    next:    '#next2', 
+  });
+  
+  $( document ).ajaxComplete(function() {
+        $('.custom-slideshow').cycle({
+        fx: 'scrollLeft',
+        prev:    '#prev2', 
+        next:    '#next2', 
+      });
+  });
 })(jQuery);
