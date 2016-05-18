@@ -100,7 +100,7 @@ Drupal.settings.gallery_settings = Drupal.settings.gallery_settings || {};
               }
             });
             $widget.find('.panopoly-spotlight-next').once('panopoly-spotlight').bind('click.panopoly-custom-widgets-gallery', function (event) {
-              event.preventDefault();
+              event.preventDefault(); 
               $widget.find('.panopoly-spotlight-pause-play:not(.paused)').trigger('click.panopoly-custom-widgets-gallery');
               var activeControl = $($controls.filter('.active'));
 

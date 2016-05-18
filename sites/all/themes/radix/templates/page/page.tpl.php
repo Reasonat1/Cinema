@@ -10,7 +10,7 @@
  * @see html.tpl.php
  */
 ?>
-<script src="/misc/jquery.js" type="text/javascript"></script>
+<!--<script src="/misc/jquery.js" type="text/javascript"></script>-->
 	<script type='text/javascript'> 
      jQuery.noConflict(); 
     </script> 

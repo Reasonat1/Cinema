@@ -182,7 +182,7 @@
 }
 
 .nav > a#next2 {
-  background-image: url("http://localhost/jercin/sites/all/themes/cinemateque/images/right.png");
+  background-image: url("http://jer-cin.tikkewebsites.com/sites/all/themes/cinemateque/images/right.png");
   font-size: 0;
   right: 15px;
   opacity: 1;
@@ -191,7 +191,7 @@
 }
 
 .nav > a#prev2 {
-  background-image: url("http://localhost/jercin/sites/all/themes/cinemateque/images/left.png");
+  background-image: url("http://jer-cin.tikkewebsites.com/sites/all/themes/cinemateque/images/left.png");
   font-size: 0;
   left: 15px;
   opacity: 1;
@@ -215,4 +215,36 @@
 }
 #edit-field-custom-gallery-duration,#edit-field-custom-gallery-pager{ 
     display: none;
+}
+.field-name-field-custom-sponser-image label {
+  width: auto !important;
+}
+#modal-content fieldset.form-wrapper > legend,#modal-content fieldset.widget-preview > legend {
+  font-size: 16px;
+}
+.panel-pane.pane-bundle-sponser {
+  background: #ffffff none repeat scroll 0 0;
+  float: left;
+  text-align: center;
+  width: 100%;
+}
+.pane-bundle-sponser .panopoly-image-full {
+  width: 126px  !important;
+}
+.field-name-field-custom-sponser-image .field-item {
+  display: inline;
+}
+.pane-bundle-sponser h2.pane-title {
+  display: none;
+}
+
+.panels-add-content-modal {
+  padding-left: 200px !important;
+}
+.panels-section-column-categories {
+  margin-left: -205px !important;
+  width: 198px !important;
+}
+#modalContent .panels-section-column-categories .content-type-button a {
+  width: 99% !important;
 }

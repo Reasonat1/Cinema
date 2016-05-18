@@ -21,6 +21,7 @@ function my_pane_uninstall() {
   // Retrieve the file IDs for default files
   $fids = array(
     'my_pane_default_gallery_fid' => variable_get('my_pane_default_gallery_fid', NULL),
+    'my_pane_default_sponser_fid' => variable_get('my_pane_default_sponser_fid', NULL), 
   );
 
   foreach($fids as $variable_name => $fid) {
@@ -178,6 +179,7 @@ function my_pane_update_7005(&$sandbox) {
   // Retrieve the file IDs for default files
   $fids = array(
     'my_pane_default_gallery_fid' => variable_get('my_pane_default_gallery_fid', NULL),
+    'my_pane_default_sponser_fid' => variable_get('my_pane_default_sponser_fid', NULL),
   );
 
   foreach($fids as $variable_name => $fid) {
@@ -220,6 +222,16 @@ function my_pane_update_7007(&$sandbox) {
   }
   if (!db_field_exists($revision_table_name, $field_name)) {
     db_add_field($revision_table_name, $field_name, $spec);
+  }
+  
+  $data_table_name_s = 'field_data_field_custom_sponser_image';
+  $revision_table_name_s = 'field_revision_field_custom_sponser_image';
+  $field_name_s = 'field_custom_sponser_image_alt';
+  if (!db_field_exists($data_table_name_s, $field_name_s)) {
+    db_add_field($data_table_name_s, $field_name_s, $spec);
+  }
+  if (!db_field_exists($revision_table_name_s, $field_name_s)) {
+    db_add_field($revision_table_name_s, $field_name_s, $spec);
   }
 }
 
@@ -306,7 +318,11 @@ function my_pane_update_7014() {
  * Unset the default image for the image widget.
  */
 function my_pane_update_7015() {
-
+  if ($image_field = field_info_field('field_basic_image_image')) {
+    $image_field['settings']['default_image'] = 0;
+    field_update_field($image_field);
+    field_info_cache_clear();
+  }
 }
 
 /**

@@ -145,7 +145,7 @@ function my_pane_page_build(&$page) {
 function my_pane_entity_info_alter(&$entity_info) {
   // gallery
   $entity_info['fieldable_panels_pane']['bundles']['gallery'] = array(
-    'label' => t('Main Gallery'),
+    'label' => t('Add New Main Gallery'),
     'description' => t('Main Gallery'),
     'pane category' => t('Custom'),
     'pane top level' => TRUE,
@@ -155,6 +155,20 @@ function my_pane_entity_info_alter(&$entity_info) {
       'bundle argument' => 4,
       'real path' => 'admin/structure/fieldable-panels-panes/manage/gallery',
      // 'access arguments' => array('administer fieldable panels panes'),
+    ),
+  );
+    // Basic Image
+  $entity_info['fieldable_panels_pane']['bundles']['sponser'] = array(
+    'label' => t('Add New Sponsers Pane'),
+    'description' => t('Add Sponser'),
+    'pane category' => t('Custom'),
+    'pane top level' => TRUE,
+    'pane icon' => drupal_get_path('module', 'panopoly_widgets') . '/images/icon_image.png',
+    'admin' => array(
+      'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
+      'bundle argument' => 4,
+      'real path' => 'admin/structure/fieldable-panels-panes/manage/sponser',
+      'access arguments' => array('administer fieldable panels panes'),
     ),
   );
 }
