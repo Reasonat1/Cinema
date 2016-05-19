@@ -216,7 +216,7 @@
 #edit-field-custom-gallery-duration,#edit-field-custom-gallery-pager{ 
     display: none;
 }
-.field-name-field-custom-sponser-image label {
+.field-name-field-custom-sponser-image label,.field-name-field-custom-caruosel-sponser label {
   width: auto !important;
 }
 #modal-content fieldset.form-wrapper > legend,#modal-content fieldset.widget-preview > legend {
@@ -247,4 +247,17 @@
 }
 #modalContent .panels-section-column-categories .content-type-button a {
   width: 99% !important;
+}
+#panopoly-form-widget-preview .slide-show {
+  height: auto;
+  width: 100%;
+}
+.custom-gallery-slider {
+  width: 100%;
+}
+.pane-bundle-caruosel h2.pane-title,.pane-bundle-gallery h2.pane-title{
+  display: none;
+}
+.field-name-field-custom-caruosel-sponser .field-items, .field-name-field-custom-caruosel-sponser .field-item {
+  width: 100% !important;
 }
