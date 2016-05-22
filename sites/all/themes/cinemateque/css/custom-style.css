@@ -144,16 +144,17 @@ body {
   padding-right: 50px;
   width: 25%;
 }
-.facebook,.youtube,.whatup {
+/*.facebook,.youtube,.whatup {
   width: 80%;
-}
-.social .pane-content li,.sponser-pane .pane-content li {
+}*/
+.social .pane-content span,.sponser-pane .pane-content li {
   float: left;
   overflow: hidden;
   width: 33%;
 }
 .col-md-3.social.icon,.col-md-3.sponser-pane {
   float: right;
+  margin-top: 20px;
 }
 .sponser {
   width: 80%;
@@ -325,7 +326,7 @@ text-align: center;
   float: left;
   padding-top: 40px;
 }
-.footer  .social .pane-content li {
+.footer  .social .pane-content span {
   width: 15%;
 }
 .pane-footer-mini-panel .carousel {
@@ -369,12 +370,12 @@ text-align: center;
   line-height: 0;
   margin: 0;
 }
-.pane-footer-mini-panel .social .pane-content > ul {
+.pane-footer-mini-panel .social .pane-content {
   margin: 0 auto;
   padding-top: 60px;
   width: 230px;
 }
-.pane-footer-mini-panel  .social .pane-content li {
+.pane-footer-mini-panel  .social .pane-content span {
   width: 75px;
   text-align: center;
 }
