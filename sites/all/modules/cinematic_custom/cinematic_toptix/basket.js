@@ -12,13 +12,15 @@ var toptix_basket_url = null;
         $esro.getCustomerDetails('toptix_callback_basket_get_customer');
       });
 
-      $esro.attachEventHandler('basketChanged', function(basket) {
-        console.log(basket);
-        $.cookie('toptix_basket', basket.totalValue);
-      });
     },
   };
+
 })(jQuery);
+
+$esro.attachEventHandler('basketChanged', function(basket) {
+  console.log(basket);
+  $.cookie('toptix_basket', basket.totalValue);
+});
 
 function toptix_callback_basket_get_customer(result) {
   var toptix_user = Drupal.settings.toptix_user;
