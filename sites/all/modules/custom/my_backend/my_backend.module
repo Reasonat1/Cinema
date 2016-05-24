@@ -14,7 +14,7 @@ function my_backend_init() {
 }
 
 /*
- * custom slider
+ * custom block info
  */
 function my_backend_block_info() {
 
@@ -23,9 +23,16 @@ function my_backend_block_info() {
   $blocks['festival_menu_block'] = array(
     'info' => t('festival menu'), 
   );
+  
+  $blocks['complex_calender_view'] = array(
+    'info' => t('Complex Calender View Block'), 
+  );
   return $blocks;
 }
 
+/*
+ * custom block view
+ */
 function my_backend_block_view($delta = '') {
 
   $block = array();
@@ -36,11 +43,20 @@ function my_backend_block_view($delta = '') {
       $block['subject'] = '';
       $block['content'] =custem_festival_menu_block_content();
       break;
+  
+  case 'complex_calender_view': 
+        $block['subject'] = '';
+        $block['content'] = complex_calender_view_block_content();
+        break;
 
   }
 
   return $block;
 }
+
+/*
+ * custom block view callback
+ */
 function custem_festival_menu_block_content(){
     // if ternonmy page is views
     global $base_url;
@@ -63,4 +79,52 @@ function custem_festival_menu_block_content(){
     }
   //  print_r(); die(" here");
     return $output;
+} 
+
+/*
+ * custom block " Complex Calender View Block " callback
+ */
+function complex_calender_view_block_content(){
+    
+     global $base_url;
+    
+      $result =  db_query("SELECT  flagging_node.uid AS flagged_user,n.nid AS nid, n.title, n.created, event_subtitle.field_cm_event_subtitle_value AS event_subtitle,
+              event_time.field_cm_event_time_value AS event_start_time, event_time.field_cm_event_time_value2 AS event_end_time, event_duration.field_cm_event_duration_interval AS event_duration,
+              event_internal_id.field_cm_event_internal_id_value AS event_internal_id, event_hall.field_cm_event_hall_target_id AS hall_tid, event_body.field_cm_event_body_value AS event_body
+              FROM node AS n 
+              LEFT JOIN {flagging} flagging_node ON n.nid = flagging_node.entity_id AND flagging_node.fid = '1'
+              LEFT JOIN field_data_field_cm_event_subtitle AS event_subtitle ON n.nid = event_subtitle.entity_id
+              LEFT JOIN field_data_field_cm_event_time  AS event_time ON n.nid = event_time.entity_id
+              LEFT JOIN field_data_field_cm_event_duration  AS event_duration  ON n.nid = event_duration.entity_id
+              LEFT JOIN field_data_field_cm_event_internal_id  AS event_internal_id  ON n.nid = event_internal_id.entity_id
+              LEFT JOIN {field_data_field_cm_event_body} event_body ON n.nid = event_body.entity_id
+              LEFT JOIN {field_data_field_cm_event_hall} event_hall ON n.nid = event_hall.entity_id
+              WHERE n.type = 'cm_event'  ORDER BY event_start_time ASC")->fetchAll();
+    $result_count = count($result);
+echo "<pre>"; print_r($result); die(" here");
+     $output="<div class='col-sm-12 calender'>";
+     $output.="<div class='calender-header'><p class='calendar-dayview-hour col-sm-2'>Time</p>";
+     foreach($result as $val){
+         $term_load = taxonomy_term_load($val->hall_tid);
+         $output.=" <p class='calendar-agenda-items col-sm-2'>$term_load->name</p>";
+     }
+    $output.="</div>";
+     foreach($result as $val){
+         $nid = $val->nid;
+         $start_time = $val->event_start_time;
+         if(!empty($start_time)){
+             $start_time = date('G:i',$start_time);
+         }
+         $alias = drupal_get_path_alias("node/$nid");
+         $output.="<div class='col-sm-12'><div class='callender-row col-sm-2'><img src='http://findicons.com/files/icons/2354/dusseldorf/32/heart.png' height='16px' width='16px'/>
+                <div class='time'><span class='bold'>$start_time</span> | $val->event_duration minutes</div>
+                    <div class='title'><span class='bold'>$val->title</span> </div>
+                   <div class='subtitle'><span>$val->event_subtitle</span> </div>
+                   <div class='internal-id'><span>$val->event_internal_id</span> </div>
+                       <div><span>Tickets</span></div>
+                 </div></div>";
+     }
+     $output.= "</div>";
+     return $output;
+     echo "<pre>"; print_r(); die(" here");
 } 
