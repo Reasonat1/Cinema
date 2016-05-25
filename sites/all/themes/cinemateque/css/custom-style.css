@@ -670,3 +670,111 @@ li.expanded .dropdown-menu {
 [dir="rtl"] .navbar-brand {
     float: right;
 }
+
+/*** calender section***/
+.col-sm-12.calender {
+  background-color: #f4f2ef;
+}
+.calender-header {
+  background: #ffffff none repeat scroll 0 0;
+  float: left;
+  padding-top: 10px;
+  width: 100%;
+}
+.col-sm-12.calender-full-row {
+  padding: 10px;
+}
+span.bold {
+  font-weight: bold;
+}
+.calender-body {
+  font-size: 12px;
+}
+.calender-row.inner {
+  background: #ffffff none repeat scroll 0 0;
+  box-shadow: 0 1px 3px 1px;
+  cursor: pointer;
+  padding: 15px;
+  float: left;
+  min-height: 160px;
+}
+.calendar-agenda-items {
+  font-weight: bold;
+  text-align: center;
+}
+.calender-row .time {
+  float: right;
+}
+.calender-row .title {
+  float: left;
+  line-height: 16px;
+  padding-top: 10px;
+  width: 100%;
+}
+.calender-row .subtitle {
+  float: left;
+  line-height: 16px;
+  padding-top: 6px;
+  width: 100%;
+  padding-bottom: 10px;
+}
+.calender-row .internal-id {
+  float: left;
+}
+.tickets {
+  float: right;
+}
+.tickets > a {
+  background-color: #b6a072;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 6px 26px;
+}
+.bold.time {
+  float: left;
+  margin-top: 70px;
+  text-align: center;
+  width: 100%;
+}
+.calender-full-row .col-sm-2 {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.calender-popup{
+    display: none;
+    margin-left: 50%;
+    position: absolute;
+    width: 500px;
+    z-index: 9;
+    margin-top: 10%;
+}
+.calender-popup > img.close-calender-popup {
+  float: right;
+  position: absolute;
+  right: -8px;
+  top: -15px;
+  cursor: pointer;
+}
+.calender-popup .calender-row.inner {
+  cursor: none;
+  padding: 20px
+}
+.calender-popup.visible {
+  display: block;
+}
+.calender-popup .tickets span {
+  margin: 15px;
+}
+.calender-popup .tickets {
+  float: left;
+  padding-top: 10px;
+  width: 100%;
+}
+.calender-popup .body > p {
+  font-size: 14px;
+}
+.calender-popup .title {
+  font-size: 14px;
+  padding-bottom: 20px;
+  padding-top: 25px;
+}
