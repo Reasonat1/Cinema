@@ -672,14 +672,18 @@ li.expanded .dropdown-menu {
 }
 
 /*** calender section***/
-.col-sm-12.calender {
-  background-color: #f4f2ef;
-}
 .calender-header {
   background: #ffffff none repeat scroll 0 0;
+  border-top: 2px solid #f4f4f4;
   float: left;
+  margin-top: 10px;
   padding-top: 10px;
   width: 100%;
+}
+.calender-body {
+  background-color: #f4f2ef;
+  float: left;
+  font-size: 12px;
 }
 .col-sm-12.calender-full-row {
   padding: 10px;
@@ -756,7 +760,7 @@ span.bold {
   cursor: pointer;
 }
 .calender-popup .calender-row.inner {
-  cursor: none;
+  cursor: default;
   padding: 20px
 }
 .calender-popup.visible {
@@ -777,4 +781,49 @@ span.bold {
   font-size: 14px;
   padding-bottom: 20px;
   padding-top: 25px;
+}
+.calender-filter > p {
+  background-color: #f4f4f4;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px;
+  padding-bottom: 10px;
+  padding-top: 5px;
+  text-align: center;
+  width: 80px;
+}
+.calender-filter {
+  float: left;
+  text-align: center;
+  width: 100%;
+}
+.calender-filter span {
+  color: #958080;
+  float: left;
+  font-size: 12px;
+  font-weight: normal;
+  width: 100%;
+}
+.calender-filter > p:hover {
+  background-color: #b6a072;
+  box-shadow: 0 0 3px 2px #f4f4f4;
+  color: #ffffff;
+  cursor: pointer;
+}
+.calender-filter > p:hover span {
+  color: #ffffff;
+}
+.calender-filter > p.active {
+  background-color: #b6a072;
+  box-shadow: 0 0 3px 2px #f4f4f4;
+  color: #ffffff;
+  cursor: pointer;
+}
+.calender-filter > p.active span {
+  color: #ffffff;
+}
+.calender-filter-date p.pull-right {
+  color: #b6a072;
+  font-weight: bolder;
 }
