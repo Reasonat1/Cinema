@@ -149,11 +149,12 @@ function complex_calender_view_block_content(){
      $output.="<div class='col-sm-12 calender'>";
      $output.= $filter;
      $output.="<div class='ajax-inner'>";
-      $output.="<div class='calender-filter-date col-sm-12'><p class='pull-right'>$selected_filter</p></div>";
-     $output.="<div class='calender-header'><p class='calendar-dayview-hour col-sm-2'></p>";
+      $output.="<div class='calender-filter-date col-sm-12'><p class='pull-left'>$selected_filter</p></div>";
+      $output.="<div class='calender-scroll'><p class='scrollleft'> Other venues ></p></div>";
+     $output.="<div class='calender-header'><p class='calendar-dayview-hour '></p>";
      foreach($all_term as $tid){
          $term_load = taxonomy_term_load($tid);
-         $output.=" <p class='calendar-agenda-items col-sm-2'>$term_load->name</p>";
+         $output.=" <p class='calendar-agenda-items'>$term_load->name</p>";
      }
     $output.="</div><div  class='calender-body col-sm-12'>";
 
@@ -165,7 +166,7 @@ function complex_calender_view_block_content(){
             }
         }
          $output.="<div class='col-sm-12 calender-full-row'>
-                                   <div class='col-sm-2'><span class='bold time'>$start_time_key</span></div>";
+                                   <div class='calender-row custom-row'><span class='bold time'>$start_time_key</span></div>";
          $calender = array();
          foreach($cell as $val){
             $nid = $val->nid;
@@ -190,7 +191,7 @@ function complex_calender_view_block_content(){
                 $minutes ='';
             }
             $string =  substr($val->event_body,0,300).'...';
-            $calender[$val->hall_tid] = "<div class='calender-row col-sm-2'>
+            $calender[$val->hall_tid] = "<div class='calender-row custom-row'>
                                            <div class = 'calender-row inner'>
                                                 <img src='http://findicons.com/files/icons/2354/dusseldorf/32/heart.png' height='16px' width='16px'/>
                                                 <div class='time'><span class='bold'>$start_time</span> $minutes</div>
@@ -202,7 +203,7 @@ function complex_calender_view_block_content(){
                                            </div>
 
                                           <div class='calender-popup'>
-                                          <img class='close-calender-popup' src='http://localhost/jercin/sites/all/themes/cinemateque/images/close.png'/>
+                                          <a href='javascript:void(0)' onclick = 'closed();'><img class='close-calender-popup' src='http://localhost/jercin/sites/all/themes/cinemateque/images/close.png'/></a>
                                                <div class = 'calender-row inner'>
                                                <div class='title'><span class='bold'>$val->title</span> </div>
                                                <div class='body'>$string </div>
@@ -222,7 +223,7 @@ function complex_calender_view_block_content(){
                 }
             }
              if($a == '0'){
-                    $output.="<div class='col-sm-2'></div>";
+                    $output.="<div class='calender-row custom-row '></div>";
              }
         } 
         $output.="</div>";
@@ -266,11 +267,12 @@ function ajax_complex_calender_filter(){
      }
      $all_term = array_unique($term_array); 
      $output.="<div class='ajax-inner'>";
-      $output.="<div class='calender-filter-date col-sm-12'><p class='pull-right'>$selected_filter</p></div>";
+      $output.="<div class='calender-filter-date col-sm-12'><p class='pull-left'>$selected_filter</p></div>";
+      $output.="<div class='calender-scroll'><p class='scrollleft'> Other venues ></p></div>";
      $output.="<div class='calender-header'><p class='calendar-dayview-hour col-sm-2'></p>";
      foreach($all_term as $tid){
          $term_load = taxonomy_term_load($tid);
-         $output.=" <p class='calendar-agenda-items col-sm-2'>$term_load->name</p>";
+         $output.=" <p class='calendar-agenda-items'>$term_load->name</p>";
      }
     $output.="</div><div  class='calender-body col-sm-12'>";
 
@@ -282,7 +284,7 @@ function ajax_complex_calender_filter(){
                 }
             }
          $output.="<div class='col-sm-12 calender-full-row'>
-                                   <div class='col-sm-2'><span class='bold time'>$start_time_key</span></div>";
+                                   <div class='calender-row custom-row'><span class='bold time'>$start_time_key</span></div>";
          $calender = array();
          foreach($cell as $val){
             $nid = $val->nid;
@@ -307,7 +309,7 @@ function ajax_complex_calender_filter(){
                 $minutes ='';
             }
             $string =  substr($val->event_body,0,300).'...';
-            $calender[$val->hall_tid] = "<div class='calender-row col-sm-2'>
+            $calender[$val->hall_tid] = "<div class='calender-row custom-row'>
                                            <div class = 'calender-row inner'>
                                                 <img src='http://findicons.com/files/icons/2354/dusseldorf/32/heart.png' height='16px' width='16px'/>
                                                 <div class='time'><span class='bold'>$start_time</span> $minutes</div>
@@ -319,7 +321,7 @@ function ajax_complex_calender_filter(){
                                            </div>
 
                                           <div class='calender-popup'>
-                                          <img class='close-calender-popup' src='http://localhost/jercin/sites/all/themes/cinemateque/images/close.png'/>
+                                          <a href='javascript:void(0)' onclick = 'closed();'><img class='close-calender-popup' src='http://localhost/jercin/sites/all/themes/cinemateque/images/close.png'/></a>
                                                <div class = 'calender-row inner'>
                                                <div class='title'><span class='bold'>$val->title</span> </div>
                                                <div class='body'>$string </div>
@@ -339,7 +341,7 @@ function ajax_complex_calender_filter(){
                 }
             }
              if($a == '0'){
-                    $output.="<div class='col-sm-2'></div>";
+                    $output.="<div class='calender-row custom-row'></div>";
              }
         } 
         $output.="</div>";
