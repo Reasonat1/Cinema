@@ -12,13 +12,23 @@ var toptix_basket_url = null;
         $esro.getCustomerDetails('toptix_callback_basket_get_customer');
       });
 
-      $esro.attachEventHandler('basketChanged', function(basket) {
-        console.log(basket);
-        $.cookie('toptix_basket', basket.totalValue);
-      });
     },
   };
+
 })(jQuery);
+
+$esro.attachEventHandler('basketChanged', function(basket) {
+  console.log(basket);
+  $.cookie('toptix_basket', basket.totalValue);
+});
+
+$esro.attachEventHandler('navigationRequired', function(pageName) {
+  if (pageName == 'DEFAULT') {
+    var target_page = Drupal.settings.basePath + '/user';
+    console.log('navigating to ' + target_page);
+    window.location.href = target_page;
+  }
+});
 
 function toptix_callback_basket_get_customer(result) {
   var toptix_user = Drupal.settings.toptix_user;

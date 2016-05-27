@@ -1,0 +1,482 @@
+<?php
+
+/**
+ * Implements hook_ctools_plugin_api().
+ */
+function my_pane_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "file_entity" && $api == "file_default_displays") {
+    return array("version" => "1");
+  }
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function my_pane_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+include_once('my_pane.gallery.inc');
+
+/**
+ * The default list of allowed file extensions in file widgets.
+ */
+define('MY_PANE_FILE_EXTENSIONS_DEFAULT', 'txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp');
+
+/**
+ * Implements hook_init()
+ */
+function my_pane_init() {
+    drupal_add_js(libraries_get_path('jquery.cycle', $base_path = FALSE) . '/jquery.cycle.all.min.js');
+
+  // Load the seven theme CSS for the media browser. This is done
+  // because the seven theme may not be the admin theme, but the
+  // media browser assumes that it is....
+  if (arg(0) == 'media' && arg(1) == 'browser') {
+    if ($GLOBALS['theme'] != 'seven') {
+      drupal_add_css(drupal_get_path('theme', 'seven') . '/reset.css', array('basename' => 'seven_reset', 'group' => CSS_THEME));
+      drupal_add_css(drupal_get_path('theme', 'seven') . '/style.css', array('basename' => 'seven_style', 'group' => CSS_THEME));
+    }
+
+    drupal_add_css(drupal_get_path('module', 'my_pane') . '/my-pane-media-browser.css', array('group' => CSS_THEME));
+  }
+}
+
+/**
+ * Implements hook_apps_app_info()
+ */
+function my_pane_apps_app_info() {
+  return array(
+    'configure form' => 'my_pane_configure_form',
+  );
+}
+
+/**
+ * Configuration Form for Panopoly Magic
+ */
+function my_pane_configure_form($form, &$form_state) {
+  $form = array();
+
+  $file_extensions = variable_get('my_pane_file_extensions', MY_PANE_FILE_EXTENSIONS_DEFAULT);
+  $file_extensions = str_replace(' ', ', ', $file_extensions);
+  $form['my_pane_file_extensions'] = array(
+    '#title' => t('Allowed file extensions in file widgets.'),
+    '#type' => 'textfield',
+    '#default_value' => $file_extensions,
+    '#element_validate' => array('_file_generic_settings_extensions'),
+    '#description' => t('Separate extensions with a space or comma and do not include the leading dot.'),
+  );
+
+  $form['my_pane_gallery_pause_play_buttons'] = array(
+    '#title' => t('Add pause/play button to all spotlight widgets.'),
+    '#type' => 'checkbox',
+    '#default_value' => variable_get('my_pane_gallery_pause_play_buttons', 1),
+    '#description' => t('The button will appear under to the slide numbers. Helps with accessibility.'),
+  );
+
+  $form = system_settings_form($form);
+  $form['#submit'][] = 'my_pane_configure_form_submit';
+  return $form;
+}
+
+/**
+ * Form submissions callback for my_pane_configure_form().
+ */
+function my_pane_configure_form_submit($form, &$form_state) {
+  if ($file_instance = field_info_instance('fieldable_panels_pane', 'field_basic_file_file', 'basic_file')) {
+    $file_extensions = $form_state['values']['my_pane_file_extensions'];
+    $file_instance['settings']['file_extensions'] = $file_extensions;
+    field_update_instance($file_instance);
+  }
+}
+
+/** 
+ * Implements hook_field_default_field_instances_alter().
+ */
+function my_pane_field_default_field_instances_alter(&$instances) {
+  if (isset($instances['fieldable_panels_pane-basic_file-field_basic_file_file'])) {
+    $file_extensions = variable_get('my_pane_file_extensions', MY_PANE_FILE_EXTENSIONS_DEFAULT);
+    $instances['fieldable_panels_pane-basic_file-field_basic_file_file']['settings']['file_extensions'] = $file_extensions;
+  }
+}
+/**
+ * Implementation of hook_ctools_plugin_directory()
+ */
+function my_pane_ctools_plugin_directory($module, $plugin) {
+  return 'plugins/' . $plugin;
+}
+
+/**
+ * Implement the "Content Settings" fieldset in a pre-render. This fixes issues with image caused by initially
+ * doing this in a form_alter.
+ *
+ * @see http://drupal.org/node/1567704
+ */
+function my_pane_fieldable_panel_pane_pre_render($element) {
+  // Add a content settings fieldset.
+  $element['content_settings'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Content Settings'),
+    '#weight' => 1,
+  );
+
+  // Add any remaining fields to the content settings fieldset.
+  foreach ($element as $key => $value) {
+    if (substr($key, 0, 6) == 'field_' || $key == 'body') {
+      $element['content_settings'][$key] = $value;
+      unset($element[$key]);
+    }
+  }
+
+  return $element;
+}
+/**
+ * Implements hook_page_build()
+ */
+function my_pane_page_build(&$page) {
+
+  // Add our custom javascript to the footer to override other things.
+  drupal_add_js(drupal_get_path('module', 'my_pane') . '/my-pane.js', array('scope' => 'footer'));
+  drupal_add_js(drupal_get_path('module', 'my_pane') . '/my-pane-gallery.js', array('scope' => 'footer'));
+}
+/** 
+ * Implementation of hook_entity_info_alter()
+ */
+function my_pane_entity_info_alter(&$entity_info) {
+  // gallery
+  $entity_info['fieldable_panels_pane']['bundles']['gallery'] = array(
+    'label' => t('Add New Main Gallery'),
+    'description' => t('Main Gallery'),
+    'pane category' => t('Custom'),
+    'pane top level' => TRUE,
+    'pane icon' => drupal_get_path('module', 'my_pane') . '/images/icon_spotlight.png',
+    'admin' => array(
+      'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
+      'bundle argument' => 4,
+      'real path' => 'admin/structure/fieldable-panels-panes/manage/gallery',
+     // 'access arguments' => array('administer fieldable panels panes'),
+    ),
+  );
+    // Basic Image
+  $entity_info['fieldable_panels_pane']['bundles']['sponser'] = array(
+    'label' => t('Add New Sponsers Pane'),
+    'description' => t('Add Sponser'),
+    'pane category' => t('Custom'),
+    'pane top level' => TRUE,
+    'pane icon' => drupal_get_path('module', 'panopoly_widgets') . '/images/icon_image.png',
+    'admin' => array(
+      'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
+      'bundle argument' => 4,
+      'real path' => 'admin/structure/fieldable-panels-panes/manage/sponser',
+      'access arguments' => array('administer fieldable panels panes'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function my_pane_theme($existing, $type, $theme, $path) {
+  return array(
+    'panopoly_gallery_wrapper' => array(
+      'render element' => 'element',
+    ),
+    'panopoly_gallery_view' => array(
+      'render element' => 'element',
+    ),
+  );
+}
+
+/**
+ * Implementation of hook_field_display_ENTITY_TYPE_alter().
+ *
+ * Update the display settings with the option selected on the entity view mode field.
+ */
+function my_pane_field_display_fieldable_panels_pane_alter(&$display, $context) {
+  if ($context['field']['field_name'] == 'field_existing_content') {
+    $view_mode = $context['entity']->field_view_mode[LANGUAGE_NONE][0]['value'];
+
+    if (!empty($view_mode)) {
+      $display['settings']['view_mode'] = $view_mode;
+    }
+  }
+}
+
+/**
+ * Implementation of hook_file_default_displays_alter()
+ */
+function my_pane_file_default_displays_alter(&$default_displays) {
+  // Display the 'Generic file' display on video preview.
+  if (!empty($default_displays['video__preview__file_field_file_default'])) {
+    $default_displays['video__preview__file_field_file_default']->status = FALSE;
+  }
+
+  // Set the default video configuration for videos
+  if (!empty($default_displays['video__default__media_vimeo_video'])) {
+    $default_displays['video__default__media_vimeo_video']->weight = 0;
+    $default_displays['video__default__media_vimeo_video']->settings['protocol_specify'] = FALSE;
+  }
+
+  // Set the default image style for videos to be our custom video image style
+  if (!empty($default_displays['video__default__media_vimeo_image'])) {
+    $default_displays['video__default__media_vimeo_image']->settings['image_style'] = 'panopoly_image_video';
+  }
+
+  // Set the teaser image style for videos to be our custom video image style
+  if (!empty($default_displays['video__teaser__media_vimeo_image'])) {
+    $default_displays['video__teaser__media_vimeo_image']->settings['image_style'] = 'panopoly_image_video';
+  }
+
+  // Set the preview image style for videos to be our custom thumbnail image style
+  if (!empty($default_displays['video__preview__media_vimeo_image'])) {
+    $default_displays['video__preview__media_vimeo_image']->settings['image_style'] = 'panopoly_image_thumbnail';
+  }
+}
+
+/**
+ * Implementation of hook_file_type_alter()
+ *
+ * Alters list of file types that can be assigned to a file.
+ */
+function my_pane_file_type_alter(&$types, $file) {
+  if ($file->filemime == 'video/youtube' || $file->filemime == 'video/vimeo') {
+    $types[] = 'video';
+  }
+}
+
+/**
+ * Implements hook_menu_block_tree_alter().
+ *
+ * Updates menu block settings in case of IPE callback magic. This will only
+ * work in limited cases but will be fixed when the page refreshes.
+ */
+function my_pane_menu_block_tree_alter($tree, $config) {
+  if (arg(0) == 'panels' && arg(1) == 'ajax') {
+    foreach ($tree as $key => $value) {
+      $tree[$key]['link']['in_active_trail'] = TRUE;
+    }
+  }
+}
+
+/**
+ * Rewrites the node title by poisening the node_load() static cache.
+ *
+ * We use this to support overriding the title of 'Content item' widgets.
+ * Unfortunately, we can't hook into a spot between when the View loads the
+ * entity and Panelizer renders it, so we have to use this hack.
+ *
+ * @param int $nid
+ *   The NID of the node whose title we're going to rewrite.
+ * @param string|NULL $title
+ *   (optional) If a string is given, the this is the new title for the node.
+ *   If NULL is given, return the title to its previous value.
+ *
+ * @see my_pane_views_post_execute()
+ * @see my_pane_views_post_render()
+ */
+function _my_pane_content_item_title_rewrite($nid, $title = NULL) {
+  static $saved_title = array();
+
+  $node = node_load($nid);
+
+  if (!is_null($title)) {
+    $saved_title[$nid] = $node->title;
+    $node->title = $title;
+  }
+  elseif (isset($saved_title[$nid])) {
+    $node->title = $saved_title[$nid];
+  }
+}
+
+/**
+ * Determines if the given view mode on this node shows the title.
+ *
+ * @param object $node
+ *   The fully loaded node object to check.
+ * @param string $view_mode
+ *   The view mode.
+ *
+ * @return boolean
+ *   TRUE if the title is shown; FALSE otherwise.
+ */
+function _my_pane_is_title_shown($node, $view_mode) {
+  if (!empty($node->panelizer) && (!empty($node->panelizer[$view_mode]) || !empty($node->panelizer['default']))) {
+    $panelizer_display = isset($node->panelizer[$view_mode]) ? $node->panelizer[$view_mode]->display : $node->panelizer['default']->display;
+    if (empty($panelizer_display->hide_title) && empty($panelizer_display->pane_title) && strpos($panelizer_display->title, '%node:title') !== FALSE) {
+      // We're showing the title via the Panelizer display title.
+      return TRUE;
+    }
+    else {
+      foreach ($panelizer_display->content as $pane) {
+        if (($pane->type == 'node_title' && $pane->subtype == 'node_title') || ($pane->type == 'token' && $pane->subtype == 'node:title')) {
+          // We're showing the node title in a Pane inside the view mode.
+          return TRUE;
+        }
+        elseif ($pane->type == 'node_content' && $pane->subtype == 'node_content') {
+          $child_view_mode = $pane->configuration['build_mode'];
+          // Prevent endless recursion.
+          if ($child_view_mode == $view_mode) {
+            if ($child_view_mode != 'full') {
+              $child_view_mode = 'full';
+            }
+            else {
+              continue;
+            }
+          }
+          if (_my_pane_is_title_shown($node, $child_view_mode)) {
+            return TRUE;
+          }
+        }
+      }
+
+      return FALSE;
+    }
+  }
+  else {
+    // If we're not using Panelizer, the theme should always be showing
+    // the title when rendering the node.
+    return TRUE;
+  }
+}
+
+/**
+ * Implements hook_views_pre_view().
+ */
+function my_pane_views_pre_view(&$view, &$display_id, &$args) {
+  if ($view->name == 'my_pane_general_content' && $display_id == 'piece_of_content') {
+    // If neither 'nid' or 'title' is set, then don't display anything. This is
+    // primarily for the live preview, which would otherwise default to the
+    // first node. See issue #2463395.
+    if (empty($view->exposed_input) || (empty($view->exposed_input['nid']) && empty($view->exposed_input['title']))) {
+      $view->executed = TRUE;
+    }
+  }
+}
+
+/**
+ * Implements hook_views_default_views_alter().
+ */
+function my_pane_views_default_views_alter(&$views) {
+  // If the locale module is enabled, ensure the "Add content item" widget's
+  // View will respect current language settings for the content.
+  if (module_exists('locale') && array_key_exists('my_pane_general_content', $views)) {
+    /** @var views_display $piece_of_content */
+    $piece_of_content =& $views['my_pane_general_content']->display['piece_of_content'];
+
+    $piece_of_content->handler->display->display_options['filters']['language']['id'] = 'language';
+    $piece_of_content->handler->display->display_options['filters']['language']['table'] = 'node';
+    $piece_of_content->handler->display->display_options['filters']['language']['field'] = 'language';
+    $piece_of_content->handler->display->display_options['filters']['language']['value'] = array(
+      '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+      'und' => 'und',
+    );
+  }
+}
+
+/**
+ * Implements hook_views_post_execute().
+ */
+function my_pane_views_post_execute(&$view) {
+  if ($view->name == 'my_pane_general_content' && $view->current_display == 'piece_of_content') {
+    $display =& $view->display[$view->current_display];
+    $row_plugin = $view->style_plugin->row_plugin;
+
+    // If we are rendering the actual node, rather than showing fields or a
+    // table, then we need to move the title override to the node itself.
+    if (is_a($row_plugin, 'entity_views_plugin_row_entity_view')) {
+      $nid = $view->result[0]->nid;
+      $overridden_title = $display->handler->options['title'];
+      if (!empty($overridden_title)) {
+        _my_pane_content_item_title_rewrite($nid, $overridden_title);
+
+
+        $hide_pane_title = FALSE;
+
+        // Attempt to determine if the node title is being shown in the view
+        // mode, so that we can hide the pane title and avoid showing it twice.
+        $node = node_load($nid);
+        if (_my_pane_is_title_shown($node, $row_plugin->options['view_mode'])) {
+          unset($display->handler->options['title']);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_views_post_render().
+ */
+function my_pane_views_post_render(&$view) {
+  if ($view->name == 'my_pane_general_content' && $view->current_display == 'piece_of_content') {
+    // Reset the title to its original value.
+    $display = $view->display[$view->current_display];
+    if (is_a($view->style_plugin->row_plugin, 'entity_views_plugin_row_entity_view')) {
+      _my_pane_content_item_title_rewrite($view->result[0]->nid);
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function my_pane_form_views_content_views_panes_content_type_edit_form_alter(&$form, &$form_state) {
+  $view = $form_state['view'];
+  if ($view->name == 'my_pane_general_content' && $view->current_display == 'piece_of_content') {
+    $exposed =& $form['exposed'];
+
+    // Set required on the form rather than the View because we need to allow
+    // either 'title' or 'nid' when actually rendering the View.
+    $exposed['filter-title']['#required'] = TRUE;
+    $exposed['filter-title']['title']['#required'] = TRUE;
+
+    // If the user updated my_pane, but hasn't run the update function
+    // panopoly_wigets_update_7012() yet, then bail out because this code can
+    // actually break this widget entirely.
+    if (empty($exposed['filter-nid'])) {
+      return;
+    }
+
+    // If we have a value for NID, then we use that to set the title and then
+    // clear out and hide the NID. This allows the user to chose the node using
+    // the title autocomplete.
+    if (!empty($exposed['filter-nid']['nid']['#default_value'])) {
+      if ($node = node_load($exposed['filter-nid']['nid']['#default_value'])) {
+        $form_state['original_nid'] = $node->nid;
+        $form_state['original_title'] = $node->title;
+        $exposed['filter-title']['title']['#default_value'] = $node->title;
+      }
+    }
+    $exposed['filter-nid']['nid']['#default_value'] = '';
+    $exposed['filter-nid']['#access'] = FALSE;
+
+    // Add a submit callback that will convert back from the title to the NID.
+    array_unshift($form['#submit'], '_my_pane_content_item_form_submit');
+  }
+}
+
+/**
+ * Submission callback for 'Content Item' widget's exposed form.
+ */
+function _my_pane_content_item_form_submit($form, &$form_state) {
+  $exposed =& $form_state['values']['exposed'];
+  if ($exposed['title'] != $form_state['original_title']) {
+    // If the title has changed, we need to load the node with that title, set
+    // the NID, and then clear out the title. We use the View itself to query
+    // so that the result is consistent with autocomplete.
+    $view = views_get_view('my_pane_general_content');
+    $view->set_display('piece_of_content');
+    $view->set_exposed_input($exposed);
+    $view->pre_execute();
+    $view->execute($view->current_display);
+    $view->post_execute();
+    if (count($view->result) > 0) {
+      $exposed['nid'] = $view->result[0]->nid;
+      $exposed['title'] = '';
+    }
+  }
+  else {
+    // If the title hasn't change, we just revert back to the original NID.
+    $exposed['nid'] = $form_state['original_nid'];
+    $exposed['title'] = '';
+  }
+}

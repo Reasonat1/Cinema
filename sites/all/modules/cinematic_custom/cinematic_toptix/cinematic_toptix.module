@@ -42,7 +42,7 @@ function cinematic_toptix_block_view($delta) {
   $block = array('title' => '');
   $path = drupal_get_path('module', 'cinematic_toptix');
   $output = '<button class="toptix-basket" data-url="http://' . TOPTIX_HOST . '/Order.aspx"> ' . t('My cart') . '</button>';
-  $esro_frame = '<esro:frame href="http://' . TOPTIX_HOST . '/integrationsample/integrationsample.html" ';
+  $esro_frame = '<esro:frame href="http://' . TOPTIX_HOST . '/integrationsample/info.htm" ';
   $esro_frame .= 'width="1024" height="768"/>';
   $output .= '<div id="toptix-frame-wrapper" style="display:none;">' . $esro_frame . '</div>';
   $block['content'] = array(
@@ -60,7 +60,7 @@ function cinematic_toptix_block_view($delta) {
       'data' => array('toptix_user' => $field_toptix), 
       'type' => 'setting'
     ),
-    $path . '/esrojsapi.js',
+    $path . '/esrojsapi.js' => array('group' => JS_LIBRARY),
     $path . '/basket.js',
   );
 
@@ -85,7 +85,8 @@ function cinematic_toptix_form_alter(&$form, &$form_state, $form_id) {
     'type' => 'setting'
   );
   $form['#attached']['js'][] = drupal_get_path('module', 'cinematic_toptix') . '/create_user.js';
-  $form['#attached']['js'][] = drupal_get_path('module', 'cinematic_toptix') . '/esrojsapi.js';
+  $path = drupal_get_path('module', 'cinematic_toptix') . '/esrojsapi.js';
+  $form['#attached']['js'][$path] = array('group' => JS_LIBRARY);
 }
 
 function cinematic_toptix_field_widget_form_alter(&$element, &$form_state, $context) {
@@ -165,7 +166,7 @@ function cinematic_toptix_field_formatter_view(
             'data' => array('toptix_user' => $field_toptix), 
             'type' => 'setting'
           ),
-          drupal_get_path('module', 'cinematic_toptix') . '/esrojsapi.js',
+          drupal_get_path('module', 'cinematic_toptix') . '/esrojsapi.js' => array('group' => JS_LIBRARY),
           drupal_get_path('module', 'cinematic_toptix') . '/frame.js',
         ),
         'library' => array(
