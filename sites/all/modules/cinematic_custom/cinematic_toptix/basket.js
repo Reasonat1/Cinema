@@ -22,6 +22,14 @@ $esro.attachEventHandler('basketChanged', function(basket) {
   $.cookie('toptix_basket', basket.totalValue);
 });
 
+$esro.attachEventHandler('navigationRequired', function(pageName) {
+  if (pageName == 'DEFAULT') {
+    var target_page = Drupal.settings.basePath + '/user';
+    console.log('navigating to ' + target_page);
+    window.location.href = target_page;
+  }
+});
+
 function toptix_callback_basket_get_customer(result) {
   var toptix_user = Drupal.settings.toptix_user;
   if (result.HasError) {
