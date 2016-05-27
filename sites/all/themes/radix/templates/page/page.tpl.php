@@ -10,7 +10,7 @@
  * @see html.tpl.php
  */
 ?>
-<script src="/misc/jquery.js" type="text/javascript"></script>
+<!--<script src="/misc/jquery.js" type="text/javascript"></script>-->
 	<script type='text/javascript'> 
      jQuery.noConflict(); 
     </script> 
@@ -62,9 +62,11 @@
             <?php print render($site_main_menu); ?>
           </ul>
         <?php endif; ?>
-        <?php if ($search_form): ?>
+		<?php if ($search_form): ?>
           <?php $block = module_invoke('block', 'block_view', '5');
                          print render($block['content']); //print $search_form; ?>
+          <?php $block2 = module_invoke('locale', 'block_view', 'language'); //dpm($block2);
+                        // print render($block2['content']); //print $search_form; ?>
         <?php endif; ?>
       </div><!-- /.navbar-collapse -->
     </nav><!-- /.navbar -->
