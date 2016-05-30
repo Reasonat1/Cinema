@@ -742,8 +742,11 @@ position: relative;
   float: left;
   font-size: 12px;
 }
-.col-sm-12.calender-full-row {
+.calender-full-row {
   padding: 10px;
+  float: left;
+  padding: 10px 0;
+  width: 100%;
 }
 span.bold {
   font-weight: bold;
@@ -801,13 +804,13 @@ span.bold {
   padding-left: 5px;
   padding-right: 5px;
 }
-.calender-popup{
-    display: none;
-    margin-left: 50%;
-    position: absolute;
-    width: 500px;
-    z-index: 9;
-    margin-top: 10%;
+.calender-popup {
+  display: none;
+  margin-left: 80px;
+  margin-top: 45px;
+  position: absolute;
+  width: 500px;
+  z-index: 9;
 }
 .calender-popup > img.close-calender-popup {
   float: right;
@@ -819,9 +822,6 @@ span.bold {
 .calender-popup .calender-row.inner {
   cursor: default;
   padding: 20px
-}
-.calender-popup.visible {
-  display: block;
 }
 .calender-popup .tickets span {
   margin: 15px;
@@ -880,7 +880,124 @@ span.bold {
 .calender-filter > p.active span {
   color: #ffffff;
 }
-.calender-filter-date p.pull-right {
+.calender-filter-date p.pull-left {
   color: #b6a072;
   font-weight: bolder;
+}
+.page-taxonomy .panels-flexible-row.content {
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+p.scrollleft {
+  cursor: pointer;
+  right: 26px;
+  position: absolute;
+  top: 146px;
+  z-index: 99;
+}
+.calender-header {
+  min-width: 100%;
+  left: 0;
+  position: relative;
+}
+.calendar-dayview-hour {
+  float: left;
+  height: 30px;
+  width: 240px;
+}
+.calendar-agenda-items {
+  float: left;
+  font-weight: bold;
+  text-align: center;
+  width: 240px;
+}
+.calender-body {
+ // width: 1920px;
+  min-width: 100%;
+      left: 0;
+      position: relative;
+}
+.calender-full-row > div {
+  float: left;
+  min-height: 150px;
+  width: 240px;
+}
+.calender-row.inner {
+  width: 230px;
+}
+.ajax-inner {
+  float: left;
+  overflow: hidden;
+  width: 100%;
+}
+.calender-popup .calender-row.inner {
+  width: 500px;
+}
+
+
+#calender-top-popup {
+  float: left;
+  left: 40%;
+  position: absolute;
+  top: 50%;
+  width: 500px;
+}
+#calender-top-popup .calender-row.inner{
+    width: 500px;
+}
+#calender-top-popup .close-calender-popup {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  cursor: pointer;
+}
+#calender-top-popup{
+    display: none;
+}
+#calender-top-popup.visible{
+    display: block;
+    z-index: 99;
+}
+
+#calender-top-popup .calender-row.inner {
+  cursor: default;
+  padding: 20px
+}
+#calender-top-popup .tickets span {
+  margin: 8px;
+}
+#calender-top-popup .tickets {
+  float: left;
+  padding-top: 10px;
+  width: 100%;
+}
+#calender-top-popup .body > p {
+  font-size: 14px;
+}
+#calender-top-popup .title {
+  font-size: 14px;
+  padding-bottom: 20px;
+  padding-top: 25px;
+}
+.flag.unflag-action {
+  background-image: url("http://findicons.com/files/icons/2354/dusseldorf/32/heart.png");
+  background-size: 100% 100%;
+  float: left;
+  font-size: 0;
+  height: 16px;
+  margin-top: 5px;
+  overflow: hidden;
+  width: 18px;
+}
+.flag.flag-action{
+    background-image: url("http://www.clker.com/cliparts/q/3/Z/I/y/I/heart-outline-md.png");
+    background-size: 100% 100%;
+    float: left;
+    font-size: 0;
+    height: 16px;
+    margin-top: 5px;
+    overflow: hidden;
+    width: 18px;
 }
