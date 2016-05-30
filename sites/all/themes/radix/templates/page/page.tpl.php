@@ -116,3 +116,8 @@
     <small class="pull-right"><a href="#"><?php print t('Back to Top'); ?></a></small>
   </div>
 </footer>
+<script>
+    jQuery(document).ready(function(){
+    jQuery(".popup-element-title span").html('<img src="<?php print path_to_theme(); ?>/images/search_icon.png" />');
+    });
+</script>
