@@ -157,7 +157,7 @@ function complex_calender_view_block_content(){
                 $start_time_key = '12:00'; 
             }
         }
-         $output.="<div class='calender-full-row'>
+         $output.="<div class='col-sm-12 calender-full-row'>
                                    <div class='calender-row custom-row'><span class='bold time'>$start_time_key</span></div>";
          $calender = array();
          foreach($cell as $val){
@@ -197,6 +197,7 @@ function complex_calender_view_block_content(){
 
                                           <div class='calender-popup'>
                                           <a href='javascript:void(0)' onclick = 'closed();'><img class='close-calender-popup' src='http://jer-cin.tikkewebsites.com//sites/all/themes/cinemateque/images/close.png'/></a>
+
                                                <div class = 'calender-row inner'>
                                                <div class='title'><span class='bold'>$val->title</span> </div>
                                                <div class='body'>$string </div>
@@ -261,9 +262,9 @@ function ajax_complex_calender_filter(){
      }
      $all_term = array_unique($term_array); 
      $output.="<div class='ajax-inner'>";
-     $output.="<div class='calender-filter-date col-sm-12'><p class='pull-left'>$selected_filter</p></div>";
-     $output.="<div class='calender-scroll'><p class='scrollleft'> Other venues ></p></div>";
-     $output.="<div class='calender-header'><p class='calendar-dayview-hour'></p>";
+      $output.="<div class='calender-filter-date col-sm-12'><p class='pull-left'>$selected_filter</p></div>";
+      $output.="<div class='calender-scroll'><p class='scrollleft'> Other venues ></p></div>";
+     $output.="<div class='calender-header'><p class='calendar-dayview-hour col-sm-2'></p>";
      foreach($all_term as $tid){
          $term_load = taxonomy_term_load($tid);
          $output.=" <p class='calendar-agenda-items'>$term_load->name</p>";
@@ -277,7 +278,7 @@ function ajax_complex_calender_filter(){
                     $start_time_key = '12:00';
                 }
             }
-         $output.="<div class='calender-full-row'>
+         $output.="<div class='col-sm-12 calender-full-row'>
                                    <div class='calender-row custom-row'><span class='bold time'>$start_time_key</span></div>";
          $calender = array();
          foreach($cell as $val){

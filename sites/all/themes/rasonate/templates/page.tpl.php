@@ -22,12 +22,13 @@
         <!---------/// LEFT PART END  HERE --->
         <!-------///  RIGHT PART ---->
         <div class="col-sm-6 top_menu_left_part">
-            <ul>
-                <li><a href="#"><img src="<?php print path_to_theme();?>/images/search_icon.png" /></a></li>
-                <li><a href="#"><img src="<?php print path_to_theme();?>/images/user_icon.png" /></a></li>
-                <li><a href="#"><img src="<?php print path_to_theme();?>/images/buy_icon.png" /></a></li>
-                <li><a href="#"><img src="<?php print path_to_theme();?>/images/help_icon.png" /></a></li>
-                <li><a href="#"><img src="<?php print path_to_theme();?>/images/e-icon.png" /></a></li>
+            <ul>               
+                <li><?php if ($page['header']) : print render($page['header']);  endif;  ?></li>
+                <li><a href="#"><img src="<?php print path_to_theme(); ?>/images/user_icon.png" /></a></li>
+                <li><a href="#"><img src="<?php print path_to_theme(); ?>/images/buy_icon.png" /></a></li>
+                <li><a href="#"><img src="<?php print path_to_theme(); ?>/images/help_icon.png" /></a></li>
+                <li><a href="#"><img src="<?php print path_to_theme(); ?>/images/e-icon.png" /></a></li>
+                
             </ul>
         </div>
         <!----------//// RIGHT PART END HERE ---->
@@ -37,13 +38,18 @@
 
 </div>
 
+<?php print render($page['content']); ?>
+<!------------MAIN CONTENT start HERE------------------>
+
 <!-------/// TOP MENU END HEREE ----->
 <!--------/// IMAGE SILDER START ---->
 <div class="container-fluid silder_main">
     <!-----------/// INNER SILDER ---->
-    <?php if($page['nivo_slideshow']){
-        print render($page['nivo_slideshow']);
-    } ?>
+<?php
+if ($page['nivo_slideshow']) {
+    print render($page['nivo_slideshow']);
+}
+?>
 
     <!---------/// INNER SILDER END HERE ---->
 </div>
@@ -360,31 +366,33 @@
 </div>
 <!------------SECOND TESTIMONIL END HERE ---->
 
+<!------------MAIN CONTENT start HERE------------------>
+
 <!---------------/// FOOTER FOUR BOX ---->
 <div class="container-fluid footer_bottom_image">
     <div class="container">
         <!---------/// PART 1 --->
         <div class="col-sm-3">
-            <img src="<?php print path_to_theme();?>/images/phone_icon.png" />
+            <img src="<?php print path_to_theme(); ?>/images/phone_icon.png" />
             <p> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 
         </div>
         <!--------/// PART 1 END --->
         <!---------/// PART 1 --->
         <div class="col-sm-3">
-            <img src="<?php print path_to_theme();?>/images/q-icon.png" />
+            <img src="<?php print path_to_theme(); ?>/images/q-icon.png" />
             <p> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
         </div>
         <!--------/// PART 1 END --->
         <!---------/// PART 1 --->
         <div class="col-sm-3">
-            <img src="<?php print path_to_theme();?>/images/icon-3.png" />
+            <img src="<?php print path_to_theme(); ?>/images/icon-3.png" />
             <p> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
         </div>
         <!--------/// PART 1 END --->
         <!---------/// PART 1 --->
         <div class="col-sm-3">
-            <img src="<?php print path_to_theme();?>/images/direction_icon.png" />
+            <img src="<?php print path_to_theme(); ?>/images/direction_icon.png" />
             <p> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
         </div>
         <!--------/// PART 1 END --->
@@ -400,17 +408,17 @@
 
     <div class="col-sm-6 mid_comtent_main">
         <div class="col-sm-6">
-            <img src="<?php print path_to_theme();?>/images/footer_icon.png" />
+            <img src="<?php print path_to_theme(); ?>/images/footer_icon.png" />
         </div>
         <div class="col-sm-6">
             <div class="col-sm-4">
-                <img src="<?php print path_to_theme();?>/images/fb.jpg" />
+                <img src="<?php print path_to_theme(); ?>/images/fb.jpg" />
             </div>
             <div class="col-sm-4">
-                <img src="<?php print path_to_theme();?>/images/you_tube.jpg" />
+                <img src="<?php print path_to_theme(); ?>/images/you_tube.jpg" />
             </div>
             <div class="col-sm-4">
-                <img src="<?php print path_to_theme();?>/images/what_s_up.jpg"  />
+                <img src="<?php print path_to_theme(); ?>/images/what_s_up.jpg"  />
             </div>
 
         </div>
@@ -466,3 +474,8 @@
 
 </div>
 <!----------/// Footer Bottom end here ---->
+<script>
+    jQuery(document).ready(function(){
+    jQuery(".popup-element-title span").html('<img src="<?php print path_to_theme(); ?>/images/search_icon.png" />');
+    });
+</script>
