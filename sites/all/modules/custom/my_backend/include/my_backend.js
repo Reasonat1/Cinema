@@ -121,12 +121,6 @@ jQuery( document ).ajaxStop(function() {
     
 });
 
-jQuery(window).load(function() {
-    jQuery('.flexslider').flexslider({
-            animation: "slide"
-    });
-});
-
 function closed(){
   jQuery('.close-calender-popup').parent().parent().removeClass('visible');
 }
