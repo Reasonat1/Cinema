@@ -1007,7 +1007,61 @@ p.scrollleft {
  * css for movie group CT
  */
 
-.view-movie-group-ct .content {
+#movie-group-ct .content {
     position: inherit;
     overflow: inherit;
+}
+.img-like-wrapper{
+    position: relative;
+}
+.img-like-wrapper .like-btn{
+	position: absolute;
+}
+.img-like-wrapper a.flag{
+    background: url("../images/like-event.png") no-repeat !important;
+    display: inline-block;
+    width: 30px;
+    height: 26px;
+}
+#movie-group-ct .views-row {
+    min-height: 170px;
+    margin-bottom: 3%;
+}
+#movie-group-ct .views-field.views-field-nothing-1 .field-content .movie-grp-add-event {
+    position: relative;
+    padding-left: 25px;
+}
+
+#movie-group-ct .views-field.views-field-nothing-1 .field-content .movie-grp-add-event a{
+    background: url("../images/add-event.png") no-repeat;
+    width: 30px;
+    height: 28px;
+    display: inline-block;
+    font-size: 0;
+    position: absolute;
+}
+#movie-group-ct .views-field.views-field-nothing-1 .field-content .pur_btn {
+    margin-left:4%;
+}
+#movie-group-ct .views-field.views-field-nothing-1 .field-content .title {
+    margin-right: 8%;
+}
+#movie-group-ct .views-field.views-field-nothing-1 .field-content .title a {
+    color: #000;
+    font-weight: 600;
+}
+#movie-group-ct .views-field.views-field-nothing-1 .field-content .place-time-btns {
+    font-size: 0.9em;
+    font-weight: 600;
+}
+#movie-group-ct .views-field.views-field-nothing-1 .field-content .place-time-btns .bar {
+    margin: 0 2px;
+}
+#movie-group-ct .views-field.views-field-field-cm-movie-short-summary p {
+    font-size: .9em;
+}
+#movie-group-ct .views-field-field-cm-movie-subtitle .field-content {
+    font-size: 0.86em;
+    color: #8f8f8f;
+    font-weight: 600;
 }
