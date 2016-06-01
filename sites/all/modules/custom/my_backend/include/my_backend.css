@@ -19,3 +19,303 @@ fieldset legend {
     margin: -1px 0 0;
     width: auto;
 }
+.panels-ipe-linkbar li {
+  display: inline;
+}
+.panels-add-content-modal .panels-modal-add-category {
+  background: #eaeaec -moz-linear-gradient(center bottom , #dbdcdf 0%, #f6f6f7 100%) repeat scroll 0 0 !important;
+  border-bottom: medium none !important;
+  box-shadow: none;
+  font: bold 11px/30px "Open Sans","Lucida Sans","Lucida Grande",Verdana,sans-serif;
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-right: 0;
+  padding: 0;
+  border-radius: 0;
+  text-align: left;
+}
+.panels-add-content-modal {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+  margin: 0 !important;
+}
+.panels-section-column-categories .panels-categories-box {
+  border-top: medium none !important;
+}
+.panels-categories-box > h5 {
+  display: none;
+}
+.nav-stacked > li + li {
+  margin-top: 0 !important;
+}
+.panels-section-column-categories.col-md-2 {
+  padding: 0;
+}
+.panels-add-content-modal .panels-modal-add-category:hover {
+  box-shadow: none !important;
+  color: #5b5b5b !important;
+  background: #e6e6e6 -moz-linear-gradient(center bottom , #c5c5c5 0%, #fafafa 100%) repeat scroll 0 0 !important;
+}
+.panels-root-content-box > h5 {
+  display: none;
+}
+.use-ajax.panels-modal-add-config {
+  background: #eaeaec -moz-linear-gradient(center bottom , #dbdcdf 0%, #f6f6f7 100%) repeat scroll 0 0;
+  box-shadow: none;
+  color: #5b5b5b !important;
+  font-size: 9px;
+  font-weight: bold;
+  margin: 0 0 6px;
+  padding: 2px 0;
+  text-align: left;
+}
+.use-ajax.panels-modal-add-config:hover {
+  box-shadow: none;
+  color: #5b5b5b !important;
+  background: #e6e6e6 -moz-linear-gradient(center bottom , #c5c5c5 0%, #fafafa 100%) repeat scroll 0 0;
+}
+#modalContent div.ctools-modal-dialog .modal-header {
+  background: #666666 -moz-linear-gradient(center bottom , #333333 0%, #666666 100%) repeat scroll 0 0;
+  border-radius: 5px 5px 0 0;
+  color: #ffffff;
+  font: bold 16px/50px "Open Sans","Lucida Sans","Lucida Grande",Verdana,sans-serif;
+  height: 50px;
+  padding: 0 14px 0 24px;
+  vertical-align: middle;
+}
+#modalContent div.ctools-modal-dialog .close {
+  color: #ff0000;
+  display: block;
+  height: 20px;
+  margin-top: 15px;
+  outline: medium none;
+  overflow: hidden;
+  padding: 0;
+  width: 16px;
+}
+#modalContent div.ctools-modal-dialog .close:focus {
+  background: none;
+}
+#modalContent div.ctools-modal-dialog .modal-title {
+  color: #ffffff;
+  font: bold 16px/50px "Open Sans","Lucida Sans","Lucida Grande",Verdana,sans-serif;
+  padding: 0;
+  text-shadow: none;
+}
+#modalContent div.ctools-modal-dialog #modal-content.modal-body {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  overflow: auto;
+}
+#modalContent .ctools-modal-dialog .modal-content {
+  padding-bottom: 25px;
+  border-radius: 8px;
+}
+#modalContent .panels-section-column-categories .panels-modal-add-config > img {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background: #ffffff none repeat scroll 0 0;
+  border-color: #eeeeee -moz-use-text-color #eeeeee #eeeeee;
+  border-image: none;
+  border-style: solid none solid solid;
+  border-width: 1px 5px 1px 1px;
+  margin: 0 2px 1px;
+  padding: 3px 2px;
+}
+#modal-content .panels-section-columns, #modal-content .panels-categories-description {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #cececa -moz-use-text-color #cececa #cececa;
+  border-image: none;
+  border-style: solid none solid solid;
+  border-width: 1px medium 1px 1px;
+  box-sizing: border-box;
+  height: 100%;
+  margin: 1px 0 0;
+  overflow-x: visible;
+  overflow-y: auto;
+  padding-top: 1em;
+  width: 100%;
+}
+#modal-content fieldset legend{
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background: #dbdbdb none repeat scroll 0 0;
+  border-color: #cccccc #cccccc -moz-use-text-color;
+  border-image: none;
+  border-style: solid solid none;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-width: 1px 1px medium;
+  color: #3b3b3b;
+  display: block;
+  height: 2em;
+  left: -1px;
+  line-height: 2;
+  padding: 1px 0 0;
+  position: absolute;
+  text-indent: 10px;
+  text-shadow: 0 1px 0 #ffffff;
+  top: -12px;
+  width: 100%;
+}
+#modal-content .fieldset-legend {
+    font: bold 12px/1.5em "Open Sans","Lucida Sans","Lucida Grande",Verdana,sans-serif;
+}
+fieldset .fieldset-legend {
+    margin-top: 0.5em;
+    padding-left: 15px;
+    position: absolute;
+    text-transform: uppercase;
+}
+#modal-content fieldset.panopoly-magic-preview {
+  border-top-right-radius: 0;
+  margin-bottom: 5em;
+  margin-top: 2em;
+}
+#modal-content fieldset {
+  background: #ffffff none repeat scroll 0 0;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  clear: none;
+  margin-bottom: 32px;
+  margin-top: 10px;
+  padding: 0 0 10px;
+  position: relative;
+  top: 12px;
+  width: auto;
+}
+#modal-content .panopoly-magic-preview .panel-body {
+  font-size: 75%;
+  max-height: 200px;
+  max-width: 100%;
+  min-height: 200px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+#modal-content .panel-body {
+  margin-top: 2.25em;
+  padding: 0 10px;
+}
+#modal-content .panopoly-magic-preview-link > a {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: medium none;
+  color: #666666;
+  cursor: pointer;
+  float: left;
+  font-size: 14px;
+  line-height: 15px;
+  margin: 0;
+  padding: 0 10px;
+  text-align: left;
+  text-shadow: none;
+}
+#modal-content .panopoly-magic-preview-link {
+  padding: 5px 0;
+  position: relative;
+}
+#modal-content .panopoly-magic-preview-link a.use-ajax.panels-modal-add-config {
+  background: #999999 none repeat scroll 0 0;
+  color: #ffffff;
+  float: left;
+  font-size: 9px;
+  opacity: 0;
+  padding: 3px 8px;
+}
+#modal-content .panopoly-magic-preview-link a.use-ajax.panels-modal-add-config .fa.fa-plus{
+    display: none;
+}
+#modal-content .panopoly-magic-preview-link:hover {
+  background-color: #f1f1f1;
+}
+#modal-content .panopoly-magic-preview-link:hover > a.use-ajax.panels-modal-add-config {
+  opacity: 1;
+}
+#modal-content .panopoly-magic-preview-link  .use-ajax.panels-modal-add-config:hover, #modal-content .panopoly-magic-preview-link .use-ajax.panels-modal-add-config:focus {
+    background: #2fa6e5 none repeat scroll 0 0 !important;
+}
+#modal-content .panopoly-magic-preview-single {
+    float: right;
+    margin-left: 1em;
+    margin-top: 0;
+    width: 48% !important;
+}
+#modal-content fieldset.panopoly-magic-preview-single {
+  margin-bottom: 1em;
+  margin-top: 10px;
+}
+.sticky-table .field-label {
+  background: #dbdbdb none repeat scroll 0 0;
+}
+#modal-content .form-actions {
+  clear: right;
+  float: right;
+  margin-left: 1em;
+  text-align: right;
+  width: 48%;
+}
+ul.tips, div.description, .form-item div.description {
+  color: #666666;
+  font-size: 0.677em;
+  line-height: 1.231em;
+  margin: 5px 0;
+}
+#modal-content .option-text-aligner {
+  float: left;
+  width: auto;
+}
+#modal-content .form-submit {
+  background: #fafafa -moz-linear-gradient(center bottom , #e9eaec 0%, #fafafa 100%) repeat scroll 0 0;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  box-shadow: 0 3px 3px 0 #d2d2d2;
+  color: #666666;
+  cursor: pointer;
+  font: bold 12px/32px "Open Sans","Lucida Sans","Lucida Grande",Verdana,sans-serif;
+  height: 33px;
+  margin-bottom: 0.5em;
+  margin-right: 1em;
+  outline: medium none;
+  padding: 0 13px 1px;
+  text-decoration: none;
+}
+#modal-content .form-submit:hover, #modal-content .form-submit:focus {
+  background: #e6e6e6 -moz-linear-gradient(center bottom , #c5c5c5 0%, #fafafa 100%) repeat scroll 0 0;
+   color: #666666 !important;
+}
+#header .container-fluid {
+    padding: 0;
+}
+.slider-title, .slider-subtitle{
+  float: left;
+  width: 100%;
+  margin: 5px 0;
+}
+.pinch {
+  bottom: 115px;
+  color: #ffffff;
+  left: 150px;
+  padding: 10px;
+  position: absolute;
+}
+.slider-readmore > a {
+  color: #ffffff !important;
+}
+.slider-readmore {
+  float: left;
+  font-size: 14px;
+  padding: 5px 12px;
+    margin: 5px 0;
+    background: #B6A072;
+}
+.slider-subtitle {
+  font-size: 16px;
+}
+.slider-title {
+  font-size: 20px;
+  font-weight: bold;
+}
