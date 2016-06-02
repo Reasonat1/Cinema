@@ -1070,11 +1070,14 @@ p.scrollleft {
     font-weight: 600;
 }
 
-#movie-group-ct .views-field.views-field-nothing-1 .field-content .pur_btn {
+#movie-group-ct .views-field.views-field-nothing-1 .field-content .pur_btn button {
     background: url("../images/toptix.png") no-repeat !important;
     border: medium none;
-    display: block;
     font-size: 0;
-    height: 40px;
-    width: 104px;
+    height: 30px;
+    border-radius: 80px 80px 80px 80px;
+    width: 72px;
+    vertical-align: middle;
 }
+
+/*movie grp css ends*/
