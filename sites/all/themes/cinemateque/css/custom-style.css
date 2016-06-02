@@ -1049,32 +1049,62 @@ p.scrollleft {
  * css for movie group CT
  */
 
-#movie-group-ct .content {
+.view-id-movie_group_ct {
+    width: 70%;
+    margin: auto;
+}
+.view-id-movie_group_ct .view .content {
     position: inherit;
     overflow: inherit;
 }
+.view-id-movie_group_ct .movie-grp-title h5 {
+    font-weight: 500;
+}
+.view-id-movie_group_ct .movie-grp-body p{
+    font-size: 1.5em;
+    font-weight: 400;
+}
 .img-like-wrapper{
     position: relative;
+}
+.img-like-wrapper .top-text-blk-wht {
+    position: absolute;
+    right: 0%;
+    top: 8px;
+}
+.img-like-wrapper .top-text-blk-wht .white {
+    padding: 5%;
+    margin-right: -3px;
+    color: #da2255;
+}
+.img-like-wrapper .top-text-blk-wht .black {
+    padding: 5%;
+    color: #fff;
+}
+.view-id-movie_group_ct .img-like-wrapper img.panopoly-image-quarter {
+    max-width: 100%;
+    width: 100% !important;
 }
 .img-like-wrapper .like-btn{
 	position: absolute;
 }
 .img-like-wrapper a.flag{
-    background: url("../images/like-event.png") no-repeat !important;
     display: inline-block;
-    width: 30px;
-    height: 26px;
+    width: 20px;
+    height: 20px;
+    margin-left: 100%;
+    margin-top: 100%;
 }
-#movie-group-ct .views-row {
-    min-height: 170px;
-    margin-bottom: 3%;
+.view-id-movie_group_ct .views-row {
+    background-color: #fff;
+    margin-bottom: 5%;
 }
-#movie-group-ct .views-field.views-field-nothing-1 .field-content .movie-grp-add-event {
+.view-id-movie_group_ct .views-field.views-field-nothing-1 .field-content .movie-grp-add-event {
     position: relative;
     padding-left: 25px;
 }
 
-#movie-group-ct .views-field.views-field-nothing-1 .field-content .movie-grp-add-event a{
+.view-id-movie_group_ct .views-field.views-field-nothing-1 .field-content .movie-grp-add-event a{
     background: url("../images/add-event.png") no-repeat;
     width: 30px;
     height: 28px;
@@ -1082,37 +1112,44 @@ p.scrollleft {
     font-size: 0;
     position: absolute;
 }
-#movie-group-ct .views-field.views-field-nothing-1 .field-content .pur_btn,
-#movie-group-ct .views-field.views-field-nothing-1 .field-content .add-event-cal {
+.view-id-movie_group_ct .views-field.views-field-nothing-1 .field-content .pur_btn,
+.view-id-movie_group_ct .views-field.views-field-nothing-1 .field-content .add-event-cal {
     margin-left:2%;
 }
-#movie-group-ct .views-field.views-field-nothing-1 .field-content .title {
+.view-id-movie_group_ct .views-field.views-field-nothing-1 .field-content .title {
     float: left;
     padding: .8% 0 0;
     font-size: 1.3em;
 }
-#movie-group-ct .views-field.views-field-nothing-1 .field-content .title a {
+.view-id-movie_group_ct .views-field.views-field-nothing-1 .field-content .title a {
     color: #000;
     font-weight: 600;
 }
-#movie-group-ct .views-field.views-field-nothing-1 .field-content .list-wrapper {
+.view-id-movie_group_ct .views-field.views-field-nothing-1 .field-content .list-wrapper {
     text-align: right;
     font-size: 1.2em;
     font-weight: 600;
 }
-#movie-group-ct .views-field.views-field-nothing-1 .field-content .list-wrapper .bar {
-    margin: 0 2px;
+.view-id-movie_group_ct .views-field.views-field-nothing-1 .field-content .list-wrapper .bar,
+.view-id-movie_group_ct .views-field-field-cm-movie-subtitle .field-content span.bar {
+    margin: 0 3px;
 }
-#movie-group-ct .views-field.views-field-field-cm-movie-short-summary p {
-    font-size: 1.2em;
+.view-id-movie_group_ct .views-field.views-field-field-cm-movie-short-summary {
+    padding: 0 5% 5%;
 }
-#movie-group-ct .views-field-field-cm-movie-subtitle .field-content {
+.view-id-movie_group_ct .views-field.views-field-field-cm-movie-short-summary p {
+    font-size: 1.4em;
+    font-weight: 400;
+}
+}
+.view-id-movie_group_ct .views-field-field-cm-movie-subtitle {
+    padding: 3% 5% 1%;
+    clear: both;
     font-size: 1.2em;
-    color: #8f8f8f;
-    font-weight: 600;
+    color: #919191;
 }
 
-#movie-group-ct .views-field.views-field-nothing-1 .field-content .pur_btn button {
+.view-id-movie_group_ct .views-field.views-field-nothing-1 .field-content .pur_btn button {
     background: url("../images/toptix.png") no-repeat !important;
     border: medium none;
     font-size: 0;
