@@ -60,7 +60,7 @@ function cinematic_toptix_block_view($delta) {
       'data' => array('toptix_user' => $field_toptix), 
       'type' => 'setting'
     ),
-    $path . '/esrojsapi.js',
+    $path . '/esrojsapi.js' => array('group' => JS_LIBRARY),
     $path . '/basket.js',
   );
 

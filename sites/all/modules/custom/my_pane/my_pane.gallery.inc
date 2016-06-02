@@ -256,6 +256,7 @@ function my_pane_field_widget_form(&$form, &$form_state, $field, $instance, $lan
       '#title' => t('Alt text'),
       '#type' => 'textfield',
       '#default_value' => isset($items[$delta]['alt']) ? $items[$delta]['alt'] : NULL,
+      '#required' => TRUE,
     );
 
     $element['description'] = array(
@@ -431,6 +432,7 @@ function theme_panopoly_gallery_wrapper($variables){
 function theme_panopoly_gallery_view($variables) {
   $output = '';
   $title = $variables['element']['#items']['title'];
+  $subtitle = $variables['element']['#items']['subtitle'];
   $description = $variables['element']['#items']['description'];
   $link = $variables['element']['#items']['link'];
   $alt = $variables['element']['#items']['alt'];
@@ -443,9 +445,19 @@ function theme_panopoly_gallery_view($variables) {
      $output = '<li>';
      if ($link) {
         $output .= l($image_markup, $link, array('html' => TRUE));
+        $output .= "<div class='pinch'>";
+        $output.="<span class='slider-title'>$title</span>";
+        $output.="<span class='slider-subtitle'>$subtitle</span>";
+        $output.="<span class='slider-readmore'><a href='$link' target='_blank'>Read More</a></span>";
+         $output .= "</div>";
       }
       else {
         $output .= $image_markup;
+        $output .= "<div class='pinch'>";
+        $output.="<span class='slider-title'>$title</span>";
+        $output.="<span class='slider-subtitle'>$subtitle</span>";
+        $output.="<span class='slider-readmore'><a href='$link' target='_blank'>Read More</a></span>";
+         $output .= "</div>";
       }
        $output .= '</li>';
 //  $output.= '<div id="' . 'panopoly-spotlight-' . $delta . '" class="' . 'panopoly-spotlight demo' . '">';

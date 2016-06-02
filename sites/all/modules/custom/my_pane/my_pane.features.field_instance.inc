@@ -8,6 +8,7 @@
  * Implements hook_field_default_field_instances().
  */
 function my_pane_field_default_field_instances() {
+    
   $field_instances = array();
 
   // Exported field_instance:
@@ -181,49 +182,48 @@ function my_pane_field_default_field_instances() {
     ),
   );
 
-      // Exported field_instance:
+       // Exported field_instance:
   // 'fieldable_panels_pane-caruosel-field_custom_caruosel_sponser'
   $field_instances['fieldable_panels_pane-caruosel-field_custom_caruosel_sponser'] = array(
        'bundle' => 'caruosel',
-     'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => 'panopoly_image_full',
-        ),
-        'type' => 'image',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'fieldable_panels_pane',
-    'field_name' => 'field_custom_caruosel_sponser',
-    'label' => 'Sopnser Caruosel image',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 1,
-      'default_image' => 0,
-      'file_directory' => 'general',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'image',
+       'deleted' => 0,
+       'description' => '',
+       'display' => array(
+         'default' => array(
+           'label' => 'hidden',
+           'module' => 'image',
+           'settings' => array(
+             'image_link' => '',
+             'image_style' => 'slide_show',
+           ),
+           'type' => 'image',
+           'weight' => 0,
+         ),
+       ),
+       'entity_type' => 'fieldable_panels_pane',
+       'field_name' => 'field_custom_caruosel_sponser',
+       'label' => 'Image',
+       'required' => 0,
       'settings' => array(
-        'preview_image_style' => 'thumbnail',
-      ),
-      'type' => 'image_image',
-      'weight' => 1,
-    ),
+         'alt_field' => 1,
+         'default_image' => 0,
+         'file_directory' => 'general',
+         'file_extensions' => 'png gif jpg jpeg',
+         'max_filesize' => '',
+         'max_resolution' => '',
+         'min_resolution' => '',
+         'title_field' => 0,
+         'user_register_form' => FALSE,
+       ),
+       'widget' => array(
+         'active' => 0,
+         'module' => 'image',
+         'settings' => array(),
+         'type' => 'image_image',
+         'weight' => 1,
+       ),
   );
+  
   // Translatables
   // Included for use with string extractors like potx.
   t('Items');

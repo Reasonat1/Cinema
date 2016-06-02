@@ -1,20 +1,34 @@
 
 <?php
 function my_backend_init() {
-    /*
-     * Module js and css files
-     */
-    drupal_add_css(drupal_get_path('module', 'my_backend') . '/include/my_backend.css');
-    drupal_add_js(drupal_get_path('module', 'my_backend') . '/include/my_backend.js');
+    //drupal_add_css(drupal_get_path('module', 'my_backend') . '/include/my_backend.css');
+    //drupal_add_js(drupal_get_path('module', 'my_backend') . '/include/my_backend.js');
     /**
      * External files link
      */
     drupal_add_css('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', array('type' => 'external'));
-    drupal_add_css('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', array('type' => 'external'));
+	if(!path_is_admin(current_path())) {
+	  drupal_add_css('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', array('type' => 'external'));
+	}
+    
 }
 
 /*
- * custom slider
+ * Implementing hook_menu()
+ */
+function my_backend_menu() {
+
+  $items['ajax_complex_calender'] = array(
+    'title' => '',
+    'access arguments' => array('access content'),
+    'page callback' => 'ajax_complex_calender_filter',
+
+    );
+    return $items;
+}
+
+/*
+ * custom block info
  */
 function my_backend_block_info() {
 
@@ -23,24 +37,32 @@ function my_backend_block_info() {
   $blocks['festival_menu_block'] = array(
     'info' => t('festival menu'), 
   );
+
   return $blocks;
 }
 
+/*
+ * custom block view
+ */
 function my_backend_block_view($delta = '') {
 
-  $block = array();
+    $block = array();
 
-  switch ($delta) {
+    switch ($delta) {
 
-  case 'festival_menu_block': 
-      $block['subject'] = '';
-      $block['content'] =custem_festival_menu_block_content();
-      break;
+    case 'festival_menu_block': 
+        $block['subject'] = '';
+        $block['content'] =custem_festival_menu_block_content();
+        break;
 
-  }
+    }
 
   return $block;
 }
+
+/*
+ * custom block view callback
+ */
 function custem_festival_menu_block_content(){
     // if ternonmy page is views
     global $base_url;
@@ -57,10 +79,282 @@ function custem_festival_menu_block_content(){
                    $menu_depth = 2;
                   $menu_load =  menu_load($menu);
                   $menu_load_name =$menu_load['title'];
-                  //$output.= "<h2>$menu_load_name</h2>";
                   $output = menu_tree_output(menu_tree_all_data($menu, null, $menu_depth));
                 }
     }
-  //  print_r(); die(" here");
     return $output;
+} 
+
+/*
+ * custom block " Complex Calender View Block " callback
+ */
+function complex_calender_view_block_content(){
+
+     global $base_url;
+    $output = $filter = $selected_filter = $day = "";
+    $term_page = arg(0);
+    if($term_page == 'taxonomy'){
+        $tid =arg(2);
+        $texonomy = taxonomy_term_load($tid);     
+        $start_date = isset($texonomy->field_cm_festival_date['und'][0]['value']) ? $texonomy->field_cm_festival_date['und'][0]['value'] : '';
+        $end_date = isset($texonomy->field_cm_festival_date['und'][0]['value2']) ? $texonomy->field_cm_festival_date['und'][0]['value2'] : '';
+        $start_date = strtotime($start_date);
+        $end_date = strtotime($end_date);
+        if(!empty($start_date)){
+            $day = date( 'Y-m-d', $start_date );
+        }
+        $filter.= " <div class ='calender-filter'>" ;
+        if(!empty($end_date) && !empty($start_date)){
+            for ( $i = $start_date; $i <= $end_date; $i = $i + 86400 ) {
+                   $Date = date( 'j.n', $i ); 
+                   $Day = date( 'l', $i );
+                   $filter.="<p class=''>$Date<br /><span>$Day</span><span class='filter-date element-invisible'>$i</span></p>";
+            }
+        }
+        $filter.= " </div>" ;
+        
+        if(!empty($start_date)){
+            $selected_filter = date( 'd.m.y | l', $start_date );
+        }
+    }
+//$day = date( 'Y-m-d', 1463000400 );
+      $result =  db_query("SELECT  flagging_node.uid AS flagged_user,n.nid AS nid, n.title, n.created, event_subtitle.field_cm_event_subtitle_value AS event_subtitle,
+              event_time.field_cm_event_time_value AS event_start_time, event_time.field_cm_event_time_value2 AS event_end_time, event_duration.field_cm_event_duration_interval AS event_duration,
+              event_internal_id.field_cm_event_internal_id_value AS event_internal_id, event_hall.field_cm_event_hall_target_id AS hall_tid, event_body.field_cm_event_body_value AS event_body
+              FROM node AS n 
+              LEFT JOIN flagging As flagging_node ON n.nid = flagging_node.entity_id AND flagging_node.fid = '1'
+              LEFT JOIN field_data_field_cm_event_subtitle AS event_subtitle ON n.nid = event_subtitle.entity_id
+              LEFT JOIN field_data_field_cm_event_time  AS event_time ON n.nid = event_time.entity_id
+              LEFT JOIN field_data_field_cm_event_duration  AS event_duration  ON n.nid = event_duration.entity_id
+              LEFT JOIN field_data_field_cm_event_internal_id  AS event_internal_id  ON n.nid = event_internal_id.entity_id
+              LEFT JOIN field_data_field_cm_event_body As event_body ON n.nid = event_body.entity_id
+              LEFT JOIN field_data_field_cm_event_hall As event_hall ON n.nid = event_hall.entity_id
+              WHERE ((n.type = 'cm_event')) and  ((n.status = '1'))  and ( (DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value2), SEC_TO_TIME(10800)), '%Y-%m-%d') >= '$day' AND DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value), SEC_TO_TIME(10800)), '%Y-%m-%d') <= '$day') )
+              ORDER BY event_start_time ASC")->fetchAll();
+    $result_count = count($result);
+
+     foreach($result as $val){
+         $term_array[] = $val->hall_tid;
+         $start_time = $val->event_start_time;
+         $event_time = date('G:i',$start_time);
+         $hall[$event_time][] = $val;
+     }
+     ksort($hall);    
+     $all_term = array_unique($term_array); 
+     $output.="<div class='col-sm-12 calender'>";
+     $output.= $filter;
+     $output.="<div class='ajax-inner'>";
+      $output.="<div class='calender-filter-date col-sm-12'><p class='pull-left'>$selected_filter</p></div>";
+      $output.="<div class='calender-scroll'><p class='scrollleft'> Other venues ></p></div>";
+     $output.="<div class='calender-header'><p class='calendar-dayview-hour'></p>";
+     foreach($all_term as $tid){
+         $term_load = taxonomy_term_load($tid);
+         $output.=" <p class='calendar-agenda-items'>$term_load->name</p>";
+     }
+    $output.="</div><div  class='calender-body'>";
+
+     foreach($hall as $key => $cell){
+        if(!empty($key)){
+           $start_time_key = $key;
+           if($start_time_key == '0:00'){
+                $start_time_key = '12:00'; 
+            }
+        }
+         $output.="<div class='col-sm-12 calender-full-row'>
+                                   <div class='calender-row custom-row'><span class='bold time'>$start_time_key</span></div>";
+         $calender = array();
+         foreach($cell as $val){
+            $nid = $val->nid;
+            $start = $val->event_start_time;
+            $short_date = $short_day = "";
+            if(!empty($start)){
+                $start_time = date('G:i',$start);
+                 $short_date= date('d.m.y',$start);
+                 $short_day= date('l',$start);
+            }if($start_time == '0:00'){
+                $start_time = '12:00';
+            }
+            $alias = drupal_get_path_alias("node/$nid");
+            if(empty($alias)){
+                $alias = "node/$nid";
+            }
+            $term = taxonomy_term_load($val->hall_tid);
+            $event_duration = $val->event_duration;
+            if(!empty($event_duration)){
+                $minutes = ' | '.$val->event_duration.' minutes';
+            }else{
+                $minutes ='';
+            }
+            $flag = flag_create_link('favorite_', $nid);
+            $string =  substr($val->event_body,0,300).'...';
+            $calender[$val->hall_tid] = "<div class='calender-row custom-row'>
+                                           <div class = 'calender-row inner'>
+                                                $flag
+                                                <div class='time'><span class='bold'>$start_time</span> $minutes</div>
+                                                <div class='title'><span class='bold'>$val->title</span> </div>
+                                                <div class='subtitle'><span>$val->event_subtitle</span> </div>
+                                                <div class='internal-id'><span>$val->event_internal_id</span> </div>
+                                                <div class='tickets'><a href='javascript:void(0)'>Tickets</a></div>
+                                                <div class='element-invisible'><span>$term->name</span></div>
+                                           </div>
+
+                                          <div class='calender-popup'>
+                                          <a href='javascript:void(0)' onclick = 'closed();'><img class='close-calender-popup' src='http://jer-cin.tikkewebsites.com//sites/all/themes/cinemateque/images/close.png'/></a>
+
+                                               <div class = 'calender-row inner'>
+                                               <div class='title'><span class='bold'>$val->title</span> </div>
+                                               <div class='body'>$string </div>
+                                               <a href='$base_url/$alias' class='read-more'>To event page> </a>
+                                               <div class='tickets'><span>$short_day</span><span>$short_date</span><span>$start_time</span><span>$term->name</span><a href='$base_url/$alias'>Tickets</a></div>
+                                               </div>
+                                           </div>
+                                     </div>";
+           
+        }
+        
+        foreach($all_term as $tid)  {
+            $a = '0';
+            foreach($calender as $cal_key => $cal_val){
+                if($cal_key == $tid){
+                    $output.=$cal_val;
+                    $a++;
+                }
+            }
+             if($a == '0'){
+                    $output.="<div class='calender-row custom-row '></div>";
+             }
+        } 
+        $output.="</div></div>";
+     }
+     $output.= "</div></div></div>";
+     return $output;
+}
+
+/**
+ * Ajax filteration of complex calender
+ */
+function ajax_complex_calender_filter(){
+   //echo "<pre>"; print_r($_POST); die();
+    $filterdate = $_POST['filterdate'];
+    $day = date( 'Y-m-d', $filterdate );
+     global $base_url;
+    $output = $selected_filter = "";
+    if(!empty($filterdate)){
+            $selected_filter = date( 'd.m.y | l', $filterdate );
+    }
+      $result =  db_query("SELECT  flagging_node.uid AS flagged_user,n.nid AS nid, n.title, n.created, event_subtitle.field_cm_event_subtitle_value AS event_subtitle,
+              event_time.field_cm_event_time_value AS event_start_time, event_time.field_cm_event_time_value2 AS event_end_time, event_duration.field_cm_event_duration_interval AS event_duration,
+              event_internal_id.field_cm_event_internal_id_value AS event_internal_id, event_hall.field_cm_event_hall_target_id AS hall_tid, event_body.field_cm_event_body_value AS event_body
+              FROM node AS n 
+              LEFT JOIN flagging As flagging_node ON n.nid = flagging_node.entity_id AND flagging_node.fid = '1'
+              LEFT JOIN field_data_field_cm_event_subtitle AS event_subtitle ON n.nid = event_subtitle.entity_id
+              LEFT JOIN field_data_field_cm_event_time  AS event_time ON n.nid = event_time.entity_id
+              LEFT JOIN field_data_field_cm_event_duration  AS event_duration  ON n.nid = event_duration.entity_id
+              LEFT JOIN field_data_field_cm_event_internal_id  AS event_internal_id  ON n.nid = event_internal_id.entity_id
+              LEFT JOIN field_data_field_cm_event_body As event_body ON n.nid = event_body.entity_id
+              LEFT JOIN field_data_field_cm_event_hall As event_hall ON n.nid = event_hall.entity_id
+              WHERE ((n.type = 'cm_event' ))and  ((n.status = '1'))  and ( (DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value2), SEC_TO_TIME(10800)), '%Y-%m-%d') >= '$day' AND DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value), SEC_TO_TIME(10800)), '%Y-%m-%d') <= '$day') )
+              ORDER BY event_start_time ASC")->fetchAll();
+    $result_count = count($result);
+
+     foreach($result as $val){
+         $term_array[] = $val->hall_tid;
+         $start_time = $val->event_start_time;
+         $event_time = date('G:i',$start_time);
+         $hall[$event_time][] = $val;
+     }
+     $all_term = array_unique($term_array); 
+     $output.="<div class='ajax-inner'>";
+      $output.="<div class='calender-filter-date col-sm-12'><p class='pull-left'>$selected_filter</p></div>";
+      $output.="<div class='calender-scroll'><p class='scrollleft'> Other venues ></p></div>";
+     $output.="<div class='calender-header'><p class='calendar-dayview-hour col-sm-2'></p>";
+     foreach($all_term as $tid){
+         $term_load = taxonomy_term_load($tid);
+         $output.=" <p class='calendar-agenda-items'>$term_load->name</p>";
+     }
+    $output.="</div><div  class='calender-body'>";
+    ksort($hall);    
+     foreach($hall as $key => $cell){
+            if(!empty($key)){
+                $start_time_key = $key;
+                if($start_time_key == '0:00'){
+                    $start_time_key = '12:00';
+                }
+            }
+         $output.="<div class='col-sm-12 calender-full-row'>
+                                   <div class='calender-row custom-row'><span class='bold time'>$start_time_key</span></div>";
+         $calender = array();
+         foreach($cell as $val){
+            $nid = $val->nid;
+            $start = $val->event_start_time;
+            $short_date = $short_day = "";
+            if(!empty($start)){
+                $start_time = date('G:i',$start);
+                 $short_date= date('d.m.y',$start);
+                 $short_day= date('l',$start);
+            }if($start_time == '0:00'){
+                $start_time = '12:00';
+            }
+            $alias = drupal_get_path_alias("node/$nid");
+            if(empty($alias)){
+                $alias = "node/$nid";
+            }
+            $term = taxonomy_term_load($val->hall_tid);
+            $event_duration = $val->event_duration;
+            if(!empty($event_duration)){
+                $minutes = ' | '.$val->event_duration.' minutes';
+            }else{
+                $minutes ='';
+            }
+            $flag = flag_create_link('favorite_', $nid);
+            $string =  substr($val->event_body,0,300).'...';
+            $calender[$val->hall_tid] = "<div class='calender-row custom-row'>
+                                           <div class = 'calender-row inner'>
+                                                $flag
+                                                <div class='time'><span class='bold'>$start_time</span> $minutes</div>
+                                                <div class='title'><span class='bold'>$val->title</span> </div>
+                                                <div class='subtitle'><span>$val->event_subtitle</span> </div>
+                                                <div class='internal-id'><span>$val->event_internal_id</span> </div>
+                                                <div class='tickets'><a href='javascript:void(0)'>Tickets</a></div>
+                                                <div class='element-invisible'><span>$term->name</span></div>
+                                           </div>
+
+                                          <div class='calender-popup'>
+                                          <a href='javascript:void(0)' onclick = 'closed();'><img class='close-calender-popup' src='http://jer-cin.tikkewebsites.com//sites/all/themes/cinemateque/images/close.png'/></a>
+                                               <div class = 'calender-row inner'>
+                                               <div class='title'><span class='bold'>$val->title</span> </div>
+                                               <div class='body'>$string </div>
+                                               <a href='$base_url/$alias' class='read-more'>To event page> </a>
+                                               <div class='tickets'><span>$short_day</span><span>$short_date</span><span>$start_time</span><span>$term->name</span><a href='$base_url/$alias'>Tickets</a></div>
+                                               </div>
+                                           </div>
+                                     </div>";
+           
+        }
+        foreach($all_term as $tid)  {
+            $a = '0';
+            foreach($calender as $cal_key => $cal_val){
+                if($cal_key == $tid){
+                    $output.=$cal_val;
+                    $a++;
+                }
+            }
+             if($a == '0'){
+                    $output.="<div class='calender-row custom-row'></div>";
+             }
+        } 
+        $output.="</div></div>";
+     }
+     $output.= "</div></div>";
+      drupal_json_output(array('output' => $output));
+}
+
+
+/**
+ *  createing calender pane
+ */
+function my_backend_ctools_plugin_directory($module, $plugin) {
+    if (($module == 'ctools' || $module == 'panels') && !empty($plugin)) {
+    return 'plugins/' . $plugin;
+  }
 } 

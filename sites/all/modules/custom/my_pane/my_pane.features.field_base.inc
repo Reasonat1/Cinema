@@ -95,7 +95,7 @@ function my_pane_field_default_field_bases() {
     'type' => 'image',
   );
   
-    // Exported field_base: 'field_custom_caruosel_sponser'
+      // Exported field_base: 'field_custom_caruosel_sponser'
   $field_bases['field_custom_caruosel_sponser'] = array(
     'active' => 1,
     'cardinality' => -1,

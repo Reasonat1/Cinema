@@ -8,7 +8,26 @@ base theme  = radix
 
 
 ; Regions
+regions[header] = Header
+regions[help] = Help
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[highlighted] = Highlighted
+
+regions[featured] = Featured
 regions[content] = Content
+regions[sidebar_first] = Sidebar first
+regions[sidebar_second] = Sidebar second
+
+regions[triptych_first] = Triptych first
+regions[triptych_middle] = Triptych middle
+regions[triptych_last] = Triptych last
+
+regions[footer_firstcolumn] = Footer first column
+regions[footer_secondcolumn] = Footer second column
+regions[footer_thirdcolumn] = Footer third column
+regions[footer_fourthcolumn] = Footer fourth column
+regions[footer] = Footer
 
 ; Breakpoints
 breakpoints[xs] = (max-width: 767px)
@@ -35,6 +54,9 @@ scripts[] = js/cinemateque.script.js
 ;scripts[] = ../MDB/js/modules/mdb.js
 scripts[] = ../../libraries/js/esrojsapi.js
 scripts[] = ../../modules/cm_toptix/js/sro_ui.js
+
+; Panels layouts. You can place multiple layouts under the "layouts" folder.
+plugins[panels][layouts] = layouts
 
 ; Information added by Drupal.org packaging script on 2016-02-01
 version = "7.x-3.3"
