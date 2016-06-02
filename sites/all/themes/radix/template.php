@@ -220,8 +220,50 @@ function radix_preprocess_page(&$variables) {
         }
 
     }
+    
+        if(!empty($variables['node'])){
+
+            global $_domain;
+            $domains = $variables['node']->domains;
+            foreach($domains as $domain){
+                if($_domain['domain_id'] == $domain){
+                    $term_tid = db_query("SELECT `entity_id` FROM `field_data_field_cm_domain` WHERE `field_cm_domain_value` =$domain ")->fetchField();
+                    break;
+                }
+            }
+            if($_domain['is_default'] != '1' && $term_tid != ''){
+                $texonomy = taxonomy_term_load($term_tid);
+                $menu = $texonomy->cinematic_menu;
+                $name = $texonomy->name;
+                $domain = isset($texonomy->field_cm_domain['und'][0]['value']) ? $texonomy->field_cm_domain['und'][0]['value'] : 1;
+                $logo_image = $texonomy->field_cm_festival_logo;
+                $date = isset($texonomy->field_cm_festival_date['und'][0]['value']) ? $texonomy->field_cm_festival_date['und'][0]['value'] : '';
+                if(!empty($date)){
+                    $date = date('d-m.Y',$date);
+                }
+                if(!empty($logo_image)){
+                    $logo_image =$base_url.'/sites/default/files/'.$logo_image['und'][0]['filename'];	
+                    $variables['festival_site_logo'] = $logo_image;
+                }
+
+                $output = "<div class='festival-site'>";
+                $output.="   <span class='festive-site-name'>$name</span>";
+                $output.="   <span class='festive-time'>$date</span>";
+                $output.= "</div>";
+                $variables['festival_site_info'] =$output;
+
+                // texonomy accssociated menu
+                if($menu != ''){
+                   $menu_source =$menu.'_links_source';
+                   $variables['festival_site_menu'] = _radix_dropdown_menu_tree(variable_get($menu_source, $menu), array(
+                       'min_depth' => 1,
+                       'max_depth' => 2,
+                     ));
+                }
+            }
+    }
   // Add a copyright message.
-  $variables['copyright'] = t('Drupal is a registered trademark of Dries Buytaert.');
+  //$variables['copyright'] = t('Drupal is a registered trademark of Dries Buytaert.');
 
   // Display a message if Sass has not been compiled.
 //  $theme_path = drupal_get_path('theme', $GLOBALS['theme']);

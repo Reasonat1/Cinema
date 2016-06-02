@@ -55,6 +55,9 @@ scripts[] = js/cinemateque.script.js
 scripts[] = ../../libraries/js/esrojsapi.js
 scripts[] = ../../modules/cm_toptix/js/sro_ui.js
 
+; Panels layouts. You can place multiple layouts under the "layouts" folder.
+plugins[panels][layouts] = layouts
+
 ; Information added by Drupal.org packaging script on 2016-02-01
 version = "7.x-3.3"
 core = "7.x"

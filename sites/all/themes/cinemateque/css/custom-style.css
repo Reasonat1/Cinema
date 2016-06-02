@@ -473,8 +473,35 @@ text-align: center;
 }
 .navbar-brand > img {
     height: 55px;
+    transition: all 0.5s ease 0s;
 }
-
+.sticky-header .navbar-brand > img {
+    height: 50px;
+}
+.navbar-header {
+  width: 25%;
+}
+.admin-menu #header {
+  top: 29px;
+}
+#header {
+    position:fixed;
+    height: 68px;
+    left:0;
+    top:0;
+    float:left;
+    width:100%;
+    -ms-transition:     all 0.5s ease-out;
+    -moz-transition:    all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -o-transition:      all 0.5s ease-out;
+    transition:         all 0.5s ease-out;
+    z-index: 99;
+}
+.sticky-header {
+    height: 56px !important;
+    line-height: 35px;
+}
 .hambruger.-menu.navbar-toggle {
   display: block;
   float: left;
@@ -482,6 +509,7 @@ text-align: center;
   margin-top: 20px;
   border: medium none;
   margin-right: 0;
+  transition: all 0.5s ease 0s;
 }
 .navbar-default{
     background-color: #B49D6F;
@@ -489,6 +517,7 @@ text-align: center;
 .header #site-main-menu,.header #site-main-menu li a,.header #site-main-menu li a:hover, .header #site-main-menu li a:active{
     background-color: #B49D6F;
      color: #ffffff;
+     transition: all 0.5s ease 0s;
 }
 
 .sticky-header.header .navbar-default {
@@ -534,6 +563,12 @@ padding: 0;
     width: 100%;
     z-index: 100;
 }
+#site-main-menu > li a.dropdown-toggle.active {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+}
+.site-custom-menu.menu.nav.navbar-nav {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+}
 li.expanded .dropdown-menu {
   border-top: 2px solid #B69E71;
 }
@@ -553,6 +588,9 @@ li.expanded .dropdown-menu {
   float: left;
   width: 100%;
 }
+#main-wrapper {
+  margin-top: 90px;
+}
 .col-md-3.header-right > li {
     color: #ffffff;
     cursor: pointer;
@@ -561,6 +599,10 @@ li.expanded .dropdown-menu {
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 18px;
+    transition: all 0.5s ease 0s;
+}
+.sticky-header .header-right > li {
+  padding-top: 9px;
 }
 .header-right {
     float: right;
@@ -599,7 +641,7 @@ li.expanded .dropdown-menu {
 }
 #main #content {
   padding: 0;
-  width: 100%;
+  /*width: 100%;*/
 }
 .panels-flexible-row.content,.panels-flexible-row.bottom.content {
   margin: 0 auto;
@@ -1079,3 +1121,4 @@ p.scrollleft {
     width: 72px;
     vertical-align: middle;
 }
+
