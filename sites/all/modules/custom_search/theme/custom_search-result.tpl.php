@@ -65,14 +65,14 @@
              <?php 
              if(isset($variables['result']['node']->field_featured_image['und'][0]['filename'])){
              if($variables['result']['node']->field_featured_image['und'][0]['filename']!=""){
-               $image_path=$GLOBALS['base_url']. '/sites/default/files/'.$variables['result']['node']->field_featured_image['und'][0]['filename']; 
+                $image_path=$GLOBALS['base_url']. '/sites/default/files/'.$variables['result']['node']->field_featured_image['und'][0]['filename']; 
              }
              else{
-                 $image_path=$GLOBALS['base_url']. '/'.path_to_theme().'/no_image.jpg';
+                $image_path=$GLOBALS['base_url']. '/'.path_to_theme().'/no_image.jpg';
              }
              }
              else{
-                 $image_path=$GLOBALS['base_url']. '/'.path_to_theme().'/no_image.jpg';
+                $image_path=$GLOBALS['base_url']. '/'.path_to_theme().'/no_image.jpg';
              }
              ?>
              <img src="<?php print $image_path?>" class="pro-img"/>
