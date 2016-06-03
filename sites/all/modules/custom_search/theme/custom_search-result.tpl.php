@@ -65,7 +65,7 @@
              <?php 
              if(isset($variables['result']['node']->field_featured_image['und'][0]['filename'])){
              if($variables['result']['node']->field_featured_image['und'][0]['filename']!=""){
-                $image_path=$variables['result']['node']->field_featured_image['und'][0]['filename']; 
+               $image_path=$GLOBALS['base_url']. '/sites/default/files/'.$variables['result']['node']->field_featured_image['und'][0]['filename']; 
              }
              else{
                  $image_path=$GLOBALS['base_url']. '/sites/default/files/no_image.jpg';
@@ -108,57 +108,3 @@
     <?php endif; ?>
   </div>
 </li>
-
-
-<style>
-    .search-results.node-results {
-    padding: 0 !important;
-}
-    
-    .pro-grid{
-margin:10px auto;
-background: rgb(227, 227, 227) none repeat scroll 0% 0%;
-padding: 0.5% ;
-border: 3px double rgb(183, 183, 183);}
-    
- .pro-grid:nth-child(odd){background: transparent}   
-    .pro-grid li:nth-child(1){ width:10% !important; }
-    .pro-grid li{ width:44%; display: inline-block; vertical-align: middle;  margin-bottom: 0;}
-    .pro-grid li .pro-img {
-    max-width: 100%;
-    background: #f6f6f6;
-    padding: 2px;
-    border: 1px solid #BFBFBF;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-}
-
-.pro-grid li .title {
-text-align: left;
-text-transform: uppercase;
-font-size: 14px;
-}
-
-.pro-grid li .title a{ color:#333 !important}
-
-.pro-grid li .search-view-mode p {
-    font-size: 13px !important;
-    margin: 0 !important;
-    line-height: 1.25 !important;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-height: 56px;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    line-clamp: 2;
-    box-orient: vertical;
-}
-.search-result:nth-child(even){ background: #fff}
- .search-result:nth-child(odd){ background: #f5f5f5}
-
-@media(max-device-width:420px){
-    .pro-grid{ padding: 10px }
-    .pro-grid li:nth-child(1){ width:40% !important; margin: auto; }
-    .pro-grid li{ width:100%; display: block; vertical-align: middle;  margin-bottom: 0;}
-}
-    </style>
