@@ -12,16 +12,20 @@
 body.node-type-cm-movie .container #breadcrumb,
 body.node-type-cm-movie .container #page-header,
 body.node-type-cm-event .container #breadcrumb,
-body.node-type-cm-event .container #page-header{
+body.node-type-cm-event .container #page-header,
+.node-type-cm-movie-group .container #breadcrumb,
+.node-type-cm-movie-group .container #page-header{
   display: none;
 }
 body.node-type-cm-event,
-body.node-type-cm-movie{
+body.node-type-cm-movie,
+.node-type-cm-movie-group{
   background-color: #fff !important;
 }
 body.node-type-cm-event #content,
 body.node-type-cm-movie #content,
-.panels-flexible-region-node_page-slider{
+.panels-flexible-region-node_page-slider,
+.node-type-cm-movie-group #content{
   width: 100% !important;
 }
 .node-type-cm-event .panels-flexible-region-8-center,
