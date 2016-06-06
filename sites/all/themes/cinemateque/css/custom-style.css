@@ -1224,6 +1224,46 @@ font-size: 14px;
     background: #000 !important;
     color: #fff !important;
 }
+
+.custom_filter_css .item-list ul li {
+    display: inline-block;
+    padding: 6px 10px;
+    background: #b59f70;
+}
+
+.custom_filter_css .item-list ul li a {
+    color: #fff !important;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+#edit-basic .form-group {
+    display: block !important;
+    margin: 0;
+    float: left !important;
+    width: 80% !important;
+    background: #fff !important;
+}
+
+
+
+
+#edit-basic .form-group label[for="edit-keys"] {
+    display: none !important;
+}
+
+#edit-basic .form-group #edit-keys {
+    width: 96%;
+    display: inline-block;
+    float: left;
+    margin-bottom: 0;
+    height: auto;
+    padding: 10px 2%;
+}
+
 /*http://www.jercin.local/modules/system/system.theme.css?o84xkb* 150*/
 #header .container-fluid {
     padding: 0;

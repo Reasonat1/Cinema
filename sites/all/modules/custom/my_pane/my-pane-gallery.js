@@ -14,6 +14,12 @@ $('.field-name-field-custom-caruosel-sponser .field-items').cycle({
     next:    '#next', 
   });
   
+$(".field-name-field-custom-caruosel-sponser .field-items").mouseover(function(){
+    $(this).cycle('pause');
+}).mouseout(function(){
+    $(this).cycle('resume');
+});
+    
   $( document ).ajaxComplete(function() {
         $('.custom-slideshow').cycle({
             fx: 'scrollHorz',
