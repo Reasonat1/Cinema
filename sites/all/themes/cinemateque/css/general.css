@@ -34,37 +34,56 @@ body.node-type-cm-movie #content,
   position: relative !important;
 }
 .views_slideshow_cycle_slide .field-content .slide-alt-title{
-  background-color: #302f2f;
-  bottom: 0;
-  color: #fff;
-  font-size: 12px;
-  padding: 2px 40px;
-  position: absolute;
-  right: 47em;
+    background-color: #312f2f;
+    bottom: 0;
+    color: #a0a0a0;
+    font-size: 12px;
+    left: 0;
+    padding: 10px 40px;
+    position: absolute;
 }
 .view.view-display-id-panel_pane_3{
   overflow: visible;
 }
+.pane-event-ct-view-panel-pane-7 table tr td{
+  border: medium none;
+}
+
+#atedrop1{
+    background-color: #f9fafb;
+    border: medium none;
+    font-size: 0;
+    z-index: 1000011;
+}
+.addthisevent-drop .addthisevent_icon{
+  background: #fff url("../images/addevent-red.png") no-repeat !important;
+}
 .pane-event-ct-view-panel-pane-3 .views-field-field-main-event-credit .slide-over-content{
-  width: 85%;
   position: absolute;
   bottom: 10em;
-  left: 12%;
+  left: 48%;
   z-index:15;
 }
+.slide-right-ct{
+    float: right;
+    margin-top: 15%;
+    width: 15%;
+}
 .slide-right-ct a{
-    background: url("../images/play-icon.png") no-repeat scroll -2px center rgba(0, 0, 0, 0);
-    font-size: 0;
-    background-position: 12px;
-    display: block;
-    width: 55px;
-    height: 55px;
-    padding: 2%;
-    background-color: #fff;
-    border-radius: 30px
+   background: #fff url("../images/play-icon.png") no-repeat scroll 12px center;
+  border-radius: 30px;
+  display: inline-block;
+  font-size: 0;
+  height: 55px;
+  margin-left: 55%;
+  padding: 2%;
+  width: 55px;
+}
+.pane-event-ct-view-panel-pane-3 .views-field-field-main-event-credit{
+  width: 100%;
 }
 .pane-event-ct-view-panel-pane-3 .views-field-field-main-event-credit .slide-left-ct{
-  width: 60%;
+  width: 85%;
   float: left;
   color: #fff;
 }
