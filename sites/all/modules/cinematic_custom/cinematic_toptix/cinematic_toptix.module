@@ -60,7 +60,7 @@ function cinematic_toptix_block_view($delta) {
       'data' => array('toptix_user' => $field_toptix), 
       'type' => 'setting'
     ),
-    $path . '/esrojsapi.js' => array('group' => JS_LIBRARY),
+    'http://' . TOPTIX_HOST . '/iframe/esrojsapi.js' => array('group' => JS_LIBRARY, 'type' => 'external'),
     $path . '/basket.js',
   );
 
@@ -85,8 +85,8 @@ function cinematic_toptix_form_alter(&$form, &$form_state, $form_id) {
     'type' => 'setting'
   );
   $form['#attached']['js'][] = drupal_get_path('module', 'cinematic_toptix') . '/create_user.js';
-  $path = drupal_get_path('module', 'cinematic_toptix') . '/esrojsapi.js';
-  $form['#attached']['js'][$path] = array('group' => JS_LIBRARY);
+  $esro_path = 'http://' . TOPTIX_HOST . '/iframe/esrojsapi.js';
+  $form['#attached']['js'][$esro_path] = array('group' => JS_LIBRARY, 'type' => 'external');
 }
 
 function cinematic_toptix_field_widget_form_alter(&$element, &$form_state, $context) {
@@ -166,7 +166,7 @@ function cinematic_toptix_field_formatter_view(
             'data' => array('toptix_user' => $field_toptix), 
             'type' => 'setting'
           ),
-          drupal_get_path('module', 'cinematic_toptix') . '/esrojsapi.js' => array('group' => JS_LIBRARY),
+          'http://' . TOPTIX_HOST . '/iframe/esrojsapi.js' => array('group' => JS_LIBRARY, 'type' => 'external'),
           drupal_get_path('module', 'cinematic_toptix') . '/frame.js',
         ),
         'library' => array(
