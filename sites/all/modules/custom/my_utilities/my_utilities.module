@@ -8,7 +8,6 @@ function my_utilities_init() {
 function my_utilities_form_alter(&$form, &$form_state, $form_id) {
    if($form_id == 'taxonomy_form_term'){
     $vocb_name = $form['#vocabulary']->machine_name;
-     //drupal_set_message('<pre>'.print_r($form['name']['#title'], 1).'</pre>');
      if($vocb_name == 'lobby'){
       $form['name']['#title'] = 'Lobby name';
       $form['description']['#title'] = 'Lobby description & teaser';
@@ -25,7 +24,6 @@ function _return_addthisevent_markup($node) {
    $summery   = !empty($node->title) ? $node->title : '';
    $description  = $node->field_cm_event_body['und'][0]['safe_summary'] ? $node->field_cm_event_body['und'][0]['safe_summary'] : $node->field_cm_event_body['und'][0]['safe_value']; 
    $owner   = user_load($node->uid);
-   
    $text = t('Add to Calendar') . '
     <span class="_start">'.$start.' ' .$start_time.'</span>
     <span class="_start">'.$end.' ' .$end_time.'</span>
