@@ -18,17 +18,23 @@ var toptix_basket_url = null;
 })(jQuery);
 
 $esro.attachEventHandler('basketChanged', function(basket) {
+  console.log('my basket handler');
   console.log(basket);
-  $.cookie('toptix_basket', basket.totalValue);
+  jQuery.cookie('toptix_basket', basket.totalValue);
 });
 
-$esro.attachEventHandler('navigationRequired', function(pageName) {
+function toptix_navigationHandler(pageName) {
+  console.log('esro navigation:' + pageName);
   if (pageName == 'DEFAULT') {
-    var target_page = Drupal.settings.basePath + '/user';
-    console.log('navigating to ' + target_page);
-    window.location.href = target_page;
+    var target_page = Drupal.settings.basePath + 'user';
+    var target_address = 'http://' + window.location.hostname + target_page;
+    if (target_address != window.location.href) {
+      console.log('navigating to ' + target_page);
+      //window.location.href = target_address;
+    }
   }
-});
+}
+$esro.attachEventHandler('navigationRequired', toptix_navigationHandler);
 
 function toptix_callback_basket_get_customer(result) {
   var toptix_user = Drupal.settings.toptix_user;

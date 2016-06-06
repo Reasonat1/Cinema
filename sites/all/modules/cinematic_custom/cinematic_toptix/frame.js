@@ -36,6 +36,7 @@ function toptix_callback_login(result) {
 
 function toptix_open_frame() {
   var frame = jQuery('#toptix-frame-wrapper');
+  console.log('opening frame at : ' + toptix_event_url);
   $esro.gotoUrl(toptix_event_url);
   frame.dialog({
     'title': Drupal.t('Purchase tickets'),
