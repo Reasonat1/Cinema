@@ -5,12 +5,19 @@
 }
 .pane-node-field-cm-event-body h2.pane-title,
 .pane-node-field-tag h2.pane-title,
-.pane-node-field-toptix-purchase h2.pane-title{
+.pane-node-field-toptix-purchase h2.pane-title,
+body.node-type-cm-movie .container #breadcrumb,
+body.node-type-cm-movie .container #page-header{
   display: none;
 }
 body.node-type-cm-event,
 body.node-type-cm-movie{
   background-color: #fff !important;
+}
+body.node-type-cm-event #content,
+body.node-type-cm-movie #content,
+.panels-flexible-region-node_page-slider{
+  width: 100% !important;
 }
 .node-type-cm-event .panels-flexible-region-8-center,
 .node-type-cm-movie .panels-flexible-region-8-center,
