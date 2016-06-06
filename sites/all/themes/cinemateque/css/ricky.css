@@ -2,7 +2,10 @@
  *@author: Anwar
  * css for movie group CT
  */
-
+body.node-type-cm-movie-group .panels-flexible-row.content,
+body.node-type-cm-movie-group .panels-flexible-row.bottom.content {
+    width: 100%;
+}
 .view-id-movie_group_ct.view-display-id-panel_pane_1 {
     width: 60%;
     margin: auto;
@@ -127,6 +130,7 @@
 }
 .view-id-movie_group_ct.view-display-id-panel_pane_3 th {
     border-bottom: none;
+    color: #b7b7b7;
 }
 .view-id-movie_group_ct.view-display-id-panel_pane_3 .table-striped>tbody>tr:nth-of-type(odd),
 .view-id-movie_group_ct.view-display-id-panel_pane_3 tr.even,
