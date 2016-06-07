@@ -16,4 +16,5 @@
             if(jQuery('.view-display-id-panel_pane_5 .table tbody tr.row-custom-4').length){
                       jQuery('view-display-id-panel_pane_5 .more-event').show();
            }
+           jQuery(".view-id-movie_group_ct.view-display-id-panel_pane_1 .img a>img").unwrap();
 });
