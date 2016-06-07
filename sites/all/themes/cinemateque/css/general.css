@@ -242,6 +242,9 @@ body.node-type-cm-movie #content,
   position: absolute;
   left: 190px;
 }
+.table-responsive tbody tr{
+  background-color: #fff !important;
+}
 #colorbox{
   width: 518px !important;
   height: 435px !important;
@@ -260,15 +263,8 @@ body.node-type-cm-movie #content,
   margin: 0px;
   width: 502px !important;
 }
-##cboxClose{
+#cboxClose{
   bottom: 3% !important;
-}
-.panels-flexible-region-node_page-content_left {
-    width: 20% !important;
-}
-.panels-flexible-region-node_page-content_right {
-    margin-left: 4%;
-    width: 75% !important;
 }
 
 @media only screen and (max-width: 500px) {
