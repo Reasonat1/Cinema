@@ -46,7 +46,8 @@ function my_pane_minipanel_2_region_33_and_66_tamplate_edit_form_submit($form, &
       $name = $form['minipanel_title']['#value'];
        $lower_str = strtolower($name);
        $string = str_replace(" ","_",$lower_str);
-       $mini_machine_name = preg_replace('/[^A-Za-z0-9\-]/', '', $string);
+       $myStr = preg_replace('/[^A-Za-z0-9\-]/', '', $string);
+       $mini_machine_name = substr($myStr, 0, 30);
 
        $form_state['conf']['minipanel_title'] = $mini_machine_name;
        
