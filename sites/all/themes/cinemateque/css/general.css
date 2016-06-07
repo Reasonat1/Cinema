@@ -149,9 +149,19 @@ body.node-type-cm-movie #content,
     float: left;
 }
 .pane-event-ct-view-panel-pane-6{
-  float: left;
+  margin-right: 10%;
   margin-top: 20px;
-  width: 85%;
+  width: auto;
+  padding-left: 15%;
+}
+.content.middle .panels-flexible-region-node_page-content_left{
+  text-align: right;
+  width: 78.804%;
+}
+.content.middle .panels-flexible-region-node_page-content_right{
+  float: left;
+  text-align: right;
+  width: 20.196%;
 }
 .pane-node-field-tag{
   margin-top: 45%;
@@ -274,11 +284,18 @@ body.node-type-cm-movie #content,
 .pane-event-ct-view-panel-pane-7 .views-table tbody tr{
   border: none;
 }
+.pane-event-ct-view-panel-pane-7 .view-content{
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
 .pane-event-ct-view-panel-pane-7 .pane-content{
    background-color: #f9fafb;
     padding-left: 7%;
     padding-right: 7%;
     width: 100%;  
+}
+.pane-event-ct-view-panel-pane-7 .views-table{
+  margin-bottom: 0;
 }
 .pane-event-ct-view-panel-pane-8 .views-field-field-cm-event-body{
     margin: 2% 20%;
