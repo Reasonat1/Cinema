@@ -42,7 +42,7 @@ function my_pane_minipanel_2_region_66_and_33_tamplate_edit_form($form, &$form_s
 /**
  * The submit form stores the data in $conf.
  */
-function my_pane_minipanel_2_region_66_and_33_tamplate_submit($form, &$form_state) {
+function my_pane_minipanel_2_region_66_and_33_tamplate_edit_form_submit($form, &$form_state) {
       $name = $form['minipanel_title']['#value'];
        $lower_str = strtolower($name);
        $string = str_replace(" ","_",$lower_str);
@@ -61,7 +61,7 @@ function my_pane_minipanel_2_region_66_and_33_tamplate_submit($form, &$form_stat
         $mini->contexts = array();
         $mini->relationships = array();
         $display = new panels_display();
-        $display->layout = 'tworegion33and66';
+        $display->layout = 'tworegion66and33';
         $display->layout_settings = array();
         $display->panel_settings = array(
           'style_settings' => array(

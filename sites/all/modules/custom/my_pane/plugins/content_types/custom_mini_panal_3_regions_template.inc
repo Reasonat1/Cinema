@@ -27,7 +27,6 @@ function my_pane_minipanel_3_region_tamplate_admin_info($subtype, $conf, $contex
  */
 function my_pane_minipanel_3_region_tamplate_edit_form($form, &$form_state) {
   $conf = $form_state['conf'];
-
   $form['minipanel_title'] = array(
     '#title' => t('Mini Panel Name'),
     '#description' => t('The human readable name of the minipanel pane.'),
@@ -42,7 +41,8 @@ function my_pane_minipanel_3_region_tamplate_edit_form($form, &$form_state) {
 /**
  * The submit form stores the data in $conf.
  */
-function my_pane_minipanel_3_region_tamplate_submit($form, &$form_state) {
+function my_pane_minipanel_3_region_tamplate_edit_form_submit($form, &$form_state) {
+
       $name = $form['minipanel_title']['#value'];
        $lower_str = strtolower($name);
        $string = str_replace(" ","_",$lower_str);
@@ -61,18 +61,19 @@ function my_pane_minipanel_3_region_tamplate_submit($form, &$form_state) {
         $mini->contexts = array();
         $mini->relationships = array();
         $display = new panels_display();
-        $display->layout = 'tworegion33and66';
+        $display->layout = 'threeregion33.3';
         $display->layout_settings = array();
         $display->panel_settings = array(
           'style_settings' => array(
             'default' => NULL,
             'left' => NULL,
+            'middel' => NULL,
             'right' => NULL,
           ),
         );
         $display->cache = array();
         $display->title = '';
-        $display->uuid = '91e40e39-059f-47d8-96ad-a5b7f2ef2a09';
+        $display->uuid = 'fd8e0517-bd52-41df-9b69-258bb71de5a5';
         $display->content = array();
         $display->panels = array();
         $display->hide_title = PANELS_TITLE_FIXED;
@@ -88,7 +89,7 @@ function my_pane_minipanel_3_region_tamplate_submit($form, &$form_state) {
  * Run-time rendering of the body of the block (content type)
  * See ctools_plugin_examples for more advanced info
  */
-//function my_pane_minipanel_2_region_tamplate_render($subtype, $conf, $panel_args, $context = NULL) {
+//function my_pane_minipanel_3_region_tamplate_render($subtype, $conf, $panel_args, $context = NULL) {
 //  $block =  panels_mini_block_view($conf['minipanel_title']);
 //  print $block['content'];
 //}
