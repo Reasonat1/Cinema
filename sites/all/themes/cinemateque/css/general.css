@@ -204,31 +204,37 @@ body.node-type-cm-movie #content,
 }
 .pane-node-field-tag .pane-content{
   border-top: 5px solid #000;
+      padding-top: 3%;
 }
 .sharethis-wrapper span.st_sharethis_button{
-  height: 41px !important;
-  display: block;
   border-bottom: 2px solid #ddd;
+  display: block;
+  margin-top: 6%;
   padding-bottom: 15px;
+}
+#panels-ipe-regionid-content_right .pane-sharethis-sharethis-block .st_facebook_button{
+      display: block;
+    margin-top: 5%;
 }
 .pane-sharethis-sharethis-block .st-sharethis-counter{
     background: url("../images/whatapp-small.png") no-repeat !important;
     font-size: 0;
     height: 15px !important;
-    width: 18px !important;
+    width: 82px !important;
 }
 .pane-sharethis-sharethis-block .st-facebook-counter{
     background: url("../images/facebook-small.png") no-repeat !important;
     font-size: 0;
     height: 16px !important;
-    width: 18px !important;
+    width: 56px !important;
 }
 .pane-event-ct-view-panel-pane-4 .flag-wrapper a{
     background: rgba(0, 0, 0, 0) url("../images/like-small.png") no-repeat scroll 0 0;
     display: block;
     font-size: 0;
-    height: 11px !important;
-    width: 18px !important;
+    height: 14px !important;
+    margin-left: 47%;
+    width: 119px !important;
 }
 .field-name-field-tag a{
   color: #bbb;
@@ -237,8 +243,13 @@ body.node-type-cm-movie #content,
 }
 .field-name-field-tag .field-item.even{
   float: left;
-  margin-right: 2em;
-  width: 40%;
+  width: 50%;
+  padding-top: 3%;
+}
+.field-name-field-tag .field-item.odd{
+  float: right;
+  padding-top: 3%;
+  width: 50%;
 }
 .movie-info{
   margin-right: 5%;
