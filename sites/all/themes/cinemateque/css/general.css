@@ -138,7 +138,8 @@ body.node-type-cm-movie #content,
 .bottom-content table,
 .bottom-content tbody,
 .bottom-content th,
-.bottom-content tr{
+.bottom-content tr,
+.bottom-content td{
   border: none !important;
 }
 .pane-event-ct-view-panel-pane-5 th{
@@ -161,6 +162,12 @@ body.node-type-cm-movie #content,
 .content.middle .panels-flexible-region-node_page-content_left{
   text-align: right;
   width: 78.804%;
+}
+.bottom-content .pane-test-view-for-movie-credit-panel-pane-2 .view-content{
+  margin: auto;
+  padding-right: 14%;
+  text-align: right;
+  width: 65%;
 }
 .content.middle .panels-flexible-region-node_page-content_right{
   float: left;
