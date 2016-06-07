@@ -1123,7 +1123,9 @@ p.scrollleft {
 
 
 //new added css
-
+.search-results{
+    padding: 0;
+}
     .search-results.node-results {
     padding: 0 !important;
 }
@@ -1131,12 +1133,12 @@ p.scrollleft {
     .pro-grid{
 margin:10px auto;
 background: rgb(227, 227, 227) none repeat scroll 0% 0%;
-padding: 0.5% ;
+padding: 0.25% ;
 border: 3px double rgb(183, 183, 183);}
     
  .pro-grid:nth-child(odd){background: transparent}   
-    .pro-grid li:nth-child(1){ width:10% !important; }
-    .pro-grid li{ width:44%; display: inline-block; vertical-align: middle;  margin-bottom: 0;}
+    .pro-grid li:nth-child(1){ width:6% !important; }
+    .pro-grid li{ width:46%; display: inline-block; vertical-align: middle;  margin-bottom: 0;}
     .pro-grid li .pro-img {
     max-width: 100%;
     background: #f6f6f6;
@@ -1173,9 +1175,11 @@ font-size: 14px;
     .pro-grid{ padding: 10px }
     .pro-grid li:nth-child(1){ width:40% !important; margin: auto; }
     .pro-grid li{ width:100%; display: block; vertical-align: middle;  margin-bottom: 0;}
-
-
-
+    /*__________________________ NEW _____________________________*/
+    #edit-basic .form-item { width: 60% !important; }
+    .custom_filter_css .item-list ul li{ padding: 6px 5px !important;}
+    .custom_filter_css .item-list ul li a{letter-spacing: 0px !important;font-size: 13px;}
+  
 /*end media 420*/}
 #edit-search-block-form--2 {border:1px solid #000;}
 .popup-element-title{color: #fff !important;}
@@ -1244,7 +1248,7 @@ font-size: 14px;
     display: block !important;
     margin: 0;
     float: left !important;
-    width: 80% !important;
+    width: 80% ;
     background: #fff !important;
 }
 
@@ -1613,4 +1617,19 @@ transition: all 0.5s ease 0s;
     .webform-component {
       width: 26%;
     }
+/*end media*/}
+
+
+.page-header h1.title{
+    background: rgb(181, 158, 112) none repeat scroll 0% 0%;
+    font-size: 32px;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-weight: 500;
+    text-shadow: 0px 1px 1px rgb(0, 0, 0);
 }
+
+
+
+
