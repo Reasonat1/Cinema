@@ -645,7 +645,8 @@ li.expanded .dropdown-menu {
 }
 .panels-flexible-row.content,.panels-flexible-row.bottom.content {
   margin: 0 auto;
-  width: 1140px;
+  /*width: 1140px;*/
+  width: 85%;
 }
 /*
  * Direction RTl format
@@ -1045,81 +1046,7 @@ p.scrollleft {
     overflow: hidden;
     width: 18px;
 }
-/*
- * css for movie group CT
- */
 
-#movie-group-ct .content {
-    position: inherit;
-    overflow: inherit;
-}
-.img-like-wrapper{
-    position: relative;
-}
-.img-like-wrapper .like-btn{
-	position: absolute;
-}
-.img-like-wrapper a.flag{
-    background: url("../images/like-event.png") no-repeat !important;
-    display: inline-block;
-    width: 30px;
-    height: 26px;
-}
-#movie-group-ct .views-row {
-    min-height: 170px;
-    margin-bottom: 3%;
-}
-#movie-group-ct .views-field.views-field-nothing-1 .field-content .movie-grp-add-event {
-    position: relative;
-    padding-left: 25px;
-}
-
-#movie-group-ct .views-field.views-field-nothing-1 .field-content .movie-grp-add-event a{
-    background: url("../images/add-event.png") no-repeat;
-    width: 30px;
-    height: 28px;
-    display: inline-block;
-    font-size: 0;
-    position: absolute;
-}
-#movie-group-ct .views-field.views-field-nothing-1 .field-content .pur_btn,
-#movie-group-ct .views-field.views-field-nothing-1 .field-content .add-event-cal {
-    margin-left:2%;
-}
-#movie-group-ct .views-field.views-field-nothing-1 .field-content .title {
-    float: left;
-    padding: .8% 0 0;
-    font-size: 1.3em;
-}
-#movie-group-ct .views-field.views-field-nothing-1 .field-content .title a {
-    color: #000;
-    font-weight: 600;
-}
-#movie-group-ct .views-field.views-field-nothing-1 .field-content .list-wrapper {
-    text-align: right;
-    font-size: 1.2em;
-    font-weight: 600;
-}
-#movie-group-ct .views-field.views-field-nothing-1 .field-content .list-wrapper .bar {
-    margin: 0 2px;
-}
-#movie-group-ct .views-field.views-field-field-cm-movie-short-summary p {
-    font-size: 1.2em;
-}
-#movie-group-ct .views-field-field-cm-movie-subtitle .field-content {
-    font-size: 1.2em;
-    color: #8f8f8f;
-    font-weight: 600;
-}
-
-#movie-group-ct .views-field.views-field-nothing-1 .field-content .pur_btn {
-    background: url("../images/toptix.png") no-repeat !important;
-    border: medium none;
-    display: block;
-    font-size: 0;
-    height: 40px;
-    width: 104px;
-}
 
 
 //new added css

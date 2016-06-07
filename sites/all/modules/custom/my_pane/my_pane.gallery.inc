@@ -29,6 +29,25 @@ function my_pane_field_info() {
         'min_resolution' => '',
       ),
     ),
+   'panopoly_caruosel' => array(
+      'label' => t('caruosel'),
+      'description' => t('A wonderfully widget for caruosel field'),
+      'default_widget' => 'panopoly_caruosel_form',
+      'default_formatter' => 'panopoly_caruosel_default',
+      'settings' => array(
+        'uri_scheme' => variable_get('file_default_scheme', 'public'),
+        'default_image' => 1,
+      ),
+      'instance_settings' => array(
+        'file_extensions' => 'jpg jpeg gif png',
+        'file_directory' => 'general',
+        'max_filesize' => '',
+        'alt_field' => 0,
+        'title_field' => 0,
+        'max_resolution' => '',
+        'min_resolution' => '',
+      ),
+    ),
   );
 }
 
@@ -49,6 +68,14 @@ function my_pane_field_widget_info() {
     'panopoly_gallery_form' => array(
       'label' => t('Gallery'),
       'field types' => array('panopoly_gallery'),
+      'behaviors' => array(
+        'multiple values' => FIELD_BEHAVIOR_DEFAULT,
+        'default value' => FIELD_BEHAVIOR_DEFAULT,
+      ),
+    ),
+    'panopoly_caruosel_form' => array(
+      'label' => t('Caruosel'),
+      'field types' => array('panopoly_caruosel'),
       'behaviors' => array(
         'multiple values' => FIELD_BEHAVIOR_DEFAULT,
         'default value' => FIELD_BEHAVIOR_DEFAULT,
@@ -109,6 +136,13 @@ function my_pane_field_formatter_info() {
         'image_style' => 'panopoly_image_spotlight',
       ),
     ),
+    'panopoly_caruosel_default' => array(
+      'label' => t('Default'),
+      'field types' => array('panopoly_caruosel'),
+      'settings' => array(
+        'image_style' => 'panopoly_image_spotlight',
+      ),
+    ),   
   );
 }
 
@@ -129,7 +163,15 @@ function my_pane_field_formatter_settings_form($field, $instance, $view_mode, $f
       '#required' => TRUE,
     );
   }
-
+    if ($display['type'] == 'panopoly_caruosel_default') {
+    $element['image_style'] = array(
+      '#title' => t('Image style'),
+      '#type' => 'select',
+      '#options' => image_style_options(),
+      '#default_value' => $settings['image_style'],
+      '#required' => TRUE,
+    );
+  }
   return $element;
 }
 
@@ -148,73 +190,122 @@ function my_pane_field_formatter_settings_summary($field, $instance, $view_mode)
  * Implements hook_field_formatter_view().
  */
 function my_pane_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+    if ($instance['widget']['type'] == 'panopoly_gallery_form') {
+        // Include the Spotlight Rotation time setting
+        $duration_field = field_get_items('fieldable_panels_pane', $entity, 'field_custom_gallery_duration');
+        if ($duration_field) {
+          $duration_field = reset($duration_field);
+          $duration = $duration_field['value'];
+        }
+        if (empty($duration)) {
+          $duration = variable_get('my_pane_gallery_rotation_time', 4);
+        }
 
-  // Include the Spotlight Rotation time setting
-  $duration_field = field_get_items('fieldable_panels_pane', $entity, 'field_custom_gallery_duration');
-  if ($duration_field) {
-    $duration_field = reset($duration_field);
-    $duration = $duration_field['value'];
-  }
-  if (empty($duration)) {
-    $duration = variable_get('my_pane_gallery_rotation_time', 4);
-  }
+        $pager_style = 'full'; // Default to the Full pager if field isn't filled out (i.e., legacy data).
+        $pager_style_field = field_get_items('fieldable_panels_pane', $entity, 'field_custom_gallery_pager');
+        if ($pager_style_field) {
+          $pager_style_field = reset($pager_style_field);
+          $pager_style = $pager_style_field['value'];
+        }
 
-  $pager_style = 'full'; // Default to the Full pager if field isn't filled out (i.e., legacy data).
-  $pager_style_field = field_get_items('fieldable_panels_pane', $entity, 'field_custom_gallery_pager');
-  if ($pager_style_field) {
-    $pager_style_field = reset($pager_style_field);
-    $pager_style = $pager_style_field['value'];
-  }
+        $element = array();
+        $settings = $display['settings'];
+        $formatter = $display['type'];
 
-  $element = array();
-  $settings = $display['settings'];
-  $formatter = $display['type'];
+        // Load the images and filter out slides with missing images.
+        foreach ($items as $delta => $item_data) {
+          if (!empty($item_data['uuid']) && module_exists('uuid')) {
+            $image_entity = entity_uuid_load('file', array($item_data['uuid']));
+            $image = file_load(array_pop($image_entity)->fid);
+          }
+          else {
+            $image = (object)$item_data;
+          }
+          if (empty($image->uri) || !file_exists($image->uri)) {
+            unset($items[$delta]);
+          }
+          else {
+            $items[$delta]['image'] = $image;
+          }
+        }
 
-  // Load the images and filter out slides with missing images.
-  foreach ($items as $delta => $item_data) {
-    if (!empty($item_data['uuid']) && module_exists('uuid')) {
-      $image_entity = entity_uuid_load('file', array($item_data['uuid']));
-      $image = file_load(array_pop($image_entity)->fid);
+        // Assemble the spotlight wrapper
+        // $element[0] rather than $element because hook_field_formatter_view()
+        // expects a renderable array for the $items, as an array of child elements
+        // keyed by numeric indexes starting from 0.
+        $element[0] = array(
+          '#theme' => 'panopoly_gallery_wrapper',
+          '#items' => $items,
+          '#settings' => $settings,
+          '#formatter' => $formatter,
+          '#duration' => $duration,
+          '#pager_style' => $pager_style,
+          '#entity_type' => $entity_type,
+          '#entity' => $entity,
+          'slides' => array(),
+        );
+
+        // Assemble the spotlight items (rendered in panopoly_spotlight_wrapper())
+        foreach ($items as $delta => $item_data) {
+          $element[0]['slides'][] = array(
+            '#theme' => 'panopoly_gallery_view',
+            '#items' => $item_data,
+            '#delta' => $delta,
+            '#settings' => $settings,
+            '#entity_type' => $entity_type,
+            '#entity' => $entity,
+          );
+        }
     }
-    else {
-      $image = (object)$item_data;
-    }
-    if (empty($image->uri) || !file_exists($image->uri)) {
-      unset($items[$delta]);
-    }
-    else {
-      $items[$delta]['image'] = $image;
-    }
-  }
+   if ($instance['widget']['type'] == 'panopoly_caruosel_form') {
 
-  // Assemble the spotlight wrapper
-  // $element[0] rather than $element because hook_field_formatter_view()
-  // expects a renderable array for the $items, as an array of child elements
-  // keyed by numeric indexes starting from 0.
-  $element[0] = array(
-    '#theme' => 'panopoly_gallery_wrapper',
-    '#items' => $items,
-    '#settings' => $settings,
-    '#formatter' => $formatter,
-    '#duration' => $duration,
-    '#pager_style' => $pager_style,
-    '#entity_type' => $entity_type,
-    '#entity' => $entity,
-    'slides' => array(),
-  );
+        $element = array();
+        $settings = $display['settings'];
+        $formatter = $display['type'];
 
-  // Assemble the spotlight items (rendered in panopoly_spotlight_wrapper())
-  foreach ($items as $delta => $item_data) {
-    $element[0]['slides'][] = array(
-      '#theme' => 'panopoly_gallery_view',
-      '#items' => $item_data,
-      '#delta' => $delta,
-      '#settings' => $settings,
-      '#entity_type' => $entity_type,
-      '#entity' => $entity,
-    );
-  }
+        // Load the images and filter out slides with missing images.
+        foreach ($items as $delta => $item_data) {
+          if (!empty($item_data['uuid']) && module_exists('uuid')) {
+            $image_entity = entity_uuid_load('file', array($item_data['uuid']));
+            $image = file_load(array_pop($image_entity)->fid);
+          }
+          else {
+            $image = (object)$item_data;
+          }
+          if (empty($image->uri) || !file_exists($image->uri)) {
+            unset($items[$delta]);
+          }
+          else {
+            $items[$delta]['image'] = $image;
+          }
+        }
 
+        // Assemble the spotlight wrapper
+        // $element[0] rather than $element because hook_field_formatter_view()
+        // expects a renderable array for the $items, as an array of child elements
+        // keyed by numeric indexes starting from 0.
+        $element[0] = array(
+          '#theme' => 'panopoly_caruosel_wrapper',
+          '#items' => $items,
+          '#settings' => $settings,
+          '#formatter' => $formatter,
+          '#entity_type' => $entity_type,
+          '#entity' => $entity,
+          'slides' => array(),
+        );
+
+        // Assemble the spotlight items (rendered in panopoly_spotlight_wrapper())
+        foreach ($items as $delta => $item_data) {
+          $element[0]['slides'][] = array(
+            '#theme' => 'panopoly_caruosel_view',
+            '#items' => $item_data,
+            '#delta' => $delta,
+            '#settings' => $settings,
+            '#entity_type' => $entity_type,
+            '#entity' => $entity,
+          );
+        }
+    }
   return $element;
 }
 /**
@@ -266,6 +357,31 @@ function my_pane_field_widget_form(&$form, &$form_state, $field, $instance, $lan
       '#resizable' => FALSE,
       '#default_value' => isset($items[$delta]['description']) ? $items[$delta]['description'] : NULL,
     );
+  }
+    if ($instance['widget']['type'] == 'panopoly_caruosel_form') {
+      
+    // Make it a multipart form
+    $form['#attributes']['enctype'] = 'multipart/form-data';
+
+    $element['fid'] = array(
+      '#title' => t('Image'),
+      '#type' => 'managed_file',
+      '#upload_location' => file_field_widget_uri($field, $instance),
+      '#default_value' => isset($items[$delta]['fid']) ? $items[$delta]['fid'] : NULL,
+    );
+    
+    $element['link_title'] = array(
+      '#title' => t('Link Title'),
+      '#type' => 'textfield',
+      '#default_value' => isset($items[$delta]['link_title']) ? $items[$delta]['link_title'] : NULL,
+    );
+      
+    $element['link'] = array(
+      '#title' => t('Link Url'),
+      '#type' => 'textfield',
+      '#default_value' => isset($items[$delta]['link']) ? $items[$delta]['link'] : NULL,
+    );
+
   }
 
   return $element;
@@ -480,6 +596,49 @@ function theme_panopoly_gallery_view($variables) {
 //  }
 //  $output .= '</div>';
 //  $output .= '</div>';
+
+  return $output;
+}
+
+
+/**
+ * Theme function for the caruosel  wrapper
+ */
+function theme_panopoly_caruosel_wrapper($variables){
+
+  $output = '';
+  $items = $variables['element']['#items'];
+  $element = array();
+  $output .= '<div class="panopoly-spotlight-widget-wrapper">';
+
+  $output.= '<div class="nav"><a href="#" id="prev">Prev</a> <a href="#" id="next">Next</a></div>';
+  $output .= "<div class='caruosel-slideshow'>".render($variables['element']['slides']). "</ul>";
+  
+  $output .= '</div>';
+
+  return $output;
+}
+
+/**
+ * Theme function for gallery items
+ */
+function theme_panopoly_caruosel_view($variables) {
+  $output = '';
+  $link_title = $variables['element']['#items']['link_title'];
+  $link_url = $variables['element']['#items']['link'];
+  $alt = $variables['element']['#items']['alt'];
+  $settings = $variables['element']['#settings'];
+  $delta = $variables['element']['#delta'];
+
+  $image = $variables['element']['#items']['image'];
+  $image_markup = theme('image_style', array('style_name' => $settings['image_style'], 'path' => $image->uri, 'alt' => $alt));
+
+     $output = '<li>';
+        $output .= $image_markup;
+        $output .= "<div class='middel-content'>";
+        $output.="<span class='slider-readmore'><a href='$link_url' target='_blank'>$link_title</a></span>";
+         $output .= "</div>";
+       $output .= '</li>';
 
   return $output;
 }

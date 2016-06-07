@@ -116,5 +116,27 @@ function my_pane_field_default_field_bases() {
     'translatable' => 0,
     'type' => 'image',
   );
+  
+  // Exported field_base: 'field_custom_caruosel_slider'
+  $field_bases['field_custom_caruosel_slider'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_custom_caruosel_slider',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'my_pane',
+    'settings' => array(
+      'default_image' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'panopoly_caruosel',
+  );
   return $field_bases;
 }

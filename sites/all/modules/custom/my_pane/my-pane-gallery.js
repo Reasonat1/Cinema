@@ -8,19 +8,25 @@ $('.custom-slideshow').cycle({
     next:    '#next2', 
   });
 
-$('.field-name-field-custom-caruosel-sponser .field-items').cycle({
+$('.caruosel-slideshow').cycle({
     fx: 'scrollHorz',
     prev:    '#prev', 
     next:    '#next', 
   });
   
+$(".caruosel-slideshow").mouseover(function(){
+    $(this).cycle('pause');
+}).mouseout(function(){
+    $(this).cycle('resume');
+});
+    
   $( document ).ajaxComplete(function() {
         $('.custom-slideshow').cycle({
             fx: 'scrollHorz',
             prev:    '#prev2', 
             next:    '#next2', 
           });
-      $('.field-name-field-custom-caruosel-sponser .field-items').cycle({
+      $('.caruosel-slideshow').cycle({
             fx: 'scrollHorz',
             prev:    '#prev', 
             next:    '#next', 
