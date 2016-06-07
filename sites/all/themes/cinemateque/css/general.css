@@ -10,9 +10,11 @@
 .pane-node-field-tag h2.pane-title,
 .pane-node-field-toptix-purchase h2.pane-title,
 body.node-type-cm-movie .container #breadcrumb,
-body.node-type-cm-movie .container #page-header,
+body.node-type-cm-movie-group .container #page-header .page-header h1.title,
+body.node-type-cm-movie .container #page-header .page-header h1.title,
 body.node-type-cm-event .container #breadcrumb,
-body.node-type-cm-event .container #page-header{
+body.node-type-cm-movie-group .container #breadcrumb,
+body.node-type-cm-event .container #page-header .page-header h1.title{
   display: none;
 }
 body.node-type-cm-event,
