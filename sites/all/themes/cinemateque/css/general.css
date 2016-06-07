@@ -141,6 +141,7 @@ body.node-type-cm-movie #content,
 .bottom-content tr,
 .bottom-content td{
   border: none !important;
+   text-align: right;
 }
 .pane-event-ct-view-panel-pane-5 th{
  color: #bbb;
@@ -158,6 +159,17 @@ body.node-type-cm-movie #content,
   margin-top: 20px;
   width: auto;
   padding-left: 15%;
+}
+.views-field.views-field-field-cm-movie-credits-person-ro{
+   color: #b3b3b3;
+}
+.views-field.views-field-field-cm-movie-credits-person > a {
+    color: #020202;
+}
+.views-field.views-field-field-cm-movie-credits-person,
+.views-field.views-field-field-cm-movie-credits-person-ro{
+    font-size: 15px;
+    font-weight: normal;
 }
 .content.middle .panels-flexible-region-node_page-content_left{
   text-align: right;
@@ -309,7 +321,22 @@ body.node-type-cm-movie #content,
   margin-bottom: 0;
 }
 .pane-event-ct-view-panel-pane-8 .views-field-field-cm-event-body{
-    margin: 2% 20%;
+   font-size: 1.1rem;
+  line-height: 28px;
+  margin: 2% 20%;
+    
+}
+.views-field.views-field-field-cm-movie-country,
+.pane-event-ct-view-panel-pane-6 .views-field-title a{
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 2%;
+}
+.pane-event-ct-view-panel-pane-6 .views-field-field-cm-movie-body{
+  color: #333333;
+  font-size: 1.1rem;
+  line-height: 28px;
 }
 @media only screen and (max-width: 500px) {
 
