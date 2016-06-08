@@ -1,15 +1,10 @@
-var $esro = null;
-
-(function($) {
-
 var eSRO_private = function() {
 
     //private member which holds the session state
     var sessionState = { status: "n/a", clientDetails: null, basket: null, contextId: null, OboName: null };
     var eventHandlers = { sessionStatusChanged: [], clientDetailsChanged: [], basketChanged: [], error: [], navigationRequired: [], oboChanged: []};
     var esroWindow = null;
-    var baseURL = "http://199.203.164.53/";
-    //var baseURL = "http://demo.toptix.com/";
+    var baseURL = 'http://199.203.164.53/';
     var integrationURL = "Iframe/IframeIntegration.ashx";
     var me = this;
     //var couponMethodId = "20000000-0000-0000-0000-000000000010";
@@ -50,25 +45,25 @@ var eSRO_private = function() {
         if (baseURL == null)
             baseURL = findUrl();
 
-        var msgIfr = $("<iframe name='msgIfr' style='display:none'>");
-        $("body").append(msgIfr);
+        var msgIfr = jQuery("<iframe name='msgIfr' style='display:none'>");
+        jQuery("body").append(msgIfr);
         msgIfr.load(ifrLoaded);
         var key = rndString(5);
         //var fieldsStr = ""
-        var form = $("<form>")
+        var form = jQuery("<form>")
         .attr("target", "msgIfr")
         .attr("method", "post")
         .attr("action", baseURL + "Iframe/processPostData.ashx?jsonp=GenericCallback&key=" + encodeURIComponent(key) + "&url=" + encodeURIComponent(url));
         for (d in data) {
             form.append(
-                $("<input type='hidden' >").attr("name", d).attr("value", data[d])
+                jQuery("<input type='hidden' >").attr("name", d).attr("value", data[d])
             );
         }
 
-        $("body").append(form);
+        jQuery("body").append(form);
         form.submit();
 
-        //$.getScript("http://localhost/esro/net/site/Iframe/getPostResponse.ashx?key=" + encodeURIComponent(key), onSuccess);
+        //jQuery.getScript("http://localhost/esro/net/site/Iframe/getPostResponse.ashx?key=" + encodeURIComponent(key), onSuccess);
 
         function ifrLoaded(e) {
             if (baseURL == null)
@@ -77,7 +72,7 @@ var eSRO_private = function() {
             form.remove();
             msgIfr.remove();
 
-            $.getScript(baseURL + "Iframe/getPostResponse.ashx?key=" + encodeURIComponent(key), onSuccess);
+            jQuery.getScript(baseURL + "Iframe/getPostResponse.ashx?key=" + encodeURIComponent(key), onSuccess);
         }
 
         function onSuccess() {
@@ -91,7 +86,7 @@ var eSRO_private = function() {
     //-------------------------------------------------------------------------------------------------------------
     this.createFrame = function(url, options, parent) {
         // creates an iFrame with the proper URL and proper options as attributes
-        var iframeElement = $("<iframe />");
+        var iframeElement = jQuery("<iframe />");
         iframeElement.attr(options).attr("src", url);
         if (options.backgroundTransparet == "true") {
             iframeElement.attr("allowTransparency", "true").attr("bgcolor", "Transparent");
@@ -108,9 +103,9 @@ var eSRO_private = function() {
     //-------------------------------------------------------------------------------------------------------------
     function processEsroMl() {
         // looks for <esro: /> elements and process them according to their type
-        var siteIframe = $("esro\\:frame");
+        var siteIframe = jQuery("esro\\:frame");
         if (siteIframe.length == 0)
-            siteIframe = $("frame").filter(function() { return this.scopeName == "esro" }); //support for IE pre-8
+            siteIframe = jQuery("frame").filter(function() { return this.scopeName == "esro" }); //support for IE pre-8
         if (siteIframe.length == 0)
             return;
         if (siteIframe.length > 1) {
@@ -133,7 +128,7 @@ var eSRO_private = function() {
 
     //-------------------------------------------------------------------------------------------------------------
     function findUrl() {
-        var scriptElement = $('script').filter(function(index) {
+        var scriptElement = jQuery('script').filter(function(index) {
             return this.src.match(/eSrojsapi.js$/i) != null;
         });
         if (scriptElement.length == 0) {
@@ -147,7 +142,7 @@ var eSRO_private = function() {
     function generateJson2Script() {
         if (baseURL == null)
             baseURL = findUrl();
-        $.getScript(baseURL + 'js/json2.js');
+        jQuery.getScript(baseURL + 'js/json2.js');
     }
 
     //-------------------------------------------------------------------------------------------------------------
@@ -155,7 +150,7 @@ var eSRO_private = function() {
         if (baseURL == null)
             baseURL = findUrl();
 
-        $.getScript(baseURL + integrationURL); //?d=' + Date().valueOf().toString());
+        jQuery.getScript(baseURL + integrationURL + "?jsonp=a123"); //?d=' + Date().valueOf().toString());
     }
 
     //-------------------------------------------------------------------------------------------------------------
@@ -163,7 +158,7 @@ var eSRO_private = function() {
         if (baseURL == null)
             baseURL = findUrl();
 
-        $.ajax(
+        jQuery.ajax(
                     {
                         url: baseURL + integrationURL + '?action=discardTransaction' + '&CustomCallback=' + callback + '&jsonp=GenericCallback',
                         async: false,
@@ -179,7 +174,7 @@ var eSRO_private = function() {
         if (baseURL == null)
             baseURL = findUrl();
 
-        $.ajax(
+        jQuery.ajax(
                     {
                         url: baseURL + integrationURL + '?action=closesession' + '&CustomCallback=' + callback + '&jsonp=GenericCallback',
                         async: false,
@@ -196,7 +191,7 @@ var eSRO_private = function() {
         if (baseURL == null)
             baseURL = findUrl();
 
-        $.ajax(
+        jQuery.ajax(
                     {
                         url: baseURL + integrationURL + '?action=getcurrenttransaction' + '&CustomCallback=' + callback + '&jsonp=GenericCallback',
                         async: false,
@@ -213,7 +208,7 @@ var eSRO_private = function() {
         if (baseURL == null)
             baseURL = findUrl();
 
-        $.ajax(
+        jQuery.ajax(
                     {
                         url: baseURL + integrationURL + '?action=getprevioustransaction' + '&CustomCallback=' + callback + '&jsonp=GenericCallback',
                         async: false,
@@ -229,7 +224,7 @@ var eSRO_private = function() {
         if (baseURL == null)
             baseURL = findUrl();
 
-        $.ajax(
+        jQuery.ajax(
                     {
                         url: baseURL + integrationURL + '?action=FreeItems&items=' + itemsList + '&doreturntransaction=' + doReturnTransaction.toString() + '&CustomCallback=' + callback + '&jsonp=GenericCallback',
                         async: false,
@@ -244,7 +239,7 @@ var eSRO_private = function() {
         if (baseURL == null)
             baseURL = findUrl();
 
-        $.ajax(
+        jQuery.ajax(
                     {
                         url: baseURL + integrationURL + '?action=freearea&eventId=' + eventId + '&areaId=' + areaId + '&doreturntransaction=' + doReturnTransaction.toString() + '&CustomCallback=' + callback + '&jsonp=GenericCallback',
                         async: false,
@@ -258,7 +253,7 @@ var eSRO_private = function() {
     this.autoCatchTickets = function(eventGuid, areaGuid, priceTypeId, priceLevelId, reservationType, seatCount, callback) {
         if (baseURL == null)
             baseURL = findUrl();
-        $.ajax(
+        jQuery.ajax(
                     {
                         url: baseURL + integrationURL + '?action=autoCatchTickets&eventGuid=' + eventGuid + "&areaGuid=" + areaGuid + "&priceTypeId="
                             + priceTypeId + "&priceLevelId=" + priceLevelId + "&reservationType=" + reservationType + "&seatCount="
@@ -275,7 +270,7 @@ var eSRO_private = function() {
     this.addCoupon = function(couponDefinitionId, couponId, couponMethodId, callback) {
         if (baseURL == null)
             baseURL = findUrl();
-        $.ajax(
+        jQuery.ajax(
         {
             url: baseURL + integrationURL + '?action=handlecoupon&CouponId=' + couponId
                                             + "&CouponNameId=" + couponDefinitionId
@@ -293,7 +288,7 @@ var eSRO_private = function() {
     this.addVoucher = function(voucherDefinitionId, voucherId, voucherMethodId, callback) {
         if (baseURL == null)
             baseURL = findUrl();
-        $.ajax(
+        jQuery.ajax(
         {
             url: baseURL + integrationURL + '?action=handlegiftvoucher&VoucherNumber=' + voucherId
                                             + "&VoucherDefinitionId=" + voucherDefinitionId
@@ -311,7 +306,7 @@ var eSRO_private = function() {
     this.addVoucherItem = function(voucherDefinitionId, quantity, price, callback) {
         if (baseURL == null)
             baseURL = findUrl();
-        $.ajax(
+        jQuery.ajax(
         {
             url: baseURL + integrationURL + '?action=addiftvoucher'
                                             + "&definitionid=" + voucherDefinitionId
@@ -330,7 +325,7 @@ var eSRO_private = function() {
     this.addMembership = function(membershipdefinitionid, pricetypeid, quantity, callback) {
         if (baseURL == null)
             baseURL = findUrl();
-        $.ajax(
+        jQuery.ajax(
         {
             url: baseURL + integrationURL + '?action=addmembership&membershipdefinitionid=' + membershipdefinitionid
                                             + "&pricetypeid=" + pricetypeid
@@ -349,7 +344,7 @@ var eSRO_private = function() {
         if (baseURL == null)
             baseURL = findUrl();
 
-        $.ajax(
+        jQuery.ajax(
                     {
                         url: baseURL + integrationURL + '?action=Login&username=' + encodeURIComponent(userName) + "&password=" + encodeURIComponent(password) + '&CustomCallback='
                         + callback + '&jsonp=GenericCallback',
@@ -366,7 +361,7 @@ var eSRO_private = function() {
         if (baseURL == null)
             baseURL = findUrl();
 
-        $.ajax(
+        jQuery.ajax(
                     {
                         url: baseURL + integrationURL + '?action=loginbyid&ClientID=' + guid + '&CustomCallback='
                         + callback + '&jsonp=GenericCallback',
@@ -384,7 +379,7 @@ var eSRO_private = function() {
 
         var result;
 
-        $.ajax(
+        jQuery.ajax(
                     {
                         url: baseURL + integrationURL + '?action=Logout&CustomCallback=' + callback + '&jsonp=GenericCallback',
                         async: false,
@@ -402,7 +397,7 @@ var eSRO_private = function() {
             baseURL = findUrl();
         var result;
 
-        $.ajax(
+        jQuery.ajax(
                     {
                         url: baseURL + integrationURL + '?action=getcustomerdetails' + '&CustomCallback=' + callback + '&jsonp=GenericCallback',
                         async: false,
@@ -434,7 +429,7 @@ var eSRO_private = function() {
             baseURL = findUrl();
         var updateResult;
 
-        $.ajax(
+        jQuery.ajax(
                     {
                         url: baseURL + integrationURL + '?action=getemptycustomer' + '&CustomCallback=' + callback + '&jsonp=GenericCallback',
                         async: false,
@@ -451,7 +446,7 @@ var eSRO_private = function() {
             baseURL = findUrl();
         var updateResult;
 
-        $.ajax(
+        jQuery.ajax(
                     {
                         url: baseURL + integrationURL + '?action=getpreferences' + '&CustomCallback=' + callback + '&jsonp=GenericCallback',
                         async: false,
@@ -470,7 +465,7 @@ var eSRO_private = function() {
             baseURL = findUrl();
         var updateResult;
 
-        $.ajax(
+        jQuery.ajax(
                     {
                         url: baseURL + integrationURL + '?action=getdataprotection' + '&CustomCallback=' + callback + '&jsonp=GenericCallback',
                         async: false,
@@ -488,7 +483,7 @@ var eSRO_private = function() {
             baseURL = findUrl();
         var updateResult;
 
-        $.ajax(
+        jQuery.ajax(
                     {
                         url: baseURL + integrationURL + '?action=geteventdescription&eventId=' + eventId + '&CustomCallback=' + callback + '&jsonp=GenericCallback',
                         async: false,
@@ -519,7 +514,7 @@ var eSRO_private = function() {
             baseURL = findUrl();
         var updateResult;
 
-        $.ajax(
+        jQuery.ajax(
                     {
                         url: baseURL + integrationURL + '?action=obologin&oboUsername=' + username + '&oboPassword=' + password + '&CustomCallback=' + callback + '&jsonp=GenericCallback',
                         async: false,
@@ -536,7 +531,7 @@ var eSRO_private = function() {
             baseURL = findUrl();
         var updateResult;
 
-        $.ajax(
+        jQuery.ajax(
                     {
                         url: baseURL + integrationURL + '?action=obologout&CustomCallback=' + callback + '&jsonp=GenericCallback',
                         async: false,
@@ -551,7 +546,7 @@ var eSRO_private = function() {
     this.getCustomerHistory = function(callback) {
         if (baseURL == null)
             baseURL = findUrl();
-        $.ajax(
+        jQuery.ajax(
                     {
                         url: baseURL + integrationURL + '?action=loadclienthistory&CustomCallback=' + callback + '&jsonp=GenericCallback',
                         async: false,
@@ -566,7 +561,7 @@ var eSRO_private = function() {
     this.reprintTransaction = function(tranId, callback) {
         if (baseURL == null)
             baseURL = findUrl();
-        $.ajax(
+        jQuery.ajax(
                 {
                     url: baseURL + integrationURL + '?action=reprint&tranToReturnId=' + tranId + '&CustomCallback=' + callback + '&jsonp=GenericCallback',
                     async: false,
@@ -581,7 +576,7 @@ var eSRO_private = function() {
     this.setCulture = function(culture, callback) {
         if (baseURL == null)
             baseURL = findUrl();
-        $.ajax(
+        jQuery.ajax(
                 {
                     url: baseURL + integrationURL + '?action=setculture&culture=' + culture + '&CustomCallback=' + callback + '&jsonp=GenericCallback',
                     async: false,
@@ -597,7 +592,7 @@ var eSRO_private = function() {
             baseURL = findUrl();
         var updateResult;
 
-        $.ajax(
+        jQuery.ajax(
             {
                 url: baseURL + integrationURL + '?action=getfromcache&cachetypename=' + cachetypename + '&CustomCallback=' + callback + '&jsonp=GenericCallback',
                 async: false,
@@ -611,7 +606,7 @@ var eSRO_private = function() {
     this.getJsonFeed = function(feedName, callback) {
         if (baseURL == null)
             baseURL = findUrl();
-        $.ajax(
+        jQuery.ajax(
             {
                 type: "GET",
                 url: baseURL + "feed/" + feedName + "?json&callback=" + callback,
@@ -624,7 +619,7 @@ var eSRO_private = function() {
                 
             }
         );
-        //$.getJSON(baseURL + "feed/" + feedName + "?json", callback);
+        //jQuery.getJSON(baseURL + "feed/" + feedName + "?json", callback);
     }
     //-------------------------------------------------------------------------------------------------------------
 
@@ -634,7 +629,7 @@ var eSRO_private = function() {
             baseURL = findUrl();
         var updateResult;
 
-        $.ajax(
+        jQuery.ajax(
             {
                 url: baseURL + integrationURL + '?action=getdeliverymethods&CustomCallback=' + callback + '&jsonp=GenericCallback',
                 async: false,
@@ -642,33 +637,67 @@ var eSRO_private = function() {
                 jsonp: false,
                 jsonpCallback: "GenericCallback"
             });
-        }
-        //-------------------------------------------------------------------------------------------------------------
-
-        this.addDeliveryToBasket = function(deliveryMethod, hasAddress, useBillingAddress, DeliveryAddress, DeliveryAddress2, DeliveryAddress3, DeliveryCity, DeliveryZipCode, DeliveryState, DeliveryCountry, callback) {
-        if (baseURL == null)
+    }
+    //-------------------------------------------------------------------------------------------------------------
+    this.joincontext = function(contextid, callback) 
+    {
+         if (baseURL == null)
             baseURL = findUrl();
         var updateResult;
 
-        $.ajax(
-        {
-            url: baseURL + integrationURL + '?action=adddelivery&DeliveryMethod=' 
-            + deliveryMethod + '&hasAddress=' 
-            + hasAddress + '&UseBillingAddress=' 
-            + useBillingAddress 
-             + '&DeliveryAddress=' + DeliveryAddress 
-             + '&DeliveryAddress2=' + DeliveryAddress2 
-              + '&DeliveryAddress3=' + DeliveryAddress3 
-               + '&DeliveryCity=' + DeliveryCity 
-                + '&DeliveryZipCode=' + DeliveryZipCode 
-                 + '&DeliveryState=' + DeliveryState 
-                 + '&DeliveryCountry=' + DeliveryCountry
-                 + '&CustomCallback=' + callback + '&jsonp=GenericCallback',
-            async: false,
-            dataType: "jsonp",
-            jsonp: false,
-            jsonpCallback: "GenericCallback"
-        });
+        jQuery.ajax(
+            {
+                url: baseURL + integrationURL + '?action=joincontext&contextid=' + contextid + '&CustomCallback=' + callback + '&jsonp=GenericCallback',
+                async: false,
+                dataType: "jsonp",
+                jsonp: false,
+                jsonpCallback: "GenericCallback"
+            });
+    }
+    //-------------------------------------------------------------------------------------------------------------
+    
+    this.getservertransaction = function(transactionid, callback) 
+    {
+         if (baseURL == null)
+            baseURL = findUrl();
+        var updateResult;
+
+        jQuery.ajax(
+            {
+                url: baseURL + integrationURL + '?action=getservertransaction&transactionid=' + transactionid + '&CustomCallback=' + callback + '&jsonp=GenericCallback',
+                async: false,
+                dataType: "jsonp",
+                jsonp: false,
+                jsonpCallback: "GenericCallback"
+            });
+    }
+    //-------------------------------------------------------------------------------------------------------------
+    
+    this.addDeliveryToBasket = function(deliveryMethod, hasAddress, useBillingAddress, DeliveryAddress, DeliveryAddress2, DeliveryAddress3, DeliveryCity, DeliveryZipCode, DeliveryState, DeliveryCountry, callback) 
+    {
+    if (baseURL == null)
+        baseURL = findUrl();
+    var updateResult;
+
+    jQuery.ajax(
+    {
+        url: baseURL + integrationURL + '?action=adddelivery&DeliveryMethod=' 
+        + deliveryMethod + '&hasAddress=' 
+        + hasAddress + '&UseBillingAddress=' 
+        + useBillingAddress 
+         + '&DeliveryAddress=' + DeliveryAddress 
+         + '&DeliveryAddress2=' + DeliveryAddress2 
+          + '&DeliveryAddress3=' + DeliveryAddress3 
+           + '&DeliveryCity=' + DeliveryCity 
+            + '&DeliveryZipCode=' + DeliveryZipCode 
+             + '&DeliveryState=' + DeliveryState 
+             + '&DeliveryCountry=' + DeliveryCountry
+             + '&CustomCallback=' + callback + '&jsonp=GenericCallback',
+        async: false,
+        dataType: "jsonp",
+        jsonp: false,
+        jsonpCallback: "GenericCallback"
+    });
     }
     //addDeliveryToBasket: function(deliveryMethod, hasAddress, callback) adddelivery
     //-------------------------------------------------------------------------------------------------------------
@@ -677,7 +706,7 @@ var eSRO_private = function() {
         generateJson2Script();
         if (sessionState.status == 'n/a' && esroWindow == null)
             return;
-        //generateStateEntity();
+        generateStateEntity();
     };
 
     //-------------------------------------------------------------------------------------------------------------
@@ -771,7 +800,7 @@ var eSRO_private = function() {
 //----------------------------               Begin $esro class                      ---------------------------
 
 //-------------------------------------------------------------------------------------------------------------
- $esro = {
+var $esro = {
     version: "4.1", //the version of the API interface
     _private: new eSRO_private(),
 
@@ -931,6 +960,19 @@ var eSRO_private = function() {
     {
         $esro._private.getdeliverymethods(callback);
     },
+    
+    //-
+    //-------------------------------------------------------------------------------------------------------------
+    getservertransaction: function(transactionid, callback) 
+    {
+        $esro._private.getservertransaction(transactionid, callback);
+    },
+    
+    //-------------------------------------------------------------------------------------------------------------
+    joincontext: function(contexid, callback) 
+    {
+        $esro._private.joincontext(contexid, callback);
+    },
      //-------------------------------------------------------------------------------------------------------------
     addDeliveryToBasket: function(deliveryMethod, hasAddress, useBillingAddress, DeliveryAddress, DeliveryAddress2, DeliveryAddress3, DeliveryCity, DeliveryZipCode, DeliveryState,DeliveryCountry , callback) 
     {
@@ -954,14 +996,12 @@ var eSRO_private = function() {
 
 //-------------------------------------------------------------------------------------------------------------
 /// verifying JQuery library is available
-if (typeof ($) == 'undefined') {
+if (typeof (jQuery) == 'undefined') {
 }
 
-$(document).ready(function() {
+jQuery(document).ready(function() {
     $esro._private.initialize();
 });
-
-})(jQuery);
 //Below is the rough format of the sessionState as it is returned from the server
 //{
 //	clientDetails:{

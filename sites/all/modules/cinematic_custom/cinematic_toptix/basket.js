@@ -8,6 +8,10 @@ var toptix_basket_url = null;
     attach: function(context, settings) {
       var self = this;
       $('.toptix-basket').click(function(event) {
+        if ($.cookie('toptix_basket') == 0) {
+          window.alert('empty basket');
+          return;
+        }
         toptix_basket_url = this.dataset.url;
         $esro.getCustomerDetails('toptix_callback_basket_get_customer');
       });
@@ -20,11 +24,12 @@ var toptix_basket_url = null;
 $esro.attachEventHandler('basketChanged', function(basket) {
   console.log('my basket handler');
   console.log(basket);
-  jQuery.cookie('toptix_basket', basket.totalValue);
+  jQuery.cookie('toptix_basket', basket.Tickets.length);
 });
 
 function toptix_navigationHandler(pageName) {
   console.log('esro navigation:' + pageName);
+  return;
   if (pageName == 'DEFAULT') {
     var target_page = Drupal.settings.basePath + 'user';
     var target_address = 'http://' + window.location.hostname + target_page;
