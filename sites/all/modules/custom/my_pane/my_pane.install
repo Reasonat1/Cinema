@@ -107,6 +107,12 @@ function my_pane_field_schema($field) {
       'not null' => FALSE,
     );
 
+    $schema['columns']['link_title'] = array(
+      'type' => 'varchar',
+      'length' => '255',
+      'not null' => FALSE,
+    );
+        
     $schema['columns']['alt'] = array(
       'type' => 'varchar',
       'length' => '255',
@@ -390,5 +396,27 @@ function my_pane_update_7016() {
     foreach ($roles as $rid => $role) {
       user_role_grant_permissions($rid, array('use media wysiwyg'));
     }
+  }
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Add an "Link Title" field for gallery items.
+ */
+function my_pane_update_8000(){
+  $spec = array(
+    'type' => 'varchar',
+    'length' => 255,
+    'not null' => FALSE,
+  );
+  $data_table_name = 'field_data_field_custom_gallery_items';
+  $revision_table_name  = 'field_revision_field_custom_gallery_items';
+  $field_name  = 'field_custom_gallery_items_link_title';
+  if (!db_field_exists($data_table_name, $field_name)) {
+    db_add_field($data_table_name, $field_name, $spec);
+  }
+  if (!db_field_exists($revision_table_name, $field_name)) {
+    db_add_field($revision_table_name, $field_name, $spec);
   }
 }

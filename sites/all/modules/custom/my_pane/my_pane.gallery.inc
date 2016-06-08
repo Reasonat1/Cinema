@@ -330,6 +330,12 @@ function my_pane_field_widget_form(&$form, &$form_state, $field, $instance, $lan
       '#default_value' => isset($items[$delta]['subtitle']) ? $items[$delta]['subtitle'] : NULL,
     );
     
+    $element['link_title'] = array(
+      '#title' => t('Link Title'),
+      '#type' => 'textfield',
+      '#default_value' => isset($items[$delta]['link_title']) ? $items[$delta]['link_title'] : NULL,
+    );
+    
     $element['link'] = array(
       '#title' => t('Link'),
       '#type' => 'textfield',
@@ -496,46 +502,8 @@ function theme_panopoly_gallery_wrapper($variables){
   $pager_style = $variables['element']['#pager_style'];
   $element = array();
   $output .= '<div class="panopoly-spotlight-widget-wrapper">';
-
-  // Assemble the tabs header
-//  $output .= '<div class="panopoly-spotlight-buttons-wrapper" data-rotation-time="' . $duration * 1000 . '">';
-//  if (count($items) > 1) {
-//    if ($pager_style == 'full') {
-//      $output .= '<ul>';
-//    }
-//    else {
-//      // We're not displaying a full pager but we still want to render the full pager, and just hide it
-//      // in an accessible way, instead of not rendering it at all.
-//      $output .= '<ul class="element-invisible">';
-//    }
-//    foreach ($items as $delta => $item_data) {
-//      $output .= '<li>' . '<a href="#panopoly-spotlight-' . $delta . '">' . ($delta+1) . '</a></li>';
-//    }
-//    $output .= '</ul>';
-//
-//    if (variable_get('my_pane_gallery_pause_play_buttons', 1) || $pager_style == 'mini') {
-//      $output .= '<div class="panopoly-spotlight-function-buttons">';
-//
-//      // Have to split up previous and next so that we can squeeze pause between them if needed.
-//      if ($pager_style == 'mini') {
-//        $output .= '<a href="#panopoly-spotlight" class="panopoly-spotlight-previous">' . t('Prev') . '</a>';
-//      }
-//      if (variable_get('my_pane_gallery_pause_play_buttons', 1)) {
-//        $output .= '<a href="#" class="panopoly-spotlight-pause-play">' . t('Pause') . '</a>';
-//      }
-//      if ($pager_style == 'mini') {
-//        $output .= '<a href="#panopoly-spotlight" class="panopoly-spotlight-next">' . t('Next') . '</a>';
-//      }
-//
-//      $output .= '</div>';
-//    }
-//  }
-//
-//  $output .= '</div>';  // class="panopoly-spotlight-buttons-wrapper"
-
   $output.= '<div class="nav"><a href="#" id="prev2">Prev</a> <a href="#" id="next2">Next</a></div>';
   $output .= "<ul class='custom-slideshow'>".render($variables['element']['slides']). "</ul>";
-  //$output .= render($variables['element']['slides']);
   
   $output .= '</div>';  // class="panopoly-spotlight-widget-wrapper"
 
@@ -551,20 +519,23 @@ function theme_panopoly_gallery_view($variables) {
   $subtitle = $variables['element']['#items']['subtitle'];
   $description = $variables['element']['#items']['description'];
   $link = $variables['element']['#items']['link'];
+  $link_title = $variables['element']['#items']['link_title'];
   $alt = $variables['element']['#items']['alt'];
   $settings = $variables['element']['#settings'];
   $delta = $variables['element']['#delta'];
 
   $image = $variables['element']['#items']['image'];
   $image_markup = theme('image_style', array('style_name' => $settings['image_style'], 'path' => $image->uri, 'alt' => $alt));
-//    echo "<pre>"; print_r($image_markup); die(" here");
+    if($link_title == ''){
+        $link_title = 'Read More';
+    }
      $output = '<li>';
      if ($link) {
         $output .= l($image_markup, $link, array('html' => TRUE));
         $output .= "<div class='pinch'>";
         $output.="<span class='slider-title'>$title</span>";
         $output.="<span class='slider-subtitle'>$subtitle</span>";
-        $output.="<span class='slider-readmore'><a href='$link' target='_blank'>Read More</a></span>";
+        $output.="<span class='slider-readmore'><a href='$link' target='_blank'>$link_title</a></span>";
          $output .= "</div>";
       }
       else {
@@ -576,26 +547,6 @@ function theme_panopoly_gallery_view($variables) {
          $output .= "</div>";
       }
        $output .= '</li>';
-//  $output.= '<div id="' . 'panopoly-spotlight-' . $delta . '" class="' . 'panopoly-spotlight demo' . '">';
-//
-//  if ($link) {
-//    $output .= l($image_markup, $link, array('html' => TRUE));
-//  }
-//  else {
-//    $output .= $image_markup;
-//  }
-//
-//  $output .= '<div class="panopoly-spotlight-wrapper">';
-//  if (!empty($title)) {
-//    $output .= '<h3 class="panopoly-spotlight-label">' . (empty($link) ? check_plain($title) : l($title, $link)) . '</h3>';
-//  }
-//  if (!empty($description)) {
-//    $output .= '<div class="panopoly-spotlight-info">';
-//    $output .= '<p>' . $description . '</p>';
-//    $output .= '</div>';
-//  }
-//  $output .= '</div>';
-//  $output .= '</div>';
 
   return $output;
 }
