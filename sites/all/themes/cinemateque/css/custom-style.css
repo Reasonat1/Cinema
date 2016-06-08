@@ -1557,6 +1557,89 @@ transition: all 0.5s ease 0s;
     text-shadow: 0px 1px 1px rgb(0, 0, 0);
 }
 
+/*********************** NEW CSS FOR Site Search*****************************/
+
+.views-row {
+    margin: 10px auto;
+    padding: 0.25%;
+    border: 3px double rgb(183, 183, 183);transition:ease 0.5s all;
+    -webkit-transition:ease 0.5s all;
+}
+
+.views-row:nth-child(odd){ background:#fff !important}
+.views-row:nth-child(even){ background:#f5f5f5 !important}
 
 
+.views-row
+.views-field {
+    width: 40%; 
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0 !important;
+}
+
+.views-row
+.views-field > * img{ width:100%!important;  max-width:100%!important}
+
+.views-row
+.views-field:nth-child(1) {
+    width: 15% !important;
+}
+
+.views-row
+.views-field .field-content {
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.views-row
+.views-field .field-content a{ color:#000 !important}
+
+.views-row:hover {
+    background-color: #B59D70 !important;
+    color: #fff !important;
+}
+
+.views-row:hover
+.views-field .field-content a{ color:#fff !important}
+
+/******** Side bar*********/
+
+#panels-ipe-regionid-sidebar div .panels-ipe-portlet-wrapper {
+    background: #fff;
+    padding: 0px;
+    margin: 5px 0 !important;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+
+#panels-ipe-regionid-sidebar div .panels-ipe-portlet-wrapper
+.pane-title {
+    font-size: 1.25rem;
+    margin: 0;
+    color: #FFF;
+    font-weight: 400 !important;
+    background: #b59e70;
+    padding: 8px;
+}
+
+
+
+
+#panels-ipe-regionid-sidebar div .panels-ipe-portlet-wrapper
+.pane-content {
+    padding: 10px;
+}
+
+.views-row > *
+.panopoly-image-quarter::after {
+    content: 'No Image';
+    border: 1px solid #b59e70;
+    padding: 18px 10px;
+    background: #fff;
+    color: #000 !important;
+    font-size: 10px;
+}
 
