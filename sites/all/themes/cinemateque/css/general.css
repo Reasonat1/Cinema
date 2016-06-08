@@ -359,14 +359,21 @@ body.node-type-cm-movie #content,
 .pane-views-panes.pane-review-panel-pane-1{
   background-color: #F9F4EE;
 }
-.pane-views-panes.pane-review-panel-pane-1 .pane-content{
-  margin: 0 auto;
-  width: 85%;
-}
-.views-field-review .field-content p{
-    color: #000000;
+.pane-views-panes.pane-review-panel-pane-1 .pane-content .view-content{
+    margin: auto;
+    padding-right: 14%;
     text-align: right;
-    font-size: 1.15rem;
+    width: 65%;
+}
+.pane-views-panes.pane-review-panel-pane-1 .pane-content .views-field-review .field-content p{
+    color: #E41145 !important;
+    text-align: right !important;
+    font-size: 1.15rem !important;
+}
+.pane-views-panes.pane-review-panel-pane-1 .pane-content .views-field-name{
+  text-align: right !important;
+  font-size: 1rem !important;
+   color: #E41145 !important;
 }
 @media only screen and (max-width: 500px) {
 
