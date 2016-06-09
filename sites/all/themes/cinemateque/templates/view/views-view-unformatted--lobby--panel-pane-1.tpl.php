@@ -24,8 +24,8 @@ $results=$view->result;
 foreach ($results as $val) {
   $nid = $val->node_taxonomy_index_nid;
   $node = node_load($nid);
-  drupal_set_message('<pre>'.print_r($nid, 1).'</pre>');
-   drupal_set_message('<pre>'.print_r($node, 1).'</pre>');
+  //drupal_set_message('<pre>'.print_r($nid, 1).'</pre>');
+  // drupal_set_message('<pre>'.print_r($node, 1).'</pre>');
 }
 //$current_nid = $results[0]->nid;
 //    print '<div class="table-responsive">';
