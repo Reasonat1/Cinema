@@ -24,12 +24,11 @@ $results=$view->result;
 foreach ($results as $val) {
   $nid = $val->node_taxonomy_index_nid;
   $node = node_load($nid);
-  drupal_set_message('<pre>'.print_r($node, 1).'</pre>');
+  drupal_set_message('<pre>'.print_r($nid, 1).'</pre>');
+   drupal_set_message('<pre>'.print_r($node, 1).'</pre>');
+  if(!empty($node->field_cm_movie_duration))
 }
 //$current_nid = $results[0]->nid;
-//    $tagetId = $results[0]->field_field_cm_event_lineup[0]['raw']['target_id'];
-//    $query = "SELECT entity_id FROM {field_data_field_cm_event_lineup} WHERE field_cm_event_lineup_target_id = " . $tagetId . "";
-//	$rs = db_query($query);
 //    print '<div class="table-responsive">';
 //    print '<table class="table">';
 //    print '<thead>';
