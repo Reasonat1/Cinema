@@ -21,11 +21,8 @@
 ?>
 <?php
 $results=$view->result;
-drupal_set_message('<pre>'.print_r($results, 1).'</pre>');
-$nid = $results->nid;
-$i=0;
 foreach ($results as $val) {
-  $nid = $val->nid;
+  $nid = $val->node_taxonomy_index_nid;
   $node = node_load($nid);
   drupal_set_message('<pre>'.print_r($nid, 1).'</pre>');
 }
