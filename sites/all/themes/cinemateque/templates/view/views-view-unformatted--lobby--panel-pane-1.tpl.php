@@ -26,7 +26,6 @@ foreach ($results as $val) {
   $node = node_load($nid);
   drupal_set_message('<pre>'.print_r($nid, 1).'</pre>');
    drupal_set_message('<pre>'.print_r($node, 1).'</pre>');
-  if(!empty($node->field_cm_movie_duration))
 }
 //$current_nid = $results[0]->nid;
 //    print '<div class="table-responsive">';
