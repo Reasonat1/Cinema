@@ -21,7 +21,7 @@
 ?>
 <?php
 $results=$view->result;
-drupal_set_message('<pre>'.print_r($results->node_taxonomy_index_nid, 1).'</pre>');
+drupal_set_message('<pre>'.print_r($results, 1).'</pre>');
 $nid = $results->nid;
 $i=0;
 foreach ($results as $val) {
