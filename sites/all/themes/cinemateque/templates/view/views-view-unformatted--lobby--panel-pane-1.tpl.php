@@ -26,7 +26,13 @@
     $node = node_load($nid);
      drupal_set_message('<pre>'.print_r($node, 1).'</pre>');
     $path_node = drupal_get_path_alias('node/'.$node->nid);
-    $title = l($node->title, $path_node); 
+    $title = l($node->title, $path_node);
+    if(!empty($node->field_mc_teaser_toptxt_white['und'])){
+     $white_text = $node->field_mc_teaser_toptxt_white['und'][0]['value'];  
+    }
+    if(!empty($node->field_mc_teaser_toptxt_blk['und'])){
+     $black_text = $node->field_mc_teaser_toptxt_blk['und'][0]['value'];  
+    }
     if(!empty($node->field_cm_movie_duration)){
       $length_interval = $node->field_cm_movie_duration['und'][0]['interval'];
       $length_period = $node->field_cm_movie_duration['und'][0]['period'];
@@ -134,7 +140,13 @@
             print $output;
         print '</div>';
         print'<div class="lobby-term-right">';
-          print $pr_image;
+          print '<div class="image-lobby">';
+            print $pr_image;
+          print '</div>';
+          print '<div class="top-text-blk-wht">';
+            print '<span class="white">'.$white_text.'</span>';
+            print '<span class="black">'.$black_text.'</span>';
+          print '</div>';
         print '</div>';
     print '</div>';
   }
