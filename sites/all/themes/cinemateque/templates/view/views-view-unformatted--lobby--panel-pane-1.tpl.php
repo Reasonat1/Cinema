@@ -135,7 +135,7 @@
               print $length . $year. ' '.$country;
             print '</div>';
             print '<div class="lobby-summary">';
-              print $sort_summary;
+              print strip_tags($sort_summary);
             print '</div>';
             print $output;
         print '</div>';
