@@ -156,9 +156,13 @@ body.node-type-cm-movie-group .panels-flexible-row.bottom.content {
 .view-id-movie_group_ct.view-display-id-panel_pane_3 tr.odd {
     background-color: #fff;
 }
-.view-id-movie_group_ct.view-display-id-panel_pane_3 {
+.view-id-movie_group_ct.view-display-id-panel_pane_3,
+.pane-lobby-panel-pane-1 .pane-content{
     margin: 0 auto;
     width: 80%;
+}
+.pane-lobby-panel-pane-1 .pane-content{
+    background-color: #fff;
 }
 button.toptix-purchase {
     background-color: #e41145;
@@ -170,6 +174,24 @@ button.toptix-purchase {
 .view-id-movie_group_ct.view-display-id-panel_pane_3 {
     z-index: 0;
  }
+ .lobby-term-left {
+    float: left;
+    margin-right: 2%;
+    width: 76%;
+}
+.lobby-term-right {
+    float: left;
+    width: 22%;
+    position: relative;
+}
+.lobby-term-right .top-text-blk-wht{
+    position: absolute;
+    right: 7px;
+    top: 0;
+}
+.lobby-term-right .top-text-blk-wht .black{
+    color: #fff !important;
+}
 /*Ends*/
 
 /*
