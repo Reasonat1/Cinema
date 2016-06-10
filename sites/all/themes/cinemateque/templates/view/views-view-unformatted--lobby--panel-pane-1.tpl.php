@@ -115,7 +115,7 @@
               $toptix_code = $node_event->field_toptix_purchase['und'][0]['value'];
           }
            $output .= '<tr class="row-custom-lobby">';
-           $output .= '<td>'.'<button data-url="http://199.203.164.53/loader.aspx/?target=hall.aspx?event="'.$toptix_code.'" class="toptix-purchase">Puchase</button>'.'</td>';
+           $output .= '<td>'.'<button data-url="http://199.203.164.53/loader.aspx/?target=hall.aspx?event="'.$toptix_code.'"" class="toptix-purchase">Puchase</button>'.'</td>';
            $output .='<td>'. $calender . '</td>';
            $output .='<td>'. $flag . '</td>';
            $output .= '<td>'.$event_code.'</td>';
