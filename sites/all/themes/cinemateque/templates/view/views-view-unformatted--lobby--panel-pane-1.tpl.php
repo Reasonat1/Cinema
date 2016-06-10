@@ -148,6 +148,7 @@
             print '<span class="black">'.$black_text.'</span>';
           print '</div>';
         print '</div>';
+        print '<div class="clr"></div>';
     print '</div>';
   }
 ?>
