@@ -99,6 +99,7 @@
           $path = drupal_get_path_alias('node/'.$node_event->nid);
           $flag = flag_create_link('favorite_', $node_event->nid);
           $calender = _return_addthisevent_markup($node_event->nid);
+          print $calender;
           if(!empty($node_event->field_cm_event_internal_id['und'])){
               $event_code = $node_event->field_cm_event_internal_id['und'][0]['value'];
           }
@@ -114,7 +115,7 @@
               $toptix_code = $node_event->field_toptix_purchase['und'][0]['value'];
           }
            $output .= '<tr class="row-custom-lobby">';
-           $output .= '<td>'.'<button data-url="http://199.203.164.53/loader.aspx/?target=hall.aspx?event="'.$toptix_code.'" class="toptix-purchase">'.t('Puchase').'</button>'.'</td>';
+           $output .= '<td>'.'<button data-url="http://199.203.164.53/loader.aspx/?target=hall.aspx?event="'.$toptix_code.'" class="toptix-purchase">Puchase</button>'.'</td>';
            $output .='<td>'. $calender . '</td>';
            $output .='<td>'. $flag . '</td>';
            $output .= '<td>'.$event_code.'</td>';
