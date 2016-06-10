@@ -22,12 +22,15 @@ function my_pane_node_content_form($form, &$form_state) {
  $content_type = db_query("select type,name from node_type")->fetchAll();
  $option = array();
  foreach ($content_type as $val){
-     $option[$val->type]= $val->name;
+     if($val->type != 'cm_hall' && $val->type != 'book' && $val->type != 'panopoly_landing_page'){
+         $option[$val->type]= $val->name;
+     }
  }
 
 $form['#prefix'] = '<fieldset id="edit-node-teaser" class="form-wrapper">
                                      <legend><span class="fieldset-legend"><a href="#" class="fieldset-title">Node Teaser View Setting</a><span class="summary"></span></span></legend>
                                      <div class="fieldset-wrapper">'; 
+
  $form['content_type'] = array(
    '#type' => 'select',
    '#title' => t('Select Content Type'),
@@ -44,18 +47,69 @@ $form['#prefix'] = '<fieldset id="edit-node-teaser" class="form-wrapper">
    '#default_value' => $conf['view_mode'],
  );
   
-   $form['no_of_content'] = array(
+    $form['top_black_title'] = array(
    '#type' => 'textfield',
-   '#title' => t('No of item to show'),
-   '#description' => t('Enter 0 or leave empty to display all result.'),
-   '#default_value' => $conf['no_of_content'],
+   '#title' => t('Override top black corner text'),
+   '#description' => t(''),
+   '#default_value' => $conf['top_black_title'],
  );
-   $form['sort_order'] = array(
-   '#type' => 'select',
-   '#title' => t('Sort order '),
-   '#options' => array('ASC' => 'ASC','DESC' =>'DESC'),
-   '#default_value' => $conf['sort_order'],
+    
+    $form['top_white_title'] = array(
+   '#type' => 'textfield',
+   '#title' => t('Override top white corner text'),
+   '#description' => t(''),
+   '#default_value' => $conf['top_white_title'],
  );
+    
+    $form['movie_image'] = array(
+   '#type' => 'checkbox',
+   '#title' => t('Show movie image'),
+   '#description' => t(' if checked show only movie name, teaser text and meta-info'),
+   '#default_value' => $conf['movie_image'],
+ );
+    
+    $form['movie_image_side'] = array(
+   '#type' => 'checkbox',
+   '#title' => t('Show text to the side of image'),
+   '#description' => t(''),
+   '#default_value' => $conf['movie_image_side'],
+ );
+    
+    $form['movie_title'] = array(
+   '#type' => 'textfield',
+   '#title' => t('Override movie title'),
+   '#description' => t(''),
+   '#default_value' => $conf['movie_title'],
+ );
+    
+     $form['movie_metainfo'] = array(
+   '#type' => 'textfield',
+   '#title' => t('Override movie meta-info'),
+   '#description' => t(''),
+   '#default_value' => $conf['movie_metainfo'],
+ );
+     
+     $form['upcomming_event'] = array(
+   '#type' => 'checkbox',
+   '#title' => t('Show upcoming events'),
+   '#description' => t(''),
+   '#default_value' => $conf['upcomming_event'],
+ );
+     
+   $form['movie_teaser_text '] = array(
+   '#type' => 'checkbox',
+   '#title' => t('Movie teaser text'),
+   '#description' => t('check the checkbox for showing the show description/teaser text'),
+   '#default_value' => $conf['movie_teaser_text'],
+ );
+    
+//   $form['no_of_content'] = array(
+//   '#type' => 'textfield',
+//   '#title' => t('No of item to show'),
+//   '#description' => t('Enter 0 or leave empty to display all result.'),
+//   '#default_value' => $conf['no_of_content'],
+ //);
+
 $form['#suffix'] = '</div></fieldset>';
  return $form;
 }
@@ -63,10 +117,17 @@ $form['#suffix'] = '</div></fieldset>';
  * Edit form submit function.
  */
 function my_pane_node_content_form_submit($form, &$form_state) {
-  $form_state['conf']['content_type'] = $form_state['values']['content_type'];
-  $form_state['conf']['view_mode'] = $form_state['values']['view_mode'];
-  $form_state['conf']['no_of_content'] = $form_state['values']['no_of_content'];
-  $form_state['conf']['sort_order'] = $form_state['values']['sort_order'];
+    $form_state['conf']['content_type'] = $form_state['values']['content_type'];
+    $form_state['conf']['view_mode'] = $form_state['values']['view_mode'];
+    $form_state['conf']['top_black_title'] = $form_state['values']['top_black_title'];
+    $form_state['conf']['top_white_title'] = $form_state['values']['top_white_title'];
+    $form_state['conf']['movie_image'] = $form_state['values']['movie_image'];
+    $form_state['conf']['movie_image_side'] = $form_state['values']['movie_image_side'];
+    $form_state['conf']['movie_title'] = $form_state['values']['movie_title'];
+    $form_state['conf']['movie_metainfo'] = $form_state['values']['movie_metainfo'];
+    $form_state['conf']['upcomming_event'] = $form_state['values']['upcomming_event'];
+ //   $form_state['conf']['no_of_content'] = $form_state['values']['no_of_content'];
+    $form_state['conf']['movie_teaser_text'] = $form_state['values']['movie_teaser_text'];
 }
 /**
  * Render the panel.
@@ -79,6 +140,18 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
     }
   
     global $base_url;
+    $content_type = $conf['content_type'];
+    $top_black_title = $conf['top_black_title'];
+    $top_white_title = $conf['top_white_title'];
+    $movie_image = $conf['movie_image'];
+    $movie_image_side = $conf['movie_image_side'];
+    $movie_title = $conf['movie_title'];
+    $movie_metainfo = $conf['movie_metainfo'];
+    $upcomming_event= $conf['upcomming_event'];
+  //  $no_of_content= $conf['no_of_content'];
+    $override_title_text= $conf['override_title_text'];
+    $movie_teaser_text= $conf['movie_teaser_text'];
+
     // Render as a block.
     $block = new stdClass();
     $block->module = 'my_pane';
@@ -86,8 +159,8 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
     $output = "";
     
     // for event  type node
-    if($conf['content_type'] == 'cm_event'){
-        $result = db_query("SELECT n.nid, n.title,n.created,n.changed,et.field_cm_event_time_value As event_start_time, et.field_cm_event_time_value2 As event_end_time,
+    if($content_type == 'cm_event'){
+        $result = db_query("SELECT  DISTINCT n.nid, n.title,n.created,n.changed,et.field_cm_event_time_value As event_start_time, et.field_cm_event_time_value2 As event_end_time,
             ei.field_cm_event_images_fid As event_image, bk.field_mc_teaser_toptxt_blk_value As black_content, wk.field_mc_teaser_toptxt_white_value As white_content
             from node As n
             LEFT JOIN field_data_field_cm_event_time AS et ON et.entity_id = n.nid
@@ -104,14 +177,14 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
             
             // check for event image
             if(!empty($val->event_image)){
-                $file = file_load($val->event_image);
-                $uri = $file->uri;
-                $img_src = file_create_url($uri);
-                $imgae = "<img src='$img_src' alt= 'event image'>";
-            }else{
-                $imgae = "";
-            }
-            
+                 $file = file_load($val->event_image);
+                 $uri = $file->uri;
+                 $img_src = file_create_url($uri);
+                 $imgae = "<img src='$img_src' alt= 'event image'>";
+             }else{
+                 $imgae = "";
+             }
+                        
             // Favorite flag link
             $flag = flag_create_link('favorite_', $val->nid);
             
@@ -121,29 +194,289 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
                 $time = date('h:i',$val->event_start_time);
             }
             
-            // event black box content
             if(!empty($val->black_content)){
                 $data_b = $val->black_content;
                 $black_content = "<span class='black-content'>$data_b</span>";
+            }else{
+                $black_content ='';
             }
-            
-            // event white box content
+
             if(!empty($val->white_content)){
                 $data_w = $val->white_content;
                 $white_content = "<span class='black-white'>$data_w</span>";
+            }else{
+                $white_content = '';
             }
-
+            
+            $title = $val->title;
+           $alias = $base_url.'/'.drupal_lookup_path('alias', "node/".$val->nid);
             $html.= "<div class='row-$row_class teaser-row'>";
             $html.= "<div class='event-image'>$imgae</div>";
             $html.= "<div class='event-date-black-white-background'>$black_content $white_content</div>";
             $html.= "<div class='event-flag'>$flag</div>";
-            $html.= "<div class='event-title'><span>$val->title</span></div>";
-            $html.= "<div class='event-time'><span class='time'>$time</span><span class='date'>$date</span></div>";
+            $html.= "<div class='event-title'><span>$title</span></div>";
+            $html.= "<div class='event-time'><span class='time'>$time</span><span class='date'>$date</span><a href='$alias'><span class='ticket'>Ticket</span></a></div>";
             $html.= "</div>";
             $no++;
         }
-        $class = $conf['content_type'];
-        $output.= "<div class='node-teaser wapper  $class'>";
+        
+        $output.= "<div class='node-teaser wapper  $content_type'>";
+        $output.= "<div class='inner-wrapper'>";
+        $output.= "<div class='content'>";
+        $output.=$html;
+        $output.= "</div></div></div>";
+    }
+    
+    // for movie  type node
+    if($conf['content_type'] == 'cm_movie'){        
+        $result = db_query("SELECT  n.nid, n.title,n.created,n.changed,bk.field_mc_teaser_toptxt_blk_value As black_content, wk.field_mc_teaser_toptxt_white_value As white_content,
+            mp.field_cm_movie_pictures_fid As movie_picture,mv.field_cm_movie_videos_fid As movie_video,md.field_cm_movie_duration_interval As movie_duration,
+            md.field_cm_movie_duration_period As movie_duration_period,mc.field_cm_movie_meta_credit_value As meta_credit,ss.field_cm_movie_short_summary_value As summery
+            from node As n
+            LEFT JOIN field_data_field_cm_movie_pictures As mp ON mp.entity_id = n.nid
+            LEFT JOIN field_data_field_cm_movie_videos As mv ON mv.entity_id = n.nid
+            LEFT JOIN field_data_field_mc_teaser_toptxt_blk As bk ON bk.entity_id = n.nid
+            LEFT JOIN field_data_field_mc_teaser_toptxt_white As wk ON wk.entity_id = n.nid
+            LEFT JOIN field_data_field_cm_movie_duration As md ON md.entity_id = n.nid
+            LEFT JOIN field_data_field_cm_movie_meta_credit AS mc ON mc.entity_id = n.nid
+            LEFT JOIN field_data_field_cm_movie_short_summary AS ss ON ss.entity_id = n.nid
+            where n.type ='cm_movie'")->fetchAll();
+
+        // Build the output of block
+        $html = "";
+        $no = 1;
+        foreach ($result as $val) {
+            if($no % 2 == 0){  $row_class = 'even'; }else{  $row_class = 'odd';}
+            
+            // check for movie image
+            $class = '';
+            if($movie_image == '0'){ 
+                if(!empty($val->movie_picture)){
+                    $file = file_load($val->movie_picture);
+                    $uri = $file->uri;
+                    $img_src = file_create_url($uri);
+                    $imgae = "<img src='$img_src' alt= 'event image'>";
+                }else{
+                    $imgae = "";
+                }
+            }else{
+                $class= 'no-image';
+                 $imgae = "";
+            }
+            
+            // check if show images to side of text
+            if($movie_image_side == '1'){ 
+                $class.= '  side-image';
+            }
+            
+            
+            // Favorite flag link
+            $flag = flag_create_link('favorite_', $val->nid);
+            
+            // event black box content
+            if($top_black_title == ''){
+                if(!empty($val->black_content)){
+                    $data_b = $val->black_content;
+                    $black_content = "<span class='black-content'>$data_b</span>";
+                }else{
+                    $black_content="";
+                }
+            }else{
+                $black_content = "<span class='black-content'>$top_black_title</span>";
+            }
+            
+            
+            // event white box content
+            if($top_white_title == ''){
+                if(!empty($val->white_content)){
+                    $data_w = $val->white_content;
+                    $white_content = "<span class='black-white'>$data_w</span>";
+                }else{
+                    $white_content ="";
+                }
+            }else{
+                $white_content = "<span class='black-white'>$top_white_title</span>";
+            }
+            
+            // check for movie video
+                if(!empty($val->movie_video)){
+                    $play_icon = "<img src='http://m.airpano.ru/images/play-icon.png' alt= 'play' height='30px' width='30px'>";
+                }else{
+                    $play_icon = "";
+                }
+                
+                // movie meta information
+                if($movie_metainfo == ''){
+                    if(!empty($val->movie_duration)){
+                        $movie_duration= "<span>Duration : $val->movie_duration $val->movie_duration_period</span>";
+                        if(!empty($val->meta_credit)){
+                            $movie_duration.= "<span class='credit'>Director: $val->meta_credit</span>";
+                        }
+                    }else{
+                        $movie_duration = "";
+                    }
+                }else{
+                    $movie_duration = $movie_metainfo;
+                }
+            
+               // show teaser text
+                if($movie_teaser_text == ''){
+                    if(!empty($val->summery)){
+                        $summery=$val->summery;
+                    }else{
+                        $summery = "";
+                    }
+                }else{
+                    $summery = "";
+                }
+                
+                // override movie title
+                if($movie_title == ''){
+                    $title = $val->title;
+                }
+                else{
+                    $title = $movie_title;
+                }
+
+            $html.= "<div class='row-$row_class teaser-row $class'>";
+            $html.= "<div class='movie-image'>$imgae</div>";
+            $html.= "<div class='movie-date-black-white-background'>$black_content $white_content</div>";
+            $html.= "<div class='movie-flag'>$flag</div>";
+            $html.= "<div class='movie-title'><span>$title</span></div>";
+            $html.= "<div class='movie_play'><span>$play_icon</span></div>";
+            $html.= "<div class='movie_metainfo'><span>$movie_duration</span></div>";
+            $html.= "<div class='movie_summery'><span>$summery</span></div>";
+            $html.= "</div>";
+            $no++;
+        }
+
+        $output.= "<div class='node-teaser wapper  $content_type'>";
+        $output.= "<div class='inner-wrapper'>";
+        $output.= "<div class='content'>";
+        $output.=$html;
+        $output.= "</div></div></div>";
+    }
+    
+   // for article node type
+    if($conf['content_type'] == 'cm_movie_group'){
+        $result = db_query("SELECT  n.nid, n.title,n.created,n.changed,bk.field_mc_teaser_toptxt_blk_value As black_content, wk.field_mc_teaser_toptxt_white_value As white_content,
+            mp.field_cm_moviegroup_pictures_fid As moviegroup_picture,mv.field_cm_moviegroup_videos_fid As moviegroup_video,ss.field_cm_moviegroup_short_summar_value As summary	,
+            md.field_cm_moviegroup_duration_interval As movigroup_duration,md.field_cm_moviegroup_duration_period As movigroup_duration_period
+            from node As n            
+            LEFT JOIN field_data_field_mc_teaser_toptxt_blk As bk ON bk.entity_id = n.nid
+            LEFT JOIN field_data_field_mc_teaser_toptxt_white As wk ON wk.entity_id = n.nid
+            LEFT JOIN field_data_field_cm_moviegroup_pictures As mp ON mp.entity_id = n.nid
+            LEFT JOIN field_data_field_cm_moviegroup_videos As mv ON mv.entity_id = n.nid
+            LEFT JOIN field_data_field_cm_moviegroup_short_summar As ss ON ss.entity_id = n.nid
+            LEFT JOIN field_data_field_cm_moviegroup_duration As md ON md.entity_id = n.nid
+            where n.type ='cm_movie_group'")->fetchAll();
+
+        // Build the output of block
+        $html = "";
+        $no = 1;
+        foreach ($result as $val) {
+            if($no % 2 == 0){  $row_class = 'even'; }else{  $row_class = 'odd';}
+            
+            // check for movie image
+            $class = '';
+            if($movie_image == '0'){ 
+                if(!empty($val->moviegroup_picture)){
+                    $file = file_load($val->moviegroup_picture);
+                    $uri = $file->uri;
+                    $img_src = file_create_url($uri);
+                    $imgae = "<img src='$img_src' alt= 'event image'>";
+                }else{
+                    $imgae = "";
+                }
+            }else{
+                $class= 'no-image';
+                 $imgae = "";
+            }
+            
+            // check if show images to side of text
+            if($movie_image_side == '1'){ 
+                $class.= '  side-image';
+            }
+            
+            
+            // Favorite flag link
+            $flag = flag_create_link('favorite_', $val->nid);
+            
+            // event black box content
+            if($top_black_title == ''){
+                if(!empty($val->black_content)){
+                    $data_b = $val->black_content;
+                    $black_content = "<span class='black-content'>$data_b</span>";
+                }else{
+                    $black_content="";
+                }
+            }else{
+                $black_content = "<span class='black-content'>$top_black_title</span>";
+            }
+            
+            
+            // event white box content
+            if($top_white_title == ''){
+                if(!empty($val->white_content)){
+                    $data_w = $val->white_content;
+                    $white_content = "<span class='black-white'>$data_w</span>";
+                }else{
+                    $white_content ="";
+                }
+            }else{
+                $white_content = "<span class='black-white'>$top_white_title</span>";
+            }
+            
+            // check for movie video
+                if(!empty($val->moviegroup_video)){
+                    $play_icon = "<img src='http://m.airpano.ru/images/play-icon.png' alt= 'play' height='30px' width='30px'>";
+                }else{
+                    $play_icon = "";
+                }
+                
+                // movie meta information
+                if($movie_metainfo == ''){
+                    if(!empty($val->movigroup_duration)){
+                        $moviegroup_duration= "<span>Duration : $val->movigroup_duration $val->movigroup_duration_period</span>";
+                    }else{
+                        $moviegroup_duration = "";
+                    }
+                }else{
+                    $moviegroup_duration = $movie_metainfo;
+                }
+            
+               // show teaser text
+                if($movie_teaser_text == ''){
+                    if(!empty($val->summery)){
+                        $summery=$val->summery;
+                    }else{
+                        $summery = "";
+                    }
+                }else{
+                    $summery = "";
+                }
+                
+                // override movie title
+                if($movie_title == ''){
+                    $title = $val->title;
+                }
+                else{
+                    $title = $movie_title;
+                }
+
+            $html.= "<div class='row-$row_class teaser-row $class'>";
+            $html.= "<div class='moviegroup-image'>$imgae</div>";
+            $html.= "<div class='movie-date-black-white-background'>$black_content $white_content</div>";
+            $html.= "<div class='moviegroup-flag'>$flag</div>";
+            $html.= "<div class='moviegroup-title'><span>$title</span></div>";
+            $html.= "<div class='moviegroup_play'><span>$play_icon</span></div>";
+            $html.= "<div class='moviegroup_metainfo'><span>$moviegroup_duration</span></div>";
+            $html.= "<div class='moviegroup_summery'><span>$summery</span></div>";
+            $html.= "</div>";
+            $no++;
+        }
+
+        $output.= "<div class='node-teaser wapper  $content_type'>";
         $output.= "<div class='inner-wrapper'>";
         $output.= "<div class='content'>";
         $output.=$html;
@@ -151,7 +484,7 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
     }
     
     // for person  type node
-    if($conf['content_type'] == 'cm_person'){
+    if($content_type == 'cm_person'){
         $result = db_query("SELECT n.nid, n.title,n.created,n.changed,cp.field_cm_person_photo_fid As person_photo, cp.field_cm_person_photo_alt As person_photo_alt,
             pb.field_cm_person_body_value As person_description, pf.field_cm_person_first_name_value As first_name, pl.field_cm_person_last_name_value,
             pt.field_cm_person_type_target_id As job_title
@@ -200,13 +533,38 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
             $html.= "</div>";
             $no++;
         }
-        $class = $conf['content_type'];
-        $output.= "<div class='node-teaser wapper  $class'>";
+
+        $output.= "<div class='node-teaser wapper  $content_type'>";
         $output.= "<div class='inner-wrapper'>";
         $output.= "<div class='content'>";
         $output.=$html;
         $output.= "</div></div></div>";
         
+    }
+    
+     // for webform  type node
+    if($conf['content_type'] == 'webform'){
+        $result = db_query("SELECT  n.nid, n.title,n.created,n.changed
+            from node As n
+            where n.type ='webform'")->fetchAll();
+        
+        // Build the output of block
+        $html = "";
+        $no = 1;
+        foreach ($result as $val) {
+            $alias = $base_url.'/'.drupal_lookup_path('alias', "node/".$val->nid);
+             if($no % 2 == 0){  $row_class = 'even'; }else{  $row_class = 'odd';}
+            $html.= "<div class='row-$row_class teaser-row'>";
+           $html.= "<div class='webform-title'><a href='$alias'>$val->title</a></div>";
+            $html.= "</div>";
+            $no++;
+        }
+
+        $output.= "<div class='node-teaser wapper  $content_type'>";
+        $output.= "<div class='inner-wrapper'>";
+        $output.= "<div class='content'>";
+        $output.=$html;
+        $output.= "</div></div></div>";
     }
     
    $block->content = $output;
@@ -217,12 +575,6 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
  */
 function my_pane_node_content_form_info($subtype, $conf, $contexts) {
   if (!empty($conf)) {
-    $content = '<p><b>Node Type:</b> ' . $conf['content_type'] . '</p>';
-    $content = '<p><b>View mode:</b> ' . $conf['view_mode'] . '</p>';
-
-    $block = new stdClass;
-    $block->title = $conf['override_title'] ? $conf['override_title_text'] : '';
-    $block->content = $content;
-    return $block;
+    return my_pane_node_content_form_render($subtype, $conf, $args=null, $context=null);
   }
 }
