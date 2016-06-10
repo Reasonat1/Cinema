@@ -20,64 +20,122 @@
  */
 ?>
 <?php
-$results=$view->result;
-foreach ($results as $val) {
-  $nid = $val->node_taxonomy_index_nid;
-  $node = node_load($nid);
-  //drupal_set_message('<pre>'.print_r($nid, 1).'</pre>');
-  // drupal_set_message('<pre>'.print_r($node, 1).'</pre>');
-}
-//$current_nid = $results[0]->nid;
-//    print '<div class="table-responsive">';
-//    print '<table class="table">';
-//    print '<thead>';
-//      print '<tr>';
-//        print '<th>'.t('Date').'</th>';
-//        print '<th>'.t('Time').'</th>';
-//        print '<th>'.t('Hall').'</th>';
-//        print '<th>'.t('Event Title').'</th>';
-//        print '<th>'.t('Event Code').'</th>';
-//		print '<th>'.t('Toptix purchase').'</th>';
-//      print '</tr>';
-//    print '</thead>';
-//    print ' <tbody>';
-//    $i = 0;
-//	foreach ($rs as $row) {
-//        $event_ref_nid = $row->entity_id;
-//        $array = array($event_ref_nid); 
-//        $array_without_current_event = array_diff($array, array($current_nid));
-//		if(!empty($array_without_current_event[0])){
-//        $node = node_load($array_without_current_event[0]);
-//            $i++;
-//            $event_title = $node->title;
-//            $path = drupal_get_path_alias('node/'.$node->nid);
-//			if(!empty($node->field_cm_event_internal_id['und'])){
-//				$event_code = $node->field_cm_event_internal_id['und'][0]['value'];
-//			}
-//			if(!empty($node->field_cm_event_time['und'])){
-//				$event_date = date('l d.m.y', $node->field_cm_event_time['und'][0]['value']);
-//				$event_time = date('g:i a', $node->field_cm_event_time['und'][0]['value']);
-//			}
-//			if(!empty($node->field_cm_event_hall['und'])){
-//				$hall_id = taxonomy_term_load($node->field_cm_event_hall['und'][0]['target_id']);
-//				$hall_name = $hall_id->name;
-//			}
-//			if(!empty($node->field_toptix_purchase['und'])){
-//				$toptix_code = $node->field_toptix_purchase['und'][0]['value'];
-//			}
-//			//print field_view_field('node', $node, 'field_toptix_purchase', 'full')
-//           //drupal_set_message('<pre>'.print_r(field_view_field('node', $node, 'field_toptix_purchase', 'full'), 1).'</pre>');
-//            print '<tr class="'.'row-custom-'.$i.'">';
-//            print '<td>'.$event_date.'</td>';
-//            print '<td>'.$event_time.'</td>';
-//            print '<td>'.$hall_name.'</td>';
-//            print '<td>'.l($event_title, $path).'</td>';
-//            print '<td>'.$event_code.'</td>';
-//			print '<td>'.'<button data-url="http://199.203.164.53/loader.aspx/?target=hall.aspx?event="'.$toptix_code.'" class="toptix-purchase">Puchase</button>'.'</td>';
-//            print '</tr>';
-//        }
-//	}
-//    print '</table>';
-//    print '<div class="more-event">More Events</div>';
-//    print '</div>';
+  $results=$view->result;
+  foreach ($results as $val) {
+    $nid = $val->node_taxonomy_index_nid;
+    $node = node_load($nid);
+     
+    $path_node = drupal_get_path_alias('node/'.$node->nid);
+    $title = l($node->title, $path_node); 
+    if(!empty($node->field_cm_movie_duration)){
+      $length_interval = $node->field_cm_movie_duration['und'][0]['interval'];
+      $length_period = $node->field_cm_movie_duration['und'][0]['period'];
+      $length = $length_interval.' '.$length_period;
+    }
+    elseif(!empty($node->field_cm_moviegroup_duration)){
+      $length_interval = $node->field_cm_moviegroup_duration['und'][0]['interval'];
+      $length_period = $node->field_cm_moviegroup_duration['und'][0]['period'];
+      $length = $length_interval.' '.$length_period;
+    }
+    if(!empty($node->field_cm_moviegroup_short_summar)){
+      $sort_summary = $node->field_cm_moviegroup_short_summar['und'][0]['value'];
+    }
+    elseif(!empty($node->field_cm_movie_short_summary)){
+      $sort_summary = $node->field_cm_movie_short_summary['und'][0]['value'];
+    }
+    if(!empty($node->field_cm_movie_year['und'])){
+      $year_name = taxonomy_term_load($node->field_cm_movie_year['und'][0]['target_id']);
+      $year = ' |' .' '.$year_name->name;
+    }else{
+      $year = '';
+    }
+    if(!empty($node->field_cm_movie_country['und'])){
+      $country_name = taxonomy_term_load($node->field_cm_movie_country['und'][0]['target_id']);
+      $country = $country_name->name;
+    }else{
+      $country = '';
+    }
+    if(!empty($node->field_cm_moviegroup_pictures)){
+      $picture_path = file_create_url($node->field_cm_moviegroup_pictures['und'][0]['uri']);
+        $pr_image = '<img src="' . image_style_url('lobby', $picture_path) . '" alt="" />';
+    }
+    elseif(!empty($node->field_cm_movie_pictures)){
+      $picture_path_movie = $node->field_cm_movie_pictures['und'][0]['fid'];
+      $file = file_load($picture_path_movie);
+      $picture_path = file_create_url($file->uri);
+      $pr_image = '<img src="' . image_style_url('lobby', $picture_path) . '" alt="" />';
+    }
+     $output ='';
+     $output .='<div class="table-responsive">';
+        $output .= '<table class="table">';
+         $output .= ' <tbody>';
+         /********For Movie****/
+        if(!empty($node->field_event_corresponding_ref['und'])){
+            $movie_node_info = node_load($node->field_event_corresponding_ref['und'][0]['target_id']);
+            $line_event = $movie_node_info->field_cm_event_lineup['und'];       
+        }
+        /*****End Movie**/     
+        /****Movie Group Nid****/ 
+        if(!empty($node->field_movie_referenced['und'])){
+            $movie_node = node_load($node->field_movie_referenced['und'][0]['target_id']);
+        }
+        if(!empty($movie_node->field_event_corresponding_ref['und'])){
+          $event_node = node_load($movie_node->field_event_corresponding_ref['und'][0]['target_id']);
+          //drupal_set_message('<pre>'.print_r($event_node->nid, 1).'</pre>');
+           $line_event = $event_node->field_cm_event_lineup['und'];
+        }
+        /****Movie Group Nid****/    
+        foreach ($line_event as $row) {
+          $event_ref_nid = $row['target_id'];
+          $node_movie = node_load($event_ref_nid);    
+          $node_event = node_load($node_movie->field_event_corresponding_ref['und'][0]['target_id']);
+          $event_title = $node_event->title;
+          $path = drupal_get_path_alias('node/'.$node_event->nid);
+          $flag = flag_create_link('favorite_', $node_event->nid);
+          $calender = _return_addthisevent_markup($node_event->nid);
+          if(!empty($node_event->field_cm_event_internal_id['und'])){
+              $event_code = $node_event->field_cm_event_internal_id['und'][0]['value'];
+          }
+          if(!empty($node_event->field_cm_event_time['und'])){
+              $event_date = date('l d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
+              $event_time = date('g:i a', $node_event->field_cm_event_time['und'][0]['value']);
+          }
+          if(!empty($node_event->field_cm_event_hall['und'])){
+              $hall_id = taxonomy_term_load($node_event->field_cm_event_hall['und'][0]['target_id']);
+              $hall_name = $hall_id->name;
+          }
+          if(!empty($node_event->field_toptix_purchase['und'])){
+              $toptix_code = $node_event->field_toptix_purchase['und'][0]['value'];
+          }
+           $output .= '<tr class="row-custom-lobby">';
+           $output .= '<td>'.'<button data-url="http://199.203.164.53/loader.aspx/?target=hall.aspx?event="'.$toptix_code.'" class="toptix-purchase">'.t('Puchase').'</button>'.'</td>';
+           $output .='<td>'. $calender . '</td>';
+           $output .='<td>'. $flag . '</td>';
+           $output .= '<td>'.$event_code.'</td>';
+           $output .= '<td>'.$hall_name.'</td>';
+           $output .= '<td>'.l($event_title, $path).'</td>';
+           $output .= '<td>'.$event_time.'</td>';
+           $output .= '<td>'.$event_date.'</td>';
+           $output .= '</tr>';
+        }
+         $output .= '</table>';
+       $output .= '</div>';
+      print '<div class="lobby-container">';
+        print'<div class="lobby-term-left">';
+            print '<div class="lobby-title">';
+              print $title;
+            print '</div>';
+            print '<div class="lobby-length">';
+              print $length . $year. ' '.$country;
+            print '</div>';
+            print '<div class="lobby-summary">';
+              print $sort_summary;
+            print '</div>';
+            print $output;
+        print '</div>';
+        print'<div class="lobby-term-right">';
+          print $pr_image;
+        print '</div>';
+    print '</div>';
+  }
 ?>
