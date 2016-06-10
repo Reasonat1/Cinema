@@ -56,13 +56,13 @@
       $country = '';
     }
     if(!empty($node->field_cm_moviegroup_pictures)){
-      $picture_path = file_create_url($node->field_cm_moviegroup_pictures['und'][0]['uri']);
+      $picture_path = $node->field_cm_moviegroup_pictures['und'][0]['uri'];
         $pr_image = '<img src="' . image_style_url('lobby', $picture_path) . '" alt="" />';
     }
     elseif(!empty($node->field_cm_movie_pictures)){
       $picture_path_movie = $node->field_cm_movie_pictures['und'][0]['fid'];
       $file = file_load($picture_path_movie);
-      $picture_path = file_create_url($file->uri);
+      $picture_path = $file->uri;
       $pr_image = '<img src="' . image_style_url('lobby', $picture_path) . '" alt="" />';
     }
      $output ='';
