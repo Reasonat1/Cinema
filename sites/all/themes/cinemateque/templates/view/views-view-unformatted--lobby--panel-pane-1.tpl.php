@@ -114,7 +114,7 @@
           if(!empty($node_event->field_toptix_purchase['und'])){
               $toptix_code = $node_event->field_toptix_purchase['und'][0]['value'];
           }
-          $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event="'.$toptix_code.'"';
+          $top_link = "http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'";
            $output .= '<tr class="row-custom-lobby">';
            $output .= '<td>'.'<button data-url="'.$top_link.'" class="toptix-purchase">Puchase</button>'.'</td>';
            $output .='<td>'. $addevent . '</td>';
