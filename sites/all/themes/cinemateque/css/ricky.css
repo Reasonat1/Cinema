@@ -133,7 +133,8 @@ body.node-type-cm-movie-group .panels-flexible-row.bottom.content {
 .panels-flexible-row.content .panels-flexible-region-node_page-content_region {
     width: 100% !important
 }
-.pane-movie-group-ct-panel-pane-1 {
+.pane-movie-group-ct-panel-pane-1,
+.pane-lobby-panel-pane-1{
     background-color: #f9f4ee;   
 }
 /*
@@ -161,8 +162,10 @@ body.node-type-cm-movie-group .panels-flexible-row.bottom.content {
     margin: 0 auto;
     width: 80%;
 }
-.pane-lobby-panel-pane-1 .pane-content{
+.pane-lobby-panel-pane-1 .pane-content .lobby-container{
     background-color: #fff;
+    padding: 2%;
+    margin-top: 2%;
 }
 button.toptix-purchase {
     background-color: #e41145;
