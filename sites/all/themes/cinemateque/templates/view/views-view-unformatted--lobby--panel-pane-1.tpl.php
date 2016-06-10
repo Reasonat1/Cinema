@@ -24,7 +24,7 @@
   foreach ($results as $val) {
     $nid = $val->node_taxonomy_index_nid;
     $node = node_load($nid);
-     drupal_set_message('<pre>'.print_r($node, 1).'</pre>');
+     //drupal_set_message('<pre>'.print_r($node, 1).'</pre>');
     $path_node = drupal_get_path_alias('node/'.$node->nid);
     $title = l($node->title, $path_node);
     if(!empty($node->field_mc_teaser_toptxt_white['und'])){
