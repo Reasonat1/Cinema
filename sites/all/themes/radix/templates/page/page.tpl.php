@@ -79,7 +79,7 @@
                     $block2 = module_invoke('locale', 'block_view', 'language'); //dpm($block2);
                     // print render($block2['content']); //print $search_form; 
                     ?>
-<?php endif; ?>
+                <?php endif; ?>
             </div><!-- /.navbar-collapse -->
         </nav><!-- /.navbar -->
     </div> <!-- /.container -->
@@ -90,49 +90,51 @@
 <div id="main-wrapper">
     <div id="main" class="main">
         <div class="container">
-                <?php if ($breadcrumb): ?>
+            <?php if ($breadcrumb): ?>
                 <div id="breadcrumb" class="visible-desktop">
-                <?php print $breadcrumb; ?>
+                    <?php print $breadcrumb; ?>
                 </div>
-                <?php endif; ?>
-                <?php if ($messages): ?>
+            <?php endif; ?>
+            <?php if ($messages): ?>
                 <div id="messages">
-                <?php print $messages; ?>
+                    <?php print $messages; ?>
                 </div>
-<?php endif; ?>
+            <?php endif; ?>
             <div id="page-header">        <?php if ($title): ?>
 
                     <div class="page-header">
                         <h1 class="title"><?php print $title; ?></h1>
                     </div>
-                    <?php endif; ?>
-                    <?php if ($tabs): ?>
+                <?php endif; ?>
+                <?php if ($tabs): ?>
                     <div class="tabs">
-                    <?php print render($tabs); ?>
+                        <?php print render($tabs); ?>
                     </div>
-                    <?php endif; ?>
-                    <?php if ($action_links): ?>
+                <?php endif; ?>
+                <?php if ($action_links): ?>
                     <ul class="action-links">
-                    <?php print render($action_links); ?>
+                        <?php print render($action_links); ?>
                     </ul>
-<?php endif; ?>
+                <?php endif; ?>
             </div>
         </div>
+
         <div id="content" class="container">
-<?php print render($page['content']); ?>
+            <div class="search_new"> <?php print render($page['triptych_first']); ?> </div>
+            <?php print render($page['content']); ?>
         </div>
     </div> <!-- /#main -->
 </div> <!-- /#main-wrapper -->
 
 <footer id="footer" class="footer" role="footer">
-  <?php if (0): ?>
-    <div class="container">
-        <?php if ($copyright): ?>
-            <small class="copyright pull-left"><?php print $copyright; ?></small>
-        <?php endif; ?>
-        <small class="pull-right"><a href="#"><?php print t('Back to Top'); ?></a></small>
-    </div>
-  <?php endif; ?>
+    <?php if (0): ?>
+        <div class="container">
+            <?php if ($copyright): ?>
+                <small class="copyright pull-left"><?php print $copyright; ?></small>
+            <?php endif; ?>
+            <small class="pull-right"><a href="#"><?php print t('Back to Top'); ?></a></small>
+        </div>
+    <?php endif; ?>
 </footer>
 <script>
 
@@ -141,6 +143,13 @@
         jQuery(".popup-element-title span").html(popup);
 //        jQuery(".popup_search").html(popup_search);
         jQuery(".popup_search").hide();
-
+//        alert(jQuery('.search-api-page-search-form').html());
+//        var data = jQuery('.search_new').html();
+//        jQuery('.search_new').remove();
+//        jQuery('#search-api-page-search-form').append('<div class="search_new">' + data + '</div>');
+        jQuery(".search_new").appendTo("#search-api-page-search-form");
+        jQuery("#search-api-page-search-form").appendTo(".container:first");
+        
+        
     });
 </script>

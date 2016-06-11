@@ -20,7 +20,7 @@
  * @see template_preprocess_custom_search_results()
  */
 ?>
-<?php if ($search_results) : ?>
+<?php if ($search_results) : print $pager; print $facet; ?>
   <!--<h2><?php //print t('Search results');?></h2>-->
   <?php if (isset($filter) && $filter != '' && $filter_position == 'above') : ?>
     <div class="custom-search-filter custom_filter_css">
