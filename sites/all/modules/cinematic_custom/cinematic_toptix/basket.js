@@ -39,7 +39,7 @@ function toptix_navigationHandler(pageName) {
     }
   }
 }
-$esro.attachEventHandler('navigationRequired', toptix_navigationHandler);
+//$esro.attachEventHandler('navigationRequired', toptix_navigationHandler);
 
 function toptix_callback_basket_get_customer(result) {
   var toptix_user = Drupal.settings.toptix_user;

@@ -72,12 +72,7 @@ function cinematic_toptix_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id != 'user_register_form' and $form_id != 'user_profile_form') {
     return;
   }
-  if (isset($form_state['user'])) {
-    $toptix_id = field_get_items('user', $form_state['user'], 'field_toptix');
-    if ($toptix_id) {
-      return;
-    }
-  }
+
   if (!isset($form['#attached']['js'])) {
     $form['#attached']['js'] = array();
   }
@@ -122,7 +117,9 @@ function cinematic_toptix_field_widget_form_alter(&$element, &$form_state, $cont
         ->condition('te.local_id', $event_id)
         ->fields('te')
         ->execute()->fetchObject();
-      $element['browser']['#default_value'] = "$event->event_date : $event->local_id";
+      if ($event) {
+        $element['browser']['#default_value'] = "$event->event_date : $event->local_id";
+      }
     }
   }
 }

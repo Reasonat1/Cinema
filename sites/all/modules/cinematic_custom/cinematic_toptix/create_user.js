@@ -5,11 +5,11 @@
       $('#' + settings.toptix_form).submit(function(event) {
         toptix_form_data = this;
         var toptix_id = $(this).find('input[name^="field_toptix"]').val();
+        event.stopPropagation();
         if (toptix_id) {
-          return;
+          $esro.customerLoginById(toptix_id, 'toptix_callback_user_login');
         }
         else {
-          event.stopPropagation();
           $esro.getEmptyCustomer('toptix_callback_create');
         }
         return false;
@@ -62,6 +62,29 @@ function toptix_callback_create(result) {
   toptix_clean_customer(Customer);
   $esro.createCustomer(Customer, 'toptix_callback_save');
 };
+
+function toptix_callback_user_login(result) {
+  if (toptix_limit_calls++ > 10 || result.HasError) {
+    var form = jQuery('#' + Drupal.settings.toptix_form);
+    form.submit();
+    return;
+  }
+
+  if ((typeof result.Result != 'object') || !('Id' in result.Result)) {
+    $esro.getCustomerDetails('toptix_callback_user_login');
+    return;
+  }
+
+  var form = toptix_form_data;
+  var Customer = result.Result;
+  Customer.Name.First = form['name'].value;
+  $esro.updateCustomerDetails(Customer, function(result) {
+    var form = jQuery('#' + Drupal.settings.toptix_form);
+    form.submit();
+  });
+}
+
+
 
 function toptix_clean_customer(obj) {
   delete obj.AddressDetails[0].Address.CountryName;
