@@ -50,14 +50,11 @@ function toptix_callback_save(result) {
   }
 }
 
-function toptix_callback_create(result) {
-  var form = toptix_form_data;
-  var Customer = result.Result;
+function toptix_alter_customer(Customer, form) {
   Customer.Login.Name = 'drupal_' + form['name'].value;
-  Customer.Login.Password = 'eqdacz';
-  //Password: Math.random().toString(36).slice(-8), 
-  Customer.Name.First = form['name'].value;
-  Customer.Name.Last = '';
+
+  Customer.Name.First = jQuery(form).find('input[name^="field_first_name"]').value;
+  Customer.Name.Last = jQuery(form).find('input[name^="field_last_name"]').value;
     /*
     Customer.AddressDetails[0] = {
       Address: {
@@ -66,8 +63,15 @@ function toptix_callback_create(result) {
         AddressLine3: "",
       },
       Usage: 10,*/
-
   toptix_clean_customer(Customer);
+
+}
+
+function toptix_callback_create(result) {
+  var form = toptix_form_data;
+  var Customer = result.Result;
+  toptix_alter_customer(Customer, form);
+  Password: Math.random().toString(36).slice(-8), 
   $esro.createCustomer(Customer, 'toptix_callback_save');
 };
 
@@ -86,7 +90,7 @@ function toptix_callback_user_login(result) {
 
   var form = toptix_form_data;
   var Customer = result.Result;
-  Customer.Name.First = form['name'].value;
+  toptix_alter_customer(Customer, form);
   $esro.updateCustomerDetails(Customer, function(result) {
     var form = jQuery('#' + Drupal.settings.toptix_form);
     toptix_form_processed = true;
