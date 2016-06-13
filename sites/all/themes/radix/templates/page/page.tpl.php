@@ -9,6 +9,7 @@
  * @see html.tpl.php
  */
 ?>
+
 <!--<script src="/misc/jquery.js" type="text/javascript"></script>-->
 <script type='text/javascript'>
     jQuery.noConflict();
@@ -61,7 +62,9 @@
                 }
                 ?>
                 <?php if ($site_main_menu): ?>
+                 <!--<div id="da11y-options"></div>-->
                     <ul id="site-main-menu" class="site-custom-menu menu nav navbar-nav col-md-5">
+                        
                         <?php print render($site_main_menu); ?>
                     </ul>
                     <ul class="col-md-3 header-right">
@@ -74,7 +77,9 @@
                         <?php
                         $block = module_invoke('block', 'block_view', '5');
                         print render($block['content']); //print $search_form; 
-                        ?></ul>
+                        ?>
+                    
+                    </ul>
                     <?php
                     $block2 = module_invoke('locale', 'block_view', 'language'); //dpm($block2);
                     // print render($block2['content']); //print $search_form; 
@@ -83,7 +88,11 @@
             </div><!-- /.navbar-collapse -->
         </nav><!-- /.navbar -->
     </div> <!-- /.container -->
+    <!--<div id="da11y-toggle"></div>-->
+<!--    <div id="da11y-plugin"></div>-->
+    
 </header>
+
 <?php if ($is_front): ?>
     <?php print render($page['featured']); ?>
 <?php endif; ?>
@@ -149,7 +158,7 @@
 //        jQuery('#search-api-page-search-form').append('<div class="search_new">' + data + '</div>');
         jQuery(".search_new").appendTo("#search-api-page-search-form");
         jQuery("#search-api-page-search-form").appendTo(".container:first");
-        
-        
+
+
     });
 </script>
