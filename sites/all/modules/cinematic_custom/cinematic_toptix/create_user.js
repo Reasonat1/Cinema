@@ -1,8 +1,13 @@
+var toptix_form_processed = false;
+
 (function($) {
   Drupal.behaviors.toptix = {
     attach: function(context, settings) {
       // closure variable
       $('#' + settings.toptix_form).submit(function(event) {
+        if (toptix_form_processed) {
+          return;
+        }
         toptix_form_data = this;
         var toptix_id = $(this).find('input[name^="field_toptix"]').val();
         event.stopPropagation();
@@ -23,11 +28,13 @@ var toptix_form_data = null;
 
 function toptix_callback_save(result) {
   if (toptix_limit_calls++ > 10) {
+    toptix_form_processed = true;
     return;
   }
   if (result.HasError) {
     var form = jQuery('#' + Drupal.settings.toptix_form);
     form.find('input[name^="field_toptix"]').val(result.ErrorDescription);
+    toptix_form_processed = true;
     form.submit();
     return;
   }
@@ -38,6 +45,7 @@ function toptix_callback_save(result) {
     toptix_validated = true;
     var form = jQuery('#' + Drupal.settings.toptix_form);
     form.find('input[name^="field_toptix"]').val(result.Result.Id);
+    toptix_form_processed = true;
     form.submit();
   }
 }
@@ -66,6 +74,7 @@ function toptix_callback_create(result) {
 function toptix_callback_user_login(result) {
   if (toptix_limit_calls++ > 10 || result.HasError) {
     var form = jQuery('#' + Drupal.settings.toptix_form);
+    toptix_form_processed = true;
     form.submit();
     return;
   }
@@ -80,6 +89,7 @@ function toptix_callback_user_login(result) {
   Customer.Name.First = form['name'].value;
   $esro.updateCustomerDetails(Customer, function(result) {
     var form = jQuery('#' + Drupal.settings.toptix_form);
+    toptix_form_processed = true;
     form.submit();
   });
 }
