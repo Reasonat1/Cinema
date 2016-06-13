@@ -53,8 +53,11 @@ function toptix_callback_save(result) {
 function toptix_alter_customer(Customer, form) {
   Customer.Login.Name = 'drupal_' + form['name'].value;
 
-  Customer.Name.First = jQuery(form).find('input[name^="field_first_name"]').value;
-  Customer.Name.Last = jQuery(form).find('input[name^="field_last_name"]').value;
+  Customer.Name.First = jQuery(form).find('input[name^="field_first_name"]').val();
+  Customer.Name.Last = jQuery(form).find('input[name^="field_last_name"]').val();
+
+  Customer.ContactDetails[0].Detail = jQuery(form).find('input[name^="field_landline"]').val();
+  Customer.ContactDetails[1].Detail = jQuery(form).find('input[name^="field_mobile"]').val();
     /*
     Customer.AddressDetails[0] = {
       Address: {
@@ -116,7 +119,6 @@ function toptix_clean_customer(obj) {
   delete obj.Birthday;
   delete obj.BlackListItems;
   delete obj.ClientTypes;
-  delete obj.ContactDetails;
   delete obj.ContactMeByServiceIds;
   delete obj.DataProtectionDetails;
   delete obj.DisplayName;
