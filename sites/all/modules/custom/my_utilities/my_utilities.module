@@ -41,7 +41,6 @@ function _return_addthisevent_markup($node) {
   }  
   return $output;
 }
-
 function my_utilities_block_info() {
     $blocks['prev'] = array(
       'info' => t('Custom Previous Links'), //The name that will appear in the block list.
@@ -72,28 +71,28 @@ function my_utilities_block_info() {
    }
    $node = node_load(arg(1));
   // drupal_set_message('<pre>'.print_r($node->type, 1).'</pre>');
-   if($node->type =='cm_event' || $node->type =='cm_movie' || $node->type =='cm_movie_group'){
-      switch($mode) {
-        case 'p':
-          $n_nid = prev_next_nid($node->nid, 'prev');
-          $link_text = t('Previous');
-          break;
-     
-        case 'n':
-          $n_nid = prev_next_nid($node->nid, 'next');
-          $link_text = t('Next');
-          break;
-     
-        default:
-          return NULL;
+      if($node->type =='cm_event' || $node->type =='cm_movie' || $node->type =='cm_movie_group'){
+         switch($mode) {
+           case 'p':
+             $n_nid = prev_next_nid($node->nid, 'prev');
+             $link_text = t('Previous');
+             break;
+        
+           case 'n':
+             $n_nid = prev_next_nid($node->nid, 'next');
+             $link_text = t('Next');
+             break;
+        
+           default:
+             return NULL;
+         }
+      }
+      if ($n_nid) {
+        $n_node = node_load($n_nid);
+        $html = l($link_text, "node/$n_nid", array('html' => TRUE));
+        return $html;
       }
    }
-  if ($n_nid) {
-    $n_node = node_load($n_nid);
-    $html = l($link_text, "node/$n_nid", array('html' => TRUE));
-    return $html;
-  }
-}
   function _node_prev_links(){
       $node = node_load(arg(1));
       $output='';
@@ -103,7 +102,7 @@ function my_utilities_block_info() {
          $output .= '</ul>';
       $output .= '</div>';
       return $output;
-  }
+   }
    function _node_next_links(){
       $node = node_load(arg(1));
       $output='';
@@ -113,7 +112,19 @@ function my_utilities_block_info() {
          $output .= '</ul>';
       $output .= '</div>';
       return $output;
+   }
+function my_utilities_views_pre_render(&$view) {
+  //remove current event from the future events view list. this has to be done here because we cant exclude the node argument from view as it is not only excluded but also used for limiting results.
+  if($view->name == 'event_ct_view' && $view->current_display == 'panel_pane_5') {
+	foreach($view->result as $key => &$result) {
+		if($result->node_field_data_field_event_corresponding_ref_nid == $view->args[0]) {
+			unset($view->result[$key]);			
+		}		
+	}
   }
+	
+	
+}
 /**
  * Implements hook_admin_paths().
  *//*
