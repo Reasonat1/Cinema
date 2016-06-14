@@ -70,8 +70,8 @@ function my_utilities_block_info() {
      return NULL;
    }
    $node = node_load(arg(1));
-   drupal_set_message('<pre>'.print_r($node, 1).'</pre>');
-      if($node->type =='cm_event' || $node->type =='cm_movie' || $node->type =='cm_movie_group'){
+   //drupal_set_message('<pre>'.print_r($node, 1).'</pre>');
+     // if($node->type =='cm_event' || $node->type =='cm_movie' || $node->type =='cm_movie_group'){
          switch($mode) {
            case 'p':
              $n_nid = prev_next_nid($node->nid, 'prev');
@@ -86,7 +86,7 @@ function my_utilities_block_info() {
            default:
              return NULL;
          }
-      }
+     // }
       if ($n_nid) {
         $n_node = node_load($n_nid);
         $html = l($link_text, "node/$n_nid", array('html' => TRUE));
