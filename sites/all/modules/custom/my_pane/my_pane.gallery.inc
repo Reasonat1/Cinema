@@ -344,7 +344,7 @@ function my_pane_field_widget_form(&$form, &$form_state, $field, $instance, $lan
 
     $element['fid'] = array(
       '#title' => t('Image'),
-      '#type' => 'managed_file',
+      '#type' => 'media',
       '#upload_location' => file_field_widget_uri($field, $instance),
       '#default_value' => isset($items[$delta]['fid']) ? $items[$delta]['fid'] : NULL,
     );
@@ -371,7 +371,7 @@ function my_pane_field_widget_form(&$form, &$form_state, $field, $instance, $lan
 
     $element['fid'] = array(
       '#title' => t('Image'),
-      '#type' => 'managed_file',
+      '#type' => 'media',
       '#upload_location' => file_field_widget_uri($field, $instance),
       '#default_value' => isset($items[$delta]['fid']) ? $items[$delta]['fid'] : NULL,
     );
@@ -435,7 +435,7 @@ function my_pane_field_load($entity_type, $entities, $field, $instances, $langco
   // return it to the item title.
   foreach ($entity_items_copy as $entity_id => $items_copy) {
     foreach ($items_copy as $delta => $item) {
-      $items[$entity_id][$delta]['title'] = $item['title'];
+     // $items[$entity_id][$delta]['title'] = $item['title'];
     }
   }
 }

@@ -272,7 +272,7 @@
   font-size: 0;
   right: 15px;
   opacity: 1;
-  margin-top: 175px;
+  top: 50%;
   z-index: 9;
 } 
 
@@ -281,7 +281,7 @@
   font-size: 0;
   left: 15px;
   opacity: 1;
-  margin-top: 175px;
+  top: 50%;
   z-index: 9;
 }
 .middel-content .slider-readmore {
@@ -562,4 +562,7 @@
   padding: 4px 13px;
   color: #ffffff;
   cursor: pointer;
+}
+fieldset#panopoly-form-widget-preview {
+  display: none;
 }
