@@ -71,7 +71,6 @@ function my_utilities_block_info() {
      return NULL;
    }
    $node = node_load(arg(1));
-  // drupal_set_message('<pre>'.print_r($node->type, 1).'</pre>');
    if($node->type =='cm_event' || $node->type =='cm_movie' || $node->type =='cm_movie_group'){
       switch($mode) {
         case 'p':
