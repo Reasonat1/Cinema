@@ -313,7 +313,7 @@ button.toptix-purchase {
  */
 /* MObile Menu
 ================================================== */
-@media screen and (max-width: 480px) {
+@media only screen and (max-device-width: 480px) and (min-device-width: 320px){
     .node-type-cm-movie .view-display-id-panel_pane_2 .slide-over-content {
         bottom: 1em;
         left: 0;
