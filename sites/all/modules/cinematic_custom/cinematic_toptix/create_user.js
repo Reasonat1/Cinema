@@ -58,6 +58,7 @@ function toptix_alter_customer(Customer, form) {
 
   Customer.ContactDetails[0].Detail = jQuery(form).find('input[name^="field_landline"]').val();
   Customer.ContactDetails[1].Detail = jQuery(form).find('input[name^="field_mobile"]').val();
+  Customer.ContactDetails[3].Detail = form['mail'].value;
     /*
     Customer.AddressDetails[0] = {
       Address: {
@@ -67,7 +68,6 @@ function toptix_alter_customer(Customer, form) {
       },
       Usage: 10,*/
   toptix_clean_customer(Customer);
-
 }
 
 function toptix_callback_create(result) {
