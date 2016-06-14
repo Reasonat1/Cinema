@@ -311,3 +311,79 @@ button.toptix-purchase {
 /*
  * movie page css ends
  */
+/* MObile Menu
+================================================== */
+@media screen and (max-width: 480px) {
+    .node-type-cm-movie .view-display-id-panel_pane_2 .slide-over-content {
+        bottom: 1em;
+        left: 0;
+    }
+    .node-type-cm-movie .view-display-id-panel_pane_2 .slide-left-ct {
+        position: relative;
+        width: 85%;
+        float: right;
+        left: 15%;
+    }
+    .node-type-cm-movie .view-display-id-panel_pane_2 .slide-movie-title {
+        font-size: 1.56rem;
+    }
+    .node-type-cm-movie .view-display-id-panel_pane_2 .slide-right-ct {
+        float: left;
+        position: relative;
+        margin-top: 0;
+        width: 10%;
+    }
+    .node-type-cm-movie .view-display-id-panel_pane_2 .slide-right-ct a {
+        height: 48px;
+        width: 48px;
+    }
+}
+/* Smaller Then Desktop
+================================================== */
+@media only screen and (min-width: 959px) and (max-width: 1200px) {
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1239px) {
+}
+/* Tablet (Portrait)
+================================================== */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+}
+/* Mobile (Portrait & Landscape)
+================================================== */
+@media only screen and (max-width: 767px) {
+}
+/* Mobile (Landscape)
+================================================== */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+}
+
+
+@media (min-width:320px) and (max-width:480px){
+    
+}
+@media(max-device-width:420px){
+    
+}
+@media (min-width:768px) and (max-width:1024px){
+}
+@media (min-width:850px) and (max-width:980px){
+}
+@media (min-width:981px) and (max-width:1024px){
+}
+@media (min-width:1025px) and (max-width:1199px){
+}
+@media (min-width:400px) and (max-width:450px){
+}
+@media (min-width:451px) and (max-width:480px){
+    
+}
+@media (min-width:481px) and (max-width:640px){
+}
+@media (min-width:560px) and (max-width:640px){
+}
+@media (min-width:641px) and (max-width:767px){
+}
+@media (min-device-width:620px){
+    
+}
