@@ -41,6 +41,78 @@ function _return_addthisevent_markup($node) {
   }  
   return $output;
 }
+function my_utilities_block_info() {
+    $blocks['prev'] = array(
+      'info' => t('Custom Previous Links'), //The name that will appear in the block list.
+      'cache' => DRUPAL_CACHE_PER_ROLE, //Default
+    );
+   $blocks['next'] = array(
+      'info' => t('Custom Next Links'), //The name that will appear in the block list.
+      'cache' => DRUPAL_CACHE_PER_ROLE, //Default
+    );
+    return $blocks;
+  }
+  function my_utilities_block_view($delta = '') {
+    $block = array();
+    switch($delta){
+      case 'prev':
+        $block['subject'] = t('Custom Prev');
+        $block['content'] =_node_prev_links();
+        break;
+      case 'next':
+        $block['subject'] = t('Custom Next');
+        $block['content'] =_node_next_links();
+     }
+    return $block;
+  }
+  function pn_node($node, $mode = 'n') {
+   if (!function_exists('prev_next_nid')) {
+     return NULL;
+   }
+   $node = node_load(arg(1));
+  // drupal_set_message('<pre>'.print_r($node->type, 1).'</pre>');
+   if($node->type =='cm_event' || $node->type =='cm_movie' || $node->type =='cm_movie_group'){
+      switch($mode) {
+        case 'p':
+          $n_nid = prev_next_nid($node->nid, 'prev');
+          $link_text = t('Previous');
+          break;
+     
+        case 'n':
+          $n_nid = prev_next_nid($node->nid, 'next');
+          $link_text = t('Next');
+          break;
+     
+        default:
+          return NULL;
+      }
+   }
+  if ($n_nid) {
+    $n_node = node_load($n_nid);
+    $html = l($link_text, "node/$n_nid", array('html' => TRUE));
+    return $html;
+  }
+}
+  function _node_prev_links(){
+      $node = node_load(arg(1));
+      $output='';
+      $output .= '<div class="node-nav prev-custom custom-nav">';
+         $output .= '<ul>';
+            $output .= '<li class="prev">'.pn_node($node, 'p').'</li>';
+         $output .= '</ul>';
+      $output .= '</div>';
+      return $output;
+  }
+   function _node_next_links(){
+      $node = node_load(arg(1));
+      $output='';
+      $output .= '<div class="node-nav next-custom custom-nav">';
+         $output .= '<ul>';
+            $output .= '<li class="next">'.pn_node($node, 'n').'</li>';
+         $output .= '</ul>';
+      $output .= '</div>';
+      return $output;
+  }
 /**
  * Implements hook_admin_paths().
  *//*
