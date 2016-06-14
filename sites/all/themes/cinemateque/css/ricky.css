@@ -344,17 +344,14 @@ button.toptix-purchase {
     .table-responsive {
         border: 0px solid #ddd;
     }
-    .node-type-cm-movie td:nth-of-type(4),
+    /*.node-type-cm-movie td:nth-of-type(4),
     .node-type-cm-movie td:nth-of-type(2),
     .node-type-cm-movie td:nth-of-type(3){
         display: none;
-    }
+    }*/
     
 }
-@media only screen and (max-width: 760px), (max-device-width: 1024px) and (min-device-width: 768px)
-td:nth-of-type(1):before{
-    content: "test";
-}
+
 /* Smaller Then Desktop
 ================================================== */
 @media only screen and (min-width: 959px) and (max-width: 1200px) {
