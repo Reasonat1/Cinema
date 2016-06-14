@@ -1,7 +1,7 @@
 <?php
 function my_backend_init() {
-    //drupal_add_css(drupal_get_path('module', 'my_backend') . '/include/my_backend.css');
-    //drupal_add_js(drupal_get_path('module', 'my_backend') . '/include/my_backend.js');
+    drupal_add_css(drupal_get_path('module', 'my_backend') . '/include/my_backend.css');
+    drupal_add_js(drupal_get_path('module', 'my_backend') . '/include/my_backend.js');
     /**
      * External files link
      */
