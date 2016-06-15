@@ -372,8 +372,12 @@ button.toptix-purchase {
     .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_7 .views-field-field-toptix-purchase button{
         padding: 3px 5px;
     }
-    .node-type-cm-movie .content.middle .panels-flexible-region-node_page-content_left {
+    .node-type-cm-movie .content.middle .panels-flexible-region-node_page-content_left,
+    .node-type-cm-movie .content.middle .inside.panels-flexible-row-inside {
         width: 100%;
+    }
+    .node-type-cm-movie .content.middle .panels-flexible-region-node_page-content_right {
+        display: none;
     }
     .node-type-cm-movie #panels-ipe-regionid-content_left .pane-movie-top-pane-view-panel-pane-4 {
         margin-right: 0%;
@@ -388,6 +392,11 @@ button.toptix-purchase {
         font-weight: 600;
         font-size: 1.2rem;
         margin: 0;
+    }
+    .node-type-cm-movie .bottom-content .pane-test-view-for-movie-credit-panel-pane-1 .view-content {
+        padding-right: 0%;
+        text-align: right;
+        width: 100%;
     }
     /*.node-type-cm-movie td:nth-of-type(4),
     .node-type-cm-movie td:nth-of-type(2),
