@@ -63,18 +63,28 @@ function _cm_extra_icons() {
 }
 
 function cm_extra_form_node_form_alter(&$form, &$form_state, $form_id) {
-  // do stuff
-
-  if(!empty($form['nid']['#value'])){
+//dpm($form);
+  if(!empty($form['nid']['#value']) && !$form['#node']->tnid){ //only for saved nodes that does not have translation
 	  
 	$newaction = $form['actions']['submit'];
 	$newaction['#submit'][] = 'cm_extra_node_translate_after_submit';
+	$newaction['#value'] = t('Save and translate');
+	$form['actions']['snt'] = $newaction;
   }
-  dpm($form);  
+
 }
 
+//redirect user to the add node form of the translation for it
 function cm_extra_node_translate_after_submit($form, &$form_state) {
-	dpm($form_state);
+	$a = $form_state;
+	($a['node']->language == 'en') ? $dest_lang = 'he' : $dest_lang = 'en';
+	$form_state['redirect'] = array(
+	  'node/add/'. str_replace('_', '-', $a['node']->type),
+	  array('query' => array(
+	    'translation' => $a['node']->nid,
+		'target' => $dest_lang,
+	    )),
+	);
 	
 }
-//http://jff.jer-cin.tikkewebsites.com/he/node/add/cm-event?translation=12&target=he
+//
