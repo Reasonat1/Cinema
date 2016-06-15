@@ -344,11 +344,20 @@ button.toptix-purchase {
     .table-responsive {
         border: 0px solid #ddd;
     }
+    .node-type-cm-movie table thead,
+    .node-type-cm-movie td:nth-of-type(2),
+    .node-type-cm-movie td:nth-of-type(3){
+        display: none;
+    }
+    .node-type-cm-movie table tr {
+        padding: 0.2em 0;
+        border-bottom: 1px solid #ccc !important;
+    }
     /*.node-type-cm-movie td:nth-of-type(4),
     .node-type-cm-movie td:nth-of-type(2),
     .node-type-cm-movie td:nth-of-type(3){
         display: none;
-    }*/
+    }
     .node-type-cm-movie table tr {
         padding: 0.2em 0;
         border-bottom: 1px solid #ccc !important;
@@ -385,7 +394,7 @@ button.toptix-purchase {
     }
     .node-type-cm-movie table .addthisevent-drop {
         padding: 13px 12px 12px 30px;
-    }
+    }*/
 }
 
 /* Smaller Then Desktop
