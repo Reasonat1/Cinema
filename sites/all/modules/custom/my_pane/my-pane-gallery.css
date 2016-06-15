@@ -309,7 +309,7 @@
 }
 .node-teaser.cm_event  .teaser-row {
   float: left;
-  height: 306px;
+  min-height: 306px;
   margin: 10px;
   overflow: hidden;
   position: relative;
@@ -322,11 +322,23 @@
   top: 15px;
 }
 .event-time {
-  bottom: 20px;
+  top: 260px;
   color: #ffffff;
   font-size: 15px;
   position: absolute;
   right: 20px;
+}
+.event-summery {
+  background-color: #ffffff;
+  float: left;
+  width: 100%;
+}
+.event-image {
+  min-height: 306px;
+}
+.event-summery > p, .event-summery span {
+  font-size: 13px;
+  padding: 5px 10px;
 }
 .event-time .time {
   border-right: 1px solid #ffffff;
@@ -335,9 +347,10 @@
 }
 .event-image > img {
   width: 100%;
+  height: 306px;
 }
 .event-title {
-  bottom: 50px;
+  top: 220px;
   color: #ffffff;
   position: absolute;
   right: 20px;
@@ -565,4 +578,40 @@
 }
 fieldset#panopoly-form-widget-preview {
   display: none;
+}
+.node-teaser.cm_article .teaser-row {
+  float: left;
+  margin: 10px;
+  position: relative;
+  width: 48%;
+}
+.article-image > img {
+  height: 300px;
+  width: 100%;
+}
+.article-title {
+  color: #ffffff;
+  position: absolute;
+  right: 20px;
+  top: 220px;
+}
+.article-subtitle {
+  color: #ffffff;
+  position: absolute;
+  right: 20px;
+  top: 240px;
+}
+.article-flag {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.article-summery {
+  background: #ffffff none repeat scroll 0 0;
+  float: left;
+  padding: 0 5px;
+  width: 100%;
+}
+.article-summery span, .article-summery p{
+    font-size: 13px;
 }

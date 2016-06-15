@@ -22,7 +22,7 @@ function my_pane_node_content_form($form, &$form_state) {
  $content_type = db_query("select type,name from node_type")->fetchAll();
  $option = array();
  foreach ($content_type as $val){
-     if($val->type != 'cm_hall' && $val->type != 'book' && $val->type != 'panopoly_landing_page'){
+     if($val->type != 'cm_hall' && $val->type != 'book' && $val->type != 'panopoly_landing_page' && $val->type != 'panopoly_page'){
          $option[$val->type]= $val->name;
      }
  }
@@ -96,11 +96,10 @@ $form['#prefix'] = '<fieldset id="edit-node-teaser" class="form-wrapper">
    '#default_value' => $conf['upcomming_event'],
  );
      
-   $form['movie_teaser_text '] = array(
-   '#type' => 'checkbox',
+   $form['movie_teaser_text'] = array(
+   '#type' => 'textarea',
    '#title' => t('Movie teaser text'),
-   '#description' => t('check the checkbox for showing the show description/teaser text'),
-   '#default_value' => $conf['movie_teaser_text'],
+   '#description' => t('Eneter the content for overriding the description/teaser text'),
  );
     
 //   $form['no_of_content'] = array(
@@ -117,6 +116,7 @@ $form['#suffix'] = '</div></fieldset>';
  * Edit form submit function.
  */
 function my_pane_node_content_form_submit($form, &$form_state) {
+    //echo "<pre>"; print_r($form_state['values']); die();
     $form_state['conf']['content_type'] = $form_state['values']['content_type'];
     $form_state['conf']['view_mode'] = $form_state['values']['view_mode'];
     $form_state['conf']['top_black_title'] = $form_state['values']['top_black_title'];
@@ -138,7 +138,7 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
             return;
           }
     }
-  
+
     global $base_url;
     $content_type = $conf['content_type'];
     $top_black_title = $conf['top_black_title'];
@@ -161,11 +161,12 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
     // for event  type node
     if($content_type == 'cm_event'){
         $result = db_query("SELECT  DISTINCT n.nid, n.title,n.created,n.changed,et.field_cm_event_time_value As event_start_time, et.field_cm_event_time_value2 As event_end_time,
-            bk.field_mc_teaser_toptxt_blk_value As black_content, wk.field_mc_teaser_toptxt_white_value As white_content
+            bk.field_mc_teaser_toptxt_blk_value As black_content, wk.field_mc_teaser_toptxt_white_value As white_content,sd.field_cm_event_short_description_value As summery
             from node As n
             LEFT JOIN field_data_field_cm_event_time AS et ON et.entity_id = n.nid
             LEFT JOIN field_data_field_mc_teaser_toptxt_blk AS bk ON bk.entity_id = n.nid
             LEFT JOIN field_data_field_mc_teaser_toptxt_white AS wk ON wk.entity_id = n.nid
+            LEFT JOIN field_data_field_cm_event_short_description AS sd ON sd.entity_id = n.nid
             where n.type ='cm_event'")->fetchAll();
 
         // Build the output of block
@@ -207,7 +208,19 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
             }else{
                 $white_content = '';
             }
-            
+
+            // show teaser text
+              if($movie_teaser_text == ''){
+                  if(!empty($val->summery)){
+                      $description = substr($val->summery, 0, 300);
+                      $description = $description.'...';
+                  }else{
+                      $description = "";
+                  }
+              }else{
+                  $description =$movie_teaser_text;
+              }
+
             $title = $val->title;
            $alias = $base_url.'/'.drupal_lookup_path('alias', "node/".$val->nid);
             $html.= "<div class='row-$row_class teaser-row'>";
@@ -216,6 +229,7 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
             $html.= "<div class='event-flag'>$flag</div>";
             $html.= "<div class='event-title'><span>$title</span></div>";
             $html.= "<div class='event-time'><span class='time'>$time</span><span class='date'>$date</span><a href='$alias'><span class='ticket'>Ticket</span></a></div>";
+            $html.= "<div class='event-summery'>$description</div>";
             $html.= "</div>";
             $no++;
         }
@@ -319,14 +333,15 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
                 }
             
                // show teaser text
-                if($movie_teaser_text == ''){
+                if($movie_teaser_text == '0'){
                     if(!empty($val->summery)){
-                        $summery=$val->summery;
+                        $description = substr($val->summery, 0, 300);
+                        $description = $description.'...';
                     }else{
-                        $summery = "";
+                        $description = "";
                     }
                 }else{
-                    $summery = "";
+                    $description = "";
                 }
                 
                 // override movie title
@@ -344,7 +359,7 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
             $html.= "<div class='movie-title'><span>$title</span></div>";
             $html.= "<div class='movie_play'><span>$play_icon</span></div>";
             $html.= "<div class='movie_metainfo'><span>$movie_duration</span></div>";
-            $html.= "<div class='movie_summery'><span>$summery</span></div>";
+            $html.= "<div class='movie_summery'><span>$description</span></div>";
             $html.= "</div>";
             $no++;
         }
@@ -445,14 +460,15 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
                 }
             
                // show teaser text
-                if($movie_teaser_text == ''){
+                if($movie_teaser_text == '0'){
                     if(!empty($val->summery)){
-                        $summery=$val->summery;
+                        $description = substr($val->summery, 0, 300);
+                        $description = $description.'...';
                     }else{
-                        $summery = "";
+                        $description = "";
                     }
                 }else{
-                    $summery = "";
+                    $description = "";
                 }
                 
                 // override movie title
@@ -470,7 +486,7 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
             $html.= "<div class='moviegroup-title'><span>$title</span></div>";
             $html.= "<div class='moviegroup_play'><span>$play_icon</span></div>";
             $html.= "<div class='moviegroup_metainfo'><span>$moviegroup_duration</span></div>";
-            $html.= "<div class='moviegroup_summery'><span>$summery</span></div>";
+            $html.= "<div class='moviegroup_summery'><span>$description</span></div>";
             $html.= "</div>";
             $no++;
         }
@@ -566,6 +582,110 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
         $output.= "</div></div></div>";
     }
     
+        // for person  type node
+    if($content_type == 'cm_article'){
+        $result = db_query("SELECT n.nid, n.title,n.created,n.changed,sb.field_cm_article_subtitle_value As article_subtitle,db.body_value As summery
+            from node As n
+           LEFT jOIN field_data_field_cm_article_subtitle As sb ON sb.entity_id = n.nid
+            LEFT jOIN field_data_body As db ON db.entity_id = n.nid
+            where n.type ='cm_article'")->fetchAll();
+
+         // Build the output of block
+        $html = "";
+        $no = 1;
+        foreach ($result as $val) {
+            if($no % 2 == 0){  $row_class = 'even'; }else{  $row_class = 'odd';}
+            
+            // check for movie image
+            $class = '';
+            if($movie_image == '0'){
+                $artical_picture = db_query("SELECT  field_cm_article_image_fid from field_data_field_cm_article_image where entity_id = $val->nid")->fetchField();
+                if(!empty($artical_picture)){
+                    $file = file_load($artical_picture);
+                    $uri = $file->uri;
+                    $img_src = file_create_url($uri);
+                    $imgae = "<img src='$img_src' alt= 'event image'>";
+                }else{
+                    $imgae = "";
+                }
+            }else{
+                $class= 'no-image';
+                 $imgae = "";
+            }
+            
+            // check if show images to side of text
+            if($movie_image_side == '1'){ 
+                $class.= '  side-image';
+            }
+            
+            
+            // Favorite flag link
+            $flag = flag_create_link('favorite_', $val->nid);
+            
+            // event black box content
+            if($top_black_title == ''){
+                if(!empty($val->black_content)){
+                    $data_b = $val->black_content;
+                    $black_content = "<span class='black-content'>$data_b</span>";
+                }else{
+                    $black_content="";
+                }
+            }else{
+                $black_content = "<span class='black-content'>$top_black_title</span>";
+            }
+            
+            
+            // event white box content
+            if($top_white_title == ''){
+                if(!empty($val->white_content)){
+                    $data_w = $val->white_content;
+                    $white_content = "<span class='black-white'>$data_w</span>";
+                }else{
+                    $white_content ="";
+                }
+            }else{
+                $white_content = "<span class='black-white'>$top_white_title</span>";
+            }
+                
+            
+               // show teaser text
+                if($movie_teaser_text == ''){
+                    if(!empty($val->summery)){
+                        $description = substr($val->$val->summery, 0, 300);
+                        $description = $description.'...';
+                    }else{
+                        $description = "";
+                    }
+                }else{
+                    $description = "";
+                }
+                
+                // override movie title
+                if($movie_title == ''){
+                    $title = $val->title;
+                }
+                else{
+                    $title = $movie_title;
+                }
+             $subtitle = $val->article_subtitle;
+                     
+            $html.= "<div class='row-$row_class teaser-row $class'>";
+            $html.= "<div class='article-image'>$imgae</div>";
+            $html.= "<div class='article-date-black-white-background'>$black_content $white_content</div>";
+            $html.= "<div class='article-flag'>$flag</div>";
+            $html.= "<div class='article-title'><span>$title</span></div>";
+            $html.= "<div class='article-subtitle'><span>$subtitle</span></div>";
+            $html.= "<div class='article-summery'><span>$description</span></div>";
+            $html.= "</div>";
+            $no++;
+        }
+
+        $output.= "<div class='node-teaser wapper  $content_type'>";
+        $output.= "<div class='inner-wrapper'>";
+        $output.= "<div class='content'>";
+        $output.=$html;
+        $output.= "</div></div></div>";
+    }
    $block->content = $output;
    return $block;
 }

@@ -61,6 +61,10 @@ $('.caruosel-slideshow').cycle({
             $('.form-item-upcomming-event').show();
             $('.form-item-movie-teaser-text-').show();            
         }
+        if ($('select#edit-content-type').val()  == 'cm_article'){
+            $('.form-item-top-black-title').show();
+            $('.form-item-top-white-title').show();     
+        }
         
        $('select#edit-content-type').change(function(){
         if($(this).val()  != 'cm_event' && $(this).val()  != 'cm_movie' && $(this).val()  != 'cm_movie_group' ){
@@ -82,6 +86,10 @@ $('.caruosel-slideshow').cycle({
             $('.form-item-upcomming-event').show();
             $('.form-item-movie-teaser-text-').show();            
         }
+       if ($(this).val()  == 'cm_article'){
+            $('.form-item-top-black-title').show();
+            $('.form-item-top-white-title').show();
+        }        
         });
   });
   
