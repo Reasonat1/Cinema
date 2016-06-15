@@ -346,12 +346,30 @@ button.toptix-purchase {
     }
     .node-type-cm-movie table thead,
     .node-type-cm-movie td:nth-of-type(2),
-    .node-type-cm-movie td:nth-of-type(3){
+    .node-type-cm-movie td:nth-of-type(3),
+    .node-type-cm-movie td:nth-of-type(4){
         display: none;
     }
     .node-type-cm-movie table tr {
         padding: 0.2em 0;
         border-bottom: 1px solid #ccc !important;
+        clear: both;
+    }
+    .node-type-cm-movie .views-field-field-toptix-purchase,
+    .node-type-cm-movie .views-field-field-cm-event-hall,
+    .node-type-cm-movie .views-field-field-cm-event-time{
+        float: left;
+    }
+    .node-type-cm-movie .views-field-field-cm-event-time,
+    .node-type-cm-movie .views-field-field-cm-event-time-1{
+        color: #ccc;
+    }
+    .node-type-cm-movie .views-field-title-1,
+    .node-type-cm-movie .views-field-field-cm-event-time-1{
+        text-align: right;
+    }
+    .node-type-cm-movie .views-field-field-toptix-purchase button{
+        padding: 3px 5px;
     }
     /*.node-type-cm-movie td:nth-of-type(4),
     .node-type-cm-movie td:nth-of-type(2),
