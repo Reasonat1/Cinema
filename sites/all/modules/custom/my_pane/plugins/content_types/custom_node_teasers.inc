@@ -333,7 +333,7 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
                 }
             
                // show teaser text
-                if($movie_teaser_text == '0'){
+                if($movie_teaser_text == ''){
                     if(!empty($val->summery)){
                         $description = substr($val->summery, 0, 300);
                         $description = $description.'...';
@@ -341,7 +341,7 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
                         $description = "";
                     }
                 }else{
-                    $description = "";
+                    $description = $movie_teaser_text;
                 }
                 
                 // override movie title
@@ -460,7 +460,7 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
                 }
             
                // show teaser text
-                if($movie_teaser_text == '0'){
+                if($movie_teaser_text == ''){
                     if(!empty($val->summery)){
                         $description = substr($val->summery, 0, 300);
                         $description = $description.'...';
@@ -468,7 +468,7 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
                         $description = "";
                     }
                 }else{
-                    $description = "";
+                    $description = $movie_teaser_text;
                 }
                 
                 // override movie title
@@ -657,7 +657,7 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
                         $description = "";
                     }
                 }else{
-                    $description = "";
+                    $description = $movie_teaser_text;
                 }
                 
                 // override movie title
