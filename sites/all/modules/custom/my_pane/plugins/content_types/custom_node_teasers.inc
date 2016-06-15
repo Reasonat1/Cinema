@@ -161,10 +161,9 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
     // for event  type node
     if($content_type == 'cm_event'){
         $result = db_query("SELECT  DISTINCT n.nid, n.title,n.created,n.changed,et.field_cm_event_time_value As event_start_time, et.field_cm_event_time_value2 As event_end_time,
-            ei.field_cm_event_images_fid As event_image, bk.field_mc_teaser_toptxt_blk_value As black_content, wk.field_mc_teaser_toptxt_white_value As white_content
+            bk.field_mc_teaser_toptxt_blk_value As black_content, wk.field_mc_teaser_toptxt_white_value As white_content
             from node As n
             LEFT JOIN field_data_field_cm_event_time AS et ON et.entity_id = n.nid
-            LEFT JOIN field_data_field_cm_event_images AS ei ON ei.entity_id = n.nid
             LEFT JOIN field_data_field_mc_teaser_toptxt_blk AS bk ON bk.entity_id = n.nid
             LEFT JOIN field_data_field_mc_teaser_toptxt_white AS wk ON wk.entity_id = n.nid
             where n.type ='cm_event'")->fetchAll();
@@ -175,9 +174,10 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
         foreach ($result as $val) {
             if($no % 2 == 0){  $row_class = 'even'; }else{  $row_class = 'odd';}
             
+            $event_image = db_query("SELECT  field_cm_event_images_fid from field_data_field_cm_event_images where entity_id = $val->nid")->fetchField();
             // check for event image
-            if(!empty($val->event_image)){
-                 $file = file_load($val->event_image);
+            if(!empty($event_image)){
+                 $file = file_load($event_image);
                  $uri = $file->uri;
                  $img_src = file_create_url($uri);
                  $imgae = "<img src='$img_src' alt= 'event image'>";
@@ -230,11 +230,8 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
     // for movie  type node
     if($conf['content_type'] == 'cm_movie'){        
         $result = db_query("SELECT  n.nid, n.title,n.created,n.changed,bk.field_mc_teaser_toptxt_blk_value As black_content, wk.field_mc_teaser_toptxt_white_value As white_content,
-            mp.field_cm_movie_pictures_fid As movie_picture,mv.field_cm_movie_videos_fid As movie_video,md.field_cm_movie_duration_interval As movie_duration,
-            md.field_cm_movie_duration_period As movie_duration_period,mc.field_cm_movie_meta_credit_value As meta_credit,ss.field_cm_movie_short_summary_value As summery
+            md.field_cm_movie_duration_interval As movie_duration,md.field_cm_movie_duration_period As movie_duration_period,mc.field_cm_movie_meta_credit_value As meta_credit,ss.field_cm_movie_short_summary_value As summery
             from node As n
-            LEFT JOIN field_data_field_cm_movie_pictures As mp ON mp.entity_id = n.nid
-            LEFT JOIN field_data_field_cm_movie_videos As mv ON mv.entity_id = n.nid
             LEFT JOIN field_data_field_mc_teaser_toptxt_blk As bk ON bk.entity_id = n.nid
             LEFT JOIN field_data_field_mc_teaser_toptxt_white As wk ON wk.entity_id = n.nid
             LEFT JOIN field_data_field_cm_movie_duration As md ON md.entity_id = n.nid
@@ -250,9 +247,10 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
             
             // check for movie image
             $class = '';
-            if($movie_image == '0'){ 
-                if(!empty($val->movie_picture)){
-                    $file = file_load($val->movie_picture);
+            if($movie_image == '0'){
+                $movie_picture = db_query("SELECT  field_cm_movie_pictures_fid from field_data_field_cm_movie_pictures where entity_id = $val->nid")->fetchField();
+                if(!empty($movie_picture)){
+                    $file = file_load($movie_picture);
                     $uri = $file->uri;
                     $img_src = file_create_url($uri);
                     $imgae = "<img src='$img_src' alt= 'event image'>";
@@ -299,7 +297,8 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
             }
             
             // check for movie video
-                if(!empty($val->movie_video)){
+            $movie_video = db_query("SELECT  field_cm_movie_videos_fid from field_data_field_cm_movie_videos where entity_id = $val->nid")->fetchField();
+                if(!empty($movie_video)){
                     $play_icon = "<img src='http://m.airpano.ru/images/play-icon.png' alt= 'play' height='30px' width='30px'>";
                 }else{
                     $play_icon = "";
@@ -360,13 +359,11 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
    // for article node type
     if($conf['content_type'] == 'cm_movie_group'){
         $result = db_query("SELECT  n.nid, n.title,n.created,n.changed,bk.field_mc_teaser_toptxt_blk_value As black_content, wk.field_mc_teaser_toptxt_white_value As white_content,
-            mp.field_cm_moviegroup_pictures_fid As moviegroup_picture,mv.field_cm_moviegroup_videos_fid As moviegroup_video,ss.field_cm_moviegroup_short_summar_value As summary	,
+            ss.field_cm_moviegroup_short_summar_value As summary	,
             md.field_cm_moviegroup_duration_interval As movigroup_duration,md.field_cm_moviegroup_duration_period As movigroup_duration_period
             from node As n            
             LEFT JOIN field_data_field_mc_teaser_toptxt_blk As bk ON bk.entity_id = n.nid
             LEFT JOIN field_data_field_mc_teaser_toptxt_white As wk ON wk.entity_id = n.nid
-            LEFT JOIN field_data_field_cm_moviegroup_pictures As mp ON mp.entity_id = n.nid
-            LEFT JOIN field_data_field_cm_moviegroup_videos As mv ON mv.entity_id = n.nid
             LEFT JOIN field_data_field_cm_moviegroup_short_summar As ss ON ss.entity_id = n.nid
             LEFT JOIN field_data_field_cm_moviegroup_duration As md ON md.entity_id = n.nid
             where n.type ='cm_movie_group'")->fetchAll();
@@ -380,8 +377,9 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
             // check for movie image
             $class = '';
             if($movie_image == '0'){ 
-                if(!empty($val->moviegroup_picture)){
-                    $file = file_load($val->moviegroup_picture);
+                $moviegroup_picture = db_query("SELECT  field_cm_moviegroup_pictures_fid from field_data_field_cm_moviegroup_pictures where entity_id = $val->nid")->fetchField();
+                if(!empty($moviegroup_picture)){
+                    $file = file_load($moviegroup_picture);
                     $uri = $file->uri;
                     $img_src = file_create_url($uri);
                     $imgae = "<img src='$img_src' alt= 'event image'>";
@@ -428,7 +426,8 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
             }
             
             // check for movie video
-                if(!empty($val->moviegroup_video)){
+            $moviegroup_video = db_query("SELECT  field_cm_moviegroup_videos_fid from field_data_field_cm_moviegroup_videos where entity_id = $val->nid")->fetchField();
+                if(!empty($moviegroup_video)){
                     $play_icon = "<img src='http://m.airpano.ru/images/play-icon.png' alt= 'play' height='30px' width='30px'>";
                 }else{
                     $play_icon = "";
