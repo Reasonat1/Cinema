@@ -351,41 +351,38 @@ button.toptix-purchase {
     }*/
     .node-type-cm-movie table tr {
         padding: 0.2em 0;
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid #ccc !important;
+        height: 100px;
+        clear: both;
+        position:relative;
     }
-    /*.node-type-cm-movie table tr td {
-        padding: 0;
-    }
+    
     .node-type-cm-movie .views-field-php,
-    .node-type-cm-movie .views-field-ops{
-        float: left;
-    }
+    .node-type-cm-movie .views-field-ops,
     .node-type-cm-movie .views-field-field-cm-event-internal-id {
-        position: relative;
-        left: 10px;
+        float: left;
     }
     .node-type-cm-movie .views-field-field-cm-event-hall {
-        position: relative;
-        bottom: 80px;
         float: left;
+        position: relative;
+        bottom: 40px;
+        right: 46px;
     }
     .node-type-cm-movie .views-field-title-1{
-        position: relative;
-        bottom: 116px;
-        left: 52%;
         float: left;
+        position: relative;
+        bottom: 76px;
+        left: 72px;
     }
     .node-type-cm-movie .views-field-field-cm-event-time {
-        float: left;
         position: relative;
-        bottom: 72px;
-        right: 20px;
+        right: 72px;
     }
     .node-type-cm-movie .views-field-field-cm-event-time-1 {
         position: relative;
         bottom: 36px;
-        left: 90px;
-    }*/
+        left: 10px;
+    }
     .node-type-cm-movie table .addthisevent-drop {
         padding: 13px 12px 12px 30px;
     }
