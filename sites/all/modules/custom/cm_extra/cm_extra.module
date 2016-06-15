@@ -1,0 +1,80 @@
+<?php
+
+function cm_extra_block_info() {
+  $blocks['icons'] = array(
+    'info' => t('header icons'),
+  );
+  return $blocks;
+}
+
+function cm_extra_block_view($delta = '') {
+  $block = array();
+  
+  switch($delta){
+    case 'icons':
+      $block = _cm_extra_icons();
+      break;
+
+  }
+  return $block;	
+}
+
+function _cm_extra_icons() {
+	//language btn
+  if (drupal_multilingual()) {
+    $path = drupal_is_front_page() ? '<front>' : $_GET['q'];
+    $links = language_negotiation_get_switch_links('language', $path);
+	global $language;
+  
+    if (isset($links->links)) {
+	  unset($links->links[$language->language]);
+	  if (isset($links->links['en'])) {
+		$links->links['en']['title'] = 'E';
+		$links->links['en']['attributes']['class'][] = 'lang-en-icon';
+	  }
+	  if (isset($links->links['he'])) {
+		$links->links['he']['title'] = t("He");
+		$links->links['he']['attributes']['class'][] = 'lang-he-icon';
+	  }
+	  //dpm($links);
+      drupal_add_css(drupal_get_path('module', 'locale') . '/locale.css');
+      $class = "language-switcher-{$links->provider}";
+      $variables = array('links' => $links->links, 'attributes' => array('class' => array($class)));
+      $langicon = theme('links__locale_block', $variables);
+      
+      //return $block;
+    }
+  }	
+  //cart btn
+  $toptixblock = module_invoke('cinematic_toptix', 'block_view', 'cart');
+  
+  $block['subject'] = '';
+  $block['content']['#markup'] = '<li class="popup_search"><i class="fa fa-search" aria-hidden="true"></i></li>
+<li>'.l('<i class="fa fa-user" aria-hidden="true"></i>','user',array('html' => true)).'</li>
+<li><i class="fa fa-shopping-cart" aria-hidden="true">'.$toptixblock['content']['#markup'].'</i></li>
+<li id="da11y-plugin"></li>
+<li>'.$langicon.'</li>
+';
+  $block['content']['#attached'] = $toptixblock['content']['#attached'];
+  //dpm(get_defined_vars());
+  
+  return $block;
+  
+}
+
+function cm_extra_form_node_form_alter(&$form, &$form_state, $form_id) {
+  // do stuff
+
+  if(!empty($form['nid']['#value'])){
+	  
+	$newaction = $form['actions']['submit'];
+	$newaction['#submit'][] = 'cm_extra_node_translate_after_submit';
+  }
+  dpm($form);  
+}
+
+function cm_extra_node_translate_after_submit($form, &$form_state) {
+	dpm($form_state);
+	
+}
+//http://jff.jer-cin.tikkewebsites.com/he/node/add/cm-event?translation=12&target=he
