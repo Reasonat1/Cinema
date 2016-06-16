@@ -22,6 +22,6 @@
                jQuery('.top-text-blk-wht').hide();
            }
            if(!!jQuery("slide-alt-title .grp-title:empty").length == false){
-               jQuery('.slide-alt-title').hide();
+               //jQuery('.slide-alt-title').hide();
            }
 });
