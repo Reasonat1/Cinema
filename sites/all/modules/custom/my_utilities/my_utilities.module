@@ -132,21 +132,7 @@ function share_this_view_block_content(){
    $output ='';
    $node = node_load(arg(1));
     global $base_url;
-    $path = drupal_get_path_alias('/node/'.$node->nid);
-    $targetPath = $base_url.$path;
-    $output .= '<div class="flag-custom share-pane">' . flag_create_link('favorite_', $node->nid) . '</div>';
-    $output .= '<div  class="facebook-custom share-pane" onclick = "openDilog()">'.t('Facebook').'</div>';
-    $output .= '<div  class="whatsapp-custom share-pane" id="whatsApp-share"></div>';
-   ?>
-   <script>
-     function openDilog() {
-      var url = "<?php print $targetPath; ?>";
-      window.open(
-      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url), 
-      'facebook-share-dialog', 
-      'width=626,height=436'); 
-    };
-    </script>
+   $output .=$base_url;
    <?php
    return $output;
   }
