@@ -363,8 +363,15 @@ button.toptix-purchase {
     .navbar-brand>img {
         height: 42px !important;
     }
-    .navbar-brand {
-       padding: 8px 8px !important; 
+    .navbar .navbar-brand{
+        height: 50px !important;
+        padding: 8px 8px !important; 
+    }
+    .navbar .navbar-collapse{
+        background-color: #B49D6F !important;
+    }
+    .sticky-header .navbar-collapse{
+        background-color: #000 !important;
     }
 }
 @media (min-width:320px) and (max-width:480px){
