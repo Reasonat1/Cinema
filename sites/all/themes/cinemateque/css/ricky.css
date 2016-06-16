@@ -369,10 +369,18 @@ button.toptix-purchase {
     }
     .navbar .navbar-collapse{
         background-color: #B49D6F !important;
+        padding: 2px;
+        overflow-x: hidden;
     }
     .sticky-header .navbar-collapse{
         background-color: #000 !important;
     }
+    .col-md-3.header-right > li,
+    .col-md-3{
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+    
 }
 @media (min-width:320px) and (max-width:480px){
     .node-type-cm-movie .view-display-id-panel_pane_2 .slide-over-content {
