@@ -130,7 +130,7 @@
         </div>
 
         <div id="content" class="container">
-            <div class="search_new"> <?php print render($page['triptych_first']); ?> </div>
+            <div class="search_new"> <?php print render($page['featured']); ?> </div>
             <?php print render($page['content']); ?>
         </div>
     </div> <!-- /#main -->
