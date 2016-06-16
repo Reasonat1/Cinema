@@ -323,16 +323,15 @@ button.toptix-purchase {
 ==================================================
 @media only screen and (max-device-width: 480px) and (min-device-width: 320px)*/
 @media (max-width:320px){
-    .navbar-header {
-        width: 100% !important;
-    }
-    /*.sticky-header.header .navbar-default {
+    .sticky-header.header .navbar-default {
         height: 42px !important;
     }
     .navbar-default {
         height: 50px !important;
     }
-    
+    .navbar-header {
+        width: 100% !important;
+    }
     .sticky-header .navbar-toggle {
         margin-right: 10px !important;
         padding: 5px 9px !important;
@@ -366,7 +365,7 @@ button.toptix-purchase {
     }
     navbar-header a.navbar-brand {
        padding: 8px 8px !important; 
-    }*/
+    }
 }
 @media (min-width:320px) and (max-width:480px){
     .node-type-cm-movie .view-display-id-panel_pane_2 .slide-over-content {
