@@ -281,7 +281,10 @@ body.node-type-cm-movie #content,
     height: 15px !important;
     width: 82px !important;
 }
-.panels-ipe-portlet-wrapper .whatsApp-share{
+.panels-ipe-portlet-wrapper .whatsapp-custom{
+  padding-right: 3%;
+}
+.panels-ipe-portlet-wrapper .whatsapp-custom a{
     background: url("../images/whatapp-small.png") no-repeat !important;
     font-size: 13px;
     width: auto !important;
@@ -298,7 +301,7 @@ body.node-type-cm-movie #content,
 }
 .panels-ipe-portlet-wrapper .facebook-custom {
       border-bottom: 2px solid #ddd;
-      padding: 5% 0;
+      padding: 5% 3% 5% 0;
 }
 .share-pane-container{
   border-top: 5px solid #000;
@@ -318,8 +321,9 @@ body.node-type-cm-movie #content,
 }
 .flag-custom.share-pane{
   border-bottom: 2px solid #ddd;
-  padding-bottom: 5%;
-  height: 53px;
+  padding-right: 3%;
+  padding-top: 3%;
+  height: 43px;
 }
 .pane-event-ct-view-panel-pane-4 .flag-wrapper a{
     background: rgba(0, 0, 0, 0) url("../images/like-small.png") no-repeat scroll 0 0 !important;
