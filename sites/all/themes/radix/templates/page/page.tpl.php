@@ -75,7 +75,8 @@
                     <?php endif; ?>
                     <?php if ($search_form): ?>
                         <?php
-                        $block = module_invoke('block', 'block_view', '5');
+                        //$block = module_invoke('block', 'block_view', '5');
+                        $block = module_invoke('cm_extra', 'block_view', 'icons');
                         print render($block['content']); //print $search_form; 
                         ?>
 
@@ -137,6 +138,12 @@
 </div> <!-- /#main-wrapper -->
 
 <footer id="footer" class="footer" role="footer">
+  <div class="container-fluid">
+    <div class="row">
+      <?php print render($page['footer1']); ?>
+	  <?php print render($page['footer2']); ?>
+    </div>
+  </div>
     <?php if (0): ?>
         <div class="container">
             <?php if ($copyright): ?>
@@ -145,6 +152,7 @@
             <small class="pull-right"><a href="#"><?php print t('Back to Top'); ?></a></small>
         </div>
     <?php endif; ?>
+<<<<<<< HEAD
 </footer>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
@@ -166,3 +174,6 @@
 
     });
 </script>
+=======
+</footer>
+>>>>>>> 71abe85634c89bd0364d55c58446c1de6b69e8f7

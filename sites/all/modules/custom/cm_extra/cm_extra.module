@@ -1,0 +1,104 @@
+<?php
+
+function cm_extra_block_info() {
+  $blocks['icons'] = array(
+    'info' => t('header icons'),
+  );
+  return $blocks;
+}
+
+function cm_extra_block_view($delta = '') {
+  $block = array();
+  
+  switch($delta){
+    case 'icons':
+      $block = _cm_extra_icons();
+      break;
+
+  }
+  return $block;	
+}
+
+function _cm_extra_icons() {
+	//language btn
+  if (drupal_multilingual()) {
+    $path = drupal_is_front_page() ? '<front>' : $_GET['q'];
+    $links = language_negotiation_get_switch_links('language', $path);
+	global $language;
+  
+    if (isset($links->links)) {
+	  unset($links->links[$language->language]);
+	  if (isset($links->links['en'])) {
+		$links->links['en']['title'] = 'E';
+		$links->links['en']['attributes']['class'][] = 'lang-en-icon';
+	  }
+	  if (isset($links->links['he'])) {
+		$links->links['he']['title'] = t("He");
+		$links->links['he']['attributes']['class'][] = 'lang-he-icon';
+	  }
+	  //dpm($links);
+      drupal_add_css(drupal_get_path('module', 'locale') . '/locale.css');
+      $class = "language-switcher-{$links->provider}";
+      $variables = array('links' => $links->links, 'attributes' => array('class' => array($class)));
+      $langicon = theme('links__locale_block', $variables);
+      
+      //return $block;
+    }
+  }	
+  //cart btn
+  $toptixblock = module_invoke('cinematic_toptix', 'block_view', 'cart');
+  
+  $block['subject'] = '';
+  $block['content']['#markup'] = '<li class="popup_search"><i class="fa fa-search" aria-hidden="true"></i></li>
+<li>'.l('<i class="fa fa-user" aria-hidden="true"></i>','user',array('html' => true)).'</li>
+<li><i class="fa fa-shopping-cart" aria-hidden="true">'.$toptixblock['content']['#markup'].'</i></li>
+<li id="da11y-plugin"></li>
+<li>'.$langicon.'</li>
+';
+  $block['content']['#attached'] = $toptixblock['content']['#attached'];
+  $block['content']['#attached']['js'][] = array(
+  'type' => 'inline',
+  'data' => 'jQuery(document).ready(function () {
+        var popup = jQuery(".popup_search").html();
+        jQuery(".popup-element-title span").html(popup);
+        jQuery(".popup_search").hide();
+        jQuery(".search_new").appendTo("#search-api-page-search-form");
+        jQuery("#search-api-page-search-form").appendTo(".container:first");
+    });',
+  'scope' => 'footer',
+  'group' => JS_THEME,
+  'weight' => 9, 
+  );
+  //dpm($block);
+  //dpm(get_defined_vars());
+  
+  return $block;
+  
+}
+
+function cm_extra_form_node_form_alter(&$form, &$form_state, $form_id) {
+//dpm($form);
+  if(!empty($form['nid']['#value']) && !$form['#node']->tnid){ //only for saved nodes that does not have translation
+	  
+	$newaction = $form['actions']['submit'];
+	$newaction['#submit'][] = 'cm_extra_node_translate_after_submit';
+	$newaction['#value'] = t('Save and translate');
+	$form['actions']['snt'] = $newaction;
+  }
+
+}
+
+//redirect user to the add node form of the translation for it
+function cm_extra_node_translate_after_submit($form, &$form_state) {
+	$a = $form_state;
+	($a['node']->language == 'en') ? $dest_lang = 'he' : $dest_lang = 'en';
+	$form_state['redirect'] = array(
+	  'node/add/'. str_replace('_', '-', $a['node']->type),
+	  array('query' => array(
+	    'translation' => $a['node']->nid,
+		'target' => $dest_lang,
+	    )),
+	);
+	
+}
+////no empty line

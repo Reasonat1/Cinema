@@ -17,8 +17,61 @@ body.node-type-cm-event .container #breadcrumb,
 body.node-type-cm-movie-group .container #breadcrumb,
 body.node-type-cm-event .container #page-header .page-header h1.title,
 .page-admin-structure-types-manage-cm-movie-group-fields-cer-settings .error,
-.page-admin-structure-types-manage-cm-movie-group-fields-cer-store-settings .error{
+.page-admin-structure-types-manage-cm-movie-group-fields-cer-store-settings .error,
+.content.middle .pane-title{
   display: none;
+}
+.content.middle{
+  width: 100%;
+  position: relative;
+}
+.content.middle .inside.panels-flexible-row-inside {
+  width: 85%;
+  margin: auto;
+}
+.prev-custom{
+  left: -11%;
+  position: absolute;
+  top: 8%;
+}
+.custom-nav ul{
+  margin: 0;
+  background-color: #f9fafb;
+  padding: 3%;
+  width: 24%;
+}
+.node-nav.prev-custom ul {
+    padding: 9% 15% 17% 10%;
+    width: 100%;
+}
+.node-nav.next-custom {
+    position: absolute;
+    right: 0;
+    top: 8%;
+}
+.next-custom ul{
+    background-color: #f9fafb;
+    margin: 0;
+    padding: 9% 15% 30% 20%;
+    width: 100%;
+}
+.node-nav.prev-custom ul li{
+  text-align: left;
+}
+.next-custom .next > a{
+  background: rgba(0, 0, 0, 0) url("../images/custom-next.png") no-repeat scroll 0 0;
+  border-radius: 5% !important;
+  display: inline-block;
+  font-size: 0;
+  height: 62px;
+  width: 38px;
+}
+.prev-custom .prev > a{
+   background: rgba(0, 0, 0, 0) url("../images/custom-prev.png") no-repeat scroll 0 0;
+    display: inline-block;
+    font-size: 0;
+    height: 41px;
+    width: 117px;
 }
 body.node-type-cm-event,
 body.node-type-cm-movie,
@@ -222,29 +275,62 @@ body.node-type-cm-movie #content,
       display: block;
     margin-top: 5%;
 }
-.pane-sharethis-sharethis-block .st-sharethis-counter{
-    background: url("../images/whatapp-small.png") no-repeat !important;
-    font-size: 0;
-    height: 15px !important;
-    width: 82px !important;
+.panels-ipe-portlet-wrapper .whatsapp-custom{
+  padding: 5% 2% 5% 5%;
 }
-.pane-sharethis-sharethis-block .st-facebook-counter{
-    background: url("../images/facebook-small.png") no-repeat !important;
-    font-size: 0;
-    height: 16px !important;
-    width: 56px !important;
+.panels-ipe-portlet-wrapper .whatsapp-custom a{
+    background: url("../images/whatapp-small.png") no-repeat right 0 !important;
+    font-size: 13px;
+    width: auto !important;
+    height: auto !important;
+    display: block;
+    padding-right: 10%;
+    color: #000 !important;
+}
+.panels-ipe-portlet-wrapper .facebook-custom {
+      border-bottom: 2px solid #ddd;
+      padding: 5% 3% 5% 0;
+}
+.share-pane-container{
+  border-top: 5px solid #000;
+}
+.panels-ipe-portlet-wrapper .facebook-custom span{
+    background: url("../images/facebook-small.png") no-repeat right 0 !important;
+    font-size: 11px;
+    width: auto !important;
+    height: auto !important;
+    display: block;
+    padding-right: 10%;
+    color: #000 !important;
 }
 .flag.flag-action{
   background: rgba(0, 0, 0, 0) url("../images/like-big.png") no-repeat scroll 0 0 !important;
   margin-top: 5px;
 }
-.pane-event-ct-view-panel-pane-4 .flag-wrapper a{
-    background: rgba(0, 0, 0, 0) url("../images/like-small.png") no-repeat scroll 0 0 !important;
+.flag-custom.share-pane{
+  border-bottom: 2px solid #ddd;
+  padding-right: 3%;
+  padding-top: 3%;
+  height: 43px;
+}
+.panels-ipe-portlet-wrapper .flag-custom .flag-favorite- a{
+    background: rgba(0, 0, 0, 0) url("../images/like-small.png") no-repeat scroll right 0 !important;
     display: block;
-    font-size: 0;
-    height: 14px !important;
-    margin-left: 47%;
-    width: 119px !important;
+    float: none !important;
+    font-size: 13px !important;
+    width: auto !important;
+    height: auto !important;
+    display: block;
+    padding-right: 10%;
+    color: #000 !important;
+}
+.panels-ipe-portlet-wrapper .flag-custom .flag-favorite- a.unflag-action{
+ background: rgba(0, 0, 0, 0) url("../images/fev-small-black.png") no-repeat scroll right 0 !important; 
+}
+.views_slideshow_cycle_slide .field-content .slide-alt-title .grp-alt{
+  border-right: 1px solid #a0a0a0;
+  padding-right: 7px;
+  margin-right: 3px;
 }
 .field-name-field-tag a{
   color: #bbb;
@@ -404,6 +490,31 @@ body.node-type-cm-movie #content,
   color: #E41145 !important;
   font-size: 1rem !important;
 }
+.view-share-this-pane .flag.flag-action,
+.view-share-this-pane .flag.unflag-action{
+  background: none !important;
+  float: none !important;
+  font-size: 12px !important;
+}
+.movie-group-title-pic-container{
+  position: relative;
+}
+.movie-group-title-pic-container .movie-title-movie-group{
+  position: absolute;
+  right: 3em;
+  top: 21em;
+}
+.movie-title-movie-group > a {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.view-id-movie_group_ct.view-display-id-panel_pane_1{
+  text-align: right;
+}
+.movie-grp-body p{
+    font-size: 1.1rem;
+}
 @media only screen and (max-width: 500px) {
 
 }
@@ -452,13 +563,13 @@ body.node-type-cm-movie #content,
 		
 		/*
 		Label the data
-		*/
+		
 		td:nth-of-type(1):before { content: "Date"; }
 		td:nth-of-type(2):before { content: "Time"; }
 		td:nth-of-type(3):before { content: "Hall"; }
 		td:nth-of-type(4):before { content: "Event Title"; }
 		td:nth-of-type(5):before { content: "Event Code"; }
-		td:nth-of-type(6):before { content: "Toptix purchase"; }
+		td:nth-of-type(6):before { content: "Toptix purchase"; }*/
 	}
 	
 	/* Smartphones (portrait and landscape) ----------- */

@@ -344,7 +344,7 @@ function my_pane_field_widget_form(&$form, &$form_state, $field, $instance, $lan
 
     $element['fid'] = array(
       '#title' => t('Image'),
-      '#type' => 'managed_file',
+      '#type' => 'media',
       '#upload_location' => file_field_widget_uri($field, $instance),
       '#default_value' => isset($items[$delta]['fid']) ? $items[$delta]['fid'] : NULL,
     );
@@ -371,15 +371,20 @@ function my_pane_field_widget_form(&$form, &$form_state, $field, $instance, $lan
 
     $element['fid'] = array(
       '#title' => t('Image'),
-      '#type' => 'managed_file',
+      '#type' => 'media',
       '#upload_location' => file_field_widget_uri($field, $instance),
       '#default_value' => isset($items[$delta]['fid']) ? $items[$delta]['fid'] : NULL,
     );
     
-    $element['link_title'] = array(
-      '#title' => t('Link Title'),
-      '#type' => 'textfield',
-      '#default_value' => isset($items[$delta]['link_title']) ? $items[$delta]['link_title'] : NULL,
+//    $element['link_title'] = array(
+//      '#title' => t('Link Title'),
+//      '#type' => 'textfield',
+//      '#default_value' => isset($items[$delta]['link_title']) ? $items[$delta]['link_title'] : NULL,
+//    );
+   $element['new_tab'] = array(
+      '#title' => t('Check  to open link in new tab'),
+      '#type' => 'checkbox',
+      '#default_value' => isset($items[$delta]['new_tab']) ? $items[$delta]['new_tab'] : NULL,
     );
       
     $element['link'] = array(
@@ -435,7 +440,7 @@ function my_pane_field_load($entity_type, $entities, $field, $instances, $langco
   // return it to the item title.
   foreach ($entity_items_copy as $entity_id => $items_copy) {
     foreach ($items_copy as $delta => $item) {
-      $items[$entity_id][$delta]['title'] = $item['title'];
+     // $items[$entity_id][$delta]['title'] = $item['title'];
     }
   }
 }
@@ -577,6 +582,7 @@ function theme_panopoly_caruosel_view($variables) {
   $output = '';
   $link_title = $variables['element']['#items']['link_title'];
   $link_url = $variables['element']['#items']['link'];
+  $new_tab = $variables['element']['#items']['new_tab'];
   $alt = $variables['element']['#items']['alt'];
   $settings = $variables['element']['#settings'];
   $delta = $variables['element']['#delta'];
@@ -584,12 +590,21 @@ function theme_panopoly_caruosel_view($variables) {
   $image = $variables['element']['#items']['image'];
   $image_markup = theme('image_style', array('style_name' => $settings['image_style'], 'path' => $image->uri, 'alt' => $alt));
 
+  if($new_tab == '1'){
+      $attribute = "target='_blank'";
+  }else{
+      $attribute = '';
+  }
      $output = '<li>';
-        $output .= $image_markup;
-        $output .= "<div class='middel-content'>";
-        $output.="<span class='slider-readmore'><a href='$link_url' target='_blank'>$link_title</a></span>";
-         $output .= "</div>";
-       $output .= '</li>';
+     if(!empty($link_url)){
+         $output.= "<a href='$link_url' $attribute>".$image_markup."</a>";
+     }else{
+         $output.= $image_markup;
+     }
+//        $output .= "<div class='middel-content'>";
+//        $output.="<span class='slider-readmore'><a href='$link_url' target='_blank'>$link_title</a></span>";
+//         $output .= "</div>";
+       $output.= '</li>';
 
   return $output;
 }

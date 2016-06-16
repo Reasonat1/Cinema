@@ -63,6 +63,12 @@ function my_pane_field_schema($field) {
       'length' => '2500',
       'not null' => FALSE,
     );
+   
+    $schema['columns']['new_tab'] = array(
+      'type' => 'varchar',
+      'length' => '128',
+      'not null' => FALSE,
+    );
     
     $schema['indexes'] = array(
       'fid' => array('fid'),
@@ -419,4 +425,26 @@ function my_pane_update_8000(){
   if (!db_field_exists($revision_table_name, $field_name)) {
     db_add_field($revision_table_name, $field_name, $spec);
   }
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Add an  "new tab check"  for target blank check in carousel items.
+ */
+function my_pane_update_8001(){
+    $spec = array(
+      'type' => 'varchar',
+      'length' => 128,
+      'not null' => FALSE,
+    );
+    $data_table_name_cs = 'field_data_field_custom_caruosel_slider';
+    $revision_table_name_cs  = 'field_revision_field_custom_caruosel_slider';
+    $field_name_cs  = 'field_custom_caruosel_slider_new_tab';
+    if (!db_field_exists($data_table_name_cs, $field_name_cs)) {
+      db_add_field($data_table_name_cs, $field_name_cs, $spec);
+    }
+    if (!db_field_exists($revision_table_name_cs, $field_name_cs)) {
+      db_add_field($revision_table_name_cs, $field_name_cs, $spec);
+    }
 }

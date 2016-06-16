@@ -17,6 +17,11 @@
                       jQuery('view-display-id-panel_pane_5 .more-event').show();
            }
            jQuery(".view-id-movie_group_ct.view-display-id-panel_pane_1 .img a>img").unwrap();
-           jQuery(".page-admin-structure-types-manage-cm-movie-group-fields-cer-settings .error").css("display", "none");
-           jQuery(".page-admin-structure-types-manage-cm-movie-group-fields-cer-store-settings .error").css("display", "none");
+           
+           if(jQuery('.top-text-blk-wht .white').is(':empty')){
+               jQuery('.top-text-blk-wht').hide();
+           }
+           if(!jQuery.trim( jQuery(".slide-alt-title .grp-title").html() ) == true){
+               jQuery('.slide-alt-title').hide();
+           }
 });
