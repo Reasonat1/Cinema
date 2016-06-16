@@ -17,4 +17,8 @@
                       jQuery('view-display-id-panel_pane_5 .more-event').show();
            }
            jQuery(".view-id-movie_group_ct.view-display-id-panel_pane_1 .img a>img").unwrap();
+           
+           if(jQuery('div.top-text-blk-wht').is(':empty')){
+               jQuery('div.top-text-blk-wht').hide();
+           }
 });
