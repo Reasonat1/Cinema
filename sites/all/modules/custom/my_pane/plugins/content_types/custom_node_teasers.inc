@@ -210,19 +210,28 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
                 $date = date('d.m.y', $val->event_start_time);
                 $time = date('h:i', $val->event_start_time);
             }
-
-            if (!empty($val->black_content)) {
-                $data_b = $val->black_content;
-                $black_content = "<span class='black-content'>$data_b</span>";
+            // event white box content
+            if ($top_black_title == '') {
+                if (!empty($val->black_content)) {
+                    $data_b = $val->black_content;
+                    $black_content = "<span class='black-content'>$data_b</span>";
+                } else {
+                    $black_content = '';
+                }
             } else {
-                $black_content = '';
+                $black_content = "<span class='black-content'>$top_black_title</span>";
             }
 
-            if (!empty($val->white_content)) {
-                $data_w = $val->white_content;
-                $white_content = "<span class='black-white'>$data_w</span>";
-            } else {
-                $white_content = '';
+           // event white box content
+            if ($top_white_title == '') {
+                if (!empty($val->white_content)) {
+                    $data_w = $val->white_content;
+                    $white_content = "<span class='black-white'>$data_w</span>";
+                } else {
+                    $white_content = '';
+                }
+            }else{
+                $white_content = "<span class='black-white'>$top_white_title</span>";
             }
 
             // show teaser text
@@ -576,11 +585,11 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
             }
 
             //check for description
-            if (trim($movie_teaser_text['value'] == '')) {                
+            if (trim($movie_teaser_text['value'] == '')) {
                 if (!empty($val->person_description)) {
                     $description = substr($val->person_description, 0, 600);
                     $description = $description;
-                }else{
+                } else {
                     $description = '';
                 }
             } else {
