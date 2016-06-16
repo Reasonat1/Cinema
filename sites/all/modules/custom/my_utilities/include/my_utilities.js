@@ -19,6 +19,7 @@
            jQuery(".view-id-movie_group_ct.view-display-id-panel_pane_1 .img a>img").unwrap();
            
            if(jQuery('div.top-text-blk-wht').is(':empty')){
+                      alert('DDD');
                jQuery('div.top-text-blk-wht').hide();
            }
 });
