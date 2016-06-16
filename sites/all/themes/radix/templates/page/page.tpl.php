@@ -130,12 +130,8 @@
         </div>
 
         <div id="content" class="container">
-<<<<<<< HEAD
-            <div class="search_new"> <?php print render($page['featured']); ?> </div>
-=======
 
-            <div class="search_new"> <div style="clear:both"> </div><?php print render($page['triptych_first']); ?> </div>
->>>>>>> a664dfc4a98a24ff07702522d21582bd8f759909
+            <div class="search_new"> <div style="clear:both"> </div><?php print render($page['featured']); ?> </div>
             <?php print render($page['content']); ?>
         </div>
     </div> <!-- /#main -->

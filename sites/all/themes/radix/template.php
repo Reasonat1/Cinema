@@ -191,9 +191,43 @@ function radix_preprocess_page(&$variables) {
 // if ternonmy page is views
     global $base_url;
     global $_domain;
+	$term_tid = db_query("SELECT `entity_id` FROM `field_data_field_cm_domain` WHERE `field_cm_domain_value` = :did",array(':did' => $_domain['domain_id']))->fetchField();
 
     $output = "";
     $variables['festival_site_info']  = "";
+	
+	if($term = taxonomy_term_load($term_tid)) {
+		$menu = $term->cinematic_menu;
+		$name = $term->name;
+		$domain = isset($term->field_cm_domain['und'][0]['value']) ? $term->field_cm_domain['und'][0]['value'] : 1;
+		$logo_image = $term->field_cm_festival_logo;
+		$date = isset($term->field_cm_festival_date['und'][0]['value']) ? $term->field_cm_festival_date['und'][0]['value'] : '';
+		if(!empty($date)){
+			$date = date('d-m.Y',$date);
+		}
+		if(!empty($logo_image)){
+			$logo_image =$base_url.'/sites/default/files/'.$logo_image['und'][0]['filename'];	
+			$variables['festival_site_logo'] = $logo_image;
+		}
+
+		$output = "<div class='festival-site'>";
+		$output.="   <span class='festive-site-name'>$name</span>";
+		$output.="   <span class='festive-time'>$date</span>";
+		$output.= "</div>";
+		$variables['festival_site_info'] = $output;
+
+		// render festival accssociated menu
+		if($menu != ''){
+		   $menu_source =$menu.'_links_source';
+		   $variables['festival_site_menu'] = _radix_dropdown_menu_tree(variable_get($menu_source, $menu), array(
+			   'min_depth' => 1,
+			   'max_depth' => 2,
+			 ));
+		}
+		
+	}
+
+	/*
     $term_page =  arg(0);
     if($term_page == 'taxonomy'){
          $tid =arg(2);
@@ -273,7 +307,7 @@ function radix_preprocess_page(&$variables) {
                      ));
                 }
             }
-    }
+    }*/
   // Add a copyright message.
   //$variables['copyright'] = t('Drupal is a registered trademark of Dries Buytaert.');
 
