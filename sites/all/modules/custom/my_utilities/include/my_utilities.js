@@ -21,4 +21,7 @@
            if(jQuery('.top-text-blk-wht .white').is(':empty')){
                jQuery('.top-text-blk-wht').hide();
            }
+           if(jQuery('.slide-alt-title').is(':empty')){
+               jQuery('.slide-alt-title').hide();
+           }
 });
