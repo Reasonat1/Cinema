@@ -549,7 +549,15 @@ button.toptix-purchase {
         float: left;
     }
 }
-
+@media (min-width: 768px){
+    .node-type-cm-movie .content.middle .inside.panels-flexible-row-inside,
+    .node-type-cm-movie .content.middle .panels-flexible-region-node_page-content_left {
+        width: 100%;
+    }
+    .node-type-cm-movie .content.middle .panels-flexible-region-node_page-content_right{
+        display: none;
+    }
+}
 
 
 /* Smaller Then Desktop
