@@ -1,0 +1,17 @@
+<?php
+/**
+ * @file
+ * Installation file for i18n_sync_taxonomy_term module.
+ */
+
+/**
+ * Implements hook_update_N().
+ * Enable needed modules.
+ */
+function i18n_sync_taxonomy_term_install() {
+  db_update('system')
+    ->fields(array('weight' => 100))
+    ->condition('type', 'module')
+    ->condition('name', 'i18n_sync_taxonomy_term')
+    ->execute();
+}
