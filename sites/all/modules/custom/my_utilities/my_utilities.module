@@ -135,7 +135,7 @@ function share_this_view_block_content(){
     $path = drupal_get_path_alias('/node/'.$node->nid);
     $targetPath = $base_url.$path;
     $output .= '<div class="flag-custom share-pane">' . flag_create_link('favorite_', $node->nid) . '</div>';
-    $output .= '<div  class="facebook-custom share-pane" onclick = "openDilog()">'.t('Facebook').'</div>';
+    $output .= '<div  class="facebook-custom share-pane" onclick = "openDilog()"><span>'.t('Facebook').'</span></div>';
     $output .= '<div  class="whatsapp-custom share-pane" id="whatsApp-share"></div>';
    ?>
    <script>
