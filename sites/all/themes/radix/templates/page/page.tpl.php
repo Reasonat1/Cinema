@@ -138,8 +138,10 @@
 
 <footer id="footer" class="footer" role="footer">
   <div class="container-fluid">
-    <?php print render($page['footer1']); ?>
-	<?php print render($page['footer2']); ?>
+    <div class="row">
+      <?php print render($page['footer1']); ?>
+	  <?php print render($page['footer2']); ?>
+    </div>
   </div>
     <?php if (0): ?>
         <div class="container">
