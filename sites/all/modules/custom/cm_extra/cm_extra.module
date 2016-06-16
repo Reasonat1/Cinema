@@ -56,6 +56,20 @@ function _cm_extra_icons() {
 <li>'.$langicon.'</li>
 ';
   $block['content']['#attached'] = $toptixblock['content']['#attached'];
+  $block['content']['#attached']['js'][] = array(
+  'type' => 'inline',
+  'data' => 'jQuery(document).ready(function () {
+        var popup = jQuery(".popup_search").html();
+        jQuery(".popup-element-title span").html(popup);
+        jQuery(".popup_search").hide();
+        jQuery(".search_new").appendTo("#search-api-page-search-form");
+        jQuery("#search-api-page-search-form").appendTo(".container:first");
+    });',
+  'scope' => 'footer',
+  'group' => JS_THEME,
+  'weight' => 9, 
+  );
+  //dpm($block);
   //dpm(get_defined_vars());
   
   return $block;
@@ -87,4 +101,4 @@ function cm_extra_node_translate_after_submit($form, &$form_state) {
 	);
 	
 }
-//
+////no empty line
