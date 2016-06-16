@@ -312,8 +312,10 @@ button.toptix-purchase {
  * movie page css ends
  */
 /* MObile Menu
-================================================== */
-@media only screen and (max-device-width: 480px) and (min-device-width: 320px){
+==================================================
+@media only screen and (max-device-width: 480px) and (min-device-width: 320px)*/
+
+@media (min-width:320px) and (max-width:480px){
     .node-type-cm-movie .view-display-id-panel_pane_2 .slide-over-content {
         bottom: 1em;
         left: 0;
@@ -404,48 +406,6 @@ button.toptix-purchase {
     .node-type-cm-movie .bottom-content .pane-test-view-for-movie-credit-panel-pane-1 .view-content .views-field-field-cm-person-last-name {
         float: left;
     }
-    /*.node-type-cm-movie td:nth-of-type(4),
-    .node-type-cm-movie td:nth-of-type(2),
-    .node-type-cm-movie td:nth-of-type(3){
-        display: none;
-    }
-    .node-type-cm-movie table tr {
-        padding: 0.2em 0;
-        border-bottom: 1px solid #ccc !important;
-        height: 100px;
-        clear: both;
-        position:relative;
-    }
-    
-    .node-type-cm-movie .views-field-php,
-    .node-type-cm-movie .views-field-ops,
-    .node-type-cm-movie .views-field-field-cm-event-internal-id {
-        float: left;
-    }
-    .node-type-cm-movie .views-field-field-cm-event-hall {
-        float: left;
-        position: relative;
-        bottom: 40px;
-        right: 46px;
-    }
-    .node-type-cm-movie .views-field-title-1{
-        float: left;
-        position: relative;
-        bottom: 76px;
-        left: 72px;
-    }
-    .node-type-cm-movie .views-field-field-cm-event-time {
-        position: relative;
-        right: 72px;
-    }
-    .node-type-cm-movie .views-field-field-cm-event-time-1 {
-        position: relative;
-        bottom: 36px;
-        left: 10px;
-    }
-    .node-type-cm-movie table .addthisevent-drop {
-        padding: 13px 12px 12px 30px;
-    }*/
 }
 
 /* Smaller Then Desktop
@@ -468,10 +428,6 @@ button.toptix-purchase {
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 }
 
-
-@media (min-width:320px) and (max-width:480px){
-    
-}
 @media(max-device-width:420px){
     
 }
