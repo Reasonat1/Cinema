@@ -65,12 +65,15 @@ body.node-type-cm-movie-group .panels-flexible-row.bottom.content {
     width: 100% !important;
 }
 .img-like-wrapper .like-btn{
-	position: absolute;
+    left: 3em;
+    position: absolute;
+    top: 1.5em;
 }
-.img-like-wrapper a.flag{
-    display: inline-block;
-    margin-left: 100%;
-    margin-top: 100%;
+.like-btn .movie-info a.flag-action{
+    background: url("../images/movie-like.png") no-repeat right 0 !important;
+}
+.like-btn .movie-info a.unflag-action{
+    background: url("../images/movie-unlike.png") no-repeat right 0 !important;
 }
 .view-id-movie_group_ct.view-display-id-panel_pane_1 .views-row {
     background-color: #fff;
