@@ -201,10 +201,17 @@ function radix_preprocess_page(&$variables) {
 		$name = $term->name;
 		$domain = isset($term->field_cm_domain['und'][0]['value']) ? $term->field_cm_domain['und'][0]['value'] : 1;
 		$logo_image = $term->field_cm_festival_logo;
-		$date = isset($term->field_cm_festival_date['und'][0]['value']) ? $term->field_cm_festival_date['und'][0]['value'] : '';
-		if(!empty($date)){
-			$date = date('d-m.Y',$date);
+		
+		$date = isset($term->field_cm_festival_date['und'][0]['value']) ? strtotime($term->field_cm_festival_date['und'][0]['value']) : '';
+		$date2 = isset($term->field_cm_festival_date['und'][0]['value2']) ? strtotime($term->field_cm_festival_date['und'][0]['value2']) : '';
+		if(date('m',$date) == date('m',$date2)) {
+		  $festivaldates = date('d',$date) . date('-d',$date2) . date('.m.Y',$date2);
+		}else{
+		  $festivaldates = date('d.m',$date) . date('-d.m',$date2) . date('.Y',$date2);
 		}
+		//if(!empty($date)){
+			//$date = date('d-m.Y',$date);
+		//}
 		if(!empty($logo_image)){
 			$logo_image =$base_url.'/sites/default/files/'.$logo_image['und'][0]['filename'];	
 			$variables['festival_site_logo'] = $logo_image;
@@ -212,7 +219,7 @@ function radix_preprocess_page(&$variables) {
 
 		$output = "<div class='festival-site'>";
 		$output.="   <span class='festive-site-name'>$name</span>";
-		$output.="   <span class='festive-time'>$date</span>";
+		$output.="   <span class='festive-time'>$festivaldates</span>";
 		$output.= "</div>";
 		$variables['festival_site_info'] = $output;
 
