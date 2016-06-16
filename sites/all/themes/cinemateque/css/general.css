@@ -491,6 +491,19 @@ body.node-type-cm-movie #content,
   float: none !important;
   font-size: 12px !important;
 }
+.movie-group-title-pic-container{
+  position: relative;
+}
+.movie-group-title-pic-container .movie-title-movie-group{
+  position: absolute;
+  right: 17em;
+  top: 20em;
+}
+.movie-title-movie-group > a {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold;
+}
 @media only screen and (max-width: 500px) {
 
 }
