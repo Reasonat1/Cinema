@@ -3,6 +3,19 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
+function my_pane_menu(){
+    $items['ajax/content-type/node'] = array(
+        'title' => '',
+        'page callback' => 'node_type_content',
+        'access callback' => true
+    );
+    
+    return $items;
+}
+
+/**
+ * Implements hook_ctools_plugin_api().
+ */
 function my_pane_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "file_entity" && $api == "file_default_displays") {
     return array("version" => "1");
@@ -500,4 +513,23 @@ function _my_pane_content_item_form_submit($form, &$form_state) {
     $exposed['nid'] = $form_state['original_nid'];
     $exposed['title'] = '';
   }
+}
+
+/**
+ * node nid and title as option based on content type
+ */
+function node_type_content() {
+   $type = isset($_POST['content_type']) ? $_POST['content_type'] : '';
+   $default_nid = isset($_POST['default_nid']) ? $_POST['default_nid'] : '';
+    $result = db_query("SELECT nid,title from node where type = '$type'")->fetchAll();
+    foreach ($result as $val) {
+        $selected = '';
+        if($default_nid == $val->nid){
+            $selected = "selected=selected";
+        }
+        $output.="<option value='$val->nid' $selected>$val->title</option>";
+    }
+    drupal_json_output(array('output' =>$output));
+    die();
+
 }
