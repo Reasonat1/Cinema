@@ -282,10 +282,10 @@ body.node-type-cm-movie #content,
     width: 82px !important;
 }
 .panels-ipe-portlet-wrapper .whatsapp-custom{
-  padding-right: 3%;
+  padding-right: 5% 3% 5% 0;
 }
 .panels-ipe-portlet-wrapper .whatsapp-custom a{
-    background: url("../images/whatapp-small.png") no-repeat !important;
+    background: url("../images/whatapp-small.png") no-repeat right 0 !important;
     font-size: 13px;
     width: auto !important;
     height: auto !important;
@@ -343,6 +343,9 @@ body.node-type-cm-movie #content,
     display: block;
     padding-right: 10%;
     color: #000 !important;
+}
+.panels-ipe-portlet-wrapper .flag-custom .flag-favorite- a.unflag-action{
+ background: rgba(0, 0, 0, 0) url("../images/fev-small-black.png") no-repeat scroll right 0 !important; 
 }
 .field-name-field-tag a{
   color: #bbb;
