@@ -29,6 +29,18 @@ function radix_preprocess_html(&$variables) {
       'weight' => $jquery_ui_js['weight'] - 1,
     ));
   }
+  if (module_exists('path')) {
+    $alias = drupal_get_path_alias(str_replace('/edit','',$_GET['q']));
+    if ($alias != $_GET['q']) {
+      $template_filename = 'html';              
+      foreach (explode('/', $alias) as $path_part) {
+       $template_filename = $template_filename . '__' . $path_part;
+        $variables['theme_hook_suggestions'][] = $template_filename;
+      }
+    }
+//    print_r($variables);
+//    die;
+  }
 //
 //  // Add support for the Modenizr module.
 //  // Load modernizr.js only if modernizr module is not present.

@@ -77,8 +77,9 @@
         
         <li>
   <?php print render($title_prefix); ?>
-  <h1 class="title"<?php print $title_attributes; ?>>      
-    <a href="<?php print $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/'.$variables['url']['path']; ?>"> <?php print_r($variables['url']['options']['entity']->title); ?></a>
+  <h1 class="title"<?php print $title_attributes; ?>>   
+      <?php print $url ? l($title, $url['path'], $url['options']) : check_plain($title); ?>
+    <!--<a href="<?php // print $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/'.$variables['url']['path']; ?>"> <?php // print_r($variables['url']['options']['entity']->title); ?></a>-->
   </h1>
         </li>
         <li>
@@ -96,12 +97,12 @@
     </ul>
     
     
-  <div class="search-snippet-info">
+<!--  <div class="search-snippet-info">
     <?php // if ($snippet) : ?>
       <p class="search-snippet"><?php // print $snippet; ?></p>
     <?php // endif; ?>
     <?php // if ($info) : ?>
       <p class="search-info"><?php // print $info; ?></p>
     <?php // endif; ?>
-  </div>
+  </div>-->
 </li>

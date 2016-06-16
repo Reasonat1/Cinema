@@ -62,9 +62,9 @@
                 }
                 ?>
                 <?php if ($site_main_menu): ?>
-                 <!--<div id="da11y-options"></div>-->
+                    <!--<div id="da11y-options"></div>-->
                     <ul id="site-main-menu" class="site-custom-menu menu nav navbar-nav col-md-5">
-                        
+
                         <?php print render($site_main_menu); ?>
                     </ul>
                     <ul class="col-md-3 header-right">
@@ -79,7 +79,7 @@
                         $block = module_invoke('cm_extra', 'block_view', 'icons');
                         print render($block['content']); //print $search_form; 
                         ?>
-                    
+
                     </ul>
                     <?php
                     $block2 = module_invoke('locale', 'block_view', 'language'); //dpm($block2);
@@ -90,8 +90,8 @@
         </nav><!-- /.navbar -->
     </div> <!-- /.container -->
     <!--<div id="da11y-toggle"></div>-->
-<!--    <div id="da11y-plugin"></div>-->
-    
+    <!--    <div id="da11y-plugin"></div>-->
+
 </header>
 
 <?php if ($is_front): ?>
@@ -130,7 +130,12 @@
         </div>
 
         <div id="content" class="container">
+<<<<<<< HEAD
             <div class="search_new"> <?php print render($page['featured']); ?> </div>
+=======
+
+            <div class="search_new"> <div style="clear:both"> </div><?php print render($page['triptych_first']); ?> </div>
+>>>>>>> a664dfc4a98a24ff07702522d21582bd8f759909
             <?php print render($page['content']); ?>
         </div>
     </div> <!-- /#main -->
@@ -151,4 +156,32 @@
             <small class="pull-right"><a href="#"><?php print t('Back to Top'); ?></a></small>
         </div>
     <?php endif; ?>
+<<<<<<< HEAD
 </footer>
+=======
+<<<<<<< HEAD
+</footer>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+<script>
+
+    jQuery(document).ready(function () {
+        jQuery('select').select2();
+        var popup = jQuery(".popup_search").html();
+        jQuery(".popup-element-title span").html(popup);
+//        jQuery(".popup_search").html(popup_search);
+        jQuery(".popup_search").hide();
+//        alert(jQuery('.search-api-page-search-form').html());
+//        var data = jQuery('.search_new').html();
+//        jQuery('.search_new').remove();
+//        jQuery('#search-api-page-search-form').append('<div class="search_new">' + data + '</div>');
+        jQuery(".search_new").appendTo("#search-api-page-search-form");
+        jQuery("#search-api-page-search-form").appendTo(".container:first");
+
+
+    });
+</script>
+=======
+</footer>
+>>>>>>> 71abe85634c89bd0364d55c58446c1de6b69e8f7
+>>>>>>> a664dfc4a98a24ff07702522d21582bd8f759909
