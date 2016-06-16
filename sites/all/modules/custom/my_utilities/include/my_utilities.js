@@ -21,7 +21,7 @@
            if(jQuery('.top-text-blk-wht .white').is(':empty')){
                jQuery('.top-text-blk-wht').hide();
            }
-           if(jQuery('.slide-alt-title .grp-alt').is(':empty')){
+           if(jQuery('.slide-alt-title .grp-title').html(':empty')){
                jQuery('.slide-alt-title').hide();
            }
 });
