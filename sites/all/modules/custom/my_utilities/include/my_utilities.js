@@ -24,4 +24,7 @@
            if(!jQuery.trim( jQuery(".slide-alt-title .grp-title").html() ) == true){
                jQuery('.slide-alt-title').hide();
            }
+           if(!jQuery.trim( jQuery("td.views-field-field-toptix-purchase").html() ) == true){
+               jQuery('th.views-field-field-toptix-purchase').hide();
+           }
 });
