@@ -1066,13 +1066,15 @@ padding: 0.25% ;
  .pro-grid:nth-child(odd){background: transparent}   
     .pro-grid li:nth-child(1){ width:6% !important; }
     .pro-grid li{ width:46%; display: inline-block; vertical-align: middle;  margin-bottom: 0;}
-    .pro-grid li .pro-img {
+.pro-grid li .pro-img {
     max-width: 100%;
     background: #f6f6f6;
     padding: 2px;
     border: 1px solid #BFBFBF;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width: 55px;
+    height: 55px;
 }
 
 .pro-grid li .title {
@@ -1113,7 +1115,8 @@ display: block;}
     #edit-basic .form-item { width: 60% !important; }
     .custom_filter_css .item-list ul li{ padding: 6px 5px !important;}
     .custom_filter_css .item-list ul li a{letter-spacing: 0px !important;font-size: 13px;}
-  
+    #search-api-page-search-form #edit-submit-1 {
+    padding: 9px 5px 11px !important; font-size: 12px !important; }
 /*end media 420*/}
 #edit-search-block-form--2 {border:1px solid #000;}
 .popup-element-title{color: #fff !important;}
@@ -1701,7 +1704,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
 
 
 .search_new .region .block {
-    width: 33%;
+    width: 20%;
     float: left;
     padding: 0 1%;
 }
@@ -1714,9 +1717,9 @@ div[id^="panels-ipe-paneid-22"] > * select {
     border-radius: 0 !important;
 }
 .search_result ol{ padding: 0}
-
+/*
 .search-api-page-result:nth-child(odd){ background: #e7decc !important
-}
+}*/
 .search-api-page-result { border: 1px solid transparent; cursor: pointer;
     background: #fff !important; transition:ease 0.2s border;-webkit-transition:ease 0.2s border;
 }
@@ -1763,4 +1766,8 @@ box-shadow: 0px 1px 3px 1px #aaa;
 }
 .search-performance {
     text-indent: 10%;
+}
+
+.pagination li a {
+    color: #E41145;
 }

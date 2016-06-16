@@ -114,10 +114,10 @@
   font-family: FontAwesome;
   display: inline-block;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 600;
   font-size: inherit;
   line-height: 1;
-  text-align: center;
+  text-align: center; 
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1599,4 +1599,9 @@ body.pojo-a11y-readable-font *:not(i):not(span) {
 body.rtl .pojo-skip-link:focus {
   right: 50px;
   left: auto;
+}
+
+.col-md-3.header-right li, #da11y-toggle {
+    font-size: 18px !important;
+    font-weight: 600 !important;
 }

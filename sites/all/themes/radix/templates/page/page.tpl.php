@@ -62,9 +62,9 @@
                 }
                 ?>
                 <?php if ($site_main_menu): ?>
-                 <!--<div id="da11y-options"></div>-->
+                    <!--<div id="da11y-options"></div>-->
                     <ul id="site-main-menu" class="site-custom-menu menu nav navbar-nav col-md-5">
-                        
+
                         <?php print render($site_main_menu); ?>
                     </ul>
                     <ul class="col-md-3 header-right">
@@ -78,7 +78,7 @@
                         $block = module_invoke('block', 'block_view', '5');
                         print render($block['content']); //print $search_form; 
                         ?>
-                    
+
                     </ul>
                     <?php
                     $block2 = module_invoke('locale', 'block_view', 'language'); //dpm($block2);
@@ -89,8 +89,8 @@
         </nav><!-- /.navbar -->
     </div> <!-- /.container -->
     <!--<div id="da11y-toggle"></div>-->
-<!--    <div id="da11y-plugin"></div>-->
-    
+    <!--    <div id="da11y-plugin"></div>-->
+
 </header>
 
 <?php if ($is_front): ?>
@@ -129,7 +129,8 @@
         </div>
 
         <div id="content" class="container">
-            <div class="search_new"> <?php print render($page['triptych_first']); ?> </div>
+
+            <div class="search_new"> <div style="clear:both"> </div><?php print render($page['triptych_first']); ?> </div>
             <?php print render($page['content']); ?>
         </div>
     </div> <!-- /#main -->
@@ -145,9 +146,12 @@
         </div>
     <?php endif; ?>
 </footer>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 <script>
 
     jQuery(document).ready(function () {
+        jQuery('select').select2();
         var popup = jQuery(".popup_search").html();
         jQuery(".popup-element-title span").html(popup);
 //        jQuery(".popup_search").html(popup_search);
