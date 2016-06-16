@@ -137,6 +137,12 @@
 </div> <!-- /#main-wrapper -->
 
 <footer id="footer" class="footer" role="footer">
+  <div class="container-fluid">
+    <div class="row">
+      <?php print render($page['footer1']); ?>
+	  <?php print render($page['footer2']); ?>
+    </div>
+  </div>
     <?php if (0): ?>
         <div class="container">
             <?php if ($copyright): ?>
@@ -146,20 +152,3 @@
         </div>
     <?php endif; ?>
 </footer>
-<script>
-
-    jQuery(document).ready(function () {
-        var popup = jQuery(".popup_search").html();
-        jQuery(".popup-element-title span").html(popup);
-//        jQuery(".popup_search").html(popup_search);
-        jQuery(".popup_search").hide();
-//        alert(jQuery('.search-api-page-search-form').html());
-//        var data = jQuery('.search_new').html();
-//        jQuery('.search_new').remove();
-//        jQuery('#search-api-page-search-form').append('<div class="search_new">' + data + '</div>');
-        jQuery(".search_new").appendTo("#search-api-page-search-form");
-        jQuery("#search-api-page-search-form").appendTo(".container:first");
-
-
-    });
-</script>
