@@ -133,6 +133,7 @@ function share_this_view_block_content(){
    $node = node_load(arg(1));
     global $base_url;
    $output .=$base_url;
+   ?>
    <?php
    return $output;
   }
