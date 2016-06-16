@@ -322,7 +322,49 @@ button.toptix-purchase {
 /* MObile Menu
 ==================================================
 @media only screen and (max-device-width: 480px) and (min-device-width: 320px)*/
-
+@media (max-width:320px){
+    .sticky-header.header .navbar-default {
+        height: 42px !important;
+    }
+    .navbar-default {
+        height: 50px !important;
+    }
+    .navbar-header {
+        width: 100% !important;
+    }
+    .sticky-header .navbar-toggle {
+        margin-right: 10px !important;
+        padding: 5px 9px !important;
+    }
+    .navbar-toggle {
+        margin-right: 12px !important;
+        padding: 8px 10px !important;
+    }
+    .sticky-header .navbar .navbar-toggle .icon-bar{
+        height: 1px !important;
+        width: 8px !important;
+    }
+    .navbar .navbar-toggle .icon-bar{
+        height: 1px !important;
+        width: 14px !important;
+    }
+    .sticky-header.header .hambruger.-menu.navbar-toggle {
+        margin-top: 8px !important;
+        margin-left: 8px !important;
+        border: 1px solid #ffffff !important;
+    }
+    .hambruger.-menu.navbar-toggle {
+        margin-top: 8px !important;
+        margin-left: 8px !important;
+        border: 1px solid #ffffff !important;
+    }
+    .sticky-header .navbar-brand>img {
+        height: 40px !important;
+    }
+    .navbar-brand>img {
+        height: 46px !important;
+    }
+}
 @media (min-width:320px) and (max-width:480px){
     .node-type-cm-movie .view-display-id-panel_pane_2 .slide-over-content {
         bottom: 1em;
