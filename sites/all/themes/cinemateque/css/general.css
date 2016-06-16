@@ -281,17 +281,34 @@ body.node-type-cm-movie #content,
     height: 15px !important;
     width: 82px !important;
 }
+.panels-ipe-portlet-wrapper .whatsApp-share{
+    background: url("../images/whatapp-small.png") no-repeat !important;
+    font-size: 11px;
+}
 .pane-sharethis-sharethis-block .st-facebook-counter{
     background: url("../images/facebook-small.png") no-repeat !important;
     font-size: 0;
     height: 16px !important;
     width: 56px !important;
 }
+.panels-ipe-portlet-wrapper .facebook-custom{
+    background: url("../images/facebook-small.png") no-repeat !important;
+    font-size: 11px;
+}
 .flag.flag-action{
   background: rgba(0, 0, 0, 0) url("../images/like-big.png") no-repeat scroll 0 0 !important;
   margin-top: 5px;
 }
-.pane-event-ct-view-panel-pane-4 .flag-wrapper a{
+.pane-event-ct-view-panel-pane-4 .flag-wrapper a,
+.panels-ipe-portlet-wrapper .flag-custom .flag-favorite- a{
+    background: rgba(0, 0, 0, 0) url("../images/like-small.png") no-repeat scroll 0 0 !important;
+    display: block;
+    font-size: 0;
+    height: 14px !important;
+    margin-left: 47%;
+    width: 119px !important;
+}
+.panels-ipe-portlet-wrapper .flag-custom .flag-favorite- a{
     background: rgba(0, 0, 0, 0) url("../images/like-small.png") no-repeat scroll 0 0 !important;
     display: block;
     font-size: 0;
