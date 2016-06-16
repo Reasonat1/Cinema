@@ -139,7 +139,7 @@ function share_this_view_block_content(){
     $output .= '<div  class="facebook-custom share-pane" onclick = "openDilog()"><span>'.t('Facebook').'</span></div>';
     $output .= '<div  class="whatsapp-custom share-pane" id="whatsApp-share"></div>';
     $output .='</div>';
-   ?>
+  /* 
    <script>
      function openDilog() {
       var url = "<?php print $targetPath; ?>";
@@ -149,13 +149,13 @@ function share_this_view_block_content(){
       'width=626,height=436'); 
     };
     </script>
-   <?php
+*/
    return $output;
   }
 /**
  * Implements hook_admin_paths().
- *//*
+ */
 function my_utilities_admin_paths() {
   $paths['admin/config/mini-panels-ipe/*'] = FALSE;
   return $paths;
-}*/
+}
