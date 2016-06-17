@@ -788,7 +788,7 @@ position: relative;
 .calender-full-row {
   padding: 10px;
   float: left;
-  padding: 10px 0;
+  padding: 5px 0;
   width: 100%;
 }
 span.bold {
@@ -1213,6 +1213,102 @@ box-shadow: 0px 1px 3px 1px #aaa;
 /*http://www.jercin.local/modules/system/system.theme.css?o84xkb* 150*/
 #header .container-fluid {
     padding: 0;
+}
+.mobile-calender .calender-filter > p {
+  background-color: #FFFFFF;
+  font-size: 12px;
+  width: 65px;
+  margin: 0;
+  border-right: 1px solid #ECECEC;
+  border-left: 1px solid #ECECEC;
+}
+.mobile-calender .calender-filter > p.active {
+  background-color: #DB0742;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: none;
+}
+.mobile-calender-filter-date {
+  float: left;
+  width: 100%;
+}
+.mobile-calender-filter-date .pull-left {
+  color: #db0742;
+    font-weight: bold;
+}
+.mobile-calender .calender-filter {
+  border-bottom: 1px solid #b2b2b2;
+  border-top: 1px solid #b2b2b2;
+}
+.mobile-calender .calender-filter > p:hover {
+  background-color: #DB0742;
+  box-shadow:none;
+}
+.mobile-event-accordian .accordian-hall {
+  background-color: #db0742;
+  color: #ffffff;
+  cursor: pointer;
+  margin: 2px 0;
+  padding: 5px 15px;
+}
+.mobile-event-accordian .accordian-hall.open {
+  background-color: #000000;
+}
+.mobile-calender .mobile-accordian-content {
+  display: none;
+}
+.mobile-calender .mobile-event-accordian {
+  float: left;
+  width: 100%;
+}
+.mobile-calender .mobile-bold-time {
+  float: left;
+  width: 45px;
+}
+.mobile-calender-row.mobile-custom-row {
+  float: left;
+  padding: 2px 15px;
+  width: 100%;
+  border-bottom: 1px solid #b2b2b2;
+}
+.mobile-calender .mobile-event-title {
+  float: left;
+  width: 200px;
+}
+.accordian-hall .fa {
+  float: right;
+  padding-top: 5px; 
+}
+.mobile-calender-row.mobile-custom-row {
+  background: #ffffff none repeat scroll 0 0;
+}
+.mobile-calender-row.mobile-custom-row:nth-child(2n+1) {
+  background-color: #ededed;
+}
+.filter-cantrol {
+  display: none;
+}
+.mobile-calender .filter-cantrol {
+  display: block;
+}
+.calender-body {
+  height: 850px;
+  overflow-y: scroll;
+  padding-top: 10px;
+}
+
+/**
+ * Reponsive calender
+ */
+@media (min-width:240px) and (max-width:767px){
+.col-sm-12.calender {
+  display: none;
+}
+}
+@media (min-width:768px) {
+.mobile-calender {
+  display: none;
+}
 }
 /* pop up menu responsive css*/
 @media (min-width:768px) and (max-width:1024px){
