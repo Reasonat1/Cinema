@@ -132,10 +132,7 @@
         <div id="content" class="container">
 
             <div class="search_new"> <div style="clear:both"> </div><?php print render($page['featured']); ?> </div>
-<<<<<<< HEAD
 
-=======
->>>>>>> 34b56dfe358b9173d0b274595a99636ad2ee122b
             <?php print render($page['content']); ?>
         </div>
     </div> <!-- /#main -->
