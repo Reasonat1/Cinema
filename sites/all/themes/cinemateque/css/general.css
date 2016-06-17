@@ -152,11 +152,20 @@ table.views-table{
     width: 26px;
     z-index: 1;
 }
+.slide-over-content .slide-movie-title{
+  margin-bottom: 15px;
+}
+.slide-movie-year,
+.slide-eve-lobby{
+  font-size: 1.2rem;
+}
 .slide-over-content{
-  position: absolute;
-  bottom: 10em;
-  left: 48%;
-  z-index:15;
+    position: absolute;
+    bottom: 2.5rem;
+    text-align: right;
+    left: 26%;
+    width: 60%;
+    z-index: 15;
 }
 .slide-right-ct{
     float: right;
@@ -254,7 +263,7 @@ table.views-table{
 }
 .content.middle .panels-flexible-region-node_page-content_left{
   text-align: right;
-  width: 87.804%;
+  width: 84.804%;
 }
 .bottom-content .pane-test-view-for-movie-credit-panel-pane-2 .pane-content{
     margin: 3% 0;
@@ -268,7 +277,7 @@ table.views-table{
 .content.middle .panels-flexible-region-node_page-content_right{
   float: left;
   text-align: right;
-  width: 12.196%;
+  width: 15.196%;
 }
 .pane-node-field-tag{
   margin-top: 45%;
@@ -448,19 +457,48 @@ table.views-table{
     margin-top: 1%;
 }
 .pane-event-ct-view-panel-pane-7 .pane-content{
-   background-color: #f9fafb;
-    padding-left: 7%;
-    padding-right: 7%;
-    width: 100%;  
+  background-color: #f9fafb;
+  padding-left: 8.4%;
+  padding-right: 7%;
+  width: 100%; 
 }
 .pane-event-ct-view-panel-pane-7 .views-table{
   margin-bottom: 0;
 }
 .pane-event-ct-view-panel-pane-8 .views-field-field-cm-event-body{
-   font-size: 1.1rem;
+  font-size: 1.1rem;
   line-height: 28px;
+  text-align: right;
   margin: 2% 18%;
-    
+  margin-right: 19.6%;   
+}
+.pane-event-ct-view-panel-pane-8 .views-field-field-cm-event-body p{
+  font-weight: bold;
+}
+.view-id-event_ct_view td.views-field-field-toptix-purchase{
+    width: 9%;
+}
+.view-id-event_ct_view td.views-field{
+  width: 8%;
+}
+.view-id-event_ct_view td.views-field-php{
+  padding-top: 0.5%;
+  width: 7%;
+}
+.view-id-event_ct_view td.views-field-field-cm-event-hall{
+  width: 14%
+}
+.view-id-event_ct_view  td.views-field-field-cm-event-time{
+  width: 10%;
+}
+.view-id-event_ct_view td.views-field-field-main-event-credit{
+ width: 27%; 
+}
+.view-id-event_ct_view td.views-field-field-cm-event-internal-id{
+    width: 10.7%; 
+}
+.pane-event-ct-view-panel-pane-5 h2{
+  text-align: right;
 }
 .lobby-summary,
 .lobby-length{
