@@ -18,7 +18,7 @@
            }
            jQuery(".view-id-movie_group_ct.view-display-id-panel_pane_1 .img a>img").unwrap();
            
-           if(jQuery('.top-text-blk-wht .white').is(':empty')){
+           if(!jQuery.trim( jQuery('.top-text-blk-wht .white').html() ) == true){
                jQuery('.top-text-blk-wht').hide();
            }
            if(!jQuery.trim( jQuery(".slide-alt-title .grp-title").html() ) == true){
