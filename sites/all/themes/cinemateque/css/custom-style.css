@@ -1720,10 +1720,10 @@ div[id^="panels-ipe-paneid-22"] > * select {
 .search-api-page-result:nth-child(odd){ background: #e7decc !important
 }*/
 .search-api-page-result { border: 1px solid transparent; cursor: pointer;
-    background: #fff !important; transition:ease 0.2s border;-webkit-transition:ease 0.2s border;
+    background: #fff !important; transition:ease 0.2s all;-webkit-transition:ease 0.2s all;
 }
-.search-api-page-result:hover{
-    border: 1px solid #777;
+.search-api-page-result:hover {
+    box-shadow: 0 0 4px 1px #999; -webkit-box-shadow: 0 0 4px 1px #999;
 }
 
 @media (min-device-width:620px){
