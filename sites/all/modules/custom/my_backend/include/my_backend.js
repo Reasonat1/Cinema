@@ -24,12 +24,12 @@
     /*
      * On ready add class active to first child
      */
-    jQuery('.calender-filter > p:first-child').addClass('active');
+    jQuery('.calender .calender-filter > p:first-child').addClass('active');
     /**
      * using Ajax filter the  calender event
      */
-    jQuery('.calender-filter > p').click(function(){
-        jQuery('.calender-filter > p').removeClass('active');
+    jQuery('.calender .calender-filter > p').click(function(){
+        jQuery('.calender .calender-filter > p').removeClass('active');
         jQuery(this).addClass('active');
        var filterdate = jQuery(this).find('.filter-date.element-invisible').text();
        url = Drupal.settings.basePath + "ajax_complex_calender";
@@ -120,3 +120,63 @@ jQuery( document ).ajaxStop(function() {
 function closed(){
   jQuery('.close-calender-popup').parent().parent().removeClass('visible');
 }
+
+/**
+ *  mobile calender js events
+ */
+jQuery(document).ready(function () {
+    jQuery('.accordian-hall').click(function () {
+        if (jQuery(this).hasClass('open')) {
+            jQuery(this).removeClass('open');
+            jQuery(this).parent().find('.mobile-accordian-content').slideUp(500).hide();
+            jQuery(this).find('i').addClass('fa-angle-right');
+            jQuery(this).find('i').removeClass('fa-angle-down');
+        } else {
+            jQuery(this).addClass('open');
+            jQuery(this).parent().find('.mobile-accordian-content').slideDown(500).show();
+            jQuery(this).find('i').removeClass('fa-angle-right');
+            jQuery(this).find('i').addClass('fa-angle-down');
+        }
+    });
+
+    /*
+     * On ready add class active to first child
+     */
+    jQuery('.mobile-calender .calender-filter > p:first-child').addClass('active');
+    /**
+     * using Ajax filter the  calender event
+     */
+    jQuery('.mobile-calender .calender-filter > p').click(function () {
+        jQuery('.mobile-calender .calender-filter > p').removeClass('active');
+        jQuery(this).addClass('active');
+        var filterdate = jQuery(this).find('.filter-date.element-invisible').text();
+        url = Drupal.settings.basePath + "ajax_complex_calender_mobile";
+        jQuery.ajax({
+            type: 'post',
+            url: url,
+            dataType: 'json',
+            data: {
+                filterdate: filterdate,
+            },
+            success: function (data) {
+                jQuery('.mobile-calender-inner').replaceWith(data.output);
+            }
+        });
+    });
+});
+
+jQuery(document).ajaxComplete(function () {
+    jQuery('.accordian-hall').click(function () {
+        if (jQuery(this).hasClass('open')) {
+            jQuery(this).removeClass('open');
+            jQuery(this).parent().find('.mobile-accordian-content').slideUp(500).hide();
+            jQuery(this).find('i').addClass('fa-angle-right');
+            jQuery(this).find('i').removeClass('fa-angle-down');
+        } else {
+            jQuery(this).addClass('open');
+            jQuery(this).parent().find('.mobile-accordian-content').slideDown(500).show();
+            jQuery(this).find('i').removeClass('fa-angle-right');
+            jQuery(this).find('i').addClass('fa-angle-down');
+        }
+    });
+})
