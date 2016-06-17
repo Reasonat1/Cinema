@@ -121,7 +121,7 @@ if ($variables['item']->type == 'cm_event') {
             <li>
                 <?php
 //             echo '<pre>';
-                print_r($variables['item']->type);
+//                print_r($variables['item']->type);
                 if (isset($variables['url']['options']['entity']->field_featured_image['und'][0]['filename'])) {
                     if ($variables['url']['options']['entity']->field_featured_image['und'][0]['filename'] != "") {
                         $image_path = $GLOBALS['base_url'] . '/sites/default/files/' . $variables['url']['options']['entity']->field_featured_image['und'][0]['filename'];
@@ -182,7 +182,7 @@ if ($variables['item']->type == 'cm_person') {
             <li>
                 <?php
 //             echo '<pre>';
-                print_r($variables['item']->type);
+//                print_r($variables['item']->type);
                 if (isset($variables['url']['options']['entity']->field_featured_image['und'][0]['filename'])) {
                     if ($variables['url']['options']['entity']->field_featured_image['und'][0]['filename'] != "") {
                         $image_path = $GLOBALS['base_url'] . '/sites/default/files/' . $variables['url']['options']['entity']->field_featured_image['und'][0]['filename'];
