@@ -18,7 +18,8 @@ body.node-type-cm-movie-group .container #breadcrumb,
 body.node-type-cm-event .container #page-header .page-header h1.title,
 .page-admin-structure-types-manage-cm-movie-group-fields-cer-settings .error,
 .page-admin-structure-types-manage-cm-movie-group-fields-cer-store-settings .error,
-.content.middle .pane-title{
+.content.middle .pane-title,
+#page-header .page-header{
   display: none;
 }
 .content.middle{
@@ -331,6 +332,11 @@ body.node-type-cm-movie #content,
   border-right: 1px solid #a0a0a0;
   padding-right: 7px;
   margin-right: 3px;
+}
+.i18n-he .views_slideshow_cycle_slide .field-content .slide-alt-title .grp-alt{
+    border-left: 1px solid #a0a0a0;
+    padding-left: 7px;
+    margin-left: 3px;
 }
 .field-name-field-tag a{
   color: #bbb;
