@@ -589,12 +589,3 @@ function ajax_complex_calender_mobile_filter(){
      $output.="</div></div></div>";
       drupal_json_output(array('output' => $output));
 }
-
-/**
- *  createing calender pane
- */
-function my_backend_ctools_plugin_directory($module, $plugin) {
-    if (($module == 'ctools' || $module == 'panels') && !empty($plugin)) {
-    return 'plugins/' . $plugin;
-  }
-} 
