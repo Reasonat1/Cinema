@@ -43,66 +43,183 @@
 ?>
 <!--<li class="search-result">
   <h3 class="title">
-    <?php // print $url ? l($title, $url['path'], $url['options']) : check_plain($title); ?>
+<?php // print $url ? l($title, $url['path'], $url['options']) : check_plain($title); ?>
   </h3>
   <div class="search-snippet-info">
-    <?php // if ($snippet) : ?>
-      <p class="search-snippet"><?php // print $snippet; ?></p>
-    <?php // endif; ?>
-    <?php // if ($info) : ?>
-      <p class="search-info"><?php // print $info; ?></p>
-    <?php // endif; ?>
+<?php // if ($snippet) : ?>
+      <p class="search-snippet"><?php // print $snippet;    ?></p>
+<?php // endif; ?>
+<?php // if ($info) : ?>
+      <p class="search-info"><?php // print $info;    ?></p>
+<?php // endif; ?>
   </div>
 </li>-->
-<li class="<?php print $classes; ?>"<?php print $attributes; ?>>
-    <ul class="pro-grid">
-        
-         <li>
-             <?php 
-//             echo '<pre>';print_r($_SERVER['REQUEST_SCHEME']);print_r($variables);die;
-             if(isset($variables['url']['options']['entity']->field_featured_image['und'][0]['filename'])){
-             if($variables['url']['options']['entity']->field_featured_image['und'][0]['filename']!=""){
-                $image_path=$GLOBALS['base_url']. '/sites/default/files/'.$variables['url']['options']['entity']->field_featured_image['und'][0]['filename']; 
-             }
-             else{
-                $image_path=$GLOBALS['base_url']. '/'.path_to_theme().'/no_image.jpg';
-             }
-             }
-             else{
-                $image_path=$GLOBALS['base_url']. '/'.path_to_theme().'/no_image.jpg';
-             }
-             ?>
-             <img src="<?php print $image_path?>" class="pro-img"/>
-        </li>
-        
-        <li>
-  <?php print render($title_prefix); ?>
-  <h1 class="title"<?php print $title_attributes; ?>>   
-      <?php print $url ? l($title, $url['path'], $url['options']) : check_plain($title); ?>
-    <!--<a href="<?php // print $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/'.$variables['url']['path']; ?>"> <?php // print_r($variables['url']['options']['entity']->title); ?></a>-->
-  </h1>
-        </li>
-        <li>
-  <?php print render($title_suffix); ?>
- <div class="search-view-mode">
-      <?php 
-      if(isset($variables['url']['options']['entity']->body['und'][0]['value'])){
-      print($variables['url']['options']['entity']->body['und'][0]['value']);
-      }
-      ?>
-    <?php // print($variables['result']['node']->rendered); ?>
-  </div>
-        </li>
-       
-    </ul>
+<?php if ($variables['item']->type == 'cm_movie' or $variables['item']->type == 'cm_movie_group') { ?>
+    <li class="<?php print $classes; ?> cm_movie"<?php print $attributes; ?> >
+        <ul class="pro-grid">
+
+            <li>
+                <?php
+//             echo '<pre>';
+//                print_r($variables['item']->type);
+                if (isset($variables['url']['options']['entity']->field_featured_image['und'][0]['filename'])) {
+                    if ($variables['url']['options']['entity']->field_featured_image['und'][0]['filename'] != "") {
+                        $image_path = $GLOBALS['base_url'] . '/sites/default/files/' . $variables['url']['options']['entity']->field_featured_image['und'][0]['filename'];
+                    } else {
+                        $image_path = $GLOBALS['base_url'] . '/' . path_to_theme() . '/no_image.jpg';
+                    }
+                } else {
+                    $image_path = $GLOBALS['base_url'] . '/' . path_to_theme() . '/no_image.jpg';
+                }
+                ?>
+                <img src="<?php print $image_path ?>" class="pro-img"/>
+            </li>
+
+            <li>
+                <?php // print render($title_prefix); ?>
+                <h1 class="title"<?php print $title_attributes; ?>>   
+                    <?php print $url ? l($title, $url['path'], $url['options']) : check_plain($title); ?>
+                  <!--<a href="<?php // print $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/'.$variables['url']['path'];    ?>"> <?php // print_r($variables['url']['options']['entity']->title);    ?></a>-->
+                </h1>
+<!--            </li>
+            <li>-->
+                <?php // print render($title_suffix); ?>
+                <div class="search-view-mode">
+                    <?php
+                    if (isset($variables['url']['options']['entity']->body['und'][0]['value'])) {
+                        print($variables['url']['options']['entity']->body['und'][0]['value']);
+                    }
+                    ?>
+                    <?php // print($variables['result']['node']->rendered); ?>
+                </div>
+                <div class="search-snippet-info">
+                    <?php if ($snippet) : ?>
+                        <p class="search-snippet"><?php // print $snippet;    ?></p>
+                    <?php endif; ?>
+                    <?php if ($info) : ?>
+                        <p class="search-info"><?php print $info; ?>
+                            <span class="fa fa-heart-o"> </span> 
+                            <span class="fa fa-calendar-o"> </span>
+                            <span class="purchase-btn"> Purchase </span>
+                        </p>
+                    <?php endif; ?>
+                </div>
+            </li>
+
+        </ul>
+
+
+
+    </li>
+    <?php
+}else
+if ($variables['item']->type == 'cm_event') {
+    ?>
+    <li class="<?php print $classes; ?> cm_event"<?php print $attributes; ?>>
+        <ul class="pro-grid">
+
+            <li>
+                <?php
+//             echo '<pre>';
+                print_r($variables['item']->type);
+                if (isset($variables['url']['options']['entity']->field_featured_image['und'][0]['filename'])) {
+                    if ($variables['url']['options']['entity']->field_featured_image['und'][0]['filename'] != "") {
+                        $image_path = $GLOBALS['base_url'] . '/sites/default/files/' . $variables['url']['options']['entity']->field_featured_image['und'][0]['filename'];
+                    } else {
+                        $image_path = $GLOBALS['base_url'] . '/' . path_to_theme() . '/no_image.jpg';
+                    }
+                } else {
+                    $image_path = $GLOBALS['base_url'] . '/' . path_to_theme() . '/no_image.jpg';
+                }
+                ?>
+                <img src="<?php print $image_path ?>" class="pro-img"/>
+            </li>
+
+            <li>
+                <div class="search-snippet-info">
+                    <?php if ($snippet) : ?>
+                        <p class="search-snippet"><?php // print $snippet;    ?></p>
+                    <?php endif; ?>
+                    <?php if ($info) : ?>
+                        <p class="search-info"><?php print $info; ?>
+                        <span class="fa fa-heart-o"> </span> 
+                            <span class="fa fa-calendar-o"> </span>
+                            <span class="purchase-btn"> Purchase </span>
+                        </p>
+                    <?php endif; ?>
+                </div>
+                
+                <?php // print render($title_prefix); ?>
+                <h1 class="title"<?php print $title_attributes; ?>>   
+                    <?php print $url ? l($title, $url['path'], $url['options']) : check_plain($title); ?>
+                  <!--<a href="<?php // print $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/'.$variables['url']['path'];   ?>"> <?php // print_r($variables['url']['options']['entity']->title);   ?></a>-->
+                </h1>
+                <div class="search-view-mode">
+                    <?php
+                    if (isset($variables['url']['options']['entity']->body['und'][0]['value'])) {
+                        print($variables['url']['options']['entity']->body['und'][0]['value']);
+                    }
+                    ?>
+                    <?php // print($variables['result']['node']->rendered); ?>
+                </div>
+            </li>
+<!--            <li>
+                <?php // print render($title_suffix); ?>
+            </li>-->
+
+        </ul>
+
+
+
+    </li>
+    <?php
+} else
+if ($variables['item']->type == 'cm_person') {
+    ?>
+    <li class="<?php print $classes; ?> cm_person"<?php print $attributes; ?>>
+        <ul class="pro-grid">
+
+            <li>
+                <?php
+//             echo '<pre>';
+                print_r($variables['item']->type);
+                if (isset($variables['url']['options']['entity']->field_featured_image['und'][0]['filename'])) {
+                    if ($variables['url']['options']['entity']->field_featured_image['und'][0]['filename'] != "") {
+                        $image_path = $GLOBALS['base_url'] . '/sites/default/files/' . $variables['url']['options']['entity']->field_featured_image['und'][0]['filename'];
+                    } else {
+                        $image_path = $GLOBALS['base_url'] . '/' . path_to_theme() . '/no_image.jpg';
+                    }
+                } else {
+                    $image_path = $GLOBALS['base_url'] . '/' . path_to_theme() . '/no_image.jpg';
+                }
+                ?>
+                <img src="<?php print $image_path ?>" class="pro-img"/>
+            </li>
+
+            <li>
+                <?php // print render($title_prefix);  ?>
+                <h1 class="title"<?php print $title_attributes; ?>>   
+                    <?php print $url ? l($title, $url['path'], $url['options']) : check_plain($title); ?>
+                  <!--<a href="<?php // print $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/'.$variables['url']['path'];   ?>"> <?php // print_r($variables['url']['options']['entity']->title);   ?></a>-->
+                </h1>
+            </li>
+            <li>
+                <?php // print render($title_suffix);  ?>
+                <div class="search-view-mode">
+                    <?php
+                    if (isset($variables['url']['options']['entity']->body['und'][0]['value'])) {
+                        print($variables['url']['options']['entity']->body['und'][0]['value']);
+                    }
+                    ?>
+                    <?php // print($variables['result']['node']->rendered); ?>
+                </div>
+            </li>
+
+        </ul>
+    </li>
+    <?php
+} else {
     
-    
-<!--  <div class="search-snippet-info">
-    <?php // if ($snippet) : ?>
-      <p class="search-snippet"><?php // print $snippet; ?></p>
-    <?php // endif; ?>
-    <?php // if ($info) : ?>
-      <p class="search-info"><?php // print $info; ?></p>
-    <?php // endif; ?>
-  </div>-->
-</li>
+}
+?>
+

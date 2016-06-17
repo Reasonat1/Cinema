@@ -130,24 +130,21 @@
         </div>
 
         <div id="content" class="container">
-<<<<<<< HEAD
-            <div class="search_new"> <?php print render($page['featured']); ?> </div>
-=======
 
-            <div class="search_new"> <div style="clear:both"> </div><?php print render($page['triptych_first']); ?> </div>
->>>>>>> a664dfc4a98a24ff07702522d21582bd8f759909
+            <div class="search_new"> <div style="clear:both"> </div><?php print render($page['featured']); ?> </div>
+
             <?php print render($page['content']); ?>
         </div>
     </div> <!-- /#main -->
 </div> <!-- /#main-wrapper -->
 
 <footer id="footer" class="footer" role="footer">
-  <div class="container-fluid">
-    <div class="row">
-      <?php print render($page['footer1']); ?>
-	  <?php print render($page['footer2']); ?>
+    <div class="container-fluid">
+        <div class="row">
+            <?php print render($page['footer1']); ?>
+            <?php print render($page['footer2']); ?>
+        </div>
     </div>
-  </div>
     <?php if (0): ?>
         <div class="container">
             <?php if ($copyright): ?>
@@ -156,17 +153,10 @@
             <small class="pull-right"><a href="#"><?php print t('Back to Top'); ?></a></small>
         </div>
     <?php endif; ?>
-<<<<<<< HEAD
 </footer>
-=======
-<<<<<<< HEAD
-</footer>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 <script>
 
     jQuery(document).ready(function () {
-        jQuery('select').select2();
         var popup = jQuery(".popup_search").html();
         jQuery(".popup-element-title span").html(popup);
 //        jQuery(".popup_search").html(popup_search);
@@ -177,11 +167,7 @@
 //        jQuery('#search-api-page-search-form').append('<div class="search_new">' + data + '</div>');
         jQuery(".search_new").appendTo("#search-api-page-search-form");
         jQuery("#search-api-page-search-form").appendTo(".container:first");
-
-
+        jQuery('select').select2();
     });
 </script>
-=======
-</footer>
->>>>>>> 71abe85634c89bd0364d55c58446c1de6b69e8f7
->>>>>>> a664dfc4a98a24ff07702522d21582bd8f759909
+
