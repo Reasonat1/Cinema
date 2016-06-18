@@ -667,3 +667,104 @@ fieldset#panopoly-form-widget-preview {
 .node-teaser.cm_person .teaser-row {
   background-color: #ffffff;
 }
+/**
+ *  Basic Bean info block css
+ **/
+.bean-block {
+    border: 1px solid;
+  float: left;
+  min-height: 100px;
+  width: 240px;
+  padding: 10px;
+}
+.bean-icon {
+  float: left;
+  height: 80px;
+  width: 30px;
+}
+.bean-icon {
+  float: left;
+  height: 80px;
+  margin-right: 10px;
+  width: 30px;
+  text-align: right;
+}
+.bean-title {
+  text-align: center;
+}
+.bean-body {
+  text-align: center;
+}
+.bean-body > p,.bean-body > span {
+  margin: 0;
+}
+/**
+ * Admin bean type for dragable
+ */
+#preview .bean-icon {
+  height: auto;
+  text-align: center;
+  width: 100%;
+}
+#preview .bean-block {
+  min-height: 170px;
+  width: 280px;
+}
+#preview .bean-title {
+  float: left;
+  font-size: 20px;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+}
+#preview .bean-body {
+  float: left;
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+}
+#preview .bean-block {
+  min-height: 170px;
+  width: 280px;
+}
+/**
+ *  Footer Bean info block css
+ **/
+.footer .pane-information-info-view-block {
+  background-color: #7a7a7a;
+  padding: 40px;
+  float: left;
+  width: 100%;
+}
+.footer .pane-information-info-view-block .pane-content {
+  margin: 0 auto;
+  width: 1125px;
+}
+.footer .pane-information-info-view-block .bean-block {
+  width: 280px;
+  border: none;
+}
+.footer .pane-information-info-view-block  .bean-icon {
+  float: left;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  color: #ffffff;
+}
+.footer .pane-information-info-view-block .bean-title {
+  color: #ffffff;
+  float: left;
+  padding-top: 15px;
+  width: 100%;
+  font-size: 20px;
+}
+.footer .pane-information-info-view-block  .bean-body {
+  color: #ffffff;
+  float: left;
+  padding-top: 10px;
+  width: 100%;
+}
+.footer .pane-information-info-view-block  .bean-body > p, .footer .pane-information-info-view-block  .bean-body > span {
+  margin: 0;
+}

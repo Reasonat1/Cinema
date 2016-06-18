@@ -9,6 +9,16 @@ function my_pane_menu(){
         'page callback' => 'node_type_content',
         'access callback' => true
     );
+    $items['ajax/term-type/term'] = array(
+        'title' => '',
+        'page callback' => 'term_type_content',
+        'access callback' => true
+    );
+    $items['ajax/bean-type/order'] = array(
+        'title' => '',
+        'page callback' => 'bean_type_order',
+        'access callback' => true
+    );
     
     return $items;
 }
@@ -532,4 +542,50 @@ function node_type_content() {
     drupal_json_output(array('output' =>$output));
     die();
 
+}
+
+/**
+ * term tid and title as option based on texonomy type
+ */
+function term_type_content() {
+    $type = isset($_POST['term_type']) ? $_POST['term_type'] : '';
+    $default_term = isset($_POST['default_term']) ? $_POST['default_term'] : 'null';
+    $default_term = explode(',',$default_term[0]);
+    $result = db_query("SELECT `entity_id` FROM `field_data_field_cm_info_block_group` WHERE `field_cm_info_block_group_tid` = '$type'")->fetchAll();
+    
+    foreach ($result as $val) {
+        $bid = $val->entity_id;
+        $selected = '';
+       foreach($default_term as $def){  
+           if($bid == $def){
+               $selected = "selected=selected";
+           }
+       }
+        $block = bean_load($bid);
+        $output.="<option value='$bid' $selected>$block->label</option>";
+    }
+    drupal_json_output(array('output' =>$output));
+    die();
+
+}
+
+/**
+ * Bean type order preview
+ */
+function bean_type_order(){
+    $result = isset($_POST['bean_order']) ? $_POST['bean_order'] : ''; 
+    $resultnew = explode(',',$result[0]);
+    foreach ($resultnew as $val) {
+        $block = bean_load($val);
+        $icon = isset($block->field_cm_info_block_icon['und'][0]['icon']) ? $block->field_cm_info_block_icon['und'][0]['icon'] : '';
+        $body = isset($block->field_cm_info_block_text['und'][0]['value']) ? $block->field_cm_info_block_text['und'][0]['value'] : '';
+        $output.="<div class='bean-block'>";
+        $output.="<div class='bid element-invisible'>$val</div>";
+        $output.="<a class='tabledrag-handle' href='javascript:void(0)' title='Drag to re-order'><div class='handle'>&nbsp;</div></a>";
+        $output.="<div class='bean-icon'><i aria-hidden='true' class='fa fa-$icon fa-2x'></i></div>";
+        $output.="<div class='bean-title'>$block->label</div>";
+        $output.="<div class='bean-body'>$body</div>";
+        $output.='</div>';
+    }
+    drupal_json_output(array('output' =>$output));
 }
