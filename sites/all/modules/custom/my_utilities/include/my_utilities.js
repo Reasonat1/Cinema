@@ -42,4 +42,7 @@
            if(!jQuery.trim( jQuery("td.views-field-field-cm-event-time-1").html() ) == true){
                jQuery('th.views-field-field-cm-event-time-1').hide();
            }
+           if(jQuery('.movie-group-slide-container .movie-group-slide').length){
+				jQuery('.slide-over-content').addClass('no-image');
+			}
 });
