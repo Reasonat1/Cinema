@@ -19,7 +19,13 @@ function my_pane_menu(){
         'page callback' => 'bean_type_order',
         'access callback' => true
     );
-    
+ 
+  $items['ajax/nodes_of_type'] = array(
+    'page callback' => 'ajax_my_pane_nodes_oftype_autocomplete_callback',
+    'file' => 'my_pane.extras.inc',
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('administer content'),
+  ); 
     return $items;
 }
 

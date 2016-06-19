@@ -97,17 +97,17 @@ Drupal.settings.gallery_settings = Drupal.settings.gallery_settings || {};
 
         /**
          * Bean type block acc to Information term type
-         */
+         *//*
         if ($('.form-item-block-type select').val() == null && $('#preview').text().length == '0') {
             var type = $('.form-item-term select').val();
-            term_type_ajax(type);
+            //term_type_ajax(type);
         }
         if ($('.form-item-term select').val() == '0') {
             $('.form-item-block-type select').attr('disabled', true);
         }
 
         $('.form-item-term select').off('change').on('change', function () {
-            term_type_ajax($(this).val());
+            //term_type_ajax($(this).val());
             $('.form-item-block-type select').removeAttr('disabled');
         });
 
@@ -123,7 +123,7 @@ Drupal.settings.gallery_settings = Drupal.settings.gallery_settings || {};
             var row = $('.default_term').val();
             var result = row.split(' ');
             bean_type_order_ajax(result);
-        }
+        }*/
         /**
          * 
          * @param {type} type

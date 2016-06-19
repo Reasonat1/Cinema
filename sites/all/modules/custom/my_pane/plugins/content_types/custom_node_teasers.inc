@@ -54,6 +54,14 @@ function my_pane_node_content_form($form, &$form_state) {
         '#default_value' => $conf['node_id'],
     );
 
+    $form['node_id_autocomplete'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Select Node'),
+        '#description' => t('Choose  the node to display'),
+        '#autocomplete_path' => 'ajax/nodes_of_type',
+        '#default_value' => $conf['node_id_autocomplete'],
+    );
+
     $form['top_black_title'] = array(
         '#type' => 'textfield',
         '#title' => t('Override top black corner text'),
@@ -120,6 +128,7 @@ function my_pane_node_content_form_submit($form, &$form_state) {
     // echo "<pre>"; print_r($form_state['values']); die();
     $form_state['conf']['content_type'] = $form_state['values']['content_type'];
     $form_state['conf']['node_id'] = $form_state['values']['node_id'];
+    $form_state['conf']['node_id_autocomplete'] = $form_state['values']['node_id_autocomplete'];
     $form_state['conf']['top_black_title'] = $form_state['values']['top_black_title'];
     $form_state['conf']['top_white_title'] = $form_state['values']['top_white_title'];
     $form_state['conf']['movie_image'] = $form_state['values']['movie_image'];
@@ -142,7 +151,7 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
 
     global $base_url;
     $content_type = $conf['content_type'];
-    $nid = $conf['node_id'];
+    $nid = isset($conf['node_id_autocomplete']) ? $conf['node_id_autocomplete'] : $conf['node_id'];
     $top_black_title = $conf['top_black_title'];
     $top_white_title = $conf['top_white_title'];
     $movie_image = $conf['movie_image'];
