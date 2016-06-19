@@ -1,4 +1,5 @@
 var toptix_event_url = null;
+var toptix_active_button = {original_text:'', item: null};
 (function($) {
   Drupal.behaviors.toptix_frame = {
     
@@ -6,6 +7,10 @@ var toptix_event_url = null;
       var self = this;
       $('.toptix-purchase').click(function(event) {
         toptix_event_url = this.dataset.url;
+
+        toptix_active_button.item = this;
+        toptix_active_button.original_text = $(this).text();
+        $(this).text(Drupal.t('Loading...'));
         $esro.getCustomerDetails('toptix_callback_get_customer');
       });
     },
@@ -48,4 +53,5 @@ function toptix_open_frame() {
       event.target.style.height = "768px";
     }
   });
+  jQuery(toptix_active_button.item).text(toptix_active_button.original_text);
 }

@@ -3,6 +3,7 @@
     attach: function(context, settings) {
       $('.field-name-field-toptix-purchase input.browser')
         .click(function(){
+          $(this).addClass('throbbing').css('background-repeat', 'no-repeat');
           toptix_dialog.setup(this);
         });
       toptix_dialog.hidden = $('.field-name-field-toptix-purchase input[type="hidden"]')
@@ -18,6 +19,7 @@ toptix_dialog.setup = function(anchor) {
   var self = this;
   jQuery.get(url, function (data) {
     self.show_results(data);
+    jQuery(self.anchor).removeClass('throbbing');
   });
 };
 

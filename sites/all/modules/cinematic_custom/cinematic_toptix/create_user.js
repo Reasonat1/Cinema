@@ -9,7 +9,13 @@ var toptix_form_processed = false;
           return;
         }
         toptix_form_data = this;
-        var toptix_id = $(this).find('input[name^="field_toptix"]').val();
+        toptix_form_item = $(this).find('input[name^="field_toptix"]');
+        if (toptix_form_item.length == 0) {
+          console.log('user toptix field not found');
+          return;
+        }
+        var toptix_id = toptix_form_item.val();
+        toptix_form_item.addClass('throbbing').css('background-repeat', 'no-repeat');
         event.stopPropagation();
         if (toptix_id) {
           $esro.customerLoginById(toptix_id, 'toptix_callback_user_login');
@@ -25,17 +31,23 @@ var toptix_form_processed = false;
 
 var toptix_limit_calls = 0;
 var toptix_form_data = null;
+var toptix_form_item = null;
+function toptix_user_submit() {
+  toptix_form_item.removeClass('throbbing');
+  var form = jQuery('#' + Drupal.settings.toptix_form);
+  form.submit();
+}
 
 function toptix_callback_save(result) {
   if (toptix_limit_calls++ > 10) {
     toptix_form_processed = true;
+    toptix_user_submit();
     return;
   }
   if (result.HasError) {
-    var form = jQuery('#' + Drupal.settings.toptix_form);
-    form.find('input[name^="field_toptix"]').val(result.ErrorDescription);
+    toptix_form_item.val(result.ErrorDescription);
     toptix_form_processed = true;
-    form.submit();
+    toptix_user_submit();
     return;
   }
   if (!('Id' in result.Result)) {
@@ -43,22 +55,33 @@ function toptix_callback_save(result) {
   }
   else {
     toptix_validated = true;
-    var form = jQuery('#' + Drupal.settings.toptix_form);
-    form.find('input[name^="field_toptix"]').val(result.Result.Id);
+    toptix_form_item.val(result.Result.Id);
     toptix_form_processed = true;
-    form.submit();
+    toptix_user_submit();
   }
 }
 
 function toptix_alter_customer(Customer, form) {
   Customer.Login.Name = 'drupal_' + form['name'].value;
 
-  Customer.Name.First = jQuery(form).find('input[name^="field_first_name"]').val();
-  Customer.Name.Last = jQuery(form).find('input[name^="field_last_name"]').val();
+  var value_checked = jQuery(form).find('input[name^="field_first_name"]').val();
+  if (value_checked) {
+    Customer.Name.First = value_checked;
+  }
+  var value_checked = jQuery(form).find('input[name^="field_last_name"]').val();
+  if (value_checked) {
+    Customer.Name.Last = value_checked;
+  }
 
-  Customer.ContactDetails[0].Detail = jQuery(form).find('input[name^="field_landline"]').val();
-  Customer.ContactDetails[1].Detail = jQuery(form).find('input[name^="field_mobile"]').val();
-  Customer.ContactDetails[3].Detail = form['mail'].value;
+  var contact_details = [];
+  contact_details[0] = jQuery(form).find('input[name^="field_landline"]').val();
+  contact_details[1] = jQuery(form).find('input[name^="field_mobile"]').val();
+  contact_details[3] = form['mail'].value;
+  contact_details.forEach (function(value, idx) {
+    if (value) {
+      Customer.ContactDetails[idx].Detail = value;
+    }
+  });
     /*
     Customer.AddressDetails[0] = {
       Address: {
@@ -80,9 +103,8 @@ function toptix_callback_create(result) {
 
 function toptix_callback_user_login(result) {
   if (toptix_limit_calls++ > 10 || result.HasError) {
-    var form = jQuery('#' + Drupal.settings.toptix_form);
     toptix_form_processed = true;
-    form.submit();
+    toptix_user_submit();
     return;
   }
 
@@ -95,9 +117,8 @@ function toptix_callback_user_login(result) {
   var Customer = result.Result;
   toptix_alter_customer(Customer, form);
   $esro.updateCustomerDetails(Customer, function(result) {
-    var form = jQuery('#' + Drupal.settings.toptix_form);
     toptix_form_processed = true;
-    form.submit();
+    toptix_user_submit();
   });
 }
 
