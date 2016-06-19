@@ -24,6 +24,7 @@ function _return_addthisevent_markup($node) {
    $summery   = !empty($node->title) ? $node->title : '';
    if(!empty($node->field_cm_event_body['und'])){
       $description  = $node->field_cm_event_body['und'][0]['safe_summary'] ? $node->field_cm_event_body['und'][0]['safe_summary'] : $node->field_cm_event_body['und'][0]['safe_value']; 
+      $desc = check_plain($description);
    }
    $owner   = user_load($node->uid);
    $text = t('Add to Calendar') . '
@@ -31,7 +32,7 @@ function _return_addthisevent_markup($node) {
     <span class="_start">'.$end.' ' .$end_time.'</span>
   <span class="_zonecode">40</span>
   <span class="_summary">'.$summery.'</span>
-  <span class="_description">'.check_plain($description).'</span>
+  <span class="_description">'.$desc.'</span>
   <span class="_organizer">'.$owner->name.'</span>
   <span class="_organizer_email">'.$owner->mail.'</span>
   <span class="_all_day_event">false</span>
