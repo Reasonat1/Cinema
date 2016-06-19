@@ -192,7 +192,7 @@ function radix_preprocess_page(&$variables) {
     global $base_url;
     global $_domain;
 	$term_tid = db_query("SELECT `entity_id` FROM `field_data_field_cm_domain` WHERE `field_cm_domain_value` = :did",array(':did' => $_domain['domain_id']))->fetchField();
-
+	
     $output = "";
     $variables['festival_site_info']  = "";
 	
@@ -317,7 +317,13 @@ function radix_preprocess_page(&$variables) {
     }*/
   // Add a copyright message.
   //$variables['copyright'] = t('Drupal is a registered trademark of Dries Buytaert.');
-
+  $theme_path = drupal_get_path('theme', $GLOBALS['theme']);
+  $stylesheet_path = '/'.$theme_path . '/css/domain-'.$_domain['domain_id'].'.css';
+  if (!file_exists('/'.$stylesheet_path)) {
+	dpm($stylesheet_path . ' is missing but we try to load it for this domain. please create scss file and use compass watch to generate css file');
+  }else{
+    drupal_add_css('/'.$stylesheet_path);
+  }
   // Display a message if Sass has not been compiled.
 //  $theme_path = drupal_get_path('theme', $GLOBALS['theme']);
 //  $stylesheet_path = $theme_path . '/assets/stylesheets/screen.css';
