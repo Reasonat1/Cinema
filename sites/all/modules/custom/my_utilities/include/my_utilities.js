@@ -45,7 +45,7 @@
            if(jQuery('.movie-group-slide-container .movie-group-slide').length){
 				jQuery('.slide-over-content').addClass('image-yes');
 			}
-           if(jQuery('.movie-group-slide-container .movie-group-slide . file-image .content .panopoly-image-original').length){
+           if(jQuery('.movie-group-slide-container .movie-group-slide .file-image .content .panopoly-image-original').length){
 				jQuery('.views_slideshow_cycle_main').addClass('image-true');
 			}
             
