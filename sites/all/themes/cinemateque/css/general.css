@@ -159,7 +159,7 @@ table.views-table{
 .slide-eve-lobby{
   font-size: 1.2rem;
 }
-.pane-event-ct-view-panel-pane-3 .image-yes.slide-over-content{
+.pane-event-ct-view-panel-pane-3 .slide-over-content.image-yes{
     position: absolute !important;
     bottom: 2.5rem;
     left: 25%;
@@ -169,10 +169,10 @@ table.views-table{
     text-align: right;
     width: 60%;
     z-index: 15;
-    bottom: 0;
-    left: 0;
+    margin: auto;
+    
 }
-.slide-right-ct{
+.slide-over-content.image-yes .slide-right-ct{
     float: right;
     margin-top: 19%;
     width: 15%;
@@ -192,7 +192,7 @@ table.views-table{
   width: 100%;
 }
 
-.pane-event-ct-view-panel-pane-3 .slide-over-content .slide-left-ct{
+.pane-event-ct-view-panel-pane-3 .slide-over-content.image-yes .slide-left-ct{
   width: 85%;
   float: left;
   color: #000;
@@ -208,10 +208,15 @@ table.views-table{
 .slide-eve-title a{
 color: #fff;
 }
-.slide-movie-title h2{
+.slide-over-content.image-yes .slide-movie-title h2{
   margin: 1% 0;
   font-weight: normal;
   color: #fff;
+}
+.slide-over-content .slide-movie-title h2{
+  margin: 1% 0;
+  font-weight: normal;
+  color: #000;
 }
 .pane-node-field-cm-event-body .pane-content{
   margin: 6% 20%;
