@@ -1,0 +1,55 @@
+
+$red: #e41145;
+/*****  header  *******/
+
+.front{
+	.navbar-default {
+		background-color: transparent!important;
+	}
+	#main-wrapper {
+    	margin-top: 0 !important;
+	}
+}
+
+.not-front{
+	.navbar-default {
+	    background-color: #000!important;
+	}
+}
+
+.header #site-main-menu, .header #site-main-menu li a, .header #site-main-menu li a:hover, .header #site-main-menu li a:active{
+	background-color: #000;
+}
+
+.navbar .navbar-brand{
+	height: 70px;
+}
+
+.header-right{
+	i{
+		color: #fff;
+		position: relative;
+	}
+	li:hover{
+		i, #da11y-toggle{
+			color: $red;
+		}
+	}
+	.fa-shopping-cart button{
+	    border: medium none;
+	    font-size: 0;
+	    height: 20px;
+	    position: absolute;
+	    width: 20px;
+	    background-color: transparent;
+	}
+}
+
+.language-switcher-locale-url{
+	a{
+		color: #fff;
+		&:hover{
+			color: $red;
+		}
+	}
+}
