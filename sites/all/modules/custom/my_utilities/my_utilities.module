@@ -25,6 +25,8 @@ function _return_addthisevent_markup($node) {
    if(!empty($node->field_cm_event_body['und'])){
       $description  = $node->field_cm_event_body['und'][0]['safe_summary'] ? $node->field_cm_event_body['und'][0]['safe_summary'] : $node->field_cm_event_body['und'][0]['safe_value']; 
       $desc = check_plain($description);
+   }else{
+       $desc = '';
    }
    $owner   = user_load($node->uid);
    $text = t('Add to Calendar') . '
