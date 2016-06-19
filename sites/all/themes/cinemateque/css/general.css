@@ -159,16 +159,18 @@ table.views-table{
 .slide-eve-lobby{
   font-size: 1.2rem;
 }
-.image-yes.slide-over-content{
-    position: absolute !important;;
-}
-  .slide-over-content{
-    position: relative;
+.pane-event-ct-view-panel-pane-3 .image-yes.slide-over-content{
+    position: absolute !important;
     bottom: 5rem;
-    text-align: right;
     left: 25%;
+}
+.slide-over-content{
+    position: relative;
+    text-align: right;
     width: 60%;
     z-index: 15;
+    bottom: 0;
+    left: 0;
 }
 .slide-right-ct{
     float: right;
