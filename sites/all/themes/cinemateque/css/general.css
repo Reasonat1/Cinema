@@ -159,13 +159,18 @@ table.views-table{
 .slide-eve-lobby{
   font-size: 1.2rem;
 }
-.slide-over-content{
+.image-yes.slide-over-content{
     position: absolute;
     bottom: 5rem;
     text-align: right;
     left: 25%;
     width: 60%;
     z-index: 15;
+}
+  .slide-over-content{
+    position: relative !important;
+    text-align: right;
+    width: 60%;
 }
 .slide-right-ct{
     float: right;
@@ -187,11 +192,14 @@ table.views-table{
   width: 100%;
 }
 
-.pane-event-ct-view-panel-pane-3 .slide-left-ct{
+.pane-event-ct-view-panel-pane-3 .slide-over-content .slide-left-ct{
   width: 85%;
   float: left;
-  color: #fff;
+  color: #000;
   margin-top: 3%;
+}
+.slide-over-content.image-yes .slide-left-ct{
+  color: #fff !important;
 }
 .slide-eve-title{
   font-size: 22px;
