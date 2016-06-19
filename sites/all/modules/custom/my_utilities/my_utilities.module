@@ -22,7 +22,9 @@ function _return_addthisevent_markup($node) {
    $end     = date('d-m-Y', $node->field_cm_event_time['und'][0]['value2']) ? date('d-m-Y', $node->field_cm_event_time['und'][0]['value2']) : $start;
    $end_time = date('H:i:s', $node->field_cm_event_time['und'][0]['value2']);
    $summery   = !empty($node->title) ? $node->title : '';
-   $description  = $node->field_cm_event_body['und'][0]['safe_summary'] ? $node->field_cm_event_body['und'][0]['safe_summary'] : $node->field_cm_event_body['und'][0]['safe_value']; 
+   if(!empty($node->field_cm_event_body['und'])){
+      $description  = $node->field_cm_event_body['und'][0]['safe_summary'] ? $node->field_cm_event_body['und'][0]['safe_summary'] : $node->field_cm_event_body['und'][0]['safe_value']; 
+   }
    $owner   = user_load($node->uid);
    $text = t('Add to Calendar') . '
     <span class="_start">'.$start.' ' .$start_time.'</span>
