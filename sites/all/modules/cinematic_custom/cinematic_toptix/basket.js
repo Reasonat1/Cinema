@@ -9,7 +9,9 @@ var toptix_basket_url = null;
       var self = this;
       $('.toptix-basket').click(function(event) {
         if ($.cookie('toptix_basket') == 0) {
-          window.alert('empty basket');
+          var message = $('<div></div>');
+          message.text(Drupal.t('You have not added any items to purchase yet'));
+          message.dialog({modal: true, title: Drupal.t('Tickets basket')});
           return;
         }
         toptix_basket_url = this.dataset.url;
