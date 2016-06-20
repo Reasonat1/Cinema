@@ -142,7 +142,7 @@ if ($variables['item']->type == 'cm_event') {
                     <?php endif; ?>
                     <?php if ($info) : ?>
                         <p class="search-info"><?php print $info; ?>
-                        <!--<span class="fa fa-heart-o"> </span>--> 
+                        <!--<span class="fa fa-heart-o"> </span> --> 
                             <span class="fa fa-calendar-o"> </span>
                             <span class="purchase-btn"> Purchase </span>
                         </p>
