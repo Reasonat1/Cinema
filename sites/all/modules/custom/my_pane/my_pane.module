@@ -571,6 +571,12 @@ function complex_calender_view_block_content(){
                     $start_date = isset($texonomy->field_cm_festival_date['und'][0]['value']) ? $texonomy->field_cm_festival_date['und'][0]['value'] : '';
                     $end_date = isset($texonomy->field_cm_festival_date['und'][0]['value2']) ? $texonomy->field_cm_festival_date['und'][0]['value2'] : '';  
                     if(!empty($start_date)){
+                       $start_date = strtotime =($start_date);
+                    }
+                    if(!empty($end_date)){
+                       $end_date = strtotime =($end_date);
+                    }
+                    if(!empty($start_date)){
                         $day = date( 'Y-m-d', $start_date );
                     }
                     $filter.= " <div class ='calender-filter'>" ;
