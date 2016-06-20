@@ -181,10 +181,6 @@ body {
 	.panels-flexible-row-node_page-3, .panels-flexible-row-node_page-4, .panels-flexible-row-node_page-6{
 		width: 100%;
 		padding: 0!important;
-	}
-	.panels-flexible-row-node_page-6{
-		margin-top: 50px;
-	}
 }
 .node-type-cm-movie {
 	.panels-flexible-region-8-center {
@@ -759,8 +755,10 @@ table.views-table {
 	margin-bottom: 2%;
 }
 .pane-views-panes.pane-review-panel-pane-1 {
+	margin-top: 50px;
 	background-color: $color_fantasy_approx;
 	.pane-content {
+		@include width();
 		.view-content {
 			color: $main_color!important;
 		}

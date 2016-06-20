@@ -35,10 +35,10 @@
       </div>		
 	<?php } ?>
 	
-	<?php if(isset($fields['ops']->content)) { print $fields['ops']->content;} ?>
+	<?php if(isset($fields['ops']->content)) { print $fields['ops']->content; } ?>
 	
     <div class="movie-group-item-header-img">
-	  <?php print $fields['field_cm_movie_pictures']->content; ?>
+	  <?php print l($fields['field_cm_movie_pictures']->content,'node/' . $row->nid,array('html' => TRUE)); ?>
 	</div>
 	  <?php print $fields['title_1']->content; ?>
   </div>

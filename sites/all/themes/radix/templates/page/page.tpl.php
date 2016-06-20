@@ -159,6 +159,7 @@
 
     jQuery(document).ready(function () {
         var popup = jQuery(".popup_search").html();
+        
         jQuery(".popup-element-title span").html(popup);
 //        jQuery(".popup_search").html(popup_search);
 //        jQuery(".popup_search").hide();
