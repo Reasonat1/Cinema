@@ -555,7 +555,51 @@ function complex_calender_view_block_content(){
             $selected_filter = date( 'd.m.y | l', $start_date );
         }
     }else{
-        return;
+          if(!empty(arg(1))){
+            $node = node_load(arg(1));
+            if(!empty($node)){
+                global $_domain;
+                $domains = $node->domains;
+               foreach($domains as $domain){
+                    if($_domain['domain_id'] == $domain){
+                        $term_tid = db_query("SELECT `entity_id` FROM `field_data_field_cm_domain` WHERE `field_cm_domain_value` =2 ")->fetchField();
+                        break;
+                    }
+                }
+                if($_domain['is_default'] != '1' && $term_tid != ''){
+                    $texonomy = taxonomy_term_load($term_tid);
+                    
+                    $start_date = isset($texonomy->field_cm_festival_date['und'][0]['value']) ? $texonomy->field_cm_festival_date['und'][0]['value'] : '';
+                    $end_date = isset($texonomy->field_cm_festival_date['und'][0]['value2']) ? $texonomy->field_cm_festival_date['und'][0]['value2'] : '';  
+                    if(!empty($start_date)){
+                        $day = date( 'Y-m-d', $start_date );
+                    }
+                    $filter.= " <div class ='calender-filter'>" ;
+                    $filter.= " <span class ='prevday filter-cantrol' ><i class='fa fa-angle-left '></i></span>" ;
+                    if(!empty($end_date) && !empty($start_date)){
+                        $a = 1; $filter_class = '';
+                        for ( $i = $start_date; $i <= $end_date; $i = $i + 86400 ) {
+                            if($a == '1'){ $filter_class = 'active';}
+                               $Date = date( 'j.n', $i ); 
+                               $Day = date( 'l', $i );
+                               $filter.="<p class='$filter_class'>$Date<br /><span>$Day</span><span class='filter-date element-invisible'>$i</span></p>";
+                               $a++;
+                               $filter_class  = '';
+                        }
+                    }
+                     $filter.= " <span class ='nextday filter-cantrol'><i class='fa fa-angle-right'></i></span>" ;
+                    $filter.= " </div>" ;
+
+                    if(!empty($start_date)){
+                        $selected_filter = date( 'd.m.y | l', $start_date );
+                    }
+                }else{
+                    drupal_set_message('Current domain or node not connected to texonomy term', $type = 'status');
+                }
+            }
+        }else{
+          return;
+        }
     }
 
       $result =  db_query("SELECT  flagging_node.uid AS flagged_user,n.nid AS nid, n.title, n.created, event_subtitle.field_cm_event_subtitle_value AS event_subtitle,
