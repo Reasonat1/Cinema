@@ -12,7 +12,7 @@ jQuery(document).ready(function () {
         var offset = jQuery(this).offset();
         var toppos = parseFloat(offset.top) + parseFloat(50.00);
         var leftpos = parseFloat(offset.left) + parseFloat(60.00);
-
+ 
         var left_view_port = parseFloat(leftpos) + parseFloat(500.00);
         if (left_view_port >= view_port_width) {
             leftpos = parseFloat(leftpos) - parseFloat(500.00);
@@ -49,7 +49,7 @@ jQuery(document).ready(function () {
     jQuery('.calender-full-row:first-child .custom-row.calender-row').each(function () {
         content_width = parseInt(content_width) + parseInt(240);
     })
-   content_width = parseInt(content_width) +parseInt(20);
+    content_width = parseInt(content_width) +parseInt(20);
     jQuery('.calender-body').css('width', content_width + 'px');
     jQuery('.calender-header').css('width', content_width + 'px');
     var body_width = jQuery(window).width();
@@ -94,7 +94,7 @@ jQuery(document).ajaxStop(function () {
     jQuery('.calender-full-row:first-child .custom-row.calender-row').each(function () {
         content_width = parseInt(content_width) + parseInt(240);
     })
-   content_width = parseInt(content_width) +parseInt(20);
+    content_width = parseInt(content_width) +parseInt(20);
     jQuery('.calender-body').css('width', content_width + 'px');
     jQuery('.calender-header').css('width', content_width + 'px');
     var body_width = jQuery(window).width();
@@ -116,7 +116,6 @@ jQuery(document).ajaxStop(function () {
 function closed() {
     jQuery('.close-calender-popup').parent().parent().removeClass('visible');
 }
-
 /**
  *  mobile calender js events
  */

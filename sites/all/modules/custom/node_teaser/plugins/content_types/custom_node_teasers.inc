@@ -5,9 +5,9 @@ $plugin = array(
     'title' => t('Add node teaser view'),
     'description' => t('Display of view pane'),
     'category' => t('Node teaser'),
-    'edit form' => 'my_pane_node_content_form',
-    'render callback' => 'my_pane_node_content_form_render',
-    'admin info' => 'my_pane_node_content_form_info',
+    'edit form' => 'node_teaser_node_content_form',
+    'render callback' => 'node_teaser_node_content_form_render',
+    'admin info' => 'node_teaser_node_content_form_info',
     'defaults' => array(),
     'all contexts' => TRUE,
 );
@@ -15,7 +15,7 @@ $plugin = array(
 /**
  * Edit form.
  */
-function my_pane_node_content_form($form, &$form_state) {
+function node_teaser_node_content_form($form, &$form_state) {
     $conf = $form_state['conf'];
 
     $content_type = db_query("select type,name from node_type")->fetchAll();
@@ -52,14 +52,6 @@ function my_pane_node_content_form($form, &$form_state) {
         '#options' => $type,
         '#validated' => TRUE,
         '#default_value' => $conf['node_id'],
-    );
-
-    $form['node_id_autocomplete'] = array(
-        '#type' => 'textfield',
-        '#title' => t('Select Node'),
-        '#description' => t('Choose  the node to display'),
-        '#autocomplete_path' => 'ajax/nodes_of_type',
-        '#default_value' => $conf['node_id_autocomplete'],
     );
 
     $form['top_black_title'] = array(
@@ -118,17 +110,16 @@ function my_pane_node_content_form($form, &$form_state) {
     );
 
     $form['#suffix'] = '</div></fieldset>';
+    
     return $form;
 }
 
 /**
  * Edit form submit function.
  */
-function my_pane_node_content_form_submit($form, &$form_state) {
-    // echo "<pre>"; print_r($form_state['values']); die();
+function node_teaser_node_content_form_submit($form, &$form_state) {
     $form_state['conf']['content_type'] = $form_state['values']['content_type'];
     $form_state['conf']['node_id'] = $form_state['values']['node_id'];
-    $form_state['conf']['node_id_autocomplete'] = $form_state['values']['node_id_autocomplete'];
     $form_state['conf']['top_black_title'] = $form_state['values']['top_black_title'];
     $form_state['conf']['top_white_title'] = $form_state['values']['top_white_title'];
     $form_state['conf']['movie_image'] = $form_state['values']['movie_image'];
@@ -142,7 +133,7 @@ function my_pane_node_content_form_submit($form, &$form_state) {
 /**
  * Render the panel.
  */
-function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
+function node_teaser_node_content_form_render($subtype, $conf, $args, $context) {
     if (!empty($context)) {
         if ($context->empty) {
             return;
@@ -151,7 +142,7 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
 
     global $base_url;
     $content_type = $conf['content_type'];
-    $nid = isset($conf['node_id_autocomplete']) ? $conf['node_id_autocomplete'] : $conf['node_id'];
+    $nid = $conf['node_id'];
     $top_black_title = $conf['top_black_title'];
     $top_white_title = $conf['top_white_title'];
     $movie_image = $conf['movie_image'];
@@ -164,7 +155,7 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
 
     // Render as a block.
     $block = new stdClass();
-    $block->module = 'my_pane';
+    $block->module = 'node_teaser';
     $block->delta = 'node-teaser' . str_replace('-', '_', $conf['content_type']);
     $output = "";
 
@@ -770,8 +761,8 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
 /**
  * Admin info.
  */
-function my_pane_node_content_form_info($subtype, $conf, $contexts) {
+function node_teaser_node_content_form_info($subtype, $conf, $contexts) {
     if (!empty($conf)) {
-        return my_pane_node_content_form_render($subtype, $conf, $args = null, $context = null);
+        return node_teaser_node_content_form_render($subtype, $conf, $args = null, $context = null);
     }
 }

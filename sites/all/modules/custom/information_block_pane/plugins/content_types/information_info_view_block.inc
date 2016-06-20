@@ -5,9 +5,9 @@ $plugin = array(
     'title' => t('Add Information Block View'),
     'description' => t('Display of view pane'),
     'category' => t('Information Block View'),
-    'edit form' => 'my_pane_info_block_content_form',
-    'render callback' => 'my_pane_info_block_content_form_render',
-    'admin info' => 'my_pane_info_block_content_form_info',
+    'edit form' => 'information_block_pane_info_block_content_form',
+    'render callback' => 'information_block_pane_info_block_content_form_render',
+    'admin info' => 'information_block_pane_info_block_content_form_info',
     'defaults' => array(),
     'all contexts' => TRUE,
 );
@@ -15,7 +15,7 @@ $plugin = array(
 /**
  * Edit form.
  */
-function my_pane_info_block_content_form($form, &$form_state) {
+function information_block_pane_info_block_content_form($form, &$form_state) {
     $conf = $form_state['conf'];
 
     $vocabulary = taxonomy_vocabulary_machine_name_load('information_blocks');
@@ -63,7 +63,7 @@ function my_pane_info_block_content_form($form, &$form_state) {
 /**
  * Edit form submit function.
  */
-function my_pane_info_block_content_form_submit($form, &$form_state) {
+function information_block_pane_info_block_content_form_submit($form, &$form_state) {
     $form_state['conf']['term'] = $form_state['values']['term'];
     $form_state['conf']['default_term'] = $form_state['values']['default_term'];
     $form_state['conf']['block_type'] = $form_state['values']['block_type'];    
@@ -72,7 +72,7 @@ function my_pane_info_block_content_form_submit($form, &$form_state) {
 /**
  * Render the panel.
  */
-function my_pane_info_block_content_form_render($subtype, $conf, $args, $context) {
+function information_block_pane_info_block_content_form_render($subtype, $conf, $args, $context) {
     if (!empty($context)) {
         if ($context->empty) {
             return;
@@ -83,7 +83,7 @@ function my_pane_info_block_content_form_render($subtype, $conf, $args, $context
     $content_type = $conf['term'];
     // Render as a block.
     $block = new stdClass();
-    $block->module = 'my_pane';
+    $block->module = 'information_block_pane';
     $block->delta = 'bean-type-teaser' . str_replace('-', '_', $conf['term']);
     $bid = isset($conf['default_term']) ? $conf['default_term']: array();
     $output = '';
@@ -107,8 +107,8 @@ function my_pane_info_block_content_form_render($subtype, $conf, $args, $context
 /**
  * Admin info.
  */
-function my_pane_info_block_content_form_info($subtype, $conf, $contexts) {
+function information_block_pane_info_block_content_form_info($subtype, $conf, $contexts) {
     if (!empty($conf)) {
-        // return my_pane_info_block_content_form_render($subtype, $conf, $args = null, $context = null);
+        // return information_block_pane_info_block_content_form_render($subtype, $conf, $args = null, $context = null);
     }
 }
