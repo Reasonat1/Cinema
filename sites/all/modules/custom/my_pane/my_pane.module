@@ -27,7 +27,6 @@ define('MY_PANE_FILE_EXTENSIONS_DEFAULT', 'txt doc docx xls xlsx pdf ppt pptx pp
  */
 function my_pane_init() {
     drupal_add_js(libraries_get_path('jquery.cycle', $base_path = FALSE) . '/jquery.cycle.all.min.js');
-    drupal_add_js(drupal_get_path('module', 'my_pane') . '/jquery.complex.calender.js');
 
   // Load the seven theme CSS for the media browser. This is done
   // because the seven theme may not be the admin theme, but the
@@ -616,7 +615,8 @@ function complex_calender_view_block_content(){
               WHERE ((n.type = 'cm_event')) and  ((n.status = '1'))  and ( (DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value2), SEC_TO_TIME(10800)), '%Y-%m-%d') >= '$day' AND DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value), SEC_TO_TIME(10800)), '%Y-%m-%d') <= '$day') )
               ORDER BY event_start_time ASC")->fetchAll();
     $result_count = count($result);
-
+    $term_array = array();
+    $hall = array();
      foreach($result as $val){
          $term_array[] = $val->hall_tid;
          $start_time = $val->event_start_time;
@@ -840,7 +840,8 @@ function ajax_complex_calender_filter(){
               WHERE ((n.type = 'cm_event' ))and  ((n.status = '1'))  and ( (DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value2), SEC_TO_TIME(10800)), '%Y-%m-%d') >= '$day' AND DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value), SEC_TO_TIME(10800)), '%Y-%m-%d') <= '$day') )
               ORDER BY event_start_time ASC")->fetchAll();
     $result_count = count($result);
-
+    $term_array = array();
+    $hall = array();
      foreach($result as $val){
          $term_array[] = $val->hall_tid;
          $start_time = $val->event_start_time;
@@ -1000,6 +1001,7 @@ function ajax_complex_calender_mobile_filter(){
               ORDER BY event_start_time ASC")->fetchAll();
     $result_count = count($result);
     $term_array = array();
+    $hall = array();
      foreach($result as $val){
          $term_array[] = $val->hall_tid;
          $start_time = $val->event_start_time;
