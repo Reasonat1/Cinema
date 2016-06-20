@@ -168,9 +168,6 @@ if ($variables['item']->type == 'cm_event') {
             </li>-->
 
         </ul>
-
-
-
     </li>
     <?php
 } else
