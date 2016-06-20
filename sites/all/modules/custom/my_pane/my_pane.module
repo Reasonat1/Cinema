@@ -614,7 +614,6 @@ function complex_calender_view_block_content(){
               LEFT JOIN field_data_field_cm_event_hall As event_hall ON n.nid = event_hall.entity_id
               WHERE ((n.type = 'cm_event')) and  ((n.status = '1'))  and ( (DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value2), SEC_TO_TIME(10800)), '%Y-%m-%d') >= '$day' AND DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value), SEC_TO_TIME(10800)), '%Y-%m-%d') <= '$day') )
               ORDER BY event_start_time ASC")->fetchAll();
-      echo "<pre>"; print_r($day); die(" here");
     $result_count = count($result);
     $term_array = array();
     $hall = array();
