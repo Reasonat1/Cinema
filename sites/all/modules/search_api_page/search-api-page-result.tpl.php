@@ -57,7 +57,6 @@
 <?php if ($variables['item']->type == 'cm_movie' or $variables['item']->type == 'cm_movie_group') { ?>
     <li class="<?php print $classes; ?> cm_movie"<?php print $attributes; ?> >
         <ul class="pro-grid">
-
             <li>
                 <?php
 //             echo '<pre>';
