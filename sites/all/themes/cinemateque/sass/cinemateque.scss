@@ -17,7 +17,7 @@ $color_mercury_approx: rgb(227, 227, 227);
 $color_black_haze_approx: #f6f6f6;
 $color_silver_approx: #bfbfbf;
 $color_wild_sand_approx: #f5f5f5;
-$red: #e41145;
+$main_color: #b59d70;
 $color_silver_chalice_approx: #aaa;
 $color_cararra_approx: #ececec;
 $color_nobel_approx: #b2b2b2;
@@ -197,7 +197,7 @@ body {
 		}
 		li:hover{
 			i, #da11y-toggle{
-				color: $red;
+				color: $main_color;
 			}
 		}
 		.fa-shopping-cart button{
@@ -215,7 +215,7 @@ body {
 	a{
 		color: #fff;
 		&:hover{
-			color: $red;
+			color: $main_color;
 		}
 	}
 }
@@ -577,16 +577,8 @@ body {
 		width: 100%;
 	}
 }
-.panels-flexible-row {
-	&.content {
-		margin: 0 auto;
-		width: 85%;
-	}
-	&.bottom.content {
-		margin: 0 auto;
-		width: 85%;
-	}
-}
+
+
 [dir="rtl"] {
 	.navbar-header {
 		float: right !important;
@@ -979,7 +971,7 @@ body {
 		background: transparent;
 	}
 	> * .search-info .fa {
-		color: $red;
+		color: $main_color;
 		font-size: 16px;
 		margin: 0 10px;
 	}
@@ -1061,38 +1053,38 @@ body {
 	}
 	> .active {
 		> a {
-			border: 1px solid $red!important;
+			border: 1px solid $main_color!important;
 			background: transparent;
-			color: $red;
+			color: $main_color;
 			&:focus {
-				border: 1px solid $red!important;
+				border: 1px solid $main_color!important;
 				background: transparent;
-				color: $red;
+				color: $main_color;
 			}
 			&:hover {
-				border: 1px solid $red!important;
+				border: 1px solid $main_color!important;
 				background: transparent;
-				color: $red;
+				color: $main_color;
 			}
 		}
 		> span {
-				border: 1px solid $red!important;
+				border: 1px solid $main_color!important;
 				background: transparent;
-				color: $red;
+				color: $main_color;
 			&:focus {
-				border: 1px solid $red!important;
+				border: 1px solid $main_color!important;
 				background: transparent;
-				color: $red;
+				color: $main_color;
 			}
 			&:hover {
-				border: 1px solid $red!important;
+				border: 1px solid $main_color!important;
 				background: transparent;
-				color: $red;
+				color: $main_color;
 			}
 		}
 	}
 	li a {
-		color: $red;
+		color: $main_color;
 		&:hover {
 			background-color: $black !important;
 			color: $white !important;
@@ -1137,7 +1129,7 @@ body {
 	#edit-submit {
 		margin: 0;
 		border-radius: 0 !important;
-		background: $red !important;
+		background: $main_color !important;
 		padding: 9px 25px 11px;
 		box-shadow: 0 1px 4px 1px $color_silver_chalice_approx;
 		font-size: 18px;
@@ -1156,13 +1148,13 @@ body {
 			border-right: 1px solid $color_cararra_approx;
 			border-left: 1px solid $color_cararra_approx;
 			&.active {
-				background-color: $red;
+				background-color: $main_color;
 				color: $white;
 				cursor: pointer;
 				box-shadow: none;
 			}
 			&:hover {
-				background-color: $red;
+				background-color: $main_color;
 				box-shadow: none;
 			}
 		}
@@ -1190,7 +1182,7 @@ body {
 	float: left;
 	width: 100%;
 	.pull-left {
-		color: $red;
+		color: $main_color;
 		font-weight: bold;
 	}
 }
@@ -1431,7 +1423,7 @@ body {
 		margin-top: 8px;
 	}
 	.navbar .navbar-brand {
-		height: 70px;
+		height: 70px!important;
 	}
 	.navbar-toggle .icon-bar {
 		transition: all 0.5s ease 0s;
@@ -1750,7 +1742,7 @@ body {
 	#edit-submit-1 {
 		margin: 0;
 		border-radius: 0 !important;
-		background: $red !important;
+		background: $main_color !important;
 		padding: 9px 25px 11px;
 		box-shadow: 0 1px 4px 1px $color_silver_chalice_approx;
 		font-size: 18px;
@@ -1764,7 +1756,7 @@ body {
 	margin: 20px 20%;
 }
 .purchase-btn {
-	background: $red;
+	background: $main_color;
 	padding: 4px 10px;
 	color: $white !important;
 	letter-spacing: 1px;
@@ -1964,6 +1956,7 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 .navbar .navbar-brand {
 	padding-top: 10px;
 	overflow: hidden;
+	height: 70px!important;
 }
 .navbar-nav > li {
 	display: inline-block;
@@ -2080,7 +2073,7 @@ p.scrollleft {
 	}
 }
 .mobile-event-accordian .accordian-hall {
-	background-color: $red;
+	background-color: $main_color;
 	color: $white;
 	cursor: pointer;
 	margin: 2px 0;

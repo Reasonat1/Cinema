@@ -25,21 +25,18 @@ function _cm_extra_icons() {
     $path = drupal_is_front_page() ? '<front>' : $_GET['q'];
     $links = language_negotiation_get_switch_links('language', $path);
 	global $language;
-    $languages = language_list();
-	
+  
     if (isset($links->links)) {
 	  unset($links->links[$language->language]);
 	  if (isset($links->links['en'])) {
 		$links->links['en']['title'] = 'E';
 		$links->links['en']['attributes']['class'][] = 'lang-en-icon';
-		if(!isset($links->links['en']['href']) || !$links->links['en']['href']) $links->links['en']['href'] = url('taxonomy/term/12'); //warning: not generic, this needs to change later on to be based on the english homepage variable
 	  }
 	  if (isset($links->links['he'])) {
 		$links->links['he']['title'] = t("He");
 		$links->links['he']['attributes']['class'][] = 'lang-he-icon';
-		if(!isset($links->links['he']['href']) || !$links->links['he']['href']) $links->links['he']['href'] = url('taxonomy/term/213');  //warning: not generic, this needs to change later on to be based on the hebrew homepage variable
 	  }
-	  
+	  //dpm($links);
       drupal_add_css(drupal_get_path('module', 'locale') . '/locale.css');
       $class = "language-switcher-{$links->provider}";
       $variables = array('links' => $links->links, 'attributes' => array('class' => array($class)));
@@ -52,10 +49,10 @@ function _cm_extra_icons() {
   $toptixblock = module_invoke('cinematic_toptix', 'block_view', 'cart');
   
   $block['subject'] = '';
-  $block['content']['#markup'] = '<li class="popup_search"><i class="fa fa-search" aria-hidden="true"></i></li>'.
-//<li>'.l('<i class="fa fa-user" aria-hidden="true"></i>','user',array('html' => true)).'</li> //commented out for phase 1, on phase 2 emable to shouw icon to now complete user page
-'<li class="hidden-sm"><i class="fa fa-shopping-cart" aria-hidden="true">'.$toptixblock['content']['#markup'].'</i></li>
-<li class="hidden-sm" id="da11y-plugin"></li>
+  $block['content']['#markup'] = '<li class="popup_search"><i class="fa fa-search" aria-hidden="true"></i></li>
+<li>'.l('<i class="fa fa-user" aria-hidden="true"></i>','user',array('html' => true)).'</li>
+<li><i class="fa fa-shopping-cart" aria-hidden="true">'.$toptixblock['content']['#markup'].'</i></li>
+<li id="da11y-plugin"></li>
 <li>'.$langicon.'</li>
 ';
   $block['content']['#attached'] = $toptixblock['content']['#attached'];
@@ -64,7 +61,6 @@ function _cm_extra_icons() {
   'data' => 'jQuery(document).ready(function () {
         var popup = jQuery(".popup_search").html();
         jQuery(".popup-element-title span").html(popup);
-        jQuery(".popup_search").hide();
         jQuery(".search_new").appendTo("#search-api-page-search-form");
         jQuery("#search-api-page-search-form").appendTo(".container:first");
     });',
