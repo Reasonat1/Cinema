@@ -18,7 +18,7 @@ jQuery(document).ready(function () {
     
     
     jQuery('select option').each(function () {
-        if (jQuery(this).text().contains("(-)")) {
+        if (jQuery(this).text().includes("(-)")) {
             jQuery("#RemoveFilters").append('<a href="' + jQuery(this).val() + '">' + jQuery(this).text() + '</a>');
         }
     });
