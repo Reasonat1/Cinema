@@ -100,11 +100,11 @@
 <div id="main-wrapper">
     <div id="main" class="main">
         <div class="container">
-            <?php if ($breadcrumb): ?>
+         <!--   <?php if ($breadcrumb): ?>
                 <div id="breadcrumb" class="visible-desktop">
                     <?php print $breadcrumb; ?>
                 </div>
-            <?php endif; ?>
+            <?php endif; ?> -->
             <?php if ($messages): ?>
                 <div id="messages">
                     <?php print $messages; ?>

@@ -19,3 +19,15 @@ function cinemateque_preprocess_page(&$variables) {
     $variables['copyright'] = check_markup($copyright['value'], $copyright['format']);
   }
 }
+
+function cinemateque_preprocess_views_view(&$vars) {
+  $view = &$vars['view'];
+  // Make sure it's the correct view
+  if ($view->name == 'lobby') {
+    // add needed javascript
+    drupal_add_js(drupal_get_path('module', 'cinematic_toptix') . '/esrojsapi.js');
+    drupal_add_js(drupal_get_path('module', 'cinematic_toptix') . '/frame.js');
+
+          
+  }
+}
