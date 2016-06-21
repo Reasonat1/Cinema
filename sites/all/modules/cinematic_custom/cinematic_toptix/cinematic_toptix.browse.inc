@@ -87,13 +87,5 @@ function cinematic_toptix_browse_query($page) {
     $shows[$event->show_id]['events'] .= "<div data-id=\"$event->local_id\"> $event->local_id : $event->event_date </div>";
   }
   return $shows;
-
-  /*
-  $ordered_shows = array();
-  foreach ($shows_ids as $show_id) {
-    $ordered_shows[$show_id] = $shows[$show_id];
-  }
-  return $ordered_shows;
-  */
 }
 
