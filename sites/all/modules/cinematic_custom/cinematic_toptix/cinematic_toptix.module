@@ -22,6 +22,15 @@ function cinematic_toptix_menu() {
   return $items;
 }
 
+function cinematic_toptix_theme() {
+  $themes = array();
+  $themes['cinematic_browser'] = array(
+    'variables' => array('filters' => array(), 'shows' => array()),
+    'template' => 'cinematic-browser',
+  );
+  return $themes;
+}
+
 function cinematic_toptix_block_info() {
   $blocks = array();
   $blocks['cart'] = array(
@@ -104,10 +113,14 @@ function cinematic_toptix_field_widget_form_alter(&$element, &$form_state, $cont
       '#attached' => array(
         'library' => array(
           array('system', 'ui.accordion'),
-          array('system', 'ui.dialog')
+          array('system', 'ui.dialog'),
+          array('system', 'ui.datepicker'),
         ),
         'js' => array(
           drupal_get_path('module', 'cinematic_toptix') . '/event_browser.js',
+        ),
+        'css' => array(
+          drupal_get_path('module', 'cinematic_toptix') . '/event_browser.css',
         ),
       ),
     );

@@ -687,31 +687,38 @@ function complex_calender_view_block_content(){
                         if(!empty($val->event_duration)){
                            $lenght = $val->event_duration/60;
                            if($lenght == 2){ $length_padding =12;}
-                           elseif($lenght == 3){ $length_padding =24;}
-                           elseif($lenght == 4){ $length_padding =36;}
-                           elseif($lenght == 5){ $length_padding =48;}
-                           elseif($lenght == 6){ $length_padding =60;}
-                           elseif($lenght == 7){ $length_padding =72;}
-                           elseif($lenght == 8){ $length_padding =84;}
-                           elseif($lenght == 9){ $length_padding =96;}
-                           elseif($lenght == 10){ $length_padding =108;}
-                           elseif($lenght == 11){ $length_padding =120;}
-                          elseif($lenght == 12){ $length_padding =132;}
-                          elseif($lenght == 13){ $length_padding =144;}
-                          elseif($lenght == 14){ $length_padding =156;}
-                          elseif($lenght == 15){ $length_padding =168;}
-                          elseif($lenght == 16){ $length_padding =180;}                          
+                           elseif($lenght == 3){ $length_padding =20;}
+                           elseif($lenght == 4){ $length_padding =30;}
+                           elseif($lenght == 5){ $length_padding =40;}
+                           elseif($lenght == 6){ $length_padding =50;}
+                           elseif($lenght == 7){ $length_padding =60;}
+                           elseif($lenght == 8){ $length_padding =70;}
+                           elseif($lenght == 9){ $length_padding =80;}
+                           elseif($lenght == 10){ $length_padding =90;}
+                           elseif($lenght == 11){ $length_padding =100;}
+                          elseif($lenght == 12){ $length_padding =110;}
+                          elseif($lenght == 13){ $length_padding =120;}
+                          elseif($lenght == 14){ $length_padding =130;}
+                          elseif($lenght == 15){ $length_padding =140;}
+                          elseif($lenght == 16){ $length_padding =150;}   
+                          elseif($lenght == 17){ $length_padding =160;}                          
                           else{ $length_padding = 0; }
                            $total_lenght = $lenght*150+$length_padding;
                         }
                     }else{
                         $minutes ='';
                     }
+                    $event_margin = 0;
+                    $mid_hour_start= date('i',$start);
+                    if($mid_hour_start != '00'){
+                        $event_diff = 60/$mid_hour_start;
+                        $event_margin = 150/$event_diff;
+                    }
                     $flag = flag_create_link('favorite_', $nid);
                     $string =  substr($val->event_body,0,500).'...';
                     $string = strip_tags($string);
                     $calender[$val->hall_tid] = "<div class='calender-row custom-row'>
-                                                   <div class = 'calender-row inner' style='height:".$total_lenght."px;position: absolute;min-height:150px;'>
+                                                   <div class = 'calender-row inner' style='height:".$total_lenght."px;position: absolute;min-height:150px;margin-top:".$event_margin."px;'>
                                                         $flag
                                                         <div class='time'><span class='bold'>$start_time</span> $minutes</div>
                                                         <div class='title'><span class='bold'>$val->title</span> </div>
@@ -914,31 +921,38 @@ function ajax_complex_calender_filter(){
                         if(!empty($val->event_duration)){
                            $lenght = $val->event_duration/60;
                            if($lenght == 2){ $length_padding =12;}
-                           elseif($lenght == 3){ $length_padding =24;}
-                           elseif($lenght == 4){ $length_padding =36;}
-                           elseif($lenght == 5){ $length_padding =48;}
-                           elseif($lenght == 6){ $length_padding =60;}
-                           elseif($lenght == 7){ $length_padding =72;}
-                           elseif($lenght == 8){ $length_padding =84;}
-                           elseif($lenght == 9){ $length_padding =96;}
-                           elseif($lenght == 10){ $length_padding =108;}
-                           elseif($lenght == 11){ $length_padding =120;}
-                          elseif($lenght == 12){ $length_padding =132;}
-                          elseif($lenght == 13){ $length_padding =144;}
-                          elseif($lenght == 14){ $length_padding =156;}
-                          elseif($lenght == 15){ $length_padding =168;}
-                          elseif($lenght == 16){ $length_padding =180;}                          
+                           elseif($lenght == 3){ $length_padding =20;}
+                           elseif($lenght == 4){ $length_padding =30;}
+                           elseif($lenght == 5){ $length_padding =40;}
+                           elseif($lenght == 6){ $length_padding =50;}
+                           elseif($lenght == 7){ $length_padding =60;}
+                           elseif($lenght == 8){ $length_padding =70;}
+                           elseif($lenght == 9){ $length_padding =80;}
+                           elseif($lenght == 10){ $length_padding =90;}
+                           elseif($lenght == 11){ $length_padding =100;}
+                          elseif($lenght == 12){ $length_padding =110;}
+                          elseif($lenght == 13){ $length_padding =120;}
+                          elseif($lenght == 14){ $length_padding =130;}
+                          elseif($lenght == 15){ $length_padding =140;}
+                          elseif($lenght == 16){ $length_padding =150;}   
+                          elseif($lenght == 17){ $length_padding =160;}                            
                           else{ $length_padding = 0; }
                            $total_lenght = $lenght*150+$length_padding;
                         }
                     }else{
                         $minutes ='';
                     }
+                    $event_margin = 0;
+                    $mid_hour_start= date('i',$start);
+                    if($mid_hour_start != '00'){
+                        $event_diff = 60/$mid_hour_start;
+                        $event_margin = 150/$event_diff;
+                    }                    
                     $flag = flag_create_link('favorite_', $nid);
                     $string =  substr($val->event_body,0,500).'...';
                     $string = strip_tags($string);
                     $calender[$val->hall_tid] = "<div class='calender-row custom-row'>
-                                                   <div class = 'calender-row inner' style='height:".$total_lenght."px;position: absolute;min-height:150px;'>
+                                                   <div class = 'calender-row inner' style='height:".$total_lenght."px;position: absolute;min-height:150px;margin-top:".$event_margin."px;'>
                                                         $flag
                                                         <div class='time'><span class='bold'>$start_time</span> $minutes</div>
                                                         <div class='title'><span class='bold'>$val->title</span> </div>
