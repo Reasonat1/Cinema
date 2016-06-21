@@ -33,22 +33,48 @@
  *
  * @see template_preprocess_search_api_page_results()
  */
-
 ?>
-<div class="<?php print $classes;?> search_result">
-  <?php if ($result_count): ?>
-    <?php print render($search_performance); ?>
-  <?php endif; ?>
-  <?php print render($spellcheck); ?>
-  <?php if ($result_count): ?>
-    <!--<h2><?php // print t('Search results');?></h2>-->
-    <?php print render($pager); ?>
-    <ol class="search-results">
-      <?php print render($search_results); ?>
-    </ol>
-    <?php print render($pager); ?>
-  <?php else : ?>
-    <h2><?php print t('Your search yielded no results.');?></h2>
-    <?php print $no_results_help; ?>
-  <?php endif; ?>
+<div id="RemoveFilters">
+
 </div>
+<div class="<?php print $classes; ?> search_result">
+    <?php if ($result_count): ?>
+        <?php print render($search_performance); ?>
+    <?php endif; ?>
+    <?php print render($spellcheck); ?>
+    <?php if ($result_count): ?>
+                            <!--<h2><?php // print t('Search results');     ?></h2>-->
+        <?php print render($pager); ?>
+        <ol class="search-results">
+            <?php print render($search_results); ?>
+        </ol>
+        <?php print render($pager); ?>
+    <?php else : ?>
+        <h2><?php print t('Your search yielded no results.'); ?></h2>
+        <?php print $no_results_help; ?>
+    <?php endif; ?>
+</div>
+<style>
+    #RemoveFilters{
+        clear:both;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    #RemoveFilters a::after {
+        content: ' x ';
+        clear: both;
+        margin-left: 10px !important;
+    }
+
+
+    #RemoveFilters a {
+        border-bottom: 1px solid #777;
+        padding-bottom: 5px;
+        color: #777;margin: 0 10px;
+    }
+
+    #RemoveFilters a:hover{
+        color: #e41145 !important;
+        border-bottom: 1px solid #e41145 !important;
+    }
+</style>
