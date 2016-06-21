@@ -1,0 +1,49 @@
+/********  mixin *********/
+
+@mixin width(){
+  width: 1280px!important;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 3%;
+  box-sizing: border-box;
+}
+
+.node-type-cm-event {
+	.panels-flexible-region-node_page-content_left{
+		float: left;
+	}
+	.pane-event-ct-view-panel-pane-7 {
+		float: right;
+		.views-field-field-toptix-purchase{
+			float: left;
+		}
+	}
+	.pane-event-ct-view-panel-pane-3{
+		.slide-left-ct {
+			float: right;
+		}
+		.slide-right-ct {
+			float: right;
+			padding-right: 6%;
+			padding-left: 10%;
+		}
+	}
+	.pane-event-ct-view-panel-pane-5{
+		.views-field-field-toptix-purchase{
+			float: left;
+		}
+		th{
+			text-align: right;
+		}
+	}
+	.pane-event-ct-view-panel-pane-6 {
+		padding-left: 0%;
+		padding-right: 8%;
+	}
+	.panels-flexible-row-node_page-6{
+		.views-slideshow-cycle-main-frame-row{
+			right: 0;
+			left: auto!important;
+		}
+	}
+}
