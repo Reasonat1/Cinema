@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- Trigger the modal with a button -->
-                <button  class="hambruger -menu navbar-toggle" data-target="#myModal" data-toggle="modal"  type="button">
+                <button  class="hambruger -menu navbar-toggle" href='/menu' data-target="#myModal" data-toggle="modal"  type="button">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
