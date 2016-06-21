@@ -563,7 +563,7 @@ function complex_calender_view_block_content(){
                 $domains = $node->domains;
                foreach($domains as $domain){
                     if($_domain['domain_id'] == $domain){
-                        $term_tid = db_query("SELECT `entity_id` FROM `field_data_field_cm_domain` WHERE `field_cm_domain_value` =2 ")->fetchField();
+                        $term_tid = db_query("SELECT `entity_id` FROM `field_data_field_cm_domain` WHERE `field_cm_domain_value` =$domain")->fetchField();
                         break;
                     }
                 }
@@ -663,7 +663,7 @@ function complex_calender_view_block_content(){
                     }
                 }
                  $html.="<div class='calender-full-row'>
-                                           <div class='custom-row calender-row '><span class='bold time'>$vtime</span></div>";
+                                           <div class='custom-row calender-row '><span class='bold time'>$vtime:00</span></div>";
                  foreach($cell as $val){
                     $nid = $val->nid;
                     $start = $val->event_start_time;
@@ -752,7 +752,7 @@ function complex_calender_view_block_content(){
 
         if($num == 1){
             $html.="<div class='calender-full-row'>
-                                           <div class='custom-row calender-row '><span class='bold time'>$vtime</span></div>";
+                                           <div class='custom-row calender-row '><span class='bold time'>$vtime:00</span></div>";
              foreach($all_term as $tid)  {
                     $html.="<div class='calender-row custom-row '></div>";
              }
@@ -889,7 +889,7 @@ function ajax_complex_calender_filter(){
                     }
                 }
                  $html.="<div class='calender-full-row'>
-                                           <div class='custom-row calender-row '><span class='bold time'>$vtime</span></div>";
+                                           <div class='custom-row calender-row '><span class='bold time'>$vtime:00</span></div>";
                  $calender = array();
                  foreach($cell as $val){
                     $nid = $val->nid;
@@ -979,7 +979,7 @@ function ajax_complex_calender_filter(){
 
         if($num == 1){
             $html.="<div class='calender-full-row'>
-                                           <div class='custom-row calender-row '><span class='bold time'>$vtime</span></div>";
+                                           <div class='custom-row calender-row '><span class='bold time'>$vtime:00</span></div>";
              foreach($all_term as $tid)  {
                     $html.="<div class='calender-row custom-row '></div>";
              }
