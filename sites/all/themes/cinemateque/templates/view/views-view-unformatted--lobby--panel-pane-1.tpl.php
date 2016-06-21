@@ -115,14 +115,14 @@
           }
           $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
            $output .= '<tr class="row-custom-lobby">';
-            $output .= '<td>'.$event_date.'</td>';
-            $output .= '<td>'.$event_time.'</td>';
-            $output .= '<td>'.l($event_title, $path).'</td>';
-            $output .= '<td>'.$hall_name.'</td>';
-            $output .= '<td>'.$event_code.'</td>';
-            $output .='<td>'. $flag . '</td>';
-            $output .='<td>'. $addevent . '</td>';
-            $output .= '<td>'.'<button data-url="'.$top_link.'" class="toptix-purchase">Puchase</button>'.'</td>'; 
+           $output .= '<td>'.'<button data-url="'.$top_link.'" class="toptix-purchase">Puchase</button>'.'</td>';
+           $output .='<td>'. $addevent . '</td>';
+           $output .='<td>'. $flag . '</td>';
+           $output .= '<td>'.$event_code.'</td>';
+           $output .= '<td>'.$hall_name.'</td>';
+           $output .= '<td>'.l($event_title, $path).'</td>';
+           $output .= '<td>'.$event_time.'</td>';
+           $output .= '<td>'.$event_date.'</td>';
            $output .= '</tr>';
         }
          $output .= '</table>';
