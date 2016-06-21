@@ -4,7 +4,18 @@ $color_pink_swan_approx: #b7b7b7;
 $color_star_dust_approx: #a0a0a0;
 $color_mine_shaft_approx: #312f2f;
 $color_gallery_approx: #eee;
+$color_fantasy_approx: #f9f4ee;
 
+
+/********  mixin *********/
+
+@mixin width(){
+  width: 1280px!important;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 3%;
+  box-sizing: border-box;
+}
 
 .node-type-cm-movie-group{
 	#content {
@@ -13,17 +24,36 @@ $color_gallery_approx: #eee;
 	.panels-flexible-row-node_page-3, .panels-flexible-row-node_page-4{
 		width: 100%!important;
 		padding: 0!important;
+		.pane-node-body{
+			width: 615px;
+			margin: auto;
+			p{
+				line-height: 25px;
+			}
+			.field-label{
+				display: none;
+			}
+		}
 	}
 	.pane-movie-group-ct-panel-pane-3{
 		padding: 0!important;
-		margin-top: 30px!important;
+		width: 100%!important;
 		overflow: visible;
+		background-color: #fff;
 		.table-responsive{
 			overflow: visible;
 		}
+		.pane-content{
+			@include width;
+			padding-top: 25px;
+			margin-bottom: 30px;
+		}
 	}
-	#atedrop1-drop{
+	#atedrop1-sdrop{
 		top: 36px!important;
+	}
+	.panels-flexible-region{
+		background-color: $color_fantasy_approx;
 	}
 	.view-id-movie_group_ct {
 		&.view-display-id-panel_pane_1 {
@@ -89,6 +119,9 @@ $color_gallery_approx: #eee;
 				right: 10px;
 				top: 10px;
 				z-index: 200;
+				&.flag-action {
+					background-image: url("../images/like-gold-movie.png");
+				}
 			}
 			.views-field {
 				&.views-field-field-cm-movie-short-summary {

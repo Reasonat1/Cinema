@@ -182,12 +182,12 @@ body {
 		border: none !important;
 		font-size: 1.1rem;
 		.views-field-ops .flag{
-			background: url("../images/like-event.png") no-repeat center center;
+			background: url("../images/like-gold.png") no-repeat center center;
 			width: 18px;
 			height: 15px;
 		}
 		.views-field-ops .unflagged{
-			background: url("../images/like-event-unflag.png") no-repeat center center;
+			background: url("../images/unlike-gold.png") no-repeat center center;
 		}
 		.views-field-php a{
 			background: url("../images/add-event.png") no-repeat center center;
@@ -199,6 +199,10 @@ body {
 	}
 	.views-field-field-toptix-purchase{
 		float: right;
+		width: 90px;
+		button{
+			float: left;
+		}
 	}
 	th {
 		border: none !important;
@@ -206,7 +210,6 @@ body {
 		color: $color_pink_swan_approx;
 		font-size: 14px;
 		font-weight: 300;
-		padding-left: 0!important;
 	}
 	tr {
 		border: none !important;
@@ -646,9 +649,7 @@ table.views-table {
 		top: 1.5em;
 	}
 }
-.pane-movie-group-ct-panel-pane-1 {
-	background-color: $color_fantasy_approx;
-}
+
 .pane-lobby-panel-pane-1 {
 	background-color: $color_fantasy_approx;
 	.pane-content {
@@ -1112,4 +1113,62 @@ button.toptix-purchase {
 		padding-right: 14%;
 		width: 65%;
 	}
+}
+
+.view-id-movie_group_ct {
+		&.view-display-id-panel_pane_1{
+			.views-field {
+				&.views-field-field-cm-movie-short-summary {
+					padding: 0 5% 5%;
+					p {
+						font-weight: 400;
+					}
+				}
+				&.views-field-nothing-1 .field-content {
+					.movie-grp-add-event {
+						position: relative;
+						padding-left: 25px;
+						a {
+							background: url("../images/add-event.png") no-repeat;
+							width: 30px;
+							height: 28px;
+							display: inline-block;
+							font-size: 0;
+							position: absolute;
+						}
+					}
+					.pur_btn {
+						margin-left: 2%;
+						button {
+							background: url("../images/toptix.png") no-repeat !important;
+							border: medium none;
+							font-size: 0;
+							height: 30px;
+							border-radius: 80px 80px 80px 80px;
+							width: 72px;
+							vertical-align: middle;
+						}
+					}
+					.add-event-cal {
+						margin-left: 2%;
+					}
+					.title {
+						float: left;
+						padding: .8% 0 0;
+						font-size: 1.3em;
+						a {
+							color: #000;
+							font-weight: 600;
+						}
+					}
+					.list-wrapper {
+						font-size: 1.2em;
+						font-weight: 600;
+						.bar {
+							margin: 0 3px;
+						}
+					}
+				}
+			}
+		}
 }
