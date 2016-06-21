@@ -79,8 +79,6 @@
   </div>
 </div>
 <!-- End Here -->
-<!--Callender event discription popup-->
-<div id="calender-top-popup" ></div>
 
 </body>
 </html>

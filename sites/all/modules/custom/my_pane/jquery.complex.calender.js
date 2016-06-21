@@ -3,6 +3,8 @@ jQuery(document).ready(function () {
      * callender event info popup hide show
      */
     jQuery('.calender-full-row .calender-row.inner').click(function () {
+        jQuery('#calender-top-popup').remove();
+        jQuery('body').append('<div id="calender-top-popup" ></div>');
         var html = jQuery(this).parent().find('.calender-popup').html();
         jQuery('#calender-top-popup').html("");
         jQuery('#calender-top-popup').addClass('visible');
@@ -65,11 +67,13 @@ jQuery(document).ready(function () {
             }
         });
     }
-
+jQuery('.calender-row .time').css('margin-top','0');
 });
 
 jQuery(document).ajaxStop(function () {
     jQuery('.calender-full-row .calender-row.inner').click(function () {
+        jQuery('#calender-top-popup').remove();
+        jQuery('body').append('<div id="calender-top-popup" ></div>');        
         var html = jQuery(this).parent().find('.calender-popup').html();
         jQuery('#calender-top-popup').html("");
         jQuery('#calender-top-popup').addClass('visible');
@@ -110,7 +114,7 @@ jQuery(document).ajaxStop(function () {
             }
         });
     }
-
+jQuery('.calender-row .time').css('margin-top','0');
 });
 
 function closed() {
