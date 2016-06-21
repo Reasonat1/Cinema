@@ -26,6 +26,11 @@
  //dpm($row);
  //dpm($fields);
 ?>
+<div class="movie-group-about">
+  <div class="label"><?php print t("About")?></div>
+  <div class="content"><?php print $fields['field_cm_movie_body']->content;?></div>
+</div>
+    
 <div class="movie-group-item">
   <div class="movie-group-item-header">
     <?php if(isset($fields['field_mc_teaser_toptxt_blk']->content) || isset($fields['field_mc_teaser_toptxt_white']->content)) { ?>
@@ -39,8 +44,8 @@
 	
     <div class="movie-group-item-header-img">
 	  <?php print l($fields['field_cm_movie_pictures']->content,'node/' . $row->nid,array('html' => TRUE)); ?>
+    <div class="title-movie"><?php print $fields['title_1']->content; ?></div>
 	</div>
-	  <?php print $fields['title_1']->content; ?>
   </div>
   <div class="movie-gorup-item-meta-info">
     <?php print $fields['nothing_1']->content; ?> 

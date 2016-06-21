@@ -483,15 +483,16 @@ body {
 	.festival-site {
 		padding-left: 12px;
 	}
+	.navbar-header{
+		height: 54px;
+	}
 	.navbar-brand > img {
 		height: 50px;
+		padding-top: 5px;
 	}
 	.header-right > li {
 		padding-top: 9px;
 	}
-}
-.navbar-header {
-	width: 25%;
 }
 .admin-menu {
 	#header {
@@ -1867,6 +1868,11 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 	border: medium none;
 	color: $white;
 }
+
+.panels-flexible-region-11-center, .panels-flexible-region-14-center{
+	width: 100%;
+}
+
 .copyright > p {
 	font-size: 14px;
 	padding: 15px 0;
@@ -1874,7 +1880,6 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 .design-development > p {
 	font-size: 14px;
 	padding: 15px 0;
-	text-align: right;
 }
 .custom-sponser-pane .pane-content {
 	li {

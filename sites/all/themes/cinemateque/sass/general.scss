@@ -20,7 +20,7 @@ $color_mine_shaft_approx: #312f2f;
 /********  mixin *********/
 
 @mixin width(){
-  width: 1280px;
+  width: 1280px!important;
   max-width: 100%;
   margin: 0 auto;
   padding: 0 3%;
@@ -31,9 +31,16 @@ a{
 	color: $main_color;
 }
 
+.panels-flexible-row{
+	@include width();
+	margin: 0 auto!important;
+	padding: 0 3%!important;
+}
+
 .ctr {
 	clear: both;
 }
+
 .pane-node-field-toptix-purchase {
 	clear: both;
 	bottom: 1%;
@@ -49,17 +56,11 @@ a{
 #main-wrapper {
 	margin-top: 58px !important;
 }
-.pane-node-field-cm-event-body {
-	.pane-content {
-		margin: 6% 20%;
-		p {
-			font-weight: 600;
-		}
-	}
-	h2.pane-title {
-		display: none;
-	}
+
+.table-responsive tbody tr {
+	background-color: transparent !important;
 }
+
 .pane-node-field-tag {
 	.pane-content {
 		border-top: 5px solid $black;
@@ -73,40 +74,16 @@ body {
 	&.node-type-cm-movie {
 		background-color: $white !important;
 		.container {
-			#breadcrumb {
-				display: none;
-			}
 			#page-header .page-header h1.title {
 				display: none;
 			}
 		}
 		#content {
 			width: 100% !important;
-		}
-	}
-	&.node-type-cm-event {
-		background-color: $white !important;
-		.container {
-			#breadcrumb {
-				display: none;
-			}
-			#page-header .page-header h1.title {
-				display: none;
-			}
-		}
-		#content {
-			width: 100% !important;
-		}
-	}
-	&.node-type-cm-movie-group .container {
-		#breadcrumb {
-			display: none;
-		}
-		#page-header .page-header h1.title {
-			display: none;
 		}
 	}
 }
+
 .prev-custom {
 	left: -11%;
 	position: absolute;
@@ -149,39 +126,11 @@ body {
 		width: 38px;
 	}
 }
-.node-type-cm-movie-group {
-	background-color: $white !important;
-	#content {
-		width: 100% !important;
-	}
-}
+
 .panels-flexible-region-node_page-slider {
 	width: 100% !important;
 }
-.node-type-cm-event {
-	.panels-flexible-region-8-center {
-		width: 100%;
-	}
-	.panels-flexible-region-3-center {
-		width: 100%;
-	}
-	.panels-flexible-region-node_page-content_left{
-		float: right;
-	}
-	.panels-flexible-row-node_page-5{
-		panels-flexible-row-node_page-5-inside{
-			padding-top: 100px;
-		}
-	}
-	.panels-flexible-row{
-		@include width();
-		margin: 0 auto!important;
-		padding: 0 3%!important;
-	}
-	.panels-flexible-row-node_page-3, .panels-flexible-row-node_page-4, .panels-flexible-row-node_page-6{
-		width: 100%;
-		padding: 0!important;
-}
+
 .node-type-cm-movie {
 	.panels-flexible-region-8-center {
 		width: 100%;
@@ -209,98 +158,14 @@ body {
 		margin: 0;
 	}
 }
-.pane-event-ct-view-panel-pane-7 {
-	background-color: $color_alabaster_approx;
-	.views-table {
-		border: none;
-		margin-bottom: 0;
-		tbody {
-			border: none;
-			tr {
-				border: none;
-			}
-		}
-	}
-	.view-content {
-		padding: 22px 0;
-	}
-	.pane-content {
-		@include width();
-	}
-	table tr td {
-		border: medium none;
-		font-size: 1.1rem;
-	}
-	.view-id-event_ct_view .views-field-php .addthisevent-drop {
-		background-color: $color_alabaster_approx;
-	}
-	.table-responsive tbody tr {
-		background-color: $color_alabaster_approx !important;
-	}
-	.views-field-field-toptix-purchase{
-		float: right;
-	}
-}
 
-.view-event-ct-view{
-	.views-field-nothing{
-		position: absolute;
-		bottom: 5rem;
-		width: 100%;
-		z-index: 15;
-		.slide-over-content {
-			@include width();
-			.slide-movie-title {
-				margin-bottom: 15px;
-			}
-		}
-	}
-}
 
-.slide-movie-year {
-	font-size: 1.2rem;
-}
-.slide-eve-lobby {
-	font-size: 1.2rem;
-}
-.slide-right-ct {
-	float: left;
-	margin-top: 10%;
-	padding-left: 6%;
-	padding-right: 10%;
-	a {
-		background: url("../images/play-icon.png") no-repeat scroll center center;
-		border-radius: 30px;
-		border:1px solid #fff;
-		display: inline-block;
-		font-size: 0;
-		height: 55px;
-		padding: 2%;
-		width: 55px;
-	}
-}
-.pane-event-ct-view-panel-pane-3 {
-	.views-field-field-main-event-cmain_colorit {
-		width: 100%;
-	}
-	.slide-left-ct {
-		float: left;
-		color: $white;
-		margin-top: 3%;
-		a{
-			color: $white;
-		}
-	}
-}
-.slide-eve-title {
-	font-size: 22px;
-	margin-top: 1%;
-}
+
 .pane-title {
 	font-size: 1.25rem;
 	font-weight: 600;
 }
-.pane-event-ct-view-panel-pane-5 {
+.pane-movie-group-ct-panel-pane-3 {
 	@include width;
 	td {
 		border: none !important;
@@ -316,11 +181,13 @@ body {
 	tbody {
 		border: none !important;
 		font-size: 1.1rem;
-		.views-field-ops{
+		.views-field-ops .flag{
 			background: url("../images/like-event.png") no-repeat center center;
 			width: 18px;
 			height: 15px;
-
+		}
+		.views-field-ops .unflagged{
+			background: url("../images/like-event-unflag.png") no-repeat center center;
 		}
 		.views-field-php a{
 			background: url("../images/add-event.png") no-repeat center center;
@@ -329,6 +196,9 @@ body {
 			display: block;
 			margin-top: -2px;
 		}
+	}
+	.views-field-field-toptix-purchase{
+		float: right;
 	}
 	th {
 		border: none !important;
@@ -346,7 +216,6 @@ body {
 .bottom-content {
 	table, tbody, tr, th, td {
 		border: none !important;
-		text-align: right;
 		font-size: 1.1rem;
 	}
 	.pane-test-view-for-movie-cmain_colorit-panel-pane-2 {
@@ -356,7 +225,6 @@ body {
 		.view-content {
 			margin: auto;
 			padding-right: 14%;
-			text-align: right;
 			width: 65%;
 		}
 	}
@@ -367,22 +235,7 @@ body {
 	margin-right: 5%;
 	float: left;
 }
-.pane-event-ct-view-panel-pane-6 {
-	width: auto;
-	padding-left: 8%;
-	max-width: 720px;
-	.views-field-field-cm-movie-body {
-		color: $color_mine_shaft_approx;
-		font-size: 1.1rem;
-		line-height: 28px;
-	}
-	.views-field-title a {
-		color: $black;
-		font-size: 1.1rem;
-		font-weight: 600;
-		margin-bottom: 2%;
-	}
-}
+
 .views-field {
 	&.views-field-field-cm-movie-cmain_colorits-person-ro {
 		color: $color_nobel_approx;
@@ -507,9 +360,6 @@ body {
 	line-height: 28px;
 }
 .view-id-movie_group_ct {
-	&.view-display-id-panel_pane_1 {
-		text-align: right;
-	}
 	.views-field-title a {
 		color: $black !important;
 	}
@@ -607,23 +457,7 @@ body {
 .page-taxonomy-term #content {
 	width: 100% !important;
 }
-.view-movie-group-ct.view-display-id-panel_pane_2 {
-	width: 100% !important;
-}
-.views_slideshow_cycle_slide .field-content .slide-alt-title {
-	background-color: $color_mine_shaft_approx;
-	bottom: 0;
-	color: $color_star_dust_approx;
-	font-size: 12px;
-	left: 0;
-	padding: 10px 20px;
-	position: absolute;
-	.grp-alt {
-		border-right: 1px solid $color_star_dust_approx;
-		padding-right: 7px;
-		margin-right: 3px;
-	}
-}
+
 table.views-table {
 	margin: 0;
 }
@@ -655,14 +489,7 @@ table.views-table {
 	font-weight: normal;
 	color: $white;
 }
-.pane-event-ct-view-panel-pane-4 .pane-content {
-	border-top: 5px solid $black;
-	padding-top: 13px;
-	border-bottom: 2px solid $color_alto_approx;
-	padding-bottom: 4px;
-	height: 57px;
-	margin-top: 12%;
-}
+
 .sharethis-wrapper span.st_sharethis_button {
 	border-bottom: 2px solid $color_alto_approx;
 	display: block;
@@ -674,7 +501,6 @@ table.views-table {
 	margin-top: 5%;
 }
 .flag.flag-action {
-	background: rgba(0, 0, 0, 0) url("../images/like-big.png") no-repeat scroll 0 0 !important;
 	margin-top: 5px;
 }
 .share-pane {
@@ -717,26 +543,8 @@ table.views-table {
 	position: absolute;
 	left: 190px;
 }
-.table-responsive tbody tr {
-	background-color: $white !important;
-}
-.pane-event-ct-view-panel-pane-8{
-	border-top: 1px solid #919191;
-	border-bottom: 1px solid #919191;
-	.views-field-field-cm-event-body {
-		font-size: 1.1rem;
-		line-height: 28px;
-		padding: 35px 0;
-		max-width: 620px;
-		margin: 0 auto;
-		p {
-			font-weight: bold;
-		}
-	}
-}
-.view-id-event_ct_view td {
-	padding: 0!important;
-}
+
+
 
 .row-custom-lobby > td {
 	border: medium none !important;
@@ -754,16 +562,19 @@ table.views-table {
 	font-weight: 600;
 	margin-bottom: 2%;
 }
+
 .pane-views-panes.pane-review-panel-pane-1 {
 	margin-top: 50px;
 	background-color: $color_fantasy_approx;
+	overflow: hidden;
 	.pane-content {
 		@include width();
 		.view-content {
 			color: $main_color!important;
+			padding: 50px 0;
+			overflow: hidden;
 		}
 		.views-field-name {
-			text-align: right !important;
 			a {
 				color: $main_color!important;
 				font-size: 1rem !important;
@@ -771,16 +582,18 @@ table.views-table {
 		}
 		.views-field-review .field-content p {
 			color: $main_color !important;
-			text-align: right !important;
-			font-size: 1.15rem !important;
+			font-size: 1.35rem !important;
+			line-height: 1.35rem;
 			span {
 				color: $main_color !important;
-				text-align: right !important;
 				font-size: 1.15rem !important;
 			}
 		}
 	}
 }
+
+
+
 .view-share-this-pane .flag {
 	&.flag-action {
 		background: none !important;
@@ -807,177 +620,6 @@ table.views-table {
 }
 
 
-body {
-	&.node-type-cm-movie-group .panels-flexible-row {
-		&.content {
-			width: 100%;
-		}
-		&.bottom.content {
-			width: 100%;
-		}
-	}
-	&.i18n-he .view-id-movie_group_ct.view-display-id-panel_pane_2 .slide-inner-group {
-		position: absolute;
-		bottom: 6em;
-		color: $white;
-		left: 4%;
-		width: 50%;
-	}
-}
-.view-id-movie_group_ct {
-	&.view-display-id-panel_pane_1 {
-		margin: auto;
-		padding: 30px 0 0;
-		width: 45.5%;
-		.content {
-			position: inherit;
-			overflow: inherit;
-		}
-		.views-row {
-			background-color: $white;
-			margin-bottom: 5%;
-		}
-		.views-field {
-			&.views-field-field-cm-movie-short-summary {
-				padding: 0 5% 5%;
-				p {
-					font-weight: 400;
-				}
-			}
-			&.views-field-nothing-1 .field-content {
-				.movie-grp-add-event {
-					position: relative;
-					padding-left: 25px;
-					a {
-						background: url("../images/add-event.png") no-repeat;
-						width: 30px;
-						height: 28px;
-						display: inline-block;
-						font-size: 0;
-						position: absolute;
-					}
-				}
-				.pur_btn {
-					margin-left: 2%;
-					button {
-						background: url("../images/toptix.png") no-repeat !important;
-						border: medium none;
-						font-size: 0;
-						height: 30px;
-						//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-						border-radius: 80px 80px 80px 80px;
-						width: 72px;
-						vertical-align: middle;
-					}
-				}
-				.add-event-cal {
-					margin-left: 2%;
-				}
-				.title {
-					float: left;
-					padding: .8% 0 0;
-					font-size: 1.3em;
-					a {
-						color: $black;
-						font-weight: 600;
-					}
-				}
-				.list-wrapper {
-					text-align: right;
-					font-size: 1.2em;
-					font-weight: 600;
-					.bar {
-						margin: 0 3px;
-					}
-				}
-			}
-		}
-		.views-field-field-cm-movie-subtitle {
-			padding: 3% 5% 1%;
-			clear: both;
-			font-size: 1em;
-			color: $color_star_dust_approx;
-			.field-content span.bar {
-				margin: 0 3px;
-			}
-		}
-		.movie-grp-title h5 {
-			font-weight: 500;
-		}
-		.movie-grp-body p {
-			font-weight: 400;
-		}
-		.img-like-wrapper img.panopoly-image-quarter {
-			max-width: 100%;
-			margin-top: 0 !important;
-			width: 100% !important;
-		}
-	}
-	&.view-display-id-panel_pane_2 {
-		#views_slideshow_cycle_teaser_section_movie_group_ct-panel_pane_2 {
-			height: 600px !important;
-		}
-		.movie-group-slide-container {
-			position: relative;
-		}
-		.slide-inner-group {
-			position: absolute;
-			bottom: 6em;
-			color: $white;
-			left: 16%;
-			width: 60%;
-			a {
-				color: $white;
-			}
-			.slide-movie-title h2 {
-				font-size: 3rem;
-			}
-		}
-	}
-	&.view-display-id-panel_pane_3 {
-		margin: 0 auto;
-		width: 80%;
-		z-index: 0;
-		.table-bordered {
-			border: none;
-			font-size: 1rem;
-			> thead > tr > th {
-				border: none;
-				font-size: 1rem;
-			}
-		}
-		tbody {
-			border: none;
-			font-size: 1rem;
-		}
-		tr {
-			&.even {
-				border: none;
-				font-size: 1rem;
-				background-color: $white;
-			}
-			&.odd {
-				border: none;
-				font-size: 1rem;
-				background-color: $white;
-			}
-		}
-		th {
-			border-bottom: none;
-			color: $color_pink_swan_approx;
-		}
-		.addthisevent-drop {
-			z-index: 0;
-		}
-		.table > tbody > tr > td {
-			border: none;
-			font-size: 1rem;
-		}
-		.table-striped > tbody > tr:nth-of-type(odd) {
-			background-color: $white;
-		}
-	}
-}
 .img-like-wrapper {
 	position: relative;
 	.top-text-blk-wht {
@@ -1016,7 +658,6 @@ body {
 			background-color: $white;
 			padding: 2%;
 			margin-top: 1%;
-			text-align: right;
 		}
 	}
 }
@@ -1297,10 +938,6 @@ body {
 			}
 			.views-field-field-cm-event-time-1 {
 				color: $color_celeste_approx;
-				text-align: right;
-			}
-			.views-field-title-1 {
-				text-align: right;
 			}
 			table tr {
 				padding: 0.2em 0;
@@ -1328,7 +965,6 @@ body {
 		}
 		.bottom-content .pane-test-view-for-movie-credit-panel-pane-1 .view-content {
 			padding-right: 0;
-			text-align: right;
 			width: 100%;
 			tr {
 				padding: 0;
@@ -1395,10 +1031,6 @@ body {
 			}
 			.views-field-field-cm-event-time-1 {
 				color: $color_celeste_approx;
-				text-align: right;
-			}
-			.views-field-title-1 {
-				text-align: right;
 			}
 			table tr {
 				padding: 0.2em 0;
@@ -1426,7 +1058,6 @@ body {
 		}
 		.bottom-content .pane-test-view-for-movie-credit-panel-pane-1 .view-content {
 			padding-right: 0;
-			text-align: right;
 			width: 100%;
 			tr {
 				padding: 0;
@@ -1479,7 +1110,6 @@ button.toptix-purchase {
 	.view-content {
 		margin: auto;
 		padding-right: 14%;
-		text-align: right;
 		width: 65%;
 	}
 }
