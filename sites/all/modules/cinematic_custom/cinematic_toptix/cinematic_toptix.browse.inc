@@ -6,21 +6,18 @@ define('TOPTIX_PAGER', 30);
 function cinematic_toptix_browse() {
   $page = isset($_GET['page']) ? $_GET['page'] : 0;
 
-  $shows = cinematic_toptix_browse_query($page);
+  list($shows, $total) = cinematic_toptix_browse_query($page);
 
-  $filters = cinematic_toptix_browse_control($page);
+  $filters = cinematic_toptix_browse_control($page, $total);
   $output = theme('cinematic_browser', array('shows' => $shows, 'filters' => $filters));
   drupal_json_output($output);
 }
 
-function cinematic_toptix_browse_control($page) {
+function cinematic_toptix_browse_control($page, $total) {
   $filters = array();
 
-  $count = db_select('toptix_shows', 'ts')
-    ->countQuery()
-    ->execute()->fetchField();
   $options = '';
-  for ($iter = 0; $iter*TOPTIX_PAGER < $count; $iter++) {
+  for ($iter = 0; $iter * TOPTIX_PAGER < $total; $iter++) {
     $options .= '<option value="' . $iter . '"';
     if ($iter == $page) $options .= ' selected';
     $options .= " > $iter </option>";
@@ -30,12 +27,18 @@ function cinematic_toptix_browse_control($page) {
 
   $label = '<label>' . t('Title') . '</label>';
   $default = isset($_GET['title']) ? 'value="' . $_GET['title'] . '"' : '';
-  $filters['title_search'] = $label . '<input ' . $default . 'class="form-text" type="text" size="15" name="title"></input>';
+  $filters['title_search'] = $label . '<input ' . $default . ' class="form-text" type="text" size="15" name="title"></input>';
+
+
+  $date_range = isset($_GET['date_range']) ? explode(':', $_GET['date_range']) : array(0, 0);
 
   $from = '<labe>' . t('From date') . '</label>';
-  $from .= '<input class="form-text" type="text" size="15" name="date_from"></input>';
+  $default = $date_range[0] ? 'value=' . $date_range[0] : '';
+  $from .= '<input ' . $default . ' class="form-text" type="text" size="15" name="date_from"></input>';
+
   $to = '<labe>' . t('To date') . '</label>';
-  $to .= '<input class="form-text" type="text" size="15" name="date_to"></input>';
+  $default = $date_range[1] ? 'value=' . $date_range[1] : '';
+  $to .= '<input ' . $default . ' class="form-text" type="text" size="15" name="date_to"></input>';
   $filters['date_range'] = $from . $to;
 
   return $filters; 
@@ -72,11 +75,14 @@ function cinematic_toptix_browse_query($page) {
     $query->orderBy('ts.title', 'DESC');
   }
 
-  $offset = $page * 30;
-  $query->range($offset, 30);
+  $count = $query->countQuery()->execute()->fetchField();
 
   $query->fields('ts', array('title'));
   $query->fields('te', array('show_id', 'local_id', 'event_date'));
+
+  $offset = $page * 30;
+  $query->range($offset, 30);
+
   $events = $query->execute()->fetchAll();
 
   $shows = array();
@@ -86,14 +92,6 @@ function cinematic_toptix_browse_query($page) {
     }
     $shows[$event->show_id]['events'] .= "<div data-id=\"$event->local_id\"> $event->local_id : $event->event_date </div>";
   }
-  return $shows;
-
-  /*
-  $ordered_shows = array();
-  foreach ($shows_ids as $show_id) {
-    $ordered_shows[$show_id] = $shows[$show_id];
-  }
-  return $ordered_shows;
-  */
+  return array($shows, $count);
 }
 
