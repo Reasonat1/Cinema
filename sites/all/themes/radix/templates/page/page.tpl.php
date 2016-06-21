@@ -155,6 +155,8 @@
     <?php endif; ?>
 </footer>
 
+<<<<<<< HEAD
+=======
 <script>
 
     jQuery(document).ready(function () {
@@ -172,4 +174,5 @@
         jQuery('select').select2();
     });
 </script>
+>>>>>>> b2cdab96d0f776b2892fd3e12eeccae239332d11
 
