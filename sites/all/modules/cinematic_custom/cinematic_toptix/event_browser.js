@@ -30,11 +30,14 @@ toptix_dialog.show_results = function(data) {
   }
   this.win = results.dialog({
     title: Drupal.t('Events'),
-    position: {my:'right center', at:'left bottom', of: this.anchor},
-    height: 400
+    position: {my:'left+10 center', at:'right bottom', of: this.anchor},
+    height: 600,
+    width: 600,
   });
-  results = this.win.find('.browse-results');
+  results = this.win.find('.browser-results');
   results.accordion({active: false});
+  var date_fields = this.win.find('.filters .date-range input');
+  date_fields.datepicker({dateFormat: 'yy-mm-dd'});
 
   var self = this;
   results.click(function(event){
@@ -46,19 +49,19 @@ toptix_dialog.show_results = function(data) {
     }
   });
 
+  this.win.find('.filters button').click(function(){
+    self.update_results();
+  });
   this.pager = this.win.find('select[name="pager"]');
-  this.pager.change(function() {
-    self.update_results();
-  });
-  this.order = this.win.find('select[name="order"]');
-  this.order.change(function() {
-    self.update_results();
-  });
+  this.title_search = this.win.find('input[name="title"]');
+  this.date_from = this.win.find('input[name="date_from"]');
+  this.date_to = this.win.find('input[name="date_to"]');
 };
 
 toptix_dialog.update_results = function() {
   var url = Drupal.settings.basePath + 'content/events-browser?';
-  url += 'page=' + this.pager.val() + '&order=' + this.order.val();
+  url += 'page=' + this.pager.val() + '&title=' + this.title_search.val();
+  url += '&date_range=' + this.date_from.val() + ':' + this.date_to.val();
   var self = this;
   jQuery.get(url, function (data) {
     self.show_results(data);
