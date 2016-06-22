@@ -60,10 +60,10 @@
             <li>
                 <?php
 //             echo '<pre>';
-//                print_r($variables['item']->type);
-                if (isset($variables['url']['options']['entity']->field_featured_image['und'][0]['filename'])) {
-                    if ($variables['url']['options']['entity']->field_featured_image['und'][0]['filename'] != "") {
-                        $image_path = $GLOBALS['base_url'] . '/sites/default/files/' . $variables['url']['options']['entity']->field_featured_image['und'][0]['filename'];
+//                print_r($variables['item']);die;
+                if (isset($variables['item']->field_movie_banner_image['und'][0]['uri'])) {
+                    if ($variables['item']->field_movie_banner_image['und'][0]['uri'] != "") {
+                        $image_path = file_create_url($variables['item']->field_movie_banner_image['und'][0]['uri']);
                     } else {
                         $image_path = $GLOBALS['base_url'] . '/' . path_to_theme() . '/no_image.jpg';
                     }
@@ -120,10 +120,10 @@ if ($variables['item']->type == 'cm_event') {
             <li>
                 <?php
 //             echo '<pre>';
-//                print_r($variables['item']->type);
-                if (isset($variables['url']['options']['entity']->field_featured_image['und'][0]['filename'])) {
-                    if ($variables['url']['options']['entity']->field_featured_image['und'][0]['filename'] != "") {
-                        $image_path = $GLOBALS['base_url'] . '/sites/default/files/' . $variables['url']['options']['entity']->field_featured_image['und'][0]['filename'];
+//               print_r($variables['item']->field_cm_event_images['und'][0]['uri']);die;
+                if (isset($variables['item']->field_cm_event_images['und'][0]['uri'])) {
+                    if ($variables['item']->field_cm_event_images['und'][0]['uri'] != "") {
+                        $image_path = file_create_url($variables['item']->field_cm_event_images['und'][0]['uri']);
                     } else {
                         $image_path = $GLOBALS['base_url'] . '/' . path_to_theme() . '/no_image.jpg';
                     }
@@ -178,10 +178,10 @@ if ($variables['item']->type == 'cm_person') {
             <li>
                 <?php
 //             echo '<pre>';
-//                print_r($variables['item']->type);
-                if (isset($variables['url']['options']['entity']->field_featured_image['und'][0]['filename'])) {
-                    if ($variables['url']['options']['entity']->field_featured_image['und'][0]['filename'] != "") {
-                        $image_path = $GLOBALS['base_url'] . '/sites/default/files/' . $variables['url']['options']['entity']->field_featured_image['und'][0]['filename'];
+//                print_r($variables['item']->field_cm_person_photo['und'][0]['uri']);die;
+                if (isset($variables['item']->field_cm_person_photo['und'][0]['uri'])) {
+                    if ($variables['item']->field_cm_person_photo['und'][0]['uri'] != "") {
+                        $image_path = file_create_url($variables['item']->field_cm_person_photo['und'][0]['uri']);
                     } else {
                         $image_path = $GLOBALS['base_url'] . '/' . path_to_theme() . '/no_image.jpg';
                     }

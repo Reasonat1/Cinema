@@ -33,6 +33,11 @@
  *
  * @see template_preprocess_search_api_page_results()
  */
+
+//echo '<pre>';
+//$uri="public://pages/koala.jpg";
+//echo file_create_url($uri);
+//print_r($search_results);die;
 ?>
 <div id="RemoveFilters">
 
