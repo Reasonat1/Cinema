@@ -13,10 +13,18 @@
  */
 ?>
 <div class="panel-display panel-1col clearfix" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
-  <div class="panel-panel panel-col  panel-col-left">
-    <div><?php print $content['left']; ?></div>
-  </div>
-    <div class="panel-panel panel-col panel-col-right">
-    <div><?php print $content['right']; ?></div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 panel-col-left panel-panel">
+        <div class="panel-panel-inner">
+          <?php print $content['left']; ?>
+        </div>
+      </div>
+      <div class="col-md-8 panel-col-right panel-panel">
+        <div class="panel-panel-inner">
+          <?php print $content['right']; ?>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

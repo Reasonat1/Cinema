@@ -91,7 +91,7 @@ function cm_extra_form_node_form_alter(&$form, &$form_state, $form_id) {
 function cm_extra_views_pre_render(&$view) {
 	//hide event title if it equals to movie title
 	if($view->name == 'event_ct_view' && $view->current_display == 'panel_pane_3') {
-		if(strcmp($view->result[0]->node_title, $view->result[0]->node_field_data_field_cm_event_lineup_title) == 0 ){
+		if(isset($view->result[0]->node_field_data_field_cm_event_lineup_title) && strcmp($view->result[0]->node_title, $view->result[0]->node_field_data_field_cm_event_lineup_title) == 0 ){
 			unset($view->result[0]->node_field_data_field_cm_event_lineup_title);
 		}
 	}
