@@ -7,9 +7,11 @@
     /**
    * Hamburger menu popup
    */
-  $(document).ready(function(){
-      var hamburgergpopupmenu = $('.panels-flexible-row.panels-flexible-row-custom_front_panel-4.clearfix.popup.region').html();
-      $('.modal-body').append(hamburgergpopupmenu);
+    $(document).ready(function(){
+        $('.hambruger.-menu.navbar-toggle').click(function(){
+            $('.modal-body').load( "http://jer-cin.tikkewebsites.com/menu div.region-content" );
+    }); 
+    
   });
   
 })(jQuery);

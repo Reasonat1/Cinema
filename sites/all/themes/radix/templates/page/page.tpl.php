@@ -154,3 +154,18 @@
         </div>
     <?php endif; ?>
 </footer>
+
+<!-- Modal  Start-->
+<div id="myModal" class="modal fade hamburger" role="dialog">
+  <div class="modal-dialog">
+     Modal content
+    <div class="modal-content">
+         <img src="http://localhost/localsetup/jercin/sites/all/themes/cinemateque/images/close42.png" class="close" data-dismiss="modal"/>
+      <div class="modal-body">
+      </div>       
+    </div>
+  </div>
+</div>
+<!-- End Here -->
+<!--Callender event discription popup-->
+<div id="calender-top-popup" ></div>

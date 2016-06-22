@@ -322,3 +322,28 @@ ul.tips, div.description, .form-item div.description {
 #modal-content .panopoly-magic-preview-link:hover .content-type-button a, #modal-content .panopoly-magic-preview-link > a:focus + .content-type-button a, #modal-content .panopoly-magic-preview-link .content-type-button a:focus {
   opacity: 1 !important;
 }
+.hamburger .modal-content {
+  background-color: #323232;
+  border-radius: 2px;
+  min-height: 300px;
+}
+.hamburger .modal-body .bean-block {
+  border: medium none;
+  color: #ffffff;
+  width: 25%;
+  background: transparent;
+}
+.hamburger .modal-body {
+  margin-top: 80px;
+}
+.hamburger .modal-body .pane-information-info-view-block {
+  float: left;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  width: 100%;
+  background: #262626;
+}
+.hamburger .modal-content > .close {
+  float: left;
+  padding: 22px;
+}
