@@ -630,7 +630,8 @@ function complex_calender_view_block_content(){
 
       $result =  db_query("SELECT  flagging_node.uid AS flagged_user,n.nid AS nid, n.title, n.created, event_subtitle.field_cm_event_subtitle_value AS event_subtitle,
               event_time.field_cm_event_time_value AS event_start_time, event_time.field_cm_event_time_value2 AS event_end_time, event_duration.field_cm_event_duration_interval AS event_duration,
-              event_internal_id.field_cm_event_internal_id_value AS event_internal_id, event_hall.field_cm_event_hall_target_id AS hall_tid, event_body.field_cm_event_body_value AS event_body
+              event_internal_id.field_cm_event_internal_id_value AS event_internal_id, event_hall.field_cm_event_hall_target_id AS hall_tid, event_body.field_cm_event_body_value AS event_body,
+              toptix_purchase.field_toptix_purchase_value As toptix_purchases
               FROM node AS n 
               LEFT JOIN flagging As flagging_node ON n.nid = flagging_node.entity_id AND flagging_node.fid = '1'
               LEFT JOIN field_data_field_cm_event_subtitle AS event_subtitle ON n.nid = event_subtitle.entity_id
@@ -639,6 +640,7 @@ function complex_calender_view_block_content(){
               LEFT JOIN field_data_field_cm_event_internal_id  AS event_internal_id  ON n.nid = event_internal_id.entity_id
               LEFT JOIN field_data_field_cm_event_body As event_body ON n.nid = event_body.entity_id
               LEFT JOIN field_data_field_cm_event_hall As event_hall ON n.nid = event_hall.entity_id
+              LEFT JOIN field_data_field_toptix_purchase As toptix_purchase ON n.nid = toptix_purchase.entity_id
               WHERE ((n.type = 'cm_event')) and ((n.language = '$lang_name')) and  ((n.status = '1'))  and ( (DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value2), SEC_TO_TIME(10800)), '%Y-%m-%d') >= '$day' AND DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value), SEC_TO_TIME(10800)), '%Y-%m-%d') <= '$day') )
               ORDER BY event_start_time ASC")->fetchAll();
     $result_count = count($result);
@@ -883,7 +885,8 @@ function ajax_complex_calender_filter(){
     }
       $result =  db_query("SELECT  flagging_node.uid AS flagged_user,n.nid AS nid, n.title, n.created, event_subtitle.field_cm_event_subtitle_value AS event_subtitle,
               event_time.field_cm_event_time_value AS event_start_time, event_time.field_cm_event_time_value2 AS event_end_time, event_duration.field_cm_event_duration_interval AS event_duration,
-              event_internal_id.field_cm_event_internal_id_value AS event_internal_id, event_hall.field_cm_event_hall_target_id AS hall_tid, event_body.field_cm_event_body_value AS event_body
+              event_internal_id.field_cm_event_internal_id_value AS event_internal_id, event_hall.field_cm_event_hall_target_id AS hall_tid, event_body.field_cm_event_body_value AS event_body,
+              toptix_purchase.field_toptix_purchase_value As toptix_purchases
               FROM node AS n 
               LEFT JOIN flagging As flagging_node ON n.nid = flagging_node.entity_id AND flagging_node.fid = '1'
               LEFT JOIN field_data_field_cm_event_subtitle AS event_subtitle ON n.nid = event_subtitle.entity_id
@@ -892,6 +895,7 @@ function ajax_complex_calender_filter(){
               LEFT JOIN field_data_field_cm_event_internal_id  AS event_internal_id  ON n.nid = event_internal_id.entity_id
               LEFT JOIN field_data_field_cm_event_body As event_body ON n.nid = event_body.entity_id
               LEFT JOIN field_data_field_cm_event_hall As event_hall ON n.nid = event_hall.entity_id
+              LEFT JOIN field_data_field_toptix_purchase As toptix_purchase ON n.nid = toptix_purchase.entity_id
               WHERE ((n.type = 'cm_event' )) and ((n.language = '$lang_name')) and  ((n.status = '1'))  and ( (DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value2), SEC_TO_TIME(10800)), '%Y-%m-%d') >= '$day' AND DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value), SEC_TO_TIME(10800)), '%Y-%m-%d') <= '$day') )
               ORDER BY event_start_time ASC")->fetchAll();
     $result_count = count($result);
