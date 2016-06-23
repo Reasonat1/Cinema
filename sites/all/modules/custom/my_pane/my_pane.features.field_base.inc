@@ -36,7 +36,7 @@ function my_pane_field_default_field_bases() {
     'module' => 'text',
     'settings' => array(),
     'translatable' => 0,
-    'type' => 'number_integer',
+    'type' => 'text',
   );
   // Exported field_base: 'field_custom_gallery_items'
   $field_bases['field_custom_gallery_items'] = array(
