@@ -97,9 +97,9 @@
       $picture_path = $file->uri;
       $image_movie= '<img src="' . image_style_url('lobby', $picture_path) . '" alt="" />';
     }else{
-      $image_movie = '';
+    $image_movie = '';
     }
-      /*****Article group Image****/
+    /*****Article group Image****/
     if(!empty($node->field_cm_article_image)){
       $picture_path_article = $node->field_cm_article_image['und'][0]['fid'];
       $file = file_load($picture_path_article);
@@ -107,6 +107,7 @@
       $image_article = '<img src="' . image_style_url('lobby', $picture_path) . '" alt="" />';
     }else{
       $image_article = '';
+    }
      $output ='';
      $output .='<div class="table-responsive">';
         $output .= '<table class="table">';
