@@ -108,7 +108,7 @@ function cinematic_toptix_field_widget_form_alter(&$element, &$form_state, $cont
       '#attributes' => array('class' => array('browser'), 'title' => ''),
       '#type' => 'textfield',
       '#title' => t('Event purchase'),
-      '#description' => t('Click top open browser'),
+      '#description' => t('Click to open browser'),
       '#size' => 16,
       '#attached' => array(
         'library' => array(
