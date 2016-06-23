@@ -535,6 +535,10 @@ function my_pane_menu() {
     return $items;
 }
 
+function _weight_indicator_sort($a, $b) {
+  return $a->weight - $b->weight;
+}
+
 /*
  * custom block " Complex Calender View Block " callback
  */
@@ -653,7 +657,7 @@ function complex_calender_view_block_content(){
          $event_time = date('G',$start_time);
          $hall[$event_time][] = $val;
      }
-     ksort($hall);    
+     ksort($hall);  
      $all_term = array_unique($term_array); 
      $output.="<div class='col-sm-12 calender'>";
      $output.= $filter;
@@ -661,9 +665,18 @@ function complex_calender_view_block_content(){
       $output.="<div class='calender-filter-date col-sm-12'><p class='pull-left'>$selected_filter</p></div>";
       $output.="<div class='calender-scroll'><p class='scrollleft'> Other venues ></p></div>";
      $output.="<div class='calender-header'><p class='calendar-dayview-hour'></p>";
-     foreach($all_term as $tid){
-         $term_load = taxonomy_term_load($tid);
-         $output.=" <p class='calendar-agenda-items'>$term_load->name</p>";
+	 $halls_inorder = array();
+	 foreach($all_term as $tid){
+        $term_load = taxonomy_term_load($tid);
+		$halls_inorder[$term_load->tid] =$term_load;
+     }
+	 //dpm($halls_inorder);
+	 //uasort($halls_inorder, 'drupal_sort_weight');
+	 uasort($halls_inorder, '_weight_indicator_sort');
+	 //dpm($halls_inorder);	
+	 //dpm($all_term);	 
+     foreach($halls_inorder as $tid => $term){
+         $output.=" <p class='calendar-agenda-items'>$term->name</p>";
      }
     $output.="</div><div  class='calender-body'>";
     $timearray = array('8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24');
@@ -771,7 +784,7 @@ function complex_calender_view_block_content(){
                                              </div>";
 
                 }
-                foreach($all_term as $tid)  {
+                foreach($halls_inorder as $tid => $term)  {
                     $a = '0';
                     foreach($calender as $cal_key => $cal_val){
                         if($cal_key == $tid){
