@@ -1,32 +1,3 @@
-//colors
-$color_celeste_approx: #ccc;
-$color_gallery_approx: #eee;
-$color_alabaster_approx: #f9fafb;
-$white: #fff;
-$color_mine_shaft_approx: #312f2f;
-$color_star_dust_approx: #a0a0a0;
-$black: #000;
-$color_pink_swan_approx: #bbb;
-$color_nobel_approx: #b3b3b3;
-$color_black_approx: #020202;
-$color_alto_approx: #ddd;
-$color_fantasy_approx: #f9f4ee;
-$main_color: #b59d70;
-$color_fantasy_approx: #f9f4ee;
-$color_pink_swan_approx: #b7b7b7;
-$color_mine_shaft_approx: #312f2f;
-
-
-/********  mixin *********/
-
-@mixin width(){
-  width: 1280px!important;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 3%;
-  box-sizing: border-box;
-}
-
 a{
 	color: $main_color;
 }
@@ -438,11 +409,12 @@ body {
 		display: none;
 	}
 	.panels-flexible-region-node_page-content_left {
-		width: 84.804%;
+		width: 77%;
 	}
 	.panels-flexible-region-node_page-content_right {
 		float: left;
-		width: 15.196%;
+		width: 15%;
+		margin-right: 8%;
 		.panels-flexible-region-node_page-content_right-inside{
 			padding: 0;
 		}

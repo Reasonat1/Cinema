@@ -1,22 +1,3 @@
-/*  colors  *****/
-$main_color: #b59d70;
-$color_pink_swan_approx: #b7b7b7;
-$color_star_dust_approx: #a0a0a0;
-$color_mine_shaft_approx: #312f2f;
-$color_gallery_approx: #eee;
-$color_fantasy_approx: #f9f4ee;
-
-
-/********  mixin *********/
-
-@mixin width(){
-  width: 1280px!important;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 3%;
-  box-sizing: border-box;
-}
-
 .node-type-cm-movie-group{
 	#content {
 		width: 100% !important;

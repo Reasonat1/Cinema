@@ -1,35 +1,10 @@
-//colors
-$color_celeste_approx: #ccc;
-$color_gallery_approx: #eee;
-$color_alabaster_approx: #f9fafb;
-$white: #fff;
-$color_mine_shaft_approx: #312f2f;
-$color_star_dust_approx: #a0a0a0;
-$black: #000;
-$color_pink_swan_approx: #bbb;
-$color_nobel_approx: #b3b3b3;
-$color_black_approx: #020202;
-$color_alto_approx: #ddd;
-$color_fantasy_approx: #f9f4ee;
-$main_color: #b59d70;
-$color_fantasy_approx: #f9f4ee;
-$color_pink_swan_approx: #b7b7b7;
-$color_mine_shaft_approx: #312f2f;
-
-/********  mixin *********/
-
-@mixin width(){
-  width: 1280px!important;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 3%;
-  box-sizing: border-box;
-}
-
 .node-type-cm-event {
 	#content {
 		width: 100% !important;
 	}
+	 .panels-flexible-row-node_page-3 .panels-flexible-region-inside{
+	 	overflow: hidden;
+	 }
 	.panels-flexible-row-node_page-3,
 	.panels-flexible-row-node_page-4,
 	.panels-flexible-row-node_page-6{
@@ -55,7 +30,7 @@ $color_mine_shaft_approx: #312f2f;
 		}
 		.views-field-field-cm-movie-credits-person-ro{
 			color: $color_nobel_approx;
-			width: 230px;
+			width: 23%;
 		}
 	}
 	.pane-event-ct-view-panel-pane-7 {
@@ -154,6 +129,9 @@ $color_mine_shaft_approx: #312f2f;
 				top: 36px!important;
 			}
 		}
+		.views-field-field-cm-event-time{
+			width: 23%;
+		}
 		td {
 			border: none !important;
 			font-size: 1.1rem;
@@ -200,7 +178,6 @@ $color_mine_shaft_approx: #312f2f;
 		}
 	}
 	.pane-event-ct-view-panel-pane-6 {
-		padding-left: 8%;
 		max-width: 720px;
 		.views-field-field-cm-movie-body {
 			color: $color_mine_shaft_approx;
@@ -228,11 +205,11 @@ $color_mine_shaft_approx: #312f2f;
 		.views-field-field-cm-event-body {
 			font-size: 1.1rem;
 			line-height: 28px;
-			padding: 35px 0;
-			max-width: 664px;
-			margin: 0 auto;
+			@include width();
+			padding: 35px 3%;
 			p {
 				font-weight: bold;
+				margin-left: 23%;
 			}
 		}
 	}
