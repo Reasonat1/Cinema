@@ -36,8 +36,7 @@
                 if (!empty($festival_site_logo)) {
                     $logo = $festival_site_logo;
                 }
-                ?>
-                <?php if ($site_name || $logo): ?>
+				if ($site_name || $logo): ?>
                     <a href="<?php print $front_page; ?>" class="navbar-brand" rel="home" title="<?php print t('Home'); ?>">
                         <?php if ($logo): ?>
                             <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" id="logo" />
@@ -53,18 +52,14 @@
                 endif;
                 ?>
             </div> <!-- /.navbar-header -->
-
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <?php
                 if (!empty($festival_site_info)) {
                     $site_main_menu = $festival_site_menu;
                 }
-                ?>
-                <?php if ($site_main_menu): ?>
-                    <!--<div id="da11y-options"></div>-->
+				if ($site_main_menu): ?>
                     <ul id="site-main-menu" class="site-custom-menu menu nav navbar-nav col-md-5">
-
                         <?php print render($site_main_menu); ?>
                     </ul>
                     <ul class="col-md-3 header-right">
@@ -75,23 +70,18 @@
                     <?php endif; ?>
                     <?php if ($search_form): ?>
                         <?php
-                        //$block = module_invoke('block', 'block_view', '5');
                         $block = module_invoke('cm_extra', 'block_view', 'icons');
-                        print render($block['content']); //print $search_form; 
+                        print render($block['content']); 
                         ?>
 
                     </ul>
                     <?php
-                    $block2 = module_invoke('locale', 'block_view', 'language'); //dpm($block2);
-                    // print render($block2['content']); //print $search_form; 
+                    $block2 = module_invoke('locale', 'block_view', 'language'); 
                     ?>
                 <?php endif; ?>
             </div><!-- /.navbar-collapse -->
         </nav><!-- /.navbar -->
     </div> <!-- /.container -->
-    <!--<div id="da11y-toggle"></div>-->
-    <!--    <div id="da11y-plugin"></div>-->
-
 </header>
 
 <?php if ($is_front): ?>
@@ -154,4 +144,3 @@
         </div>
     <?php endif; ?>
 </footer>
-
