@@ -539,8 +539,12 @@ function my_pane_menu() {
  * custom block " Complex Calender View Block " callback
  */
 function complex_calender_view_block_content(){
-
-     global $base_url;
+    global $language ;
+    $lang_name = isset($language->language) ? $language->language : '';
+    if($lang_name == ''){
+        $lang_name = 'en';
+    }
+    global $base_url;
     $output = $filter = $selected_filter = $day = "";
     $term_page = arg(0);
     if($term_page == 'taxonomy'){
@@ -635,7 +639,7 @@ function complex_calender_view_block_content(){
               LEFT JOIN field_data_field_cm_event_internal_id  AS event_internal_id  ON n.nid = event_internal_id.entity_id
               LEFT JOIN field_data_field_cm_event_body As event_body ON n.nid = event_body.entity_id
               LEFT JOIN field_data_field_cm_event_hall As event_hall ON n.nid = event_hall.entity_id
-              WHERE ((n.type = 'cm_event')) and  ((n.status = '1'))  and ( (DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value2), SEC_TO_TIME(10800)), '%Y-%m-%d') >= '$day' AND DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value), SEC_TO_TIME(10800)), '%Y-%m-%d') <= '$day') )
+              WHERE ((n.type = 'cm_event')) and ((n.language = '$lang_name')) and  ((n.status = '1'))  and ( (DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value2), SEC_TO_TIME(10800)), '%Y-%m-%d') >= '$day' AND DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value), SEC_TO_TIME(10800)), '%Y-%m-%d') <= '$day') )
               ORDER BY event_start_time ASC")->fetchAll();
     $result_count = count($result);
     $term_array = array();
@@ -730,14 +734,26 @@ function complex_calender_view_block_content(){
                     $flag = flag_create_link('favorite_', $nid);
                     $string =  substr($val->event_body,0,500).'...';
                     $string = strip_tags($string);
+                   $event_interanl_id ='';
+                    if(!empty($val->event_internal_id)){
+                        $event_interanl_id = $val->event_internal_id;
+                    }
+                    $toptix_purchases = '';
+                    if(!empty($val->toptix_purchases)){
+                            $node = node_load($nid);
+                            $items = isset($node->field_toptix_purchase['und']) ? $node->field_toptix_purchase['und'] : array();
+                            $the_field = cinematic_toptix_field_formatter_view('node', $node, 'field_toptix_purchase', '', 'en', $items, array('type' => 'toptix_purchase'));
+                           $toptix_purchases = drupal_render($the_field);
+                    }
+                    
                     $calender[$val->hall_tid] = "<div class='calender-row custom-row'>
                                                    <div class = 'calender-row inner' style='height:".$total_lenght."px;position: absolute;min-height:150px;margin-top:".$event_margin."px;'>
                                                         $flag
                                                         <div class='time'><span class='bold'>$start_time</span> $minutes</div>
                                                         <div class='title'><span class='bold'>$val->title</span> </div>
                                                         <div class='subtitle'><span>$val->event_subtitle</span> </div>
-                                                        <div class='internal-id'><span>$val->event_internal_id | $short_date</span> </div>
-                                                        <div class='tickets'><a href='javascript:void(0)'>Tickets</a></div>
+                                                        <div class='internal-id'><span>$event_interanl_id</span> </div>
+                                                        <div class='tickets'>$toptix_purchases</div>
                                                         <div class='element-invisible'><span>$term->name</span></div>
                                                    </div>
  
@@ -747,7 +763,7 @@ function complex_calender_view_block_content(){
                                                        <div class='title'><span class='bold'>$val->title</span> </div>
                                                        <div class='body'>$string </div>
                                                        <a href='$base_url/$alias' class='read-more'>To event page  > </a>
-                                                       <div class='tickets'><span>$short_day</span><span>$short_date</span><span>$start_time</span><span>$term->name</span><a href='$base_url/$alias'>Tickets</a></div>
+                                                       <div class='tickets'><span>$short_day</span><span>$short_date</span><span>$start_time</span><span>$term->name</span>$toptix_purchases</div>
                                                        </div>
                                                    </div>
                                              </div>";
@@ -852,7 +868,12 @@ function complex_calender_view_block_content(){
  * Ajax filteration of complex calender
  */
 function ajax_complex_calender_filter(){
-
+    
+    global $language ;
+    $lang_name = isset($language->language) ? $language->language : '';
+    if($lang_name == ''){
+        $lang_name = 'en';
+    }
     $filterdate = $_POST['filterdate'];
     $day = date( 'Y-m-d', $filterdate );
      global $base_url;
@@ -871,7 +892,7 @@ function ajax_complex_calender_filter(){
               LEFT JOIN field_data_field_cm_event_internal_id  AS event_internal_id  ON n.nid = event_internal_id.entity_id
               LEFT JOIN field_data_field_cm_event_body As event_body ON n.nid = event_body.entity_id
               LEFT JOIN field_data_field_cm_event_hall As event_hall ON n.nid = event_hall.entity_id
-              WHERE ((n.type = 'cm_event' ))and  ((n.status = '1'))  and ( (DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value2), SEC_TO_TIME(10800)), '%Y-%m-%d') >= '$day' AND DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value), SEC_TO_TIME(10800)), '%Y-%m-%d') <= '$day') )
+              WHERE ((n.type = 'cm_event' )) and ((n.language = '$lang_name')) and  ((n.status = '1'))  and ( (DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value2), SEC_TO_TIME(10800)), '%Y-%m-%d') >= '$day' AND DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value), SEC_TO_TIME(10800)), '%Y-%m-%d') <= '$day') )
               ORDER BY event_start_time ASC")->fetchAll();
     $result_count = count($result);
     $term_array = array();
@@ -964,14 +985,25 @@ function ajax_complex_calender_filter(){
                     $flag = flag_create_link('favorite_', $nid);
                     $string =  substr($val->event_body,0,500).'...';
                     $string = strip_tags($string);
+                    $event_interanl_id ='';
+                    if(!empty($val->event_internal_id)){
+                        $event_interanl_id = $val->event_internal_id;
+                    }
+                   $toptix_purchases = '';
+                    if(!empty($val->toptix_purchases)){
+                            $node = node_load($nid);
+                            $items = isset($node->field_toptix_purchase['und']) ? $node->field_toptix_purchase['und'] : array();
+                            $the_field = cinematic_toptix_field_formatter_view('node', $node, 'field_toptix_purchase', '', 'en', $items, array('type' => 'toptix_purchase'));
+                           $toptix_purchases = drupal_render($the_field);
+                    }                    
                     $calender[$val->hall_tid] = "<div class='calender-row custom-row'>
                                                    <div class = 'calender-row inner' style='height:".$total_lenght."px;position: absolute;min-height:150px;margin-top:".$event_margin."px;'>
                                                         $flag
                                                         <div class='time'><span class='bold'>$start_time</span> $minutes</div>
                                                         <div class='title'><span class='bold'>$val->title</span> </div>
                                                         <div class='subtitle'><span>$val->event_subtitle</span> </div>
-                                                        <div class='internal-id'><span>$val->event_internal_id | $short_date</span> </div>
-                                                        <div class='tickets'><a href='javascript:void(0)'>Tickets</a></div>
+                                                        <div class='internal-id'><span>$event_interanl_id</span> </div>
+                                                        <div class='tickets'>$toptix_purchases</div>
                                                         <div class='element-invisible'><span>$term->name</span></div>
                                                    </div>
  
@@ -981,7 +1013,7 @@ function ajax_complex_calender_filter(){
                                                        <div class='title'><span class='bold'>$val->title</span> </div>
                                                        <div class='body'>$string </div>
                                                        <a href='$base_url/$alias' class='read-more'>To event page  > </a>
-                                                       <div class='tickets'><span>$short_day</span><span>$short_date</span><span>$start_time</span><span>$term->name</span><a href='$base_url/$alias'>Tickets</a></div>
+                                                       <div class='tickets'><span>$short_day</span><span>$short_date</span><span>$start_time</span><span>$term->name</span>$toptix_purchases</div>
                                                        </div>
                                                    </div>
                                              </div>";
