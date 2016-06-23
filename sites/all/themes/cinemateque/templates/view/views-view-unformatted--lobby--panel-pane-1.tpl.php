@@ -24,7 +24,7 @@
   foreach ($results as $val) {
     $nid = $val->node_taxonomy_index_nid;
     $node = node_load($nid);
-     //drupal_set_message('<pre>'.print_r($node, 1).'</pre>');
+     //drupal_set_message('<pre>'.print_r($node->field_cm_event_images, 1).'</pre>');
     $path_node = drupal_get_path_alias('node/'.$node->nid);
     $title = l($node->title, $path_node);
     if(!empty($node->field_mc_teaser_toptxt_white['und'])){
@@ -68,10 +68,13 @@
       $length = $length_interval.' '.$length_period;
     }
     if(!empty($node->field_cm_moviegroup_short_summar)){
-      $summary_movie_group = $node->field_cm_moviegroup_short_summar['und'][0]['value'];
+      $summary_movie_group =  truncate_utf8($node->field_cm_moviegroup_short_summar['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
     }
     elseif(!empty($node->field_cm_movie_short_summary)){
-      $summary_movie = $node->field_cm_movie_short_summary['und'][0]['value'];
+      $summary_movie = truncate_utf8($node->field_cm_movie_short_summary['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+    }
+    if(!empty($node->field_cm_event_body['und'][0]['value'])){
+      $summary_event = truncate_utf8($node->field_cm_event_body['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
     }
     if(!empty($node->field_cm_movie_year['und'])){
       $year_name = taxonomy_term_load($node->field_cm_movie_year['und'][0]['target_id']);
@@ -108,6 +111,50 @@
     }else{
       $image_article = '';
     }
+    /*****Event Image****/
+    if(!empty($node->field_cm_event_images)){
+      $picture_path_event = $node->field_cm_event_images['und'][0]['uri'];
+      $image_event = '<img src="' . image_style_url('lobby', $picture_path_event) . '" alt="" />';
+    }else{
+      $image_event = '';
+    }
+    if($node->type == 'cm_event'){
+    $output_event ='';
+     $output_event .='<div class="table-responsive">';
+        $output_event .= '<table class="table">';
+         $output_event .= ' <tbody>';
+          $event_title = $node_event->field_cm_event_short_title['und'][0]['value'];
+          $path = drupal_get_path_alias('node/'.$node->nid);
+          $flag = flag_create_link('favorite_', $node->nid);
+          $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node).'</div>';
+          if(!empty($node->field_cm_event_internal_id['und'])){
+              $event_code = $node->field_cm_event_internal_id['und'][0]['value'];
+          }
+          if(!empty($node->field_cm_event_time['und'])){
+              $event_date = date('l d.m.y', $node->field_cm_event_time['und'][0]['value']);
+              $event_time = date('g:i a', $node->field_cm_event_time['und'][0]['value']);
+          }
+          if(!empty($node->field_cm_event_hall['und'])){
+              $hall_id = taxonomy_term_load($node->field_cm_event_hall['und'][0]['target_id']);
+              $hall_name = $hall_id->name;
+          }
+          if(!empty($node->field_toptix_purchase['und'])){
+              $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
+          }
+          $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
+           $output_event .= '<tr class="row-custom-lobby">';
+           $output_event .= '<td>'.'<button data-url="'.$top_link.'" class="toptix-purchase">Puchase</button>'.'</td>';
+           $output_event .='<td>'. $addevent . '</td>';
+           $output_event .='<td>'. $flag . '</td>';
+           $output_event .= '<td>'.$event_code.'</td>';
+           $output_event .= '<td>'.$hall_name.'</td>';
+           $output_event .= '<td>'.l($event_title, $path).'</td>';
+           $output_event .= '<td>'.$event_time.'</td>';
+           $output_event .= '<td>'.$event_date.'</td>';
+           $output_event .= '</tr>';
+         $output_event .= '</table>';
+       $output_event .= '</div>';
+    }else{
      $output ='';
      $output .='<div class="table-responsive">';
         $output .= '<table class="table">';
@@ -131,7 +178,7 @@
           $event_ref_nid = $row['target_id'];
           $node_movie = node_load($event_ref_nid);    
           $node_event = node_load($node_movie->field_event_corresponding_ref['und'][0]['target_id']);
-          $event_title = $node_event->title;
+          $event_title = $node_event->field_cm_event_short_title['und'][0]['value'];
           $path = drupal_get_path_alias('node/'.$node_event->nid);
           $flag = flag_create_link('favorite_', $node_event->nid);
           $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node_event).'</div>';
@@ -163,7 +210,7 @@
         }
          $output .= '</table>';
        $output .= '</div>';
-       
+    }  
       switch ($node->type) {
         case "cm_movie_group":
           $image = $image_movie_group;
@@ -182,10 +229,17 @@
         case "cm_article":
           $image = $image_article;
           if(!empty($node->body['und'][0]['value'])){
-            $sort_summary = $node->body['und'][0]['value'];
+            $sort_summary = truncate_utf8($node->body['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
           }
           $top_text = $white_text_article . $black_text_article;
           $event_info = '';
+          $duration_info = '';
+        break;
+          case "cm_event":
+          $image = $image_event;
+          $sort_summary = $summary_event;
+          $top_text = $white_text_article . $black_text_article;
+          $event_info = $output_event;
           $duration_info = '';
         break;
         default:
