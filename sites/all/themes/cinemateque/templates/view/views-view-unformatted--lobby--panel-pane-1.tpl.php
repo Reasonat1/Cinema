@@ -69,12 +69,18 @@
     }
     if(!empty($node->field_cm_moviegroup_short_summar)){
       $summary_movie_group =  truncate_utf8($node->field_cm_moviegroup_short_summar['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+    }else{
+      $summary_movie_group = '';
     }
     elseif(!empty($node->field_cm_movie_short_summary)){
       $summary_movie = truncate_utf8($node->field_cm_movie_short_summary['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+    }else{
+      $summary_movie = '';
     }
     if(!empty($node->field_cm_event_body['und'][0]['value'])){
       $summary_event = truncate_utf8($node->field_cm_event_body['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+    }else{
+      $summary_event = '';
     }
     if(!empty($node->field_cm_movie_year['und'])){
       $year_name = taxonomy_term_load($node->field_cm_movie_year['und'][0]['target_id']);
