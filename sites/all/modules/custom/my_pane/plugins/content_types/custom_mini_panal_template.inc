@@ -47,7 +47,7 @@ function my_pane_minipanel_tamplate_edit_form_submit($form, &$form_state) {
        $lower_str = strtolower($name);
        $string = str_replace(" ","_",$lower_str);
        $myStr = preg_replace('/[^A-Za-z0-9\-]/', '', $string);
-       $mini_machine_name = substr($myStr, 0, 30);
+       $mini_machine_name = filter_xss_admin(substr($myStr, 0, 30));
        $form_state['conf']['minipanel_title'] = $mini_machine_name;
        
        $mini = new stdClass();

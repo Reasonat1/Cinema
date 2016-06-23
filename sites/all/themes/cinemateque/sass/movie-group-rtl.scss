@@ -4,7 +4,7 @@
 			.movie-group-item-header-img{
 				.title-movie{
 					left: auto;
-					right: 20px;
+					right: 30px;
 				}
 			}
 			.top-text-blk-wht{
@@ -20,8 +20,12 @@
 		}
 		&.view-display-id-panel_pane_2 {
 			.slide-inner-group {
-				right: 16%;
-				left: 0;
+				.wrapper{
+					.slide-eve-title, .slide-movie-title{
+						margin-right: 23%;
+						margin-left: 0;
+					}
+				}
 			}
 		}
 	}

@@ -1,23 +1,23 @@
 /*
 Error: Undefined mixin 'width'.
-        on line 28 of /home/jercin/public_html/sites/all/themes/cinemateque/sass/movie-group.scss, in `width'
-        from line 28 of /home/jercin/public_html/sites/all/themes/cinemateque/sass/movie-group.scss
+        on line 38 of /home/jercin/public_html/sites/all/themes/cinemateque/sass/movie-group.scss, in `width'
+        from line 38 of /home/jercin/public_html/sites/all/themes/cinemateque/sass/movie-group.scss
 
-23: 		background-color: #fff;
-24: 		.table-responsive{
-25: 			overflow: visible;
-26: 		}
-27: 		.pane-content{
-28: 			@include width;
-29: 			padding-top: 25px;
-30: 			margin-bottom: 30px;
-31: 		}
-32: 	}
-33: 	#atedrop1-sdrop{
+33: 		}
+34: 		.views-field-field-cm-event-time-1{
+35: 			width: 23%;
+36: 		}
+37: 		.pane-content{
+38: 			@include width;
+39: 			padding-top: 25px;
+40: 			margin-bottom: 30px;
+41: 		}
+42: 	}
+43: 	#atedrop1-sdrop{
 
 Backtrace:
-/home/jercin/public_html/sites/all/themes/cinemateque/sass/movie-group.scss:28:in `width'
-/home/jercin/public_html/sites/all/themes/cinemateque/sass/movie-group.scss:28
+/home/jercin/public_html/sites/all/themes/cinemateque/sass/movie-group.scss:38:in `width'
+/home/jercin/public_html/sites/all/themes/cinemateque/sass/movie-group.scss:38
 /usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:349:in `visit_mixin'
 /usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/stack.rb:98:in `with_mixin'
 /usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/stack.rb:115:in `with_frame'
@@ -121,4 +121,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'width'.\A         on line 28 of /home/jercin/public_html/sites/all/themes/cinemateque/sass/movie-group.scss, in `width'\A         from line 28 of /home/jercin/public_html/sites/all/themes/cinemateque/sass/movie-group.scss\A \A 23: 		background-color: #fff;\A 24: 		.table-responsive{\A 25: 			overflow: visible;\A 26: 		}\A 27: 		.pane-content{\A 28: 			@include width;\A 29: 			padding-top: 25px;\A 30: 			margin-bottom: 30px;\A 31: 		}\A 32: 	}\A 33: 	#atedrop1-sdrop{"; }
+  content: "Error: Undefined mixin 'width'.\A         on line 38 of /home/jercin/public_html/sites/all/themes/cinemateque/sass/movie-group.scss, in `width'\A         from line 38 of /home/jercin/public_html/sites/all/themes/cinemateque/sass/movie-group.scss\A \A 33: 		}\A 34: 		.views-field-field-cm-event-time-1{\A 35: 			width: 23%;\A 36: 		}\A 37: 		.pane-content{\A 38: 			@include width;\A 39: 			padding-top: 25px;\A 40: 			margin-bottom: 30px;\A 41: 		}\A 42: 	}\A 43: 	#atedrop1-sdrop{"; }

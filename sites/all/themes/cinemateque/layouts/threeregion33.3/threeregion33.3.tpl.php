@@ -12,20 +12,20 @@
  *   $content['middle']: The only panel in the layout.
  */
 ?>
-<div class="panel-display panel-1col clearfix" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+<div class="panel-display  clearfix" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-4 panel-col panel-panel">
+      <div class="col-md-4 panel-panel">
         <div class="panel-panel-inner">
           <?php print $content['left']; ?>
         </div>
       </div>
-      <div class="col-md-4 panel-col-right panel-panel">
+      <div class="col-md-4 panel-panel">
         <div class="panel-panel-inner">
           <?php print $content['middel']; ?>
         </div>
       </div>
-      <div class="col-md-4 panel-col-right panel-panel">
+      <div class="col-md-4 panel-panel">
         <div class="panel-panel-inner">
           <?php print $content['right']; ?>
         </div>

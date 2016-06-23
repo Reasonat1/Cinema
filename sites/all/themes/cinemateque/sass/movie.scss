@@ -1,0 +1,114 @@
+ .node-type-cm-movie{
+ 	.panels-flexible-row-node_page-3{
+ 		width: 100%!important;
+ 		padding: 0!important;
+ 		.views-field-field-cm-movie-credits{
+ 			bottom: 5rem;
+		    color: #fff;
+		    padding: 0;
+		    position: absolute;
+		    width: 100%;	
+		    z-index: 90;
+		    height: 118px;
+		     .slide-over-content{
+ 		    	@include width;
+ 		    	position: relative;
+		    }		
+ 		}
+ 	}
+ 	.slide-right-ct {
+			float: left;
+			padding-left: 6%;
+			padding-right: 10%;
+			width: 23%;
+			margin-top: 38px;
+			a {
+				background: url("../images/play-icon.png") no-repeat scroll center center;
+				border-radius: 30px;
+				border:1px solid #fff;
+				display: inline-block;
+				font-size: 0;
+				height: 55px;
+				padding: 2%;
+				width: 55px;
+			}
+		}
+	.slide-left-ct{
+		float: left;
+		.slide-eve-lobby{
+			font-size: 22px;
+			margin-bottom: 1%;
+		}
+		.slide-movie-title{
+			margin-bottom: 15px;
+		}
+		.slide-movie-year{
+			font-size: 1.2rem;
+		}
+	}
+	.view-display-id-panel_pane_2 {
+		overflow: visible;
+		.slide-left-ct {
+			float: left;
+			color: $white;
+			margin-left: 23%;
+			position: absolute;
+			.slide-movie-title {
+				font-size: 3.56rem;
+				margin: 1% 0;
+				font-weight: normal;
+				line-height: 110%;
+			}
+		}
+		.slide-right-ct {
+			float: left;
+		}
+	}
+	#panels-ipe-regionid-content_left .pane-movie-top-pane-view-panel-pane-4 {
+		margin-right: 10%;
+		margin-top: 20px;
+		width: auto;
+		padding-left: 15%;
+		.views-field-title {
+			color: $black;
+			font-size: 1.1rem;
+			font-weight: 600;
+			margin-bottom: 2%;
+		}
+		.views-field-field-cm-movie-body {
+			color: $color_mine_shaft_approx;
+			font-size: 1.1rem;
+			line-height: 28px;
+		}
+	}
+	.panels-flexible-row-node_page-5 .panels-flexible-region-node_page-content_right #panels-ipe-regionid-content_right {
+		.pane-movie-top-pane-view-panel-pane-6 {
+			margin-top: 45%;
+			.pane-content {
+				border-top: 5px solid $black;
+				padding-top: 3%;
+				.views-field-term-node-tid li a {
+					color: $color_pink_swan_approx;
+					text-decoration: underline;
+					font-size: 14px;
+				}
+			}
+		}
+		.pane-movie-top-pane-view-panel-pane-3 .pane-content {
+			border-top: 5px solid $black;
+			padding-top: 13px;
+			border-bottom: 2px solid $color_alto_approx;
+			padding-bottom: 4px;
+			height: 57px;
+			margin-top: 12%;
+			.view-display-id-panel_pane_3 .flag-wrapper a {
+				background: $black url("../images/like-small.png") no-repeat scroll 0 0!important;
+				display: block;
+				font-size: 0;
+				height: 14px!important;
+				margin-left: 47%;
+				width: 119px!important;
+			}
+		}
+	}
+}

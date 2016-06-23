@@ -1,28 +1,40 @@
 /*
-Error: Undefined variable: "$color_star_dust_approx".
-        on line 39 of /home/jercin/public_html/sites/all/themes/cinemateque/sass/movie-group-rtl.scss
+Error: Undefined mixin 'width'.
+        on line 14 of /home/jercin/public_html/sites/all/themes/cinemateque/sass/movie.scss, in `width'
+        from line 14 of /home/jercin/public_html/sites/all/themes/cinemateque/sass/movie.scss
 
-34: 		left:0;
-35: 		.grp-alt {
-36: 			border-right: none;
-37: 			padding-right: 0px;
-38: 			margin-right: 0px;
-39: 			border-left: 1px solid $color_star_dust_approx;
-40: 			padding-left: 7px;
-41: 			margin-left: 3px;
-42: 		}
-43: 	}
-44: }
+9: 		    position: absolute;
+10: 		    width: 100%;	
+11: 		    z-index: 90;
+12: 		    height: 118px;
+13: 		     .slide-over-content{
+14:  		    	@include width;
+15:  		    	position: relative;
+16: 		    }		
+17:  		}
+18:  	}
+19:  	.slide-right-ct {
 
 Backtrace:
-/home/jercin/public_html/sites/all/themes/cinemateque/sass/movie-group-rtl.scss:39
-/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/script/tree/variable.rb:49:in `_perform'
-/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/script/tree/node.rb:50:in `perform'
-/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/script/tree/list_literal.rb:63:in `_perform'
-/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/script/tree/list_literal.rb:63:in `map'
-/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/script/tree/list_literal.rb:63:in `_perform'
-/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/script/tree/node.rb:50:in `perform'
-/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
+/home/jercin/public_html/sites/all/themes/cinemateque/sass/movie.scss:14:in `width'
+/home/jercin/public_html/sites/all/themes/cinemateque/sass/movie.scss:14
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:349:in `visit_mixin'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/stack.rb:98:in `with_mixin'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/stack.rb:115:in `with_frame'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/stack.rb:98:in `with_mixin'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:347:in `visit_mixin'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:36:in `send'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/stack.rb:79:in `with_base'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/stack.rb:115:in `with_frame'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/stack.rb:79:in `with_base'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:431:in `visit_rule'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:431:in `map'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:431:in `visit_rule'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
 /usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:36:in `send'
 /usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:36:in `visit'
 /usr/lib64/ruby/gems/1.8/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:158:in `visit'
@@ -121,4 +133,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$color_star_dust_approx\".\A         on line 39 of /home/jercin/public_html/sites/all/themes/cinemateque/sass/movie-group-rtl.scss\A \A 34: 		left:0;\A 35: 		.grp-alt {\A 36: 			border-right: none;\A 37: 			padding-right: 0px;\A 38: 			margin-right: 0px;\A 39: 			border-left: 1px solid $color_star_dust_approx;\A 40: 			padding-left: 7px;\A 41: 			margin-left: 3px;\A 42: 		}\A 43: 	}\A 44: }"; }
+  content: "Error: Undefined mixin 'width'.\A         on line 14 of /home/jercin/public_html/sites/all/themes/cinemateque/sass/movie.scss, in `width'\A         from line 14 of /home/jercin/public_html/sites/all/themes/cinemateque/sass/movie.scss\A \A 9: 		    position: absolute;\A 10: 		    width: 100%;	\A 11: 		    z-index: 90;\A 12: 		    height: 118px;\A 13: 		     .slide-over-content{\A 14:  		    	@include width;\A 15:  		    	position: relative;\A 16: 		    }		\A 17:  		}\A 18:  	}\A 19:  	.slide-right-ct {"; }

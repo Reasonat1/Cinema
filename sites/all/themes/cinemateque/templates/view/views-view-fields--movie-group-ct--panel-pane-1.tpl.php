@@ -25,11 +25,12 @@
  */
  //dpm($row);
  //dpm($fields);
+ $state = (isset($fields['field_cm_movie_pictures']->content)) ? 'haspic' : 'nopic';
 ?>
    
 <div class="movie-group-item">
-  <div class="movie-group-item-header">
-    <?php if(isset($fields['field_mc_teaser_toptxt_blk']->content) || isset($fields['field_mc_teaser_toptxt_white']->content)) { ?>
+  <div class="movie-group-item-header state-<?php print $state; ?>">
+    <?php if(isset($fields['field_cm_movie_pictures']->content) && (isset($fields['field_mc_teaser_toptxt_blk']->content) || isset($fields['field_mc_teaser_toptxt_white']->content))) { ?>
       <div class="top-text-blk-wht">
         <span class="black"><?php print $fields['field_mc_teaser_toptxt_blk']->content;?></span>
         <span class="white"><?php print $fields['field_mc_teaser_toptxt_white']->content;?></span>
@@ -39,8 +40,8 @@
 	<div class="flag"><?php if(isset($fields['ops']->content)) { print $fields['ops']->content; } ?></div>
 	
     <div class="movie-group-item-header-img">
-	  <?php print l($fields['field_cm_movie_pictures']->content,'node/' . $row->nid,array('html' => TRUE)); ?>
-    <div class="title-movie"><?php print $fields['title_1']->content; ?></div>
+	  <?php if(isset($fields['field_cm_movie_pictures']->content)) print l($fields['field_cm_movie_pictures']->content,'node/' . $row->nid,array('html' => TRUE)); ?>
+    <div class="title-movie <?php print $state; ?>"><?php print $fields['title_1']->content; ?></div>
 	</div>
   </div>
   <div class="under-image">

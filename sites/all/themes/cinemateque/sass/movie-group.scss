@@ -2,11 +2,18 @@
 	#content {
 		width: 100% !important;
 	}
+	.pane-movie-group-ct-panel-pane-2{
+		overflow: hidden;	
+	}
 	.panels-flexible-row-node_page-3, .panels-flexible-row-node_page-4{
 		width: 100%!important;
 		padding: 0!important;
 		.pane-node-body{
-			width: 615px;
+			min-width: 615px;
+			max-width: 100%;
+			width: 54%;
+			box-sizing: border-box;
+			padding: 0 3%;
 			margin: auto;
 			p{
 				line-height: 25px;
@@ -24,6 +31,9 @@
 		.table-responsive{
 			overflow: visible;
 		}
+		.views-field-field-cm-event-time-1{
+			width: 23%;
+		}
 		.pane-content{
 			@include width;
 			padding-top: 25px;
@@ -40,8 +50,11 @@
 		&.view-display-id-panel_pane_1 {
 			margin: auto;
 			padding: 30px 0 0;
-			width: 615px;
+			min-width: 615px;
 			max-width: 100%;
+			width: 54%;
+			box-sizing: border-box;
+			padding: 0 3%;
 			.content {
 				position: inherit;
 				overflow: inherit;
@@ -55,7 +68,7 @@
 					font-size: 25px;
 					position: absolute;
 					bottom: 20px;
-					left: 20px;
+					left: 30px;
 					a{
 						color: #fff;
 					}
@@ -81,7 +94,7 @@
 			.top-text-blk-wht{
 				position: absolute;
 				top: 0;
-				z-index: 200;
+				z-index: 90;
 				span{
 					display: inline-block;
 					padding: 5px;
@@ -186,12 +199,17 @@
 				position: relative;
 			}
 			.slide-inner-group {
-				@include width;
 				position: absolute;
 				bottom: 6em;
 				color: #fff;
-				left: 16%;
-				width: 60%;
+				width: 100%;
+				padding: 0;
+				.wrapper{
+					@include width;
+					.slide-eve-title, .slide-movie-title{
+						margin-left: 23%;
+					}
+				}
 				a {
 					color: #fff;
 				}
@@ -243,7 +261,7 @@
 	}
 	.views_slideshow_cycle_slide .field-content .slide-alt-title {
 		background-color: $color_mine_shaft_approx;
-		bottom: 42px;
+		bottom: 0px;
 		color: $color_star_dust_approx;
 		font-size: 12px;
 		right: 0;

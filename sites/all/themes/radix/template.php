@@ -320,7 +320,7 @@ function radix_preprocess_page(&$variables) {
   $theme_path = drupal_get_path('theme', $GLOBALS['theme']);
   $stylesheet_path = '/'.$theme_path . '/css/domain-'.$_domain['domain_id'].'.css';
   if (!file_exists('/'.$stylesheet_path)) {
-	dpm($stylesheet_path . ' is missing but we try to load it for this domain. please create scss file and use compass watch to generate css file');
+	//dpm($stylesheet_path . ' is missing but we try to load it for this domain. please create scss file and use compass watch to generate css file');
   }else{
     drupal_add_css('/'.$stylesheet_path);
   }

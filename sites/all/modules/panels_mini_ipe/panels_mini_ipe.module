@@ -67,9 +67,9 @@ function _panels_mini_ipe_editor($delta) {
   }
 
   $panel_mini = panels_mini_load($delta);
-dpm($delta);
+//dpm($delta);
 //ddebug_backtrace();
-dpm($panel_mini);
+//dpm($panel_mini);
   // We set the renderer here, Panels will load the object for us.
   $panel_mini->display->renderer = 'ipe';
   if (empty($panel_mini)) {
