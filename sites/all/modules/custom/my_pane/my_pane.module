@@ -185,6 +185,20 @@ function my_pane_entity_info_alter(&$entity_info) {
       'access arguments' => array('administer fieldable panels panes'),
     ),
   );
+    // Customm Lobby pane
+   $entity_info['fieldable_panels_pane']['bundles']['lobby'] = array(
+     'label' => t('Add Lobby'),
+     'description' => t('Add  Lobby to Display'),
+     'pane category' => t('Custom'),
+     'pane top level' => TRUE,
+     'admin' => array(
+       'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
+       'bundle argument' => 4,
+       'real path' => 'admin/structure/fieldable-panels-panes/manage/lobby',
+       'access arguments' => array('administer fieldable panels panes'),
+     ),
+   );
+  }
 }
 
 /**
