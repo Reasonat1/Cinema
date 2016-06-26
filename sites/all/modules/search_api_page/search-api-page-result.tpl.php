@@ -99,7 +99,8 @@
                         <p class="search-info"><?php print $info; ?>
                             <!--<span class="fa fa-heart-o"> </span>--> 
                             <span class="fa fa-calendar-o"> </span>
-                            <span class="purchase-btn"> Purchase </span>
+                           <!-- <span class="purchase-btn"> Purchase </span>-->
+                           <input type="button" class="purchase-btn" value="Purchase" style="background: #b59d70 !important;"/>
                         </p>
                     <?php endif; ?>
                 </div>
@@ -143,7 +144,8 @@ if ($variables['item']->type == 'cm_event') {
                         <p class="search-info"><?php print $info; ?>
                         <!--<span class="fa fa-heart-o"> </span> --> 
                             <span class="fa fa-calendar-o"> </span>
-                            <span class="purchase-btn"> Purchase </span>
+                           <!-- <span class="purchase-btn"> Purchase </span>-->
+                           <input type="button" class="purchase-btn" value="Purchase" style="background: #b59d70 !important;"/>
                         </p>
                     <?php endif; ?>
                 </div>

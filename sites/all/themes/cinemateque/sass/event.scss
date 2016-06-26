@@ -119,6 +119,18 @@
 			}
 		}
 	}
+	.views_slideshow_cycle_main{
+		.views-slideshow-cycle-main-frame-row{
+			height: 100%!important;
+		}
+		img{
+			height: 100% !important;
+			left: 0;
+			top: 14px;
+			width: auto !important;
+			position: absolute;
+			}
+		}
 	.pane-event-ct-view-panel-pane-5{
 		@include width;
 		.view-event-ct-view{

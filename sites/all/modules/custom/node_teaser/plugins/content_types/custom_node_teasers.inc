@@ -189,13 +189,13 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
                     $file = file_load($event_image);
                     $uri = $file->uri;
                     $img_src = file_create_url($uri);
-                    $imgae = "<img src='$img_src' alt= 'event image'>";
+                    $image = "<img src='$img_src' alt= 'event image'>";
                 } else {
-                    $imgae = "";
+                    $image = "";
                 }
             } else {
                 $class = 'no-image';
-                $imgae = "";
+                $image = "";
             }
             // check if show images to side of text
             if ($movie_image_side == '1') {
@@ -260,13 +260,13 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
                 $movie_duration = $movie_metainfo;
             }
 
-            $title = $val->title;
+            $title = empty(trim($movie_title)) ? $val->title : $movie_title;
             $alias = $base_url . '/' . drupal_lookup_path('alias', "node/" . $val->nid);
             $html.= "<div class='row-$row_class teaser-row $class'>";
-            $html.= "<div class='event-image'>$imgae</div>";
+            $html.= "<div class='event-image'>".l($image,"node/" . $val->nid,array('html'=> TRUE))."</div>";
             $html.= "<div class='event-date-black-white-background'>$black_content $white_content</div>";
             $html.= "<div class='event-flag'>$flag</div>";
-            $html.= "<div class='event-title'><span>$title</span></div>";
+            $html.= "<div class='event-title'><span>".l($title,'node/'. $val->nid)."</span></div>";
             $html.= "<div class='event-time'><span class='time'>$time</span><span class='date'>$date</span><a href='$alias'><span class='ticket'>Ticket</span></a></div>";
             $html.= "<div class='movie_metainfo'><span>$movie_duration</span></div>";
             $html.= "<div class='event-summery'>$description</div>";
@@ -311,13 +311,13 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
                     $file = file_load($movie_picture);
                     $uri = $file->uri;
                     $img_src = file_create_url($uri);
-                    $imgae = "<img src='$img_src' alt= 'event image'>";
+                    $image = "<img src='$img_src' alt= 'event image'>";
                 } else {
-                    $imgae = "";
+                    $image = "";
                 }
             } else {
                 $class = 'no-image';
-                $imgae = "";
+                $image = "";
             }
 
             // check if show images to side of text
@@ -389,17 +389,17 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             }
 
             // override movie title
-            if ($movie_title == '') {
+            /*if ($movie_title == '') {
                 $title = $val->title;
             } else {
                 $title = $movie_title;
-            }
-
+            }	*/
+			$title = empty(trim($movie_title)) ? $val->title : $movie_title;
             $html.= "<div class='row-$row_class teaser-row $class'>";
-            $html.= "<div class='movie-image'>$imgae</div>";
+            $html.= "<div class='movie-image'>".l($image,"node/" . $val->nid,array('html'=> TRUE))."</div>";
             $html.= "<div class='movie-date-black-white-background'>$black_content $white_content</div>";
             $html.= "<div class='movie-flag'>$flag</div>";
-            $html.= "<div class='movie-title'><span>$title</span></div>";
+            $html.= "<div class='movie-title'><span>".l($title,'node/'. $val->nid)."</span></div>";
             $html.= "<div class='movie_play'><span>$play_icon</span></div>";
             $html.= "<div class='movie_metainfo'><span>$movie_duration</span></div>";
             $html.= "<div class='movie_summery'><span>$description</span></div>";
@@ -444,13 +444,13 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
                     $file = file_load($moviegroup_picture);
                     $uri = $file->uri;
                     $img_src = file_create_url($uri);
-                    $imgae = "<img src='$img_src' alt= 'event image'>";
+                    $image = "<img src='$img_src' alt= 'event image'>";
                 } else {
-                    $imgae = "";
+                    $image = "";
                 }
             } else {
                 $class = 'no-image';
-                $imgae = "";
+                $image = "";
             }
 
             // check if show images to side of text
@@ -519,17 +519,18 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             }
 
             // override movie title
-            if ($movie_title == '') {
+            /*if ($movie_title == '') {
                 $title = $val->title;
             } else {
                 $title = $movie_title;
-            }
-
+            }*/
+			$title = empty(trim($movie_title)) ? $val->title : $movie_title;
+			
             $html.= "<div class='row-$row_class teaser-row $class'>";
-            $html.= "<div class='moviegroup-image'>$imgae</div>";
+            $html.= "<div class='moviegroup-image'>".l($image,"node/" . $val->nid,array('html'=> TRUE))."</div>";
             $html.= "<div class='movie-date-black-white-background'>$black_content $white_content</div>";
             $html.= "<div class='moviegroup-flag'>$flag</div>";
-            $html.= "<div class='moviegroup-title'><span>$title</span></div>";
+            $html.= "<div class='moviegroup-title'><span>".l($title,'node/'. $val->nid)."</span></div>";
             $html.= "<div class='moviegroup_play'><span>$play_icon</span></div>";
             $html.= "<div class='moviegroup_metainfo'><span>$moviegroup_duration</span></div>";
             $html.= "<div class='moviegroup_summery'><span>$description</span></div>";
@@ -572,16 +573,15 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
                 $file = file_load($val->person_photo);
                 $uri = $file->uri;
                 $img_src = file_create_url($uri);
-                $imgae = "<img src='$img_src' alt= 'event image'>";
+                $image = "<img src='$img_src' alt= 'event image'>";
             } else {
-                $imgae = "<img src='$base_url/sites/all/themes/cinemateque/images/persion_default.png' alt= 'event image'>";
+                $image = "<img src='$base_url/sites/all/themes/cinemateque/images/persion_default.png' alt= 'event image'>";
             }
 
             //check for job title
             $job_title = '';
             if (!empty($val->job_title)) {
-                $term = taxonomy_term_load($val->job_title);
-                $job_title = $term->name;
+                $job_title = $val->job_title;
             }
 
             //check for description
@@ -595,10 +595,12 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             } else {
                 $description = $movie_teaser_text['value'];
             }
-
+			
+			$title = empty(trim($movie_title)) ? $val->title : $movie_title;
+			
             $html.= "<div class='row-$row_class teaser-row'>";
-            $html.= "<div class='person-image'>$imgae</div>";
-            $html.= "<div class='person-title'><span class='person-name'>$val->title</span><span>$job_title</span></div>";
+            $html.= "<div class='person-image'>".l($image,'node/'.$val->nid,array('html' => TRUE))."</div>";
+            $html.= "<div class='person-title'><span class='person-name'>".l($title,'node/'.$val->nid)."</span><span>$job_title</span></div>";
             $html.= "<div class='person-description'>$description</div>";
             $html.= "</div>";
             $no++;
@@ -633,8 +635,10 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             } else {
                 $row_class = 'odd';
             }
+			$title = empty(trim($movie_title)) ? $val->title : $movie_title;
+			
             $html.= "<div class='row-$row_class teaser-row'>";
-            $html.= "<div class='webform-title'><a href='$alias'>$val->title</a></div>";
+            $html.= "<div class='webform-title'><a href='$alias'>".$title."</a></div>";
             $html.= "<div class='moviegroup_summery'>$description</div>";
             $html.= "</div>";
             $no++;
@@ -673,13 +677,13 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
                     $file = file_load($artical_picture);
                     $uri = $file->uri;
                     $img_src = file_create_url($uri);
-                    $imgae = "<img src='$img_src' alt= 'event image'>";
+                    $image = "<img src='$img_src' alt= 'event image'>";
                 } else {
-                    $imgae = "";
+                    $image = "";
                 }
             } else {
                 $class = 'no-image';
-                $imgae = "";
+                $image = "";
             }
 
             // check if show images to side of text
@@ -730,18 +734,19 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             }
 
             // override movie title
-            if ($movie_title == '') {
+            /*if ($movie_title == '') {
                 $title = $val->title;
             } else {
                 $title = $movie_title;
-            }
+            }*/
+			$title = empty(trim($movie_title)) ? $val->title : $movie_title;
             $subtitle = $val->article_subtitle;
 
             $html.= "<div class='row-$row_class teaser-row $class'>";
-            $html.= "<div class='article-image'>$imgae</div>";
+            $html.= "<div class='article-image'>".l($image,'node/'.$val->nid,array('html'=> TRUE))."</div>";
             $html.= "<div class='article-date-black-white-background'>$black_content $white_content</div>";
             $html.= "<div class='article-flag'>$flag</div>";
-            $html.= "<div class='article-title'><span>$title</span></div>";
+            $html.= "<div class='article-title'><span>".l($title,'node/'.$val->nid)."</span></div>";
             $html.= "<div class='article-subtitle'><span>$subtitle</span></div>";
             $html.= "<div class='article-summery'><span>$description</span></div>";
             $html.= "</div>";
