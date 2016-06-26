@@ -263,7 +263,7 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             $title = empty(trim($movie_title)) ? $val->title : $movie_title;
             $alias = $base_url . '/' . drupal_lookup_path('alias', "node/" . $val->nid);
             $html.= "<div class='row-$row_class teaser-row $class'>";
-            $html.= "<div class='event-image'>".l($image,"node/" . $val->nid,array('html'=> TRUE))."</div>";
+            if(!$movie_image) {$html.= "<div class='event-image'>".l($image,"node/" . $val->nid,array('html'=> TRUE))."</div>"; }
             $html.= "<div class='event-date-black-white-background'>$black_content $white_content</div>";
             $html.= "<div class='event-flag'>$flag</div>";
             $html.= "<div class='event-title'><span>".l($title,'node/'. $val->nid)."</span></div>";
@@ -396,7 +396,7 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             }	*/
 			$title = empty(trim($movie_title)) ? $val->title : $movie_title;
             $html.= "<div class='row-$row_class teaser-row $class'>";
-            $html.= "<div class='movie-image'>".l($image,"node/" . $val->nid,array('html'=> TRUE))."</div>";
+            if(!$movie_image) {$html.= "<div class='movie-image'>".l($image,"node/" . $val->nid,array('html'=> TRUE))."</div>"; }
             $html.= "<div class='movie-date-black-white-background'>$black_content $white_content</div>";
             $html.= "<div class='movie-flag'>$flag</div>";
             $html.= "<div class='movie-title'><span>".l($title,'node/'. $val->nid)."</span></div>";
@@ -527,7 +527,7 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
 			$title = empty(trim($movie_title)) ? $val->title : $movie_title;
 			
             $html.= "<div class='row-$row_class teaser-row $class'>";
-            $html.= "<div class='moviegroup-image'>".l($image,"node/" . $val->nid,array('html'=> TRUE))."</div>";
+            if(!$movie_image) {$html.= "<div class='moviegroup-image'>".l($image,"node/" . $val->nid,array('html'=> TRUE))."</div>"; }
             $html.= "<div class='movie-date-black-white-background'>$black_content $white_content</div>";
             $html.= "<div class='moviegroup-flag'>$flag</div>";
             $html.= "<div class='moviegroup-title'><span>".l($title,'node/'. $val->nid)."</span></div>";
