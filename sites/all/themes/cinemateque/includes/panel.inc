@@ -14,17 +14,15 @@ function cinemateque_preprocess_panels_pane(&$variables) {
 	}else{
 	  $tid = $variables['pane']->configuration['fieldable_panels_pane']->field_which_lobby_to_show_['und'][0]['tid'];	
 	}
-	//dpm($variables['content']['#fieldable_panels_pane']);
-	
+
 	$display = $variables['content']['#fieldable_panels_pane']->field_select_lobby_view['und'][0]['value'];  // $display = $variables['pane']->configuration['fieldable_panels_pane']->field_select_lobby_view['und'][0]['value'];
 	
 	if($display == 'List Lobby View') {
-	  $output = views_embed_view('lobby', 'panel_pane_1' ,($tid)); //set second argument for list display
+	  $output = views_embed_view('lobby', 'panel_pane_1' ,$tid); 
 	}else{
-	  $output = views_embed_view('lobby', 'panel_pane_2' ,($tid)); //set second argument for grid display 
+	  $output = views_embed_view('lobby', 'panel_pane_2' ,$tid);  
 	}
 	//dpm(get_defined_vars());
 	$variables['content'] = array('the_only_output' => array('#markup' => $output));
-	//$variables['content'] = array('output' => array('#markup' => $output));
   }
 }

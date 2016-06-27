@@ -1,52 +1,3 @@
-//colors
-$white: #ffffff;
-$color_celeste_approx: #cccccc;
-$mine_shaft: #323232;
-$color_chicago_approx: #5c5c5c;
-$boulder: #7a7a7a;
-$color_mongoose_approx: #b59d70;
-$main-color: #b59d70;
-$color_clay_creek_approx: #96825d;
-$color_iron_approx: #d8d8d8;
-$black_80: rgba(0, 0, 0, 0.8);
-$white_30: rgba(255, 255, 255, 0.3);
-$black: #000000;
-$wild_sand: #f4f4f4;
-$color_pampas_approx: #f4f2ef;
-$color_bazaar_approx: #958080;
-$color_mercury_approx: rgb(227, 227, 227);
-$color_black_haze_approx: #f6f6f6;
-$color_silver_approx: #bfbfbf;
-$color_wild_sand_approx: #f5f5f5;
-$color_silver_chalice_approx: #aaa;
-$color_cararra_approx: #ececec;
-$color_nobel_approx: #b2b2b2;
-$color_gallery_approx: #ededed;
-$color_tundora_approx: #444;
-$color_pearl_bush_approx: #e7decc;
-$color_tapa_approx: #777;
-$color_mountain_mist_approx: #999;
-$color_fantasy_approx: #f9f4ee;
-$color_mine_shaft_approx: #333;
-$color_alabaster_approx: #f9fafb;
-$color_pink_swan_approx: #b7b7b7;
-$color_alto_approx: #ddd;
-$color_black_approx: #020202;
-$color_celeste_approx: #ccc;
-$color_gallery_approx: #eee;
-$color_star_dust_approx: #a0a0a0;
-$color_pink_swan_approx: #bbb;
-$color_nobel_approx: #b3b3b3;
-/********  mixin *********/
-
-@mixin width(){
-  width: 1280px!important;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 3%;
-  box-sizing: border-box;
-};
-
 body {
 	background-color: #eef3fa!important;
 }
@@ -785,7 +736,7 @@ body {
 	> div {
 		float: left;
 		min-height: 150px;
-		width: 240px;
+		width: 217px;
 	}
 }
 .calender-row {
@@ -796,7 +747,7 @@ body {
 		padding: 15px;
 		float: left;
 		min-height: 160px;
-		width: 230px;
+		width: 210px;
 	}
 	.time {
 		float: right;
@@ -822,7 +773,7 @@ body {
 	float: left;
 	font-weight: bold;
 	text-align: center;
-	width: 240px;
+	width: 217px;
 }
 .tickets {
 	float: right;
@@ -913,7 +864,7 @@ body {
 .calendar-dayview-hour {
 	float: left;
 	height: 30px;
-	width: 240px;
+	width: 217px;
 }
 .ajax-inner {
 	float: left;
@@ -1889,13 +1840,13 @@ p.scrollleft {
 	cursor: pointer;
 	right: 26px;
 	position: absolute;
-	top: 146px;
+	top: 132px;
 	z-index: 99;
 }
 .col-sm-12.calender-full-row > div {
 	float: left;
 	min-height: 150px;
-	width: 240px;
+	width: 217px;
 }
 
 /********  new added css  ******/

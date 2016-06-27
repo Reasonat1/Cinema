@@ -20,6 +20,7 @@ jQuery(document).ready(function () {
             leftpos = parseFloat(leftpos) - parseFloat(500.00);
         }
         jQuery('#calender-top-popup').css('top', toppos + 'px').css('left', leftpos + 'px');
+        toptix_purchase_event();
     });
 
     /**
@@ -39,6 +40,7 @@ jQuery(document).ready(function () {
             },
             success: function (data) {
                 jQuery('.ajax-inner').replaceWith(data.output);
+                toptix_purchase_event();
             }
         });
     });
@@ -49,7 +51,7 @@ jQuery(document).ready(function () {
      */
     var content_width = 0;
     jQuery('.calender-full-row:first-child .custom-row.calender-row').each(function () {
-        content_width = parseInt(content_width) + parseInt(240);
+        content_width = parseInt(content_width) + parseInt(217);
     })
     content_width = parseInt(content_width) +parseInt(20);
     jQuery('.calender-body').css('width', content_width + 'px');
@@ -62,8 +64,8 @@ jQuery(document).ready(function () {
             if (currentPosition < 0)
                 currentPosition *= -1;
             if (currentPosition < sliderLimit) {
-                jQuery('.calender-body').stop(false, true).animate({left: "-=" + 240}, "slow");
-                jQuery('.calender-header').stop(false, true).animate({left: "-=" + 240}, "slow");
+                jQuery('.calender-body').stop(false, true).animate({left: "-=" + 217}, "slow");
+                jQuery('.calender-header').stop(false, true).animate({left: "-=" + 217}, "slow");
             }
         });
     }
@@ -89,6 +91,7 @@ jQuery(document).ajaxStop(function () {
             leftpos = parseFloat(leftpos) - parseFloat(500.00);
         }
         jQuery('#calender-top-popup').css('top', toppos + 'px').css('left', leftpos + 'px');
+        toptix_purchase_event();
     });
     /**
      * calender scroll effect
@@ -96,7 +99,7 @@ jQuery(document).ajaxStop(function () {
      */
     var content_width = 0;
     jQuery('.calender-full-row:first-child .custom-row.calender-row').each(function () {
-        content_width = parseInt(content_width) + parseInt(240);
+        content_width = parseInt(content_width) + parseInt(217);
     })
     content_width = parseInt(content_width) +parseInt(20);
     jQuery('.calender-body').css('width', content_width + 'px');
@@ -109,8 +112,8 @@ jQuery(document).ajaxStop(function () {
             if (currentPosition < 0)
                 currentPosition *= -1;
             if (currentPosition < sliderLimit) {
-                jQuery('.calender-body').stop(false, true).animate({left: "-=" + 240}, "slow");
-                jQuery('.calender-header').stop(false, true).animate({left: "-=" + 240}, "slow");
+                jQuery('.calender-body').stop(false, true).animate({left: "-=" + 217}, "slow");
+                jQuery('.calender-header').stop(false, true).animate({left: "-=" + 217}, "slow");
             }
         });
     }
@@ -175,3 +178,19 @@ jQuery(document).ajaxComplete(function () {
         }
     });
 })
+
+/*
+ * toptix purchase event over event popup
+ */
+function toptix_purchase_event(){
+    var toptix_event_url = null;
+    var toptix_active_button = {original_text:'', item: null};
+
+    jQuery('.toptix-purchase').click(function(event) {
+      toptix_event_url = this.dataset.url;
+      toptix_active_button.item = this;
+      toptix_active_button.original_text = jQuery(this).text();
+      jQuery(this).text(Drupal.t('Loading...'));
+      $esro.getCustomerDetails('toptix_callback_get_customer');
+    });
+}

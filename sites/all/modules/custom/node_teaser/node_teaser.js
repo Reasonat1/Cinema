@@ -6,19 +6,19 @@
             $('.form-item-top-white-title').hide();
             $('.form-item-movie-image').hide();
             $('.form-item-movie-image-side').hide();
-            $('.form-item-movie-title').hide();
+            //$('.form-item-movie-title').hide();
             $('.form-item-movie-metainfo').hide();
             $('.form-item-upcomming-event').hide();
-            $('.form-item-movie-teaser-text-').hide();
+            //$('.form-item-movie-teaser-text-').hide();
         } else {
             $('.form-item-top-black-title').show();
             $('.form-item-top-white-title').show();
             $('.form-item-movie-image').show();
             $('.form-item-movie-image-side').show();
-            $('.form-item-movie-title').show();
+            //$('.form-item-movie-title').show();
             $('.form-item-movie-metainfo').show();
             $('.form-item-upcomming-event').show();
-            $('.form-item-movie-teaser-text-').show();
+            //$('.form-item-movie-teaser-text-').show();
         }
         if ($('.form-item-content-type select').val() == 'cm_article') {
             $('.form-item-top-black-title').show();
@@ -35,19 +35,19 @@
                 $('.form-item-top-white-title').hide();
                 $('.form-item-movie-image').hide();
                 $('.form-item-movie-image-side').hide();
-                $('.form-item-movie-title').hide();
+                //$('.form-item-movie-title').hide();
                 $('.form-item-movie-metainfo').hide();
                 $('.form-item-upcomming-event').hide();
-                $('.form-item-movie-teaser-text-').hide();
+                //$('.form-item-movie-teaser-text-').hide();
             } else {
                 $('.form-item-top-black-title').show();
                 $('.form-item-top-white-title').show();
                 $('.form-item-movie-image').show();
                 $('.form-item-movie-image-side').show();
-                $('.form-item-movie-title').show();
+                //$('.form-item-movie-title').show();
                 $('.form-item-movie-metainfo').show();
                 $('.form-item-upcomming-event').show();
-                $('.form-item-movie-teaser-text-').show();
+                //$('.form-item-movie-teaser-text-').show();
             }
             if ($(this).val() == 'cm_article') {
                 $('.form-item-top-black-title').show();

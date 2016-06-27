@@ -6,6 +6,7 @@
            jQuery('.view-display-id-panel_pane_3 .views-table tbody tr.up-events-item-movie.item-show').show(); 
            jQuery('.view-footer .more-event').click(function(){
                  jQuery('.view-display-id-panel_pane_3 .views-table tbody tr.up-events-item-movie').show('slow');
+                 jQuery('.view-footer .more-event').hide();
            });
            
            jQuery('.view-display-id-panel_pane_5 .table tbody tr:nth-child(1)').addClass("item-show");
