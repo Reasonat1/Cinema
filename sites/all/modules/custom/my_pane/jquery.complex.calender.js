@@ -20,6 +20,7 @@ jQuery(document).ready(function () {
             leftpos = parseFloat(leftpos) - parseFloat(500.00);
         }
         jQuery('#calender-top-popup').css('top', toppos + 'px').css('left', leftpos + 'px');
+        toptix_purchase_event();
     });
 
     /**
@@ -175,3 +176,19 @@ jQuery(document).ajaxComplete(function () {
         }
     });
 })
+
+/*
+ * toptix purchase event over event popup
+ */
+function toptix_purchase_event(){
+    var toptix_event_url = null;
+    var toptix_active_button = {original_text:'', item: null};
+
+    jQuery('.toptix-purchase').click(function(event) {
+      toptix_event_url = this.dataset.url;
+      toptix_active_button.item = this;
+      toptix_active_button.original_text = jQuery(this).text();
+      jQuery(this).text(Drupal.t('Loading...'));
+      $esro.getCustomerDetails('toptix_callback_get_customer');
+    });
+}
