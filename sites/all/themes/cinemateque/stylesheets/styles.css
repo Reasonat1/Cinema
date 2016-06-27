@@ -2299,7 +2299,12 @@ table td, table th {
   padding: 0 3%;
   box-sizing: border-box;
 }
-
+.page-search-search-results #main #content .search_new, .page-search-search-results #main #content .region-content .views-field-php a {
+  background: url("../images/add-event.png") no-repeat center center;
+  vertical-align: top;
+  width: 30px;
+  height: 27px;
+}
 /* line 262, ../sass/search.scss */
 .select2-results__options li:first-child {
   background: none;

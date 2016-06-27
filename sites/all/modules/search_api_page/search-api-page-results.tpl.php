@@ -33,11 +33,11 @@
  *
  * @see template_preprocess_search_api_page_results()
  */
-
 //echo '<pre>';
 //$uri="public://pages/koala.jpg";
 //echo file_create_url($uri);
 //print_r($search_results);die;
+drupal_add_js(drupal_get_path('module', 'cinematic_toptix') . '/frame.js');
 ?>
 <div id="RemoveFilters">
 
@@ -48,7 +48,7 @@
     <?php endif; ?>
     <?php print render($spellcheck); ?>
     <?php if ($result_count): ?>
-                            <!--<h2><?php // print t('Search results');     ?></h2>-->
+                                <!--<h2><?php // print t('Search results');     ?></h2>-->
         <?php print render($pager); ?>
         <ol class="search-results">
             <?php print render($search_results); ?>
