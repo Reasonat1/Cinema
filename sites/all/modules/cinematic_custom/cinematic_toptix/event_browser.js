@@ -45,6 +45,8 @@ toptix_dialog.show_results = function(respone) {
     var target = event.target;
     if (target.dataset.hasOwnProperty('id')) {
       self.hidden.val(target.dataset.id);
+      // better to dispatch event
+      toptix_temp_update_date(target.dataset.id);
       self.anchor.value = target.textContent;
       self.win.dialog('close');
     }
@@ -67,4 +69,14 @@ toptix_dialog.update_results = function() {
   jQuery.get(url, function (data) {
     self.show_results(data);
   });
+}
+
+function toptix_temp_update_date(id) {
+  var date_name = 'field_cm_event_time[und][0][value]';
+  var data = toptix_dialog.data[id];
+  //var actual_date = new Date(data.ActualEventDate);
+  var actual_date = data.ActualEventDate.split('T');
+
+  jQuery('input[name="' + date_name + '[date]"]').val(actual_date[0]);
+  jQuery('input[name="' + date_name + '[time]"]').val(actual_date[1]);
 }
