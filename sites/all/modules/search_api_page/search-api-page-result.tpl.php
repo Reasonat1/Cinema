@@ -47,10 +47,10 @@
   </h3>
   <div class="search-snippet-info">
 <?php // if ($snippet) : ?>
-      <p class="search-snippet"><?php // print $snippet;    ?></p>
+      <p class="search-snippet"><?php // print $snippet;       ?></p>
 <?php // endif; ?>
 <?php // if ($info) : ?>
-      <p class="search-info"><?php // print $info;    ?></p>
+      <p class="search-info"><?php // print $info;       ?></p>
 <?php // endif; ?>
   </div>
 </li>-->
@@ -60,7 +60,7 @@
             <li>
                 <?php
 //             echo '<pre>';
-//                print_r($variables['item']);die;
+//                print_r($variables['item']->changed);die;
                 if (isset($variables['item']->field_movie_banner_image['und'][0]['uri'])) {
                     if ($variables['item']->field_movie_banner_image['und'][0]['uri'] != "") {
                         $image_path = file_create_url($variables['item']->field_movie_banner_image['und'][0]['uri']);
@@ -78,10 +78,10 @@
                 <?php // print render($title_prefix); ?>
                 <h1 class="title"<?php print $title_attributes; ?>>   
                     <?php print $url ? l($title, $url['path'], $url['options']) : check_plain($title); ?>
-                  <!--<a href="<?php // print $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/'.$variables['url']['path'];    ?>"> <?php // print_r($variables['url']['options']['entity']->title);    ?></a>-->
+                  <!--<a href="<?php // print $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/'.$variables['url']['path'];       ?>"> <?php // print_r($variables['url']['options']['entity']->title);       ?></a>-->
                 </h1>
-<!--            </li>
-            <li>-->
+                <!--            </li>
+                            <li>-->
                 <?php // print render($title_suffix); ?>
                 <div class="search-view-mode">
                     <?php
@@ -93,14 +93,29 @@
                 </div>
                 <div class="search-snippet-info">
                     <?php if ($snippet) : ?>
-                        <p class="search-snippet"><?php // print $snippet;    ?></p>
+                        <p class="search-snippet"><?php // print $snippet;       ?></p>
                     <?php endif; ?>
                     <?php if ($info) : ?>
                         <p class="search-info"><?php print $info; ?>
                             <!--<span class="fa fa-heart-o"> </span>--> 
-                            <span class="fa fa-calendar-o"> </span>
-                           <!-- <span class="purchase-btn"> Purchase </span>-->
-                           <input type="button" class="purchase-btn" value="Purchase" style="background: #b59d70 !important;"/>
+                            <!--<span class="fa fa-calendar-o"> </span>-->
+                            <span class="views-field-php"><a title="" href="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/' . $variables['url']['path'] ?>" class="addthisevent">Add to Calendar
+                                    <span style="display: none;" class="_start"><?php echo date('d-m-Y h:i:s', $variables['item']->changed); ?></span>
+                                    <span style="display: none;" class="_start"><?php echo date('d-m-Y h:i:s', $variables['item']->changed); ?></span>
+                                    <span style="display: none;" class="_zonecode"><?php echo $variables['item']->title; ?></span>
+                                    <span style="display: none;" class="_summary"><?php echo $variables['item']->title; ?></span>
+                                    <span style="display: none;" class="_description"><?php echo $variables['item']->title; ?></span>
+                                    <span style="display: none;" class="_organizer"><?php echo $variables['item']->name; ?></span>
+                                    <span style="display: none;" class="_organizer_email">office@reasonat.com</span>
+                                    <span style="display: none;" class="_all_day_event">false</span>
+                                    <span style="display: none;" class="_date_format">DD/MM/YYYY</span><span class="addthisevent_icon"></span><span class="addthisevent_dropdown" id="atedrop2-drop"><span class="ateappleical" data-ref="2" onclick="addthisevent.click(this, 'appleical', '&amp;dstart=24-05-2016%2021%3A00%3A00&amp;dstart=24-05-2016%2023%3A15%3A00&amp;dzone=40&amp;dsum=TestEvent&amp;ddesc=%26lt%3Bp%26gt%3BThis%20is%20test%20event%26nbsp%3B%26lt%3B%2Fp%26gt%3B&amp;dorga=admin&amp;dorgaem=office%40reasonat.com&amp;dallday=false&amp;dateformat=DD%2FMM%2FYYYY');">Apple Calendar</span><span class="ategoogle" data-ref="2" onclick="addthisevent.click(this, 'google', '&amp;dstart=24-05-2016%2021%3A00%3A00&amp;dstart=24-05-2016%2023%3A15%3A00&amp;dzone=40&amp;dsum=TestEvent&amp;ddesc=%26lt%3Bp%26gt%3BThis%20is%20test%20event%26nbsp%3B%26lt%3B%2Fp%26gt%3B&amp;dorga=admin&amp;dorgaem=office%40reasonat.com&amp;dallday=false&amp;dateformat=DD%2FMM%2FYYYY');">Google <em>(online)</em></span><span class="ateoutlook" data-ref="2" onclick="addthisevent.click(this, 'outlook', '&amp;dstart=24-05-2016%2021%3A00%3A00&amp;dstart=24-05-2016%2023%3A15%3A00&amp;dzone=40&amp;dsum=TestEvent&amp;ddesc=%26lt%3Bp%26gt%3BThis%20is%20test%20event%26nbsp%3B%26lt%3B%2Fp%26gt%3B&amp;dorga=admin&amp;dorgaem=office%40reasonat.com&amp;dallday=false&amp;dateformat=DD%2FMM%2FYYYY');">Outlook</span><span class="ateoutlookcom" data-ref="2" onclick="addthisevent.click(this, 'outlookcom', '&amp;dstart=24-05-2016%2021%3A00%3A00&amp;dstart=24-05-2016%2023%3A15%3A00&amp;dzone=40&amp;dsum=TestEvent&amp;ddesc=%26lt%3Bp%26gt%3BThis%20is%20test%20event%26nbsp%3B%26lt%3B%2Fp%26gt%3B&amp;dorga=admin&amp;dorgaem=office%40reasonat.com&amp;dallday=false&amp;dateformat=DD%2FMM%2FYYYY');">Outlook.com <em>(online)</em></span><span class="ateyahoo" data-ref="2" onclick="addthisevent.click(this, 'yahoo', '&amp;dstart=24-05-2016%2021%3A00%3A00&amp;dstart=24-05-2016%2023%3A15%3A00&amp;dzone=40&amp;dsum=TestEvent&amp;ddesc=%26lt%3Bp%26gt%3BThis%20is%20test%20event%26nbsp%3B%26lt%3B%2Fp%26gt%3B&amp;dorga=admin&amp;dorgaem=office%40reasonat.com&amp;dallday=false&amp;dateformat=DD%2FMM%2FYYYY');">Yahoo <em>(online)</em></span><em class="copyx"><em class="brx"></em><em class="frs" data-ref="2" onclick="addthisevent.click(this, 'home');">AddEvent.com</em></em></span></a>
+                            </span>
+                            <?php if ($variables['item']->field_toptix_purchase['und'][0]['value'] != "") { ?>                             <!--<span class="purchase-btn"> Purchase </span>-->
+                                <button class="toptix-purchase" data-url="http://199.203.164.53/loader.aspx/?target=hall.aspx?event=<?php echo $variables['item']->field_toptix_purchase['und'][0]['value'] ?>">Purchase</button>
+                                    <!--<input type="button" class="purchase-btn" value="Purchase" style="background: #b59d70 !important;"/>-->
+                            <?php } else { ?> 
+                                <button class="toptix-purchase" data-url="http://199.203.164.53/loader.aspx/?target=hall.aspx">Purchase</button>
+                            <?php } ?>
                         </p>
                     <?php endif; ?>
                 </div>
@@ -112,7 +127,7 @@
 
     </li>
     <?php
-}else
+} else
 if ($variables['item']->type == 'cm_event') {
     ?>
     <li class="<?php print $classes; ?> cm_event"<?php print $attributes; ?>>
@@ -121,7 +136,7 @@ if ($variables['item']->type == 'cm_event') {
             <li>
                 <?php
 //             echo '<pre>';
-//               print_r($variables['item']->field_cm_event_images['und'][0]['uri']);die;
+//               print_r(date('d-m-Y h:i:s',$variables['item']->field_cm_event_time['und'][0]['value']));die;
                 if (isset($variables['item']->field_cm_event_images['und'][0]['uri'])) {
                     if ($variables['item']->field_cm_event_images['und'][0]['uri'] != "") {
                         $image_path = file_create_url($variables['item']->field_cm_event_images['und'][0]['uri']);
@@ -138,22 +153,38 @@ if ($variables['item']->type == 'cm_event') {
             <li>
                 <div class="search-snippet-info">
                     <?php if ($snippet) : ?>
-                        <p class="search-snippet"><?php // print $snippet;    ?></p>
+                        <p class="search-snippet"><?php // print $snippet;       ?></p>
                     <?php endif; ?>
                     <?php if ($info) : ?>
                         <p class="search-info"><?php print $info; ?>
                         <!--<span class="fa fa-heart-o"> </span> --> 
-                            <span class="fa fa-calendar-o"> </span>
-                           <!-- <span class="purchase-btn"> Purchase </span>-->
-                           <input type="button" class="purchase-btn" value="Purchase" style="background: #b59d70 !important;"/>
+                            <!--<span class="fa fa-calendar-o"> </span>-->
+                            <span class="views-field-php"><a title=""  href="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/' . $variables['url']['path'] ?>" class="addthisevent">Add to Calendar
+                                    <span style="display: none;" class="_start"><?php echo date('d-m-Y h:i:s', $variables['item']->field_cm_event_time['und'][0]['value']); ?></span>
+                                    <span style="display: none;" class="_start"><?php echo date('d-m-Y h:i:s', $variables['item']->field_cm_event_time['und'][0]['value2']); ?></span>
+                                    <span style="display: none;" class="_zonecode"><?php echo $variables['item']->title; ?></span>
+                                    <span style="display: none;" class="_summary"><?php echo $variables['item']->title; ?></span>
+                                    <span style="display: none;" class="_description"><?php echo $variables['item']->title; ?></span>
+                                    <span style="display: none;" class="_organizer"><?php echo $variables['item']->name; ?></span>
+                                    <span style="display: none;" class="_organizer_email">office@reasonat.com</span>
+                                    <span style="display: none;" class="_all_day_event">false</span>
+                                    <span style="display: none;" class="_date_format">DD/MM/YYYY</span><span class="addthisevent_icon"></span><span class="addthisevent_dropdown" id="atedrop2-drop"><span class="ateappleical" data-ref="2" onclick="addthisevent.click(this, 'appleical', '&amp;dstart=24-05-2016%2021%3A00%3A00&amp;dstart=24-05-2016%2023%3A15%3A00&amp;dzone=40&amp;dsum=TestEvent&amp;ddesc=%26lt%3Bp%26gt%3BThis%20is%20test%20event%26nbsp%3B%26lt%3B%2Fp%26gt%3B&amp;dorga=admin&amp;dorgaem=office%40reasonat.com&amp;dallday=false&amp;dateformat=DD%2FMM%2FYYYY');">Apple Calendar</span><span class="ategoogle" data-ref="2" onclick="addthisevent.click(this, 'google', '&amp;dstart=24-05-2016%2021%3A00%3A00&amp;dstart=24-05-2016%2023%3A15%3A00&amp;dzone=40&amp;dsum=TestEvent&amp;ddesc=%26lt%3Bp%26gt%3BThis%20is%20test%20event%26nbsp%3B%26lt%3B%2Fp%26gt%3B&amp;dorga=admin&amp;dorgaem=office%40reasonat.com&amp;dallday=false&amp;dateformat=DD%2FMM%2FYYYY');">Google <em>(online)</em></span><span class="ateoutlook" data-ref="2" onclick="addthisevent.click(this, 'outlook', '&amp;dstart=24-05-2016%2021%3A00%3A00&amp;dstart=24-05-2016%2023%3A15%3A00&amp;dzone=40&amp;dsum=TestEvent&amp;ddesc=%26lt%3Bp%26gt%3BThis%20is%20test%20event%26nbsp%3B%26lt%3B%2Fp%26gt%3B&amp;dorga=admin&amp;dorgaem=office%40reasonat.com&amp;dallday=false&amp;dateformat=DD%2FMM%2FYYYY');">Outlook</span><span class="ateoutlookcom" data-ref="2" onclick="addthisevent.click(this, 'outlookcom', '&amp;dstart=24-05-2016%2021%3A00%3A00&amp;dstart=24-05-2016%2023%3A15%3A00&amp;dzone=40&amp;dsum=TestEvent&amp;ddesc=%26lt%3Bp%26gt%3BThis%20is%20test%20event%26nbsp%3B%26lt%3B%2Fp%26gt%3B&amp;dorga=admin&amp;dorgaem=office%40reasonat.com&amp;dallday=false&amp;dateformat=DD%2FMM%2FYYYY');">Outlook.com <em>(online)</em></span><span class="ateyahoo" data-ref="2" onclick="addthisevent.click(this, 'yahoo', '&amp;dstart=24-05-2016%2021%3A00%3A00&amp;dstart=24-05-2016%2023%3A15%3A00&amp;dzone=40&amp;dsum=TestEvent&amp;ddesc=%26lt%3Bp%26gt%3BThis%20is%20test%20event%26nbsp%3B%26lt%3B%2Fp%26gt%3B&amp;dorga=admin&amp;dorgaem=office%40reasonat.com&amp;dallday=false&amp;dateformat=DD%2FMM%2FYYYY');">Yahoo <em>(online)</em></span><em class="copyx"><em class="brx"></em><em class="frs" data-ref="2" onclick="addthisevent.click(this, 'home');">AddEvent.com</em></em></span></a>
+                            </span>
+                          <!--<input type="button" class="purchase-btn" value="Purchase" style="background: #b59d70 !important;"/>-->
+                            <?php if ($variables['item']->field_toptix_purchase['und'][0]['value'] != "") { ?>                             <!--<span class="purchase-btn"> Purchase </span>-->
+                                <button class="toptix-purchase" data-url="http://199.203.164.53/loader.aspx/?target=hall.aspx?event=<?php echo $variables['item']->field_toptix_purchase['und'][0]['value'] ?>">Purchase</button>
+                                <!--<input type="button" class="purchase-btn" value="Purchase" style="background: #b59d70 !important;"/>-->
+                            <?php } else { ?> 
+                                <button class="toptix-purchase" data-url="http://199.203.164.53/loader.aspx/?target=hall.aspx">Purchase</button>
+                            <?php } ?>
                         </p>
                     <?php endif; ?>
                 </div>
-                
+
                 <?php // print render($title_prefix); ?>
                 <h1 class="title"<?php print $title_attributes; ?>>   
                     <?php print $url ? l($title, $url['path'], $url['options']) : check_plain($title); ?>
-                  <!--<a href="<?php // print $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/'.$variables['url']['path'];   ?>"> <?php // print_r($variables['url']['options']['entity']->title);   ?></a>-->
+                  <!--<a href="<?php // print $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/'.$variables['url']['path'];      ?>"> <?php // print_r($variables['url']['options']['entity']->title);      ?></a>-->
                 </h1>
                 <div class="search-view-mode">
                     <?php
@@ -164,9 +195,9 @@ if ($variables['item']->type == 'cm_event') {
                     <?php // print($variables['result']['node']->rendered); ?>
                 </div>
             </li>
-<!--            <li>
-                <?php // print render($title_suffix); ?>
-            </li>-->
+            <!--            <li>
+            <?php // print render($title_suffix); ?>
+                        </li>-->
 
         </ul>
     </li>
@@ -198,7 +229,7 @@ if ($variables['item']->type == 'cm_person') {
                 <?php // print render($title_prefix);  ?>
                 <h1 class="title"<?php print $title_attributes; ?>>   
                     <?php print $url ? l($title, $url['path'], $url['options']) : check_plain($title); ?>
-                  <!--<a href="<?php // print $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/'.$variables['url']['path'];   ?>"> <?php // print_r($variables['url']['options']['entity']->title);   ?></a>-->
+                  <!--<a href="<?php // print $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/'.$variables['url']['path'];      ?>"> <?php // print_r($variables['url']['options']['entity']->title);      ?></a>-->
                 </h1>
             </li>
             <li>

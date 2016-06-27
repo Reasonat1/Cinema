@@ -21,6 +21,7 @@
             $('.modal-body').html('<img src="http://www.volantski.com/season1516/images/loadingIMG.gif" class="popup-loader">');            
             $('.modal-body').load(path+" #main .region-content");
         });
+
       
         //$screenheight = $(windows).height()-55;
         //$(".panels-flexible-row-node_page-3 .panels-flexible-region-inside-last").height($screenheight);

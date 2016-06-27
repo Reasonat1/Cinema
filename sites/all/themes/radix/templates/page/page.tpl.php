@@ -69,7 +69,7 @@
                     </ul>
                     <ul class="col-md-3 header-right">
                         <li>
-                            <?php print render($page['sidebar_first']); ?>
+                            <?php // print render($page['sidebar_first']); ?>
                         </li>
 
                     <?php endif; ?>
