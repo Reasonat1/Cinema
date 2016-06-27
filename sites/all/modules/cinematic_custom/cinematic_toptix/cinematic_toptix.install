@@ -52,5 +52,21 @@ function cinematic_toptix_schema() {
     ),
   );
 
+  $schema['toptix_events_data'] = array(
+    'fields' => array(
+      'local_id' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'data' => array(
+        'type' => 'text',
+        'size' => 'big',
+      ),
+    ),
+    'primary key' => array('local_id'),
+  );
+
+
   return $schema;
 }

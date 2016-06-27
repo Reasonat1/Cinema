@@ -17,14 +17,15 @@ toptix_dialog.setup = function(anchor) {
   var url = Drupal.settings.basePath + 'content/events-browser';
   this.anchor = anchor;
   var self = this;
-  jQuery.get(url, function (data) {
-    self.show_results(data);
+  jQuery.get(url, function (respone) {
+    self.show_results(respone);
     jQuery(self.anchor).removeClass('throbbing');
   });
 };
 
-toptix_dialog.show_results = function(data) {
-  var results = jQuery(data);
+toptix_dialog.show_results = function(respone) {
+  var results = jQuery(respone.results);
+  this.data = respone.data;
   if (this.win) {
     this.win.dialog('destroy');
   }
