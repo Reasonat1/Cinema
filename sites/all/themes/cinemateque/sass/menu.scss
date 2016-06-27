@@ -1,0 +1,223 @@
+.hamburger {
+	.modal-dialog {
+		width: 1300px;
+	}
+	.modal-content{
+		padding: 50px 0 0;
+		background-color: $mine_shaft;
+		.close{
+			position: absolute;
+			top: 10px;
+			left: 10px;
+		}
+	}
+	.modal-body {
+		padding: 0;
+		margin: 0;
+		.close {
+			float: left;
+			padding: 22px;
+		}
+		.pane-bean-infomation-block-view .handle {
+			display: none;
+		}
+		.view-id-bean_infomation_block_view .form-submit {
+			display: none;
+		}
+	}
+	.panels-flexible-region.popup.region {
+		width: 100%;
+	}
+}
+
+#hamburger-menu{
+	.col-md-12{
+		padding: 0;
+	}
+	.pane-my-backend-festival-menu-block {
+		width: 22%;
+		float: left;
+		margin: 10px 4% 0 85px;
+		box-sizing: border-box;
+		.pane-title{
+			color: #fff;
+			font-size: 20px;
+			margin: 13px 0 15px;
+		}
+		.col-md-3 {
+			padding-left: 50px;
+			padding-right: 50px;
+			width: 25%;
+		}
+		.menu.nav li {
+			background-image: url("../images/arrow-right.png");
+			background-position: right center;
+			background-repeat: no-repeat;
+			background-size: 20px auto;
+			border-bottom: 2px solid $color_chicago_approx;
+			line-height: 40px;
+			&.expanded {
+				display: none;
+			}
+			a {
+				background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+				color: $white;
+				font-size: 14px;
+				padding: 10px 0;
+				&:hover {
+					background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+				}
+				&:active {
+					background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+				}
+			}
+		}
+		.menu.nav li.last{
+			border-bottom: none;
+		}
+		.pane-content > h2 {
+			font-size: 16px;
+			font-weight: bold;
+		}
+	}
+	.pane-menu-menu-site-main-menu {
+		width: 74%;
+		float: right;
+		margin: 0 70px 0 0;
+		.menu-link-demo-1, .menu-link-demo-2, .menu-link-demo-3{
+			> a{
+				font-size: 20px;
+				font-weight: bold;
+			}
+		}
+		h2 {
+			display: none;
+		}
+		.menu.nav li.expanded {
+			float: left;
+			padding: 10px 15px 0;
+			width: 33.3%;
+			box-sizing: border-box;
+			a {
+				color: $white;
+				padding: 10px 0;
+				&:hover {
+					background: none;
+				}
+				&:active {
+					background: none;
+				}
+			}
+			li {
+				border-bottom: 2px solid $color_chicago_approx;
+				line-height: 40px;
+				background-image: url("../images/arrow-right.png");
+				background-position: right center;
+				background-repeat: no-repeat;
+				background-size: 20px auto;
+				&.last {
+					border-bottom: none;
+				}
+				a {
+					background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+					font-size: 14px;
+					color: $white;
+					&:hover {
+						background: none;
+					}
+					&:active {
+						background: none;
+					}
+				}
+			}
+		}
+	}
+	.pane-information-info-view-block{
+		padding-left: 82px;
+		padding-right: 82px;
+		.bean-block{
+			padding: 0 50px 0 0;
+			text-align: left;
+			position: relative;
+			.bean-icon{
+				font-size: 20px;
+				width: auto;
+				position: absolute;
+				left: -30px;
+			}
+			.bean-title{
+				font-weight: bold;
+				font-size: 17px;
+				font-size: 1.25rem;
+    			line-height: 1.2;
+    			text-align: left;
+			}
+			.bean-body p{
+    			line-height: 1.2;
+    			text-align: left;
+			}
+		}
+	}
+	.pane-hamburgermenufooter{
+		clear: both;
+		background-color: #262626;
+		padding: 0 70px 50px;
+		.pane-title{
+			color: #fff;
+		}
+		input{
+			background-color: #000;
+			border: none;
+			padding: 0 10px;
+			box-sizing: border-box;
+			height: 30px;
+		}
+		label{
+			color: #fff;
+		}
+		.panel-panel{
+			width: 50%;
+			float: left;
+		}
+		.form-actions{
+			margin: 0;
+			input{
+				margin: 0;
+				background-color: #fff;
+				color: $main_color;
+				border-radius: 0 15px 15px 0;
+				padding: 0 15px 0 10px;
+				&:hover{
+					background-color: #fff!important;
+					color: $main_color!important;
+				}
+			}
+		}
+		.webform-component{
+			margin-right: 8px;
+		}
+		.webform-component--approve-recieving-e-mail{
+			position: absolute;
+			bottom: 0;
+			label{
+				top: 20px;
+				position: relative;
+			}
+			input{
+				height: auto;
+			}
+		}
+		.panel-panel:nth-child(2){
+			span{
+				display: inline-block;
+				float: left;
+			}
+		}
+		.pane-block-8{
+			margin-top: 46px;
+			i{
+				color: $main-color;
+			}
+		}
+	}
+}

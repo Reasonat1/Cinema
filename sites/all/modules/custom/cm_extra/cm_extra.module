@@ -160,7 +160,24 @@ function cm_extra_form_alter(&$form, &$form_state, $form_id) {
 	}
 }
 
-
+function cm_extra_i18n_sync_translation($entity_type, $translation, $translation_language, $source, $source_language, $field_names) {
+	dpm(get_defined_vars());
+	/*
+  foreach ($field_names as $field_name) {
+    $info = field_info_field($field_name);
+    if ($info['type'] == 'entityreference') {
+      $items = field_get_items($entity_type, $source, $field_name);
+      foreach ($items as $delta => $item) {
+        $translations = translation_node_get_translations($item['target_id']);
+        if (isset($translations[$translation_language])) {
+          list($id, $vid, $bundle) = entity_extract_ids($entity_type, (object) $translations[$translation_language]);
+          $translation->{$field_name}['und'][$delta]['target_id'] = $id;
+        }
+      }
+    }
+  }*/
+}
+  
 /**
  * Submit handler that prepares a view object to send to the draggable views submit handler.
  *
