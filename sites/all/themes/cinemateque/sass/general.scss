@@ -1083,3 +1083,16 @@ table{
 		padding-left: 0!important;
 	}
 }
+
+#page-header{
+	.tabs{
+		position: fixed;
+	    right: 0;
+	    margin-top: 40px;
+	    z-index: 300;
+	   	background-color: rgba(0,0,0,0.7);
+	    li{
+	    	clear: both;
+	    }
+	}
+}

@@ -64,81 +64,8 @@ body {
 		}
 	}
 }
-.pane-my-backend-festival-menu-block {
-	.col-md-3 {
-		padding-left: 50px;
-		padding-right: 50px;
-		width: 25%;
-	}
-	.menu.nav li {
-		background-image: url("../images/arrow-right.png;");
-		background-position: right center;
-		background-repeat: no-repeat;
-		background-size: 20px auto;
-		border-bottom: 2px solid $color_chicago_approx;
-		line-height: 40px;
-		&.expanded {
-			display: none;
-		}
-		a {
-			background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-			color: $white;
-			font-size: 14px;
-			&:hover {
-				background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-			}
-			&:active {
-				background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-			}
-		}
-	}
-	.pane-content > h2 {
-		font-size: 16px;
-		font-weight: bold;
-	}
-}
-.pane-menu-menu-site-main-menu {
-	h2 {
-		display: none;
-	}
-	.menu.nav li.expanded {
-		float: left;
-		padding: 10px 15px 0;
-		width: 33.3%;
-		a {
-			color: $white;
-			font-weight: bold;
-			&:hover {
-				background: none;
-			}
-			&:active {
-				background: none;
-			}
-		}
-		li {
-			border-bottom: 2px solid $color_chicago_approx;
-			line-height: 40px;
-			background-image: url("../images/arrow-right.png");
-			background-position: right center;
-			background-repeat: no-repeat;
-			background-size: 20px auto;
-			&.last {
-				border-bottom: none;
-			}
-			a {
-				background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-				font-size: 14px;
-				color: $white;
-				&:hover {
-					background: none;
-				}
-				&:active {
-					background: none;
-				}
-			}
-		}
-	}
-}
+
+
 .col-md-3 {
 	&.sponser-pane {
 		float: right;
@@ -229,28 +156,7 @@ body {
 	border-bottom-left-radius: 15px !important;
 	border-top-left-radius: 15px !important;
 }
-.hamburger {
-	.modal-dialog {
-		width: 1200px;
-	}
-	.modal-body {
-		background: $mine_shaft none repeat scroll 0 0;
-		padding: 0;
-		.close {
-			float: left;
-			padding: 22px;
-		}
-		.pane-bean-infomation-block-view .handle {
-			display: none;
-		}
-		.view-id-bean_infomation_block_view .form-submit {
-			display: none;
-		}
-	}
-	.panels-flexible-region.popup.region {
-		width: 100%;
-	}
-}
+
 .footer {
 	.view-bean-infomation-block-view {
 		table {

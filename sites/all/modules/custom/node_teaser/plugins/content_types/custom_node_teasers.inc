@@ -266,12 +266,13 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             if(!$movie_image) {$html.= "<div class='event-image'>".l($image,"node/" . $val->nid,array('html'=> TRUE))."</div>"; }
             $html.= "<div class='event-date-black-white-background'>$black_content $white_content</div>";
             $html.= "<div class='event-flag'>$flag</div>";
-            $html.= "<div class='event-title'><span>".l($title,'node/'. $val->nid)."</span></div>";
+            $html.= "<div class='event-title'><h3>".l($title,'node/'. $val->nid)."</h3></div>";
             $html.= "<div class='event-time'><span class='time'>$time</span><span class='date'>$date</span><a href='$alias'><span class='ticket'>Ticket</span></a></div>";
             $html.= "<div class='movie_metainfo'><span>$movie_duration</span></div>";
             $html.= "<div class='event-summery'>$description</div>";
             $html.= "</div>";
             $no++;
+
         }
 
         $output.= "<div class='node-teaser wapper  $content_type'>";
@@ -399,12 +400,16 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             if(!$movie_image) {$html.= "<div class='movie-image'>".l($image,"node/" . $val->nid,array('html'=> TRUE))."</div>"; }
             $html.= "<div class='movie-date-black-white-background'>$black_content $white_content</div>";
             $html.= "<div class='movie-flag'>$flag</div>";
-            $html.= "<div class='movie-title'><span>".l($title,'node/'. $val->nid)."</span></div>";
+            $html.= "<div class='movie-title'><h3>".l($title,'node/'. $val->nid)."</h3></div>";
             $html.= "<div class='movie_play'><span>$play_icon</span></div>";
             $html.= "<div class='movie_metainfo'><span>$movie_duration</span></div>";
             $html.= "<div class='movie_summery'><span>$description</span></div>";
             $html.= "</div>";
             $no++;
+			if($upcomming_event) { //add markup of next 3 future events (missing)
+				//dpm(views_embed_view('event_ct_view','page_1') );
+				//$upcoming = views_embed_view('movie_top_pane_view','panel_pane_7',$conf['node_id']);
+			}			
         }
 
         $output.= "<div class='node-teaser wapper  $content_type'>";
@@ -530,7 +535,7 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             if(!$movie_image) {$html.= "<div class='moviegroup-image'>".l($image,"node/" . $val->nid,array('html'=> TRUE))."</div>"; }
             $html.= "<div class='movie-date-black-white-background'>$black_content $white_content</div>";
             $html.= "<div class='moviegroup-flag'>$flag</div>";
-            $html.= "<div class='moviegroup-title'><span>".l($title,'node/'. $val->nid)."</span></div>";
+            $html.= "<div class='moviegroup-title'><h3>".l($title,'node/'. $val->nid)."</h3></div>";
             $html.= "<div class='moviegroup_play'><span>$play_icon</span></div>";
             $html.= "<div class='moviegroup_metainfo'><span>$moviegroup_duration</span></div>";
             $html.= "<div class='moviegroup_summery'><span>$description</span></div>";
@@ -600,7 +605,7 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
 			
             $html.= "<div class='row-$row_class teaser-row'>";
             $html.= "<div class='person-image'>".l($image,'node/'.$val->nid,array('html' => TRUE))."</div>";
-            $html.= "<div class='person-title'><span class='person-name'>".l($title,'node/'.$val->nid)."</span><span>$job_title</span></div>";
+            $html.= "<div class='person-title'><h3 class='person-name'>".l($title,'node/'.$val->nid)."</h3><span>$job_title</span></div>";
             $html.= "<div class='person-description'>$description</div>";
             $html.= "</div>";
             $no++;
@@ -638,7 +643,7 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
 			$title = empty(trim($movie_title)) ? $val->title : $movie_title;
 			
             $html.= "<div class='row-$row_class teaser-row'>";
-            $html.= "<div class='webform-title'><a href='$alias'>".$title."</a></div>";
+            $html.= "<div class='webform-title'><h3><a href='$alias'>".$title."</a></h3></div>";
             $html.= "<div class='moviegroup_summery'>$description</div>";
             $html.= "</div>";
             $no++;
@@ -746,7 +751,7 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             $html.= "<div class='article-image'>".l($image,'node/'.$val->nid,array('html'=> TRUE))."</div>";
             $html.= "<div class='article-date-black-white-background'>$black_content $white_content</div>";
             $html.= "<div class='article-flag'>$flag</div>";
-            $html.= "<div class='article-title'><span>".l($title,'node/'.$val->nid)."</span></div>";
+            $html.= "<div class='article-title'><h3>".l($title,'node/'.$val->nid)."</h3></div>";
             $html.= "<div class='article-subtitle'><span>$subtitle</span></div>";
             $html.= "<div class='article-summery'><span>$description</span></div>";
             $html.= "</div>";
