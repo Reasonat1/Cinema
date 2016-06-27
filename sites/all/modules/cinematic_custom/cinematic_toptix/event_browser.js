@@ -77,6 +77,6 @@ function toptix_temp_update_date(id) {
   //var actual_date = new Date(data.ActualEventDate);
   var actual_date = data.ActualEventDate.split('T');
 
-  jQuery('input[name="' + date_name + '[date]"]').val(actual_date[0]);
-  jQuery('input[name="' + date_name + '[time]"]').val(actual_date[1]);
+  //jQuery('input[name="' + date_name + '[date]"]').val(actual_date[0]);
+  //jQuery('input[name="' + date_name + '[time]"]').val(actual_date[1]);
 }
