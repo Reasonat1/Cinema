@@ -17,14 +17,15 @@ toptix_dialog.setup = function(anchor) {
   var url = Drupal.settings.basePath + 'content/events-browser';
   this.anchor = anchor;
   var self = this;
-  jQuery.get(url, function (data) {
-    self.show_results(data);
+  jQuery.get(url, function (respone) {
+    self.show_results(respone);
     jQuery(self.anchor).removeClass('throbbing');
   });
 };
 
-toptix_dialog.show_results = function(data) {
-  var results = jQuery(data);
+toptix_dialog.show_results = function(respone) {
+  var results = jQuery(respone.results);
+  this.data = respone.data;
   if (this.win) {
     this.win.dialog('destroy');
   }
@@ -44,6 +45,8 @@ toptix_dialog.show_results = function(data) {
     var target = event.target;
     if (target.dataset.hasOwnProperty('id')) {
       self.hidden.val(target.dataset.id);
+      // better to dispatch event
+      toptix_temp_update_date(target.dataset.id);
       self.anchor.value = target.textContent;
       self.win.dialog('close');
     }
@@ -66,4 +69,14 @@ toptix_dialog.update_results = function() {
   jQuery.get(url, function (data) {
     self.show_results(data);
   });
+}
+
+function toptix_temp_update_date(id) {
+  var date_name = 'field_cm_event_time[und][0][value]';
+  var data = toptix_dialog.data[id];
+  //var actual_date = new Date(data.ActualEventDate);
+  var actual_date = data.ActualEventDate.split('T');
+
+  jQuery('input[name="' + date_name + '[date]"]').val(actual_date[0]);
+  jQuery('input[name="' + date_name + '[time]"]').val(actual_date[1]);
 }

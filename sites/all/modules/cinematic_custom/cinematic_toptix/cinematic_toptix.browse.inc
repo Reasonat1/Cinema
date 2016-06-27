@@ -6,11 +6,11 @@ define('TOPTIX_PAGER', 30);
 function cinematic_toptix_browse() {
   $page = isset($_GET['page']) ? $_GET['page'] : 0;
 
-  list($shows, $total) = cinematic_toptix_browse_query($page);
+  list($shows, $total, $data) = cinematic_toptix_browse_query($page);
 
   $filters = cinematic_toptix_browse_control($page, $total);
   $output = theme('cinematic_browser', array('shows' => $shows, 'filters' => $filters));
-  drupal_json_output($output);
+  drupal_json_output(array('results' => $output, 'data' => $data));
 }
 
 function cinematic_toptix_browse_control($page, $total) {
@@ -51,7 +51,7 @@ function cinematic_toptix_browse_query($page) {
   $query->addExpression('max(te.event_date)', 'max_date');
 
   $order = TOPTIX_TITLE_ORDER;
-  if ($_GET['date_range']) {
+  if (isset($_GET['date_range'])) {
     $date_range = $_GET['date_range'];
     $date_range = explode(':', $date_range);
     if ($date_range[0]) {
@@ -64,7 +64,7 @@ function cinematic_toptix_browse_query($page) {
     }
   }
 
-  if ($_GET['title']) {
+  if (isset($_GET['title'])) {
     $query->condition('ts.title', '%' . $_GET['title'] . '%', 'LIKE');
   }
 
@@ -86,12 +86,28 @@ function cinematic_toptix_browse_query($page) {
   $events = $query->execute()->fetchAll();
 
   $shows = array();
+  $event_ids = array();
   foreach ($events as $event) {
+    $event_ids[] = $event->local_id;
     if (!isset($shows[$event->show_id])) {
       $shows[$event->show_id] = array('title' => $event->title, 'events' => '');
     }
     $shows[$event->show_id]['events'] .= "<div data-id=\"$event->local_id\"> $event->local_id : $event->event_date </div>";
   }
-  return array($shows, $count);
+
+  if ($event_ids) {
+    $query = db_select('toptix_events_data', 'ted');
+    $query->condition('local_id', $event_ids, 'IN');
+    $query->fields('ted', array('local_id', 'data'));
+    $data = $query->execute()->fetchAllKeyed();
+    foreach ($data as $id => &$event_data) {
+      $event_data = unserialize($event_data);
+    }
+  }
+  else {
+    $data = array();
+  }
+
+  return array($shows, $count, $data);
 }
 

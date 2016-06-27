@@ -101,13 +101,12 @@ class TopTixReader extends XMLReader {
       case 'Event':
         $this->toptix->context = &$this->toptix->event;
         break;
-    }
-    switch ($this->name) {
       case 'Name':
       case 'ID':
       case 'EventId':
       case 'EventLocalId':
       case 'ActualEventDate':
+      default:
         $this->toptix->key = $this->name;
         break;
     }
@@ -167,6 +166,13 @@ class TopTixReader extends XMLReader {
             'external_id' => $event['EventId'],
             'show_id' => $show_id,
             'event_date' => $event['ActualEventDate'],
+          ))
+          ->execute();
+        db_merge('toptix_events_data')
+          ->key(array('local_id' => $event['EventLocalId']))
+          ->fields(array(
+            'local_id' => $event['EventLocalId'],
+            'data' => serialize($event),
           ))
           ->execute();
       }

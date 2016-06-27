@@ -49,7 +49,7 @@ function _cm_extra_icons() {
   $toptixblock = module_invoke('cinematic_toptix', 'block_view', 'cart');
   
   $block['subject'] = '';
-  $block['content']['#markup'] = '<li class="popup_search"><i class="fa fa-search" aria-hidden="true">[popup block module=search delta=form]</i></li>
+  $block['content']['#markup'] = '<li class="popup_search"><i class="fa fa-search" aria-hidden="true"></i></li>
 <li>'.l('<i class="fa fa-user" aria-hidden="true"></i>','user',array('html' => true)).'</li>
 <li><i class="fa fa-shopping-cart" aria-hidden="true">'.$toptixblock['content']['#markup'].'</i></li>
 <li id="da11y-plugin"></li>
@@ -160,7 +160,34 @@ function cm_extra_form_alter(&$form, &$form_state, $form_id) {
 	}
 }
 
-
+function cm_extra_i18n_sync_translation($entity_type, $translation, $translation_language, $source, $source_language, $field_names) {
+	//dpm(get_defined_vars());
+	if($entity_type != 'node') return;
+	
+	if(isset($source->field_lobby['und'][0]['target_id']) && !empty($source->field_lobby['und'][0]['target_id'])) {
+		$lobby_tid_org = $source->field_lobby['und'][0]['target_id'];
+		
+		if($lobby_tid_trans = i18n_taxonomy_translation_term_tid($lobby_tid_org,$translation_language)){
+			$translation->field_lobby['und'][0]['target_id'] = $lobby_tid_trans;
+			dpm(get_defined_vars());
+		}	
+	}
+	/*
+  foreach ($field_names as $field_name) {
+    $info = field_info_field($field_name);
+    if ($info['type'] == 'entityreference') {
+      $items = field_get_items($entity_type, $source, $field_name);
+      foreach ($items as $delta => $item) {
+        $translations = translation_node_get_translations($item['target_id']);
+        if (isset($translations[$translation_language])) {
+          list($id, $vid, $bundle) = entity_extract_ids($entity_type, (object) $translations[$translation_language]);
+          $translation->{$field_name}['und'][$delta]['target_id'] = $id;
+        }
+      }
+    }
+  }*/
+}
+  
 /**
  * Submit handler that prepares a view object to send to the draggable views submit handler.
  *

@@ -76,6 +76,7 @@ function cinematic_festival_taxonomy_term_insert($term) {
 }
 
 function cinematic_festival_taxonomy_term_update($term) {
+  if($term->vocabulary_machine_name != 'festival') {return;}
   if ($term->cinematic_menu == 'new') {
     $menu = array(
       'menu_name' => 'cinematic-festival-' . $term->tid,
