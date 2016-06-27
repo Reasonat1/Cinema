@@ -40,6 +40,7 @@ jQuery(document).ready(function () {
             },
             success: function (data) {
                 jQuery('.ajax-inner').replaceWith(data.output);
+                toptix_purchase_event();
             }
         });
     });
@@ -90,6 +91,7 @@ jQuery(document).ajaxStop(function () {
             leftpos = parseFloat(leftpos) - parseFloat(500.00);
         }
         jQuery('#calender-top-popup').css('top', toppos + 'px').css('left', leftpos + 'px');
+        toptix_purchase_event();
     });
     /**
      * calender scroll effect
