@@ -158,3 +158,76 @@ table td, table th {
   top: -4px;
   left: -0;
 }
+
+/* line 3, ../sass/menu-rtl.scss */
+.hamburger .modal-content .close {
+  left: auto;
+  right: 20px;
+}
+/* line 9, ../sass/menu-rtl.scss */
+.hamburger .modal-body .close {
+  float: right;
+}
+
+/* line 16, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-my-backend-festival-menu-block {
+  width: 27.5%;
+  padding: 10px 85px 0 15px;
+}
+/* line 19, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-my-backend-festival-menu-block .menu.nav li {
+  background-image: url("../images/arrow-left.png");
+  background-position: left center;
+}
+/* line 24, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-menu-menu-site-main-menu {
+  float: left;
+  padding: 0 0px 0 70px;
+}
+/* line 27, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded {
+  float: right;
+}
+/* line 29, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li {
+  background-image: url("../images/arrow-left.png");
+  background-position: left center;
+}
+/* line 36, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-information-info-view-block .bean-block {
+  text-align: right;
+}
+/* line 38, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-information-info-view-block .bean-block .bean-icon {
+  left: auto;
+  right: -30px;
+}
+/* line 42, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-information-info-view-block .bean-block .bean-title {
+  text-align: right;
+  padding-right: 0px;
+  padding-left: 50px;
+}
+/* line 47, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-information-info-view-block .bean-block .bean-body p {
+  text-align: right;
+  padding-right: 0px;
+  padding-left: 50px;
+}
+/* line 55, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-hamburgermenufooter .panel-panel {
+  float: right;
+}
+/* line 59, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-hamburgermenufooter .form-actions input {
+  padding: 0 10px 0 15px;
+}
+/* line 63, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-hamburgermenufooter .webform-component {
+  margin-right: 0px;
+  margin-left: 8px;
+}
+/* line 68, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-hamburgermenufooter .panel-panel:nth-child(2) span {
+  float: right;
+}

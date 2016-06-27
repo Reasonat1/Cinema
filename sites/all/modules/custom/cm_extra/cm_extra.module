@@ -161,7 +161,17 @@ function cm_extra_form_alter(&$form, &$form_state, $form_id) {
 }
 
 function cm_extra_i18n_sync_translation($entity_type, $translation, $translation_language, $source, $source_language, $field_names) {
-	dpm(get_defined_vars());
+	//dpm(get_defined_vars());
+	if($entity_type != 'node') return;
+	
+	if(isset($source->field_lobby['und'][0]['target_id']) && !empty($source->field_lobby['und'][0]['target_id'])) {
+		$lobby_tid_org = $source->field_lobby['und'][0]['target_id'];
+		
+		if($lobby_tid_trans = i18n_taxonomy_translation_term_tid($lobby_tid_org,$translation_language)){
+			$translation->field_lobby['und'][0]['target_id'] = $lobby_tid_trans;
+			dpm(get_defined_vars());
+		}	
+	}
 	/*
   foreach ($field_names as $field_name) {
     $info = field_info_field($field_name);

@@ -1,0 +1,73 @@
+.hamburger {
+	.modal-content{
+		.close{
+			left: auto;
+			right: 20px;
+		}
+	}
+	.modal-body {
+		.close {
+			float: right;
+		}
+	}
+}
+
+#hamburger-menu{
+	.pane-my-backend-festival-menu-block {
+		width: 27.5%;
+		padding: 10px 85px 0 15px;
+		.menu.nav li {
+			background-image: url("../images/arrow-left.png");
+			background-position: left center;
+		}
+	}
+	.pane-menu-menu-site-main-menu {
+		float: left;
+		padding: 0 0px 0 70px;
+		.menu.nav li.expanded {
+			float: right;
+			li {
+				background-image: url("../images/arrow-left.png");
+				background-position: left center;
+			}
+		}
+	}
+	.pane-information-info-view-block{
+		.bean-block{
+			text-align: right;
+			.bean-icon{
+				left: auto;
+				right: -30px;
+			}
+			.bean-title{
+    			text-align: right;
+    			padding-right: 0px;
+    			padding-left: 50px;
+			}
+			.bean-body p{
+    			text-align: right;
+    			padding-right: 0px;
+    			padding-left: 50px;
+			}
+		}
+	}
+	.pane-hamburgermenufooter{
+		.panel-panel{
+			float: right;
+		}
+		.form-actions{
+			input{
+				padding: 0 10px 0 15px;
+			}
+		}
+		.webform-component{
+			margin-right: 0px;
+			margin-left: 8px;
+		}
+		.panel-panel:nth-child(2){
+			span{
+				float: right;
+			}
+		}
+	}
+}
