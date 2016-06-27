@@ -635,9 +635,10 @@ function complex_calender_view_block_content(){
       $result =  db_query("SELECT  flagging_node.uid AS flagged_user,n.nid AS nid, n.title, n.created, event_subtitle.field_cm_event_subtitle_value AS event_subtitle,
               event_time.field_cm_event_time_value AS event_start_time, event_time.field_cm_event_time_value2 AS event_end_time, event_duration.field_cm_event_duration_interval AS event_duration,
               event_internal_id.field_cm_event_internal_id_value AS event_internal_id, event_hall.field_cm_event_hall_target_id AS hall_tid, event_body.field_cm_event_body_value AS event_body,
-              toptix_purchase.field_toptix_purchase_value As toptix_purchases
+              toptix_purchase.field_toptix_purchase_value As toptix_purchases, short_title.field_cm_event_short_title_value As short_title
               FROM node AS n 
               LEFT JOIN flagging As flagging_node ON n.nid = flagging_node.entity_id AND flagging_node.fid = '1'
+              LEFT JOIN field_data_field_cm_event_short_title AS short_title ON n.nid = short_title.entity_id
               LEFT JOIN field_data_field_cm_event_subtitle AS event_subtitle ON n.nid = event_subtitle.entity_id
               LEFT JOIN field_data_field_cm_event_time  AS event_time ON n.nid = event_time.entity_id
               LEFT JOIN field_data_field_cm_event_duration  AS event_duration  ON n.nid = event_duration.entity_id
@@ -760,12 +761,17 @@ function complex_calender_view_block_content(){
                             $the_field = cinematic_toptix_field_formatter_view('node', $node, 'field_toptix_purchase', '', 'en', $items, array('type' => 'toptix_purchase'));
                            $toptix_purchases = drupal_render($the_field);
                     }
+                   if(!empty($val->short_title)){
+                        $title = $val->short_title;
+                    }else{
+                        $title = $val->title;
+                    }
                     
                     $calender[$val->hall_tid] = "<div class='calender-row custom-row'>
                                                    <div class = 'calender-row inner' style='height:".$total_lenght."px;position: absolute;min-height:150px;margin-top:".$event_margin."px;'>
                                                         $flag
                                                         <div class='time'><span class='bold'>$start_time</span> $minutes</div>
-                                                        <div class='title'><span class='bold'>$val->title</span> </div>
+                                                        <div class='title'><span class='bold'>$title</span> </div>
                                                         <div class='subtitle'><span>$val->event_subtitle</span> </div>
                                                         <div class='internal-id'><span>$event_interanl_id</span> </div>
                                                         <div class='tickets'>$toptix_purchases</div>
@@ -775,7 +781,7 @@ function complex_calender_view_block_content(){
                                                   <div class='calender-popup'>
                                                   <a href='javascript:void(0)' onclick = 'closed();'><img class='close-calender-popup' src='sites/all/themes/cinemateque/images/close.png'/></a>
                                                        <div class = 'calender-row inner'>
-                                                       <div class='title'><span class='bold'>$val->title</span> </div>
+                                                       <div class='title'><span class='bold'>$title</span> </div>
                                                        <div class='body'>$string </div>
                                                        <a href='$base_url/$alias' class='read-more'>To event page  > </a>
                                                        <div class='tickets'><span>$short_day</span><span>$short_date</span><span>$start_time</span><span>$term->name</span>$toptix_purchases</div>
@@ -899,9 +905,10 @@ function ajax_complex_calender_filter(){
       $result =  db_query("SELECT  flagging_node.uid AS flagged_user,n.nid AS nid, n.title, n.created, event_subtitle.field_cm_event_subtitle_value AS event_subtitle,
               event_time.field_cm_event_time_value AS event_start_time, event_time.field_cm_event_time_value2 AS event_end_time, event_duration.field_cm_event_duration_interval AS event_duration,
               event_internal_id.field_cm_event_internal_id_value AS event_internal_id, event_hall.field_cm_event_hall_target_id AS hall_tid, event_body.field_cm_event_body_value AS event_body,
-              toptix_purchase.field_toptix_purchase_value As toptix_purchases
+              toptix_purchase.field_toptix_purchase_value As toptix_purchases, short_title.field_cm_event_short_title_value As short_title
               FROM node AS n 
               LEFT JOIN flagging As flagging_node ON n.nid = flagging_node.entity_id AND flagging_node.fid = '1'
+              LEFT JOIN field_data_field_cm_event_short_title AS short_title ON n.nid = short_title.entity_id
               LEFT JOIN field_data_field_cm_event_subtitle AS event_subtitle ON n.nid = event_subtitle.entity_id
               LEFT JOIN field_data_field_cm_event_time  AS event_time ON n.nid = event_time.entity_id
               LEFT JOIN field_data_field_cm_event_duration  AS event_duration  ON n.nid = event_duration.entity_id
@@ -1012,12 +1019,17 @@ function ajax_complex_calender_filter(){
                             $items = isset($node->field_toptix_purchase['und']) ? $node->field_toptix_purchase['und'] : array();
                             $the_field = cinematic_toptix_field_formatter_view('node', $node, 'field_toptix_purchase', '', 'en', $items, array('type' => 'toptix_purchase'));
                            $toptix_purchases = drupal_render($the_field);
-                    }                    
+                    }   
+                    if(!empty($val->short_title)){
+                        $title = $val->short_title;
+                    }else{
+                        $title = $val->title;
+                    }                        
                     $calender[$val->hall_tid] = "<div class='calender-row custom-row'>
                                                    <div class = 'calender-row inner' style='height:".$total_lenght."px;position: absolute;min-height:150px;margin-top:".$event_margin."px;'>
                                                         $flag
                                                         <div class='time'><span class='bold'>$start_time</span> $minutes</div>
-                                                        <div class='title'><span class='bold'>$val->title</span> </div>
+                                                        <div class='title'><span class='bold'>$title</span> </div>
                                                         <div class='subtitle'><span>$val->event_subtitle</span> </div>
                                                         <div class='internal-id'><span>$event_interanl_id</span> </div>
                                                         <div class='tickets'>$toptix_purchases</div>
@@ -1027,7 +1039,7 @@ function ajax_complex_calender_filter(){
                                                   <div class='calender-popup'>
                                                   <a href='javascript:void(0)' onclick = 'closed();'><img class='close-calender-popup' src='sites/all/themes/cinemateque/images/close.png'/></a>
                                                        <div class = 'calender-row inner'>
-                                                       <div class='title'><span class='bold'>$val->title</span> </div>
+                                                       <div class='title'><span class='bold'>$title</span> </div>
                                                        <div class='body'>$string </div>
                                                        <a href='$base_url/$alias' class='read-more'>To event page  > </a>
                                                        <div class='tickets'><span>$short_day</span><span>$short_date</span><span>$start_time</span><span>$term->name</span>$toptix_purchases</div>
@@ -1082,9 +1094,11 @@ function ajax_complex_calender_mobile_filter(){
     }
       $result =  db_query("SELECT  flagging_node.uid AS flagged_user,n.nid AS nid, n.title, n.created, event_subtitle.field_cm_event_subtitle_value AS event_subtitle,
               event_time.field_cm_event_time_value AS event_start_time, event_time.field_cm_event_time_value2 AS event_end_time, event_duration.field_cm_event_duration_interval AS event_duration,
-              event_internal_id.field_cm_event_internal_id_value AS event_internal_id, event_hall.field_cm_event_hall_target_id AS hall_tid, event_body.field_cm_event_body_value AS event_body
+              event_internal_id.field_cm_event_internal_id_value AS event_internal_id, event_hall.field_cm_event_hall_target_id AS hall_tid, event_body.field_cm_event_body_value AS event_body,
+              short_title.field_cm_event_short_title_value As short_title
               FROM node AS n 
               LEFT JOIN flagging As flagging_node ON n.nid = flagging_node.entity_id AND flagging_node.fid = '1'
+              LEFT JOIN field_data_field_cm_event_short_title AS short_title ON n.nid = short_title.entity_id
               LEFT JOIN field_data_field_cm_event_subtitle AS event_subtitle ON n.nid = event_subtitle.entity_id
               LEFT JOIN field_data_field_cm_event_time  AS event_time ON n.nid = event_time.entity_id
               LEFT JOIN field_data_field_cm_event_duration  AS event_duration  ON n.nid = event_duration.entity_id
@@ -1139,9 +1153,14 @@ function ajax_complex_calender_mobile_filter(){
             }else{
                 $minutes ='';
             }
+            if(!empty($val->short_title)){
+                $title = $val->short_title;
+            }else{
+                $title = $val->title;
+            }              
             $calender[$val->hall_tid][] = "<div class='mobile-calender-row mobile-custom-row'>
                                                 <div class='mobile-bold-time'>$start_time_key</div>
-                                                <div class='mobile-event-title'>$val->title</div>
+                                                <div class='mobile-event-title'>$title</div>
                                                 <div class='mobile-event-tickets'><a href='$base_url/$alias'>Tickets</a></div>
                                      </div>";
            
