@@ -167,7 +167,7 @@ function cinematic_toptix_field_formatter_view(
 
   foreach ($items as $delta => $item) {
     $event_id = $item['value'];
-    $url = 'http://' . TOPTIX_HOST . '/loader.aspx/?target=hall.aspx?event=' . $event_id . '?culture=en-US';
+    $url = 'http://' . TOPTIX_HOST . '/loader.aspx/?target=hall.aspx&event=' . $event_id . '&culture=en-US';
     $output = '<button class="toptix-purchase" data-url="' . $url . '">' . t('Purchase') . '</button>';
 
     $element[$delta] = array(
