@@ -25,15 +25,17 @@
         //$screenheight = $(windows).height()-55;
         //$(".panels-flexible-row-node_page-3 .panels-flexible-region-inside-last").height($screenheight);
       /**
-        * news letter check box disabled
+        * news letter check box disabled and already check
         */
-        jQuery('.webform-client-form .webform-component--approve-recieving-e-mail .form-checkbox').attr('disabled',true);
+         jQuery('.webform-client-form .webform-component--approve-recieving-e-mail .form-checkbox').attr('disabled',true);
+         jQuery('.webform-client-form .webform-component--approve-recieving-e-mail .form-checkbox').prop('checked', true);
      });
     /**
      * Trigger event on ajax complete
      */
      jQuery(document).ajaxComplete(function () {
-          jQuery('.webform-client-form .webform-component--approve-recieving-e-mail .form-checkbox').attr('disabled',true);
+           jQuery('.webform-client-form .webform-component--approve-recieving-e-mail .form-checkbox').attr('disabled',true);
+           jQuery('.webform-client-form .webform-component--approve-recieving-e-mail .form-checkbox').prop('checked', true);
     });
 
 })(jQuery);

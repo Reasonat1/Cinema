@@ -3252,11 +3252,6 @@ function webform_client_form_submit($form, &$form_state) {
 /**
  * user must be login and not submit more than one form
  */
-  $check = isset($form_state['input']['submitted']['approve_recieving_e_mail'][1]) ? $form_state['input']['submitted']['approve_recieving_e_mail'][1] : 0;
-  if($check == '0'){
-      drupal_set_message('Please check the "I approve recieving E-mail updates from Cinematheque Jerusalem"','error');
-      return;
-  } 
   if(!empty($user) && $user->uid != '0'){
     $result = db_query("SELECT `sid` FROM `webform_submissions` WHERE `uid` = '$user->uid'")->fetchField();
     if($result != ''){
