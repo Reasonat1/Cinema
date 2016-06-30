@@ -60,9 +60,28 @@
 
 })(jQuery);
 
+//function node_type_ajax(type) {
+//    var default_nid = jQuery('.node_id_default').val();
+//    var url = Drupal.settings.basePath + "ajax/content-type/node";
+//    jQuery.ajax({
+//        type: 'post',
+//        url: url,
+//        dataType: 'json',
+//        data: {
+//            content_type: type,
+//            default_nid: default_nid
+//        },
+//        success: function (data) {
+//            jQuery('.form-item-node-id select').html(data.output);
+//        }
+//    });
+//}
+
 function node_type_ajax(type) {
     var default_nid = jQuery('.node_id_default').val();
-    var url = Drupal.settings.basePath + "ajax/content-type/node";
+    var url = Drupal.settings.basePath + "node/autocomplete";
+    console.log(url);
+    
     jQuery.ajax({
         type: 'post',
         url: url,
@@ -72,7 +91,8 @@ function node_type_ajax(type) {
             default_nid: default_nid
         },
         success: function (data) {
-            jQuery('.form-item-node-id select').html(data.output);
+             console.log(data);
+            jQuery('.form-item-node-id').html(data.output);
         }
     });
 }
