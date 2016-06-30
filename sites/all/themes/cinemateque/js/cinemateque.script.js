@@ -16,7 +16,8 @@
      
         $('.hambruger.-menu.navbar-toggle').click(function () {
             var host = $(location).attr('hostname')
-            var path = 'http://'+host+'/menu';            
+
+            var path = Drupal.settings.basePath + Drupal.settings.pathPrefix +'menu';            
             $('.modal-body').html('');
             $('.modal-body').html('<img src="http://www.volantski.com/season1516/images/loadingIMG.gif" class="popup-loader">');            
             $('.modal-body').load(path+" #main .region-content");
