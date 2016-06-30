@@ -454,7 +454,12 @@ table.views-table {
 	background-color: $white;
 	border: medium none;
 	font-size: 0;
-	z-index: 1;;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0) url("../images/add-event.png") no-repeat scroll center center;
+    display: block;
+    height: 27px;
+    margin-top: -2px;
+    width: 30px;
 	&:hover {
 		background-color: $white;
 		border: medium none;
@@ -663,51 +668,7 @@ table.views-table {
 		}
 	}
 }
-.view-id-movie_top_pane_view {
-	&.view-display-id-panel_pane_7 {
-		.table-bordered {
-			border: none;
-			> thead > tr > th {
-				border: none;
-			}
-		}
-		tbody {
-			border: none;
-		}
-		tr {
-			&.even {
-				border: none;
-			}
-			&.odd {
-				border: none;
-			}
-		}
-		th {
-			border-bottom: none;
-			color: $color_pink_swan_approx;
-		}
-		.table > tbody > tr > td {
-			border: none;
-		}
-	}
-	&.view-display-id-panel_pane_1 #views_slideshow_cycle_teaser_section_movie_top_pane_view-panel_pane_1 {
-		.content {
-			position: inherit;
-			overflow: inherit;
-		}
-		.field-label {
-			display: none;
-		}
-		.field-name-field-file-image-alt-text .field-item {
-			background-color: $color_mine_shaft_approx;
-			position: absolute;
-			bottom: 20px;
-			color: $color_star_dust_approx;
-			font-size: 12px;
-			padding: 10px 40px;
-		}
-	}
-}
+
 
 @media(max-width:320px) {
 	.sticky-header {
@@ -1019,16 +980,6 @@ button.toptix-purchase {
 	font-size: .8rem;
 	border: none;
 	padding: 4px 14px;
-}
-.bottom-content .pane-test-view-for-movie-credit-panel-pane-1 {
-	.pane-content {
-		margin: 3% 0;
-	}
-	.view-content {
-		margin: auto;
-		padding-right: 14%;
-		width: 65%;
-	}
 }
 
 .view-id-movie_group_ct {

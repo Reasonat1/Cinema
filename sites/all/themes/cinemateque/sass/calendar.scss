@@ -9,7 +9,6 @@
 	border-top: 2px solid $wild_sand;
 	float: left;
 	margin-top: 10px;
-	width: 100%!important;
 	min-width: 94%;
 	padding: 10px 3%;
 	left: 0;
@@ -26,7 +25,6 @@
 	overflow-y: scroll;
 	padding-top: 10px;
 	padding: 0 3%;
-	width: 100%!important;
 }
 .calender-filter-date{
 	float: left;
@@ -46,10 +44,11 @@
 	> div {
 		float: left;
 		min-height: 100px;
+		width: 217px;
 	}
 }
 .calender-row {
-	width: 12%;
+	width: 210px;
 	margin: 0 1%!important;
 	min-height: 100px!important;
 	&.inner {
@@ -84,7 +83,7 @@
 	float: left;
 	font-weight: bold;
 	text-align: center;
-	width: 13%;
+	width: 217px;
 	margin: 0 0.5%;
 }
 .tickets {
@@ -209,7 +208,7 @@
 .calendar-dayview-hour {
 	float: left;
 	height: 30px;
-	width: 13%;
+	width: 217px;
 	margin: 0 0.5%;
 }
 
@@ -295,10 +294,11 @@
 	background-size: 33px;
 	padding-right: 30px;
 	margin-right: 3%;
-	width: 30%;
 	text-align: right;
+	cursor: pointer;
 	p{
 		margin: 0;
+		top: 132px;
 	}
 	
 }

@@ -118,7 +118,7 @@
 		.inside{
 			height: 100%!important;
 		}
-		.panels-flexible-region, .panel-pane, .pane-content, .view, .views-slideshow-cycle-main-frame, .view-content,.skin-default, .views-slideshow-cycle-main-frame-row,
+		.panels-flexible-region, .pane-content, .pane-movie-top-pane-view-panel-pane-1, .view, .views-slideshow-cycle-main-frame, .view-content,.skin-default, .views-slideshow-cycle-main-frame-row,
 		.views-slideshow-cycle-main-frame-row-item, .views-field, .field-content, .movie-slide-container, .movie-slide{
 			height: 100%;
 		}
@@ -127,6 +127,100 @@
 			img{
 				height: auto !important;
 			}
+		}
+	}
+	.pane-movie-top-pane-view-panel-pane-2{
+		 bottom: 6em;
+	    color: #fff;
+	    padding: 0;
+	    position: absolute;
+	    width: 100%;
+	    z-index: 50;
+	}
+	.view-id-movie_top_pane_view.view-display-id-panel_pane_4{
+		margin-top: 50px;
+		.views-field-title, .views-field-nothing{
+			color: #000000;
+		    font-size: 1.1rem;
+		    font-weight: 600;
+		    margin-bottom: 2%;
+		}
+	}
+	.panels-flexible-row-node_page-6{
+		width: 100%!important;
+		background-color: #fff;
+		padding: 30px 0;
+		.pane-content{
+			@include width;
+		}
+		.views-field-field-cm-movie-credits-person-ro{
+			color: $color_nobel_approx;
+			width: 23%;
+		}
+		a{
+			color: #000;
+		}
+	}
+	.pane-movie-top-pane-view-panel-pane-7{
+		.view-movie-top-pane-view{
+			overflow: visible;
+			.table-responsive{
+				overflow: visible;
+			}
+		}
+		#atedrop5-drop{
+			top: 35px!important;
+		}
+	}
+	.panels-flexible-row-node_page-4{
+		margin-top: 20px!important;
+	}
+}
+
+
+
+.view-id-movie_top_pane_view {
+	&.view-display-id-panel_pane_7 {
+		.table-bordered {
+			border: none;
+			> thead > tr > th {
+				border: none;
+			}
+		}
+		tbody {
+			border: none;
+		}
+		tr {
+			&.even {
+				border: none;
+			}
+			&.odd {
+				border: none;
+			}
+		}
+		th {
+			border-bottom: none;
+			color: $color_pink_swan_approx;
+		}
+		.table > tbody > tr > td {
+			border: none;
+		}
+	}
+	&.view-display-id-panel_pane_1 #views_slideshow_cycle_teaser_section_movie_top_pane_view-panel_pane_1 {
+		.content {
+			position: inherit;
+			overflow: inherit;
+		}
+		.field-label {
+			display: none;
+		}
+		.field-name-field-file-image-alt-text .field-item {
+			background-color: $color_mine_shaft_approx;
+			position: absolute;
+			bottom: 0px;
+			color: $color_star_dust_approx;
+			font-size: 12px;
+			padding: 10px 40px;
 		}
 	}
 }
