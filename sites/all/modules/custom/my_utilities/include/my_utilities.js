@@ -1,12 +1,9 @@
 ﻿jQuery(document).ready(function(e) {
            jQuery('.view-display-id-panel_pane_3 .views-table tbody tr:nth-child(1)').addClass("item-show");
            jQuery('.view-display-id-panel_pane_3 .views-table tbody tr:nth-child(2)').addClass("item-show");
-           jQuery('.view-display-id-panel_pane_3 .views-table tbody tr:nth-child(3)').addClass("item-show");
-           jQuery('.view-display-id-panel_pane_3 .views-table tbody tr.up-events-item-movie').hide();
-           jQuery('.view-display-id-panel_pane_3 .views-table tbody tr.up-events-item-movie.item-show').show(); 
+           jQuery('.view-display-id-panel_pane_3 .views-table tbody tr:nth-child(3)').addClass("item-show");    
            jQuery('.view-footer .more-event').click(function(){
                  jQuery('.view-display-id-panel_pane_3 .views-table tbody tr.up-events-item-movie').show('slow');
-                 jQuery('.view-footer .more-event').hide();
            });
            
            jQuery('.view-display-id-panel_pane_5 .table tbody tr:nth-child(1)').addClass("item-show");

@@ -1,52 +1,5 @@
-//colors
-$white: #ffffff;
-$color_celeste_approx: #cccccc;
-$mine_shaft: #323232;
-$color_chicago_approx: #5c5c5c;
-$boulder: #7a7a7a;
-$color_mongoose_approx: #b59d70;
-$main-color: #b59d70;
-$color_clay_creek_approx: #96825d;
-$color_iron_approx: #d8d8d8;
-$black_80: rgba(0, 0, 0, 0.8);
-$white_30: rgba(255, 255, 255, 0.3);
-$black: #000000;
-$wild_sand: #f4f4f4;
-$color_pampas_approx: #f4f2ef;
-$color_bazaar_approx: #958080;
-$color_mercury_approx: rgb(227, 227, 227);
-$color_black_haze_approx: #f6f6f6;
-$color_silver_approx: #bfbfbf;
-$color_wild_sand_approx: #f5f5f5;
-$color_silver_chalice_approx: #aaa;
-$color_cararra_approx: #ececec;
-$color_nobel_approx: #b2b2b2;
-$color_gallery_approx: #ededed;
-$color_tundora_approx: #444;
-$color_pearl_bush_approx: #e7decc;
-$color_tapa_approx: #777;
-$color_mountain_mist_approx: #999;
-$color_fantasy_approx: #f9f4ee;
-$color_mine_shaft_approx: #333;
-$color_alabaster_approx: #f9fafb;
-$color_pink_swan_approx: #b7b7b7;
-$color_alto_approx: #ddd;
-$color_black_approx: #020202;
-$color_celeste_approx: #ccc;
-$color_gallery_approx: #eee;
-$color_star_dust_approx: #a0a0a0;
-$color_pink_swan_approx: #bbb;
-$color_nobel_approx: #b3b3b3;
-$color_mine_shaft_approx: #312f2f;
-/********  mixin *********/
+@import "init";
 
-@mixin width(){
-  width: 1280px!important;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 3%;
-  box-sizing: border-box;
-};
 
 .node-type-cm-movie-group{
 	#content {
@@ -91,7 +44,7 @@ $color_mine_shaft_approx: #312f2f;
 	}
 	.panels-flexible-row-node_page-3{
 		.inside{
-			height: 100%;
+			height: 100%!important;
 		}
 		.panels-flexible-region, .panel-pane, .pane-content, .view, .views-slideshow-cycle-main-frame, .view-content,.skin-default, .views-slideshow-cycle-main-frame-row,
 		.views-slideshow-cycle-main-frame-row-item, .views-field, .field-content, .movie-group-slide-container, .movie-group-slide{
@@ -100,11 +53,7 @@ $color_mine_shaft_approx: #312f2f;
 		.views_slideshow_main{
 			height: 100%;
 			img{
-				height: 100% !important;
-				left: 0;
-				top: 12px;
-				width: auto !important;
-				position: absolute;
+				height: auto !important;
 			}
 		}
 	}

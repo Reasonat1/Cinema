@@ -24,20 +24,7 @@ function my_pane_field_default_field_bases() {
     'translatable' => 0,
     'type' => 'number_integer',
   );
-   // Exported field_base: 'field_custom_lobby_term'
-  $field_bases['field_custom_lobby_term'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_custom_lobby_term',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'text',
-  );
+
   // Exported field_base: 'field_custom_gallery_items'
   $field_bases['field_custom_gallery_items'] = array(
     'active' => 1,

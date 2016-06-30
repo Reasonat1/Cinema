@@ -48,51 +48,23 @@ function my_backend_block_view($delta = '') {
  * custom block view callback
  */
 function custem_festival_menu_block_content(){
-	global $_domain;
-	if($_domain['domain_id'] == 1) {
-		return ;
-	}
-	
-	$term_tid = db_query("SELECT `entity_id` FROM `field_data_field_cm_domain` WHERE `field_cm_domain_value` = :did",array(':did' => $_domain['domain_id']))->fetchField();
+    // if ternonmy page is views
+    global $base_url;
     
     $output = "";
     $term_page = arg(0);
-    if($term = taxonomy_term_load($term_tid)) {
-		$menu = $term->cinematic_menu;
-		// texonomy accssociated menu
-		if($menu != ''){
-		   $menu_source =$menu.'_links_source';
-		   $menu_depth = 2;
-		  $menu_load =  menu_load($menu);
-		  $menu_load_name =$menu_load['title'];
-		  $output = menu_tree_output(menu_tree_all_data($menu, null, $menu_depth));
-		}
+    if($term_page == 'taxonomy'){
+        $tid =arg(2);
+        $texonomy = taxonomy_term_load($tid);
+        $menu = $texonomy->cinematic_menu;       
+                // texonomy accssociated menu
+                if($menu != ''){
+                   $menu_source =$menu.'_links_source';
+                   $menu_depth = 2;
+                  $menu_load =  menu_load($menu);
+                  $menu_load_name =$menu_load['title'];
+                  $output = menu_tree_output(menu_tree_all_data($menu, null, $menu_depth));
+                }
     }
     return $output;
-}
-
-/**
- * Implements hook_form_alter().
- */
-function my_backend_form_alter(&$form, &$form_state, $form_id) {
-  $button_title= isset($form['actions']['submit']['#value']) ? $form['actions']['submit']['#value'] :'send';
-  switch($form_id) {
-    case 'webform_client_form_19':
-       $form['actions']['submit'] = array(
-        '#type' => 'submit',
-        '#value' => $button_title,
-        '#ajax' => array(
-          'callback' => 'custom_webform_news_letter_form_js_submit',
-          'wrapper' => 'webform-client-form-' . $form['#node']->nid,
-          'effect' => 'fade',
-        ),
-        '#id' => 'edit-submit--' . $form['#node']->nid,
-      );
-      break;
-  }
-}
-
-function custom_webform_news_letter_form_js_submit($form, &$form_state){
-  $sid = $form_state['values']['details']['sid'];
-   return $form;
 }

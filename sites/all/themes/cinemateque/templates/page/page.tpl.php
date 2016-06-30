@@ -59,7 +59,7 @@
                     $site_main_menu = $festival_site_menu;
                 }
 				if ($site_main_menu): ?>
-                    <ul id="site-main-menu" class="site-custom-menu menu nav navbar-nav col-md-5">
+                    <ul id="site-main-menu" class="site-custom-menu menu nav navbar-nav col-md-4">
                         <?php print render($site_main_menu); ?>
                     </ul>
                     <ul class="col-md-3 header-right">

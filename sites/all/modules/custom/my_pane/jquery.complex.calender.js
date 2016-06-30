@@ -3,8 +3,6 @@ jQuery(document).ready(function () {
      * callender event info popup hide show
      */
     jQuery('.calender-full-row .calender-row.inner').click(function () {
-        jQuery('#calender-top-popup').remove();
-        jQuery('body').append('<div id="calender-top-popup" ></div>');
         var html = jQuery(this).parent().find('.calender-popup').html();
         jQuery('#calender-top-popup').html("");
         jQuery('#calender-top-popup').addClass('visible');
@@ -20,14 +18,7 @@ jQuery(document).ready(function () {
             leftpos = parseFloat(leftpos) - parseFloat(500.00);
         }
         jQuery('#calender-top-popup').css('top', toppos + 'px').css('left', leftpos + 'px');
-        toptix_purchase_event();
     });
-    /*
-     * stop click event over perchage button
-     */
-    jQuery(".calender-full-row .calender-row.inner .toptix-purchase").click(function(e) {
-        e.stopPropagation();
-     });    
 
     /**
      * using Ajax filter the  calender event
@@ -46,7 +37,6 @@ jQuery(document).ready(function () {
             },
             success: function (data) {
                 jQuery('.ajax-inner').replaceWith(data.output);
-                toptix_purchase_event();
             }
         });
     });
@@ -75,13 +65,11 @@ jQuery(document).ready(function () {
             }
         });
     }
-jQuery('.calender-row .time').css('margin-top','0');
+
 });
 
 jQuery(document).ajaxStop(function () {
     jQuery('.calender-full-row .calender-row.inner').click(function () {
-        jQuery('#calender-top-popup').remove();
-        jQuery('body').append('<div id="calender-top-popup" ></div>');        
         var html = jQuery(this).parent().find('.calender-popup').html();
         jQuery('#calender-top-popup').html("");
         jQuery('#calender-top-popup').addClass('visible');
@@ -97,14 +85,7 @@ jQuery(document).ajaxStop(function () {
             leftpos = parseFloat(leftpos) - parseFloat(500.00);
         }
         jQuery('#calender-top-popup').css('top', toppos + 'px').css('left', leftpos + 'px');
-        toptix_purchase_event();
     });
-    /*
-     * stop click event over perchage button
-     */
-    jQuery(".calender-full-row .calender-row.inner .toptix-purchase").click(function(e) {
-        e.stopPropagation();
-     });    
     /**
      * calender scroll effect
      * @param {type} param
@@ -129,7 +110,7 @@ jQuery(document).ajaxStop(function () {
             }
         });
     }
-jQuery('.calender-row .time').css('margin-top','0');
+
 });
 
 function closed() {
@@ -190,19 +171,3 @@ jQuery(document).ajaxComplete(function () {
         }
     });
 })
-
-/*
- * toptix purchase event over event popup
- */
-function toptix_purchase_event(){
-    var toptix_event_url = null;
-    var toptix_active_button = {original_text:'', item: null};
-
-    jQuery('.toptix-purchase').click(function(event) {
-      toptix_event_url = this.dataset.url;
-      toptix_active_button.item = this;
-      toptix_active_button.original_text = jQuery(this).text();
-      jQuery(this).text(Drupal.t('Loading...'));
-      $esro.getCustomerDetails('toptix_callback_get_customer');
-    });
-}

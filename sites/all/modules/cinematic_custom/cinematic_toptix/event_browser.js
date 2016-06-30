@@ -74,9 +74,18 @@ toptix_dialog.update_results = function() {
 function toptix_temp_update_date(id) {
   var date_name = 'field_cm_event_time[und][0][value]';
   var data = toptix_dialog.data[id];
-  //var actual_date = new Date(data.ActualEventDate);
-  var actual_date = data.ActualEventDate.split('T');
+  var actual_date = new Date(data.ActualEventDate);
+  var time = actual_date.getHours() + ':' + actual_date.getMinutes();
 
-  //jQuery('input[name="' + date_name + '[date]"]').val(actual_date[0]);
-  //jQuery('input[name="' + date_name + '[time]"]').val(actual_date[1]);
+  var datefield = jQuery('input[name="' + date_name + '[date]"]');
+  var format = datefield.datepicker('option', 'dateFormat');
+  if (format == null) {
+    format = 'M d yy';
+  }
+  var actual_date = jQuery.datepicker.formatDate(format, actual_date);
+  datefield.val(actual_date);
+
+  jQuery('input[name="' + date_name + '[time]"]').timeEntry('setTime', time);
+  console.log('input[name="' + date_name + '[time]"]');
+  console.log(time);
 }

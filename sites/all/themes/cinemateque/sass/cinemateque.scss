@@ -1,52 +1,4 @@
-//colors
-$white: #ffffff;
-$color_celeste_approx: #cccccc;
-$mine_shaft: #323232;
-$color_chicago_approx: #5c5c5c;
-$boulder: #7a7a7a;
-$color_mongoose_approx: #b59d70;
-$main-color: #b59d70;
-$color_clay_creek_approx: #96825d;
-$color_iron_approx: #d8d8d8;
-$black_80: rgba(0, 0, 0, 0.8);
-$white_30: rgba(255, 255, 255, 0.3);
-$black: #000000;
-$wild_sand: #f4f4f4;
-$color_pampas_approx: #f4f2ef;
-$color_bazaar_approx: #958080;
-$color_mercury_approx: rgb(227, 227, 227);
-$color_black_haze_approx: #f6f6f6;
-$color_silver_approx: #bfbfbf;
-$color_wild_sand_approx: #f5f5f5;
-$color_silver_chalice_approx: #aaa;
-$color_cararra_approx: #ececec;
-$color_nobel_approx: #b2b2b2;
-$color_gallery_approx: #ededed;
-$color_tundora_approx: #444;
-$color_pearl_bush_approx: #e7decc;
-$color_tapa_approx: #777;
-$color_mountain_mist_approx: #999;
-$color_fantasy_approx: #f9f4ee;
-$color_mine_shaft_approx: #333;
-$color_alabaster_approx: #f9fafb;
-$color_pink_swan_approx: #b7b7b7;
-$color_alto_approx: #ddd;
-$color_black_approx: #020202;
-$color_celeste_approx: #ccc;
-$color_gallery_approx: #eee;
-$color_star_dust_approx: #a0a0a0;
-$color_pink_swan_approx: #bbb;
-$color_nobel_approx: #b3b3b3;
-$color_mine_shaft_approx: #312f2f;
-/********  mixin *********/
-
-@mixin width(){
-  width: 1280px!important;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 3%;
-  box-sizing: border-box;
-};
+@import "init";
 
 body {
 	background-color: #eef3fa!important;
@@ -144,6 +96,13 @@ body {
 			i, #da11y-toggle{
 				color: $main_color;
 			}
+		}
+		#da11y-toggle.active{
+				color: $main_color;
+				box-shadow: none;
+		}
+		.popup-title-active i{
+				color: $main_color;
 		}
 		.fa-shopping-cart button{
 		    border: medium none;
@@ -368,7 +327,7 @@ body {
 	z-index: 100;
 	&.header {
 		.navbar-default {
-			background-color: $black;
+			background-color: $black!important;
 		}
 		#site-main-menu {
 			padding-bottom: 0;
@@ -380,6 +339,7 @@ body {
 				padding-top: 12px;
 				background-color: $black;
 				color: $white;
+				font-size: 16px;
 				&:hover {
 					padding-bottom: 12px;
 					padding-top: 12px;
@@ -406,6 +366,10 @@ body {
 	}
 	.festival-site {
 		padding-left: 12px;
+		padding-top: 7px;
+		span{
+			line-height: 20px;
+		}
 	}
 	.navbar-header{
 		height: 54px;
@@ -457,6 +421,7 @@ body {
 		background-color: $color_mongoose_approx;
 		color: $white;
 		transition: all 0.5s ease 0s;
+		padding: 0!important;
 		li a {
 			color: $white;
 			transition: all 0.5s ease 0s;
@@ -490,15 +455,16 @@ body {
 }
 .header-right {
 	float: right;
+	width: auto;
 }
 .festival-site {
 	float: left;
-	padding-top: 12px;
+	padding-top: 11px;
 	span {
 		color: $white;
 		float: left;
-		font-size: 12px;
-		line-height: 16px;
+		font-size: 16px;
+		line-height: 25px;
 		width: 100%;
 	}
 }
@@ -562,16 +528,22 @@ body {
 			float: right;
 		}
 		.newsleter-name {
-			border-bottom-right-radius: 0;
-			border-top-right-radius: 0;
-			border-bottom-left-radius: 15px;
-			border-top-left-radius: 15px;
+			border-bottom-left-radius: 0!important;
+			border-top-left-radius: 0!important;
+			border-bottom-right-radius: 15px!important;
+			border-top-right-radius: 15px!important;
 		}
 		.news-leter .webform-submit.button-primary {
-			border-bottom-right-radius: 0;
-			border-top-right-radius: 0;
-			border-bottom-left-radius: 15px;
-			border-top-left-radius: 15px;
+			border-bottom-left-radius: 0!important;
+			border-top-left-radius: 0!important;
+			border-bottom-right-radius: 15px!important;
+			border-top-right-radius: 15px!important;
+		}
+		.form-submit{
+			border-bottom-left-radius: 15px!important;
+			border-top-left-radius: 15px!important;
+			border-bottom-right-radius: 0px!important;
+			border-top-right-radius: 0px!important;
 		}
 	}
 	.radio {
@@ -658,236 +630,7 @@ body {
 		}
 	}
 }
-.calender-header {
-	background: $white none repeat scroll 0 0;
-	border-top: 2px solid $wild_sand;
-	float: left;
-	margin-top: 10px;
-	padding-top: 10px;
-	width: 100%;
-	min-width: 100%;
-	left: 0;
-	position: relative;
-}
-.calender-body {
-	background-color: $color_pampas_approx;
-	float: left;
-	font-size: 12px;
-	min-width: 100%;
-	left: 0;
-	position: relative;
-	height: 850px;
-	overflow-y: scroll;
-	padding-top: 10px;
-}
-.calender-full-row {
-	padding: 10px;
-	float: left;
-	padding: 5px 0;
-	width: 100%;
-	.col-sm-2 {
-		padding-left: 5px;
-		padding-right: 5px;
-	}
-	> div {
-		float: left;
-		min-height: 150px;
-		width: 240px;
-	}
-}
-.calender-row {
-	&.inner {
-		background: $white none repeat scroll 0 0;
-		box-shadow: 0 1px 3px 1px;
-		cursor: pointer;
-		padding: 15px;
-		float: left;
-		min-height: 160px;
-		width: 230px;
-	}
-	.time {
-		float: right;
-	}
-	.title {
-		float: left;
-		line-height: 16px;
-		padding-top: 10px;
-		width: 100%;
-	}
-	.subtitle {
-		float: left;
-		line-height: 16px;
-		padding-top: 6px;
-		width: 100%;
-		padding-bottom: 10px;
-	}
-	.internal-id {
-		float: left;
-	}
-}
-.calendar-agenda-items {
-	float: left;
-	font-weight: bold;
-	text-align: center;
-	width: 240px;
-}
-.tickets {
-	float: right;
-	> a {
-		background-color: $color_mongoose_approx;
-		color: $white;
-		font-weight: bold;
-		padding: 6px 26px;
-	}
-}
-.calender-popup {
-	display: none;
-	margin-left: 80px;
-	margin-top: 45px;
-	position: absolute;
-	width: 500px;
-	z-index: 9;
-	.tickets {
-		float: left;
-		padding-top: 10px;
-		width: 100%;
-		span {
-			margin: 15px;
-		}
-	}
-	.title {
-		font-size: 14px;
-		padding-bottom: 20px;
-		padding-top: 25px;
-	}
-	> img.close-calender-popup {
-		float: right;
-		position: absolute;
-		right: -8px;
-		top: -15px;
-		cursor: pointer;
-	}
-	.calender-row.inner {
-		cursor: default;
-		padding: 20px;
-		width: 500px;
-	}
-	.body > p {
-		font-size: 14px;
-	}
-}
-.calender-filter {
-	float: left;
-	text-align: center;
-	width: 100%;
-	> p {
-		background-color: $wild_sand;
-		display: inline-block;
-		font-size: 20px;
-		font-weight: bold;
-		margin: 5px;
-		padding-bottom: 10px;
-		padding-top: 5px;
-		text-align: center;
-		width: 80px;
-		&:hover {
-			background-color: $color_mongoose_approx;
-			box-shadow: 0 0 3px 2px $wild_sand;
-			color: $white;
-			cursor: pointer;
-			span {
-				color: $white;
-			}
-		}
-		&.active {
-			background-color: $color_mongoose_approx;
-			box-shadow: 0 0 3px 2px $wild_sand;
-			color: $white;
-			cursor: pointer;
-			span {
-				color: $white;
-			}
-		}
-	}
-	span {
-		color: $color_bazaar_approx;
-		float: left;
-		font-size: 12px;
-		font-weight: normal;
-		width: 100%;
-	}
-}
-.calendar-dayview-hour {
-	float: left;
-	height: 30px;
-	width: 240px;
-}
-.ajax-inner {
-	float: left;
-	overflow: hidden;
-	width: 100%;
-}
-#calender-top-popup {
-	float: left;
-	left: 40%;
-	position: absolute;
-	top: 50%;
-	width: 500px;
-	display: none;
-	.close-calender-popup {
-		position: absolute;
-		right: -10px;
-		top: -10px;
-		cursor: pointer;
-	}
-	&.visible {
-		display: block;
-		z-index: 99;
-	}
-	.tickets {
-		float: left;
-		padding-top: 10px;
-		width: 100%;
-		span {
-			margin: 8px;
-		}
-	}
-	.title {
-		font-size: 14px;
-		padding-bottom: 20px;
-		padding-top: 25px;
-	}
-	.calender-row.inner {
-		width: 500px;
-		cursor: default;
-		padding: 20px;
-	}
-	.body > p {
-		font-size: 14px;
-	}
-}
-.flag {
-	&.unflag-action {
-		background-image: url("../images/unlike-gold.png");
-		background-size: 100% 100%;
-		float: left;
-		font-size: 0;
-		height: 16px;
-		margin-top: 5px;
-		overflow: hidden;
-		width: 18px;
-	}
-	&.flag-action {
-		background-image: url("../images/like-gold.png");
-		background-size: 100% 100%;
-		float: left;
-		font-size: 0;
-		height: 16px;
-		margin-top: 5px;
-		overflow: hidden;
-		width: 18px;
-	}
-}
+
 .pro-grid {
 	margin: 0 auto;
 	background: $color_mercury_approx none repeat scroll 0 0;
@@ -1792,18 +1535,7 @@ span.bold {
 	margin: 0 auto;
 	width: 100%;
 }
-p.scrollleft {
-	cursor: pointer;
-	right: 26px;
-	position: absolute;
-	top: 146px;
-	z-index: 99;
-}
-.col-sm-12.calender-full-row > div {
-	float: left;
-	min-height: 150px;
-	width: 240px;
-}
+
 
 /********  new added css  ******/
 

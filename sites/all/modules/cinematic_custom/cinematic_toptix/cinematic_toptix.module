@@ -50,7 +50,10 @@ function cinematic_toptix_block_view($delta) {
 
   $block = array('title' => '');
   $path = drupal_get_path('module', 'cinematic_toptix');
-  $output = '<button class="toptix-basket" data-url="http://' . TOPTIX_HOST . '/Order.aspx?culture=en-US"> ' . t('My cart') . '</button>';
+  global $language;
+  if($language->language == 'en') { $langadd = '?culture=en-US'; }else { $langadd = ''; }
+  
+  $output = '<button class="toptix-basket" data-url="http://' . TOPTIX_HOST . '/Order.aspx'.$langadd.'"> ' . t('My cart') . '</button>';
   $esro_frame = '<esro:frame href="http://' . TOPTIX_HOST . '/integrationsample/info.htm" ';
   $esro_frame .= 'width="1024" height="768"/>';
   $output .= '<div id="toptix-frame-wrapper" style="display:none;">' . $esro_frame . '</div>';
@@ -164,10 +167,12 @@ function cinematic_toptix_field_formatter_view(
   $account = user_load($user->uid);
   $field_toptix = field_get_items('user', $account, 'field_toptix');
   $field_toptix = $field_toptix[0]['value'];
-
+  global $language;
+  if($language->language == 'en') { $langadd = '&culture=en-US'; }else { $langadd = ''; }
+  
   foreach ($items as $delta => $item) {
     $event_id = $item['value'];
-    $url = 'http://' . TOPTIX_HOST . '/loader.aspx/?target=hall.aspx&event=' . $event_id . '&culture=en-US';
+    $url = 'http://' . TOPTIX_HOST . '/loader.aspx/?target=hall.aspx&event=' . $event_id . $langadd;
     $output = '<button class="toptix-purchase" data-url="' . $url . '">' . t('Purchase') . '</button>';
 
     $element[$delta] = array(

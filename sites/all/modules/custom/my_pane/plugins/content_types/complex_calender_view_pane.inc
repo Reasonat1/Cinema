@@ -11,7 +11,7 @@ function my_pane_complex_calender_view_pane_ctools_content_types() {
 function my_pane_complex_calender_view_pane_content_type_render($subtype, $conf, $panel_args, $context) {
   drupal_add_js(drupal_get_path('module', 'my_pane') . '/jquery.complex.calender.js');
   $block = new stdClass();
-  $block->title = 'Complex Calender View Block';
+//  $block->title = 'Complex Calender View Block';
   $custom = complex_calender_view_block_content();
   
   $block->content = $custom;

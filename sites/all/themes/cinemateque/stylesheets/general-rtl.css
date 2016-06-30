@@ -1,28 +1,38 @@
-/* line 2, ../sass/general-rtl.scss */
+/********  mixin *********/
+/* line 4, ../sass/general-rtl.scss */
 .pane-movie-group-ct-panel-pane-3 .views-field-field-toptix-purchase {
   float: left;
   width: 83px;
 }
-/* line 5, ../sass/general-rtl.scss */
+/* line 7, ../sass/general-rtl.scss */
 .pane-movie-group-ct-panel-pane-3 .views-field-field-toptix-purchase button {
   float: right;
 }
 
-/* line 12, ../sass/general-rtl.scss */
+/* line 14, ../sass/general-rtl.scss */
 .content.middle .panels-flexible-region-node_page-content_right {
   float: right;
   margin-left: 8%;
   margin-right: 0;
 }
 
-/* line 20, ../sass/general-rtl.scss */
+/* line 22, ../sass/general-rtl.scss */
 table td, table th {
   padding-right: 0 !important;
   padding-left: 8px !important;
 }
 
-/* line 27, ../sass/general-rtl.scss */
+/* line 29, ../sass/general-rtl.scss */
 #page-header .tabs {
   right: auto;
   left: 0;
+}
+
+/* line 35, ../sass/general-rtl.scss */
+.header-right {
+  float: left;
+}
+/* line 37, ../sass/general-rtl.scss */
+.header-right li {
+  float: right !important;
 }
