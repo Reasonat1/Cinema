@@ -10,7 +10,7 @@
 	float: left;
 	margin-top: 10px;
 	min-width: 94%;
-	padding: 10px 3%;
+	padding: 0;
 	left: 0;
 	position: relative;
 }
@@ -23,8 +23,7 @@
 	position: relative;
 	height: 850px;
 	overflow-y: scroll;
-	padding-top: 10px;
-	padding: 0 3%;
+	padding: 0px;
 }
 .calender-filter-date{
 	float: left;
@@ -49,8 +48,8 @@
 }
 .calender-row {
 	width: 210px;
-	margin: 0 1%!important;
-	min-height: 100px!important;
+	margin: 0;
+	min-height:150px !important;
 	&.inner {
 		background: $white none repeat scroll 0 0;
 		box-shadow: 0 1px 3px 0px;
@@ -61,6 +60,9 @@
 	}
 	.time {
 		float: left;
+	}
+	.bold.time{
+		margin-top: 0;
 	}
 	.title {
 		float: left;
@@ -84,7 +86,7 @@
 	font-weight: bold;
 	text-align: center;
 	width: 217px;
-	margin: 0 0.5%;
+	margin: 0;
 }
 .tickets {
 	position: absolute;
@@ -209,7 +211,7 @@
 	float: left;
 	height: 30px;
 	width: 217px;
-	margin: 0 0.5%;
+	margin: 0;
 }
 
 .pane-complex-calender-view-pane{

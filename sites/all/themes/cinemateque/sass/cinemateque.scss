@@ -383,6 +383,16 @@ body {
 	}
 }*/
 
+.sticky-header{
+	height: 56px!important;
+	.navbar-brand{
+		padding-top: 11px;
+		> img {
+			height: 40px;
+		}
+	}
+}
+
 .admin-menu {
 	#header {
 		top: 29px;
@@ -391,12 +401,21 @@ body {
 		margin-top: 0;
 	}
 }
+
+.navbar-default{
+	background-color: transparent;
+}
+
+.navbar-header{
+	position: relative;
+	z-index: 200;
+}
+
 #header {
 	position: fixed;
 	height: 68px;
 	left: 0;
 	top: 0;
-	float: left;
 	width: 100%;
 	transition: all 0.5s ease-out;
 	z-index: 99;
@@ -404,13 +423,16 @@ body {
 		padding: 0;
 	}
 }
-.navbar-default {
+#header {
 	background-color: $black;
 }
 
 .front{
-	.navbar-default {
+	#header {
 		background-color: transparent;
+	}
+	.sticky-header	#header {
+		background-color: $black;
 	}
 	#main-wrapper {
     	margin-top: 0 !important;
@@ -423,9 +445,13 @@ body {
 		color: $white;
 		transition: all 0.5s ease 0s;
 		padding: 0!important;
+		width: 100%;
+		position: absolute;
+		float: none;
 		li a {
 			color: $white;
 			transition: all 0.5s ease 0s;
+			font-size: 16px;
 		}
 	}
 	.container {
@@ -460,7 +486,7 @@ body {
 }
 .festival-site {
 	float: left;
-	padding-top: 11px;
+	padding-top: 7px;
 	span {
 		color: $white;
 		float: left;
@@ -1484,14 +1510,14 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 	opacity: 1;
 }
 .navbar-brand > img {
-	height: 55px;
+	height: 50px;
 	transition: all 0.5s ease 0s;
 }
 .hambruger.-menu.navbar-toggle {
 	display: block;
 	float: left;
 	margin-left: 30px;
-	margin-top: 20px;
+	margin-top: 16px;
 	border: medium none;
 	margin-right: 0;
 	transition: all 0.5s ease 0s;
@@ -1508,9 +1534,9 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 	width: 100%;
 }
 .navbar .navbar-brand {
-	padding-top: 10px;
+	padding: 9px 15px 0;
 	overflow: hidden;
-	height: 70px!important;
+	width: 120px;
 }
 .navbar-nav > li {
 	display: inline-block;
