@@ -47,7 +47,7 @@ jQuery(document).ready(function () {
      */
     var content_width = 0;
     jQuery('.calender-full-row:first-child .custom-row.calender-row').each(function () {
-        content_width = parseInt(content_width) + parseInt(240);
+        content_width = parseInt(content_width) + parseInt(217);
     })
     content_width = parseInt(content_width) +parseInt(20);
     jQuery('.calender-body').css('width', content_width + 'px');
@@ -60,8 +60,8 @@ jQuery(document).ready(function () {
             if (currentPosition < 0)
                 currentPosition *= -1;
             if (currentPosition < sliderLimit) {
-                jQuery('.calender-body').stop(false, true).animate({left: "-=" + 240}, "slow");
-                jQuery('.calender-header').stop(false, true).animate({left: "-=" + 240}, "slow");
+                jQuery('.calender-body').stop(false, true).animate({left: "-=" + 217}, "slow");
+                jQuery('.calender-header').stop(false, true).animate({left: "-=" + 217}, "slow");
             }
         });
     }
@@ -92,7 +92,7 @@ jQuery(document).ajaxStop(function () {
      */
     var content_width = 0;
     jQuery('.calender-full-row:first-child .custom-row.calender-row').each(function () {
-        content_width = parseInt(content_width) + parseInt(240);
+        content_width = parseInt(content_width) + parseInt(217);
     })
     content_width = parseInt(content_width) +parseInt(20);
     jQuery('.calender-body').css('width', content_width + 'px');
@@ -105,8 +105,8 @@ jQuery(document).ajaxStop(function () {
             if (currentPosition < 0)
                 currentPosition *= -1;
             if (currentPosition < sliderLimit) {
-                jQuery('.calender-body').stop(false, true).animate({left: "-=" + 240}, "slow");
-                jQuery('.calender-header').stop(false, true).animate({left: "-=" + 240}, "slow");
+                jQuery('.calender-body').stop(false, true).animate({left: "-=" + 217}, "slow");
+                jQuery('.calender-header').stop(false, true).animate({left: "-=" + 217}, "slow");
             }
         });
     }

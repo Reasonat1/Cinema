@@ -88,4 +88,5 @@ function toptix_temp_update_date(id) {
   jQuery('input[name="' + date_name + '[time]"]').timeEntry('setTime', time);
   console.log('input[name="' + date_name + '[time]"]');
   console.log(time);
+
 }
