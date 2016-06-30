@@ -88,7 +88,7 @@ function cinematic_toptix_browse_query($page) {
   $shows = array();
   $event_ids = array();
   foreach ($events as $event) {
-    $event_ids[] = $event->local_id;
+    $event_ids[$event->local_id] = $event->title;
     if (!isset($shows[$event->show_id])) {
       $shows[$event->show_id] = array('title' => $event->title, 'events' => '');
     }
@@ -97,11 +97,12 @@ function cinematic_toptix_browse_query($page) {
 
   if ($event_ids) {
     $query = db_select('toptix_events_data', 'ted');
-    $query->condition('local_id', $event_ids, 'IN');
+    $query->condition('local_id', array_keys($event_ids), 'IN');
     $query->fields('ted', array('local_id', 'data'));
     $data = $query->execute()->fetchAllKeyed();
     foreach ($data as $id => &$event_data) {
       $event_data = unserialize($event_data);
+      $event_data['title'] = $event_ids[$id];
     }
   }
   else {
