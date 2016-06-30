@@ -78,6 +78,7 @@ function toptix_temp_update_date(id) {
   var time = actual_date.getHours() + ':' + actual_date.getMinutes();
 
   var datefield = jQuery('input[name="' + date_name + '[date]"]');
+  //datefield.datepicker('setDate', actual_date);
   var format = datefield.datepicker('option', 'dateFormat');
   if (format == null) {
     format = 'M d yy';
@@ -85,8 +86,15 @@ function toptix_temp_update_date(id) {
   var actual_date = jQuery.datepicker.formatDate(format, actual_date);
   datefield.val(actual_date);
 
-  jQuery('input[name="' + date_name + '[time]"]').timeEntry('setTime', time);
-  console.log('input[name="' + date_name + '[time]"]');
-  console.log(time);
-
+  //jQuery('input[name="' + date_name + '[time]"]').timeEntry('setTime', time);
+  var timefield = jQuery('input[name="' + date_name + '[time]"]');
+  // timefield.timeEntry('setTime', time);
+  timefield.val(time);
+  setTimeout(function() {
+    timefield
+      .blur()
+      .click()
+      .keydown()
+      .keypress();
+  }, 5);
 }
