@@ -46,12 +46,11 @@ function node_teaser_node_content_form($form, &$form_state) {
     );
 
     $form['node_id'] = array(
-        '#type' => 'select',
+        '#type' => 'textfield',
         '#title' => t('Select Node'),
         '#description' => t('Choose  the node to display'),
-        '#options' => $type,
-        '#validated' => TRUE,
-        '#default_value' => $conf['node_id'],
+        //'#default_value' => $conf['node_id'],
+        '#autocomplete_path' => 'node/autocomplete',
     );
 
     $form['top_black_title'] = array(

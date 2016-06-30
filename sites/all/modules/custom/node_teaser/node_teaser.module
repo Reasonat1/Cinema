@@ -4,9 +4,11 @@
  * Implements hook_ctools_plugin_api().
  */
 function node_teaser_menu(){
-    $items['ajax/content-type/node'] = array(
+    $items['node/autocomplete'] = array(
         'title' => '',
         'page callback' => 'node_type_content',
+        'access arguments' => array('access test autocomplete'),
+        'type' => MENU_CALLBACK,
         'access callback' => true
     );
     return $items;
@@ -41,18 +43,34 @@ function node_teaser_form_alter(&$form, &$form_state, $form_id) {
 /**
  * node nid and title as option based on content type
  */
+//function node_type_content() {
+//   $type = isset($_POST['content_type']) ? $_POST['content_type'] : '';
+//   $default_nid = isset($_POST['default_nid']) ? $_POST['default_nid'] : '';
+//    $result = db_query("SELECT nid,title from node where type = '$type'")->fetchAll();
+//    foreach ($result as $val) {
+//        $selected = '';
+//        if($default_nid == $val->nid){
+//            $selected = "selected=selected";
+//        }
+//        $output.="<option value='$val->nid' $selected>$val->title</option>";
+//    }
+//    drupal_json_output(array('output' =>$output));
+//    die();
+//
+//}
+
 function node_type_content() {
    $type = isset($_POST['content_type']) ? $_POST['content_type'] : '';
-   $default_nid = isset($_POST['default_nid']) ? $_POST['default_nid'] : '';
-    $result = db_query("SELECT nid,title from node where type = '$type'")->fetchAll();
+   //$default_nid = isset($_POST['default_nid']) ? $_POST['default_nid'] : '';
+   drupal_set_message('<pre>'.print_r($type, 1).'</pre>');
+    $output = array();
+    $result = db_query("SELECT nid,title,type from node where type = '$type'")->fetchAll();
     foreach ($result as $val) {
-        $selected = '';
-        if($default_nid == $val->nid){
-            $selected = "selected=selected";
-        }
-        $output.="<option value='$val->nid' $selected>$val->title</option>";
+        
+        //drupal_set_message('<pre>'.print_r($val, 1).'</pre>');
+        $output[$val->nid] = check_plain($val->title);
     }
-    drupal_json_output(array('output' =>$output));
+    drupal_json_output($output);
     die();
 
 }
