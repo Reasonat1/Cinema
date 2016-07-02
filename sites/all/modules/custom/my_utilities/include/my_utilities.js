@@ -50,6 +50,8 @@
 			}
             if(jQuery('.pane-event-ct-view-panel-pane-1 #views_slideshow_cycle_main_event_ct_view-panel_pane_1 .hide-div').length){
 				jQuery('.pane-event-ct-view-panel-pane-1').addClass('without-image-event');
+                jQuery('.slide-over-content').addClass('without-image-event-title');
+                jQuery("node-type-cm-event .pane-event-ct-view-panel-pane-3 .view-event-ct-view .views-field-nothing").css("bottom", "1rem");
 			}
             
 });
