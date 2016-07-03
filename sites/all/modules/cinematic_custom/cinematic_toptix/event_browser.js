@@ -74,6 +74,8 @@ toptix_dialog.update_results = function() {
 function toptix_temp_update_date(id) {
   var data = toptix_dialog.data[id];
 
+  jQuery('input[name="title"]').val(data.title);
+
   var actual_date = new Date(data.ActualEventDate);
   var time = actual_date.getHours() + ':' + actual_date.getMinutes();
 
