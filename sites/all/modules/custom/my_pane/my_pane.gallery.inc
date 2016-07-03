@@ -353,7 +353,6 @@ function my_pane_field_widget_form(&$form, &$form_state, $field, $instance, $lan
       '#title' => t('Alt text'),
       '#type' => 'textfield',
       '#default_value' => isset($items[$delta]['alt']) ? $items[$delta]['alt'] : NULL,
-      '#required' => TRUE,
     );
 
     $element['description'] = array(
