@@ -51,7 +51,7 @@ function cinematic_toptix_block_view($delta) {
   $block = array('title' => '');
   $path = drupal_get_path('module', 'cinematic_toptix');
   global $language;
-  if($language->language == 'en') { $langadd = '?culture=en-US'; }else { $langadd = ''; }
+  if($language->language == 'en') { $langadd = '%26culture=en-US'; }else { $langadd = ''; }
   
   $output = '<button class="toptix-basket" data-url="http://' . TOPTIX_HOST . '/Order.aspx'.$langadd.'"> ' . t('My cart') . '</button>';
   $esro_frame = '<esro:frame href="http://' . TOPTIX_HOST . '/integrationsample/info.htm" ';
@@ -168,7 +168,7 @@ function cinematic_toptix_field_formatter_view(
   $field_toptix = field_get_items('user', $account, 'field_toptix');
   $field_toptix = $field_toptix[0]['value'];
   global $language;
-  if($language->language == 'en') { $langadd = '&culture=en-US'; }else { $langadd = ''; }
+  if($language->language == 'en') { $langadd = '%26culture=en-US'; }else { $langadd = ''; }
   
   foreach ($items as $delta => $item) {
     $event_id = $item['value'];
@@ -193,5 +193,6 @@ function cinematic_toptix_field_formatter_view(
       ),
     );
   }
+
   return $element;
 }
