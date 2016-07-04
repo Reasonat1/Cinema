@@ -9,8 +9,9 @@
 	border-top: 2px solid $wild_sand;
 	float: left;
 	margin-top: 10px;
+	width: 100%!important;
 	min-width: 94%;
-	padding: 0;
+	padding: 10px 3%;
 	left: 0;
 	position: relative;
 }
@@ -23,7 +24,9 @@
 	position: relative;
 	height: 850px;
 	overflow-y: scroll;
-	padding: 0px;
+	padding-top: 10px;
+	padding: 0 3%;
+	width: 100%!important;
 }
 .calender-filter-date{
 	float: left;
@@ -43,13 +46,12 @@
 	> div {
 		float: left;
 		min-height: 100px;
-		width: 217px;
 	}
 }
 .calender-row {
-	width: 210px;
-	margin: 0;
-	min-height:150px !important;
+	width: 12%;
+	margin: 0 1%!important;
+	min-height: 100px!important;
 	&.inner {
 		background: $white none repeat scroll 0 0;
 		box-shadow: 0 1px 3px 0px;
@@ -60,9 +62,6 @@
 	}
 	.time {
 		float: left;
-	}
-	.bold.time{
-		margin-top: 0;
 	}
 	.title {
 		float: left;
@@ -85,14 +84,10 @@
 	float: left;
 	font-weight: bold;
 	text-align: center;
-	width: 217px;
-	margin: 0;
+	width: 13%;
+	margin: 0 0.5%;
 }
 .tickets {
-	position: absolute;
-	bottom: 20px;
-	right: 15px;
-	left: auto;
 	> a {
 		background-color: $color_mongoose_approx;
 		color: $white;
@@ -210,8 +205,8 @@
 .calendar-dayview-hour {
 	float: left;
 	height: 30px;
-	width: 217px;
-	margin: 0;
+	width: 13%;
+	margin: 0 0.5%;
 }
 
 .pane-complex-calender-view-pane{
@@ -290,19 +285,24 @@
 }
 
 .calender-scroll{
-	margin-top: 10px;
 	float: right;
-	background: url("../images/arrow-right--black.png") no-repeat right center;
-	background-size: 33px;
+	background: none;
 	padding-right: 30px;
 	margin-right: 3%;
+	width: 30%;
 	text-align: right;
-	cursor: pointer;
 	p{
 		margin: 0;
-		top: 132px;
+		float: right;
+		font-size: 30px;
 	}
-	
+	> span {
+		float: left;
+		font-size: 18px;
+		font-weight: bold;
+		margin-right: 5px;
+		margin-top: 13px;
+		}
 }
 
 .pane-complex-calender-view-pane{
@@ -316,9 +316,6 @@
 }
 
 .page-node-3261, .page-node-3284{
-	#page-header .page-header{
-		display: block;
-	}
 	.panel-panel{
 		padding: 0;
 	}

@@ -342,58 +342,88 @@ function interval_element_process($element, &$form_state, $form) {
  * Implements hook_interval_intervals
  */
 function interval_interval_intervals() {
+  // The 'formula' property is added to enable Template Extractor module to
+  // recognize plural strings. The 'singular' and 'plural' properties must
+  // match the strings used in format_plural().	
   return array(
     'second' => array(
-      'plural' => t('Seconds', array(), array('context' => 'interval')),
-      'singular' => t('Second', array(), array('context' => 'interval')),
+      //'plural' => t('Seconds', array(), array('context' => 'interval')),
+      //'singular' => t('Second', array(), array('context' => 'interval')),
+      'formula' => format_plural($count, '@count Second', '@count Seconds', array(), array('context' => 'interval')),
+      'singular' => '@count Second',
+      'plural' => '@count Seconds',	  
       'php' => 'seconds',
       'multiplier' => 1,
     ),
     'minute' => array(
-      'plural' => t('Minutes', array(), array('context' => 'interval')),
-      'singular' => t('Minute', array(), array('context' => 'interval')),
+      //'plural' => t('Minutes', array(), array('context' => 'interval')),
+      //'singular' => t('Minute', array(), array('context' => 'interval')),
+      'formula' => format_plural($count, '@count Minute', '@count Minutes', array(), array('context' => 'interval')),
+      'singular' => '@count Minute',
+      'plural' => '@count Minutes',	  	  
       'php' => 'minutes',
       'multiplier' => 1,
     ),
     'hour' => array(
-      'plural' => t('Hours', array(), array('context' => 'interval')),
-      'singular' => t('Hour', array(), array('context' => 'interval')),
+      //'plural' => t('Hours', array(), array('context' => 'interval')),
+      //'singular' => t('Hour', array(), array('context' => 'interval')),
+      'formula' => format_plural($count, '@count Hour', '@count Hours', array(), array('context' => 'interval')),
+      'singular' => '@count Hour',
+      'plural' => '@count Hours',	 	  
       'php' => 'hours',
       'multiplier' => 1,
     ),
     'day' => array(
-      'plural' => t('Days', array(), array('context' => 'interval')),
-      'singular' => t('Day', array(), array('context' => 'interval')),
+      //'plural' => t('Days', array(), array('context' => 'interval')),
+      //'singular' => t('Day', array(), array('context' => 'interval')),
+      'formula' => format_plural($count, '@count Day', '@count Days', array(), array('context' => 'interval')),
+      'singular' => '@count Day',
+      'plural' => '@count Days',	 	  
       'php' => 'days',
       'multiplier' => 1,
     ),
     'month' => array(
-      'plural' => t('Months', array(), array('context' => 'interval')),
-      'singular' => t('Month', array(), array('context' => 'interval')),
+      //'plural' => t('Months', array(), array('context' => 'interval')),
+      //'singular' => t('Month', array(), array('context' => 'interval')),
+      'formula' => format_plural($count, '@count Month', '@count Months', array(), array('context' => 'interval')),
+      'singular' => '@count Month',
+      'plural' => '@count Months',		  
       'php' => 'months',
       'multiplier' => 1,
     ),
     'year' => array(
-      'plural' => t('Years', array(), array('context' => 'interval')),
-      'singular' => t('Year', array(), array('context' => 'interval')),
+      //'plural' => t('Years', array(), array('context' => 'interval')),
+      //'singular' => t('Year', array(), array('context' => 'interval')),
+      'formula' => format_plural($count, '@count Year', '@count Years', array(), array('context' => 'interval')),
+      'singular' => '@count Year',
+      'plural' => '@count Years',		  
       'php' => 'years',
       'multiplier' => 1,
     ),
     'week' => array(
-      'plural' => t('Weeks', array(), array('context' => 'interval')),
-      'singular' => t('Week', array(), array('context' => 'interval')),
+      //'plural' => t('Weeks', array(), array('context' => 'interval')),
+      //'singular' => t('Week', array(), array('context' => 'interval')),
+      'formula' => format_plural($count, '@count Week', '@count Weeks', array(), array('context' => 'interval')),
+      'singular' => '@count Week',
+      'plural' => '@count Weeks',		  
       'php' => 'days',
       'multiplier' => 7,
     ),
     'fortnight' => array(
-      'plural' => t('Fortnights', array(), array('context' => 'interval')),
-      'singular' => t('Fortnight', array(), array('context' => 'interval')),
+      //'plural' => t('Fortnights', array(), array('context' => 'interval')),
+      //'singular' => t('Fortnight', array(), array('context' => 'interval')),
+      'formula' => format_plural($count, '@count Fortnight', '@count Fortnights', array(), array('context' => 'interval')),
+      'singular' => '@count Fortnight',
+      'plural' => '@count Fortnights',		  
       'php' => 'days',
       'multiplier' => 14,
     ),
     'quarter' => array(
-      'plural' => t('Quarters', array(), array('context' => 'interval')),
-      'singular' => t('Quarter', array(), array('context' => 'interval')),
+      //'plural' => t('Quarters', array(), array('context' => 'interval')),
+      //'singular' => t('Quarter', array(), array('context' => 'interval')),
+      'formula' => format_plural($count, '@count Quarters', '@count Quarters', array(), array('context' => 'interval')),
+      'singular' => '@count Quarter',
+      'plural' => '@count Quarters',		  
       'php' => 'months',
       'multiplier' => 3,
     ),
@@ -407,10 +437,15 @@ function interval_interval_intervals() {
  * Util function to fetch defined intervals
  */
 function interval_get_intervals() {
+
+  global $language;
+  $langcode = $language->language;
+	
   $intervals = &drupal_static(__FUNCTION__);
   if (!isset($intervals)) {
     // First prime of the static - try cache.
-    $cached = cache_get('interval_intervals');
+    //$cached = cache_get('interval_intervals');
+	$cached = cache_get("interval_intervals:$langcode");
     if ($cached && $cached->data) {
       $intervals = $cached->data;
     }
@@ -418,7 +453,8 @@ function interval_get_intervals() {
       // Non-primed cache too - initialize with module_invoke_all.
       $intervals = module_invoke_all('interval_intervals');
       // Cache them.
-      cache_set('interval_intervals', $intervals);
+      //cache_set('interval_intervals', $intervals);
+	  cache_set("interval_intervals:$langcode", $intervals);
     }
   }
   return $intervals;
@@ -505,11 +541,16 @@ function interval_format_interval($item) {
   $intervals = interval_get_intervals();
   $interval = $intervals[$item['period']];
   return format_plural(
-    $item['interval'], '1 @singular', '@count @plural',
-    array(
-      '@singular' => $interval['singular'],
-      '@plural' => $interval['plural']
-    )
+    //$item['interval'], '1 @singular', '@count @plural',
+    //array(
+      //'@singular' => $interval['singular'],
+      //'@plural' => $interval['plural']
+    //)
+    $item['interval'],
+    $interval['singular'],
+    $interval['plural'],
+    array(), 
+    array('context' => 'interval')	
   );
 }
 
