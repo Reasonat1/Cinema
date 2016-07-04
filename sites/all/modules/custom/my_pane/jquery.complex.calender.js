@@ -67,7 +67,7 @@ jQuery(document).ready(function () {
     var body_width = jQuery(window).width();
     if (content_width > body_width) {
         var sliderLimit = parseInt(content_width) - parseInt(body_width);
-        jQuery('.scrollleft').click(function () {
+        jQuery('.scrollright').click(function () {
             var currentPosition = parseInt(jQuery('.calender-body').css("left"));
             if (currentPosition < 0) 
                 currentPosition *= -1;
@@ -76,8 +76,16 @@ jQuery(document).ready(function () {
                 jQuery('.calender-header').stop(false, true).animate({left: "-=" + 217}, "slow");
             }
         });
+        jQuery('.scrollleft').click(function () {
+            var currentPosition = parseInt(jQuery('.calender-body').css("left"));
+            currentPosition *= -1;
+            if (currentPosition > 0) {
+                jQuery('.calender-body').stop(false, true).animate({left: "+=" +217}, "slow");
+                jQuery('.calender-header').stop(false, true).animate({left: "+=" + 217}, "slow");
+            }
+        });
     }else{
-        jQuery('.scrollleft').remove();
+        jQuery('.calender-scroll').html('');
     }
 jQuery('.calender-row .time').css('margin-top','0');
 });
@@ -127,7 +135,7 @@ jQuery(document).ajaxStop(function () {
     var body_width = jQuery(window).width();
     if (content_width > body_width) {
         var sliderLimit = parseInt(content_width) - parseInt(body_width);
-        jQuery('.scrollleft').click(function () {
+        jQuery('.scrollright').click(function () {
             var currentPosition = parseInt(jQuery('.calender-body').css("left"));
             if (currentPosition < 0)
                 currentPosition *= -1;
@@ -136,8 +144,16 @@ jQuery(document).ajaxStop(function () {
                 jQuery('.calender-header').stop(false, true).animate({left: "-=" + 217}, "slow");
             }
         });
+        jQuery('.scrollleft').click(function () {
+            var currentPosition = parseInt(jQuery('.calender-body').css("left"));
+            currentPosition *= -1;
+            if (currentPosition > 0) {
+                jQuery('.calender-body').stop(false, true).animate({left: "+=" +217}, "slow");
+                jQuery('.calender-header').stop(false, true).animate({left: "+=" + 217}, "slow");
+            }
+        });
     }else{
-        jQuery('.scrollleft').remove();
+       jQuery('.calender-scroll').html('');
     }
 jQuery('.calender-row .time').css('margin-top','0');
 });
