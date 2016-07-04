@@ -11,6 +11,32 @@ foreach (glob($includes_path) as $filename) {
 }
 
 /**
+ * Implements template_preprocess_html().
+ */
+function cinemateque_preprocess_html(&$variables) {
+	if ($node = menu_get_object()) {
+	    switch($node->type) {
+		  case 'cm_event':
+			if(empty($node->field_cm_event_images)) $variables['classes_array'][] = 'noheaderimage';
+		  break;
+		  case 'cm_article':
+			if(empty($node->field_cm_article_image)) $variables['classes_array'][] = 'noheaderimage';
+		  break;
+		  case 'cm_movie':
+			if(empty($node->field_cm_movie_pictures)) $variables['classes_array'][] = 'noheaderimage';
+		  break;
+		  case 'cm_movie_group':
+			if(empty($node->field_cm_moviegroup_pictures)) $variables['classes_array'][] = 'noheaderimage';
+		  break;
+		  default:
+		  
+		  break;
+	    }
+	}
+	
+	//dpm($variables);
+}
+/**
  * Implements template_preprocess_page().
  */
 function cinemateque_preprocess_page(&$variables) {
