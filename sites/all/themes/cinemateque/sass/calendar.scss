@@ -9,9 +9,8 @@
 	border-top: 2px solid $wild_sand;
 	float: left;
 	margin-top: 10px;
-	width: 100%!important;
 	min-width: 94%;
-	padding: 10px 3%;
+	padding: 0;
 	left: 0;
 	position: relative;
 }
@@ -24,9 +23,7 @@
 	position: relative;
 	height: 850px;
 	overflow-y: scroll;
-	padding-top: 10px;
-	padding: 0 3%;
-	width: 100%!important;
+	padding: 0;
 }
 .calender-filter-date{
 	float: left;
@@ -46,12 +43,13 @@
 	> div {
 		float: left;
 		min-height: 100px;
+		width: 217px;
 	}
 }
 .calender-row {
-	width: 12%;
-	margin: 0 1%!important;
-	min-height: 100px!important;
+	width: 210px;
+	margin: 0!important;
+	min-height: 150px!important;
 	&.inner {
 		background: $white none repeat scroll 0 0;
 		box-shadow: 0 1px 3px 0px;
@@ -62,6 +60,7 @@
 	}
 	.time {
 		float: left;
+		margin-top: 0;
 	}
 	.title {
 		float: left;
@@ -84,8 +83,8 @@
 	float: left;
 	font-weight: bold;
 	text-align: center;
-	width: 13%;
-	margin: 0 0.5%;
+	width: 217px;
+	margin: 0;
 }
 .tickets {
 	> a {
@@ -129,7 +128,7 @@
 	.calender-row.inner {
 		cursor: default;
 		padding: 20px;
-		width: 500px;
+		width: 210px;
 	}
 	.body > p {
 		font-size: 14px;
@@ -205,8 +204,8 @@
 .calendar-dayview-hour {
 	float: left;
 	height: 30px;
-	width: 13%;
-	margin: 0 0.5%;
+	width: 217px;
+	margin: 0;
 }
 
 .pane-complex-calender-view-pane{
@@ -291,18 +290,28 @@
 	margin-right: 3%;
 	width: 30%;
 	text-align: right;
+	margin-top: 13px;
 	p{
 		margin: 0;
 		float: right;
-		font-size: 30px;
+		font-size: 0px;
+		height: 19px;
+	    width: 10px;
+	    cursor: pointer;
+	    margin-left: 20px;
+	    margin-top: 5px;
 	}
 	> span {
-		float: left;
-		font-size: 18px;
-		font-weight: bold;
-		margin-right: 5px;
-		margin-top: 13px;
-		}
+		  font-size: 18px;
+		  font-weight: bold;
+		  margin-right: 5px;
+	}
+	.scrollright{
+		background: url("../images/more-gold-right.png") no-repeat center center;
+	}
+	.scrollleft{
+		background: url("../images/more-gold-left.png") no-repeat center center;
+	}
 }
 
 .pane-complex-calender-view-pane{
@@ -321,5 +330,9 @@
 	}
 	#main-wrapper{
 		background-color: #fff;
+	}
+	#page-header .page-header{
+		display: block;
+		border: none;
 	}
 }

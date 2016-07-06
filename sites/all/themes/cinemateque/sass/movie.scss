@@ -119,8 +119,9 @@
 			height: 100%!important;
 		}
 		.panels-flexible-region, .pane-content, .pane-movie-top-pane-view-panel-pane-1, .view, .views-slideshow-cycle-main-frame, .view-content,.skin-default, .views-slideshow-cycle-main-frame-row,
-		.views-slideshow-cycle-main-frame-row-item, .views-field, .field-content, .movie-slide-container, .movie-slide{
-			height: 100%;
+		.views-slideshow-cycle-main-frame-row-item, .views-field, .field-content, .movie-slide-container, .movie-slide, .views-slideshow-cycle-main-frame{
+			height: 100%!important;
+			width: 100%;
 		}
 		.views_slideshow_main{
 			height: 100%;
@@ -130,12 +131,16 @@
 		}
 	}
 	.pane-movie-top-pane-view-panel-pane-2{
-		 bottom: 6em;
+		bottom: 6em;
 	    color: #fff;
 	    padding: 0;
 	    position: absolute;
 	    width: 100%;
 	    z-index: 50;
+	    min-height: 130px;
+	    .pane-content{
+	    	@include width;
+	    }
 	}
 	.view-id-movie_top_pane_view.view-display-id-panel_pane_4{
 		margin-top: 50px;
@@ -149,10 +154,9 @@
 	.panels-flexible-row-node_page-6{
 		width: 100%!important;
 		background-color: #fff;
-		padding: 30px 0;
-		.pane-content{
-			@include width;
-		}
+		@include width;
+		padding-top: 30px;
+		padding-bottom: 30px;
 		.views-field-field-cm-movie-credits-person-ro{
 			color: $color_nobel_approx;
 			width: 23%;
@@ -167,6 +171,9 @@
 			.table-responsive{
 				overflow: visible;
 			}
+		}
+		.views-field-field-cm-event-time{
+			width: 23%;
 		}
 		#atedrop5-drop{
 			top: 35px!important;

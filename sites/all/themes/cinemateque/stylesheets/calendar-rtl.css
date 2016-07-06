@@ -137,11 +137,28 @@
 /* line 114, ../sass/calendar-rtl.scss */
 .calender-scroll {
   float: left;
-  background: url("../images/arrow-left--black.png") no-repeat left center;
-  background-size: 33px;
   padding-left: 30px;
   padding-right: 0;
-  margin-right: 0;
   margin-left: 3%;
+  margin-right: 0;
   text-align: left;
+}
+/* line 121, ../sass/calendar-rtl.scss */
+.calender-scroll p {
+  float: left;
+  margin-left: 0px;
+  margin-right: 20px;
+}
+/* line 126, ../sass/calendar-rtl.scss */
+.calender-scroll > span {
+  margin-left: 5px;
+  margin-right: 0;
+}
+/* line 130, ../sass/calendar-rtl.scss */
+.calender-scroll .scrollright {
+  background: url("../images/more-gold-left.png") no-repeat center center;
+}
+/* line 133, ../sass/calendar-rtl.scss */
+.calender-scroll .scrollleft {
+  background: url("../images/more-gold-right.png") no-repeat center center;
 }

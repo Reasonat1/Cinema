@@ -50,7 +50,6 @@ function _cm_extra_icons() {
   
   $block['subject'] = '';
   $block['content']['#markup'] = '<li class="popup_search"><i class="fa fa-search" aria-hidden="true"></i></li>
-<li>'.l('<i class="fa fa-user" aria-hidden="true"></i>','user',array('html' => true)).'</li>
 <li><i class="fa fa-shopping-cart" aria-hidden="true">'.$toptixblock['content']['#markup'].'</i></li>
 <li id="da11y-plugin"></li>
 <li>'.$langicon.'</li>
@@ -75,6 +74,144 @@ function _cm_extra_icons() {
   
 }
 
+function cm_extra_form_alter(&$form, &$form_state, $form_id) {
+	//panels_ipe_edit_control_form or fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form
+	//dpm($form_id);
+	//dpm($form);
+	if($form_id == 'fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form') {
+		
+	  if(empty($form['field_which_lobby_to_show_']['und']['#entity']->field_which_lobby_to_show_)) {
+		  //cant work with default pane on term page, but they have link for that on that page.
+		  $form['no_reorder'] = array(
+			'#type' => 'markup',
+			'#markup' => t('To re-order content of this pane, click on the re-order tab link or supply a specific lobby term for this pane.'),
+		  );
+	  }else{
+		$tid = $form['field_which_lobby_to_show_']['und']['#entity']->field_which_lobby_to_show_['und'][0]['tid'];
+			
+		  // Execute the draggable view.
+		  $draggable_view = views_get_view('lobby');
+		  $draggable_view->set_display('page_1');
+		  $draggable_view->pre_execute(array($tid));
+		  $draggable_view->execute('page_1');
+
+		  // Get the markup without the form.
+		  $draggable_view_output = (!empty($draggable_view->result) || $draggable_view->style_plugin->even_empty())
+			? $draggable_view->style_plugin->render($draggable_view->result) : '';
+
+		  // Get the form in array form (not rendered html). This is needed so we strip the form build id's, and what not, so merging the forms works,
+		  // meaning the original form id will be used.
+		  $sorter_form = drupal_get_form(views_form_id($draggable_view), $draggable_view, $draggable_view_output);
+
+		  // Strip lots of unnecessary stuff stuff.
+		  unset($sorter_form['#action']);
+		  unset($sorter_form['#form_id']);
+		  unset($sorter_form['#build_id']);
+		  unset($sorter_form['#token']);
+		  unset($sorter_form['#method']);
+		  unset($sorter_form['form_id']);
+		  unset($sorter_form['form_token']);
+		  unset($sorter_form['form_build_id']);
+
+		  // Change the default draggable_views_submit handler with our own, because it expects a views object argument, which is not properly sent.
+		  $sorter_form['actions']['submit']['#submit'][0] = '_cm_extra_custom_draggable_views_submit';
+
+		  // Save the view we will send as an argument, in build_info key.
+		  $form_state['build_info']['draggable_views'][$draggable_view->name] = $draggable_view;
+
+		  // Change the save button to the name set in the options, because whenever the view is empty, views sets its own Save label.
+			if (isset($reference_design_sorter_view->field['draggableviews']->options['draggableviews']['save_button_label'])) {
+			  $label = $reference_design_sorter_view->field['draggableviews']->options['draggableviews']['save_button_label'];
+
+			  // It is important that the label is not one of the labels that are present on node edit page, like Save, Edit, Delete.
+			  if (in_array($label, array(t('Save'), t('Edit'), t('Preview'), t('Delete'), t('View Changes')))) {
+				$message = t('The draggable views submit label should be set to something other than Save, Edit, or any other button present,\
+	 otherwise the node edit page will not work correctly. eg. Save Order. The label can be set in the field settings of the draggable view <a href="!link">here</a>.',
+				  array('!link' => url('admin/structure/views/view/' . $reference_design_sorter_view->name)));
+				drupal_set_message($message, 'warning');
+
+			  }
+			  $sorter_form['actions']['submit']['#value'] = $label;
+			}
+
+			// Change the type of the item from 'form' to 'container', so no additional form submit handling is executed besides the main form.
+			$sorter_form['#type'] = 'container';
+
+		  // Add the draggable views form elements into the node edit form.
+		  $form['ref_design_sorter_wrapper'] = array(
+			'#type' => 'fieldset',
+			'#title' => t('Content of lobby'),
+			'ref_design_sorter' => $sorter_form,
+			'#weight' => 100,
+		  );
+
+		  // Put it inside the field-group, so we don't clutter the form.
+		  if (isset($form['#fieldgroups']['group_references'])) {
+			$form['#fieldgroups']['group_references']->children[] = 'ref_design_sorter_wrapper';
+			$form['#group_children']['ref_design_sorter_wrapper'] = 'group_references';
+		  }
+	  
+		//dpm($form);
+		//dpm($tid);
+
+	  }	
+		
+	}
+}
+
+function cm_extra_i18n_sync_translation($entity_type, $translation, $translation_language, $source, $source_language, $field_names) {
+	//dpm(get_defined_vars());
+	if($entity_type != 'node') return;
+	
+	if(isset($source->field_lobby['und'][0]['target_id']) && !empty($source->field_lobby['und'][0]['target_id'])) {
+		$lobby_tid_org = $source->field_lobby['und'][0]['target_id'];
+		
+		if($lobby_tid_trans = i18n_taxonomy_translation_term_tid($lobby_tid_org,$translation_language)){
+			$translation->field_lobby['und'][0]['target_id'] = $lobby_tid_trans;
+			//dpm(get_defined_vars());
+		}	
+	}
+	/*
+  foreach ($field_names as $field_name) {
+    $info = field_info_field($field_name);
+    if ($info['type'] == 'entityreference') {
+      $items = field_get_items($entity_type, $source, $field_name);
+      foreach ($items as $delta => $item) {
+        $translations = translation_node_get_translations($item['target_id']);
+        if (isset($translations[$translation_language])) {
+          list($id, $vid, $bundle) = entity_extract_ids($entity_type, (object) $translations[$translation_language]);
+          $translation->{$field_name}['und'][$delta]['target_id'] = $id;
+        }
+      }
+    }
+  }*/
+}
+  
+/**
+ * Submit handler that prepares a view object to send to the draggable views submit handler.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function _cm_extra_custom_draggable_views_submit($form, &$form_state) {
+  // Get the view object.
+  $view_object = current($form_state['build_info']['draggable_views']);
+
+  // Save the original argument, if it exists.
+  if (isset($form_state['build_info']['args'][0])) {
+    $original_argument = $form_state['build_info']['args'][0];
+  }
+
+  // Temporarily set the view object as the new argument, and call the draggable views handler.
+  $form_state['build_info']['args'][0] = $view_object;
+  draggableviews_views_submit($form, $form_state);
+
+  // Restore original argument, if it existed.
+  if (isset($original_argument)) {
+    $form_state['build_info']['args'][0] = $original_argument;
+  }
+}
+
 function cm_extra_form_node_form_alter(&$form, &$form_state, $form_id) {
 //dpm($form);
   if(!empty($form['nid']['#value']) && !$form['#node']->tnid){ //only for saved nodes that does not have translation
@@ -88,6 +225,15 @@ function cm_extra_form_node_form_alter(&$form, &$form_state, $form_id) {
 }
 
 //redirect user to the add node form of the translation for it
+function cm_extra_views_pre_render(&$view) {
+	//hide event title if it equals to movie title
+	if($view->name == 'event_ct_view' && $view->current_display == 'panel_pane_3') {
+		if(isset($view->result[0]->node_field_data_field_cm_event_lineup_title) && strcmp($view->result[0]->node_title, $view->result[0]->node_field_data_field_cm_event_lineup_title) == 0 ){
+			unset($view->result[0]->node_field_data_field_cm_event_lineup_title);
+		}
+	}
+}
+
 function cm_extra_node_translate_after_submit($form, &$form_state) {
 	$a = $form_state;
 	($a['node']->language == 'en') ? $dest_lang = 'he' : $dest_lang = 'en';

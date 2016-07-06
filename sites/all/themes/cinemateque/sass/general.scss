@@ -35,7 +35,7 @@ a{
 	width: 100%;
 }
 #main-wrapper {
-	margin-top: 58px !important;
+	margin-top: 50px !important;
 }
 
 .table-responsive tbody tr {
@@ -319,23 +319,40 @@ body {
 .slide-parent-content {
 	position: relative;
 }
+
 #colorbox {
-	width: 518px !important;
-	height: 435px !important;
-	border-radius: 2%;
-	left: 30% !important;
-	#cboxWrapper {
-		height: 453px !important;
-		width: 616px !important;
+	left: 10% !important;
+	background-color: transparent;
+	overflow: visible;
+	width: 80%!important;
+	#cboxMiddleLeft, #cboxTopLeft, #cboxMiddleRight, #cboxTopCenter, #cboxTopRight, #cboxBottomLeft, #cboxBottomLeft, #cboxBottomRight, #cboxBottomCenter{
+		display: none;
 	}
+	#cboxWrapper{
+		border-radius: 0;
+		width: 100%;
+	}
+	#cboxWrapper, #cboxContent{
+		background-color: transparent;
+		overflow: visible;
+	}
+	#cboxClose{
+		background: url("../images/close42.png") no-repeat center center;
+   		left: -35px;
+    	top: -29px;
+  	}
+  	video{
+  		width: 100%;
+
+  	}
 }
+
 #cboxContent {
 	width: 497px !important;
 	height: 399px !important;
 }
 #cboxLoadedContent {
 	margin: 0;
-	width: 502px !important;
 }
 #cboxClose {
 	bottom: 3% !important;
@@ -1089,7 +1106,7 @@ table{
 			float: left;
 			margin-top: 14px;
 			&:hover{
-				background-color: $main-color;	
+				background-color: $main-color!important;	
 			}
 		}
 		.form-item{

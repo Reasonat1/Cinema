@@ -113,12 +113,24 @@
 
 .calender-scroll{
 	float: left;
-	background: url("../images/arrow-left--black.png") no-repeat left center;
-	background-size: 33px;
 	padding-left: 30px;
 	padding-right: 0;
-	margin-right: 0;
 	margin-left: 3%;
+	margin-right: 0;
 	text-align: left;
-
+	p{
+		float: left;
+	    margin-left: 0px;
+	    margin-right: 20px;
+	}
+	> span {
+		  margin-left: 5px;
+		  margin-right: 0;
+	}
+	.scrollright{
+		background: url("../images/more-gold-left.png") no-repeat center center;
+	}
+	.scrollleft{
+		background: url("../images/more-gold-right.png") no-repeat center center;
+	}
 }
