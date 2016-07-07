@@ -46,19 +46,28 @@ class addressfield_phone_handler_field_address_phone_nr extends views_handler_fi
    * Render the addresfields phone field.
    */
   public function render($values) {
-    $phoneNrs = unserialize($this->get_value($values))
+    /*$phoneNrs = unserialize($this->get_value($values))
       + array(
         'phone_number' => '',
         'phone_number_extension' => '',
         'mobile_number' => '',
         'fax_number' => '',
-      );
+      );*/
+    $phoneNrs = array(
+      'phone_number' => '',
+      'phone_number_extension' => '',
+      'mobile_number' => '',
+      'fax_number' => '',
+    );
+
+    $phoneNrs = unserialize($this->get_value($values));	  
+
     switch ($this->options['selected_phone_type']) {
       case 1:
         return $phoneNrs['phone_number'];
         break;
       case 2:
-        return $phoneNrs['phone_number_extension'];
+        return !empty($phoneNrs['phone_number_extension']) ? $phoneNrs['phone_number_extension'] : '';
         break;
       case 3:
         return $phoneNrs['mobile_number'];

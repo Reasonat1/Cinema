@@ -15,7 +15,8 @@
         $(".node-type-cm-event .views-slideshow-cycle-main-frame").height($screenheight);
         $(".node-type-cm-movie-group .panels-flexible-row-node_page-3, .node-type-cm-movie .panels-flexible-row-node_page-3, .page-term-lobby .panels-flexible-row-node_page-1 .pane-lobby-panel-pane-3").height($screenheight);
         $(".movie-group-slide-container").height($screenheight);
-
+        $fullscreenheight = $(window).height();
+        $(".front .pane-bundle-gallery").height($fullscreenheight);
        
         $(window).resize(function() {
         	$screenheight = $(window).height()-50;
@@ -24,6 +25,8 @@
             $(".node-type-cm-event .views-slideshow-cycle-main-frame").height($screenheight);
             $(".node-type-cm-movie-group .panels-flexible-row-node_page-3, .node-type-cm-movie .panels-flexible-row-node_page-3, .page-term-lobby .panels-flexible-row-node_page-1 .pane-lobby-panel-pane-3").height($screenheight);
             $(".movie-group-slide-container").height($screenheight);
+            $fullscreenheight = $(window).height();
+            $(".front .pane-bundle-gallery").height($fullscreenheight);
         });
 
         $screenwidth = $(window).width();

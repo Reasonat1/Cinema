@@ -24,9 +24,18 @@
 				padding-right: 10px;
 			}
 		}
+		label{
+			padding: 10px;	
+		}
 		.webform-component--approve-recieving-e-mail{
 			margin-left: 0%;
 			margin-right: 23%;
+			label{
+				position: relative!important;
+				&.element-invisible{
+					display: none;
+				}
+			}
 		}
 		.form-submit{
 			margin: 0 5px 0 0px;

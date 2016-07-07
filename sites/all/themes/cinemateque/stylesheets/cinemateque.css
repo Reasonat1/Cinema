@@ -280,7 +280,7 @@ body {
 }
 /* line 249, ../sass/cinemateque.scss */
 .footer .webform-client-form .webform-component--approve-recieving-e-mail input {
-  display: none;
+  height: auto;
 }
 /* line 253, ../sass/cinemateque.scss */
 .footer .webform-client-form .form-submit {
@@ -1992,4 +1992,14 @@ div[id^="panels-ipe-paneid-22"] > * select {
   border-radius: 0 !important;
   border: 1px solid #999;
   box-shadow: none !important;
+}
+
+/* line 1667, ../sass/cinemateque.scss */
+.front .pane-bundle-gallery .pane-content, .front .pane-bundle-gallery .fieldable-panels-pane, .front .pane-bundle-gallery .field-name-field-custom-gallery-items, .front .pane-bundle-gallery .field-items, .front .pane-bundle-gallery .field-item, .front .pane-bundle-gallery .panopoly-spotlight-widget-wrapper, .front .pane-bundle-gallery .custom-slideshow, .front .pane-bundle-gallery .custom-slideshow li {
+  height: 100% !important;
+}
+/* line 1670, ../sass/cinemateque.scss */
+.front .pane-bundle-gallery .custom-slideshow li img {
+  height: 100%;
+  width: auto;
 }

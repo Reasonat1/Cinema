@@ -247,7 +247,7 @@ body {
 			cursor: default;
 			margin-left: 20%;
 			input{
-				display: none;
+				height: auto;
 			}
 		}
 		.form-submit{
@@ -1659,4 +1659,17 @@ div[id^="panels-ipe-paneid-22"] > * select {
 	border-radius: 0 !important;
 	border: 1px solid $color_mountain_mist_approx;
 	box-shadow: none !important;
+}
+
+
+.front{
+	.pane-bundle-gallery{
+		.pane-content, .fieldable-panels-pane, .field-name-field-custom-gallery-items, .field-items, .field-item, .panopoly-spotlight-widget-wrapper, .custom-slideshow, .custom-slideshow li{
+			height: 100%!important;
+		}
+		.custom-slideshow li img{
+			height: 100%;
+			width: auto;
+		}
+	}
 }
