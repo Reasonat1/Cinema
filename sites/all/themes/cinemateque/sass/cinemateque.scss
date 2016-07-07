@@ -1308,7 +1308,8 @@ body {
 }
 
 .wide-margins {
-	padding: 20px 20%;
+	@include width;
+	width: 615px!important;
 }
 
 .purchase-btn {
@@ -1663,6 +1664,15 @@ div[id^="panels-ipe-paneid-22"] > * select {
 
 
 .front{
+	background-color: $color_fantasy_approx!important;
+	.pane-title{
+		font-weight: normal;
+		font-size: 20px;
+		text-align: center;
+	}
+	.panel-pane{
+		overflow: hidden;
+	}
 	.pane-bundle-gallery{
 		.pane-content, .fieldable-panels-pane, .field-name-field-custom-gallery-items, .field-items, .field-item, .panopoly-spotlight-widget-wrapper, .custom-slideshow, .custom-slideshow li{
 			height: 100%!important;
@@ -1681,11 +1691,22 @@ div[id^="panels-ipe-paneid-22"] > * select {
 		}
 		.pinch{
 			width: 100%;
-			letter-spacing: 0;
+			left: 0;
 			padding: 0;
 			.wrapper{
 				@include width;
 			}
 		}
+	}
+	.field-name-field-cm-festival-body{
+		margin-top: 100px;
+		margin-bottom: 20px;
+		p{	
+			margin-bottom: 50px;
+			line-height: 25px;
+		}
+	}
+	.pane-panels-mini{
+		@include width;
 	}
 }

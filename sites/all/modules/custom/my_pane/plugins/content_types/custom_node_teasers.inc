@@ -272,11 +272,11 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
             $title = $val->title;
             $alias = $base_url . '/' . drupal_lookup_path('alias', "node/" . $val->nid);
             $html.= "<div class='row-$row_class teaser-row $class'>";
-            $html.= "<div class='event-image'>$imgae</div>";
+            $html.= "<div class='wrapper-image'><div class='event-image'>$imgae</div>";
             $html.= "<div class='event-date-black-white-background'>$black_content $white_content</div>";
             $html.= "<div class='event-flag'>$flag</div>";
             $html.= "<div class='event-title'><span>$title</span></div>";
-            $html.= "<div class='event-time'><span class='time'>$time</span><span class='date'>$date</span><a href='$alias'><span class='ticket'>Ticket</span></a></div>";
+            $html.= "<div class='event-time'><span class='time'>$time</span><span class='date'>$date</span><a href='$alias'><span class='ticket'>Ticket</span></a></div></div>";
             $html.= "<div class='movie_metainfo'><span>$movie_duration</span></div>";
             $html.= "<div class='event-summery'>$description</div>";
             $html.= "</div>";
@@ -405,11 +405,11 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
             }
 
             $html.= "<div class='row-$row_class teaser-row $class'>";
-            $html.= "<div class='movie-image'>$imgae</div>";
+            $html.= "<div class='wrapper-image'><div class='movie-image'>$imgae</div>";
             $html.= "<div class='movie-date-black-white-background'>$black_content $white_content</div>";
             $html.= "<div class='movie-flag'>$flag</div>";
             $html.= "<div class='movie-title'><span>$title</span></div>";
-            $html.= "<div class='movie_play'><span>$play_icon</span></div>";
+            $html.= "<div class='movie_play'><span>$play_icon</span></div></div>";
             $html.= "<div class='movie_metainfo'><span>$movie_duration</span></div>";
             $html.= "<div class='movie_summery'><span>$description</span></div>";
             $html.= "</div>";
@@ -535,11 +535,11 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
             }
 
             $html.= "<div class='row-$row_class teaser-row $class'>";
-            $html.= "<div class='moviegroup-image'>$imgae</div>";
+            $html.= "<div class='wrapper-image'><div class='moviegroup-image'>$imgae</div>";
             $html.= "<div class='movie-date-black-white-background'>$black_content $white_content</div>";
             $html.= "<div class='moviegroup-flag'>$flag</div>";
             $html.= "<div class='moviegroup-title'><span>$title</span></div>";
-            $html.= "<div class='moviegroup_play'><span>$play_icon</span></div>";
+            $html.= "<div class='moviegroup_play'><span>$play_icon</span></div></div>";
             $html.= "<div class='moviegroup_metainfo'><span>$moviegroup_duration</span></div>";
             $html.= "<div class='moviegroup_summery'><span>$description</span></div>";
             $html.= "</div>";
