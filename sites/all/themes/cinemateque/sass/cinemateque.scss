@@ -1671,5 +1671,21 @@ div[id^="panels-ipe-paneid-22"] > * select {
 			height: 100%;
 			width: auto;
 		}
+		.slider-readmore{
+			border-radius: 15px;
+			margin-top: 20px;
+		}
+		.slider-title{
+			font-size: 3rem;
+			font-weight: normal;
+		}
+		.pinch{
+			width: 100%;
+			letter-spacing: 0;
+			padding: 0;
+			.wrapper{
+				@include width;
+			}
+		}
 	}
 }

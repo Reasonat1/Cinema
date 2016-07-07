@@ -536,19 +536,19 @@ function theme_panopoly_gallery_view($variables) {
      $output = '<li>';
      if ($link) {
         $output .= l($image_markup, $link, array('html' => TRUE));
-        $output .= "<div class='pinch'>";
+        $output .= "<div class='pinch'><div class='wrapper'>";
         $output.="<span class='slider-title'>$title</span>";
         $output.="<span class='slider-subtitle'>$subtitle</span>";
         $output.="<span class='slider-readmore'><a href='$link' target='_blank'>$link_title</a></span>";
-         $output .= "</div>";
+         $output .= "</div></div>";
       }
       else {
         $output .= $image_markup;
-        $output .= "<div class='pinch'>";
+        $output .= "<div class='pinch'><div class='wrapper'>";
         $output.="<span class='slider-title'>$title</span>";
         $output.="<span class='slider-subtitle'>$subtitle</span>";
         $output.="<span class='slider-readmore'><a href='$link' target='_blank'>Read More</a></span>";
-         $output .= "</div>";
+         $output .= "</div></div>";
       }
        $output .= '</li>';
 
