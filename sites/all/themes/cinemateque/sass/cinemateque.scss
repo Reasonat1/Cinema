@@ -1665,10 +1665,13 @@ div[id^="panels-ipe-paneid-22"] > * select {
 
 .front{
 	background-color: $color_fantasy_approx!important;
-	.pane-title{
+	#mini-panel-myminipaneltest23rds13rd .pane-title{
 		font-weight: normal;
 		font-size: 20px;
 		text-align: center;
+	}
+	p{
+		line-height: 24px;
 	}
 	.panel-pane{
 		overflow: hidden;
@@ -1680,6 +1683,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
 		.custom-slideshow li img{
 			height: 100%;
 			width: auto;
+			max-width: none;
 		}
 		.slider-readmore{
 			border-radius: 15px;

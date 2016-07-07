@@ -5,15 +5,18 @@ unset($content['links']);
 unset($content['language']);
 //dpm(get_defined_vars());
 ?>
-<div class="node-title-teaser node-title-teaser-cm-event">
-	<div class="node-title-teaser-title">
-	   <h3><?php print l($title,'node/'.$nid);?></h3>
-	<?php if($field_cm_event_subtitle){ ?>
-		<div class="node-title-teaser-sub-title">
-		<?php print $field_cm_event_subtitle[0]['safe_value'];?>
+<?php if($field_cm_event_subtitle){ ?> <div class="teaser-with-sub"> <?php } ?>
+<div class="node-title-teaser node-title-teaser-cm-event node-title-teaser-content-type">
+	<?php $nodeurl = url('node/'. $node->nid);?>
+	<a href="<?php print $nodeurl;?>">
+		<div class="node-title-teaser-title">
+		   <h3><?php print $title;?></h3>
+		<?php if($field_cm_event_subtitle){ ?>
+			<div class="node-title-teaser-sub-title">
+			<?php print $field_cm_event_subtitle[0]['safe_value'];?>
+			</div>
+		<?php } ?>	  
 		</div>
-	<?php } ?>	  
-	</div>
-	<?php print l('<span class="click-arrow" />','node/'.$nid,array('html' => TRUE));?>
-	
+	</a>
 </div>
+<?php if($field_cm_event_subtitle){ ?> </div> <?php } ?>

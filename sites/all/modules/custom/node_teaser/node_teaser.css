@@ -330,17 +330,15 @@ fieldset#panopoly-form-widget-preview {
   top: 0;
 }
 .side-image .event-image {
-  height: auto;
-  margin-right: 20px;
-  min-height: auto;
-  width: 300px;
   float: left;
+  width: 48%;
 }
 .side-image .event-image > img {
   height: auto;
 }
-.side-image .event-summery {
-  float: none;
+.side-image .event-summery, .side-image .movie_metainfo {
+  float: right;
+  width: 52%;
 }
 .side-image .event-title {
   color: #000000;
@@ -366,4 +364,52 @@ fieldset#panopoly-form-widget-preview {
   height: auto;
   min-height: 30px;
   width: 100%;
+}
+
+.node-title-teaser-content-type{
+  font-size: 20px;
+  padding: 23px 26px 23px 10px;
+  background: url("/sites/all/themes/cinemateque/images/more-gold-right.png") no-repeat right 10px center #fff; 
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+    margin-bottom: 20px;
+}
+
+.teaser-with-sub .node-title-teaser-content-type{
+  padding: 10px 26px 10px 10px;
+}
+
+.node-title-teaser-content-type h3{
+    font-weight: bold;
+    font-size: 20px!important;
+    margin: 0;
+}
+
+.node-title-teaser-content-type a{
+    color: #333;
+}
+
+.node-title-teaser-content-type:hover a{
+    color: #fff;
+}
+
+.node-title-teaser-content-type:hover{
+  background: url("/sites/all/themes/cinemateque/images/more-white-right.png") no-repeat right 10px center #b59d70; 
+  color: #fff;
+}
+
+.node-title-teaser-cm-movie{
+  padding: 0!important;
+  overflow: hidden;
+}
+
+.node-title-teaser-cm-movie .node-cm-movie-year{
+  padding: 23px 10px;
+  float: left;
+  border-right: 2px solid #f9f4ee;
+  margin-right: 10px;
+}
+
+.node-title-teaser-cm-movie a .node-title-teaser-title{
+  padding: 26px 26px 23px 10px;
 }

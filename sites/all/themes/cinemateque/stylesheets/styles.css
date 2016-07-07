@@ -4769,41 +4769,46 @@ div[id^="panels-ipe-paneid-22"] > * select {
   background-color: #f9f4ee !important;
 }
 /* line 1668, ../sass/cinemateque.scss */
-.front .pane-title {
+.front #mini-panel-myminipaneltest23rds13rd .pane-title {
   font-weight: normal;
   font-size: 20px;
   text-align: center;
 }
 /* line 1673, ../sass/cinemateque.scss */
+.front p {
+  line-height: 24px;
+}
+/* line 1676, ../sass/cinemateque.scss */
 .front .panel-pane {
   overflow: hidden;
 }
-/* line 1677, ../sass/cinemateque.scss */
+/* line 1680, ../sass/cinemateque.scss */
 .front .pane-bundle-gallery .pane-content, .front .pane-bundle-gallery .fieldable-panels-pane, .front .pane-bundle-gallery .field-name-field-custom-gallery-items, .front .pane-bundle-gallery .field-items, .front .pane-bundle-gallery .field-item, .front .pane-bundle-gallery .panopoly-spotlight-widget-wrapper, .front .pane-bundle-gallery .custom-slideshow, .front .pane-bundle-gallery .custom-slideshow li {
   height: 100% !important;
 }
-/* line 1680, ../sass/cinemateque.scss */
+/* line 1683, ../sass/cinemateque.scss */
 .front .pane-bundle-gallery .custom-slideshow li img {
   height: 100%;
   width: auto;
+  max-width: none;
 }
-/* line 1684, ../sass/cinemateque.scss */
+/* line 1688, ../sass/cinemateque.scss */
 .front .pane-bundle-gallery .slider-readmore {
   border-radius: 15px;
   margin-top: 20px;
 }
-/* line 1688, ../sass/cinemateque.scss */
+/* line 1692, ../sass/cinemateque.scss */
 .front .pane-bundle-gallery .slider-title {
   font-size: 3rem;
   font-weight: normal;
 }
-/* line 1692, ../sass/cinemateque.scss */
+/* line 1696, ../sass/cinemateque.scss */
 .front .pane-bundle-gallery .pinch {
   width: 100%;
   left: 0;
   padding: 0;
 }
-/* line 1696, ../sass/cinemateque.scss */
+/* line 1700, ../sass/cinemateque.scss */
 .front .pane-bundle-gallery .pinch .wrapper {
   width: 1280px !important;
   max-width: 100%;
@@ -4811,17 +4816,17 @@ div[id^="panels-ipe-paneid-22"] > * select {
   padding: 0 3%;
   box-sizing: border-box;
 }
-/* line 1701, ../sass/cinemateque.scss */
+/* line 1705, ../sass/cinemateque.scss */
 .front .field-name-field-cm-festival-body {
   margin-top: 100px;
   margin-bottom: 20px;
 }
-/* line 1704, ../sass/cinemateque.scss */
+/* line 1708, ../sass/cinemateque.scss */
 .front .field-name-field-cm-festival-body p {
   margin-bottom: 50px;
   line-height: 25px;
 }
-/* line 1709, ../sass/cinemateque.scss */
+/* line 1713, ../sass/cinemateque.scss */
 .front .pane-panels-mini {
   width: 1280px !important;
   max-width: 100%;
@@ -5007,21 +5012,28 @@ div[id^="panels-ipe-paneid-22"] > * select {
 #hamburger-menu .pane-information-info-view-block {
   padding-left: 70px;
   padding-right: 70px;
+  width: 100%;
+  color: #fff;
+  background-color: #262626;
+  padding-top: 30px;
 }
-/* line 152, ../sass/menu.scss */
+/* line 156, ../sass/menu.scss */
 #hamburger-menu .pane-information-info-view-block .bean-block {
   padding: 0 15px;
   text-align: left;
   position: relative;
+  border: none;
+  width: 25%;
+  margin-bottom: 27px;
 }
-/* line 156, ../sass/menu.scss */
+/* line 163, ../sass/menu.scss */
 #hamburger-menu .pane-information-info-view-block .bean-block .bean-icon {
   font-size: 20px;
   width: auto;
   position: absolute;
   left: -30px;
 }
-/* line 162, ../sass/menu.scss */
+/* line 169, ../sass/menu.scss */
 #hamburger-menu .pane-information-info-view-block .bean-block .bean-title {
   font-weight: bold;
   font-size: 12px;
@@ -5031,24 +5043,24 @@ div[id^="panels-ipe-paneid-22"] > * select {
   padding-right: 50px;
   padding-bottom: 5px;
 }
-/* line 171, ../sass/menu.scss */
+/* line 178, ../sass/menu.scss */
 #hamburger-menu .pane-information-info-view-block .bean-block .bean-body p {
   line-height: 1.2;
   text-align: left;
   padding-right: 50px;
   font-variant: 12px;
 }
-/* line 179, ../sass/menu.scss */
+/* line 186, ../sass/menu.scss */
 #hamburger-menu .pane-hamburgermenufooter {
   clear: both;
   background-color: #262626;
   padding: 0 70px 50px;
 }
-/* line 183, ../sass/menu.scss */
+/* line 190, ../sass/menu.scss */
 #hamburger-menu .pane-hamburgermenufooter .pane-title {
   color: #fff;
 }
-/* line 186, ../sass/menu.scss */
+/* line 193, ../sass/menu.scss */
 #hamburger-menu .pane-hamburgermenufooter input {
   background-color: #000;
   border: none;
@@ -5056,22 +5068,22 @@ div[id^="panels-ipe-paneid-22"] > * select {
   box-sizing: border-box;
   height: 30px;
 }
-/* line 193, ../sass/menu.scss */
+/* line 200, ../sass/menu.scss */
 #hamburger-menu .pane-hamburgermenufooter label {
   color: #fff;
   padding: 7px;
 }
-/* line 197, ../sass/menu.scss */
+/* line 204, ../sass/menu.scss */
 #hamburger-menu .pane-hamburgermenufooter .panel-panel {
   width: 50%;
   float: left;
   padding: 0;
 }
-/* line 202, ../sass/menu.scss */
+/* line 209, ../sass/menu.scss */
 #hamburger-menu .pane-hamburgermenufooter .form-actions {
   margin: 0;
 }
-/* line 204, ../sass/menu.scss */
+/* line 211, ../sass/menu.scss */
 #hamburger-menu .pane-hamburgermenufooter .form-actions input {
   margin: 0;
   background-color: #fff;
@@ -5079,59 +5091,59 @@ div[id^="panels-ipe-paneid-22"] > * select {
   border-radius: 0 15px 15px 0;
   padding: 0 15px 0 10px;
 }
-/* line 210, ../sass/menu.scss */
+/* line 217, ../sass/menu.scss */
 #hamburger-menu .pane-hamburgermenufooter .form-actions input:hover {
   background-color: #fff !important;
   color: #b59d70 !important;
 }
-/* line 216, ../sass/menu.scss */
+/* line 223, ../sass/menu.scss */
 #hamburger-menu .pane-hamburgermenufooter .webform-component {
   margin-right: 8px;
 }
-/* line 218, ../sass/menu.scss */
+/* line 225, ../sass/menu.scss */
 #hamburger-menu .pane-hamburgermenufooter .webform-component labe {
   padding: 10px;
 }
-/* line 222, ../sass/menu.scss */
+/* line 229, ../sass/menu.scss */
 #hamburger-menu .pane-hamburgermenufooter .webform-component--name input {
   border-radius: 15px 0 0 15px;
 }
-/* line 225, ../sass/menu.scss */
+/* line 232, ../sass/menu.scss */
 #hamburger-menu .pane-hamburgermenufooter .webform-component--join-our-newsletter {
   font-size: 1.25rem;
   font-weight: 600;
   width: 100%;
   color: #fff;
 }
-/* line 231, ../sass/menu.scss */
+/* line 238, ../sass/menu.scss */
 #hamburger-menu .pane-hamburgermenufooter .webform-component--approve-recieving-e-mail {
   position: absolute;
   bottom: -10px;
   width: 100%;
 }
-/* line 235, ../sass/menu.scss */
+/* line 242, ../sass/menu.scss */
 #hamburger-menu .pane-hamburgermenufooter .webform-component--approve-recieving-e-mail label {
   top: 20px;
   position: relative;
 }
-/* line 239, ../sass/menu.scss */
+/* line 246, ../sass/menu.scss */
 #hamburger-menu .pane-hamburgermenufooter .webform-component--approve-recieving-e-mail input {
   height: auto;
 }
-/* line 244, ../sass/menu.scss */
+/* line 251, ../sass/menu.scss */
 #hamburger-menu .pane-hamburgermenufooter .panel-panel:nth-child(2) span {
   display: inline-block;
   float: left;
 }
-/* line 249, ../sass/menu.scss */
+/* line 256, ../sass/menu.scss */
 #hamburger-menu .pane-hamburgermenufooter .pane-block-8 {
   margin-top: 46px;
 }
-/* line 251, ../sass/menu.scss */
+/* line 258, ../sass/menu.scss */
 #hamburger-menu .pane-hamburgermenufooter .pane-block-8 i {
   color: #b59d70;
 }
-/* line 255, ../sass/menu.scss */
+/* line 262, ../sass/menu.scss */
 #hamburger-menu .pane-hamburgermenufooter .pane-custom.pane-1 {
   float: left;
 }

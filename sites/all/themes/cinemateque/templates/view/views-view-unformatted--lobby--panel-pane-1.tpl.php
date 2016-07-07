@@ -129,7 +129,7 @@
      $output_event .='<div class="table-responsive">';
         $output_event .= '<table class="table">';
          $output_event .= ' <tbody>';
-          $event_title = $node_event->field_cm_event_short_title['und'][0]['value'];
+          $event_title = $node->field_cm_event_short_title['und'][0]['value'];
           $path = drupal_get_path_alias('node/'.$node->nid);
           $flag = flag_create_link('favorite_', $node->nid);
           $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node).'</div>';
@@ -146,8 +146,9 @@
           }
           if(!empty($node->field_toptix_purchase['und'])){
               $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
-          }
-          $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
+			  $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
+          }else { $top_link = '';}
+          
            $output_event .= '<tr class="row-custom-lobby">';
            $output_event .= '<td>'.$event_date.'</td>';
            $output_event .= '<td>'.$event_time.'</td>';
@@ -156,7 +157,7 @@
            $output_event .= '<td>'.$event_code.'</td>';
            $output_event .='<td>'. $flag . '</td>';
            $output_event .='<td>'. $addevent . '</td>';
-           $output_event .= '<td>'.'<button data-url="'.$top_link.'" class="toptix-purchase">Puchase</button>'.'</td>';
+           if(!empty($top_link)) $output_event .= '<td>'.'<button data-url="'.$top_link.'" class="toptix-purchase">Puchase</button>'.'</td>';
            $output_event .= '</tr>';
          $output_event .= '</table>';
        $output_event .= '</div>';
