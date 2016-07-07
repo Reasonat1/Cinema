@@ -19,7 +19,7 @@
 
             var path = Drupal.settings.basePath + Drupal.settings.pathPrefix +'menu';            
             $('.modal-body').html('');
-            $('.modal-body').html('<img src="http://www.volantski.com/season1516/images/loadingIMG.gif" class="popup-loader">');            
+            $('.modal-body').html('<img src="/sites/all/themes/cinemateque/images/load.gif" class="popup-loader">');            
             $('.modal-body').load(path+" #main .region-content");
         });
 

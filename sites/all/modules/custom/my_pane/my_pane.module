@@ -671,11 +671,13 @@ function complex_calender_view_block_content(){
      $output.= $filter;
      $output.="<div class='ajax-inner'>";
       $output.="<div class='calender-filter-date col-sm-12'><p class='pull-left'>$selected_filter</p></div>";
-      $output.="<div class='calender-scroll'><span>";
+      $output.="<div class='calender-scroll'>";
+	  $output.= "<p class='inactive scrollleft'><</p>";
+	  $output.= "<span>";
       $output.= t("Other venues");
       $output.="</span>";
       $output.="<p class='scrollright'>></p>
-                          <p class='scrollleft'><</p></div>";
+                          </div>";
      $output.="<div class='calender-header'><p class='calendar-dayview-hour'></p>";
 	 $halls_inorder = array();
 	 foreach($all_term as $tid){
@@ -791,11 +793,11 @@ function complex_calender_view_block_content(){
                                                    </div>
  
                                                   <div class='calender-popup'>
-                                                  <a href='javascript:void(0)' onclick = 'closed();'><img class='close-calender-popup' src='sites/all/themes/cinemateque/images/close.png'/></a>
+                                                  <a href='javascript:void(0)' onclick = 'closed();'><img class='close-calender-popup' src='/sites/all/themes/cinemateque/images/close.png'/></a>
                                                        <div class = 'calender-row inner'>
                                                        <div class='title'><span class='bold'>$title</span> </div>
                                                        <div class='body'>$string </div>
-                                                       <a href='$base_url/$alias' class='read-more'>To event page  > </a>
+                                                       ".l(t('To event page'),'node/'.$nid,array('attributes' => array('class' => array('read-more'))))."
                                                        <div class='tickets'><span>$short_day</span><span>$short_date</span><span>$start_time</span><span>$term->name</span>$toptix_purchases</div>
                                                        </div>
                                                    </div>
@@ -860,10 +862,11 @@ function complex_calender_view_block_content(){
             }if($start_time == '0:00'){
                 $start_time = '12:00';
             }
+			/*
             $alias = drupal_get_path_alias("node/$nid");
             if(empty($alias)){
                 $alias = "node/$nid";
-            }
+            }*/
             $event_duration = $val->event_duration;
             if(!empty($event_duration)){
                 $minutes = ' | '.$val->event_duration.' minutes';
@@ -873,7 +876,7 @@ function complex_calender_view_block_content(){
             $calender[$val->hall_tid][] = "<div class='mobile-calender-row mobile-custom-row'>
                                                 <div class='mobile-bold-time'>$start_time_key</div>
                                                 <div class='mobile-event-title'>$val->title</div>
-                                                <div class='mobile-event-tickets'><a href='$base_url/$alias'>Tickets</a></div>
+                                                <div class='mobile-event-tickets'>".l(t('Tickets'),'node/'.$nid)."</div>
                                      </div>";
            
         }
@@ -944,11 +947,13 @@ function ajax_complex_calender_filter(){
      $all_term = array_unique($term_array); 
      $output.="<div class='ajax-inner'>";
      $output.="<div class='calender-filter-date col-sm-12'><p class='pull-left'>$selected_filter</p></div>";
-      $output.="<div class='calender-scroll'><span>";
+      $output.="<div class='calender-scroll'>";
+	  $output.= "<p class='inactive scrollleft'><</p>";
+	  $output.= "<span>";
       $output.= t("Other venues");
       $output.="</span>";
       $output.="<p class='scrollright'>></p>
-                          <p class='scrollleft'><</p></div>";
+                          </div>";
      $output.="<div class='calender-header'><p class='calendar-dayview-hour col-sm-2'></p>";
      foreach($all_term as $tid){
          $term_load = taxonomy_term_load($tid);
@@ -1055,7 +1060,7 @@ function ajax_complex_calender_filter(){
                                                    </div>
  
                                                   <div class='calender-popup'>
-                                                  <a href='javascript:void(0)' onclick = 'closed();'><img class='close-calender-popup' src='sites/all/themes/cinemateque/images/close.png'/></a>
+                                                  <a href='javascript:void(0)' onclick = 'closed();'><img class='close-calender-popup' src='/sites/all/themes/cinemateque/images/close.png'/></a>
                                                        <div class = 'calender-row inner'>
                                                        <div class='title'><span class='bold'>$title</span> </div>
                                                        <div class='body'>$string </div>

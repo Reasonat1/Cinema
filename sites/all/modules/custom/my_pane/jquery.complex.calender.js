@@ -74,6 +74,8 @@ jQuery(document).ready(function () {
             if (currentPosition < sliderLimit) {
                 jQuery('.calender-body').stop(false, true).animate({left: "-=" + 217}, "slow");
                 jQuery('.calender-header').stop(false, true).animate({left: "-=" + 217}, "slow");
+				jQuery('.scrollright').toggleClass('inactive');
+				jQuery('.scrollleft').toggleClass('inactive');
             }
         });
         jQuery('.scrollleft').click(function () {
@@ -82,6 +84,8 @@ jQuery(document).ready(function () {
             if (currentPosition > 0) {
                 jQuery('.calender-body').stop(false, true).animate({left: "+=" +217}, "slow");
                 jQuery('.calender-header').stop(false, true).animate({left: "+=" + 217}, "slow");
+				jQuery('.scrollright').toggleClass('inactive');
+				jQuery('.scrollleft').toggleClass('inactive');
             }
         });
     }else{

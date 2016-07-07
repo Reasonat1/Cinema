@@ -56,3 +56,37 @@ table{
 		}
 	}
 }
+
+/**** lobby page  ****/
+
+.page-term-lobby{
+	.view-lobby.view-display-id-panel_pane_1{
+		.toptix-purchase{
+			float: left;
+		}
+	}
+	.lobby-term-left {
+		float: left;
+	}
+	.lobby-term-right {
+		float: right;
+		.top-text-blk-wht {
+			right: 0px;
+			left: auto;
+		}
+	}
+	.view-lobby.view-display-id-panel_pane_2{
+		.views-row{
+			margin-left: 5%;
+			margin-right: 0;
+			float: right;
+		}
+		.views-row:nth-child(3n){
+			margin-left: 0;
+		}
+		.views-field-field-mc-teaser-toptxt-blk{
+			right: 0;
+			left: auto;
+		}
+	}
+}

@@ -321,16 +321,14 @@ body {
 }
 
 #colorbox {
-	left: 10% !important;
+	left: 30% !important;
 	background-color: transparent;
 	overflow: visible;
-	width: 80%!important;
 	#cboxMiddleLeft, #cboxTopLeft, #cboxMiddleRight, #cboxTopCenter, #cboxTopRight, #cboxBottomLeft, #cboxBottomLeft, #cboxBottomRight, #cboxBottomCenter{
 		display: none;
 	}
 	#cboxWrapper{
 		border-radius: 0;
-		width: 100%;
 	}
 	#cboxWrapper, #cboxContent{
 		background-color: transparent;
@@ -353,6 +351,7 @@ body {
 }
 #cboxLoadedContent {
 	margin: 0;
+	width: 100%!important;
 }
 #cboxClose {
 	bottom: 3% !important;
@@ -553,6 +552,149 @@ table.views-table {
 }
 
 
+/**** lobby page  ****/
+
+.page-term-lobby{
+	.panels-flexible-row-node_page-1, .panels-flexible-row-node_page-4{
+		padding: 0!important;
+		width: 100%!important;
+	}
+	.view-lobby.view-display-id-panel_pane_1{
+		overflow: visible;
+		.table-responsive{
+			overflow: visible;
+		}
+		#atedrop7-drop{
+			top: 35px!important
+		}
+	}
+	.panels-flexible-region-node_page-header{
+		width: 100%;
+	}
+	.panels-flexible-row-node_page-1{
+		.pane-lobby-panel-pane-3 .pane-content, .view-lobby{
+			height: 100%;
+			.view-content, .views-row, .views-field-field-cm-lobby-media, .field-content{
+				height: 100%;
+				overflow: hidden;
+			}
+		}
+		.views-field-field-cm-lobby-media img{
+			height: auto;
+			width: 100%;
+		}
+		.views-field-field-sub-title{
+			position: absolute;
+			bottom: 5em;
+			width: 100%;
+			.field-content{
+				@include width;
+				color: #fff;
+				.sub-title{
+					font-size: 22px;
+				}
+			}
+		}
+	}
+	.view-lobby.view-display-id-panel_pane_1{
+		@include width;
+		padding-top: 30px;
+		.toptix-purchase{
+			float: right;
+		}
+	}
+	.lobby-term-left {
+		float: right;
+		width: 80%;
+		padding: 30px;
+	}
+	.lobby-term-right {
+		float: left;
+		width: 20%;
+		position: relative;
+		img{
+			width: 100%;
+		}
+		.top-text-blk-wht {
+			position: absolute;
+			left: 0px;
+			top: 2px;
+			.white{
+				background-color: rgba(256, 256, 256, 0.9);
+				padding: 3px;
+			}
+			.black {
+				color: $white !important;
+				padding: 3px;
+			}
+		}
+	}
+	.pane-lobby-panel-pane-1 {
+		background-color: $color_fantasy_approx;
+		.pane-content {
+			.lobby-container {
+				background-color: $white;
+				margin-top: 1%;
+			}
+		}
+	}
+	.view-lobby.view-display-id-panel_pane_2{
+		@include width;
+		padding-top: 30px;
+		.views-row{
+			width: 30%;
+			margin-right: 5%;
+			float: left;
+			position: relative;
+			overflow: hidden;
+			margin-bottom: 30px;
+			img{
+				width: 100%;
+			}
+			.content{
+				position: relative;
+			}
+		}
+		.views-row:nth-child(3n){
+			margin-right: 0;
+		}
+		.views-row:nth-child(3n+1){
+			clear: both;
+		}
+		.views-field-field-cm-moviegroup-short-summar{
+			position: absolute;
+			color: #fff;
+			bottom: 20px;
+			padding: 0 20px;
+			width: 100%;
+			a{
+				color: #fff;
+			}
+		}
+		.views-field-field-mc-teaser-toptxt-blk{
+			position: absolute;
+			top: 4px;
+			left: 0;
+			.black{
+				color: #fff;
+				padding: 5px;
+			}
+			.white{
+				padding: 5px;
+			}
+		}
+	}
+	.pane-term-description{
+		@include width;
+		padding: 30px 3%;
+		p{
+			margin: 0;
+		}
+	}
+	.pane-lobby-panel-pane-4{
+		@include width;
+	}
+}
 
 .row-custom-lobby > td {
 	border: medium none !important;
@@ -654,38 +796,6 @@ table.views-table {
 		top: 1.5em;
 	}
 }
-
-.pane-lobby-panel-pane-1 {
-	background-color: $color_fantasy_approx;
-	.pane-content {
-		margin: 0 auto;
-		width: 80%;
-		.lobby-container {
-			background-color: $white;
-			padding: 2%;
-			margin-top: 1%;
-		}
-	}
-}
-.lobby-term-left {
-	float: left;
-	margin-right: 2%;
-	width: 76%;
-}
-.lobby-term-right {
-	float: left;
-	width: 22%;
-	position: relative;
-	.top-text-blk-wht {
-		position: absolute;
-		right: -2px;
-		top: 0;
-		.black {
-			color: $white !important;
-		}
-	}
-}
-
 
 @media(max-width:320px) {
 	.sticky-header {
@@ -1108,6 +1218,9 @@ table{
 			&:hover{
 				background-color: $main-color!important;	
 			}
+		}
+		.form-item-custom-search-types {
+			display: none;
 		}
 		.form-item{
 			float: left;

@@ -178,6 +178,40 @@ table td, table th {
   float: right;
 }
 
+/**** lobby page  ****/
+/* line 64, ../sass/general-rtl.scss */
+.page-term-lobby .view-lobby.view-display-id-panel_pane_1 .toptix-purchase {
+  float: left;
+}
+/* line 68, ../sass/general-rtl.scss */
+.page-term-lobby .lobby-term-left {
+  float: left;
+}
+/* line 71, ../sass/general-rtl.scss */
+.page-term-lobby .lobby-term-right {
+  float: right;
+}
+/* line 73, ../sass/general-rtl.scss */
+.page-term-lobby .lobby-term-right .top-text-blk-wht {
+  right: 0px;
+  left: auto;
+}
+/* line 79, ../sass/general-rtl.scss */
+.page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-row {
+  margin-left: 5%;
+  margin-right: 0;
+  float: right;
+}
+/* line 84, ../sass/general-rtl.scss */
+.page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-row:nth-child(3n) {
+  margin-left: 0;
+}
+/* line 87, ../sass/general-rtl.scss */
+.page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-field-field-mc-teaser-toptxt-blk {
+  right: 0;
+  left: auto;
+}
+
 /* line 7, ../sass/search-rtl.scss */
 .page-search-search-results .cm_event .pro-grid li div.search-snippet-info {
   padding-right: 0 !important;
@@ -474,4 +508,64 @@ table td, table th {
 /* line 133, ../sass/calendar-rtl.scss */
 .calender-scroll .scrollleft {
   background: url("../images/more-gold-right.png") no-repeat center center;
+}
+
+/* line 5, ../sass/cinemateque-rtl.scss */
+.footer .views-field.views-field-field-cm-info-block-text {
+  margin-left: 0%;
+  margin-right: 10%;
+}
+/* line 10, ../sass/cinemateque-rtl.scss */
+.footer .pane-webform-client-block-19 {
+  padding-top: 30px !important;
+}
+/* line 14, ../sass/cinemateque-rtl.scss */
+.footer .webform-client-form .webform-component--join-our-newsletter {
+  margin-left: 30px !important;
+  margin-right: 0;
+}
+/* line 18, ../sass/cinemateque-rtl.scss */
+.footer .webform-client-form .webform-component {
+  float: right;
+  margin-right: 0px;
+  margin-left: 14px;
+}
+/* line 22, ../sass/cinemateque-rtl.scss */
+.footer .webform-client-form .webform-component input {
+  padding-left: 0px;
+  padding-right: 10px;
+}
+/* line 27, ../sass/cinemateque-rtl.scss */
+.footer .webform-client-form .webform-component--approve-recieving-e-mail {
+  margin-left: 0%;
+  margin-right: 23%;
+}
+/* line 31, ../sass/cinemateque-rtl.scss */
+.footer .webform-client-form .form-submit {
+  margin: 0 5px 0 0px;
+}
+/* line 34, ../sass/cinemateque-rtl.scss */
+.footer .webform-client-form .form-actions {
+  margin: 0;
+}
+/* line 39, ../sass/cinemateque-rtl.scss */
+.footer .social.icon {
+  float: right;
+}
+/* line 42, ../sass/cinemateque-rtl.scss */
+.footer .social .pane-content span {
+  padding-right: 25px;
+  padding-left: 1px;
+}
+/* line 48, ../sass/cinemateque-rtl.scss */
+.footer .copyrignt-block .copyright {
+  float: right;
+}
+/* line 51, ../sass/cinemateque-rtl.scss */
+.footer .copyrignt-block .design-development {
+  float: left;
+}
+/* line 55, ../sass/cinemateque-rtl.scss */
+.footer .news-letter h2 {
+  float: right;
 }

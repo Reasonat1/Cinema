@@ -166,6 +166,8 @@ body {
 	border-top-left-radius: 15px !important;
 }
 
+/*****  footer   **********/
+
 .footer {
 	.view-bean-infomation-block-view {
 		table {
@@ -207,22 +209,31 @@ body {
 		padding-top: 20px;
 	}
 	.webform-client-form {
+		.webform-component--join-our-newsletter{
+			width: auto!important;
+			margin-right: 30px!important;
+			p{
+				margin: 0;
+			}
+		}
 		.webform-component {
 			float: left;
 			margin-bottom: 0;
 			margin-right: 15px;
 			margin-top: 0;
-			width: 16%;
-			width: 24%;
+			width: 20%;
 			input {
 				background-color: $color_clay_creek_approx;
-				border-radius: 50px !important;
-				color: $color_iron_approx;
-				height: 30px;
+				color: #fff;
+				height: 40px;
 				padding-left: 12px;
 				font-size: 11px;
 				margin-bottom: 0;
 				padding-left: 10px;
+				border-radius: 0!important;
+			}
+			label{
+				color: #fff;
 			}
 			&.webform-component-radios {
 				width: 100%;
@@ -231,17 +242,26 @@ body {
 				}
 			}
 		}
-		.webform-submit {
+		.webform-component--approve-recieving-e-mail{
+			width: auto;
+			cursor: default;
+			margin-left: 20%;
+			input{
+				display: none;
+			}
+		}
+		.form-submit{
+			margin: 0 0 0 5px;
 			background: $white none repeat scroll 0 0 !important;
-			border-radius: 35px;
 			box-shadow: none;
 			color: $color_mongoose_approx !important;
-			height: 30px;
+			height: 40px;
 			line-height: 0;
 			margin: 0;
+			border-radius: 0;
 		}
-		&.webform-client-form-19 {
-			margin-left: 200px;
+		.form-control::-moz-placeholder{
+			color: #fff;
 		}
 	}
 	.social {
@@ -249,32 +269,43 @@ body {
 			background-color: $color_mongoose_approx;
 			float: left;
 			padding-top: 40px;
+			text-align: center;
+			.pane-content{
+				display: inline-block;
+			}
 		}
 		.pane-content span {
-			width: 15%;
+			padding-left: 25px;
+			padding-right: 1px;
 		}
 	}
 	.copyrignt-block {
 		background-color: $white;
-		min-height: 57px;
-	}
-	.design-development-block {
-		background-color: $white;
-		min-height: 57px;
+		width: 100%;
+		.pane-content{
+			@include width;
+		}
+		p{
+			margin-bottom: 0;
+		}
+		.copyright{
+			float: left;
+		}
+		.design-development{
+			float: right;
+		}
 	}
 	.col-md-12.news-letter {
 		background-color: $color_mongoose_approx;
 		color: $white;
-		padding-bottom: 20px;
-	}
-	.news-letter h2 {
-		float: left;
-		font-size: 16px;
-		margin-left: 25%;
+		padding: 0 0 25px 0;
+		.pane-content{
+			@include width;
+			width: 1048px!important;
+		}
 	}
 	.pane-webform-client-block-19 .pane-content {
 		margin: 0 auto;
-		width: 54%;
 	}
 }
 .pane-footer-mini-panel {
@@ -297,13 +328,9 @@ body {
 }
 .block-image {
 	float: left;
-	width: 47%;
-	text-align: right;
 }
 .block-body {
 	float: left;
-	padding-left: 2%;
-	width: 50%;
 }
 .views-slideshow-cycle-main-frame {
 	float: left;
@@ -508,48 +535,7 @@ body {
 		float: right;
 		text-align: left;
 	}
-	.footer {
-		.copyrignt-block {
-			float: right;
-			text-align: right;
-		}
-		.webform-client-form {
-			&.webform-client-form-19 {
-				margin-right: 200px;
-				margin-left: 0;
-			}
-			.webform-component {
-				float: right;
-				margin-left: 15px;
-				margin-right: 0;
-				width: 24%;
-				input {
-					padding-left: 0;
-					padding-right: 10px;
-					&.form-radio {
-						right: 0;
-					}
-				}
-				&.webform-component-radios {
-					margin-left: 0;
-					margin-right: 15px;
-					width: 100%;
-					label {
-						padding-right: 20px;
-						padding-left: 0;
-					}
-				}
-			}
-		}
-		.news-letter h2 {
-			margin-right: 24%;
-			float: right;
-			margin-left: 0;
-		}
-		.social .pane-content span {
-			width: 30%;
-		}
-	}
+
 	.navbar-brand {
 		float: right;
 	}
@@ -613,18 +599,8 @@ body {
 	.view-bean-infomation-block-view table tr {
 		float: right;
 	}
-	.block-body > div {
-		float: right;
-		width: 360px;
-	}
-	.site-logo.social .block-body {
-		width: 52%;
-	}
 	.pane-menu-menu-site-main-menu .menu.nav li.expanded {
 		float: right;
-	}
-	.col-md-3.social.icon {
-		float: left;
 	}
 	.col-md-6.news-leter {
 		float: right;
@@ -1332,8 +1308,9 @@ body {
 }
 
 .wide-margins {
-	margin: 20px 20%;
+	padding: 20px 20%;
 }
+
 .purchase-btn {
 	background: $main_color;
 	padding: 4px 10px;
