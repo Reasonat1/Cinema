@@ -70,7 +70,7 @@
                     <?php endif; ?>
                     <?php if ($search_form): ?>
                         <?php
-                        $block = module_invoke('cm_extra', 'block_view', 'icons');
+                        $block = module_invoke('search_api_page', 'block_view', 'search_results');
                         print render($block['content']); 
                         ?>
 
