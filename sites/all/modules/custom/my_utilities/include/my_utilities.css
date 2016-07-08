@@ -1,5 +1,10 @@
-.node-type-cm-event #messages .alert.alert-danger{
+.node-type-cm-event #messages .alert.alert-danger,
+.page-search.page-search-results #messages .alert.alert-danger,
+.pane-facet h2.pane-title{
     display: none;
+}
+.page-search.page-search-results #page-header .page-header{
+    display: block !important;
 }
 .panels-flexible-region-node_page-slider-inside{
     height: auto !important;
