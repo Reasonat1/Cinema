@@ -64,13 +64,13 @@ function node_type_content() {
    //$default_nid = isset($_POST['default_nid']) ? $_POST['default_nid'] : '';
    drupal_set_message('<pre>'.print_r($type, 1).'</pre>');
     $output = array();
-    $result = db_query("SELECT nid,title,type from node where type = '$type'")->fetchAll();
+    $result = db_query("SELECT nid,title,type from node where type = 'cm_article'")->fetchAll();
     foreach ($result as $val) {
         
         //drupal_set_message('<pre>'.print_r($val, 1).'</pre>');
         $output[$val->nid] = check_plain($val->title);
     }
-    drupal_json_output($output);
+    drupal_json_output(array('output' =>$output));
     die();
 
 }
