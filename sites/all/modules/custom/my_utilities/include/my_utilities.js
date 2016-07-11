@@ -14,15 +14,32 @@
                                  location.reload();
                       }
            });
+           jQuery('#cboxContent #cboxClose').click(function(){      
+                      if(jQuery('.file-video-youtube').length){
+                                 var pathD  = jQuery('iframe').attr('src');
+                                 var res = pathD.slice(-11);
+                                 jQuery('iframe').attr('src', res);
+                                 location.reload();
+                      }
+           });
+           jQuery('video').prop('id', 'myVideo');
            jQuery('.slide-right-ct a.active ').click(function(){
                       if(jQuery('.slide-over-content .file-video-mp4').length){
-                                 jQuery("video").attr("autoplay","autoplay");
+                                 var vid = document.getElementById("myVideo");
+                                 vid.autoplay = true;
+                                 vid.load();
                       }
            });
            jQuery('#cboxOverlay').click(function(){
                       if(jQuery('.slide-over-content .file-video-mp4').length){
-                                 jQuery("video").attr("autoplay","no");
-                                 location.reload();
+                                 vid.autoplay = false;
+                                 vid.load();
+                      }
+           });
+            jQuery('#cboxContent #cboxClose').click(function(){      
+                      if(jQuery('.slide-over-content .file-video-mp4').length){
+                                 vid.autoplay = false;
+                                 vid.load();
                       }
            });
            jQuery('.view-display-id-panel_pane_3 .views-table tbody tr:nth-child(1)').addClass("item-show");
