@@ -1,4 +1,9 @@
 /********  mixin *********/
+/****  fonts  ********/
+@font-face {
+  font-family: Open-Sans;
+  src: url("../fonts/Open-Sans.eot?") format("eot"), url("../fonts/Open-Sans.woff") format("woff"), url("../fonts/Open-Sans.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans.ttf") format("truetype");
+}
 /* line 6, ../sass/event.scss */
 .node-type-cm-event #content {
   width: 100% !important;

@@ -1,4 +1,9 @@
 /********  mixin *********/
+/****  fonts  ********/
+@font-face {
+  font-family: Open-Sans;
+  src: url("../fonts/Open-Sans.eot?") format("eot"), url("../fonts/Open-Sans.woff") format("woff"), url("../fonts/Open-Sans.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans.ttf") format("truetype");
+}
 /* line 5, ../sass/search.scss */
 .page-search-search-results .page-header {
   display: block !important;
