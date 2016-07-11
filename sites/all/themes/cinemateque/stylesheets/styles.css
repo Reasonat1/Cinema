@@ -1804,7 +1804,8 @@ table td, table th {
   background-size: 10px 10px !important;
 }
 /* line 1211, ../sass/general.scss */
-.popup-element-body #search-block-form {
+.popup-element-body #search-block-form,
+.popup-element-body #search-api-page-search-form-search-results {
   background-color: #323232;
   box-sizing: border-box;
   opacity: 0.9;
@@ -1815,33 +1816,39 @@ table td, table th {
   right: 80px;
 }
 /* line 1220, ../sass/general.scss */
-.popup-element-body #search-block-form .form-submit {
+.popup-element-body #search-block-form .form-submit,
+.popup-element-body #search-api-page-search-form-search-results .form-submit {
   background-color: #b59d70;
   color: #fff;
   float: left;
   margin-top: 14px;
 }
 /* line 1225, ../sass/general.scss */
-.popup-element-body #search-block-form .form-submit:hover {
+.popup-element-body #search-block-form .form-submit:hover ,
+.popup-element-body #search-api-page-search-form-search-results .form-submit:hover {
   background-color: #b59d70 !important;
 }
 /* line 1229, ../sass/general.scss */
-.popup-element-body #search-block-form .form-item-custom-search-types {
+.popup-element-body #search-block-form .form-item-custom-search-types,
+.popup-element-body #search-api-page-search-form-search-results .form-item-custom-search-types{
   display: none;
 }
 /* line 1232, ../sass/general.scss */
-.popup-element-body #search-block-form .form-item {
+.popup-element-body #search-block-form .form-item,
+.popup-element-body #search-api-page-search-form-search-results .form-item{
   float: left;
 }
 /* line 1234, ../sass/general.scss */
-.popup-element-body #search-block-form .form-item input {
+.popup-element-body #search-block-form .form-item input,
+.popup-element-body #search-api-page-search-form-search-results .form-item input {
   height: 42px;
   box-sizing: border-box;
   padding: 10px 5px;
   background-color: #fff;
 }
 /* line 1240, ../sass/general.scss */
-.popup-element-body #search-block-form .form-item label {
+.popup-element-body #search-block-form .form-item label,
+.popup-element-body #search-api-page-search-form-search-results .form-item label {
   font-size: 14px;
   padding: 10px 5px;
   color: #000;
