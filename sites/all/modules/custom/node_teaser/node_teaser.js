@@ -92,7 +92,7 @@ function node_type_ajax(type) {
         },
         success: function (data) {
              console.log(data);
-            jQuery('.form-item-node-id').html(data.output);
+            jQuery('.form-item-node-id span').html(data.output);
         }
     });
 }

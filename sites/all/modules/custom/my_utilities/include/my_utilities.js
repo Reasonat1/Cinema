@@ -7,7 +7,6 @@
                       }
            });
            jQuery('#cboxOverlay').click(function(){
-                      
                       if(jQuery('.file-video-youtube').length){
                                  var pathD  = jQuery('iframe').attr('src');
                                  var res = pathD.slice(-11);
