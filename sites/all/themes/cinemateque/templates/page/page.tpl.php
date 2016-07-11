@@ -70,8 +70,9 @@
                     <?php endif; ?>
                     <?php if ($search_form): ?>
                         <?php
-                        $block = module_invoke('search_api_page', 'block_view', 'search_results');
-                        //print render($block['content']); 
+                        //$block = module_invoke('block', 'block_view', '5');
+                        $block = module_invoke('cm_extra', 'block_view', 'icons');
+                        print render($block['content']); //print $search_form; 
                         ?>
 
                     </ul>
