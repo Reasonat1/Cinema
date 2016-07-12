@@ -129,8 +129,7 @@
      $output_event .='<div class="table-responsive">';
         $output_event .= '<table class="table">';
          $output_event .= ' <tbody>';
-          $event_title = $node->field_cm_event_short_title['und'][0]['value'];
-          $path = drupal_get_path_alias('node/'.$node->nid);
+          $event_title = (!empty($node->field_cm_event_short_title)) ? $node->field_cm_event_short_title['und'][0]['value'] : $node->title;
           $flag = flag_create_link('favorite_', $node->nid);
           $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node).'</div>';
           if(!empty($node->field_cm_event_internal_id['und'])){
@@ -152,7 +151,7 @@
            $output_event .= '<tr class="row-custom-lobby">';
            $output_event .= '<td>'.$event_date.'</td>';
            $output_event .= '<td>'.$event_time.'</td>';
-           $output_event .= '<td>'.l($event_title, $path).'</td>';
+           $output_event .= '<td>'.l($event_title, 'node/'.$node->nid).'</td>';
            $output_event .= '<td>'.$hall_name.'</td>';
            $output_event .= '<td>'.$event_code.'</td>';
            $output_event .='<td>'. $flag . '</td>';

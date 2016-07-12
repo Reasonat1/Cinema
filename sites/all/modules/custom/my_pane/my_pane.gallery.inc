@@ -306,6 +306,8 @@ function my_pane_field_formatter_view($entity_type, $entity, $field, $instance, 
           );
         }
     }
+	$element['#attached']['js'][] = libraries_get_path('jquery.cycle', $base_path = FALSE) . '/jquery.cycle.all.min.js';
+	$element['#attached']['js'][drupal_get_path('module', 'my_pane') . '/my-pane-gallery.js'] = array('scope' => 'footer');
   return $element;
 }
 /**
@@ -503,10 +505,9 @@ function theme_panopoly_gallery_wrapper($variables){
   $output = '';
   $items = $variables['element']['#items'];
   $duration = $variables['element']['#duration'];
-  $pager_style = $variables['element']['#pager_style'];
-  $element = array();
+  $pager_style = $variables['element']['#pager_style'];  
   $output .= '<div class="panopoly-spotlight-widget-wrapper">';
-  $output.= '<div class="nav"><a href="#" id="prev2">Prev</a> <a href="#" id="next2">Next</a></div>';
+  if(count($items) > 1)   $output.= '<div class="nav"><a href="#" id="prev2">Prev</a> <a href="#" id="next2">Next</a></div>';
   $output .= "<ul class='custom-slideshow'>".render($variables['element']['slides']). "</ul>";
   
   $output .= '</div>';  // class="panopoly-spotlight-widget-wrapper"

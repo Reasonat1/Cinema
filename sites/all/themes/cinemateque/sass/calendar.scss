@@ -21,8 +21,6 @@
 	min-width: 94%;
 	left: 0;
 	position: relative;
-	height: 850px;
-	overflow-y: scroll;
 	padding: 0;
 }
 .calender-filter-date{
@@ -49,7 +47,7 @@
 .calender-row {
 	width: 210px;
 	margin: 0!important;
-	min-height: 150px!important;
+	min-height: 80px!important;
 	&.inner {
 		background: $white none repeat scroll 0 0;
 		box-shadow: 0 1px 3px 0px;
@@ -293,13 +291,14 @@
 	margin-top: 13px;
 	p{
 		margin: 0;
-		float: right;
+		display: inline-block;
 		font-size: 0px;
 		height: 19px;
 	    width: 10px;
 	    cursor: pointer;
-	    margin-left: 20px;
 	    margin-top: 5px;
+	    position: relative;
+	    top: -16px;
 	}
 	> span {
 		  font-size: 18px;
@@ -308,9 +307,11 @@
 	}
 	.scrollright{
 		background: url("../images/more-gold-right.png") no-repeat center center;
+		margin-left: 20px;
 	}
 	.scrollleft{
 		background: url("../images/more-gold-left.png") no-repeat center center;
+		margin-right: 20px;
 	}
 }
 
@@ -335,4 +336,8 @@
 		display: block;
 		border: none;
 	}
+}
+
+.fixed-header-calendar .calender-filter{
+	position: fixed;
 }

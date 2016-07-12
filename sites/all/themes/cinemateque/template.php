@@ -17,7 +17,17 @@ function cinemateque_preprocess_html(&$variables) {
 	if ($node = menu_get_object()) {
 	    switch($node->type) {
 		  case 'cm_event':
-			if(empty($node->field_cm_event_images)) $variables['classes_array'][] = 'noheaderimage';
+			if(empty($node->field_cm_event_images)) {
+			  if(!empty($node->field_cm_event_lineup)) {
+				if($movienode = node_load($node->field_cm_event_lineup['und'][0]['target_id'])) {
+					if(empty($movienode->field_cm_movie_pictures)) $variables['classes_array'][] = 'noheaderimage';	
+				}
+			  
+			  }else{
+				$variables['classes_array'][] = 'noheaderimage';	
+			  }
+			  
+			}
 		  break;
 		  case 'cm_article':
 			if(empty($node->field_cm_article_image)) $variables['classes_array'][] = 'noheaderimage';

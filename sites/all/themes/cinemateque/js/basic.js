@@ -56,6 +56,14 @@
                 $(".node-type-cm-movie .views_slideshow_cycle_main img").css("top",$imagebigermovie*-1);
             }
         });
+
+      /*      $(window).scroll(function (event) {
+                var scroll = $(window).scrollTop();
+                if (scroll >= $('.calender-filter').offset().top){
+                    $('body').addClass('fixed-header-calendar');
+                }
+            });
+*/
     });
 
 })(jQuery);

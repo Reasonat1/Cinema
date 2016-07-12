@@ -26,7 +26,7 @@ define('MY_PANE_FILE_EXTENSIONS_DEFAULT', 'txt doc docx xls xlsx pdf ppt pptx pp
  * Implements hook_init()
  */
 function my_pane_init() {
-    drupal_add_js(libraries_get_path('jquery.cycle', $base_path = FALSE) . '/jquery.cycle.all.min.js');
+    //drupal_add_js(libraries_get_path('jquery.cycle', $base_path = FALSE) . '/jquery.cycle.all.min.js');
 
   // Load the seven theme CSS for the media browser. This is done
   // because the seven theme may not be the admin theme, but the
@@ -136,7 +136,7 @@ function my_pane_page_build(&$page) {
 
   // Add our custom javascript to the footer to override other things.
   drupal_add_js(drupal_get_path('module', 'my_pane') . '/my-pane.js', array('scope' => 'footer'));
-  drupal_add_js(drupal_get_path('module', 'my_pane') . '/my-pane-gallery.js', array('scope' => 'footer'));
+  
 }
 /** 
  * Implementation of hook_entity_info_alter()
@@ -658,13 +658,15 @@ function complex_calender_view_block_content(){
     $result_count = count($result);
     $term_array = array();
     $hall = array();
-     $html = '';
-     foreach($result as $val){
-         $term_array[] = $val->hall_tid;
-         $start_time = $val->event_start_time;
-         $event_time = date('G',$start_time);
-         $hall[$event_time][] = $val;
-     }
+    $html = '';
+    foreach($result as $val){
+      if($val->hall_tid) {
+		$term_array[] = $val->hall_tid;
+        $start_time = $val->event_start_time;
+        $event_time = date('G',$start_time);
+        $hall[$event_time][] = $val;
+	  }
+    }
      ksort($hall);  
      $all_term = array_unique($term_array); 
      $output.="<div class='col-sm-12 calender'>";
@@ -680,6 +682,7 @@ function complex_calender_view_block_content(){
                           </div>";
      $output.="<div class='calender-header'><p class='calendar-dayview-hour'></p>";
 	 $halls_inorder = array();
+	 
 	 foreach($all_term as $tid){
         $term_load = taxonomy_term_load($tid);
 		$halls_inorder[$term_load->tid] =$term_load;

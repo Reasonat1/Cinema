@@ -143,7 +143,14 @@
 			h2{
 				color: #000!important;
 			}
+			a{
+				color: #000!important;
+			}
 		}
+		.slide-right-ct a {
+    		background: rgba(0, 0, 0, 0) url("../images/play-icon-black.png") no-repeat scroll right 43% center;
+    		border-color: #000;
+    	}
 	}
 	.views_slideshow_cycle_main{
 		.views-slideshow-cycle-main-frame-row{
@@ -268,4 +275,8 @@
 
 #atedrop1-drop{
 	top: 35px!important;
+}
+
+.panels-flexible-region-node_page-bottom_content{
+	width: 100%;
 }

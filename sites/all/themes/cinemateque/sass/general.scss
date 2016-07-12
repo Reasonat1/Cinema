@@ -562,7 +562,7 @@ table.views-table {
 /**** lobby page  ****/
 
 .page-term-lobby{
-	.panels-flexible-row-node_page-1, .panels-flexible-row-node_page-4{
+	.panels-flexible-row-node_page-1{
 		padding: 0!important;
 		width: 100%!important;
 	}
@@ -604,7 +604,6 @@ table.views-table {
 		}
 	}
 	.view-lobby.view-display-id-panel_pane_1{
-		@include width;
 		padding-top: 30px;
 		.toptix-purchase{
 			float: right;
@@ -637,7 +636,6 @@ table.views-table {
 		}
 	}
 	.pane-lobby-panel-pane-1 {
-		background-color: $color_fantasy_approx;
 		.pane-content {
 			.lobby-container {
 				background-color: $white;
@@ -646,7 +644,6 @@ table.views-table {
 		}
 	}
 	.view-lobby.view-display-id-panel_pane_2, .view-lobby.view-display-id-panel_pane_4{
-		@include width;
 		padding-top: 30px;
 		.views-row{
 			width: 30%;
@@ -668,7 +665,7 @@ table.views-table {
 		.views-row:nth-child(3n+1){
 			clear: both;
 		}
-		.views-field-field-cm-moviegroup-short-summar{
+		.views-field-field-cm-moviegroup-short-summar, .views-field-name{
 			position: absolute;
 			color: #fff;
 			bottom: 20px;
@@ -695,6 +692,9 @@ table.views-table {
 			top: 15px;
 			right: 15px;
 			z-index: 200;
+		}
+		.file-image-jpeg .content{
+			position: relative;
 		}
 	}
 	.pane-term-description{
