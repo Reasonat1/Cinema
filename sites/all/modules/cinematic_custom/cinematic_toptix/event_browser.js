@@ -86,6 +86,10 @@ function toptix_temp_update_date(id) {
   var data = toptix_dialog.data[id];
 
   jQuery('input[name="title"]').val(data.title);
+  if (typeof data.DetailedText != 'undefined') {
+    jQuery('textarea[name="field_cm_event_body[und][0][value]"').val(data.DetailedText);
+    //console.log(data.DetailedText);
+  }
 
   var actual_date = new Date(data.ActualEventDate.substring(0,10));
   //var time = actual_date.getHours() + ':' + actual_date.getMinutes();
