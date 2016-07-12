@@ -645,7 +645,7 @@ table.views-table {
 			}
 		}
 	}
-	.view-lobby.view-display-id-panel_pane_2{
+	.view-lobby.view-display-id-panel_pane_2, .view-lobby.view-display-id-panel_pane_4{
 		@include width;
 		padding-top: 30px;
 		.views-row{
@@ -689,6 +689,12 @@ table.views-table {
 			.white{
 				padding: 5px;
 			}
+		}
+		.views-field-ops{
+			position: absolute;
+			top: 15px;
+			right: 15px;
+			z-index: 200;
 		}
 	}
 	.pane-term-description{
@@ -1097,14 +1103,17 @@ table.views-table {
 	}
 }
 
-.like-btn .movie-info a {
+.flag-wrapper a {
+	display: block;
+	text-indent: -9999px;
 	&.flag-action {
-		background: url("../images/movie-like.png") no-repeat right 0 !important;
+		background: url("../images/like-gold.png") no-repeat right 0 !important;
 	}
 	&.unflag-action {
-		background: url("../images/movie-unlike.png") no-repeat right 0 !important;
+		background: url("../images/unlike-gold.png") no-repeat right 0 !important;
 	}
 }
+
 .panels-flexible-row.content .panels-flexible-region-node_page-content_region {
 	width: 100% !important;
 }
@@ -1208,7 +1217,7 @@ table{
 	    z-index: 300;
 	    background-size: 10px 10px!important;
 	}
-	#search-block-form{
+	#search-api-page-search-form-search-results{
 	    background-color: #323232;
 	    box-sizing: border-box;
 	    opacity: 0.9;

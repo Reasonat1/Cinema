@@ -503,7 +503,7 @@ body {
 	background-color: transparent;
 	padding: 0;
 }
-.panels-flexible-region-custom_front_panel-footer_region {
+.panels-flexible-region-custom_front_panel-footer_region, .panels-flexible-region-93-center {
 	width: 100%;
 }
 .pane-block-4 {
@@ -1714,5 +1714,6 @@ div[id^="panels-ipe-paneid-22"] > * select {
 	}
 	.pane-panels-mini{
 		@include width;
+		width: 1330px!important;
 	}
 }
