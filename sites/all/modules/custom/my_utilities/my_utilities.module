@@ -1,10 +1,4 @@
 <?php
-
-function my_utilities_init() {
-   drupal_add_css(drupal_get_path('module', 'my_utilities') . '/include/my_utilities.css');
-   drupal_add_js(drupal_get_path('module', 'my_utilities') . '/include/my_utilities.js');
-   drupal_add_js(drupal_get_path('module', 'my_utilities') . '/include/atemay.js');
-}
 function my_utilities_form_alter(&$form, &$form_state, $form_id) {
    if($form_id == 'taxonomy_form_term'){
     $vocb_name = $form['#vocabulary']->machine_name;
@@ -16,6 +10,7 @@ function my_utilities_form_alter(&$form, &$form_state, $form_id) {
 }
 function _return_addthisevent_markup($node) {
   $output = '';
+   $output .= drupal_add_js(drupal_get_path('module', 'my_utilities') . '/include/atemay.js');
   if(isset($node->field_cm_event_time) && !empty($node->field_cm_event_time['und'][0]['value'])){
    $start   = date('d-m-Y', $node->field_cm_event_time['und'][0]['value']);
    $start_time = date('H:i:s', $node->field_cm_event_time['und'][0]['value']);
