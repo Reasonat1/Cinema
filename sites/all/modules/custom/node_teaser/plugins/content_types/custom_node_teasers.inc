@@ -265,7 +265,7 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             $html.= "<div class='wrapper-image'><div class='event-image'>$imgae</div>";
             $html.= "<div class='event-date-black-white-background'>$black_content $white_content</div>";
             $html.= "<div class='event-flag'>$flag</div>";
-            $html.= "<div class='text-on-image'><div class='event-title'><span>$title</span></div>";
+            $html.= "<div class='text-on-image'><div class='event-title'><span>".l($title,'node/'.$val->nid,array('html'=>TRUE))."</span></div>";
             $html.= "<div class='event-time'><span class='time'>$time</span><span class='date'>$date</span><a href='$alias'><span class='ticket'>Ticket</span></a></div></div></div>";
             $html.= "<div class='movie_metainfo'><span>$movie_duration</span></div>";
             $html.= "<div class='event-summery'>$description</div>";
