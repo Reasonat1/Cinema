@@ -54,6 +54,9 @@ function cinemateque_preprocess_page(&$variables) {
   if ($copyright = theme_get_setting('copyright')) {
     $variables['copyright'] = check_markup($copyright['value'], $copyright['format']);
   }
+    if(('3261' == arg(1)) || ('3284' == arg(1))){
+    drupal_add_js('sites/all/themes/cinemateque/js/jquery-scrolltofixed-min.js');
+  }
 }
 
 function cinemateque_preprocess_views_view(&$vars) {
@@ -67,3 +70,4 @@ function cinemateque_preprocess_views_view(&$vars) {
           
   }
 }
+

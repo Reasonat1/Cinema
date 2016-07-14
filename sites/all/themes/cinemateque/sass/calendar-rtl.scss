@@ -119,7 +119,6 @@
 	margin-right: 0;
 	text-align: left;
 	p{
-		float: left;
 	    margin-left: 0px;
 	    margin-right: 20px;
 	}
@@ -129,8 +128,12 @@
 	}
 	.scrollright{
 		background: url("../images/more-gold-left.png") no-repeat center center;
+		margin-left: 0px;
+		margin-right: 20px;
 	}
 	.scrollleft{
 		background: url("../images/more-gold-right.png") no-repeat center center;
+		margin-left: 20px;
+		margin-right: 0;
 	}
 }

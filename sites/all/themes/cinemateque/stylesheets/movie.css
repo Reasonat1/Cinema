@@ -44,7 +44,7 @@
 }
 /* line 32, ../sass/movie.scss */
 .node-type-cm-movie.noheaderimage .panels-flexible-row-node_page-3 .pane-movie-top-pane-view-panel-pane-2 .slide-right-ct a {
-  background: url("../images/play-icon-black.png") no-repeat scroll center center;
+  background: url("../images/play-icon-black.png") no-repeat scroll 60% center;
   border: 1px solid #000;
 }
 /* line 39, ../sass/movie.scss */
@@ -57,7 +57,7 @@
 }
 /* line 45, ../sass/movie.scss */
 .node-type-cm-movie .slide-right-ct a {
-  background: url("../images/play-icon.png") no-repeat scroll center center;
+  background: url("../images/play-icon.png") no-repeat scroll 60% center;
   border-radius: 30px;
   border: 1px solid #fff;
   display: inline-block;
@@ -158,26 +158,11 @@
   margin-left: 47%;
   width: 119px !important;
 }
-/* line 135, ../sass/movie.scss */
-.node-type-cm-movie .panels-flexible-row-node_page-3 .inside {
-  height: 100% !important;
+/* line 136, ../sass/movie.scss */
+.node-type-cm-movie .panels-flexible-row-node_page-3 .views-slideshow-cycle-main-frame-row {
+  width: 100% !important;
 }
-/* line 138, ../sass/movie.scss */
-.node-type-cm-movie .panels-flexible-row-node_page-3 .panels-flexible-region, .node-type-cm-movie .panels-flexible-row-node_page-3 .pane-content, .node-type-cm-movie .panels-flexible-row-node_page-3 .pane-movie-top-pane-view-panel-pane-1, .node-type-cm-movie .panels-flexible-row-node_page-3 .view, .node-type-cm-movie .panels-flexible-row-node_page-3 .views-slideshow-cycle-main-frame, .node-type-cm-movie .panels-flexible-row-node_page-3 .view-content, .node-type-cm-movie .panels-flexible-row-node_page-3 .skin-default, .node-type-cm-movie .panels-flexible-row-node_page-3 .views-slideshow-cycle-main-frame-row,
-.node-type-cm-movie .panels-flexible-row-node_page-3 .views-slideshow-cycle-main-frame-row-item, .node-type-cm-movie .panels-flexible-row-node_page-3 .views-field, .node-type-cm-movie .panels-flexible-row-node_page-3 .field-content, .node-type-cm-movie .panels-flexible-row-node_page-3 .movie-slide-container, .node-type-cm-movie .panels-flexible-row-node_page-3 .movie-slide, .node-type-cm-movie .panels-flexible-row-node_page-3 .views-slideshow-cycle-main-frame,
-.node-type-cm-movie .panels-flexible-row-node_page-3 .panels-ipe-portlet-wrapper, .node-type-cm-movie .panels-flexible-row-node_page-3 .panels-ipe-region, .node-type-cm-movie .panels-flexible-row-node_page-3 .panels-ipe-sort-container, .node-type-cm-movie .panels-flexible-row-node_page-3 .panels-ipe-portlet-content {
-  height: 100% !important;
-  width: 100%;
-}
-/* line 145, ../sass/movie.scss */
-.node-type-cm-movie .panels-flexible-row-node_page-3 .views_slideshow_main {
-  height: 100%;
-}
-/* line 147, ../sass/movie.scss */
-.node-type-cm-movie .panels-flexible-row-node_page-3 .views_slideshow_main img {
-  height: auto !important;
-}
-/* line 152, ../sass/movie.scss */
+/* line 140, ../sass/movie.scss */
 .node-type-cm-movie .pane-movie-top-pane-view-panel-pane-2 {
   bottom: 6em;
   color: #fff;
@@ -187,7 +172,7 @@
   z-index: 50;
   min-height: 130px;
 }
-/* line 160, ../sass/movie.scss */
+/* line 148, ../sass/movie.scss */
 .node-type-cm-movie .pane-movie-top-pane-view-panel-pane-2 .pane-content {
   width: 1280px !important;
   max-width: 100%;
@@ -195,18 +180,18 @@
   padding: 0 3%;
   box-sizing: border-box;
 }
-/* line 164, ../sass/movie.scss */
+/* line 152, ../sass/movie.scss */
 .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_4 {
   margin-top: 50px;
 }
-/* line 166, ../sass/movie.scss */
+/* line 154, ../sass/movie.scss */
 .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_4 .views-field-title, .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_4 .views-field-nothing {
   color: #000000;
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 2%;
 }
-/* line 173, ../sass/movie.scss */
+/* line 161, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-6 {
   width: 100% !important;
   background-color: #fff;
@@ -218,75 +203,75 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
-/* line 179, ../sass/movie.scss */
+/* line 167, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-6 .views-field-field-cm-movie-credits-person-ro {
   color: #b3b3b3;
   width: 23%;
 }
-/* line 183, ../sass/movie.scss */
+/* line 171, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-6 a {
   color: #000;
 }
-/* line 188, ../sass/movie.scss */
+/* line 176, ../sass/movie.scss */
 .node-type-cm-movie .pane-movie-top-pane-view-panel-pane-7 .view-movie-top-pane-view {
   overflow: visible;
 }
-/* line 190, ../sass/movie.scss */
+/* line 178, ../sass/movie.scss */
 .node-type-cm-movie .pane-movie-top-pane-view-panel-pane-7 .view-movie-top-pane-view .table-responsive {
   overflow: visible;
 }
-/* line 194, ../sass/movie.scss */
+/* line 182, ../sass/movie.scss */
 .node-type-cm-movie .pane-movie-top-pane-view-panel-pane-7 .views-field-field-cm-event-time {
   width: 23%;
 }
-/* line 197, ../sass/movie.scss */
+/* line 185, ../sass/movie.scss */
 .node-type-cm-movie .pane-movie-top-pane-view-panel-pane-7 #atedrop5-drop {
   top: 35px !important;
 }
-/* line 201, ../sass/movie.scss */
+/* line 189, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-4 {
   margin-top: 20px !important;
 }
 
-/* line 210, ../sass/movie.scss */
+/* line 198, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_7 .table-bordered {
   border: none;
 }
-/* line 212, ../sass/movie.scss */
+/* line 200, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_7 .table-bordered > thead > tr > th {
   border: none;
 }
-/* line 216, ../sass/movie.scss */
+/* line 204, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_7 tbody {
   border: none;
 }
-/* line 220, ../sass/movie.scss */
+/* line 208, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_7 tr.even {
   border: none;
 }
-/* line 223, ../sass/movie.scss */
+/* line 211, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_7 tr.odd {
   border: none;
 }
-/* line 227, ../sass/movie.scss */
+/* line 215, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_7 th {
   border-bottom: none;
   color: #bbb;
 }
-/* line 231, ../sass/movie.scss */
+/* line 219, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_7 .table > tbody > tr > td {
   border: none;
 }
-/* line 236, ../sass/movie.scss */
+/* line 224, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_1 #views_slideshow_cycle_teaser_section_movie_top_pane_view-panel_pane_1 .content {
   position: inherit;
   overflow: inherit;
 }
-/* line 240, ../sass/movie.scss */
+/* line 228, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_1 #views_slideshow_cycle_teaser_section_movie_top_pane_view-panel_pane_1 .field-label {
   display: none;
 }
-/* line 243, ../sass/movie.scss */
+/* line 231, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_1 #views_slideshow_cycle_teaser_section_movie_top_pane_view-panel_pane_1 .field-name-field-file-image-alt-text .field-item {
   background-color: #312f2f;
   position: absolute;
