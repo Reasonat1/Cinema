@@ -345,11 +345,12 @@ function interval_interval_intervals() {
   // The 'formula' property is added to enable Template Extractor module to
   // recognize plural strings. The 'singular' and 'plural' properties must
   // match the strings used in format_plural().	
+  
   return array(
     'second' => array(
       //'plural' => t('Seconds', array(), array('context' => 'interval')),
       //'singular' => t('Second', array(), array('context' => 'interval')),
-      'formula' => format_plural($count, '@count Second', '@count Seconds', array(), array('context' => 'interval')),
+      'formula' => @format_plural($count, '@count Second', '@count Seconds', array(), array('context' => 'interval')),
       'singular' => '@count Second',
       'plural' => '@count Seconds',	  
       'php' => 'seconds',
@@ -358,7 +359,7 @@ function interval_interval_intervals() {
     'minute' => array(
       //'plural' => t('Minutes', array(), array('context' => 'interval')),
       //'singular' => t('Minute', array(), array('context' => 'interval')),
-      'formula' => format_plural($count, '@count Minute', '@count Minutes', array(), array('context' => 'interval')),
+      'formula' => @format_plural($count, '@count Minute', '@count Minutes', array(), array('context' => 'interval')),
       'singular' => '@count Minute',
       'plural' => '@count Minutes',	  	  
       'php' => 'minutes',
@@ -367,7 +368,7 @@ function interval_interval_intervals() {
     'hour' => array(
       //'plural' => t('Hours', array(), array('context' => 'interval')),
       //'singular' => t('Hour', array(), array('context' => 'interval')),
-      'formula' => format_plural($count, '@count Hour', '@count Hours', array(), array('context' => 'interval')),
+      'formula' => @format_plural($count, '@count Hour', '@count Hours', array(), array('context' => 'interval')),
       'singular' => '@count Hour',
       'plural' => '@count Hours',	 	  
       'php' => 'hours',
@@ -376,7 +377,7 @@ function interval_interval_intervals() {
     'day' => array(
       //'plural' => t('Days', array(), array('context' => 'interval')),
       //'singular' => t('Day', array(), array('context' => 'interval')),
-      'formula' => format_plural($count, '@count Day', '@count Days', array(), array('context' => 'interval')),
+      'formula' => @format_plural($count, '@count Day', '@count Days', array(), array('context' => 'interval')),
       'singular' => '@count Day',
       'plural' => '@count Days',	 	  
       'php' => 'days',
@@ -385,7 +386,7 @@ function interval_interval_intervals() {
     'month' => array(
       //'plural' => t('Months', array(), array('context' => 'interval')),
       //'singular' => t('Month', array(), array('context' => 'interval')),
-      'formula' => format_plural($count, '@count Month', '@count Months', array(), array('context' => 'interval')),
+      'formula' => @format_plural($count, '@count Month', '@count Months', array(), array('context' => 'interval')),
       'singular' => '@count Month',
       'plural' => '@count Months',		  
       'php' => 'months',
@@ -394,7 +395,7 @@ function interval_interval_intervals() {
     'year' => array(
       //'plural' => t('Years', array(), array('context' => 'interval')),
       //'singular' => t('Year', array(), array('context' => 'interval')),
-      'formula' => format_plural($count, '@count Year', '@count Years', array(), array('context' => 'interval')),
+      'formula' => @format_plural($count, '@count Year', '@count Years', array(), array('context' => 'interval')),
       'singular' => '@count Year',
       'plural' => '@count Years',		  
       'php' => 'years',
@@ -403,7 +404,7 @@ function interval_interval_intervals() {
     'week' => array(
       //'plural' => t('Weeks', array(), array('context' => 'interval')),
       //'singular' => t('Week', array(), array('context' => 'interval')),
-      'formula' => format_plural($count, '@count Week', '@count Weeks', array(), array('context' => 'interval')),
+      'formula' => @format_plural($count, '@count Week', '@count Weeks', array(), array('context' => 'interval')),
       'singular' => '@count Week',
       'plural' => '@count Weeks',		  
       'php' => 'days',
@@ -412,7 +413,7 @@ function interval_interval_intervals() {
     'fortnight' => array(
       //'plural' => t('Fortnights', array(), array('context' => 'interval')),
       //'singular' => t('Fortnight', array(), array('context' => 'interval')),
-      'formula' => format_plural($count, '@count Fortnight', '@count Fortnights', array(), array('context' => 'interval')),
+      'formula' => @format_plural($count, '@count Fortnight', '@count Fortnights', array(), array('context' => 'interval')),
       'singular' => '@count Fortnight',
       'plural' => '@count Fortnights',		  
       'php' => 'days',
@@ -421,7 +422,7 @@ function interval_interval_intervals() {
     'quarter' => array(
       //'plural' => t('Quarters', array(), array('context' => 'interval')),
       //'singular' => t('Quarter', array(), array('context' => 'interval')),
-      'formula' => format_plural($count, '@count Quarters', '@count Quarters', array(), array('context' => 'interval')),
+      'formula' => @format_plural($count, '@count Quarters', '@count Quarters', array(), array('context' => 'interval')),
       'singular' => '@count Quarter',
       'plural' => '@count Quarters',		  
       'php' => 'months',

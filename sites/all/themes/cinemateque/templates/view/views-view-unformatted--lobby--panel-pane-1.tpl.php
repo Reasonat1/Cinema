@@ -132,6 +132,7 @@
           $event_title = (!empty($node->field_cm_event_short_title)) ? $node->field_cm_event_short_title['und'][0]['value'] : $node->title;
           $flag = flag_create_link('favorite_', $node->nid);
           $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node).'</div>';
+		  $event_code = '';
           if(!empty($node->field_cm_event_internal_id['und'])){
               $event_code = $node->field_cm_event_internal_id['und'][0]['value'];
           }
@@ -166,6 +167,7 @@
         $output .= '<table class="table">';
          $output .= ' <tbody>';
          /********For Movie****/
+		 $line_event = array();
         if(!empty($node->field_event_corresponding_ref['und'])){
             $movie_node_info = node_load($node->field_event_corresponding_ref['und'][0]['target_id']);
             $line_event = $movie_node_info->field_cm_event_lineup['und'];       
