@@ -17,6 +17,7 @@ function cinemateque_preprocess_html(&$variables) {
 	if ($node = menu_get_object()) {
 	    switch($node->type) {
 		  case 'cm_event':
+			drupal_add_js(drupal_get_path('module', 'my_utilities') . '/include/my_utilities.js');
 			if(empty($node->field_cm_event_images)) {
 			  if(!empty($node->field_cm_event_lineup)) {
 				if($movienode = node_load($node->field_cm_event_lineup['und'][0]['target_id'])) {
@@ -33,9 +34,11 @@ function cinemateque_preprocess_html(&$variables) {
 			if(empty($node->field_cm_article_image)) $variables['classes_array'][] = 'noheaderimage';
 		  break;
 		  case 'cm_movie':
+			drupal_add_js(drupal_get_path('module', 'my_utilities') . '/include/my_utilities.js');
 			if(empty($node->field_cm_movie_pictures)) $variables['classes_array'][] = 'noheaderimage';
 		  break;
 		  case 'cm_movie_group':
+			drupal_add_js(drupal_get_path('module', 'my_utilities') . '/include/my_utilities.js');
 			if(empty($node->field_cm_moviegroup_pictures)) $variables['classes_array'][] = 'noheaderimage';
 		  break;
 		  default:
