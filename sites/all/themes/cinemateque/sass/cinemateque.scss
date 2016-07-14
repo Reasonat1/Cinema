@@ -3,6 +3,7 @@
 body {
 	background-color: #eef3fa!important;
 	font-family: Open-Sans;
+	display: block!important;
 }
 .tabledrag-toggle-weight-wrapper {
 	display: none;
@@ -1678,12 +1679,13 @@ div[id^="panels-ipe-paneid-22"] > * select {
 		overflow: hidden;
 	}
 	.pane-bundle-gallery{
-		.pane-content, .fieldable-panels-pane, .field-name-field-custom-gallery-items, .field-items, .field-item, .panopoly-spotlight-widget-wrapper, .custom-slideshow, .custom-slideshow li{
+		.pane-content, .fieldable-panels-pane, .panopoly-spotlight-widget-wrapper, .field-name-field-custom-gallery-items,
+		.field-name-field-custom-gallery-items .field-items, .field-name-field-custom-gallery-items .field-item{
 			height: 100%!important;
 		}
 		.custom-slideshow li img{
-			height: 100%;
-			width: auto;
+			width: 100%;
+			height: auto;
 			max-width: none;
 		}
 		.slider-readmore{

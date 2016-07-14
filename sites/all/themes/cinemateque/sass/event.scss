@@ -102,7 +102,7 @@
 			padding-right: 10%;
 			width: 23%;
 			a {
-				background: url("../images/play-icon.png") no-repeat scroll center center;
+				background: url("../images/play-icon.png") no-repeat scroll 60% center;
 				border-radius: 30px;
 				border:1px solid #fff;
 				display: inline-block;
@@ -148,20 +148,10 @@
 			}
 		}
 		.slide-right-ct a {
-    		background: rgba(0, 0, 0, 0) url("../images/play-icon-black.png") no-repeat scroll right 43% center;
+    		background: rgba(0, 0, 0, 0) url("../images/play-icon-black.png") no-repeat scroll 60% center;
     		border-color: #000;
     	}
 	}
-	.views_slideshow_cycle_main{
-		.views-slideshow-cycle-main-frame-row{
-			height: 100%!important;
-		}
-		img{
-			left: 0;
-			height: auto !important;
-			position: absolute;
-			}
-		}
 	.pane-event-ct-view-panel-pane-5{
 		@include width;
 		.view-event-ct-view{

@@ -162,6 +162,10 @@
 	text-align: center;
 	box-sizing: border-box;
 	width: 100%;
+	background-color: #fff;
+	&.scroll-to-fixed-fixed{
+		padding-bottom: 40px;
+	}
 	> p {
 		background-color: $wild_sand;
 		display: inline-block;
