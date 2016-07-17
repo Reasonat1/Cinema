@@ -28,7 +28,8 @@
             $(".movie-group-slide-container").height($screenheight);
         }
         if ($(".node-type-cm-movie .panels-flexible-row-node_page-3").height() > $screenheight){
-                $(".node-type-cm-movie .panels-flexible-row-node_page-3").css("height",$screenheight);
+                $(".node-type-cm-movie .panels-flexible-row-node_page-3 .panels-flexible-region-node_page-slider-inside").css("height",$screenheight);
+                $(".node-type-cm-movie .panels-flexible-row-node_page-3 .views-slideshow-cycle-main-frame-row").css("height",$screenheight);
         }
         $(window).resize(function() {
             $(".page-term-lobby .panels-flexible-row-node_page-1 .pane-lobby-panel-pane-3").css("height","auto");
@@ -51,8 +52,11 @@
                 $(".node-type-cm-movie-group .panels-flexible-row-node_page-3").css("height",$screenheight);
                 $(".movie-group-slide-container").css("height",$screenheight);
             }
+            $(".node-type-cm-movie .panels-flexible-row-node_page-3 .panels-flexible-region-node_page-slider-inside").css("height","auto");
+            $(".node-type-cm-movie .panels-flexible-row-node_page-3 .views-slideshow-cycle-main-frame-row").css("height","auto");
             if ($(".node-type-cm-movie .panels-flexible-row-node_page-3").height() > $screenheight){
-                $(".node-type-cm-movie .panels-flexible-row-node_page-3").css("height",$screenheight);
+                    $(".node-type-cm-movie .panels-flexible-row-node_page-3 .panels-flexible-region-node_page-slider-inside").css("height",$screenheight);
+                    $(".node-type-cm-movie .panels-flexible-row-node_page-3 .views-slideshow-cycle-main-frame-row").css("height",$screenheight);
             }
         });
 
@@ -116,9 +120,14 @@
               $('.calender-filter-date, .calender-scroll').scrollToFixed({ marginTop: 120});
               $('.calender-header').scrollToFixed({ marginTop: 160});
             });
+            $.ajax({
+                complete: function() {
+              $('.calender-filter').scrollToFixed({ marginTop: 50});
+              $('.calender-filter-date, .calender-scroll').scrollToFixed({ marginTop: 120});
+              $('.calender-header').scrollToFixed({ marginTop: 160});                },
+            });
+
         }
-
-
 
     });
 

@@ -163,8 +163,10 @@
 	box-sizing: border-box;
 	width: 100%;
 	background-color: #fff;
+	width: 100%!important;
+	left: 0!important;
 	&.scroll-to-fixed-fixed{
-		padding-bottom: 40px;
+		padding-bottom: 107px;
 	}
 	> p {
 		background-color: $wild_sand;

@@ -18,7 +18,20 @@
  		    	position: relative;
 		    }		
  		}
- 	}
+ 		.panels-flexible-region-node_page-slider-inside{
+ 			overflow: hidden;
+ 			.views-slideshow-cycle-main-frame-row{
+ 				div{
+ 					height: 100%;
+ 				}
+ 			}
+ 		}
+	 	.view .content, .view .mask {
+		    height: auto;
+		    left: auto;
+		    position: relative!important;
+		}
+	}
  	&.noheaderimage .panels-flexible-row-node_page-3{
  		height: auto!important;
  		padding-top: 75px!important;
@@ -235,6 +248,7 @@
 			color: $color_star_dust_approx;
 			font-size: 12px;
 			padding: 10px 40px;
+			height: auto;
 		}
 	}
 }
