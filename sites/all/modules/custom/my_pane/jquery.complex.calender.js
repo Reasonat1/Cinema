@@ -63,6 +63,7 @@ jQuery(document).ready(function () {
     })
     content_width = parseInt(content_width) +parseInt(20);
     jQuery('.calender-body').css('width', content_width + 'px');
+    jQuery('.scroll-date').css('width', jQuery('.ajax-inner').width());
     jQuery('.calender-header').css('width', content_width + 'px');
     var body_width = jQuery(window).width();
     if (content_width > body_width) {
@@ -95,6 +96,8 @@ jQuery('.calender-row .time').css('margin-top','0');
 });
 
 jQuery(document).ajaxStop(function () {
+
+	
     jQuery('.calender-full-row .calender-row.inner').click(function () {
         jQuery('#calender-top-popup').remove();
         jQuery('body').append('<div id="calender-top-popup" ></div>');        

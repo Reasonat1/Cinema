@@ -23,12 +23,7 @@
 	position: relative;
 	padding: 0;
 }
-.calender-filter-date{
-	float: left;
-	margin-left: 3%;
-	width: 30%;
-	margin-top: 10px;
-}
+
 .calender-full-row {
 	padding: 10px;
 	float: left;
@@ -287,12 +282,27 @@
 	}	
 }
 
+.scroll-date{
+	position: relative;
+	padding: 0;
+	overflow: hidden;
+	width: 100%;
+	.wrapper{
+		@include width;
+	}
+}
+
+.calender-filter-date{
+	float: left;
+	margin-top: 10px;
+	width: 30%;
+	padding: 0;
+}
+
 .calender-scroll{
+	width: 30%;
 	float: right;
 	background: none;
-	padding-right: 30px;
-	margin-right: 3%;
-	width: 30%;
 	text-align: right;
 	margin-top: 13px;
 	p{
@@ -346,4 +356,35 @@
 
 .fixed-header-calendar .calender-filter{
 	position: fixed;
+}
+
+.scroll-calendar{
+	.calender-filter{
+		position: fixed;
+		top: 50px;
+		z-index: 400;
+		padding-bottom: 80px;
+	}
+	.scroll-date{
+		position: fixed;
+		top: 132px;
+		z-index: 400;
+	}
+	.calender-header{
+		position: fixed;
+		top: 183px;
+		z-index: 400;
+		.calendar-agenda-items{
+			left: 60px;
+			position: relative;
+		}		
+	}
+}
+
+.node-type-cm-article{
+	&.page-node-3261, &.page-node-3284{
+		.panel-panel-inner .panel-pane{
+			width: 100%!important;
+		}
+	}
 }

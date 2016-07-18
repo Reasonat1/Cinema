@@ -672,14 +672,14 @@ function complex_calender_view_block_content(){
      $output.="<div class='col-sm-12 calender'>";
      $output.= $filter;
      $output.="<div class='ajax-inner'>";
-      $output.="<div class='calender-filter-date col-sm-12'><p class='pull-left'>$selected_filter</p></div>";
+      $output.="<div class='scroll-date'><div class='wrapper'><div class='calender-filter-date col-sm-12'><p class='pull-left'>$selected_filter</p></div>";
       $output.="<div class='calender-scroll'>";
 	  $output.= "<p class='inactive scrollleft'><</p>";
 	  $output.= "<span>";
       $output.= t("Other venues");
       $output.="</span>";
       $output.="<p class='scrollright'>></p>
-                          </div>";
+                          </div></div></div>";
      $output.="<div class='calender-header'><p class='calendar-dayview-hour'></p>";
 	 $halls_inorder = array();
 	 

@@ -51,6 +51,11 @@ a{
 		display: none;
 	}
 }
+
+.panels-flexible-node_page .panels-flexible-region-inside{
+	padding: 0!important;	
+}
+
 body {
 	&.node-type-cm-movie {
 		background-color: $white !important;
@@ -350,19 +355,16 @@ body {
   		width: 100%;
 
   	}
+  	#cboxLoadedContent {
+		margin: 0;
+		width: 100%!important;
+	}
+	#cboxClose {
+		bottom: 3% !important;
+	}
 }
 
-/*#cboxContent {
-	width: 497px !important;
-	height: 399px !important;
-}*/
-#cboxLoadedContent {
-	margin: 0;
-	width: 100%!important;
-}
-#cboxClose {
-	bottom: 3% !important;
-}
+
 .lobby-summary {
 	font-size: 1.1rem;
 	line-height: 28px;

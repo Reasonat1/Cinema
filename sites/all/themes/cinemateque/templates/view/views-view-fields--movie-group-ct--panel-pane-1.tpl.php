@@ -49,7 +49,7 @@
       <?php print $fields['nothing_1']->content; ?> 
     </div>
     <div class="movie-gorup-item-teaser-txt">
-      <?php print $fields['field_cm_movie_short_summary']->content; ?>
+      <?php print (empty($fields['field_cm_movie_short_summary']->raw)) ? $fields['field_cm_movie_body']->content : $fields['field_cm_movie_short_summary']->content; ?>
     </div>
   </div>
 </div>

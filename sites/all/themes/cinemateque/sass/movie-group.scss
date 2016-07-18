@@ -46,14 +46,18 @@
 		.inside{
 			height: 100%!important;
 		}
-		.panels-flexible-region, .panel-pane, .pane-content, .view, .views-slideshow-cycle-main-frame, .view-content,.skin-default, .views-slideshow-cycle-main-frame-row,
+		/*.panels-flexible-region, .panel-pane, .pane-content, .view, .views-slideshow-cycle-main-frame, .view-content,.skin-default, .views-slideshow-cycle-main-frame-row,
 		.views-slideshow-cycle-main-frame-row-item, .views-field, .field-content, .movie-group-slide-container, .movie-group-slide{
 			height: 100%;
+		}*/
+		.views-slideshow-cycle-main-frame-row{
+			width: 100%!important;
 		}
 		.views_slideshow_main{
 			height: 100%;
 			img{
 				height: auto !important;
+				width: 100%;
 			}
 		}
 	}
@@ -272,7 +276,7 @@
 			}
 		}
 	}
-	.views_slideshow_cycle_slide .field-content .slide-alt-title {
+	.views_slideshow_cycle_slide .slide-alt-title {
 		background-color: $color_mine_shaft_approx;
 		bottom: 0px;
 		color: $color_star_dust_approx;

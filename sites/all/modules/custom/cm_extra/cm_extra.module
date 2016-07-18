@@ -232,6 +232,18 @@ function cm_extra_views_pre_render(&$view) {
 			unset($view->result[0]->node_field_data_field_cm_event_lineup_title);
 		}
 	}
+	
+	if($view->name == 'event_ct_view' && $view->current_display == 'panel_pane_9') {
+		//dpm($view->result);
+		/*if(empty($view->result[0]->field_data_field_cm_event_images_field_cm_event_images_fid)) {
+			dpm('replace view result');
+			dpm($view->result);
+			$view->result = views_get_view_result('event_ct_view', 'panel_pane_9', ($view->args[0]));
+			dpm($view->result);
+			
+		}*/
+		
+	}
 }
 
 function cm_extra_node_translate_after_submit($form, &$form_state) {

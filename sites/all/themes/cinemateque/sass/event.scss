@@ -6,6 +6,10 @@
 	#content {
 		width: 100% !important;
 	}
+	.view .content, .view .mask {
+	    left: auto;
+	    position: relative!important;
+	}
 	.panels-flexible-row-node_page-3,
 	.panels-flexible-row-node_page-4,
 	.panels-flexible-row-node_page-6{
@@ -81,6 +85,11 @@
 		}
 	}
 	.pane-event-ct-view-panel-pane-3{
+		.movie-group-slide{
+			img{
+				margin-bottom: 0;
+			}
+		}
 		.slide-left-ct {
 			float: left;
 			color: $white;
