@@ -160,10 +160,11 @@ function cm_extra_form_alter(&$form, &$form_state, $form_id) {
 }
 
 function cm_extra_i18n_sync_translation($entity_type, $translation, $translation_language, $source, $source_language, $field_names) {
-	//dpm(get_defined_vars());
+	//TODO: now this does not work at all, code does not run on http://jff.jer-cin.tikkewebsites.com/he/node/add/cm-movie-group?translation=3367&target=he even though it should. try writing die(); and see. I dont know why.... need to debug this... it might have to do with another module enabled or some update to i18n sync modules (or the term sync module). in any case, there is a bug while this is not taking place - the lobby term of a translated node needs to get its translated lobby term when translating, this code needs to run in order to do that. i also noticed that now lobby term options are limited to the language of the interface, so if you access edit of node in hebrew and its lobby is an english term it appears as though it has no lobby because that term option is ommited. 
 	if($entity_type != 'node') return;
 	
 	if(isset($source->field_lobby['und'][0]['target_id']) && !empty($source->field_lobby['und'][0]['target_id'])) {
+		//dpm($source->field_lobby);
 		$lobby_tid_org = $source->field_lobby['und'][0]['target_id'];
 		
 		if($lobby_tid_trans = i18n_taxonomy_translation_term_tid($lobby_tid_org,$translation_language)){
