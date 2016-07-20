@@ -186,21 +186,25 @@
           $event_ref_nid = $row['target_id'];
           $node_movie = node_load($event_ref_nid);    
           $node_event = node_load($node_movie->field_event_corresponding_ref['und'][0]['target_id']);
-          $event_title = $node_event->field_cm_event_short_title['und'][0]['value'];
-          $path = drupal_get_path_alias('node/'.$node_event->nid);
+		  
+          $event_title = (empty($node_event->field_cm_event_short_title)) ? $node_event->title : $node_event->field_cm_event_short_title['und'][0]['value'];
+          //$path = drupal_get_path_alias('node/'.$node_event->nid);
           $flag = flag_create_link('favorite_', $node_event->nid);
           $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node_event).'</div>';
-          if(!empty($node_event->field_cm_event_internal_id['und'])){
+          $event_code = '';
+		  if(!empty($node_event->field_cm_event_internal_id['und'])){
               $event_code = $node_event->field_cm_event_internal_id['und'][0]['value'];
           }
           if(!empty($node_event->field_cm_event_time['und'])){
               $event_date = date('l d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
               $event_time = date('g:i a', $node_event->field_cm_event_time['und'][0]['value']);
           }
+		  $hall_name = '';
           if(!empty($node_event->field_cm_event_hall['und'])){
               $hall_id = taxonomy_term_load($node_event->field_cm_event_hall['und'][0]['target_id']);
               $hall_name = $hall_id->name;
           }
+		  $toptix_code = '';
           if(!empty($node_event->field_toptix_purchase['und'])){
               $toptix_code = $node_event->field_toptix_purchase['und'][0]['value'];
           }
@@ -208,12 +212,12 @@
            $output .= '<tr class="row-custom-lobby">';
            $output .= '<td>'.$event_date.'</td>';
            $output .= '<td>'.$event_time.'</td>';
-           $output .= '<td>'.l($event_title, $path).'</td>';
-           $output .= '<td>'.$hall_name.'</td>';
-           $output .= '<td>'.$event_code.'</td>';
+           $output .= '<td>'.l($event_title, 'node/'.$node_event->nid).'</td>';
+           if($hall_name) $output .= '<td>'.$hall_name.'</td>';
+           if($event_code) $output .= '<td>'.$event_code.'</td>';
            $output .='<td>'. $flag . '</td>';
            $output .='<td>'. $addevent . '</td>';       
-           $output .= '<td>'.'<button data-url="'.$top_link.'" class="toptix-purchase">Puchase</button>'.'</td>';
+           if($toptix_code) $output .= '<td>'.'<button data-url="'.$top_link.'" class="toptix-purchase">Puchase</button>'.'</td>';
            $output .= '</tr>';
         }
          $output .= '</table>';

@@ -19,10 +19,10 @@ function radix_preprocess_html(&$variables) {
 //  // Add Bootstrap JS from CDN if bootstrap library is not installed.
   if (!module_exists('bootstrap_library')) {
     $base = parse_url($base_url);
-    $url = $base['scheme'] . '://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js';
+    //$url = $base['scheme'] . '://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js';
     $jquery_ui_library = drupal_get_library('system', 'ui');
     $jquery_ui_js = reset($jquery_ui_library['js']);
-    drupal_add_js($url, array(
+    drupal_add_js('/sites/all/themes/cinemateque/js/bootstrap.min.js', array(
       'type' => 'external',
       // We have to put Bootstrap after jQuery, but before jQuery UI.
       'group' => JS_LIBRARY,

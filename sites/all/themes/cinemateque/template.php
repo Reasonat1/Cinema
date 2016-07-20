@@ -47,7 +47,9 @@ function cinemateque_preprocess_html(&$variables) {
 	    }
 	}
 	
-	//dpm($variables);
+	if(arg(0) == 'taxonomy' && arg(1) == 'term' && $term = taxonomy_term_load(arg(2))) {
+		if($term->vocabulary_machine_name == 'lobby' && empty($term->field_cm_lobby_media)) $variables['classes_array'][] = 'noheaderimage';	
+	}
 }
 /**
  * Implements template_preprocess_page().

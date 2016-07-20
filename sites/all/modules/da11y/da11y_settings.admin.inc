@@ -40,7 +40,7 @@ function da11y_admin_settings($form, &$form_state) {
     $form["da11y_labels"][$key] = array(
           '#type' => 'textfield',
           '#title' => t($value),
-          '#default_value' => isset($da11y_setting[$key]) ? $da11y_setting[$key] : $value, 
+          '#default_value' => isset($da11y_setting[$key]) ? t($da11y_setting[$key]) : $value, 
     );
   }
 
