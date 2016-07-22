@@ -580,7 +580,7 @@ function complex_calender_view_block_content(){
         $filter.= " </div>" ;
         
         if(!empty($start_date)){
-            $selected_filter = date( 'd.m.y | l', $start_date );
+            $selected_filter = date( 'l | d.m.y', $start_date );
         }
     }else{
           if(!empty(arg(1))){
@@ -627,7 +627,7 @@ function complex_calender_view_block_content(){
                     $filter.= " </div>" ;
 
                     if(!empty($start_date)){
-                        $selected_filter = date( 'd.m.y | l', $start_date );
+                        $selected_filter = date( 'l | d.m.y', $start_date );
                     }
                 }else{
                     drupal_set_message('Current domain or node not connected to texonomy term', $type = 'status');
@@ -918,7 +918,7 @@ function ajax_complex_calender_filter(){
      global $base_url;
     $output = $selected_filter = "";
     if(!empty($filterdate)){
-            $selected_filter = date( 'd.m.y | l', $filterdate );
+            $selected_filter = date( 'l | d.m.y', $filterdate );
     }
       $result =  db_query("SELECT  flagging_node.uid AS flagged_user,n.nid AS nid, n.title, n.created, event_subtitle.field_cm_event_subtitle_value AS event_subtitle,
               event_time.field_cm_event_time_value AS event_start_time, event_time.field_cm_event_time_value2 AS event_end_time, event_duration.field_cm_event_duration_interval AS event_duration,
@@ -1116,7 +1116,7 @@ function ajax_complex_calender_mobile_filter(){
      global $base_url;
     $output = $selected_filter = "";
     if(!empty($filterdate)){
-            $selected_filter = date( 'd.m.y | l', $filterdate );
+            $selected_filter = date( 'l | d.m.y', $filterdate );
     }
       $result =  db_query("SELECT  flagging_node.uid AS flagged_user,n.nid AS nid, n.title, n.created, event_subtitle.field_cm_event_subtitle_value AS event_subtitle,
               event_time.field_cm_event_time_value AS event_start_time, event_time.field_cm_event_time_value2 AS event_end_time, event_duration.field_cm_event_duration_interval AS event_duration,
