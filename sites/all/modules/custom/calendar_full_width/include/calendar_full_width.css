@@ -1,0 +1,92 @@
+.pane-title{
+    display: none;
+}
+.pane-calendar-full-width-calendar .ajax-inner{
+   background-color: #f9f4ee;
+   margin-top: 3%;
+}
+.loading{
+    background: url("loading-small.gif") no-repeat scroll 0 0;
+    width: 2%;
+    height: 30px;
+    margin: auto;
+    background-position: 0px 6px;
+    padding-top: 2%;
+}
+.pane-calendar-full-width-calendar .ajax-inner .calendar-full-container{
+    width: 1280px !important;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 6%;
+    box-sizing: border-box;
+   background-color: #f9f4ee;
+}
+.pane-calendar-full-width-calendar .calenders-filter-date p,
+.pane-calendar-full-width-calendar .calendar-floating-top-content span,
+.pane-calendar-full-width-calendar .lobby-title a{
+    color: #000000;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 2%;
+}
+.pane-calendar-full-width-calendar .lobby-summary {
+    font-size: 1.1rem;
+    line-height: 28px;
+}
+.pane-calendar-full-width-calendar .lobby-container{
+  margin-top: 3%;  
+}
+.pane-calendar-full-width-calendar .lobby-term-left {
+    float: left;
+    width: 80%;
+    padding: 0 3% 0 0;
+}
+.pane-calendar-full-width-calendar .lobby-term-right {
+    float: right;
+    width: 20%;
+    position: relative;
+}
+button.toptix-purchases{
+    background-color: #b59d70;
+    color: #ffffff;
+    font-size: .8rem;
+    border: none;
+    padding: 4px 14px;
+}
+.pane-calendar-full-width-calendar .addthisevent-drop{
+    padding-top: 20px !important;
+}
+.cal-add-event {
+    margin-left: 45%;
+}
+.pane-calendar-full-width-calendar .calenders-filter-date p{
+    margin: 3% 0 2%;
+}
+.ajax-data-calendar .calenders-filter-date p{
+    margin-left: 7.5% !important;
+}
+.ajax-inner .top-text-blk-wht{
+    position: absolute;
+    left: 0px;
+    top: 2px;
+}
+.ajax-inner .flag-wrapper a {
+    display: block;
+    text-indent: -9999px;
+    z-index: 200;
+}
+.ajax-inner .flag-wrapper a.unflag-action {
+    background: url("../images/unlike-gold.png") no-repeat right 0 !important;
+}
+.ajax-inner a.flag-action {
+    background: url("../images/like-gold.png") no-repeat right 0 !important;
+}
+.ajax-inner .black {
+    background-color: #000!important;
+    padding: 4px;
+    color: #fff;
+}
+.ajax-inner .white {
+    background-color: #FFF!important;
+    padding: 4px;
+}
