@@ -68,9 +68,13 @@ function cinemateque_preprocess_views_view(&$vars) {
   if ($view->name == 'lobby') {
     // add needed javascript
     drupal_add_js(drupal_get_path('module', 'cinematic_toptix') . '/esrojsapi.js');
-    drupal_add_js(drupal_get_path('module', 'cinematic_toptix') . '/frame.js');
-
-          
+    drupal_add_js(drupal_get_path('module', 'cinematic_toptix') . '/frame.js');      
   }
 }
+function cinemateque_preprocess_date_views_pager(&$vars) {
+  if($vars['plugin']->view->name=='custom_calendar_floating_pane'){
+	$vars['nav_title'] = date('l | d.m.y', strtotime($vars['nav_title']));
+  } 
+}
+
 
