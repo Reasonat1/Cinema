@@ -1,0 +1,182 @@
+.pane-title{
+    display: none;
+}
+.pane-calendar-full-width-calendar .ajax-inner{
+   background-color: #f9f4ee;
+   margin-top: 3%;
+}
+.loading{
+    background: url("loading-small.gif") no-repeat scroll 0 0;
+    width: 2%;
+    height: 30px;
+    margin: auto;
+    background-position: 0px 6px;
+    padding-top: 2%;
+}
+.pane-calendar-full-width-calendar .ajax-inner .calendar-full-container{
+    width: 1280px !important;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 6%;
+    box-sizing: border-box;
+   background-color: #f9f4ee;
+}
+.pane-calendar-full-width-calendar .calenders-filter-date p,
+.pane-calendar-full-width-calendar .calendar-floating-top-content span,
+.pane-calendar-full-width-calendar .lobby-title a{
+    color: #000000;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 2%;
+}
+.pane-calendar-full-width-calendar .lobby-summary {
+    font-size: 1.1rem;
+    line-height: 28px;
+}
+.pane-calendar-full-width-calendar .lobby-container{
+  margin-top: 3%;  
+}
+.pane-calendar-full-width-calendar .lobby-term-left {
+    float: left;
+    width: 80%;
+    padding: 0 3% 0 0;
+}
+.pane-calendar-full-width-calendar .lobby-term-right {
+    float: right;
+    width: 20%;
+    position: relative;
+}
+button.toptix-purchases{
+    background-color: #b59d70;
+    color: #ffffff;
+    font-size: .8rem;
+    border: none;
+    padding: 4px 14px;
+}
+.pane-calendar-full-width-calendar .addthisevent-drop{
+    padding-top: 20px !important;
+}
+.cal-add-event {
+    margin-left: 45%;
+}
+.pane-calendar-full-width-calendar .calenders-filter-date p{
+    margin: 3% 0 2%;
+}
+.ajax-data-calendar .calenders-filter-date p{
+    margin-left: 7.5% !important;
+}
+.ajax-inner .top-text-blk-wht{
+    position: absolute;
+    left: 0px;
+    top: 2px;
+}
+.ajax-inner .flag-wrapper a {
+    display: block;
+    text-indent: -9999px;
+    z-index: 200;
+}
+.ajax-inner .flag-wrapper a.unflag-action {
+    background: url("../images/unlike-gold.png") no-repeat right 0 !important;
+}
+.ajax-inner a.flag-action {
+    background: url("../images/like-gold.png") no-repeat right 0 !important;
+}
+.ajax-inner .black {
+    background-color: #000!important;
+    padding: 4px;
+    color: #fff;
+}
+.ajax-inner .white {
+    background-color: #FFF!important;
+    padding: 4px;
+}
+.view-custom-calendar-floating-pane{
+    width: 20%;
+    margin: 0;
+    padding: 0;
+}
+.view-custom-calendar-floating-pane .view-header{
+   background-color: #000; 
+}
+.view-custom-calendar-floating-pane #multi-day-container{
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+    height: 100% !important;
+}
+.view-custom-calendar-floating-pane #multi-day-container,
+.view-custom-calendar-floating-pane #multi-day-container tbody,
+.view-custom-calendar-floating-pane #multi-day-container tbody tr,
+.view-custom-calendar-floating-pane #multi-day-container table,
+.view-custom-calendar-floating-pane #multi-day-container tr td{
+    border: none;
+}
+.view-custom-calendar-floating-pane .header-body-divider,
+.view-custom-calendar-floating-pane #single-day-container,
+.view-custom-calendar-floating-pane .single-day-footer,
+.view-custom-calendar-floating-pane tbody tr td.calendar-agenda-hour{
+ display: none;   
+}
+.view-custom-calendar-floating-pane #multi-day-container tr td .calendar{
+    padding: 0;
+    margin: 0;
+}
+.view-custom-calendar-floating-pane tbody tr td.calendar-agenda-items{
+  width: 266px !important;
+  display: block !important;
+}
+.view-custom-calendar-floating-pane  h3.pull-left{
+    font-size: 1em;
+    margin: 5% 0 5% 26%;
+    color: #fff;
+}
+.view-custom-calendar-floating-pane .view-header .btn-group{
+    position: initial;
+}
+.pane-custom-calendar-floating-pane-panel-pane-1{
+    margin-top: 5%;
+}
+.view-custom-calendar-floating-pane .date-nav-wrapper .btn-group a:first-child{
+    background: url("cal-prev.png") no-repeat right 0 !important;
+    text-indent: -9999px;
+    position: absolute;
+    left: 0;
+    margin: 5% 0 0;
+    box-shadow: none;
+    padding: 0px 10px;
+}
+.view-custom-calendar-floating-pane .date-nav-wrapper .btn-group a:last-child{
+    background: url("cal-next.png") no-repeat right 0 !important;
+    text-indent: -9999px;
+    position: absolute;
+    right: 4%;
+    margin: 5% 0 0;
+    box-shadow: none;
+    padding: 0px 5px;
+}
+.view-custom-calendar-floating-pane .calendar.dayview{
+    border-radius: 0 !important;
+    background-color: #ECECEB !important;
+}
+.view-custom-calendar-floating-pane #multi-day-container tr td .item{
+    background-color: #ECECEB !important;
+    border-bottom: 1px solid #B3B3B3;
+}
+.view-custom-calendar-floating-pane #multi-day-container tr td .item .view-item-custom_calendar_floating_pane{
+    padding: 4% 3%;
+}
+.view-custom-calendar-floating-pane #multi-day-container tr td .item a{
+    color: #000;
+    font-weight: 600;
+    font-size: 1.3em;
+}
+.view-custom-calendar-floating-pane #multi-day-container tr td .item .date-display-single{
+    color: #000;
+    font-size: 1.3em;
+    margin-right: 2%;
+}
+.view-custom-calendar-floating-pane #multi-day-container tr td .item .toptix-purchase{
+    float: right;
+    background-color: #b59d70;
+    font-size: .7rem;
+    padding: 4px 6px;
+}
