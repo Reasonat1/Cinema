@@ -244,14 +244,24 @@
 		.field-label {
 			display: none;
 		}
-		.field-name-field-file-image-alt-text .field-item {
+		.group-alttab{
 			background-color: $color_mine_shaft_approx;
 			position: absolute;
 			bottom: 0px;
 			color: $color_star_dust_approx;
 			font-size: 12px;
-			padding: 10px 40px;
+			padding: 10px 10px;
 			height: auto;
+			left: 0;
+			right: auto;
+			.field{
+				float: right;
+			}
+			.field-name-field-file-image-alt-text{
+				margin-left: 5px;
+				padding-left: 5px;
+				border-left: 1px solid;
+			}
 		}
 	}
 }

@@ -63,8 +63,8 @@ jQuery(document).ready(function () {
     })
     content_width = parseInt(content_width) +parseInt(20);
     jQuery('.calender-body').css('width', content_width + 'px');
-    jQuery('.scroll-date').css('width', jQuery('.ajax-inner').width());
-    jQuery('.calender-header').css('width', content_width + 'px');
+    jQuery('.scroll-date').css('width', jQuery('.ajax-inner').width()-30);
+    jQuery('.calender-header').css('width', content_width+57 + 'px');
     var body_width = jQuery(window).width();
     if (content_width > body_width) {
         var sliderLimit = parseInt(content_width) - parseInt(body_width);
@@ -138,7 +138,8 @@ jQuery(document).ajaxStop(function () {
     })
     content_width = parseInt(content_width) +parseInt(20);
     jQuery('.calender-body').css('width', content_width + 'px');
-    jQuery('.calender-header').css('width', content_width + 'px');
+    jQuery('.scroll-date').css('width', jQuery('.ajax-inner').width()-30);
+    jQuery('.calender-header').css('width', content_width+57 + 'px');
     var body_width = jQuery(window).width();
     if (content_width > body_width) {
         var sliderLimit = parseInt(content_width) - parseInt(body_width);

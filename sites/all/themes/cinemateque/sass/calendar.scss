@@ -6,7 +6,6 @@
 }
 .calender-header {
 	background: $white none repeat scroll 0 0;
-	border-top: 2px solid $wild_sand;
 	float: left;
 	margin-top: 10px;
 	min-width: 94%;
@@ -41,7 +40,6 @@
 }
 .calender-row {
 	width: 210px;
-	margin: 0!important;
 	min-height: 80px!important;
 	&.inner {
 		background: $white none repeat scroll 0 0;
@@ -276,17 +274,13 @@
 	}
 }
 
-.calender-full-row{
-	.calender-row.inner{
-		margin: 0!important;
-	}	
-}
-
 .scroll-date{
 	position: relative;
 	padding: 0;
 	overflow: hidden;
 	width: 100%;
+	border-bottom: 2px solid $wild_sand;
+	padding-bottom: 8px;
 	.wrapper{
 		@include width;
 	}
@@ -363,12 +357,12 @@
 		position: fixed;
 		top: 50px;
 		z-index: 400;
-		padding-bottom: 80px;
+		padding-bottom: 96px;
 	}
 	.scroll-date{
 		position: fixed;
 		top: 132px;
-		z-index: 400;
+		z-index: 500;
 	}
 	.calender-header{
 		position: fixed;
