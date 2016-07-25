@@ -1,4 +1,4 @@
-.pane-title{
+.pane-calendar-full-width-calendar .pane-title{
     display: none;
 }
 .pane-calendar-full-width-calendar .ajax-inner{
@@ -63,12 +63,20 @@ button.toptix-purchases{
     margin: 3% 0 2%;
 }
 .ajax-data-calendar .calenders-filter-date p{
-    margin-left: 7.5% !important;
+    margin-left: 6% !important;
 }
 .ajax-inner .top-text-blk-wht{
     position: absolute;
     left: 0px;
     top: 2px;
+    width: 100%;
+}
+.pane-calendar-full-width-calendar .flag-event{
+    float: right;
+    width: 15%;
+}
+.pane-calendar-full-width-calendar .flag-event a{
+    display: inline-block;
 }
 .ajax-inner .flag-wrapper a {
     display: block;
@@ -83,12 +91,12 @@ button.toptix-purchases{
 }
 .ajax-inner .black {
     background-color: #000!important;
-    padding: 4px;
+    padding: 2px 4px 4px 4px;
     color: #fff;
 }
 .ajax-inner .white {
     background-color: #FFF!important;
-    padding: 4px;
+    padding: 2px 4px 4px 4px;
 }
 .view-custom-calendar-floating-pane{
     width: 20%;
