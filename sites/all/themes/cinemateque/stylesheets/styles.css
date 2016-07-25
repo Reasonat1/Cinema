@@ -119,11 +119,6 @@
   margin-bottom: 0;
 }
 /* line 93, ../sass/event.scss */
-.node-type-cm-event .pane-event-ct-view-panel-pane-3 .slide-left-ct {
-  float: left;
-  color: #ffffff;
-  margin-top: 3%;
-}
 /* line 97, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-3 .slide-left-ct a {
   color: #ffffff;
@@ -135,14 +130,6 @@
 /* line 104, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-3 .slide-eve-lobby {
   font-size: 1.2rem;
-}
-/* line 107, ../sass/event.scss */
-.node-type-cm-event .pane-event-ct-view-panel-pane-3 .slide-right-ct {
-  float: left;
-  margin-top: 10%;
-  padding-left: 6%;
-  padding-right: 10%;
-  width: 23%;
 }
 /* line 113, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-3 .slide-right-ct a {
@@ -1450,7 +1437,8 @@ table.views-table {
     left: 0;
   }
   /* line 891, ../sass/general.scss */
-  .node-type-cm-movie .view-display-id-panel_pane_2 .slide-left-ct {
+  .node-type-cm-movie .view-display-id-panel_pane_2 .slide-left-ct,
+  .node-type-cm-event .pane-event-ct-view-panel-pane-3 .slide-left-ct{
     position: relative;
     width: 85%;
     float: right;
@@ -1461,7 +1449,8 @@ table.views-table {
     font-size: 1.56rem;
   }
   /* line 900, ../sass/general.scss */
-  .node-type-cm-movie .view-display-id-panel_pane_2 .slide-right-ct {
+  .node-type-cm-movie .view-display-id-panel_pane_2 .slide-right-ct,
+  .node-type-cm-event .pane-event-ct-view-panel-pane-3 .slide-right-ct {
     float: left;
     position: relative;
     margin-top: 0;
