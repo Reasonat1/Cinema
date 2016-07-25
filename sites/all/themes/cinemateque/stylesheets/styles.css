@@ -2559,11 +2559,13 @@ table td, table th {
   overflow: inherit;
 }
 /* line 244, ../sass/movie.scss */
-.view-id-movie_top_pane_view.view-display-id-panel_pane_1 #views_slideshow_cycle_teaser_section_movie_top_pane_view-panel_pane_1 .field-label {
+.view-id-movie_top_pane_view.view-display-id-panel_pane_1 #views_slideshow_cycle_teaser_section_movie_top_pane_view-panel_pane_1 .field-label ,
+#views_slideshow_cycle_main_event_ct_view-panel_pane_9  .field-label{
   display: none;
 }
 /* line 247, ../sass/movie.scss */
-.view-id-movie_top_pane_view.view-display-id-panel_pane_1 #views_slideshow_cycle_teaser_section_movie_top_pane_view-panel_pane_1 .group-alttab {
+.view-id-movie_top_pane_view.view-display-id-panel_pane_1 #views_slideshow_cycle_teaser_section_movie_top_pane_view-panel_pane_1 .group-alttab,
+.view-display-id-panel_pane_9 #views_slideshow_cycle_main_event_ct_view-panel_pane_9 .group-alttab{
   background-color: #312f2f;
   position: absolute;
   bottom: 0px;
@@ -2575,15 +2577,11 @@ table td, table th {
   right: auto;
 }
 /* line 257, ../sass/movie.scss */
-.view-id-movie_top_pane_view.view-display-id-panel_pane_1 #views_slideshow_cycle_teaser_section_movie_top_pane_view-panel_pane_1 .group-alttab .field {
+.view-id-movie_top_pane_view.view-display-id-panel_pane_1 #views_slideshow_cycle_teaser_section_movie_top_pane_view-panel_pane_1 .group-alttab .field,
+.view-display-id-panel_pane_9 #views_slideshow_cycle_main_event_ct_view-panel_pane_9 .group-alttab .field{
   float: right;
 }
 /* line 260, ../sass/movie.scss */
-.view-id-movie_top_pane_view.view-display-id-panel_pane_1 #views_slideshow_cycle_teaser_section_movie_top_pane_view-panel_pane_1 .group-alttab .field-name-field-file-image-alt-text {
-  margin-left: 5px;
-  padding-left: 5px;
-  border-left: 1px solid;
-}
 
 /* line 5, ../sass/search.scss */
 .page-search-search-results .page-header {
