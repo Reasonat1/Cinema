@@ -16,15 +16,15 @@
                 filterdate: filterdate,
             },
             success: function (data) {
+                var path_url = Drupal.settings.basePath + 'sites/all/modules/flag/theme/flag.js';
+                var cal_path = Drupal.settings.basePath + 'sites/all/modules/custom/my_utilities/include/atemay.js';
                 jQuery('.ajax-inner').replaceWith(data.output);
                 jQuery(".load-inner").removeClass('loading');
-                jQuery(".calendar-floating-top-content span.cal-add-event a").addClass('addthisevent-drop');
-                
+                jQuery.getScript(path_url, function() {
+                    Drupal.behaviors.flagLink.attach(document);
+                });
+                jQuery.getScript(cal_path);
             }
         });
     });
-    jQuery(".cal-add-event a").click(function(e) {
-        e.stopPropagation();
-     });
-    
 });
