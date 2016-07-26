@@ -39,6 +39,9 @@
              jQuery('#cm-event-node-form .pane-node-form-title .form-item-title #edit-title').val(mainStr);
         } 
     });
+    jQuery( ".pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.field-content span" ).last().addClass( "no-space-bar");
+    var tempStrs = jQuery('.pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.field-content span.no-space-bar').text().slice(0,-3)
+    jQuery('.pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.field-content span.no-space-bar').text(tempStrs);
 });
 
 jQuery(document).ajaxComplete(function () { //Tom added this to make flag work after ajax
