@@ -2,6 +2,7 @@
 function calendar_full_width_init() {
     drupal_add_js(drupal_get_path('module', 'calendar_full_width') . '/include/calendar_full_width.js');
     drupal_add_css(drupal_get_path('module', 'calendar_full_width') . '/include/calendar_full_width.css');
+   // drupal_add_js(drupal_get_path('module', 'flag') . '/theme/flag.js');
 }
 /**
  * The default list of allowed file extensions in file widgets.
@@ -85,7 +86,7 @@ function calendar_full_width_block_content(){
         $filter.= " </div>" ;
         
         if(!empty($current_date)){
-            $selected_filter = date( 'd.m.y | l');
+            $selected_filter = date( ' l | d.m.y');
         }
       $result =  db_query("SELECT  n.nid AS nid, n.title, 
               event_time.field_cm_event_time_value AS event_start_time, event_time.field_cm_event_time_value2 AS event_end_time,
@@ -99,6 +100,7 @@ function calendar_full_width_block_content(){
      $output.="<div class='calenders'>";
      $output.= $filter;
      $output.="<div class='ajax-inner'>";
+     $output.="<div class='load-inner'></div>";
      $output.="<div class='calendar-full-container'>";
       $output.="<div class='calenders-filter-date'><p class='pull-left'>$selected_filter</p></div>";
       foreach($result as $val){
@@ -106,7 +108,7 @@ function calendar_full_width_block_content(){
         //echo'<pre>'.print_r($node, 1).'</pre>';
         $event_title = $node->field_cm_event_short_title['und'][0]['value'];
         $path = drupal_get_path_alias('node/'.$node->nid);
-        $flag = flag_create_link('favorite_', $node->nid);
+        $flag = '<span class="flag-event">'.flag_create_link('favorite_', $node->nid).'</span>';
         if(!empty($node->field_cm_event_duration['und'])){
             $interval = $node->field_cm_event_duration['und'][0]['interval'];
             $period = $node->field_cm_event_duration['und'][0]['period'];
@@ -195,7 +197,7 @@ function ajax_calender_full_width_filter(){
      global $base_url;
     $output = $selected_filter = "";
     if(!empty($filterdate)){
-            $selected_filter = date( 'd.m.y | l', $filterdate );
+            $selected_filter = date( 'l | d.m.y', $filterdate );
     }
       $result =  db_query("SELECT  n.nid AS nid, n.title, 
               event_time.field_cm_event_time_value AS event_start_time, event_time.field_cm_event_time_value2 AS event_end_time,
