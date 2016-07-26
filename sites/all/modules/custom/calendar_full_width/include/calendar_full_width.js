@@ -28,3 +28,9 @@
      });
     
 });
+
+jQuery(document).ajaxComplete(function () { //Tom added this to make flag work after ajax
+	jQuery.getScript('/sites/all/modules/flag/theme/flag.js', function() {
+		Drupal.behaviors.flagLink.attach(document);
+		});	
+})

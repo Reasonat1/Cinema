@@ -516,9 +516,7 @@ table.views-table {
 	display: block;
 	margin-top: 5%;
 }
-.flag.flag-action {
-	margin-top: 5px;
-}
+
 .share-pane {
 	border-bottom: 2px solid $color_alto_approx;
 	padding: 10px 30px;
@@ -1109,6 +1107,7 @@ table.views-table {
 .flag-wrapper a {
 	display: block;
 	text-indent: -9999px;
+	width: 18px;
 	&.flag-action {
 		background: url("../images/like-gold.png") no-repeat right 0 !important;
 	}

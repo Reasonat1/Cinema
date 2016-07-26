@@ -21,6 +21,7 @@
 	left: 0;
 	position: relative;
 	padding: 0;
+	min-width: 100%;
 }
 
 .calender-full-row {
@@ -28,6 +29,9 @@
 	float: left;
 	padding: 5px 0;
 	width: 100%;
+	.custom-row:nth-child(1){
+		width: 100px;
+	}
 	.col-sm-2 {
 		padding-left: 5px;
 		padding-right: 5px;
@@ -201,7 +205,7 @@
 .calendar-dayview-hour {
 	float: left;
 	height: 30px;
-	width: 217px;
+	width: 100px;
 	margin: 0;
 }
 

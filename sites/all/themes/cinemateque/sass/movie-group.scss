@@ -14,8 +14,11 @@
 		.pane-node-body{
 			@include width;
 			min-width: 615px;
+			margin-top: 30px;
 			.pane-title, .pane-content{
-				margin: 0 23%;
+				margin: 0 auto;
+				width: 647px;
+				max-width: 100%;
 			}
 			p{
 				line-height: 25px;
@@ -24,6 +27,9 @@
 				display: none;
 			}
 		}
+	}
+	.panels-flexible-row-node_page-4{
+		margin-top: 30px;
 	}
 	.pane-movie-group-ct-panel-pane-3{
 		padding: 0!important;
@@ -73,7 +79,10 @@
 			padding-top: 30px;
 			min-width: 615px;
 			.view-content{
-				margin: 0 23%;
+				margin: 0 auto;
+				width: 647px;
+				max-width: 100%;
+
 			}
 			.content {
 				position: inherit;
@@ -89,8 +98,15 @@
 					position: absolute;
 					bottom: 20px;
 					left: 30px;
+					&.nopic{
+						position: relative;
+						a{
+							color: #000;
+						}
+					}
 					a{
 						color: #fff;
+						text-shadow: 2px 2px 0px rgba(150, 150, 150, 1);					
 					}
 				}
 				img{
@@ -108,6 +124,7 @@
 				.movie-gorup-item-teaser-txt{
 					p{
 						line-height: 25px;
+						font-size: 18px;
 					}
 				}
 			}
@@ -130,9 +147,18 @@
 			}
 			.flag{
 				position: absolute;
-				right: 10px;
-				top: 10px;
+				right: 20px;
+				top: 20px;
 				z-index: 200;
+				width: 18px;
+				.field-content, .flag-wrapper{
+					float: right;
+					width: 18px;
+				}
+				a{
+					right: 0;
+					top: 0;
+				}
 				&.flag-action {
 					background-image: url("../images/like-gold-movie.png");
 				}
@@ -224,14 +250,21 @@
 				.wrapper{
 					@include width;
 					.slide-eve-title, .slide-movie-title{
-						margin-left: 23%;
+						margin: 0 23%;
+					}
+					.slide-eve-title{
+						a{
+							font-size: 22px;
+						}
 					}
 				}
 				a {
 					color: #fff;
+					text-shadow: 2px 2px 0px rgba(150, 150, 150, 1);					
 				}
 				.slide-movie-title h2 {
-					font-size: 3rem;
+					font-size: 3.56rem;
+					text-shadow: 2px 2px 0px rgba(150, 150, 150, 1);					
 				}
 			}
 		}

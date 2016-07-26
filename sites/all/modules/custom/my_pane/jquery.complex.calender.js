@@ -49,6 +49,7 @@ jQuery(document).ready(function () {
             success: function (data) {
                 jQuery('.ajax-inner').replaceWith(data.output);
                 toptix_purchase_event();
+
             }
         });
     });
@@ -63,7 +64,7 @@ jQuery(document).ready(function () {
     })
     content_width = parseInt(content_width) +parseInt(20);
     jQuery('.calender-body').css('width', content_width + 'px');
-    jQuery('.scroll-date').css('width', jQuery('.ajax-inner').width()-30);
+    jQuery('.scroll-date').css('width', jQuery('.ajax-inner').width());
     jQuery('.calender-header').css('width', content_width+57 + 'px');
     var body_width = jQuery(window).width();
     if (content_width > body_width) {
@@ -138,7 +139,7 @@ jQuery(document).ajaxStop(function () {
     })
     content_width = parseInt(content_width) +parseInt(20);
     jQuery('.calender-body').css('width', content_width + 'px');
-    jQuery('.scroll-date').css('width', jQuery('.ajax-inner').width()-30);
+    jQuery('.scroll-date').css('width', jQuery('.ajax-inner').width());
     jQuery('.calender-header').css('width', content_width+57 + 'px');
     var body_width = jQuery(window).width();
     if (content_width > body_width) {
@@ -223,6 +224,10 @@ jQuery(document).ajaxComplete(function () {
             jQuery(this).find('i').addClass('fa-angle-down');
         }
     });
+				//Drupal.attachBehaviors($(context)); //fix ajax link elements loaded after ajax
+				jQuery.getScript('/sites/all/modules/flag/theme/flag.js', function() {
+					Drupal.behaviors.flagLink.attach(document);
+					});	
 })
 
 /*

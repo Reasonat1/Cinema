@@ -69,19 +69,22 @@ table th {
 /* line 19, ../sass/movie-group-rtl.scss */
 .node-type-cm-movie-group .view-id-movie_group_ct.view-display-id-panel_pane_1 .flag {
   right: auto;
-  left: 10px;
+  left: 20px;
 }
-/* line 27, ../sass/movie-group-rtl.scss */
-.node-type-cm-movie-group .view-id-movie_group_ct.view-display-id-panel_pane_2 .slide-inner-group .wrapper .slide-eve-title, .node-type-cm-movie-group .view-id-movie_group_ct.view-display-id-panel_pane_2 .slide-inner-group .wrapper .slide-movie-title {
-  margin-right: 23%;
-  margin-left: 0;
+/* line 22, ../sass/movie-group-rtl.scss */
+.node-type-cm-movie-group .view-id-movie_group_ct.view-display-id-panel_pane_1 .flag .field-content, .node-type-cm-movie-group .view-id-movie_group_ct.view-display-id-panel_pane_1 .flag .flag-wrapper {
+  float: left;
 }
-/* line 35, ../sass/movie-group-rtl.scss */
+/* line 25, ../sass/movie-group-rtl.scss */
+.node-type-cm-movie-group .view-id-movie_group_ct.view-display-id-panel_pane_1 .flag a {
+  left: 0;
+}
+/* line 31, ../sass/movie-group-rtl.scss */
 .node-type-cm-movie-group .views_slideshow_cycle_slide .field-content .slide-alt-title {
   right: auto;
   left: 0;
 }
-/* line 38, ../sass/movie-group-rtl.scss */
+/* line 34, ../sass/movie-group-rtl.scss */
 .node-type-cm-movie-group .views_slideshow_cycle_slide .field-content .slide-alt-title .grp-alt {
   padding-right: 0px;
   margin-right: 0px;
@@ -371,8 +374,8 @@ table td, table th {
 /* line 4, ../sass/calendar-rtl.scss */
 .calender-header {
   float: right;
-  left: auto;
-  right: 0;
+  left: 0;
+  right: auto;
 }
 
 /* line 9, ../sass/calendar-rtl.scss */
