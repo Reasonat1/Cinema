@@ -95,7 +95,7 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
       $output .= '</tbody>';
     $output .= '</table>';
       $output .='<div class="view-footer">';
-      if($row_count > 2){
+      if($row_count > 4){
        $output .='<div class="more-event">'. t('More Events').'</div>';
       }
       $output .='</div>';
