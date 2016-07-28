@@ -3,6 +3,7 @@
 
 
 .node-type-cm-event {
+	background-color: #fff!important;
 	#content {
 		width: 100% !important;
 	}
@@ -24,7 +25,7 @@
 	}
 	.panels-flexible-row-node_page-5{
 		.panels-flexible-row-node_page-5-inside{
-			padding-top: 100px;
+			padding-top: 40px;
 		}
 	}
 	.panels-flexible-row-node_page-3{
@@ -35,6 +36,9 @@
 		padding: 30px 0;
 		.pane-content{
 			@include width;
+			.view{
+				margin: 0 23%;
+			}
 		}
 		.views-field-field-cm-movie-credits-person-ro{
 			color: $color_nobel_approx;
@@ -70,18 +74,29 @@
 		.pane-content {
 			@include width();
 		}
-		table tr td {
+		table tr td, table tr th {
 			border: medium none;
-			font-size: 1.1rem;
+			width: calc(15% - 19.25px);
+			display: inline-block;
+			float: left;
+		}
+		.views-field-php{
+			width: 60px;
+		}
+		.views-field-ops{
+			height: 40px;
+			padding-top: 13px;
+			width: 60px;
+		}
+		.views-field-field-toptix-purchase{
+			width: 80px;
+			float: right;
 		}
 		.view-id-event_ct_view .views-field-php .addthisevent-drop {
 			background-color: $color_alabaster_approx;
 		}
 		.table-responsive tbody tr {
 			background-color: $color_alabaster_approx !important;
-		}
-		.views-field-field-toptix-purchase{
-			float: right;
 		}
 	}
 	.pane-event-ct-view-panel-pane-3{
@@ -94,22 +109,26 @@
 			float: left;
 			color: $white;
 			margin-top: 3%;
+			margin: 0 23%;
 			a{
 				color: $white;
 			}
 		}
 		.slide-movie-year {
 			font-size: 1.2rem;
+			text-shadow: 2px 2px 2px #000;					
 		}
 		.slide-eve-lobby {
 			font-size: 1.2rem;
+			text-shadow: 2px 2px 2px #000;					
 		}
 		.slide-right-ct {
 			float: left;
-			margin-top: 10%;
+			bottom: 25px;
 			padding-left: 6%;
 			padding-right: 10%;
 			width: 23%;
+			position: absolute;
 			a {
 				background: url("../images/play-icon.png") no-repeat scroll 60% center;
 				border-radius: 30px;
@@ -136,6 +155,10 @@
 					@include width();
 					.slide-movie-title {
 						margin-bottom: 15px;
+						text-shadow: 2px 2px 2px #000;	
+						a{
+							text-shadow: 2px 2px 2px #000;	
+						}				
 					}
 				}
 			}
@@ -146,23 +169,38 @@
 			position: relative;
 			bottom: 0;
 		}
+		.slide-movie-year{
+			text-shadow: none!important;
+		}
 		.slide-left-ct{
 			color: #000!important;
+			text-shadow: none!important;
 			margin-bottom: 3%;
 			h2{
 				color: #000!important;
+				text-shadow: none!important;
 			}
 			a{
 				color: #000!important;
+				text-shadow: none!important;
 			}
+		}
+		.slide-right-ct{
+			margin-bottom: 41px;
 		}
 		.slide-right-ct a {
     		background: rgba(0, 0, 0, 0) url("../images/play-icon-black.png") no-repeat scroll 60% center;
     		border-color: #000;
     	}
+    	.slide-over-content{
+    		margin: 50px auto 25px!important;
+    	}
 	}
 	.pane-event-ct-view-panel-pane-5{
 		@include width;
+		.pane-title{
+			font-size: 1rem;
+		}
 		.view-event-ct-view{
 			overflow: visible;
 			.table-responsive{
@@ -177,18 +215,15 @@
 		}
 		td {
 			border: none !important;
-			font-size: 1.1rem;
 			a {
 				color: $black;
 			}
 		}
 		table {
 			border: none !important;
-			font-size: 1.1rem;
 		}
 		tbody {
 			border: none !important;
-			font-size: 1.1rem;
 			.views-field-ops .flag{
 				background: url("../images/like-gold.png") no-repeat center center;
 				width: 18px;
@@ -210,28 +245,28 @@
 		}
 		th {
 			border: none !important;
-			font-size: 1.1rem;
 			color: $color_pink_swan_approx;
 			font-size: 14px;
 			font-weight: 300;
 		}
 		tr {
 			border: none !important;
-			font-size: 1.1rem;
 		}
 	}
 	.pane-event-ct-view-panel-pane-6 {
-		max-width: 720px;
+		margin-right: 23%;
 		.views-field-field-cm-movie-body {
 			color: $color_mine_shaft_approx;
-			font-size: 1.1rem;
 			line-height: 28px;
 		}
 		.views-field-title a {
+			font-weight: bold;
 			color: $black;
-			font-size: 1.1rem;
-			font-weight: 600;
-			margin-bottom: 2%;
+		}
+		.views-field-nothing{
+			font-weight: bold;
+			padding: 10px 0;
+			color: $black;
 		}
 	}
 	.pane-event-ct-view-panel-pane-4 .pane-content {
@@ -243,16 +278,13 @@
 		margin-top: 12%;
 	}
 	.pane-event-ct-view-panel-pane-8{
-		border-top: 1px solid #919191;
-		border-bottom: 1px solid #919191;
 		.views-field-field-cm-event-body {
-			font-size: 1.1rem;
 			line-height: 28px;
 			@include width();
 			padding: 35px 3%;
 			p {
 				font-weight: bold;
-				margin-left: 23%;
+				margin: 0 23%;
 			}
 		}
 	}

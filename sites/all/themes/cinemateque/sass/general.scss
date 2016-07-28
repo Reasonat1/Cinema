@@ -4,6 +4,9 @@ a{
 	color: $main_color;
 }
 
+p{
+	font-size: 1rem;
+}
 .panels-flexible-row{
 	@include width();
 	margin: 0 auto!important;
@@ -243,15 +246,6 @@ body {
 			color: $color_black_approx;
 		}
 	}
-	&.views-field-field-cm-movie-country {
-		color: $black;
-		font-size: 1.1rem;
-		font-weight: 600;
-		margin-bottom: 2%;
-	}
-	&.views-field-title{
-		margin-bottom: 2%;
-	}
 }
 .panels-ipe-portlet-wrapper {
 	.whatsapp-custom {
@@ -458,7 +452,9 @@ body {
 }
 #page-header .page-header {
 	display: none;
+	border: none;
 }
+
 .custom-nav ul {
 	margin: 0;
 	background-color: $color_alabaster_approx;

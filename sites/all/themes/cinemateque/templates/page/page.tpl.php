@@ -63,7 +63,7 @@
                         <?php print render($site_main_menu); ?>
                     </ul>
                     <ul class="col-md-3 header-right">
-                        <li>
+                        <li class="search">
                             <?php print render($page['sidebar_first']); ?>
                         </li>
 

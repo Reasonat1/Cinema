@@ -50,7 +50,7 @@ function _cm_extra_icons() {
   
   $block['subject'] = '';
   $block['content']['#markup'] = '<li class="popup_search"><i class="fa fa-search" aria-hidden="true"></i></li>
-<li><i class="fa fa-shopping-cart" aria-hidden="true">'.$toptixblock['content']['#markup'].'</i></li>
+<li class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true">'.$toptixblock['content']['#markup'].'</i></li>
 <li id="da11y-plugin"></li>
 <li>'.$langicon.'</li>
 ';

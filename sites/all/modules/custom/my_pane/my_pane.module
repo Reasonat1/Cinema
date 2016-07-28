@@ -752,7 +752,7 @@ function complex_calender_view_block_content(){
                           elseif($lenght == 16){ $length_padding =150;}   
                           elseif($lenght == 17){ $length_padding =160;}                          
                           else{ $length_padding = 0; }
-                           $total_lenght = $lenght*150+$length_padding;
+                           $total_lenght = $lenght*95+$length_padding;
                         }
                     }else{
                         $minutes ='';
@@ -761,7 +761,7 @@ function complex_calender_view_block_content(){
                     $mid_hour_start= date('i',$start);
                     if($mid_hour_start != '00'){
                         $event_diff = 60/$mid_hour_start;
-                        $event_margin = 150/$event_diff;
+                        $event_margin = 80/$event_diff;
                     }
                     $flag = flag_create_link('favorite_', $nid);
                     $string =  substr($val->event_body,0,500).'...';
@@ -1020,7 +1020,7 @@ function ajax_complex_calender_filter(){
                           elseif($lenght == 16){ $length_padding =150;}   
                           elseif($lenght == 17){ $length_padding =160;}                            
                           else{ $length_padding = 0; }
-                           $total_lenght = $lenght*150+$length_padding;
+                           $total_lenght = $lenght*95+$length_padding;
                         }
                     }else{
                         $minutes ='';
@@ -1029,7 +1029,7 @@ function ajax_complex_calender_filter(){
                     $mid_hour_start= date('i',$start);
                     if($mid_hour_start != '00'){
                         $event_diff = 60/$mid_hour_start;
-                        $event_margin = 150/$event_diff;
+                        $event_margin = 80/$event_diff;
                     }                    
                     $flag = flag_create_link('favorite_', $nid);
                     $string =  substr($val->event_body,0,500).'...';
