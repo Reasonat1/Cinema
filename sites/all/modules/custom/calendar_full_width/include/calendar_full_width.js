@@ -27,6 +27,21 @@
             }
         });
     });
+    /** if short event title is empty print reference Movie title*/
+    jQuery('#cm-event-node-form .form-item-field-cm-event-lineup-und-0-target-id').on('click', function(){
+        str = jQuery('#cm-event-node-form .form-item-field-cm-event-lineup-und-0-target-id #edit-field-cm-event-lineup-und-0-target-id').val();
+        var tempStr = str.split('(');
+        var mainStr = tempStr[0];
+        if( !jQuery('#cm-event-node-form #edit-field-cm-event-short-title-und-0-value').val() ) {
+            jQuery('#cm-event-node-form #edit-field-cm-event-short-title-und-0-value').val(mainStr);
+        }
+        if( !jQuery('#cm-event-node-form .pane-node-form-title .form-item-title #edit-title').val() ) {
+             jQuery('#cm-event-node-form .pane-node-form-title .form-item-title #edit-title').val(mainStr);
+        } 
+    });
+    jQuery( ".pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.field-content span" ).last().addClass( "no-space-bar");
+    var tempStrs = jQuery('.pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.field-content span.no-space-bar').text().slice(0,-3)
+    jQuery('.pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.field-content span.no-space-bar').text(tempStrs);
 });
 
 jQuery(document).ajaxComplete(function () { //Tom added this to make flag work after ajax
