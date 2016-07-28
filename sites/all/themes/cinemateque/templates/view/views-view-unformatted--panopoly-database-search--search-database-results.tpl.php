@@ -88,7 +88,7 @@
     }
     if(!empty($node->field_cm_movie_year['und'])){
       $year_name = taxonomy_term_load($node->field_cm_movie_year['und'][0]['target_id']);
-      $year = ' |' .' '.$year_name->name;
+      $year = $year_name->name;
     }else{
       $year = '';
     }
@@ -150,27 +150,36 @@
               $event_time = date('g:i a', $node->field_cm_event_time['und'][0]['value']);
           }
            $output_event .= '<tr class="row-custom-lobby">';
-            if(!empty($node->field_toptix_purchase['und'])){
-            $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
-            $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
-            $output_event .= '<td>'.'<button data-url="'.$top_link.'" class="toptix-purchase">Puchase</button>'.'</td>';
-            } 
-           $output_event .='<td>'. $addevent . '</td>';
-           $output_event .='<td>'. $flag . '</td>';
-            if(!empty($node->field_cm_event_internal_id['und'])){
-              $event_code = $node->field_cm_event_internal_id['und'][0]['value'];
-              $output_event .= '<td>'.$event_code.'</td>';
-            }
+            $output_event .= '<td class="date">'.$event_date.'</td>';
+            $output_event .= '<td class="time">'.$event_time.'</td>';
             if(!empty($node->field_cm_event_hall['und'])){
                 $hall_id = taxonomy_term_load($node->field_cm_event_hall['und'][0]['target_id']);
                 $hall_name = $hall_id->name;
-                $output_event .= '<td>'.$hall_name.'</td>';
+                $output_event .= '<td class="hall">'.$hall_name.'</td>';
             }
-           if(!empty($event_title)){
-            $output_event .= '<td>'.l($event_title, $path).'</td>';
-           }
-           $output_event .= '<td>'.$event_time.'</td>';
-           $output_event .= '<td>'.$event_date.'</td>';
+            else{
+                $output_event .= '<td class="hall"></td>';
+            }
+            if(!empty($event_title)){
+              $output_event .= '<td class="title">'.l($event_title, $path).'</td>';
+            }
+            if(!empty($node->field_cm_event_internal_id['und'])){
+              $event_code = $node->field_cm_event_internal_id['und'][0]['value'];
+              $output_event .= '<td class="code">'.$event_code.'</td>';
+            }
+            else{
+              $output_event .= '<td class="code"></td>';
+            }
+            $output_event .='<td>'. $flag . '</td>';
+            $output_event .='<td>'. $addevent . '</td>';
+            if(!empty($node->field_toptix_purchase['und'])){
+            $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
+            $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
+            $output_event .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t("Purchase").'</button>'.'</td>';
+            } 
+
+
+
            $output_event .= '</tr>';
          $output_event .= '</table>';
        $output_event .= '</div>';
@@ -212,28 +221,33 @@
                   $event_time = date('g:i a', $node_event->field_cm_event_time['und'][0]['value']);
               }
 
-               $output .= '<tr class="row-custom-lobby">';
-                    if(!empty($node_event->field_toptix_purchase['und'])){
-                    $toptix_code = $node_event->field_toptix_purchase['und'][0]['value'];
-                    $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
-                    $output .= '<td>'.'<button data-url="'.$top_link.'" class="toptix-purchase">Puchase</button>'.'</td>';
-                }
-               $output .='<td>'. $addevent . '</td>';
-               $output .='<td>'. $flag . '</td>';
-                if(!empty($node_event->field_cm_event_internal_id['und'])){
-                  $event_code = $node_event->field_cm_event_internal_id['und'][0]['value'];
-                  $output .= '<td>'.$event_code.'</td>';
-                }
+              $output .= '<tr class="row-custom-lobby">';
+                $output .= '<td class="date">'.$event_date.'</td>';
+                $output .= '<td class="time">'.$event_time.'</td>';
                 if(!empty($node_event->field_cm_event_hall['und'])){
                   $hall_id = taxonomy_term_load($node_event->field_cm_event_hall['und'][0]['target_id']);
                   $hall_name = $hall_id->name;
-                  $output .= '<td>'.$hall_name.'</td>';
+                  $output .= '<td class="hall">'.$hall_name.'</td>';
                 }
-               
-               $output .= '<td>'.l($event_title, $path).'</td>';
-               $output .= '<td>'.$event_time.'</td>';
-               $output .= '<td>'.$event_date.'</td>';
-               $output .= '</tr>';
+                else{
+                  $output .= '<td class="hall"></td>';
+                }
+                $output .= '<td class="title">'.l($event_title, $path).'</td>';
+                if(!empty($node_event->field_cm_event_internal_id['und'])){
+                  $event_code = $node_event->field_cm_event_internal_id['und'][0]['value'];
+                  $output .= '<td class="code">'.$event_code.'</td>';
+                }
+                else{
+                $output .= '<td class="code"></td>';
+                }
+                $output .='<td>'. $flag . '</td>';
+                $output .='<td class="addevent">'. $addevent . '</td>';
+                if(!empty($node_event->field_toptix_purchase['und'])){
+                  $toptix_code = $node_event->field_toptix_purchase['und'][0]['value'];
+                  $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
+                  $output .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">' . t("Purchase") . '</button>'.'</td>';
+                }
+                $output .= '</tr>';
             }
         }
          $output .= '</table>';
@@ -251,14 +265,14 @@
           $image = $image_movie_group;
           $sort_summary = $summary_movie_group;
           $event_info = $output;
-          $duration_info = $length . $year. ' '.$country;
+          $duration_info = $country . " " . $year . "|" . $length;
           $top_text = $white_text_movie_group . $black_text_movie_group;
         break;
         case "cm_movie":
           $image = $image_movie;
           $sort_summary = $summary_movie;
           $event_info = $output;
-          $duration_info = $length . $year. ' '.$country;
+          $duration_info = $country . " " . $year . "|" . $length;
           $top_text = $white_text_movie . $black_text_movie;
         break;
         case "cm_article":
@@ -286,6 +300,14 @@
       }
       print '<div class="lobby-container">';
         print'<div class="lobby-term-left">';
+          print '<div class="image-lobby">';
+            print $image;
+          print '</div>';
+          print '<div class="top-text-blk-wht">';
+            print $top_text;
+          print '</div>';
+        print '</div>';
+        print'<div class="lobby-term-right">';
             print '<div class="lobby-title">';
               print $title;
             print '</div>';
@@ -296,14 +318,6 @@
               print strip_tags($sort_summary);
             print '</div>';
             print $event_info;
-        print '</div>';
-        print'<div class="lobby-term-right">';
-          print '<div class="image-lobby">';
-            print $image;
-          print '</div>';
-          print '<div class="top-text-blk-wht">';
-            print $top_text;
-          print '</div>';
         print '</div>';
         print '<div class="clr"></div>';
     print '</div>';

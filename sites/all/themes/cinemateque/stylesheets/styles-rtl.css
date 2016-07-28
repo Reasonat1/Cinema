@@ -182,121 +182,188 @@ table td, table th {
 }
 
 /* line 43, ../sass/general-rtl.scss */
-.popup-element-body .popup-close {
-  right: -165px !important;
-  left: auto;
+.popup-element-body .center {
+  width: 100% !important;
+  top: 55px;
+  left: 0;
+  position: fixed !important;
 }
-/* line 47, ../sass/general-rtl.scss */
+/* line 48, ../sass/general-rtl.scss */
+.popup-element-body .center .inner {
+  width: 1280px !important;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 3%;
+  box-sizing: border-box;
+  margin: 40px auto 0 !important;
+}
+/* line 55, ../sass/general-rtl.scss */
+.popup-element-body #search-api-page-search-form-search-results--2 .form-group .form-text {
+  float: right;
+  padding: 7px 2% 8px 22%;
+}
+/* line 60, ../sass/general-rtl.scss */
+.popup-element-body #search-api-page-search-form-search-results--2 .form-submit {
+  right: auto;
+  left: 0;
+}
+/* line 65, ../sass/general-rtl.scss */
+.popup-element-body .popup-close {
+  left: 0;
+  right: auto !important;
+}
+/* line 69, ../sass/general-rtl.scss */
 .popup-element-body #search-api-page-search-form-search-results {
   padding: 42px 47px 10px 0px;
   left: 0px;
   right: auto;
 }
-/* line 51, ../sass/general-rtl.scss */
+/* line 73, ../sass/general-rtl.scss */
 .popup-element-body #search-api-page-search-form-search-results .form-submit {
   float: right;
 }
-/* line 54, ../sass/general-rtl.scss */
+/* line 76, ../sass/general-rtl.scss */
 .popup-element-body #search-api-page-search-form-search-results .form-item {
   float: right;
 }
 
 /**** lobby page  ****/
-/* line 64, ../sass/general-rtl.scss */
+/* line 86, ../sass/general-rtl.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_1 .toptix-purchase {
   float: left;
 }
-/* line 68, ../sass/general-rtl.scss */
+/* line 90, ../sass/general-rtl.scss */
 .page-term-lobby .lobby-term-left {
   float: left;
 }
-/* line 71, ../sass/general-rtl.scss */
+/* line 93, ../sass/general-rtl.scss */
 .page-term-lobby .lobby-term-right {
   float: right;
 }
-/* line 73, ../sass/general-rtl.scss */
+/* line 95, ../sass/general-rtl.scss */
 .page-term-lobby .lobby-term-right .top-text-blk-wht {
   right: 0px;
   left: auto;
 }
-/* line 79, ../sass/general-rtl.scss */
+/* line 101, ../sass/general-rtl.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-row {
   margin-left: 5%;
   margin-right: 0;
   float: right;
 }
-/* line 84, ../sass/general-rtl.scss */
+/* line 106, ../sass/general-rtl.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-row:nth-child(3n) {
   margin-left: 0;
 }
-/* line 87, ../sass/general-rtl.scss */
+/* line 109, ../sass/general-rtl.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-field-field-mc-teaser-toptxt-blk {
   right: 0;
   left: auto;
 }
-/* line 91, ../sass/general-rtl.scss */
+/* line 113, ../sass/general-rtl.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-field-ops {
   left: 15px;
   right: auto;
 }
 
-/* line 7, ../sass/search-rtl.scss */
-.page-search-search-results .cm_event .pro-grid li div.search-snippet-info {
+/* line 6, ../sass/search-rtl.scss */
+.page-search .search_result .text-center {
+  float: left;
+}
+/* line 12, ../sass/search-rtl.scss */
+.page-search .cm_event .pro-grid li div.search-snippet-info {
   padding-right: 0 !important;
 }
-/* line 14, ../sass/search-rtl.scss */
-.page-search-search-results .cm_movie .pro-grid li div.search-snippet-info {
-  padding-right: 0 !important;
-}
-/* line 21, ../sass/search-rtl.scss */
-.page-search-search-results #search-api-page-search-form .form-group .form-text {
+/* line 17, ../sass/search-rtl.scss */
+.page-search .search-performance {
   float: right;
-  padding: 15px 2% 15px 22%;
 }
-/* line 26, ../sass/search-rtl.scss */
-.page-search-search-results #search-api-page-search-form .form-submit {
+/* line 20, ../sass/search-rtl.scss */
+.page-search .pager {
+  float: left;
+}
+/* line 25, ../sass/search-rtl.scss */
+.page-search .cm_movie .pro-grid li div.search-snippet-info {
+  padding-right: 0 !important;
+}
+/* line 32, ../sass/search-rtl.scss */
+.page-search #search-api-page-search-form-search-results .form-group .form-text {
+  float: right;
+  padding: 7px 2% 8px 22%;
+}
+/* line 37, ../sass/search-rtl.scss */
+.page-search #search-api-page-search-form-search-results .form-submit {
   right: auto;
   left: 0;
 }
-/* line 32, ../sass/search-rtl.scss */
-.page-search-search-results .search_new .region .block {
+/* line 43, ../sass/search-rtl.scss */
+.page-search .search_new .region .block {
   float: right;
   margin-left: 2%;
   margin-right: 0;
 }
-/* line 38, ../sass/search-rtl.scss */
-.page-search-search-results #RemoveFilters {
+/* line 49, ../sass/search-rtl.scss */
+.page-search #RemoveFilters {
   text-align: right;
 }
-/* line 40, ../sass/search-rtl.scss */
-.page-search-search-results #RemoveFilters a {
+/* line 54, ../sass/search-rtl.scss */
+.page-search .views-row.views-field .field-content {
+  text-align: right;
+}
+/* line 60, ../sass/search-rtl.scss */
+.page-search .panels-flexible-row-node_page-4 .pane-facet {
+  float: right;
+  margin-right: 1.5%;
+  margin-left: 0;
+}
+/* line 65, ../sass/search-rtl.scss */
+.page-search .panels-flexible-row-node_page-4 .pane-facet:nth-child(1) {
   margin-right: 0;
 }
-/* line 44, ../sass/search-rtl.scss */
-.page-search-search-results .search-performance {
+/* line 70, ../sass/search-rtl.scss */
+.page-search .current-search-item li {
+  float: right;
+  padding-left: 30px;
+  padding-right: 0;
+}
+/* line 79, ../sass/search-rtl.scss */
+.page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-header {
+  left: 0;
+  right: auto;
+}
+/* line 84, ../sass/search-rtl.scss */
+.page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-left {
   float: right;
 }
-/* line 48, ../sass/search-rtl.scss */
-.page-search-search-results .search-api-page-results .text-center {
+/* line 86, ../sass/search-rtl.scss */
+.page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-left .top-text-blk-wht {
+  right: 0;
+  left: auto;
+}
+/* line 91, ../sass/search-rtl.scss */
+.page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-right {
   float: left;
-  text-align: left;
+}
+/* line 95, ../sass/search-rtl.scss */
+.page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .row-custom-lobby .purchase {
+  float: left;
 }
 
-/* line 56, ../sass/search-rtl.scss */
+/* line 106, ../sass/search-rtl.scss */
 .select2-results__options li {
-  background: url("../images/select-empty.png") no-repeat right 7px center;
+  background: url("../images/select-empty.png") no-repeat right 7px top 12px;
   padding-right: 22px;
+  padding-left: 0;
 }
-/* line 59, ../sass/search-rtl.scss */
+/* line 110, ../sass/search-rtl.scss */
 .select2-results__options li.select2-results__option-selected {
-  background: url("../images/select-gold.png") no-repeat right 7px center;
+  background: url("../images/select-gold.png") no-repeat right 7px top 12px;
 }
 
-/* line 65, ../sass/search-rtl.scss */
+/* line 116, ../sass/search-rtl.scss */
 .select2-container--default .select2-selection--single .select2-selection__arrow b:before {
+  left: -4px;
   right: auto;
-  top: -4px;
-  left: -0;
 }
 
 /* line 5, ../sass/menu-rtl.scss */

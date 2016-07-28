@@ -2032,36 +2032,41 @@ div[id^="panels-ipe-paneid-22"] > * select {
   overflow: hidden;
 }
 /* line 1689, ../sass/cinemateque.scss */
-.front .pane-bundle-gallery {
-  /*.pane-content, .fieldable-panels-pane, .panopoly-spotlight-widget-wrapper, .field-name-field-custom-gallery-items,
-  .field-name-field-custom-gallery-items .field-items, .field-name-field-custom-gallery-items .field-item{
-  	height: 100%!important;
-  }*/
+.front .panel-flexible-inside {
+  height: 100%;
 }
-/* line 1694, ../sass/cinemateque.scss */
+/* line 1693, ../sass/cinemateque.scss */
+.front .pane-bundle-gallery .custom-slideshow {
+  height: 1024px !important;
+}
+/* line 1696, ../sass/cinemateque.scss */
 .front .pane-bundle-gallery .custom-slideshow li img {
   width: 100%;
   height: auto;
   max-width: none;
 }
-/* line 1699, ../sass/cinemateque.scss */
+/* line 1701, ../sass/cinemateque.scss */
+.front .pane-bundle-gallery li {
+  height: 1024px !important;
+}
+/* line 1704, ../sass/cinemateque.scss */
 .front .pane-bundle-gallery .slider-readmore {
   border-radius: 15px;
   margin-top: 20px;
 }
-/* line 1703, ../sass/cinemateque.scss */
+/* line 1708, ../sass/cinemateque.scss */
 .front .pane-bundle-gallery .slider-title {
   font-size: 3rem;
   font-weight: normal;
 }
-/* line 1707, ../sass/cinemateque.scss */
+/* line 1712, ../sass/cinemateque.scss */
 .front .pane-bundle-gallery .pinch {
   width: 100%;
   left: 0;
   padding: 0;
   text-shadow: -3px -3px 2px #969696;
 }
-/* line 1712, ../sass/cinemateque.scss */
+/* line 1717, ../sass/cinemateque.scss */
 .front .pane-bundle-gallery .pinch .wrapper {
   width: 1280px !important;
   max-width: 100%;
@@ -2069,17 +2074,17 @@ div[id^="panels-ipe-paneid-22"] > * select {
   padding: 0 3%;
   box-sizing: border-box;
 }
-/* line 1717, ../sass/cinemateque.scss */
+/* line 1722, ../sass/cinemateque.scss */
 .front .field-name-field-cm-festival-body {
   margin-top: 100px;
   margin-bottom: 20px;
 }
-/* line 1720, ../sass/cinemateque.scss */
+/* line 1725, ../sass/cinemateque.scss */
 .front .field-name-field-cm-festival-body p {
   margin-bottom: 50px;
   line-height: 25px;
 }
-/* line 1725, ../sass/cinemateque.scss */
+/* line 1730, ../sass/cinemateque.scss */
 .front .pane-panels-mini {
   width: 1280px !important;
   max-width: 100%;
