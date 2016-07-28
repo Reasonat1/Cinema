@@ -17,16 +17,14 @@
         $(".node-type-cm-movie .views_slideshow_cycle_main .content").css("max-height",$screenheight);
         $(".node-type-cm-event .panels-flexible-region-node_page-slider-inside").css("max-height",$screenheight);
         $(".node-type-cm-event .views_slideshow_cycle_main .content").css("max-height",$screenheight);
-        $(".front .custom-slideshow").css("max-height",$fullscreenheight);
-
-
+        $(".front .custom-slideshow, .front .custom-slideshow li").css("max-height",$fullscreenheight);
         $(window).resize(function() {
             $screenheight = $(window).height()-50;
             $fullscreenheight = $(window).height();
             $(".movie-group-slide-container").css("max-height",$screenheight);
             $(".node-type-cm-movie .panels-flexible-region-node_page-slider-inside").css("max-height",$screenheight);
             $(".node-type-cm-movie .views_slideshow_cycle_main .content").css("max-height",$screenheight);
-            $(".front .custom-slideshow").css("max-height",$fullscreenheight);
+        $(".front .custom-slideshow, .front .custom-slideshow li").css("max-height",$fullscreenheight);
             $(".node-type-cm-event .panels-flexible-region-node_page-slider-inside").css("max-height",$screenheight);
             $(".node-type-cm-event .views_slideshow_cycle_main .content").css("max-height",$screenheight);
         });
