@@ -13,8 +13,18 @@ p{
 	padding: 0 3%!important;
 }
 
+.ajax-progress{
+  position: absolute;
+}
+
 .ctr {
 	clear: both;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+	width: auto;
 }
 
 #da11y-toggle.active {
@@ -1205,15 +1215,66 @@ table{
 }
 
 .popup-element-body{
+	.center{
+		width: 100%!important;
+		top: 55px;
+		left: 0;
+		position: fixed!important;
+		.inner{
+			@include width;
+			margin: 40px auto 0!important;
+		}
+	}
+	#search-api-page-search-form-search-results--2{
+		position: relative;
+		> div{
+			position: relative;
+		}
+		.form-group {
+			overflow: hidden;
+			-webkit-box-shadow: -1px 1px 10px -3px rgba(0,0,0,0.75);
+			-moz-box-shadow: -1px 1px 10px -3px rgba(0,0,0,0.75);
+			box-shadow: -1px 1px 10px -3px rgba(0,0,0,0.75);
+			label[for="edit-keys-1"] {
+				display: none !important;
+			}
+			.form-text {
+				width: 100%;
+				box-sizing: border-box;
+				display: inline-block;
+				float: left;
+				background: $white;
+				margin-bottom: 0;
+				height: auto;
+				padding: 7px 22% 8px 2%;
+				font-size: 25px;
+				border:none;
+			}
+		}
+		.form-submit {
+			margin: 0;
+			border-radius: 0 !important;
+			background: $main_color !important;
+			padding: 9px 25px 11px;
+			font-size: 18px;
+			width: 20%;
+			position: absolute;
+			right: 0;
+			box-shadow: none;
+			top: 0px;
+		}
+	}
 	.popup-close{
 	    background: $main-color url("../images/close42.png") no-repeat scroll center center !important;
 	    border-radius: 50%;
 	    height: 25px !important;
-	    left: -247px;
-	    top: 18px !important;
+		left: auto;
+		top: -32px !important;
 	    width: 25px !important;
 	    z-index: 300;
 	    background-size: 10px 10px!important;
+		right: 0;
+		position: absolute !important;
 	}
 	#search-api-page-search-form-search-results{
 	    background-color: #323232;

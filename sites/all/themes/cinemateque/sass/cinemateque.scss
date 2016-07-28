@@ -1686,15 +1686,20 @@ div[id^="panels-ipe-paneid-22"] > * select {
 	.panel-pane{
 		overflow: hidden;
 	}
+	.panel-flexible-inside{
+			height: 100%;
+	}
 	.pane-bundle-gallery{
-		/*.pane-content, .fieldable-panels-pane, .panopoly-spotlight-widget-wrapper, .field-name-field-custom-gallery-items,
-		.field-name-field-custom-gallery-items .field-items, .field-name-field-custom-gallery-items .field-item{
-			height: 100%!important;
-		}*/
+		.custom-slideshow{
+			height: 1024px!important;
+		}
 		.custom-slideshow li img{
 			width: 100%;
 			height: auto;
 			max-width: none;
+		}
+		li{
+			height: 1024px!important;
 		}
 		.slider-readmore{
 			border-radius: 15px;
