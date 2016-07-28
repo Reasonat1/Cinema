@@ -1358,3 +1358,30 @@ table{
 		}
 	}
 }
+
+/*****  slideshow controls  *******/
+
+.views-slideshow-controls-top{
+	.views_slideshow_controls_text_next, .views-slideshow-controls-text-previous{
+		a{
+		    font-size: 0;
+		    opacity: 1;
+		    top: 50%;
+		    z-index: 9;
+		    height: 32px;
+	    	position: absolute;
+	    	width: 32px;
+	    	background-color: rgba(0,0,0,0.4);
+	    	border-radius: 50%;
+   		}
+	}
+	.views-slideshow-controls-text-previous a{
+	    background-image: url("../images/left.png");
+	    left: 15px;
+	}
+   	.views_slideshow_controls_text_next a{
+   		background-image: url("../images/right.png");
+	    right: 15px;
+   	}
+}
+

@@ -2025,6 +2025,30 @@ table td, table th {
   font-size: 20px;
 }
 
+/*****  slideshow controls  *******/
+/* line 1366, ../sass/general.scss */
+.views-slideshow-controls-top .views_slideshow_controls_text_next a, .views-slideshow-controls-top .views-slideshow-controls-text-previous a {
+  font-size: 0;
+  opacity: 1;
+  top: 50%;
+  z-index: 9;
+  height: 32px;
+  position: absolute;
+  width: 32px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+}
+/* line 1378, ../sass/general.scss */
+.views-slideshow-controls-top .views-slideshow-controls-text-previous a {
+  background-image: url("../images/left.png");
+  left: 15px;
+}
+/* line 1382, ../sass/general.scss */
+.views-slideshow-controls-top .views_slideshow_controls_text_next a {
+  background-image: url("../images/right.png");
+  right: 15px;
+}
+
 /* line 5, ../sass/movie-group.scss */
 .node-type-cm-movie-group #content {
   width: 100% !important;
