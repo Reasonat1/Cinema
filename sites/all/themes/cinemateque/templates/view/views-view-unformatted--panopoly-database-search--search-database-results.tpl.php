@@ -177,9 +177,6 @@
             $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
             $output_event .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t("Purchase").'</button>'.'</td>';
             } 
-
-
-
            $output_event .= '</tr>';
          $output_event .= '</table>';
        $output_event .= '</div>';
