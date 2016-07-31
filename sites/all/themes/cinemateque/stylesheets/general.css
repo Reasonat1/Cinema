@@ -1473,26 +1473,26 @@ table td, table th {
   margin: 40px auto 0 !important;
 }
 /* line 1228, ../sass/general.scss */
-.popup-element-body #search-api-page-search-form-search-results--2 {
+.popup-element-body form {
   position: relative;
 }
 /* line 1230, ../sass/general.scss */
-.popup-element-body #search-api-page-search-form-search-results--2 > div {
+.popup-element-body form > div {
   position: relative;
 }
 /* line 1233, ../sass/general.scss */
-.popup-element-body #search-api-page-search-form-search-results--2 .form-group {
+.popup-element-body form .form-group {
   overflow: hidden;
   -webkit-box-shadow: -1px 1px 10px -3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 1px 10px -3px rgba(0, 0, 0, 0.75);
   box-shadow: -1px 1px 10px -3px rgba(0, 0, 0, 0.75);
 }
 /* line 1238, ../sass/general.scss */
-.popup-element-body #search-api-page-search-form-search-results--2 .form-group label[for="edit-keys-1"] {
+.popup-element-body form .form-group label[for="edit-keys-1"] {
   display: none !important;
 }
 /* line 1241, ../sass/general.scss */
-.popup-element-body #search-api-page-search-form-search-results--2 .form-group .form-text {
+.popup-element-body form .form-group .form-text {
   width: 100%;
   box-sizing: border-box;
   display: inline-block;
@@ -1505,7 +1505,7 @@ table td, table th {
   border: none;
 }
 /* line 1254, ../sass/general.scss */
-.popup-element-body #search-api-page-search-form-search-results--2 .form-submit {
+.popup-element-body form .form-submit {
   margin: 0;
   border-radius: 0 !important;
   background: #b59d70 !important;
@@ -1530,51 +1530,8 @@ table td, table th {
   right: 0;
   position: absolute !important;
 }
-/* line 1279, ../sass/general.scss */
-.popup-element-body #search-api-page-search-form-search-results {
-  background-color: #323232;
-  box-sizing: border-box;
-  opacity: 0.9;
-  overflow: hidden;
-  padding: 42px 0px 10px 47px;
-  width: 332px;
-  position: absolute;
-  right: 80px;
-}
-/* line 1288, ../sass/general.scss */
-.popup-element-body #search-api-page-search-form-search-results .form-submit {
-  background-color: #b59d70;
-  color: #fff;
-  float: left;
-  margin-top: 14px;
-}
-/* line 1293, ../sass/general.scss */
-.popup-element-body #search-api-page-search-form-search-results .form-submit:hover {
-  background-color: #b59d70 !important;
-}
-/* line 1297, ../sass/general.scss */
-.popup-element-body #search-api-page-search-form-search-results .form-item-custom-search-types {
-  display: none;
-}
-/* line 1300, ../sass/general.scss */
-.popup-element-body #search-api-page-search-form-search-results .form-item {
-  float: left;
-}
-/* line 1302, ../sass/general.scss */
-.popup-element-body #search-api-page-search-form-search-results .form-item input {
-  height: 42px;
-  box-sizing: border-box;
-  padding: 10px 5px;
-  background-color: #fff;
-}
-/* line 1308, ../sass/general.scss */
-.popup-element-body #search-api-page-search-form-search-results .form-item label {
-  font-size: 14px;
-  padding: 10px 5px;
-  color: #000;
-}
 
-/* line 1317, ../sass/general.scss */
+/* line 1281, ../sass/general.scss */
 .popup-style-white .popup-element-body .bottom .right,
 .popup-style-white .popup-element-body .bottom .center,
 .popup-style-white .popup-element-body .bottom .left,
@@ -1588,16 +1545,16 @@ table td, table th {
 }
 
 /***  article page  ****/
-/* line 1332, ../sass/general.scss */
+/* line 1296, ../sass/general.scss */
 .node-type-cm-article .radix-layouts-content {
   padding: 0;
 }
-/* line 1335, ../sass/general.scss */
+/* line 1299, ../sass/general.scss */
 .node-type-cm-article .panel-panel-inner .panel-pane.pane-article-ct-panes-panel-pane-1 {
   width: 100% !important;
   padding: 0 !important;
 }
-/* line 1339, ../sass/general.scss */
+/* line 1303, ../sass/general.scss */
 .node-type-cm-article .panel-panel-inner .panel-pane {
   width: 1280px !important;
   max-width: 100%;
@@ -1605,18 +1562,18 @@ table td, table th {
   padding: 0 3%;
   box-sizing: border-box;
 }
-/* line 1343, ../sass/general.scss */
+/* line 1307, ../sass/general.scss */
 .node-type-cm-article .view-article-ct-panes.view-display-id-panel_pane_1 .content {
   position: relative;
 }
-/* line 1346, ../sass/general.scss */
+/* line 1310, ../sass/general.scss */
 .node-type-cm-article .view-article-ct-panes.view-display-id-panel_pane_1 .views-field-title {
   color: #fff;
   position: absolute;
   bottom: 5em;
   width: 100%;
 }
-/* line 1351, ../sass/general.scss */
+/* line 1315, ../sass/general.scss */
 .node-type-cm-article .view-article-ct-panes.view-display-id-panel_pane_1 .views-field-title .field-content {
   width: 1280px !important;
   max-width: 100%;
@@ -1625,13 +1582,13 @@ table td, table th {
   box-sizing: border-box;
   display: block;
 }
-/* line 1354, ../sass/general.scss */
+/* line 1318, ../sass/general.scss */
 .node-type-cm-article .view-article-ct-panes.view-display-id-panel_pane_1 .views-field-title .field-content .sub-title {
   font-size: 20px;
 }
 
 /*****  slideshow controls  *******/
-/* line 1366, ../sass/general.scss */
+/* line 1330, ../sass/general.scss */
 .views-slideshow-controls-top .views_slideshow_controls_text_next a, .views-slideshow-controls-top .views-slideshow-controls-text-previous a {
   font-size: 0;
   opacity: 1;
@@ -1643,12 +1600,12 @@ table td, table th {
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 50%;
 }
-/* line 1378, ../sass/general.scss */
+/* line 1342, ../sass/general.scss */
 .views-slideshow-controls-top .views-slideshow-controls-text-previous a {
   background-image: url("../images/left.png");
   left: 15px;
 }
-/* line 1382, ../sass/general.scss */
+/* line 1346, ../sass/general.scss */
 .views-slideshow-controls-top .views_slideshow_controls_text_next a {
   background-image: url("../images/right.png");
   right: 15px;

@@ -49,8 +49,8 @@ function _cm_extra_icons() {
   $toptixblock = module_invoke('cinematic_toptix', 'block_view', 'cart');
   
   $block['subject'] = '';
-  $block['content']['#markup'] = '<li class="popup_search"><i class="fa fa-search" aria-hidden="true"></i></li>
-<li class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true">'.$toptixblock['content']['#markup'].'</i></li>
+  $block['content']['#markup'] = '<li class="popup_search">Search</li>
+<li class="shopping-cart"><div class="shopping-cart">'.$toptixblock['content']['#markup'].'</div></li>
 <li id="da11y-plugin"></li>
 <li>'.$langicon.'</li>
 ';

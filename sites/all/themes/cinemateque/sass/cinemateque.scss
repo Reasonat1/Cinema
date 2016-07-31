@@ -82,10 +82,8 @@ body {
 	}
 	&.header-right{
 		> li {
-			color: $white;
 			cursor: pointer;
 			display: inline-block;
-			float: left;
 			padding-left: 15px;
 			padding-right: 15px;
 			padding-top: 12px;
@@ -107,14 +105,17 @@ body {
 		.popup-title-active i{
 				color: $main_color;
 		}
-		.fa-shopping-cart button{
-		    border: medium none;
-		    font-size: 0;
-		    height: 20px;
-		    position: absolute;
-		    width: 20px;
-		    background-color: transparent;
-		    left: 0;
+		.shopping-cart{
+			button{
+			    border: medium none;
+			    font-size: 0;
+			    height: 20px;
+			    width: 20px;
+			    background: url("../images/shop-icon.png") no-repeat 0 0 transparent;
+			    &:hover{
+			    	background: url("../images/shop-icon-gold.png") no-repeat 0 0;
+			    }
+			}
 		}
 	}
 }
@@ -492,7 +493,46 @@ img.panopoly-image-full{
 			padding-top: 10px;
 			padding-bottom: 10px!important;
 		}
-
+	}
+	.header-right{
+		width: auto;
+		float: right;
+		.search span{
+			background: url("../images/search-icon.png") no-repeat 0 0;
+		    display: inline-block;
+		    height: 20px;
+		    margin-top: 5px;
+		    text-indent: -9999px;
+		    width: 20px;
+    		&:hover{
+				background: url("../images/search-icon-gold.png") no-repeat 0 0;
+			}
+		}
+		#da11y-toggle:before {
+		    content: "";
+		}
+		#da11y-toggle{
+			background: url("../images/access-icon.png") no-repeat 0 0;
+			height: 22px;
+    		margin-top: 3px;
+    		width: 20px;
+			 &:hover{
+				background: url("../images/access-icon-gold.png") no-repeat 0 0;
+			}
+		}
+		.language-switcher-locale-url{
+			a{
+				background: url("../images/hebrew-icon.png") no-repeat 0 0;
+				display: inline-block;
+			    height: 20px;
+			    margin-top: 6px;
+			    text-indent: -9999px;
+			    width: 20px;
+				&:hover{
+					background: url("../images/access-icon-gold.png") no-repeat 0 0;
+				}
+			}
+		}
 	}
 	.container {
 		padding: 0;
@@ -508,6 +548,7 @@ img.panopoly-image-full{
 		}
 	}
 }
+
 .dropdown-menu {
 	background-color: transparent;
 	padding: 0;
@@ -520,10 +561,7 @@ img.panopoly-image-full{
 	float: left;
 	width: 100%;
 }
-.header-right {
-	float: right;
-	width: auto;
-}
+
 .festival-site {
 	float: left;
 	padding-top: 4px;

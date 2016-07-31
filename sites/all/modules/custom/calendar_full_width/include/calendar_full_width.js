@@ -43,9 +43,9 @@
     var tempStrs = jQuery('.pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.field-content span.no-space-bar').text().slice(0,-3)
     jQuery('.pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.field-content span.no-space-bar').text(tempStrs);
 });
-
+/*
 jQuery(document).ajaxComplete(function () { //Tom added this to make flag work after ajax
 	jQuery.getScript('/sites/all/modules/flag/theme/flag.js', function() {
 		Drupal.behaviors.flagLink.attach(document);
 		});	
-})
+})*/

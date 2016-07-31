@@ -1,7 +1,7 @@
 <?php
 function calendar_full_width_init() {
-    drupal_add_js(drupal_get_path('module', 'calendar_full_width') . '/include/calendar_full_width.js');
-    drupal_add_css(drupal_get_path('module', 'calendar_full_width') . '/include/calendar_full_width.css');
+    //drupal_add_js(drupal_get_path('module', 'calendar_full_width') . '/include/calendar_full_width.js');
+    //drupal_add_css(drupal_get_path('module', 'calendar_full_width') . '/include/calendar_full_width.css');
    // drupal_add_js(drupal_get_path('module', 'flag') . '/theme/flag.js');
 }
 /**
@@ -22,7 +22,17 @@ function calendar_full_width_block_info() {
     switch($delta){
       case 'calendar':
         $block['subject'] = t('Calendar Full Width Block');
-        $block['content'] =calendar_full_width_block_content();
+		$block['content'] = array();
+        $block['content']['#markup'] =calendar_full_width_block_content();
+		$block['content']['#attached'] = array(
+			'js' => array(
+				drupal_get_path('module', 'calendar_full_width') . '/include/calendar_full_width.js',
+			),
+			'css' => array(
+				drupal_get_path('module', 'calendar_full_width') . '/include/calendar_full_width.css',
+			),
+		
+		);
         break;
      }
     return $block;

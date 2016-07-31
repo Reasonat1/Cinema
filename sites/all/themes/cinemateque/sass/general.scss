@@ -1225,7 +1225,7 @@ table{
 			margin: 40px auto 0!important;
 		}
 	}
-	#search-api-page-search-form-search-results--2{
+	form{
 		position: relative;
 		> div{
 			position: relative;
@@ -1275,42 +1275,6 @@ table{
 	    background-size: 10px 10px!important;
 		right: 0;
 		position: absolute !important;
-	}
-	#search-api-page-search-form-search-results{
-	    background-color: #323232;
-	    box-sizing: border-box;
-	    opacity: 0.9;
-	    overflow: hidden;
-	    padding: 42px 0px 10px 47px;
-	    width: 332px;
-	    position: absolute;
-	    right: 80px;
-		.form-submit{
-			background-color: $main-color;	
-			color: #fff;
-			float: left;
-			margin-top: 14px;
-			&:hover{
-				background-color: $main-color!important;	
-			}
-		}
-		.form-item-custom-search-types {
-			display: none;
-		}
-		.form-item{
-			float: left;
-			input{
-				height: 42px;
-				box-sizing: border-box;
-				padding: 10px 5px;
-				background-color: #fff;
-			}
-			label{
-				font-size: 14px;
-				padding: 10px 5px;
-				color: #000;
-			}
-		}
 	}
 }
 
