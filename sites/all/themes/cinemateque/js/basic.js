@@ -19,6 +19,7 @@
         $(".node-type-cm-event .views_slideshow_cycle_main .content").css("max-height",$screenheight);
         $(".front .custom-slideshow, .front .custom-slideshow li").css("max-height",$fullscreenheight);
         $(".node-type-cm-article .view-article-ct-panes.view-display-id-panel_pane_1").css("max-height",$screenheight);
+        $(".node-type-webform .view-webform-ct-panes.view-display-id-panel_pane_1").css("max-height",$screenheight);
 
 
         $(window).resize(function() {
@@ -27,10 +28,21 @@
             $(".movie-group-slide-container").css("max-height",$screenheight);
             $(".node-type-cm-movie .panels-flexible-region-node_page-slider-inside").css("max-height",$screenheight);
             $(".node-type-cm-movie .views_slideshow_cycle_main .content").css("max-height",$screenheight);
-        $(".front .custom-slideshow, .front .custom-slideshow li").css("max-height",$fullscreenheight);
+            $(".front .custom-slideshow, .front .custom-slideshow li").css("max-height",$fullscreenheight);
             $(".node-type-cm-event .panels-flexible-region-node_page-slider-inside").css("max-height",$screenheight);
             $(".node-type-cm-event .views_slideshow_cycle_main .content").css("max-height",$screenheight);
             $(".node-type-cm-article .view-article-ct-panes.view-display-id-panel_pane_1").css("max-height",$screenheight);
+            $(".node-type-webform .view-webform-ct-panes.view-display-id-panel_pane_1").css("max-height",$screenheight);
+        });
+
+        $(".header-right .search span").click(function() {
+            if (!$("div").hasClass("screen-search")){
+                $("#header").prepend("<div class='screen-search'></div>");
+            }
+        });
+
+        $(".popup-close-button").click(function() {
+                $(".screen-search").remove();
         });
 
 

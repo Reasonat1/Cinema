@@ -49,56 +49,62 @@
   text-align: right;
 }
 /* line 60, ../sass/search-rtl.scss */
-.page-search .panels-flexible-row-node_page-4 .pane-facet {
+.page-search .panels-flexible-row-node_page-3 .pane-facet {
   float: right;
   margin-right: 1.5%;
   margin-left: 0;
 }
 /* line 65, ../sass/search-rtl.scss */
-.page-search .panels-flexible-row-node_page-4 .pane-facet:nth-child(1) {
+.page-search .panels-flexible-row-node_page-3 .panel-pane:nth-child(2) {
   margin-right: 0;
 }
 /* line 70, ../sass/search-rtl.scss */
 .page-search .current-search-item li {
   float: right;
-  padding-left: 30px;
-  padding-right: 0;
+  margin-left: 30px !important;
+  margin-right: 0 !important;
 }
-/* line 79, ../sass/search-rtl.scss */
+/* line 78, ../sass/search-rtl.scss */
+.page-search .pane-current-search-search-results-facets-block a:before {
+  float: right;
+  margin-left: 5px;
+  margin-right: 0;
+}
+/* line 88, ../sass/search-rtl.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-header {
   left: 0;
   right: auto;
 }
-/* line 84, ../sass/search-rtl.scss */
+/* line 93, ../sass/search-rtl.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-left {
   float: right;
 }
-/* line 86, ../sass/search-rtl.scss */
+/* line 95, ../sass/search-rtl.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-left .top-text-blk-wht {
   right: 0;
   left: auto;
 }
-/* line 91, ../sass/search-rtl.scss */
+/* line 100, ../sass/search-rtl.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-right {
   float: left;
 }
-/* line 95, ../sass/search-rtl.scss */
+/* line 104, ../sass/search-rtl.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .row-custom-lobby .purchase {
   float: left;
 }
 
-/* line 106, ../sass/search-rtl.scss */
+/* line 115, ../sass/search-rtl.scss */
 .select2-results__options li {
   background: url("../images/select-empty.png") no-repeat right 7px top 12px;
   padding-right: 22px;
   padding-left: 0;
 }
-/* line 110, ../sass/search-rtl.scss */
+/* line 119, ../sass/search-rtl.scss */
 .select2-results__options li.select2-results__option-selected {
   background: url("../images/select-gold.png") no-repeat right 7px top 12px;
 }
 
-/* line 116, ../sass/search-rtl.scss */
+/* line 125, ../sass/search-rtl.scss */
 .select2-container--default .select2-selection--single .select2-selection__arrow b:before {
   left: -4px;
   right: auto;

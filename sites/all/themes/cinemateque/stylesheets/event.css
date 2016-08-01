@@ -135,32 +135,56 @@
 .node-type-cm-event .pane-event-ct-view-panel-pane-7 .table-responsive tbody tr {
   background-color: #f9fafb !important;
 }
-/* line 104, ../sass/event.scss */
+/* line 103, ../sass/event.scss */
+.node-type-cm-event .view-display-id-panel_pane_5 .views-field-field-cm-event-time {
+  width: 23%;
+}
+/* line 106, ../sass/event.scss */
+.node-type-cm-event .view-display-id-panel_pane_5 table tr td, .node-type-cm-event .view-display-id-panel_pane_5 table tr th {
+  width: calc(15% - 19.25px);
+  float: left;
+}
+/* line 110, ../sass/event.scss */
+.node-type-cm-event .view-display-id-panel_pane_5 .views-field-php {
+  width: 60px;
+}
+/* line 113, ../sass/event.scss */
+.node-type-cm-event .view-display-id-panel_pane_5 .views-field-ops {
+  height: 40px;
+  padding-top: 13px;
+  width: 60px;
+}
+/* line 118, ../sass/event.scss */
+.node-type-cm-event .view-display-id-panel_pane_5 .views-field-field-toptix-purchase {
+  width: 80px;
+  float: right;
+}
+/* line 125, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-3 .movie-group-slide img {
   margin-bottom: 0;
 }
-/* line 108, ../sass/event.scss */
+/* line 129, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-3 .slide-left-ct {
   float: left;
   color: #ffffff;
   margin-top: 3%;
   margin: 0 23%;
 }
-/* line 113, ../sass/event.scss */
+/* line 134, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-3 .slide-left-ct a {
   color: #ffffff;
 }
-/* line 117, ../sass/event.scss */
+/* line 138, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-3 .slide-movie-year {
   font-size: 1.2rem;
   text-shadow: 2px 2px 2px #000;
 }
-/* line 121, ../sass/event.scss */
+/* line 142, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-3 .slide-eve-lobby {
   font-size: 1.2rem;
   text-shadow: 2px 2px 2px #000;
 }
-/* line 125, ../sass/event.scss */
+/* line 146, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-3 .slide-right-ct {
   float: left;
   bottom: 25px;
@@ -169,7 +193,7 @@
   width: 23%;
   position: absolute;
 }
-/* line 132, ../sass/event.scss */
+/* line 153, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-3 .slide-right-ct a {
   background: url("../images/play-icon.png") no-repeat scroll 60% center;
   border-radius: 30px;
@@ -180,23 +204,23 @@
   padding: 2%;
   width: 55px;
 }
-/* line 143, ../sass/event.scss */
+/* line 164, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-3 .slide-eve-title {
   font-size: 22px;
   margin-top: 1%;
 }
-/* line 147, ../sass/event.scss */
+/* line 168, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-3 .view-event-ct-view {
   overflow: visible;
 }
-/* line 149, ../sass/event.scss */
+/* line 170, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-3 .view-event-ct-view .views-field-nothing {
   position: absolute;
   bottom: 5rem;
   width: 100%;
   z-index: 15;
 }
-/* line 154, ../sass/event.scss */
+/* line 175, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-3 .view-event-ct-view .views-field-nothing .slide-over-content {
   width: 1280px !important;
   max-width: 100%;
@@ -204,54 +228,54 @@
   padding: 0 3%;
   box-sizing: border-box;
 }
-/* line 156, ../sass/event.scss */
+/* line 177, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-3 .view-event-ct-view .views-field-nothing .slide-over-content .slide-movie-title {
   margin-bottom: 15px;
   text-shadow: 2px 2px 2px #000;
 }
-/* line 159, ../sass/event.scss */
+/* line 180, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-3 .view-event-ct-view .views-field-nothing .slide-over-content .slide-movie-title a {
   text-shadow: 2px 2px 2px #000;
 }
-/* line 168, ../sass/event.scss */
+/* line 189, ../sass/event.scss */
 .node-type-cm-event.noheaderimage .pane-event-ct-view-panel-pane-3 .view-event-ct-view .views-field-nothing {
   position: relative;
   bottom: 0;
 }
-/* line 172, ../sass/event.scss */
+/* line 193, ../sass/event.scss */
 .node-type-cm-event.noheaderimage .slide-movie-year {
   text-shadow: none !important;
 }
-/* line 175, ../sass/event.scss */
+/* line 196, ../sass/event.scss */
 .node-type-cm-event.noheaderimage .slide-left-ct {
   color: #000 !important;
   text-shadow: none !important;
   margin-bottom: 3%;
 }
-/* line 179, ../sass/event.scss */
+/* line 200, ../sass/event.scss */
 .node-type-cm-event.noheaderimage .slide-left-ct h2 {
   color: #000 !important;
   text-shadow: none !important;
 }
-/* line 183, ../sass/event.scss */
+/* line 204, ../sass/event.scss */
 .node-type-cm-event.noheaderimage .slide-left-ct a {
   color: #000 !important;
   text-shadow: none !important;
 }
-/* line 188, ../sass/event.scss */
+/* line 209, ../sass/event.scss */
 .node-type-cm-event.noheaderimage .slide-right-ct {
   margin-bottom: 41px;
 }
-/* line 191, ../sass/event.scss */
+/* line 212, ../sass/event.scss */
 .node-type-cm-event.noheaderimage .slide-right-ct a {
   background: transparent url("../images/play-icon-black.png") no-repeat scroll 60% center;
   border-color: #000;
 }
-/* line 195, ../sass/event.scss */
+/* line 216, ../sass/event.scss */
 .node-type-cm-event.noheaderimage .slide-over-content {
   margin: 50px auto 25px !important;
 }
-/* line 199, ../sass/event.scss */
+/* line 220, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-5 {
   width: 1280px !important;
   max-width: 100%;
@@ -259,53 +283,53 @@
   padding: 0 3%;
   box-sizing: border-box;
 }
-/* line 201, ../sass/event.scss */
+/* line 222, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-5 .pane-title {
   font-size: 1rem;
 }
-/* line 204, ../sass/event.scss */
+/* line 225, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-5 .view-event-ct-view {
   overflow: visible;
 }
-/* line 206, ../sass/event.scss */
+/* line 227, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-5 .view-event-ct-view .table-responsive {
   overflow: visible;
 }
-/* line 209, ../sass/event.scss */
+/* line 230, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-5 .view-event-ct-view #atedrop2-drop {
   top: 36px !important;
 }
-/* line 213, ../sass/event.scss */
+/* line 234, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-5 .views-field-field-cm-event-time {
   width: 23%;
 }
-/* line 216, ../sass/event.scss */
+/* line 237, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-5 td {
   border: none !important;
 }
-/* line 218, ../sass/event.scss */
+/* line 239, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-5 td a {
   color: #000000;
 }
-/* line 222, ../sass/event.scss */
+/* line 243, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-5 table {
   border: none !important;
 }
-/* line 225, ../sass/event.scss */
+/* line 246, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-5 tbody {
   border: none !important;
 }
-/* line 227, ../sass/event.scss */
+/* line 248, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-5 tbody .views-field-ops .flag {
   background: url("../images/like-gold.png") no-repeat center center;
   width: 18px;
   height: 15px;
 }
-/* line 232, ../sass/event.scss */
+/* line 253, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-5 tbody .views-field-ops .unflagged {
   background: url("../images/like-event-unflag.png") no-repeat center center;
 }
-/* line 235, ../sass/event.scss */
+/* line 256, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-5 tbody .views-field-php a {
   background: url("../images/add-event.png") no-repeat center center;
   width: 30px;
@@ -313,42 +337,42 @@
   display: block;
   margin-top: -2px;
 }
-/* line 243, ../sass/event.scss */
+/* line 264, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-5 .views-field-field-toptix-purchase {
   float: right;
 }
-/* line 246, ../sass/event.scss */
+/* line 267, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-5 th {
   border: none !important;
   color: #bbb;
   font-size: 14px;
   font-weight: 300;
 }
-/* line 252, ../sass/event.scss */
+/* line 273, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-5 tr {
   border: none !important;
 }
-/* line 256, ../sass/event.scss */
+/* line 277, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-6 {
   margin-right: 23%;
 }
-/* line 258, ../sass/event.scss */
+/* line 279, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-6 .views-field-field-cm-movie-body {
   color: #312f2f;
   line-height: 28px;
 }
-/* line 262, ../sass/event.scss */
+/* line 283, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-6 .views-field-title a {
   font-weight: bold;
   color: #000000;
 }
-/* line 266, ../sass/event.scss */
+/* line 287, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-6 .views-field-nothing {
   font-weight: bold;
   padding: 10px 0;
   color: #000000;
 }
-/* line 272, ../sass/event.scss */
+/* line 293, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-4 .pane-content {
   border-top: 5px solid #000000;
   padding-top: 13px;
@@ -357,7 +381,7 @@
   height: 57px;
   margin-top: 12%;
 }
-/* line 281, ../sass/event.scss */
+/* line 302, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-8 .views-field-field-cm-event-body {
   line-height: 28px;
   width: 1280px !important;
@@ -367,12 +391,12 @@
   box-sizing: border-box;
   padding: 35px 3%;
 }
-/* line 285, ../sass/event.scss */
+/* line 306, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-8 .views-field-field-cm-event-body p {
   font-weight: bold;
   margin: 0 23%;
 }
-/* line 291, ../sass/event.scss */
+/* line 312, ../sass/event.scss */
 .node-type-cm-event .views_slideshow_cycle_slide .field-content .slide-alt-title {
   background-color: #312f2f;
   bottom: 0px;
@@ -382,19 +406,19 @@
   padding: 10px 20px;
   position: absolute;
 }
-/* line 299, ../sass/event.scss */
+/* line 320, ../sass/event.scss */
 .node-type-cm-event .views_slideshow_cycle_slide .field-content .slide-alt-title .grp-alt {
   border-right: 1px solid #a0a0a0;
   padding-right: 7px;
   margin-right: 7px;
 }
 
-/* line 307, ../sass/event.scss */
+/* line 328, ../sass/event.scss */
 #atedrop1-drop {
   top: 35px !important;
 }
 
-/* line 311, ../sass/event.scss */
+/* line 332, ../sass/event.scss */
 .panels-flexible-region-node_page-bottom_content {
   width: 100%;
 }

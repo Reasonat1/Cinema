@@ -332,6 +332,9 @@ body {
 #colorbox {
 	background-color: transparent;
 	overflow: visible;
+	height: 80%!important;
+	width: 80%!important;
+	left: 10%!important;
 	#cboxMiddleLeft, #cboxTopLeft, #cboxMiddleRight, #cboxTopCenter, #cboxTopRight, #cboxBottomLeft, #cboxBottomLeft, #cboxBottomRight, #cboxBottomCenter{
 		display: none;
 	}
@@ -1293,17 +1296,15 @@ table{
 /***  article page  ****/
 
 .node-type-cm-article{
-	.radix-layouts-content{
-		padding: 0;
+	.radix-layouts-header{
+		padding: 0!important;
 	}
 	.panel-panel-inner .panel-pane.pane-article-ct-panes-panel-pane-1{
 		width: 100%!important;
 		padding: 0!important;
 	}
-	.panel-panel-inner .panel-pane{
-		@include width;
-	}
 	.view-article-ct-panes.view-display-id-panel_pane_1{
+		margin-bottom: 30px;
 		.content{
 			position: relative;
 		}
@@ -1312,13 +1313,57 @@ table{
 			position: absolute;
 			bottom: 5em;
 			width: 100%;
+			text-shadow: 2px 2px 2px #000;	
 			.field-content{
-				@include width;
+				@include width;				
 				display: block;
 				.sub-title{
 					font-size: 20px;
+					margin: 0 23%;
+				}
+				h2{
+					margin: 0 23%;
 				}
 			}
+		}
+	}
+	.container-fluid .row:nth-child(2){
+		@include width;
+		.radix-layouts-sidebar{
+			padding-left: 0;
+			width: 23%;
+			padding-right: 100px;
+			box-sizing: border-box;
+			.field-name-field-cm-article-tags{
+				border-top: 5px solid $black;
+				padding-top: 20px;
+				margin-top: 12px;
+				a{
+				    border-bottom: 1px solid;
+				    color: #828282;
+				    display: block;
+				    float: left;
+				    font-size: 14px;
+				    margin-right: 10px;
+				    padding-bottom: 5px;
+				}
+			}
+		}
+		.radix-layouts-content{
+			padding: 0;
+			width: 77%;
+			.pane-node-body{
+				margin-right: 23%;
+			}
+		}
+	}
+	&.noheaderimage{
+		.view-article-ct-panes.view-display-id-panel_pane_1 .views-field-title.views-field-title{
+			position: relative;
+			color: #000;
+			text-shadow: none;
+			bottom: auto;
+			margin: 50px 0 20px;
 		}
 	}
 }
@@ -1349,3 +1394,60 @@ table{
    	}
 }
 
+/******   webform  *****/
+
+.node-type-webform{
+	.container, .panels-flexible-region-46-center{
+		width: 100%;
+	}
+	.pane-node-body{
+		@include width;
+		.pane-content{
+			margin: 30px 23%;
+		}
+	}
+	.view-webform-ct-panes.view-display-id-panel_pane_1{
+		.views-field-title{
+			color: #fff;
+			position: absolute;
+			bottom: 5em;
+			width: 100%;
+			text-shadow: 2px 2px 2px #000;	
+			.field-content{
+				@include width;				
+				display: block;
+				.sub-title{
+					font-size: 20px;
+					margin: 0 23%;
+				}
+				h2{
+					margin: 0 23%;
+				}
+			}
+		}
+	}
+	form{
+		@include width;
+		> div{
+			margin: 0 23%;
+		}
+		.webform-component{
+			float: none;
+			width: 100%;
+			margin: 0;
+		}
+		.form-actions{
+			float: right;
+			.webform-submit{
+				box-shadow: none;;
+				background-color: $main_color;
+				color: #fff;
+				margin: 0;
+				&:hover{
+					background-color: $main_color!important;
+					opacity: 0.9;
+				}
+			}
+		}
+	}
+}

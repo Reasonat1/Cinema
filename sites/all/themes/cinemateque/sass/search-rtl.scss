@@ -56,21 +56,30 @@
 			}
 		}
 	}
-	.panels-flexible-row-node_page-4{
+	.panels-flexible-row-node_page-3{
 		.pane-facet{
 			float: right;
 			margin-right: 1.5%;
 			margin-left: 0;
 		}
-		.pane-facet:nth-child(1){
+		.panel-pane:nth-child(2){
 			margin-right: 0;
 		}
 	}
 	.current-search-item {
 		li{
 			float: right;
-			padding-left: 30px;
-			padding-right: 0;
+			margin-left: 30px!important;
+			margin-right: 0!important;
+		}
+	}
+	.pane-current-search-search-results-facets-block{
+		a{
+			&:before{
+			    float: right;
+			    margin-left: 5px;
+			    margin-right: 0;
+			}
 		}
 	}
 	.pane-panopoly-database-search-search-database-results{

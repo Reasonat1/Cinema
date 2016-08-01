@@ -102,6 +102,7 @@
 						position: relative;
 						a{
 							color: #000;
+							text-shadow: none;
 						}
 					}
 					a{
@@ -162,6 +163,9 @@
 				&.flag-action {
 					background-image: url("../images/like-gold-movie.png");
 				}
+			}
+			.state-nopic .flag{
+				top: -5px;
 			}
 			.views-field {
 				&.views-field-field-cm-movie-short-summary {

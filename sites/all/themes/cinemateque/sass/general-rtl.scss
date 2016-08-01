@@ -116,3 +116,39 @@ table{
 		}
 	}
 }
+
+/***  article page  ****/
+
+.node-type-cm-article{
+	.container-fluid .row:nth-child(2){
+		@include width;
+		.radix-layouts-sidebar{
+			padding-right: 0;
+			padding-left: 100px;
+			float: right;
+			.field-name-field-cm-article-tags{
+				a{
+				    float: right;
+				    margin-left: 10px;
+				    margin-right: 0;
+				}
+			}
+		}
+		.radix-layouts-content{
+			.pane-node-body{
+				margin-left: 23%;
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+/******   webform  *****/
+
+.node-type-webform{
+	form{
+		.form-actions{
+			float: left;
+		}
+	}
+}

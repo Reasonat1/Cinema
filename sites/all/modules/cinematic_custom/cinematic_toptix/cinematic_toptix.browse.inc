@@ -10,7 +10,13 @@ function cinematic_toptix_browse() {
 
   $filters = cinematic_toptix_browse_control($page, $total);
   $output = theme('cinematic_browser', array('shows' => $shows, 'filters' => $filters));
-  drupal_json_output(array('results' => $output, 'data' => $data));
+  if (isset($_GET['html'])) {
+    dpm($shows);
+    return 'output';
+  }
+  else {
+    drupal_json_output(array('results' => $output, 'data' => $data));
+  }
 }
 
 function cinematic_toptix_browse_control($page, $total) {

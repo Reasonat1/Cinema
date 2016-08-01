@@ -82,7 +82,6 @@ body {
 	}
 	&.header-right{
 		> li {
-			cursor: pointer;
 			display: inline-block;
 			padding-left: 15px;
 			padding-right: 15px;
@@ -109,7 +108,7 @@ body {
 			button{
 			    border: medium none;
 			    font-size: 0;
-			    height: 20px;
+			    height: 36px;
 			    width: 20px;
 			    background: url("../images/shop-icon.png") no-repeat 0 0 transparent;
 			    &:hover{
@@ -119,14 +118,7 @@ body {
 		}
 	}
 }
-.language-switcher-locale-url{
-	a{
-		color: #fff;
-		&:hover{
-			color: $main_color;
-		}
-	}
-}
+
 .sponser {
 	width: 80%;
 	min-height: 60px;
@@ -494,19 +486,30 @@ img.panopoly-image-full{
 			padding-bottom: 10px!important;
 		}
 	}
+	.screen-search{
+			position: fixed;
+			height: 100%;
+			width: 100%;
+			background-color: #000;
+			opacity: 0.8;
+	}
 	.header-right{
 		width: auto;
 		float: right;
-		.search span{
-			background: url("../images/search-icon.png") no-repeat 0 0;
-		    display: inline-block;
-		    height: 20px;
-		    margin-top: 5px;
-		    text-indent: -9999px;
-		    width: 20px;
-    		&:hover{
-				background: url("../images/search-icon-gold.png") no-repeat 0 0;
+		.search{
+			span{
+				background: url("../images/search-icon.png") no-repeat 0 2px;
+			    display: inline-block;
+			    height: 20px;
+			    text-indent: -9999px;
+			    width: 20px;
+			     &:hover{
+					background: url("../images/search-icon-gold.png") no-repeat 0 2px;
+				}
 			}
+		    a{
+		    	padding: 0;
+		    }
 		}
 		#da11y-toggle:before {
 		    content: "";
@@ -522,15 +525,22 @@ img.panopoly-image-full{
 		}
 		.language-switcher-locale-url{
 			a{
-				background: url("../images/hebrew-icon.png") no-repeat 0 0;
+				background: url("../images/hebrew-icon.png") no-repeat 0 2px;
 				display: inline-block;
 			    height: 20px;
-			    margin-top: 6px;
 			    text-indent: -9999px;
 			    width: 20px;
 				&:hover{
-					background: url("../images/access-icon-gold.png") no-repeat 0 0;
+					background: url("../images/hebrew-icon-gold.png") no-repeat 0 2px;
 				}
+			}
+			span{
+				opacity: 0.4;
+				background: url("../images/hebrew-icon.png") no-repeat 0 2px;
+				display: inline-block;
+			    height: 20px;
+			    text-indent: -9999px;
+			    width: 20px;
 			}
 		}
 	}
