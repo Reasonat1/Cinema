@@ -83,13 +83,21 @@ function cinematic_toptix_browse_query($page) {
 
   $count = $query->countQuery()->execute()->fetchField();
 
-  $query->fields('ts', array('title'));
-  $query->fields('te', array('show_id', 'local_id', 'event_date'));
+  $query->addField('ts', 'id');
 
   $offset = $page * 30;
   $query->range($offset, 30);
+  $show_ids = $query->execute()->fetchCol();
+  if (!$show_ids) {
+    return array(array(), 0, array());
+  }
 
-  $events = $query->execute()->fetchAll();
+  $events_query = db_select('toptix_events', 'te');
+  $events_query->join('toptix_shows', 'ts', 'ts.id = te.show_id');
+  $events_query->condition('te.show_id', $show_ids, 'IN');
+  $events_query->fields('ts', array('title'));
+  $events_query->fields('te', array('show_id', 'local_id', 'event_date'));
+  $events = $events_query->execute()->fetchAll();
 
   $shows = array();
   $event_ids = array();
