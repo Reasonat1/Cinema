@@ -79,4 +79,3 @@ function cinemateque_preprocess_date_views_pager(&$vars) {
   } 
 }
 
-
