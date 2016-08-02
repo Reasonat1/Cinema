@@ -76,6 +76,43 @@
         });
     }
 
+    
+      /*****Table Header hide if empty value*******/
+        if($('.view-event-ct-view tr.item-show-1 .views-field-field-cm-event-time .hide-div').length){
+             $('.view-event-ct-view thead th.views-field-field-cm-event-time').hide();
+        }
+        if($('.view-event-ct-view tr.item-show-1 .views-field-field-cm-event-time-1 .hide-div').length){
+            $('.view-event-ct-view thead th.views-field-field-cm-event-time-1').hide();
+        }
+        if($('.view-event-ct-view tr.item-show-1 .views-field-field-cm-event-hall .hide-div').length){
+            $('.view-event-ct-view thead th.views-field-field-cm-event-hall').hide();
+        }
+        if($('.view-event-ct-view tr.item-show-1 .views-field-field-cm-event-short-title .hide-div').length){
+            $('.view-event-ct-view thead th.views-field-field-cm-event-short-title').hide();
+        }
+        if($('.view-event-ct-view tr.item-show-1 .views-field-field-cm-event-internal-id .hide-div').length){
+            $('.view-event-ct-view thead th.views-field-field-cm-event-internal-id').hide();
+        }
+        if($('.view-event-ct-view tr.item-show-1 .views-field-field-toptix-purchase .hide-div').length){
+            $('.view-event-ct-view thead th.views-field-field-toptix-purchase').hide();
+        }
+        /** if short event title is empty print reference Movie title*/
+        $('#cm-event-node-form .form-item-field-cm-event-lineup-und-0-target-id').on('click', function(){
+            str = $('#cm-event-node-form .form-item-field-cm-event-lineup-und-0-target-id #edit-field-cm-event-lineup-und-0-target-id').val();
+            var tempStr = str.split('(');
+            var mainStr = tempStr[0];
+            if( !$('#cm-event-node-form #edit-field-cm-event-short-title-und-0-value').val() ) {
+                $('#cm-event-node-form #edit-field-cm-event-short-title-und-0-value').val(mainStr);
+            }
+            if( !$('#cm-event-node-form .pane-node-form-title .form-item-title #edit-title').val() ) {
+                 $('#cm-event-node-form .pane-node-form-title .form-item-title #edit-title').val(mainStr);
+            } 
+        });
+        $( ".pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.field-content span:last-child" ).addClass('no-space-bar');
+        $('.pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.field-content span.no-space-bar').each(function () {
+            var tempStrs = $(this).text().slice(0,-3)
+            $(this).text(tempStrs);
+        });
 
     });
 
