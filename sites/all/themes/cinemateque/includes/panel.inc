@@ -25,4 +25,10 @@ function cinemateque_preprocess_panels_pane(&$variables) {
 	//dpm(get_defined_vars());
 	$variables['content'] = array('the_only_output' => array('#markup' => $output));
   }
+  //dpm($variables);
+  if($variables['pane']->subtype == "search_api_page-search_results" ) { //add select2 to search page for exposed facets
+	  $variables['content']['#attached']['js'][] = drupal_get_path('theme', 'cinemateque') . '/js/select2.min.js';
+	  $variables['content']['#attached']['css'][] = drupal_get_path('theme', 'cinemateque') . '/css/select2.min.css';
+  }
+
 }
