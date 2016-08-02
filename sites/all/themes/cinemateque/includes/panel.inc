@@ -26,7 +26,12 @@ function cinemateque_preprocess_panels_pane(&$variables) {
 	}
 	//dpm(get_defined_vars());
 	$variables['content'] = array('the_only_output' => array('#markup' => $output));
-//dpm(get_defined_vars());
+	
+	if(empty($variables['title'])) {
+		$term = taxonomy_term_load($tid);
+		$variables['title'] = $term->name;
+	}
+
   }
   //dpm($variables);
   if($variables['pane']->subtype == "search_api_page-search_results" ) { //add select2 to search page for exposed facets
