@@ -54,7 +54,6 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
         $node = node_load($val->nid);
         
         if($val->nid !=$current_nid){
-          drupal_set_message('<pre>'.print_r($node->field_toptix_purchase, 1).'</pre>');
           if(!empty($node->nid)){
             $event_title = (!empty($node->field_cm_event_short_title)) ? $node->field_cm_event_short_title['und'][0]['value'] : $node->title;
           }else{
