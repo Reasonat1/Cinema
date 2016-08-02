@@ -12,7 +12,9 @@ function cinemateque_preprocess_panels_pane(&$variables) {
 	if(empty($variables['content']['#fieldable_panels_pane']->field_which_lobby_to_show_)) {
 	  $tid = arg(2);
 	}else{
-	  $tid = $variables['pane']->configuration['fieldable_panels_pane']->field_which_lobby_to_show_['und'][0]['tid'];	
+		//dpm($variables);
+	  //$tid = $variables['pane']->configuration['fieldable_panels_pane']->field_which_lobby_to_show_['und'][0]['tid'];	
+	  $tid = $variables['content']['field_which_lobby_to_show_']['#items'][0]['tid'];	
 	}
 
 	$display = $variables['content']['#fieldable_panels_pane']->field_select_lobby_view['und'][0]['value'];  // $display = $variables['pane']->configuration['fieldable_panels_pane']->field_select_lobby_view['und'][0]['value'];
@@ -24,6 +26,7 @@ function cinemateque_preprocess_panels_pane(&$variables) {
 	}
 	//dpm(get_defined_vars());
 	$variables['content'] = array('the_only_output' => array('#markup' => $output));
+//dpm(get_defined_vars());
   }
   //dpm($variables);
   if($variables['pane']->subtype == "search_api_page-search_results" ) { //add select2 to search page for exposed facets
