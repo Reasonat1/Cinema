@@ -23,6 +23,8 @@
   $output = '';
   $results=$view->result;
   $movie_nid = $results[0]->node_field_data_field_cm_event_lineup_nid;
+  $node_type = node_load($movie_nid);
+  $types = $node_type->type;
   $current_nid = arg(1);
     global $language ;
   $lang_name = isset($language->language) ? $language->language : '';
@@ -30,7 +32,7 @@
       $lang_name = 'en';
   }
    $result = db_query("SELECT DISTINCT node.nid AS nid, field_data_field_cm_event_time.field_cm_event_time_value AS field_data_field_cm_event_time_field_cm_event_time_value FROM {node} node LEFT JOIN {field_data_field_cm_event_lineup} field_data_field_cm_event_lineup ON node.nid = field_data_field_cm_event_lineup.entity_id AND (field_data_field_cm_event_lineup.entity_type = 'node' AND field_data_field_cm_event_lineup.deleted = '0') LEFT JOIN {node} node_field_data_field_cm_event_lineup ON field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = node_field_data_field_cm_event_lineup.nid LEFT JOIN {field_data_field_cm_event_time} field_data_field_cm_event_time ON node.nid = field_data_field_cm_event_time.entity_id AND (field_data_field_cm_event_time.entity_type = 'node' AND field_data_field_cm_event_time.deleted = '0')
-WHERE (( (field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = '$movie_nid' ) )AND(( (node.status = '1') AND (node_field_data_field_cm_event_lineup.type IN  ('cm_movie')) AND (node.language IN  ('$lang_name')) )))
+WHERE (( (field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = '$movie_nid' ) )AND(( (node.status = '1') AND (node_field_data_field_cm_event_lineup.type IN  ('$types')) AND (node.language IN  ('$lang_name')) )))
 ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAll();
    $output .= '<div class="table-responsive">';
     $output .= '<table class="views-table cols-8 table table-striped table-bordered">';
