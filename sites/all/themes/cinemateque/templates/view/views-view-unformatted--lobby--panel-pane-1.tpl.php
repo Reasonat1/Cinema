@@ -150,14 +150,14 @@
           }else { $top_link = '';}
           
            $output_event .= '<tr class="row-custom-lobby">';
-           $output_event .= '<td>'.$event_date.'</td>';
-           $output_event .= '<td>'.$event_time.'</td>';
-           $output_event .= '<td>'.l($event_title, 'node/'.$node->nid).'</td>';
-           $output_event .= '<td>'.$hall_name.'</td>';
-           $output_event .= '<td>'.$event_code.'</td>';
+           $output_event .= '<td class="date">'.$event_date.'</td>';
+           $output_event .= '<td class="time">'.$event_time.'</td>';
+           $output_event .= '<td class="title">'.l($event_title, 'node/'.$node->nid).'</td>';
+           $output_event .= '<td class="hall">'.$hall_name.'</td>';
+           $output_event .= '<td class="code">'.$event_code.'</td>';
            $output_event .='<td>'. $flag . '</td>';
            $output_event .='<td>'. $addevent . '</td>';
-           if(!empty($top_link)) $output_event .= '<td>'.'<button data-url="'.$top_link.'" class="toptix-purchase">Puchase</button>'.'</td>';
+           if(!empty($top_link)) $output_event .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t(Puchase).'</button>'.'</td>';
            $output_event .= '</tr>';
          $output_event .= '</table>';
        $output_event .= '</div>';
@@ -210,14 +210,14 @@
           }
           $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
            $output .= '<tr class="row-custom-lobby">';
-           $output .= '<td>'.$event_date.'</td>';
-           $output .= '<td>'.$event_time.'</td>';
-           $output .= '<td>'.l($event_title, 'node/'.$node_event->nid).'</td>';
+           $output .= '<td class="date">'.$event_date.'</td>';
+           $output .= '<td class="time">'.$event_time.'</td>';
+           $output .= '<td class="title">'.l($event_title, 'node/'.$node_event->nid).'</td>';
            if($hall_name) $output .= '<td>'.$hall_name.'</td>';
            if($event_code) $output .= '<td>'.$event_code.'</td>';
            $output .='<td>'. $flag . '</td>';
            $output .='<td>'. $addevent . '</td>';       
-           if($toptix_code) $output .= '<td>'.'<button data-url="'.$top_link.'" class="toptix-purchase">Puchase</button>'.'</td>';
+           if($toptix_code) $output .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t('Puchase').'</button>'.'</td>';
            $output .= '</tr>';
         }
          $output .= '</table>';

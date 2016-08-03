@@ -393,52 +393,6 @@ body {
 		bottom: 6%;
 	}
 }
-@media only screen and(max-width: 500px) {
-}
-@media only screen and(max-width: 760px),(min-device-width: 768px) and(max-device-width: 1024px) {
-	table {
-		display: block;
-	}
-	thead {
-		display: block;
-		tr {
-			position: absolute;
-			top: -9999px;
-			left: -9999px;
-		}
-	}
-	tbody {
-		display: block;
-	}
-	th {
-		display: block;
-	}
-	td {
-		display: block;
-		border: none;
-		border-bottom: 1px solid $color_gallery_approx;
-		position: relative;
-		padding-left: 50%;
-		&:before {
-			top: 6px;
-			left: 6px;
-			width: 45%;
-			padding-right: 10px;
-			white-space: nowrap;
-		}
-	}
-	tr {
-		display: block;
-		border: 1px solid $color_celeste_approx;
-	}
-}
-@media only screen and(min-device-width : 320px) and(max-device-width : 480px) {
-	body {
-		padding: 0;
-		margin: 0 auto;
-		width: 320px;
-	}
-}
 
 .page-admin-structure-types-manage-cm-movie-group-fields-cer-settings .error {
 	display: none;
@@ -453,11 +407,13 @@ body {
 	}
 	.panels-flexible-region-node_page-content_left {
 		width: 77%;
+		float: right;
 	}
 	.panels-flexible-region-node_page-content_right {
 		float: left;
 		width: 15%;
 		margin-right: 8%;
+		padding-top: 50px;
 		.panels-flexible-region-node_page-content_right-inside{
 			padding: 0;
 		}
@@ -820,299 +776,6 @@ table.views-table {
 	}
 }
 
-@media(max-width:320px) {
-	.sticky-header {
-		&.header {
-			.navbar-default {
-				height: 42px !important;
-			}
-			.hambruger.-menu.navbar-toggle {
-				margin-top: 8px !important;
-				margin-left: 8px !important;
-				border: 1px solid $white !important;
-			}
-		}
-		.navbar-toggle {
-			margin-right: 10px !important;
-			padding: 5px 9px !important;
-		}
-		.navbar-collapse {
-			background-color: $black !important;
-		}
-		.navbar .navbar-toggle .icon-bar {
-			height: 1px !important;
-			width: 8px !important;
-		}
-		.navbar-brand > img {
-			height: 40px !important;
-		}
-	}
-	.navbar-default {
-		height: 50px !important;
-	}
-	.navbar-header {
-		width: 100% !important;
-	}
-	.navbar-toggle {
-		padding: 8px 10px !important;
-	}
-	.navbar {
-		.navbar-brand {
-			height: 50px !important;
-			padding: 8px 8px !important;
-		}
-		.navbar-collapse {
-			background-color: $main_color !important;
-			padding: 2px;
-			overflow-x: hidden;
-		}
-		.navbar-toggle .icon-bar {
-			height: 1px !important;
-			width: 14px !important;
-		}
-	}
-	.col-md-3 {
-		padding-left: 6px;
-		padding-right: 6px;
-		&.header-right > li {
-			padding-left: 6px;
-			padding-right: 6px;
-		}
-	}
-	.hambruger.-menu.navbar-toggle {
-		margin-top: 8px !important;
-		margin-left: 8px !important;
-		border: 1px solid $white !important;
-	}
-	.navbar-brand > img {
-		height: 42px !important;
-	}
-}
-@media(min-width:320px) and(max-width:480px) {
-	.node-type-cm-movie {
-		.view-display-id-panel_pane_2 {
-			.slide-over-content {
-				bottom: 1em;
-				left: 0;
-			}
-			.slide-left-ct {
-				position: relative;
-				width: 85%;
-				float: right;
-				left: 15%;
-				.slide-movie-title {
-					font-size: 1.56rem;
-				}
-			}
-			.slide-right-ct {
-				float: left;
-				position: relative;
-				margin-top: 0;
-				width: 10%;
-				a {
-					height: 48px;
-					width: 48px;
-				}
-			}
-		}
-		.table-responsive {
-			overflow-x: hidden;
-		}
-		.panels-flexible-row {
-			&.content {
-				width: 100%;
-			}
-			&.bottom.content {
-				width: 100%;
-			}
-		}
-		.views-field {
-			&.views-field-field-cm-movie-country {
-				font-size: .7rem;
-			}
-			&.views-field-field-cm-movie-body p {
-				font-weight: 600;
-				font-size: 1.2rem;
-				margin: 0;
-			}
-		}
-		table thead {
-			display: none;
-		}
-		.view-id-movie_top_pane_view.view-display-id-panel_pane_7 {
-			td {
-				&:nth-of-type(2) {
-					display: none;
-				}
-				&:nth-of-type(3) {
-					display: none;
-				}
-				&:nth-of-type(4) {
-					display: none;
-				}
-			}
-			.views-field-field-toptix-purchase {
-				float: left;
-				button {
-					padding: 3px 5px;
-				}
-			}
-			.views-field-field-cm-event-hall {
-				float: left;
-			}
-			.views-field-field-cm-event-time {
-				float: left;
-				color: $color_celeste_approx;
-			}
-			.views-field-field-cm-event-time-1 {
-				color: $color_celeste_approx;
-			}
-			table tr {
-				padding: 0.2em 0;
-				border-bottom: 1px solid $color_celeste_approx !important;
-				clear: both;
-				min-height: 80px;
-			}
-		}
-		.content.middle {
-			.panels-flexible-region-node_page-content_left {
-				width: 100%;
-			}
-			.panels-flexible-region-node_page-content_right {
-				display: none;
-			}
-			.inside.panels-flexible-row-inside {
-				width: 100%;
-			}
-		}
-		#panels-ipe-regionid-content_left .pane-movie-top-pane-view-panel-pane-4 {
-			margin-right: 0;
-			margin-top: 0;
-			width: auto;
-			padding-left: 0;
-		}
-		.bottom-content .pane-test-view-for-movie-credit-panel-pane-1 .view-content {
-			padding-right: 0;
-			width: 100%;
-			tr {
-				padding: 0;
-			}
-			.views-field-field-cm-person-last-name {
-				float: left;
-			}
-		}
-	}
-	.table-responsive {
-		border: 0 solid $color_alto_approx;
-	}
-}
-@media(max-width: 640px) and(min-width: 481px) {
-	.node-type-cm-movie {
-		.slide-over-content {
-			left: 30%;
-		}
-		.panels-flexible-row {
-			&.content {
-				width: 100%;
-			}
-			&.bottom.content {
-				width: 100%;
-			}
-		}
-		.views-field {
-			&.views-field-field-cm-movie-country {
-				font-size: .7rem;
-			}
-			&.views-field-field-cm-movie-body p {
-				font-weight: 600;
-				font-size: 1.2rem;
-				margin: 0;
-			}
-		}
-		table thead {
-			display: none;
-		}
-		.view-id-movie_top_pane_view.view-display-id-panel_pane_7 {
-			td {
-				&:nth-of-type(2) {
-					display: none;
-				}
-				&:nth-of-type(3) {
-					display: none;
-				}
-				&:nth-of-type(4) {
-					display: none;
-				}
-			}
-			.views-field-field-toptix-purchase {
-				float: left;
-				button {
-					padding: 3px 5px;
-				}
-			}
-			.views-field-field-cm-event-hall {
-				float: left;
-			}
-			.views-field-field-cm-event-time {
-				float: left;
-				color: $color_celeste_approx;
-			}
-			.views-field-field-cm-event-time-1 {
-				color: $color_celeste_approx;
-			}
-			table tr {
-				padding: 0.2em 0;
-				border-bottom: 1px solid $color_celeste_approx !important;
-				clear: both;
-				min-height: 80px;
-			}
-		}
-		.content.middle {
-			.panels-flexible-region-node_page-content_left {
-				width: 100%;
-			}
-			.panels-flexible-region-node_page-content_right {
-				display: none;
-			}
-			.inside.panels-flexible-row-inside {
-				width: 100%;
-			}
-		}
-		#panels-ipe-regionid-content_left .pane-movie-top-pane-view-panel-pane-4 {
-			margin-right: 0;
-			margin-top: 0;
-			width: auto;
-			padding-left: 0;
-		}
-		.bottom-content .pane-test-view-for-movie-credit-panel-pane-1 .view-content {
-			padding-right: 0;
-			width: 100%;
-			tr {
-				padding: 0;
-			}
-			.views-field-field-cm-person-last-name {
-				float: left;
-			}
-		}
-	}
-	.table-responsive {
-		border: 0 solid $color_alto_approx;
-	}
-}
-@media(min-width: 768px) {
-	.node-type-cm-movie .content.middle {
-		.panels-flexible-region-node_page-content_left {
-			width: 100%;
-		}
-		.panels-flexible-region-node_page-content_right {
-			display: none;
-		}
-		.inside.panels-flexible-row-inside {
-			width: 100%;
-		}
-	}
-}
-
 .flag-wrapper a {
 	display: block;
 	text-indent: -9999px;
@@ -1449,5 +1112,206 @@ table{
 				}
 			}
 		}
+	}
+}
+
+.alert{
+	position: relative;
+	z-index: 200;
+}
+
+/*******  user profile  ********/
+
+.page-user{
+	background-color: $color_fantasy_approx!important;
+	.container{
+		width: 100%;
+	}
+	.panels-flexible-region-homepage_panel-center {
+	    width: 100%;
+	}
+	.pane-user-page-pane-panel-pane-1{
+		background-color: #999b9c;
+		.pane-content{
+			@include width;
+			padding-top: 60px; 
+			.views-field-name{
+				text-align: center;
+				.field-content{
+					font-size: 3rem;
+				}
+			}
+		}
+	}
+	#views-exposed-form-user-flagged-content-panel-pane-1{
+		.views-widget-filter-gid{
+			width: 100%;
+			background-color: #999b9c;
+			overflow: hidden;
+			padding-bottom: 30px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			a{
+				color: #000;
+				border:1px solid #fff;
+				padding: 5px 10px;
+				display: block;	
+				width: 160px;
+				margin-right: -5px; 
+				&.active{
+					color: #fff;
+					background-color: $main_color;
+				}
+			}
+			.form-item{
+				text-align: center;
+				.form-item{
+					display: inline-block;
+				}
+			}
+		}
+		.form-item-edit-gid-all{
+			display: none!important;
+		}
+	}
+	.view-user-flagged-content.view-display-id-panel_pane_1{
+		.view-filters{
+			background-color: #c0c1c3;	
+			overflow: hidden;
+			padding-top: 90px;
+			padding-bottom: 13px;
+			margin-bottom: 50px;
+			.wrapper{
+				@include width;
+				form{
+					float: left;
+				}
+				.edit{
+					float: right;
+					a{
+						color: $main_color;
+						border: 1px solid;
+						padding: 5px 10px;
+					}
+				}
+			}
+			.views-widget-filter-type{
+				padding: 0;
+				.form-item-edit-type-all{
+					display: none!important;
+				}	
+				.form-item{
+					display: inline-block;
+					a{
+						color: #000;
+						&.active{
+							color: $main_color;
+						}
+					}
+				}
+				.form-item-edit-type-1{
+					border-right: 1px solid #000;
+					margin-right: 40px;
+					padding-right: 40px;
+				}
+			}
+		}
+		.text-center{
+			overflow: hidden;
+			padding-bottom: 50px;
+			.item-list{
+				@include width;
+				ul{
+					margin: 0;
+				}
+			}
+			.pagination{
+				float: right;
+			}
+			.pager-next, .pager-last, .pager-first, .pager-previous{
+				a{
+					padding-right: 0;
+					padding-left: 0;
+				}
+			}
+			.pager-item a, .pager-current span{
+				padding: 5px 10px;
+			}
+		}
+	}
+	.pane-user-flagged-content-panel-pane-1 .view-content{
+		padding-bottom: 20px;
+		.item-list{
+			@include width;
+			.view{
+				overflow: visible;
+			}
+				.lobby-container{
+					margin-bottom: 20px;
+					clear: both;
+					background-color: #fff;
+				}
+				.lobby-container{
+					.lobby-term-left{
+						float: left;
+						width: 30%;
+						position: relative;
+						.top-text-blk-wht{
+							position: absolute;
+							top: 0;
+							left: 0;
+							padding: 5px 0;
+							span{
+								padding: 5px 10px;
+							}
+							.black{
+								color: #fff;
+							}
+						}
+					}
+					.lobby-term-right{
+						float: right;
+						width: 70%;
+						padding: 20px;
+						box-sizing: border-box;
+						table tbody{
+							border: none;
+						}
+						.lobby-title a{
+							font-size: 1.3rem;
+						}
+						.lobby-length{
+							color: #919191;
+						}
+					}
+				}
+		}
+	}
+}
+
+
+/********  table with date **********/
+
+.row-custom-lobby{
+	.date{
+		width: 20%;
+	}
+	.time{
+		width: 11%;
+	}
+	.hall{
+		width: 18%;
+	}
+	.purchase{
+		float: right;
+		padding-right: 0;
+		padding-left: 0;
+	}
+	.title{
+		width: 23%;
+	}
+	.code{
+		width: 10%;
 	}
 }

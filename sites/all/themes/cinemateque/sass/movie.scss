@@ -125,9 +125,7 @@
 		}
 	}
 	.view-movie-top-pane-view.view-display-id-panel_pane_4{
-		width: 77%;
 		float: right;
-		padding-right: 23%;
 		box-sizing: border-box;
 	}
 	.panels-flexible-row-node_page-5 .panels-flexible-region-node_page-content_right #panels-ipe-regionid-content_right {
@@ -193,7 +191,7 @@
 		@include width;
 		padding-top: 30px;
 		padding-bottom: 30px;
-		.panels-flexible-row-node_page-6-inside{
+		.panels-flexible-row-node_page-6-inside .panels-flexible-region{
 			margin: 0 23%;
 		}
 		.views-field-field-cm-movie-credits-person-ro{
@@ -216,9 +214,6 @@
 		#atedrop5-drop{
 			top: 35px!important;
 		}
-	}
-	.panels-flexible-row-node_page-4{
-		margin-top: 20px!important;
 	}
 }
 
@@ -286,7 +281,7 @@
 .node-type-cm-movie{
 	.panels-flexible-row-node_page-4{
 		width: 100%!important;
-		padding: 0!important;
+		padding: 20px 0 0 0!important;
 		background-color: $color_fantasy_approx;
 		.panels-flexible-row-node_page-4-inside{
 			@include width();

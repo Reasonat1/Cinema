@@ -472,104 +472,48 @@ body.node-type-cm-article #content {
   bottom: 6%;
 }
 
-@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
-  /* line 399, ../sass/general.scss */
-  table {
-    display: block;
-  }
-
-  /* line 402, ../sass/general.scss */
-  thead {
-    display: block;
-  }
-  /* line 404, ../sass/general.scss */
-  thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-
-  /* line 410, ../sass/general.scss */
-  tbody {
-    display: block;
-  }
-
-  /* line 413, ../sass/general.scss */
-  th {
-    display: block;
-  }
-
-  /* line 416, ../sass/general.scss */
-  td {
-    display: block;
-    border: none;
-    border-bottom: 1px solid #eee;
-    position: relative;
-    padding-left: 50%;
-  }
-  /* line 422, ../sass/general.scss */
-  td:before {
-    top: 6px;
-    left: 6px;
-    width: 45%;
-    padding-right: 10px;
-    white-space: nowrap;
-  }
-
-  /* line 430, ../sass/general.scss */
-  tr {
-    display: block;
-    border: 1px solid #ccc;
-  }
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  /* line 436, ../sass/general.scss */
-  body {
-    padding: 0;
-    margin: 0 auto;
-    width: 320px;
-  }
-}
-/* line 443, ../sass/general.scss */
+/* line 397, ../sass/general.scss */
 .page-admin-structure-types-manage-cm-movie-group-fields-cer-settings .error {
   display: none;
 }
 
-/* line 446, ../sass/general.scss */
+/* line 400, ../sass/general.scss */
 .page-admin-structure-types-manage-cm-movie-group-fields-cer-store-settings .error {
   display: none;
 }
 
-/* line 449, ../sass/general.scss */
+/* line 403, ../sass/general.scss */
 .content.middle {
   position: relative;
 }
-/* line 451, ../sass/general.scss */
+/* line 405, ../sass/general.scss */
 .content.middle .pane-title {
   display: none;
 }
-/* line 454, ../sass/general.scss */
+/* line 408, ../sass/general.scss */
 .content.middle .panels-flexible-region-node_page-content_left {
   width: 77%;
+  float: right;
 }
-/* line 457, ../sass/general.scss */
+/* line 412, ../sass/general.scss */
 .content.middle .panels-flexible-region-node_page-content_right {
   float: left;
   width: 15%;
   margin-right: 8%;
+  padding-top: 50px;
 }
-/* line 461, ../sass/general.scss */
+/* line 417, ../sass/general.scss */
 .content.middle .panels-flexible-region-node_page-content_right .panels-flexible-region-node_page-content_right-inside {
   padding: 0;
 }
 
-/* line 466, ../sass/general.scss */
+/* line 422, ../sass/general.scss */
 #page-header .page-header {
   display: none;
   border: none;
 }
 
-/* line 471, ../sass/general.scss */
+/* line 427, ../sass/general.scss */
 .custom-nav ul {
   margin: 0;
   background-color: #f9fafb;
@@ -577,22 +521,22 @@ body.node-type-cm-article #content {
   width: 24%;
 }
 
-/* line 477, ../sass/general.scss */
+/* line 433, ../sass/general.scss */
 .page-taxonomy-term #content {
   width: 100% !important;
 }
 
-/* line 481, ../sass/general.scss */
+/* line 437, ../sass/general.scss */
 table.views-table {
   margin: 0;
 }
 
-/* line 484, ../sass/general.scss */
+/* line 440, ../sass/general.scss */
 .view.view-display-id-panel_pane_3 {
   overflow: visible;
 }
 
-/* line 487, ../sass/general.scss */
+/* line 443, ../sass/general.scss */
 .views-field-php .addthisevent-drop {
   background-color: #ffffff;
   border: medium none;
@@ -604,33 +548,33 @@ table.views-table {
   margin-top: -2px;
   width: 30px;
 }
-/* line 497, ../sass/general.scss */
+/* line 453, ../sass/general.scss */
 .views-field-php .addthisevent-drop:hover {
   background-color: #ffffff;
   border: medium none;
   font-size: 0;
   z-index: 1;
 }
-/* line 503, ../sass/general.scss */
+/* line 459, ../sass/general.scss */
 .views-field-php .addthisevent-drop .addthisevent_icon {
   background: none;
   height: auto;
   width: auto;
 }
 
-/* line 509, ../sass/general.scss */
+/* line 465, ../sass/general.scss */
 .views-field-field-cm-movie-pictures img {
   width: 100%;
 }
 
-/* line 512, ../sass/general.scss */
+/* line 468, ../sass/general.scss */
 .slide-movie-title h2 {
   margin: 1% 0;
   font-weight: normal;
   color: #ffffff;
 }
 
-/* line 518, ../sass/general.scss */
+/* line 474, ../sass/general.scss */
 .sharethis-wrapper span.st_sharethis_button {
   border-bottom: 2px solid #ddd;
   display: block;
@@ -638,24 +582,24 @@ table.views-table {
   padding-bottom: 15px;
 }
 
-/* line 524, ../sass/general.scss */
+/* line 480, ../sass/general.scss */
 #panels-ipe-regionid-content_right .pane-sharethis-sharethis-block .st_facebook_button {
   display: block;
   margin-top: 5%;
 }
 
-/* line 529, ../sass/general.scss */
+/* line 485, ../sass/general.scss */
 .share-pane {
   border-bottom: 2px solid #ddd;
   padding: 10px 30px;
 }
 
-/* line 533, ../sass/general.scss */
+/* line 489, ../sass/general.scss */
 .facebook-custom.share-pane {
   background: url("../images/facebook-gold.png") no-repeat center center !important;
 }
 
-/* line 536, ../sass/general.scss */
+/* line 492, ../sass/general.scss */
 .i18n-he .views_slideshow_cycle_slide .field-content .slide-alt-title .grp-alt {
   border-left: 1px solid #a0a0a0;
   padding-left: 7px;
@@ -663,7 +607,7 @@ table.views-table {
   border-right: none;
 }
 
-/* line 542, ../sass/general.scss */
+/* line 498, ../sass/general.scss */
 .add-event a {
   background: url("../images/add-event.png") no-repeat !important;
   display: block;
@@ -675,7 +619,7 @@ table.views-table {
   right: 18%;
 }
 
-/* line 552, ../sass/general.scss */
+/* line 508, ../sass/general.scss */
 .field-name-field-toptix-purchase .field-item button {
   background: url("../images/toptix.png") no-repeat !important;
   border: medium none;
@@ -685,7 +629,7 @@ table.views-table {
   width: 104px;
 }
 
-/* line 560, ../sass/general.scss */
+/* line 516, ../sass/general.scss */
 .movie-flag a {
   background: url("../images/like-event.png") no-repeat !important;
   display: inline-block;
@@ -697,48 +641,48 @@ table.views-table {
 }
 
 /**** lobby page  ****/
-/* line 574, ../sass/general.scss */
+/* line 530, ../sass/general.scss */
 .page-term-lobby .panels-flexible-row-node_page-1 {
   padding: 0 !important;
   width: 100% !important;
 }
-/* line 578, ../sass/general.scss */
+/* line 534, ../sass/general.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_1 {
   overflow: visible;
 }
-/* line 580, ../sass/general.scss */
+/* line 536, ../sass/general.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_1 .table-responsive {
   overflow: visible;
 }
-/* line 583, ../sass/general.scss */
+/* line 539, ../sass/general.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_1 #atedrop7-drop {
   top: 35px !important;
 }
-/* line 587, ../sass/general.scss */
+/* line 543, ../sass/general.scss */
 .page-term-lobby .panels-flexible-region-node_page-header {
   width: 100%;
 }
-/* line 591, ../sass/general.scss */
+/* line 547, ../sass/general.scss */
 .page-term-lobby .panels-flexible-row-node_page-1 .pane-lobby-panel-pane-3 .pane-content, .page-term-lobby .panels-flexible-row-node_page-1 .view-lobby {
   height: 100%;
 }
-/* line 593, ../sass/general.scss */
+/* line 549, ../sass/general.scss */
 .page-term-lobby .panels-flexible-row-node_page-1 .pane-lobby-panel-pane-3 .pane-content .view-content, .page-term-lobby .panels-flexible-row-node_page-1 .pane-lobby-panel-pane-3 .pane-content .views-row, .page-term-lobby .panels-flexible-row-node_page-1 .pane-lobby-panel-pane-3 .pane-content .views-field-field-cm-lobby-media, .page-term-lobby .panels-flexible-row-node_page-1 .pane-lobby-panel-pane-3 .pane-content .field-content, .page-term-lobby .panels-flexible-row-node_page-1 .view-lobby .view-content, .page-term-lobby .panels-flexible-row-node_page-1 .view-lobby .views-row, .page-term-lobby .panels-flexible-row-node_page-1 .view-lobby .views-field-field-cm-lobby-media, .page-term-lobby .panels-flexible-row-node_page-1 .view-lobby .field-content {
   height: 100%;
   overflow: hidden;
 }
-/* line 598, ../sass/general.scss */
+/* line 554, ../sass/general.scss */
 .page-term-lobby .panels-flexible-row-node_page-1 .views-field-field-cm-lobby-media img {
   height: auto;
   width: 100%;
 }
-/* line 602, ../sass/general.scss */
+/* line 558, ../sass/general.scss */
 .page-term-lobby .panels-flexible-row-node_page-1 .views-field-field-sub-title {
   position: absolute;
   bottom: 5em;
   width: 100%;
 }
-/* line 606, ../sass/general.scss */
+/* line 562, ../sass/general.scss */
 .page-term-lobby .panels-flexible-row-node_page-1 .views-field-field-sub-title .field-content {
   width: 1280px !important;
   max-width: 100%;
@@ -747,60 +691,60 @@ table.views-table {
   box-sizing: border-box;
   color: #fff;
 }
-/* line 609, ../sass/general.scss */
+/* line 565, ../sass/general.scss */
 .page-term-lobby .panels-flexible-row-node_page-1 .views-field-field-sub-title .field-content .sub-title {
   font-size: 22px;
 }
-/* line 615, ../sass/general.scss */
+/* line 571, ../sass/general.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_1 {
   padding-top: 30px;
 }
-/* line 617, ../sass/general.scss */
+/* line 573, ../sass/general.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_1 .toptix-purchase {
   float: right;
 }
-/* line 621, ../sass/general.scss */
+/* line 577, ../sass/general.scss */
 .page-term-lobby .lobby-term-left {
   float: right;
   width: 80%;
   padding: 30px;
 }
-/* line 626, ../sass/general.scss */
+/* line 582, ../sass/general.scss */
 .page-term-lobby .lobby-term-right {
   float: left;
   width: 20%;
   position: relative;
 }
-/* line 630, ../sass/general.scss */
+/* line 586, ../sass/general.scss */
 .page-term-lobby .lobby-term-right img {
   width: 100%;
 }
-/* line 633, ../sass/general.scss */
+/* line 589, ../sass/general.scss */
 .page-term-lobby .lobby-term-right .top-text-blk-wht {
   position: absolute;
   left: 0px;
   top: 2px;
 }
-/* line 637, ../sass/general.scss */
+/* line 593, ../sass/general.scss */
 .page-term-lobby .lobby-term-right .top-text-blk-wht .white {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 3px;
 }
-/* line 641, ../sass/general.scss */
+/* line 597, ../sass/general.scss */
 .page-term-lobby .lobby-term-right .top-text-blk-wht .black {
   color: #ffffff !important;
   padding: 3px;
 }
-/* line 649, ../sass/general.scss */
+/* line 605, ../sass/general.scss */
 .page-term-lobby .pane-lobby-panel-pane-1 .pane-content .lobby-container {
   background-color: #ffffff;
   margin-top: 1%;
 }
-/* line 655, ../sass/general.scss */
+/* line 611, ../sass/general.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2, .page-term-lobby .view-lobby.view-display-id-panel_pane_4 {
   padding-top: 30px;
 }
-/* line 657, ../sass/general.scss */
+/* line 613, ../sass/general.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-row, .page-term-lobby .view-lobby.view-display-id-panel_pane_4 .views-row {
   width: 30%;
   margin-right: 5%;
@@ -809,24 +753,24 @@ table.views-table {
   overflow: hidden;
   margin-bottom: 30px;
 }
-/* line 664, ../sass/general.scss */
+/* line 620, ../sass/general.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-row img, .page-term-lobby .view-lobby.view-display-id-panel_pane_4 .views-row img {
   width: 100%;
   height: auto;
 }
-/* line 668, ../sass/general.scss */
+/* line 624, ../sass/general.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-row .content, .page-term-lobby .view-lobby.view-display-id-panel_pane_4 .views-row .content {
   position: relative;
 }
-/* line 672, ../sass/general.scss */
+/* line 628, ../sass/general.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-row:nth-child(3n), .page-term-lobby .view-lobby.view-display-id-panel_pane_4 .views-row:nth-child(3n) {
   margin-right: 0;
 }
-/* line 675, ../sass/general.scss */
+/* line 631, ../sass/general.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-row:nth-child(3n+1), .page-term-lobby .view-lobby.view-display-id-panel_pane_4 .views-row:nth-child(3n+1) {
   clear: both;
 }
-/* line 678, ../sass/general.scss */
+/* line 634, ../sass/general.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-field-field-cm-moviegroup-short-summar, .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-field-name, .page-term-lobby .view-lobby.view-display-id-panel_pane_4 .views-field-field-cm-moviegroup-short-summar, .page-term-lobby .view-lobby.view-display-id-panel_pane_4 .views-field-name {
   position: absolute;
   color: #fff;
@@ -834,37 +778,37 @@ table.views-table {
   padding: 0 20px;
   width: 100%;
 }
-/* line 684, ../sass/general.scss */
+/* line 640, ../sass/general.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-field-field-cm-moviegroup-short-summar a, .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-field-name a, .page-term-lobby .view-lobby.view-display-id-panel_pane_4 .views-field-field-cm-moviegroup-short-summar a, .page-term-lobby .view-lobby.view-display-id-panel_pane_4 .views-field-name a {
   color: #fff;
 }
-/* line 688, ../sass/general.scss */
+/* line 644, ../sass/general.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-field-field-mc-teaser-toptxt-blk, .page-term-lobby .view-lobby.view-display-id-panel_pane_4 .views-field-field-mc-teaser-toptxt-blk {
   position: absolute;
   top: 4px;
   left: 0;
 }
-/* line 692, ../sass/general.scss */
+/* line 648, ../sass/general.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-field-field-mc-teaser-toptxt-blk .black, .page-term-lobby .view-lobby.view-display-id-panel_pane_4 .views-field-field-mc-teaser-toptxt-blk .black {
   color: #fff;
   padding: 5px;
 }
-/* line 696, ../sass/general.scss */
+/* line 652, ../sass/general.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-field-field-mc-teaser-toptxt-blk .white, .page-term-lobby .view-lobby.view-display-id-panel_pane_4 .views-field-field-mc-teaser-toptxt-blk .white {
   padding: 5px;
 }
-/* line 700, ../sass/general.scss */
+/* line 656, ../sass/general.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-field-ops, .page-term-lobby .view-lobby.view-display-id-panel_pane_4 .views-field-ops {
   position: absolute;
   top: 15px;
   right: 15px;
   z-index: 200;
 }
-/* line 706, ../sass/general.scss */
+/* line 662, ../sass/general.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .file-image-jpeg .content, .page-term-lobby .view-lobby.view-display-id-panel_pane_4 .file-image-jpeg .content {
   position: relative;
 }
-/* line 710, ../sass/general.scss */
+/* line 666, ../sass/general.scss */
 .page-term-lobby .pane-term-description {
   width: 1280px !important;
   max-width: 100%;
@@ -873,11 +817,11 @@ table.views-table {
   box-sizing: border-box;
   padding: 30px 3%;
 }
-/* line 713, ../sass/general.scss */
+/* line 669, ../sass/general.scss */
 .page-term-lobby .pane-term-description p {
   margin: 0;
 }
-/* line 717, ../sass/general.scss */
+/* line 673, ../sass/general.scss */
 .page-term-lobby .pane-lobby-panel-pane-4 {
   width: 1280px !important;
   max-width: 100%;
@@ -886,22 +830,22 @@ table.views-table {
   box-sizing: border-box;
 }
 
-/* line 722, ../sass/general.scss */
+/* line 678, ../sass/general.scss */
 .row-custom-lobby > td {
   border: medium none !important;
   font-size: 1rem;
 }
-/* line 725, ../sass/general.scss */
+/* line 681, ../sass/general.scss */
 .row-custom-lobby > td a {
   color: #000000 !important;
 }
 
-/* line 729, ../sass/general.scss */
+/* line 685, ../sass/general.scss */
 .lobby-term-left tbody {
   border: medium none !important;
 }
 
-/* line 732, ../sass/general.scss */
+/* line 688, ../sass/general.scss */
 .lobby-title a {
   color: #000000;
   font-size: 1.1rem;
@@ -909,13 +853,13 @@ table.views-table {
   margin-bottom: 2%;
 }
 
-/* line 739, ../sass/general.scss */
+/* line 695, ../sass/general.scss */
 .pane-views-panes.pane-review-panel-pane-1 {
   margin-top: 50px;
   background-color: #f9f4ee;
   overflow: hidden;
 }
-/* line 743, ../sass/general.scss */
+/* line 699, ../sass/general.scss */
 .pane-views-panes.pane-review-panel-pane-1 .pane-content {
   width: 1280px !important;
   max-width: 100%;
@@ -923,450 +867,113 @@ table.views-table {
   padding: 0 3%;
   box-sizing: border-box;
 }
-/* line 745, ../sass/general.scss */
+/* line 701, ../sass/general.scss */
 .pane-views-panes.pane-review-panel-pane-1 .pane-content .view-content {
   color: #b59d70 !important;
   padding: 50px 0;
   overflow: hidden;
 }
-/* line 751, ../sass/general.scss */
+/* line 707, ../sass/general.scss */
 .pane-views-panes.pane-review-panel-pane-1 .pane-content .views-field-name a {
   color: #b59d70 !important;
   font-size: 1rem !important;
 }
-/* line 756, ../sass/general.scss */
+/* line 712, ../sass/general.scss */
 .pane-views-panes.pane-review-panel-pane-1 .pane-content .views-field-review .field-content p {
   color: #b59d70 !important;
   font-size: 1.35rem !important;
   line-height: 1.35rem;
 }
-/* line 760, ../sass/general.scss */
+/* line 716, ../sass/general.scss */
 .pane-views-panes.pane-review-panel-pane-1 .pane-content .views-field-review .field-content p span {
   color: #b59d70 !important;
   font-size: 1.15rem !important;
 }
 
-/* line 771, ../sass/general.scss */
+/* line 727, ../sass/general.scss */
 .view-share-this-pane .flag.flag-action {
   background: none !important;
   float: none !important;
   font-size: 12px !important;
 }
-/* line 776, ../sass/general.scss */
+/* line 732, ../sass/general.scss */
 .view-share-this-pane .flag.unflag-action {
   background: none !important;
   float: none !important;
   font-size: 12px !important;
 }
 
-/* line 782, ../sass/general.scss */
+/* line 738, ../sass/general.scss */
 .movie-picture-movie-group img.panopoly-image-quarter {
   float: none !important;
   margin: 0;
 }
 
-/* line 786, ../sass/general.scss */
+/* line 742, ../sass/general.scss */
 .movie-title-movie-group > a {
   color: #ffffff;
   font-size: 1.5em;
   font-weight: bold;
 }
 
-/* line 791, ../sass/general.scss */
+/* line 747, ../sass/general.scss */
 .movie-grp-body p {
   font-size: 1.1rem;
 }
 
-/* line 796, ../sass/general.scss */
+/* line 752, ../sass/general.scss */
 .img-like-wrapper {
   position: relative;
 }
-/* line 798, ../sass/general.scss */
+/* line 754, ../sass/general.scss */
 .img-like-wrapper .top-text-blk-wht {
   left: 36em;
   position: absolute;
   width: 100%;
   top: 0;
 }
-/* line 803, ../sass/general.scss */
+/* line 759, ../sass/general.scss */
 .img-like-wrapper .top-text-blk-wht .white {
   color: #b59d70;
   display: block;
   float: left;
   padding: 1%;
 }
-/* line 809, ../sass/general.scss */
+/* line 765, ../sass/general.scss */
 .img-like-wrapper .top-text-blk-wht .black {
   color: #ffffff;
   display: block;
   float: left;
   padding: 1%;
 }
-/* line 816, ../sass/general.scss */
+/* line 772, ../sass/general.scss */
 .img-like-wrapper .like-btn {
   left: 3em;
   position: absolute;
   top: 1.5em;
 }
 
-@media (max-width: 320px) {
-  /* line 826, ../sass/general.scss */
-  .sticky-header.header .navbar-default {
-    height: 42px !important;
-  }
-  /* line 829, ../sass/general.scss */
-  .sticky-header.header .hambruger.-menu.navbar-toggle {
-    margin-top: 8px !important;
-    margin-left: 8px !important;
-    border: 1px solid #ffffff !important;
-  }
-  /* line 835, ../sass/general.scss */
-  .sticky-header .navbar-toggle {
-    margin-right: 10px !important;
-    padding: 5px 9px !important;
-  }
-  /* line 839, ../sass/general.scss */
-  .sticky-header .navbar-collapse {
-    background-color: #000000 !important;
-  }
-  /* line 842, ../sass/general.scss */
-  .sticky-header .navbar .navbar-toggle .icon-bar {
-    height: 1px !important;
-    width: 8px !important;
-  }
-  /* line 846, ../sass/general.scss */
-  .sticky-header .navbar-brand > img {
-    height: 40px !important;
-  }
-
-  /* line 850, ../sass/general.scss */
-  .navbar-default {
-    height: 50px !important;
-  }
-
-  /* line 853, ../sass/general.scss */
-  .navbar-header {
-    width: 100% !important;
-  }
-
-  /* line 856, ../sass/general.scss */
-  .navbar-toggle {
-    padding: 8px 10px !important;
-  }
-
-  /* line 860, ../sass/general.scss */
-  .navbar .navbar-brand {
-    height: 50px !important;
-    padding: 8px 8px !important;
-  }
-  /* line 864, ../sass/general.scss */
-  .navbar .navbar-collapse {
-    background-color: #b59d70 !important;
-    padding: 2px;
-    overflow-x: hidden;
-  }
-  /* line 869, ../sass/general.scss */
-  .navbar .navbar-toggle .icon-bar {
-    height: 1px !important;
-    width: 14px !important;
-  }
-
-  /* line 874, ../sass/general.scss */
-  .col-md-3 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-  /* line 877, ../sass/general.scss */
-  .col-md-3.header-right > li {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-
-  /* line 882, ../sass/general.scss */
-  .hambruger.-menu.navbar-toggle {
-    margin-top: 8px !important;
-    margin-left: 8px !important;
-    border: 1px solid #ffffff !important;
-  }
-
-  /* line 887, ../sass/general.scss */
-  .navbar-brand > img {
-    height: 42px !important;
-  }
-}
-@media (min-width: 320px) and (max-width: 480px) {
-  /* line 894, ../sass/general.scss */
-  .node-type-cm-movie .view-display-id-panel_pane_2 .slide-over-content {
-    bottom: 1em;
-    left: 0;
-  }
-  /* line 898, ../sass/general.scss */
-  .node-type-cm-movie .view-display-id-panel_pane_2 .slide-left-ct {
-    position: relative;
-    width: 85%;
-    float: right;
-    left: 15%;
-  }
-  /* line 903, ../sass/general.scss */
-  .node-type-cm-movie .view-display-id-panel_pane_2 .slide-left-ct .slide-movie-title {
-    font-size: 1.56rem;
-  }
-  /* line 907, ../sass/general.scss */
-  .node-type-cm-movie .view-display-id-panel_pane_2 .slide-right-ct {
-    float: left;
-    position: relative;
-    margin-top: 0;
-    width: 10%;
-  }
-  /* line 912, ../sass/general.scss */
-  .node-type-cm-movie .view-display-id-panel_pane_2 .slide-right-ct a {
-    height: 48px;
-    width: 48px;
-  }
-  /* line 918, ../sass/general.scss */
-  .node-type-cm-movie .table-responsive {
-    overflow-x: hidden;
-  }
-  /* line 922, ../sass/general.scss */
-  .node-type-cm-movie .panels-flexible-row.content {
-    width: 100%;
-  }
-  /* line 925, ../sass/general.scss */
-  .node-type-cm-movie .panels-flexible-row.bottom.content {
-    width: 100%;
-  }
-  /* line 930, ../sass/general.scss */
-  .node-type-cm-movie .views-field.views-field-field-cm-movie-country {
-    font-size: .7rem;
-  }
-  /* line 933, ../sass/general.scss */
-  .node-type-cm-movie .views-field.views-field-field-cm-movie-body p {
-    font-weight: 600;
-    font-size: 1.2rem;
-    margin: 0;
-  }
-  /* line 939, ../sass/general.scss */
-  .node-type-cm-movie table thead {
-    display: none;
-  }
-  /* line 944, ../sass/general.scss */
-  .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_7 td:nth-of-type(2) {
-    display: none;
-  }
-  /* line 947, ../sass/general.scss */
-  .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_7 td:nth-of-type(3) {
-    display: none;
-  }
-  /* line 950, ../sass/general.scss */
-  .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_7 td:nth-of-type(4) {
-    display: none;
-  }
-  /* line 954, ../sass/general.scss */
-  .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_7 .views-field-field-toptix-purchase {
-    float: left;
-  }
-  /* line 956, ../sass/general.scss */
-  .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_7 .views-field-field-toptix-purchase button {
-    padding: 3px 5px;
-  }
-  /* line 960, ../sass/general.scss */
-  .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_7 .views-field-field-cm-event-hall {
-    float: left;
-  }
-  /* line 963, ../sass/general.scss */
-  .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_7 .views-field-field-cm-event-time {
-    float: left;
-    color: #ccc;
-  }
-  /* line 967, ../sass/general.scss */
-  .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_7 .views-field-field-cm-event-time-1 {
-    color: #ccc;
-  }
-  /* line 970, ../sass/general.scss */
-  .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_7 table tr {
-    padding: 0.2em 0;
-    border-bottom: 1px solid #ccc !important;
-    clear: both;
-    min-height: 80px;
-  }
-  /* line 978, ../sass/general.scss */
-  .node-type-cm-movie .content.middle .panels-flexible-region-node_page-content_left {
-    width: 100%;
-  }
-  /* line 981, ../sass/general.scss */
-  .node-type-cm-movie .content.middle .panels-flexible-region-node_page-content_right {
-    display: none;
-  }
-  /* line 984, ../sass/general.scss */
-  .node-type-cm-movie .content.middle .inside.panels-flexible-row-inside {
-    width: 100%;
-  }
-  /* line 988, ../sass/general.scss */
-  .node-type-cm-movie #panels-ipe-regionid-content_left .pane-movie-top-pane-view-panel-pane-4 {
-    margin-right: 0;
-    margin-top: 0;
-    width: auto;
-    padding-left: 0;
-  }
-  /* line 994, ../sass/general.scss */
-  .node-type-cm-movie .bottom-content .pane-test-view-for-movie-credit-panel-pane-1 .view-content {
-    padding-right: 0;
-    width: 100%;
-  }
-  /* line 997, ../sass/general.scss */
-  .node-type-cm-movie .bottom-content .pane-test-view-for-movie-credit-panel-pane-1 .view-content tr {
-    padding: 0;
-  }
-  /* line 1000, ../sass/general.scss */
-  .node-type-cm-movie .bottom-content .pane-test-view-for-movie-credit-panel-pane-1 .view-content .views-field-field-cm-person-last-name {
-    float: left;
-  }
-
-  /* line 1005, ../sass/general.scss */
-  .table-responsive {
-    border: 0 solid #ddd;
-  }
-}
-@media (max-width: 640px) and (min-width: 481px) {
-  /* line 1011, ../sass/general.scss */
-  .node-type-cm-movie .slide-over-content {
-    left: 30%;
-  }
-  /* line 1015, ../sass/general.scss */
-  .node-type-cm-movie .panels-flexible-row.content {
-    width: 100%;
-  }
-  /* line 1018, ../sass/general.scss */
-  .node-type-cm-movie .panels-flexible-row.bottom.content {
-    width: 100%;
-  }
-  /* line 1023, ../sass/general.scss */
-  .node-type-cm-movie .views-field.views-field-field-cm-movie-country {
-    font-size: .7rem;
-  }
-  /* line 1026, ../sass/general.scss */
-  .node-type-cm-movie .views-field.views-field-field-cm-movie-body p {
-    font-weight: 600;
-    font-size: 1.2rem;
-    margin: 0;
-  }
-  /* line 1032, ../sass/general.scss */
-  .node-type-cm-movie table thead {
-    display: none;
-  }
-  /* line 1037, ../sass/general.scss */
-  .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_7 td:nth-of-type(2) {
-    display: none;
-  }
-  /* line 1040, ../sass/general.scss */
-  .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_7 td:nth-of-type(3) {
-    display: none;
-  }
-  /* line 1043, ../sass/general.scss */
-  .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_7 td:nth-of-type(4) {
-    display: none;
-  }
-  /* line 1047, ../sass/general.scss */
-  .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_7 .views-field-field-toptix-purchase {
-    float: left;
-  }
-  /* line 1049, ../sass/general.scss */
-  .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_7 .views-field-field-toptix-purchase button {
-    padding: 3px 5px;
-  }
-  /* line 1053, ../sass/general.scss */
-  .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_7 .views-field-field-cm-event-hall {
-    float: left;
-  }
-  /* line 1056, ../sass/general.scss */
-  .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_7 .views-field-field-cm-event-time {
-    float: left;
-    color: #ccc;
-  }
-  /* line 1060, ../sass/general.scss */
-  .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_7 .views-field-field-cm-event-time-1 {
-    color: #ccc;
-  }
-  /* line 1063, ../sass/general.scss */
-  .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_7 table tr {
-    padding: 0.2em 0;
-    border-bottom: 1px solid #ccc !important;
-    clear: both;
-    min-height: 80px;
-  }
-  /* line 1071, ../sass/general.scss */
-  .node-type-cm-movie .content.middle .panels-flexible-region-node_page-content_left {
-    width: 100%;
-  }
-  /* line 1074, ../sass/general.scss */
-  .node-type-cm-movie .content.middle .panels-flexible-region-node_page-content_right {
-    display: none;
-  }
-  /* line 1077, ../sass/general.scss */
-  .node-type-cm-movie .content.middle .inside.panels-flexible-row-inside {
-    width: 100%;
-  }
-  /* line 1081, ../sass/general.scss */
-  .node-type-cm-movie #panels-ipe-regionid-content_left .pane-movie-top-pane-view-panel-pane-4 {
-    margin-right: 0;
-    margin-top: 0;
-    width: auto;
-    padding-left: 0;
-  }
-  /* line 1087, ../sass/general.scss */
-  .node-type-cm-movie .bottom-content .pane-test-view-for-movie-credit-panel-pane-1 .view-content {
-    padding-right: 0;
-    width: 100%;
-  }
-  /* line 1090, ../sass/general.scss */
-  .node-type-cm-movie .bottom-content .pane-test-view-for-movie-credit-panel-pane-1 .view-content tr {
-    padding: 0;
-  }
-  /* line 1093, ../sass/general.scss */
-  .node-type-cm-movie .bottom-content .pane-test-view-for-movie-credit-panel-pane-1 .view-content .views-field-field-cm-person-last-name {
-    float: left;
-  }
-
-  /* line 1098, ../sass/general.scss */
-  .table-responsive {
-    border: 0 solid #ddd;
-  }
-}
-@media (min-width: 768px) {
-  /* line 1104, ../sass/general.scss */
-  .node-type-cm-movie .content.middle .panels-flexible-region-node_page-content_left {
-    width: 100%;
-  }
-  /* line 1107, ../sass/general.scss */
-  .node-type-cm-movie .content.middle .panels-flexible-region-node_page-content_right {
-    display: none;
-  }
-  /* line 1110, ../sass/general.scss */
-  .node-type-cm-movie .content.middle .inside.panels-flexible-row-inside {
-    width: 100%;
-  }
-}
-/* line 1116, ../sass/general.scss */
+/* line 779, ../sass/general.scss */
 .flag-wrapper a {
   display: block;
   text-indent: -9999px;
   width: 18px;
 }
-/* line 1120, ../sass/general.scss */
+/* line 783, ../sass/general.scss */
 .flag-wrapper a.flag-action {
   background: url("../images/like-gold.png") no-repeat right 0 !important;
 }
-/* line 1123, ../sass/general.scss */
+/* line 786, ../sass/general.scss */
 .flag-wrapper a.unflag-action {
   background: url("../images/unlike-gold.png") no-repeat right 0 !important;
 }
 
-/* line 1128, ../sass/general.scss */
+/* line 791, ../sass/general.scss */
 .panels-flexible-row.content .panels-flexible-region-node_page-content_region {
   width: 100% !important;
 }
 
-/* line 1131, ../sass/general.scss */
+/* line 794, ../sass/general.scss */
 button.toptix-purchase {
   background-color: #b59d70;
   color: #ffffff;
@@ -1375,20 +982,20 @@ button.toptix-purchase {
   padding: 4px 14px;
 }
 
-/* line 1142, ../sass/general.scss */
+/* line 805, ../sass/general.scss */
 .view-id-movie_group_ct.view-display-id-panel_pane_1 .views-field.views-field-field-cm-movie-short-summary {
   padding: 0 5% 5%;
 }
-/* line 1144, ../sass/general.scss */
+/* line 807, ../sass/general.scss */
 .view-id-movie_group_ct.view-display-id-panel_pane_1 .views-field.views-field-field-cm-movie-short-summary p {
   font-weight: 400;
 }
-/* line 1149, ../sass/general.scss */
+/* line 812, ../sass/general.scss */
 .view-id-movie_group_ct.view-display-id-panel_pane_1 .views-field.views-field-nothing-1 .field-content .movie-grp-add-event {
   position: relative;
   padding-left: 25px;
 }
-/* line 1152, ../sass/general.scss */
+/* line 815, ../sass/general.scss */
 .view-id-movie_group_ct.view-display-id-panel_pane_1 .views-field.views-field-nothing-1 .field-content .movie-grp-add-event a {
   background: url("../images/add-event.png") no-repeat;
   width: 30px;
@@ -1397,11 +1004,11 @@ button.toptix-purchase {
   font-size: 0;
   position: absolute;
 }
-/* line 1161, ../sass/general.scss */
+/* line 824, ../sass/general.scss */
 .view-id-movie_group_ct.view-display-id-panel_pane_1 .views-field.views-field-nothing-1 .field-content .pur_btn {
   margin-left: 2%;
 }
-/* line 1163, ../sass/general.scss */
+/* line 826, ../sass/general.scss */
 .view-id-movie_group_ct.view-display-id-panel_pane_1 .views-field.views-field-nothing-1 .field-content .pur_btn button {
   background: url("../images/toptix.png") no-repeat !important;
   border: medium none;
@@ -1411,42 +1018,42 @@ button.toptix-purchase {
   width: 72px;
   vertical-align: middle;
 }
-/* line 1173, ../sass/general.scss */
+/* line 836, ../sass/general.scss */
 .view-id-movie_group_ct.view-display-id-panel_pane_1 .views-field.views-field-nothing-1 .field-content .add-event-cal {
   margin-left: 2%;
 }
-/* line 1176, ../sass/general.scss */
+/* line 839, ../sass/general.scss */
 .view-id-movie_group_ct.view-display-id-panel_pane_1 .views-field.views-field-nothing-1 .field-content .title {
   float: left;
   padding: .8% 0 0;
   font-size: 1.3em;
 }
-/* line 1180, ../sass/general.scss */
+/* line 843, ../sass/general.scss */
 .view-id-movie_group_ct.view-display-id-panel_pane_1 .views-field.views-field-nothing-1 .field-content .title a {
   color: #000;
   font-weight: 600;
 }
-/* line 1185, ../sass/general.scss */
+/* line 848, ../sass/general.scss */
 .view-id-movie_group_ct.view-display-id-panel_pane_1 .views-field.views-field-nothing-1 .field-content .list-wrapper {
   font-size: 1.2em;
   font-weight: 600;
 }
-/* line 1188, ../sass/general.scss */
+/* line 851, ../sass/general.scss */
 .view-id-movie_group_ct.view-display-id-panel_pane_1 .views-field.views-field-nothing-1 .field-content .list-wrapper .bar {
   margin: 0 3px;
 }
 
-/* line 1197, ../sass/general.scss */
+/* line 860, ../sass/general.scss */
 input:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]), input[type="email"]:focus:not([readonly]), input[type="number"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), input[type="search-md"]:focus:not([readonly]), input[type="tel"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="time"]:focus:not([readonly]), input[type="url"]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
   border-bottom: 1px solid #b59d70 !important;
 }
 
-/* line 1202, ../sass/general.scss */
+/* line 865, ../sass/general.scss */
 table td, table th {
   padding-left: 0 !important;
 }
 
-/* line 1208, ../sass/general.scss */
+/* line 871, ../sass/general.scss */
 #page-header .tabs {
   position: fixed;
   right: 0;
@@ -1454,19 +1061,19 @@ table td, table th {
   z-index: 300;
   background-color: rgba(0, 0, 0, 0.7);
 }
-/* line 1214, ../sass/general.scss */
+/* line 877, ../sass/general.scss */
 #page-header .tabs li {
   clear: both;
 }
 
-/* line 1221, ../sass/general.scss */
+/* line 884, ../sass/general.scss */
 .popup-element-body .center {
   width: 100% !important;
   top: 55px;
   left: 0;
   position: fixed !important;
 }
-/* line 1226, ../sass/general.scss */
+/* line 889, ../sass/general.scss */
 .popup-element-body .center .inner {
   width: 1280px !important;
   max-width: 100%;
@@ -1475,26 +1082,26 @@ table td, table th {
   box-sizing: border-box;
   margin: 40px auto 0 !important;
 }
-/* line 1231, ../sass/general.scss */
+/* line 894, ../sass/general.scss */
 .popup-element-body form {
   position: relative;
 }
-/* line 1233, ../sass/general.scss */
+/* line 896, ../sass/general.scss */
 .popup-element-body form > div {
   position: relative;
 }
-/* line 1236, ../sass/general.scss */
+/* line 899, ../sass/general.scss */
 .popup-element-body form .form-group {
   overflow: hidden;
   -webkit-box-shadow: -1px 1px 10px -3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 1px 10px -3px rgba(0, 0, 0, 0.75);
   box-shadow: -1px 1px 10px -3px rgba(0, 0, 0, 0.75);
 }
-/* line 1241, ../sass/general.scss */
+/* line 904, ../sass/general.scss */
 .popup-element-body form .form-group label[for="edit-keys-1"] {
   display: none !important;
 }
-/* line 1244, ../sass/general.scss */
+/* line 907, ../sass/general.scss */
 .popup-element-body form .form-group .form-text {
   width: 100%;
   box-sizing: border-box;
@@ -1507,7 +1114,7 @@ table td, table th {
   font-size: 25px;
   border: none;
 }
-/* line 1257, ../sass/general.scss */
+/* line 920, ../sass/general.scss */
 .popup-element-body form .form-submit {
   margin: 0;
   border-radius: 0 !important;
@@ -1520,7 +1127,7 @@ table td, table th {
   box-shadow: none;
   top: 0px;
 }
-/* line 1270, ../sass/general.scss */
+/* line 933, ../sass/general.scss */
 .popup-element-body .popup-close {
   background: #b59d70 url("../images/close42.png") no-repeat scroll center center !important;
   border-radius: 50%;
@@ -1534,7 +1141,7 @@ table td, table th {
   position: absolute !important;
 }
 
-/* line 1284, ../sass/general.scss */
+/* line 947, ../sass/general.scss */
 .popup-style-white .popup-element-body .bottom .right,
 .popup-style-white .popup-element-body .bottom .center,
 .popup-style-white .popup-element-body .bottom .left,
@@ -1548,24 +1155,24 @@ table td, table th {
 }
 
 /***  article page  ****/
-/* line 1299, ../sass/general.scss */
+/* line 962, ../sass/general.scss */
 .node-type-cm-article .radix-layouts-header {
   padding: 0 !important;
 }
-/* line 1302, ../sass/general.scss */
+/* line 965, ../sass/general.scss */
 .node-type-cm-article .panel-panel-inner .panel-pane.pane-article-ct-panes-panel-pane-1 {
   width: 100% !important;
   padding: 0 !important;
 }
-/* line 1306, ../sass/general.scss */
+/* line 969, ../sass/general.scss */
 .node-type-cm-article .view-article-ct-panes.view-display-id-panel_pane_1 {
   margin-bottom: 30px;
 }
-/* line 1308, ../sass/general.scss */
+/* line 971, ../sass/general.scss */
 .node-type-cm-article .view-article-ct-panes.view-display-id-panel_pane_1 .content {
   position: relative;
 }
-/* line 1311, ../sass/general.scss */
+/* line 974, ../sass/general.scss */
 .node-type-cm-article .view-article-ct-panes.view-display-id-panel_pane_1 .views-field-title {
   color: #fff;
   position: absolute;
@@ -1573,7 +1180,7 @@ table td, table th {
   width: 100%;
   text-shadow: 2px 2px 2px #000;
 }
-/* line 1317, ../sass/general.scss */
+/* line 980, ../sass/general.scss */
 .node-type-cm-article .view-article-ct-panes.view-display-id-panel_pane_1 .views-field-title .field-content {
   width: 1280px !important;
   max-width: 100%;
@@ -1582,16 +1189,16 @@ table td, table th {
   box-sizing: border-box;
   display: block;
 }
-/* line 1320, ../sass/general.scss */
+/* line 983, ../sass/general.scss */
 .node-type-cm-article .view-article-ct-panes.view-display-id-panel_pane_1 .views-field-title .field-content .sub-title {
   font-size: 20px;
   margin: 0 23%;
 }
-/* line 1324, ../sass/general.scss */
+/* line 987, ../sass/general.scss */
 .node-type-cm-article .view-article-ct-panes.view-display-id-panel_pane_1 .views-field-title .field-content h2 {
   margin: 0 23%;
 }
-/* line 1330, ../sass/general.scss */
+/* line 993, ../sass/general.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) {
   width: 1280px !important;
   max-width: 100%;
@@ -1599,20 +1206,20 @@ table td, table th {
   padding: 0 3%;
   box-sizing: border-box;
 }
-/* line 1332, ../sass/general.scss */
+/* line 995, ../sass/general.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) .radix-layouts-sidebar {
   padding-left: 0;
   width: 23%;
   padding-right: 100px;
   box-sizing: border-box;
 }
-/* line 1337, ../sass/general.scss */
+/* line 1000, ../sass/general.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) .radix-layouts-sidebar .field-name-field-cm-article-tags {
   border-top: 5px solid #000000;
   padding-top: 20px;
   margin-top: 12px;
 }
-/* line 1341, ../sass/general.scss */
+/* line 1004, ../sass/general.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) .radix-layouts-sidebar .field-name-field-cm-article-tags a {
   border-bottom: 1px solid;
   color: #828282;
@@ -1622,16 +1229,16 @@ table td, table th {
   margin-right: 10px;
   padding-bottom: 5px;
 }
-/* line 1352, ../sass/general.scss */
+/* line 1015, ../sass/general.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) .radix-layouts-content {
   padding: 0;
   width: 77%;
 }
-/* line 1355, ../sass/general.scss */
+/* line 1018, ../sass/general.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) .radix-layouts-content .pane-node-body {
   margin-right: 23%;
 }
-/* line 1361, ../sass/general.scss */
+/* line 1024, ../sass/general.scss */
 .node-type-cm-article.noheaderimage .view-article-ct-panes.view-display-id-panel_pane_1 .views-field-title.views-field-title {
   position: relative;
   color: #000;
@@ -1641,7 +1248,7 @@ table td, table th {
 }
 
 /*****  slideshow controls  *******/
-/* line 1375, ../sass/general.scss */
+/* line 1038, ../sass/general.scss */
 .views-slideshow-controls-top .views_slideshow_controls_text_next a, .views-slideshow-controls-top .views-slideshow-controls-text-previous a {
   font-size: 0;
   opacity: 1;
@@ -1653,23 +1260,23 @@ table td, table th {
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 50%;
 }
-/* line 1387, ../sass/general.scss */
+/* line 1050, ../sass/general.scss */
 .views-slideshow-controls-top .views-slideshow-controls-text-previous a {
   background-image: url("../images/left.png");
   left: 15px;
 }
-/* line 1391, ../sass/general.scss */
+/* line 1054, ../sass/general.scss */
 .views-slideshow-controls-top .views_slideshow_controls_text_next a {
   background-image: url("../images/right.png");
   right: 15px;
 }
 
 /******   webform  *****/
-/* line 1400, ../sass/general.scss */
+/* line 1063, ../sass/general.scss */
 .node-type-webform .container, .node-type-webform .panels-flexible-region-46-center {
   width: 100%;
 }
-/* line 1403, ../sass/general.scss */
+/* line 1066, ../sass/general.scss */
 .node-type-webform .pane-node-body {
   width: 1280px !important;
   max-width: 100%;
@@ -1677,11 +1284,11 @@ table td, table th {
   padding: 0 3%;
   box-sizing: border-box;
 }
-/* line 1405, ../sass/general.scss */
+/* line 1068, ../sass/general.scss */
 .node-type-webform .pane-node-body .pane-content {
   margin: 30px 23%;
 }
-/* line 1410, ../sass/general.scss */
+/* line 1073, ../sass/general.scss */
 .node-type-webform .view-webform-ct-panes.view-display-id-panel_pane_1 .views-field-title {
   color: #fff;
   position: absolute;
@@ -1689,7 +1296,7 @@ table td, table th {
   width: 100%;
   text-shadow: 2px 2px 2px #000;
 }
-/* line 1416, ../sass/general.scss */
+/* line 1079, ../sass/general.scss */
 .node-type-webform .view-webform-ct-panes.view-display-id-panel_pane_1 .views-field-title .field-content {
   width: 1280px !important;
   max-width: 100%;
@@ -1698,16 +1305,16 @@ table td, table th {
   box-sizing: border-box;
   display: block;
 }
-/* line 1419, ../sass/general.scss */
+/* line 1082, ../sass/general.scss */
 .node-type-webform .view-webform-ct-panes.view-display-id-panel_pane_1 .views-field-title .field-content .sub-title {
   font-size: 20px;
   margin: 0 23%;
 }
-/* line 1423, ../sass/general.scss */
+/* line 1086, ../sass/general.scss */
 .node-type-webform .view-webform-ct-panes.view-display-id-panel_pane_1 .views-field-title .field-content h2 {
   margin: 0 23%;
 }
-/* line 1429, ../sass/general.scss */
+/* line 1092, ../sass/general.scss */
 .node-type-webform form {
   width: 1280px !important;
   max-width: 100%;
@@ -1715,29 +1322,282 @@ table td, table th {
   padding: 0 3%;
   box-sizing: border-box;
 }
-/* line 1431, ../sass/general.scss */
+/* line 1094, ../sass/general.scss */
 .node-type-webform form > div {
   margin: 0 23%;
 }
-/* line 1434, ../sass/general.scss */
+/* line 1097, ../sass/general.scss */
 .node-type-webform form .webform-component {
   float: none;
   width: 100%;
   margin: 0;
 }
-/* line 1439, ../sass/general.scss */
+/* line 1102, ../sass/general.scss */
 .node-type-webform form .form-actions {
   float: right;
 }
-/* line 1441, ../sass/general.scss */
+/* line 1104, ../sass/general.scss */
 .node-type-webform form .form-actions .webform-submit {
   box-shadow: none;
   background-color: #b59d70;
   color: #fff;
   margin: 0;
 }
-/* line 1446, ../sass/general.scss */
+/* line 1109, ../sass/general.scss */
 .node-type-webform form .form-actions .webform-submit:hover {
   background-color: #b59d70 !important;
   opacity: 0.9;
+}
+
+/* line 1118, ../sass/general.scss */
+.alert {
+  position: relative;
+  z-index: 200;
+}
+
+/*******  user profile  ********/
+/* line 1125, ../sass/general.scss */
+.page-user {
+  background-color: #f9f4ee !important;
+}
+/* line 1127, ../sass/general.scss */
+.page-user .container {
+  width: 100%;
+}
+/* line 1130, ../sass/general.scss */
+.page-user .panels-flexible-region-homepage_panel-center {
+  width: 100%;
+}
+/* line 1133, ../sass/general.scss */
+.page-user .pane-user-page-pane-panel-pane-1 {
+  background-color: #999b9c;
+}
+/* line 1135, ../sass/general.scss */
+.page-user .pane-user-page-pane-panel-pane-1 .pane-content {
+  width: 1280px !important;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 3%;
+  box-sizing: border-box;
+  padding-top: 60px;
+}
+/* line 1138, ../sass/general.scss */
+.page-user .pane-user-page-pane-panel-pane-1 .pane-content .views-field-name {
+  text-align: center;
+}
+/* line 1140, ../sass/general.scss */
+.page-user .pane-user-page-pane-panel-pane-1 .pane-content .views-field-name .field-content {
+  font-size: 3rem;
+}
+/* line 1147, ../sass/general.scss */
+.page-user #views-exposed-form-user-flagged-content-panel-pane-1 .views-widget-filter-gid {
+  width: 100%;
+  background-color: #999b9c;
+  overflow: hidden;
+  padding-bottom: 30px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* line 1155, ../sass/general.scss */
+.page-user #views-exposed-form-user-flagged-content-panel-pane-1 .views-widget-filter-gid a {
+  color: #000;
+  border: 1px solid #fff;
+  padding: 5px 10px;
+  display: block;
+  width: 160px;
+  margin-right: -5px;
+}
+/* line 1162, ../sass/general.scss */
+.page-user #views-exposed-form-user-flagged-content-panel-pane-1 .views-widget-filter-gid a.active {
+  color: #fff;
+  background-color: #b59d70;
+}
+/* line 1167, ../sass/general.scss */
+.page-user #views-exposed-form-user-flagged-content-panel-pane-1 .views-widget-filter-gid .form-item {
+  text-align: center;
+}
+/* line 1169, ../sass/general.scss */
+.page-user #views-exposed-form-user-flagged-content-panel-pane-1 .views-widget-filter-gid .form-item .form-item {
+  display: inline-block;
+}
+/* line 1174, ../sass/general.scss */
+.page-user #views-exposed-form-user-flagged-content-panel-pane-1 .form-item-edit-gid-all {
+  display: none !important;
+}
+/* line 1179, ../sass/general.scss */
+.page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters {
+  background-color: #c0c1c3;
+  overflow: hidden;
+  padding-top: 90px;
+  padding-bottom: 13px;
+  margin-bottom: 50px;
+}
+/* line 1185, ../sass/general.scss */
+.page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper {
+  width: 1280px !important;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 3%;
+  box-sizing: border-box;
+}
+/* line 1187, ../sass/general.scss */
+.page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper form {
+  float: left;
+}
+/* line 1190, ../sass/general.scss */
+.page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper .edit {
+  float: right;
+}
+/* line 1192, ../sass/general.scss */
+.page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper .edit a {
+  color: #b59d70;
+  border: 1px solid;
+  padding: 5px 10px;
+}
+/* line 1199, ../sass/general.scss */
+.page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .views-widget-filter-type {
+  padding: 0;
+}
+/* line 1201, ../sass/general.scss */
+.page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .views-widget-filter-type .form-item-edit-type-all {
+  display: none !important;
+}
+/* line 1204, ../sass/general.scss */
+.page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .views-widget-filter-type .form-item {
+  display: inline-block;
+}
+/* line 1206, ../sass/general.scss */
+.page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .views-widget-filter-type .form-item a {
+  color: #000;
+}
+/* line 1208, ../sass/general.scss */
+.page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .views-widget-filter-type .form-item a.active {
+  color: #b59d70;
+}
+/* line 1213, ../sass/general.scss */
+.page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .views-widget-filter-type .form-item-edit-type-1 {
+  border-right: 1px solid #000;
+  margin-right: 40px;
+  padding-right: 40px;
+}
+/* line 1220, ../sass/general.scss */
+.page-user .view-user-flagged-content.view-display-id-panel_pane_1 .text-center {
+  overflow: hidden;
+  padding-bottom: 50px;
+}
+/* line 1223, ../sass/general.scss */
+.page-user .view-user-flagged-content.view-display-id-panel_pane_1 .text-center .item-list {
+  width: 1280px !important;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 3%;
+  box-sizing: border-box;
+}
+/* line 1225, ../sass/general.scss */
+.page-user .view-user-flagged-content.view-display-id-panel_pane_1 .text-center .item-list ul {
+  margin: 0;
+}
+/* line 1229, ../sass/general.scss */
+.page-user .view-user-flagged-content.view-display-id-panel_pane_1 .text-center .pagination {
+  float: right;
+}
+/* line 1233, ../sass/general.scss */
+.page-user .view-user-flagged-content.view-display-id-panel_pane_1 .text-center .pager-next a, .page-user .view-user-flagged-content.view-display-id-panel_pane_1 .text-center .pager-last a, .page-user .view-user-flagged-content.view-display-id-panel_pane_1 .text-center .pager-first a, .page-user .view-user-flagged-content.view-display-id-panel_pane_1 .text-center .pager-previous a {
+  padding-right: 0;
+  padding-left: 0;
+}
+/* line 1238, ../sass/general.scss */
+.page-user .view-user-flagged-content.view-display-id-panel_pane_1 .text-center .pager-item a, .page-user .view-user-flagged-content.view-display-id-panel_pane_1 .text-center .pager-current span {
+  padding: 5px 10px;
+}
+/* line 1243, ../sass/general.scss */
+.page-user .pane-user-flagged-content-panel-pane-1 .view-content {
+  padding-bottom: 20px;
+}
+/* line 1245, ../sass/general.scss */
+.page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list {
+  width: 1280px !important;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 3%;
+  box-sizing: border-box;
+}
+/* line 1247, ../sass/general.scss */
+.page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .view {
+  overflow: visible;
+}
+/* line 1250, ../sass/general.scss */
+.page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container {
+  margin-bottom: 20px;
+  clear: both;
+  background-color: #fff;
+}
+/* line 1256, ../sass/general.scss */
+.page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-left {
+  float: left;
+  width: 30%;
+  position: relative;
+}
+/* line 1260, ../sass/general.scss */
+.page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-left .top-text-blk-wht {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px 0;
+}
+/* line 1265, ../sass/general.scss */
+.page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-left .top-text-blk-wht span {
+  padding: 5px 10px;
+}
+/* line 1268, ../sass/general.scss */
+.page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-left .top-text-blk-wht .black {
+  color: #fff;
+}
+/* line 1273, ../sass/general.scss */
+.page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-right {
+  float: right;
+  width: 70%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+/* line 1278, ../sass/general.scss */
+.page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-right table tbody {
+  border: none;
+}
+/* line 1281, ../sass/general.scss */
+.page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-right .lobby-title a {
+  font-size: 1.3rem;
+}
+/* line 1284, ../sass/general.scss */
+.page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-right .lobby-length {
+  color: #919191;
+}
+
+/********  table with date **********/
+/* line 1297, ../sass/general.scss */
+.row-custom-lobby .date {
+  width: 20%;
+}
+/* line 1300, ../sass/general.scss */
+.row-custom-lobby .time {
+  width: 11%;
+}
+/* line 1303, ../sass/general.scss */
+.row-custom-lobby .hall {
+  width: 18%;
+}
+/* line 1306, ../sass/general.scss */
+.row-custom-lobby .purchase {
+  float: right;
+  padding-right: 0;
+  padding-left: 0;
+}
+/* line 1311, ../sass/general.scss */
+.row-custom-lobby .title {
+  width: 23%;
+}
+/* line 1314, ../sass/general.scss */
+.row-custom-lobby .code {
+  width: 10%;
 }

@@ -2,7 +2,8 @@
 
 .hamburger {
 	.modal-dialog {
-		width: 1300px;
+		width: 100%;
+		margin: 0;
 	}
 	.modal-content{
 		padding: 50px 0 0;
@@ -153,6 +154,8 @@
 		color: #fff;
 		background-color: #262626;
 		padding-top: 30px;
+		clear: left;
+		overflow: hidden;
 		.bean-block{
 			padding: 0 15px;
 			text-align: left;

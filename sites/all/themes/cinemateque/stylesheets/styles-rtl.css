@@ -230,52 +230,53 @@ table td, table th {
 .popup-element-body #search-api-page-search-form-search-results .form-submit {
   float: right;
 }
-/* line 76, ../sass/general-rtl.scss */
-.popup-element-body #search-api-page-search-form-search-results .form-item {
-  float: right;
+/* line 77, ../sass/general-rtl.scss */
+.popup-element-body form .form-submit {
+  left: 0;
+  right: auto;
 }
 
 /**** lobby page  ****/
-/* line 86, ../sass/general-rtl.scss */
+/* line 87, ../sass/general-rtl.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_1 .toptix-purchase {
   float: left;
 }
-/* line 90, ../sass/general-rtl.scss */
+/* line 91, ../sass/general-rtl.scss */
 .page-term-lobby .lobby-term-left {
   float: left;
 }
-/* line 93, ../sass/general-rtl.scss */
+/* line 94, ../sass/general-rtl.scss */
 .page-term-lobby .lobby-term-right {
   float: right;
 }
-/* line 95, ../sass/general-rtl.scss */
+/* line 96, ../sass/general-rtl.scss */
 .page-term-lobby .lobby-term-right .top-text-blk-wht {
   right: 0px;
   left: auto;
 }
-/* line 101, ../sass/general-rtl.scss */
+/* line 102, ../sass/general-rtl.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-row {
   margin-left: 5%;
   margin-right: 0;
   float: right;
 }
-/* line 106, ../sass/general-rtl.scss */
+/* line 107, ../sass/general-rtl.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-row:nth-child(3n) {
   margin-left: 0;
 }
-/* line 109, ../sass/general-rtl.scss */
+/* line 110, ../sass/general-rtl.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-field-field-mc-teaser-toptxt-blk {
   right: 0;
   left: auto;
 }
-/* line 113, ../sass/general-rtl.scss */
+/* line 114, ../sass/general-rtl.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-field-ops {
   left: 15px;
   right: auto;
 }
 
 /***  article page  ****/
-/* line 123, ../sass/general-rtl.scss */
+/* line 124, ../sass/general-rtl.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) {
   width: 1280px !important;
   max-width: 100%;
@@ -283,27 +284,63 @@ table td, table th {
   padding: 0 3%;
   box-sizing: border-box;
 }
-/* line 125, ../sass/general-rtl.scss */
+/* line 126, ../sass/general-rtl.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) .radix-layouts-sidebar {
   padding-right: 0;
   padding-left: 100px;
   float: right;
 }
-/* line 130, ../sass/general-rtl.scss */
+/* line 131, ../sass/general-rtl.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) .radix-layouts-sidebar .field-name-field-cm-article-tags a {
   float: right;
   margin-left: 10px;
   margin-right: 0;
 }
-/* line 138, ../sass/general-rtl.scss */
+/* line 139, ../sass/general-rtl.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) .radix-layouts-content .pane-node-body {
   margin-left: 23%;
   margin-right: 0;
 }
 
 /******   webform  *****/
-/* line 150, ../sass/general-rtl.scss */
+/* line 151, ../sass/general-rtl.scss */
 .node-type-webform form .form-actions {
+  float: left;
+}
+
+/*******  user profile  ********/
+/* line 164, ../sass/general-rtl.scss */
+.page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper form {
+  float: right;
+}
+/* line 167, ../sass/general-rtl.scss */
+.page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper .edit {
+  float: left;
+}
+/* line 172, ../sass/general-rtl.scss */
+.page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .views-widget-filter-type .form-item-edit-type-1 {
+  border-left: 1px solid #000;
+  border-right: none;
+  margin-left: 40px;
+  padding-left: 40px;
+  margin-right: 0;
+  padding-right: 0;
+}
+/* line 186, ../sass/general-rtl.scss */
+.page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-left {
+  float: right;
+}
+/* line 188, ../sass/general-rtl.scss */
+.page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-left .top-text-blk-wht {
+  right: 0;
+  left: auto;
+}
+/* line 193, ../sass/general-rtl.scss */
+.page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-right {
+  float: left;
+}
+/* line 197, ../sass/general-rtl.scss */
+.page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .row-custom-lobby .purchase {
   float: left;
 }
 
