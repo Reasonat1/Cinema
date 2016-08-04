@@ -115,5 +115,8 @@
         });
 
     });
-
+   /******Hide Other screening ****/
+    if($('.hide-table').length){
+        $('.pane-event-ct-view-panel-pane-5 h2.pane-title').hide();
+    }
 })(jQuery);
