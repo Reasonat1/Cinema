@@ -76,7 +76,10 @@
         });
     }
 
-    
+       /******Hide Other screening ****/
+    if($('.pane-event-ct-view-panel-pane-5 .view-content .hide-table').length){
+        $('.pane-event-ct-view-panel-pane-5 h2.pane-title').hide();
+    }
       /*****Table Header hide if empty value*******/
         if($('.view-event-ct-view tr.item-show-1 .views-field-field-cm-event-time .hide-div').length){
              $('.view-event-ct-view thead th.views-field-field-cm-event-time').hide();
@@ -115,8 +118,4 @@
         });
 
     });
-   /******Hide Other screening ****/
-    if($('.hide-table').length){
-        $('.pane-event-ct-view-panel-pane-5 h2.pane-title').hide();
-    }
 })(jQuery);
