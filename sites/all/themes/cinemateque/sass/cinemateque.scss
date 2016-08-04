@@ -304,6 +304,7 @@ body {
 		margin: 0 auto;
 	}
 }
+
 .pane-footer-mini-panel {
 	.carousel {
 		padding: 0;
@@ -1310,11 +1311,17 @@ div[id^="panels-ipe-paneid-22"] > * select {
 }
 
 .pane-bundle-sponser{
-	padding: 0px 3%;
+	padding: 20px 3%;
+
 	.field-item{
-		margin: 0px 15px;
+		padding: 0px 20px;
+		box-sizing: border-box;
+		display: inline-block;
+    	height: 80px;
 		img{
 			padding: 10px 0;
+			height: 100%;
+			width: auto;
 		}
 	}
 }
