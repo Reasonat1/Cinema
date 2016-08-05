@@ -80,6 +80,9 @@
     if($('.pane-event-ct-view-panel-pane-5 .view-content .hide-table').length){
         $('.pane-event-ct-view-panel-pane-5 h2.pane-title').hide();
     }
+    if($('.view-display-id-panel_pane_1 .view-content .views_slideshow_cycle_slide .views-field-field-cm-event-images img').length){
+        $('.pane-event-ct-view-panel-pane-9').hide();
+    }
       /*****Table Header hide if empty value*******/
         if($('.view-event-ct-view tr.item-show-1 .views-field-field-cm-event-time .hide-div').length){
              $('.view-event-ct-view thead th.views-field-field-cm-event-time').hide();
