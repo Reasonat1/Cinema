@@ -134,7 +134,18 @@
       $picture_path_event = $node->field_cm_event_images['und'][0]['uri'];
       $image_event = '<img src="' . image_style_url('lobby', $picture_path_event) . '" alt="" />';
     }else{
-      $image_event = '';
+      if(!empty($node->field_cm_event_lineup['und'])){
+        $event_ext_node = node_load($node->field_cm_event_lineup['und'][0]['target_id']);
+        if($event_ext_node->type == 'cm_movie_group'){
+          $picture_path_ext_moviegroup = $event_ext_node->field_cm_moviegroup_pictures['und'][0]['uri'];
+          $image_event = '<img src="' . image_style_url('lobby', $picture_path_ext_moviegroup) . '" alt="" />';
+        }else if($event_ext_node->type == 'cm_movie'){
+          $picture_path_ext_movie = $event_ext_node->field_cm_movie_pictures['und'][0]['fid'];
+          $file_ext_movie = file_load($picture_path_ext_movie);
+          $picture_path_ext_movie = $file_ext_movie->uri;
+          $image_event= '<img src="' . image_style_url('lobby', $picture_path_ext_movie) . '" alt="" />';
+        }
+      } 
     }
     if($node->type == 'cm_event'){
     $output_event ='';

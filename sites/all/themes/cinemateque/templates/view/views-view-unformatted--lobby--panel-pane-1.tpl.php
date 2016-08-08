@@ -23,6 +23,7 @@
   $results=$view->result;
   foreach ($results as $val) {
     $nid = $val->node_taxonomy_index_nid;
+    $default_image = '<img src="/sites/all/themes/cinemateque/images/default-image.png">';
     $node = node_load($nid);
      //drupal_set_message('<pre>'.print_r($node->field_cm_event_images, 1).'</pre>');
     $path_node = drupal_get_path_alias('node/'.$node->nid);
@@ -56,6 +57,16 @@
      $black_text_article = '<span class="black">' . $node->field_article_top_text_black['und'][0]['value'] .'</span>'; 
     }else{
       $black_text_article = '';
+    }
+    if(!empty($node->field_event_top_text_white['und'])){
+     $white_text_event = '<span class="white">'. $node->field_event_top_text_white['und'][0]['value'] . '</span>'; 
+    }else{
+      $white_text_event = '';
+    }
+    if(!empty($node->field_event_top_text_black['und'])){
+     $black_text_event = '<span class="black">' . $node->field_event_top_text_black['und'][0]['value'] .'</span>'; 
+    }else{
+      $black_text_event = '';
     }
     if(!empty($node->field_cm_movie_duration)){
       $length_interval = $node->field_cm_movie_duration['und'][0]['interval'];
@@ -98,6 +109,8 @@
     if(!empty($node->field_cm_moviegroup_pictures)){
       $picture_path = $node->field_cm_moviegroup_pictures['und'][0]['uri'];
         $image_movie_group = '<img src="' . image_style_url('lobby', $picture_path) . '" alt="" />';
+    }else{
+       $image_movie_group = $default_image;
     }
     /*****Movie Image****/
     if(!empty($node->field_cm_movie_pictures)){
@@ -106,7 +119,7 @@
       $picture_path = $file->uri;
       $image_movie= '<img src="' . image_style_url('lobby', $picture_path) . '" alt="" />';
     }else{
-    $image_movie = '';
+    $image_movie = $default_image;
     }
     /*****Article group Image****/
     if(!empty($node->field_cm_article_image)){
@@ -115,15 +128,28 @@
       $picture_path = $file->uri;
       $image_article = '<img src="' . image_style_url('lobby', $picture_path) . '" alt="" />';
     }else{
-      $image_article = '';
+      $image_article = $default_image;
     }
-    /*****Event Image****/
+ /*****Event Image****/
     if(!empty($node->field_cm_event_images)){
       $picture_path_event = $node->field_cm_event_images['und'][0]['uri'];
       $image_event = '<img src="' . image_style_url('lobby', $picture_path_event) . '" alt="" />';
     }else{
-      $image_event = '';
-    }
+      if(!empty($node->field_cm_event_lineup['und'])){
+        $event_ext_node = node_load($node->field_cm_event_lineup['und'][0]['target_id']);
+        if($event_ext_node->type == 'cm_movie_group'){
+          $picture_path_ext_moviegroup = $event_ext_node->field_cm_moviegroup_pictures['und'][0]['uri'];
+          $image_event = '<img src="' . image_style_url('lobby', $picture_path_ext_moviegroup) . '" alt="" />';
+        }else if($event_ext_node->type == 'cm_movie'){
+          $picture_path_ext_movie = $event_ext_node->field_cm_movie_pictures['und'][0]['fid'];
+          $file_ext_movie = file_load($picture_path_ext_movie);
+          $picture_path_ext_movie = $file_ext_movie->uri;
+          $image_event= '<img src="' . image_style_url('lobby', $picture_path_ext_movie) . '" alt="" />';
+        }else{
+            $image_event = $default_image;
+        }
+      } 
+    }  
     if($node->type == 'cm_event'){
     $output_event ='';
      $output_event .='<div class="table-responsive">';
@@ -250,7 +276,7 @@
           case "cm_event":
           $image = $image_event;
           $sort_summary = $summary_event;
-          $top_text = $white_text_article . $black_text_article;
+          $top_text = $white_text_event . $black_text_event;
           $event_info = $output_event;
           $duration_info = '';
         break;

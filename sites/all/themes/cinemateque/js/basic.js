@@ -76,7 +76,13 @@
         });
     }
 
-    
+       /******Hide Other screening ****/
+    if($('.pane-event-ct-view-panel-pane-5 .view-content .hide-table').length){
+        $('.pane-event-ct-view-panel-pane-5 h2.pane-title').hide();
+    }
+    if($('.view-display-id-panel_pane_1 .view-content .views_slideshow_cycle_slide .views-field-field-cm-event-images img').length){
+        $('.pane-event-ct-view-panel-pane-9').hide();
+    }
       /*****Table Header hide if empty value*******/
         if($('.view-event-ct-view tr.item-show-1 .views-field-field-cm-event-time .hide-div').length){
              $('.view-event-ct-view thead th.views-field-field-cm-event-time').hide();
@@ -115,29 +121,32 @@
         });
 
     });
+
    /******Hide Other screening ****/
     if($('.hide-table').length){
         $('.pane-event-ct-view-panel-pane-5 h2.pane-title').hide();
     }
+
+  document.addEventListener("DOMContentLoaded", function() {
+      var elements = document.getElementsByTagName("INPUT");
+      for (var i = 0; i < elements.length; i++) {
+          elements[i].oninvalid = function(e) {
+              e.target.setCustomValidity("");
+              if (!e.target.validity.valid) {
+                  var message = Drupal.t('Please fill out this field');
+                  e.target.setCustomValidity(message);
+              }
+              if (e.target.validity.typeMismatch) {
+                  var message = Drupal.t('Please fill out a valid email');
+                  e.target.setCustomValidity(message);
+              }
+          };
+          elements[i].oninput = function(e) {
+              e.target.setCustomValidity("");
+          };
+      }
+
+  })
+
 })(jQuery);
 
-document.addEventListener("DOMContentLoaded", function() {
-    var elements = document.getElementsByTagName("INPUT");
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].oninvalid = function(e) {
-            e.target.setCustomValidity("");
-            if (!e.target.validity.valid) {
-                var message = Drupal.t('Please fill out this field');
-                e.target.setCustomValidity(message);
-            }
-            if (e.target.validity.typeMismatch) {
-                var message = Drupal.t('Please fill out a valid email');
-                e.target.setCustomValidity(message);
-            }
-        };
-        elements[i].oninput = function(e) {
-            e.target.setCustomValidity("");
-        };
-    }
-
-})
