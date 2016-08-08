@@ -1315,3 +1315,18 @@ table{
 		width: 10%;
 	}
 }
+
+/*********  person page  **********/
+
+.node-type-cm-person{
+	#content{
+		width: 100%;
+	}
+	.panels-flexible-row-node_page-4{
+		background-color: $color_alabaster_approx;
+		width: 100%;
+		> .inside{
+			@include width;
+		}
+	}
+}
