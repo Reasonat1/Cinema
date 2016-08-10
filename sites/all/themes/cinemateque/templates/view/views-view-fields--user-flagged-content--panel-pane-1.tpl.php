@@ -27,6 +27,8 @@
      $node = node_load($row->nid);
      //drupal_set_message('<pre>'.print_r($view->result, 1).'</pre>');
     $path_node = drupal_get_path_alias('node/'.$node->nid);
+    $default_user_image = '<img src="/sites/all/themes/cinemateque/images/user-default.jpg">';
+    $default_image = '<img src="/sites/all/themes/cinemateque/images/default-image.png">';
     $title = l($node->title, $path_node);
     if(!empty($node->field_mc_teaser_toptxt_white['und'])){
      $white_text_movie = '<span class="white">'. $node->field_mc_teaser_toptxt_white['und'][0]['value'] . '</span>'; 
@@ -57,6 +59,16 @@
      $black_text_article = '<span class="black">' . $node->field_article_top_text_black['und'][0]['value'] .'</span>'; 
     }else{
       $black_text_article = '';
+    }
+    if(!empty($node->field_event_top_text_white['und'])){
+     $white_text_event = '<span class="white">'. $node->field_event_top_text_white['und'][0]['value'] . '</span>'; 
+    }else{
+      $white_text_event = '';
+    }
+    if(!empty($node->field_event_top_text_black['und'])){
+     $black_text_event = '<span class="black">' . $node->field_event_top_text_black['und'][0]['value'] .'</span>'; 
+    }else{
+      $black_text_event = '';
     }
     if(!empty($node->field_cm_movie_duration)){
       $length_interval = $node->field_cm_movie_duration['und'][0]['interval'];
@@ -105,11 +117,15 @@
     if(!empty($node->field_cm_person_photo)){
       $picture_path = $node->field_cm_person_photo['und'][0]['uri'];
         $image_person = '<img src="' . image_style_url('lobby', $picture_path) . '" alt="" />';
+    }else{
+      $image_person = $default_image;
     }
     /*****Movie group Image****/
     if(!empty($node->field_cm_moviegroup_pictures)){
       $picture_path = $node->field_cm_moviegroup_pictures['und'][0]['uri'];
         $image_movie_group = '<img src="' . image_style_url('lobby', $picture_path) . '" alt="" />';
+    }else{
+      $image_movie_group = $default_image;
     }
     /*****Movie Image****/
     if(!empty($node->field_cm_movie_pictures)){
@@ -118,7 +134,7 @@
       $picture_path = $file->uri;
       $image_movie= '<img src="' . image_style_url('lobby', $picture_path) . '" alt="" />';
     }else{
-    $image_movie = '';
+      $image_movie = $default_image;
     }
     /*****Article group Image****/
     if(!empty($node->field_cm_article_image)){
@@ -127,7 +143,7 @@
       $picture_path = $file->uri;
       $image_article = '<img src="' . image_style_url('lobby', $picture_path) . '" alt="" />';
     }else{
-      $image_article = '';
+      $image_article = $default_image;
     }
     /*****Event Image****/
     if(!empty($node->field_cm_event_images)){
@@ -144,6 +160,8 @@
           $file_ext_movie = file_load($picture_path_ext_movie);
           $picture_path_ext_movie = $file_ext_movie->uri;
           $image_event= '<img src="' . image_style_url('lobby', $picture_path_ext_movie) . '" alt="" />';
+        }else{
+            $image_event = $default_image;
         }
       } 
     }
@@ -160,7 +178,7 @@
           $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node).'</div>';
           if(!empty($node->field_cm_event_time['und'])){
               $event_date = date('l d.m.y', $node->field_cm_event_time['und'][0]['value']);
-              $event_time = date('g:i a', $node->field_cm_event_time['und'][0]['value']);
+              $event_time = date('G:i', $node->field_cm_event_time['und'][0]['value']);
           }
            $output_event .= '<tr class="row-custom-lobby">';
             $output_event .= '<td class="date">'.$event_date.'</td>';
@@ -209,7 +227,6 @@
         }
         if(!empty($movie_node->field_event_corresponding_ref['und'])){
           $event_node = node_load($movie_node->field_event_corresponding_ref['und'][0]['target_id']);
-          //drupal_set_message('<pre>'.print_r($event_node->nid, 1).'</pre>');
            $line_event = $event_node->field_cm_event_lineup['und'];
         }
         /****Movie Group Nid****/
@@ -228,7 +245,7 @@
               $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node_event).'</div>';
               if(!empty($node_event->field_cm_event_time['und'])){
                   $event_date = date('l d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
-                  $event_time = date('g:i a', $node_event->field_cm_event_time['und'][0]['value']);
+                  $event_time = date('G:i', $node_event->field_cm_event_time['und'][0]['value']);
               }
 
               $output .= '<tr class="row-custom-lobby">';
@@ -265,28 +282,28 @@
     }  
       switch ($node->type) {
         case "cm_person":
-          $image = $image_person;
+          $image = l($image_person, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true));
           $sort_summary = $summary_person;
           $event_info = '';
           $duration_info = '';
           $top_text = '';
         break;
         case "cm_movie_group":
-          $image = $image_movie_group;
+          $image = l($image_movie_group, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true));
           $sort_summary = $summary_movie_group;
           $event_info = $output;
           $duration_info = $country . " " . $year . "|" . $length;
           $top_text = $white_text_movie_group . $black_text_movie_group;
         break;
         case "cm_movie":
-          $image = $image_movie;
+          $image = l($image_movie, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true));
           $sort_summary = $summary_movie;
           $event_info = $output;
           $duration_info = $country . " " . $year . "|" . $length;
           $top_text = $white_text_movie . $black_text_movie;
         break;
         case "cm_article":
-          $image = $image_article;
+          $image = l($image_article, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true));
           if(!empty($node->body['und'][0]['value'])){
             $sort_summary = truncate_utf8($node->body['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
           }
@@ -295,9 +312,9 @@
           $duration_info = '';
         break;
           case "cm_event":
-          $image = $image_event;
+          $image = l($image_event, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true));
           $sort_summary = $summary_event;
-          $top_text = $white_text_article . $black_text_article;
+          $top_text = $white_text_event . $black_text_event;
           $event_info = $output_event;
           $duration_info = '';
         break;
