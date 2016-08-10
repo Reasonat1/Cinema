@@ -77,7 +77,7 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
                 $event_date = '<div class="hide-div"></div>';
              }
             if(!empty($node->field_cm_event_time['und'])){
-                $event_time = date('g:i a', $node->field_cm_event_time['und'][0]['value']);
+                $event_time = date('G:i', $node->field_cm_event_time['und'][0]['value']);
             }else{
                 $event_time = '<div class="hide-div"></div>';
             }

@@ -89,13 +89,25 @@
       $summary_movie = '';
     }
     if(!empty($node->field_cm_event_short_description['und'][0]['value'])){
-      $summary_event = truncate_utf8($node->field_cm_event_short_description['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+        $summary_event = truncate_utf8($node->field_cm_event_short_description['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
     }else{
-      $summary_event = '';
+      if(!empty($node->field_cm_event_lineup['und'])){
+        $event_ext_nodes = node_load($node->field_cm_event_lineup['und'][0]['target_id']);
+        if($event_ext_nodes->type == 'cm_movie'){
+          $summary_event = truncate_utf8($event_ext_nodes->field_cm_movie_short_summary['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+        }else if($event_ext_nodes->type == 'cm_movie_group'){
+          $summary_event =  truncate_utf8($event_ext_nodes->field_cm_moviegroup_short_summar['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+        }else{
+            $summary_event = '';
+        }
+      } 
     }
+    
+    
     if(!empty($node->field_cm_person_body['und'][0]['value'])){
       $summary_person = truncate_utf8($node->field_cm_person_body['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
     }else{
+      
       $summary_person = '';
     }
     if(!empty($node->field_cm_movie_year['und'])){

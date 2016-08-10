@@ -164,7 +164,7 @@
           }
           if(!empty($node->field_cm_event_time['und'])){
               $event_date = date('l d.m.y', $node->field_cm_event_time['und'][0]['value']);
-              $event_time = date('g:i a', $node->field_cm_event_time['und'][0]['value']);
+              $event_time = date('G:i', $node->field_cm_event_time['und'][0]['value']);
           }
           if(!empty($node->field_cm_event_hall['und'])){
               $hall_id = taxonomy_term_load($node->field_cm_event_hall['und'][0]['target_id']);
@@ -223,7 +223,7 @@
           }
           if(!empty($node_event->field_cm_event_time['und'])){
               $event_date = date('l d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
-              $event_time = date('g:i a', $node_event->field_cm_event_time['und'][0]['value']);
+              $event_time = date('G:i', $node_event->field_cm_event_time['und'][0]['value']);
           }
 		  $hall_name = '';
           if(!empty($node_event->field_cm_event_hall['und'])){
