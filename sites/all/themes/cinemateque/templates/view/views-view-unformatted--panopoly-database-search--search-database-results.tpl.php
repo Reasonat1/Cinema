@@ -251,7 +251,9 @@
               } 
               if(!empty($node_movie->field_event_corresponding_ref['und'])){
                 $node_event = node_load($node_movie->field_event_corresponding_ref['und'][0]['target_id']);
-                $event_title = $node_event->field_cm_event_short_title['und'][0]['value'];
+                if(!empty($node_event->field_cm_event_short_title['und'])){
+                  $event_title = $node_event->field_cm_event_short_title['und'][0]['value'];
+                }
                 $path = drupal_get_path_alias('node/'.$node_event->nid);
                 $flag = flag_create_link('favorite_', $node_event->nid);
               }
