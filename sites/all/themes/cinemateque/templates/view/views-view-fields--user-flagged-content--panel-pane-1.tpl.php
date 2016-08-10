@@ -118,7 +118,7 @@
       $picture_path = $node->field_cm_person_photo['und'][0]['uri'];
         $image_person = '<img src="' . image_style_url('lobby', $picture_path) . '" alt="" />';
     }else{
-      $image_person = $default_image;
+      $image_person = $default_user_image;
     }
     /*****Movie group Image****/
     if(!empty($node->field_cm_moviegroup_pictures)){
