@@ -286,7 +286,9 @@
                 else{
                   $output .= '<td class="hall"></td>';
                 }
-                $output .= '<td class="title">'.l($event_title, $path).'</td>';
+                if(!empty($event_title)){
+                  $output .= '<td class="title">'.l($event_title, $path).'</td>';
+                }
                 if(!empty($node_event->field_cm_event_internal_id['und'])){
                   $event_code = $node_event->field_cm_event_internal_id['und'][0]['value'];
                   $output .= '<td class="code">'.$event_code.'</td>';
