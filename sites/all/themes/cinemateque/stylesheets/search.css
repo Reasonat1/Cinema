@@ -269,41 +269,47 @@
   margin-left: 1.5%;
 }
 /* line 229, ../sass/search.scss */
+.page-search .panels-flexible-row-node_page-3 .pane-facet *:focus {
+  outline: 0;
+  outline-style: none;
+  outline-width: 0;
+}
+/* line 234, ../sass/search.scss */
 .page-search .panels-flexible-row-node_page-3 .pane-facet .select2-container {
   width: 100% !important;
 }
-/* line 233, ../sass/search.scss */
+/* line 238, ../sass/search.scss */
 .page-search .panels-flexible-row-node_page-3 .panel-pane:nth-child(2) {
   margin-left: 0;
 }
-/* line 236, ../sass/search.scss */
+/* line 241, ../sass/search.scss */
 .page-search .panels-flexible-row-node_page-3 .form-type-select {
   margin-top: 0;
 }
-/* line 240, ../sass/search.scss */
+/* line 245, ../sass/search.scss */
 .page-search .current-search-item {
   clear: both;
 }
-/* line 242, ../sass/search.scss */
+/* line 247, ../sass/search.scss */
 .page-search .current-search-item li {
   float: left;
   margin-right: 30px !important;
   border-bottom: 1px solid;
   color: #c9c9c9;
 }
-/* line 247, ../sass/search.scss */
+/* line 252, ../sass/search.scss */
 .page-search .current-search-item li a {
   color: #c9c9c9;
 }
-/* line 251, ../sass/search.scss */
+/* line 256, ../sass/search.scss */
 .page-search .current-search-item li:hover {
   color: #b59d70;
 }
-/* line 253, ../sass/search.scss */
+/* line 258, ../sass/search.scss */
 .page-search .current-search-item li:hover a {
   color: #b59d70;
 }
-/* line 258, ../sass/search.scss */
+/* line 263, ../sass/search.scss */
 .page-search .pane-search-current {
   clear: both;
   padding-top: 60px;
@@ -311,7 +317,7 @@
   background-color: #f9f4ee;
   padding-bottom: 20px;
 }
-/* line 264, ../sass/search.scss */
+/* line 269, ../sass/search.scss */
 .page-search .pane-search-current .pane-content {
   width: 1280px !important;
   max-width: 100%;
@@ -319,17 +325,17 @@
   padding: 0 3%;
   box-sizing: border-box;
 }
-/* line 266, ../sass/search.scss */
+/* line 271, ../sass/search.scss */
 .page-search .pane-search-current .pane-content h2 {
   font-size: 18px;
   font-weight: bold;
   margin: 0;
 }
-/* line 274, ../sass/search.scss */
+/* line 279, ../sass/search.scss */
 .page-search .pane-current-search-search-results-facets-block a {
   font-size: 0;
 }
-/* line 276, ../sass/search.scss */
+/* line 281, ../sass/search.scss */
 .page-search .pane-current-search-search-results-facets-block a:before {
   content: "x";
   display: block;
@@ -338,16 +344,16 @@
   margin-right: 5px;
   padding-top: 1px;
 }
-/* line 286, ../sass/search.scss */
+/* line 291, ../sass/search.scss */
 .page-search .pane-current-search-search-results-facets-block li:hover:before {
   color: #b59d70;
 }
-/* line 291, ../sass/search.scss */
+/* line 296, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results {
   background-color: #f9f4ee;
   padding-bottom: 50px;
 }
-/* line 294, ../sass/search.scss */
+/* line 299, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content {
   width: 1280px !important;
   max-width: 100%;
@@ -355,113 +361,121 @@
   padding: 0 3%;
   box-sizing: border-box;
 }
-/* line 296, ../sass/search.scss */
+/* line 301, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view {
   overflow: visible;
 }
-/* line 300, ../sass/search.scss */
+/* line 305, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .lobby-container {
   background-color: #fff;
   margin-bottom: 20px;
   clear: both;
 }
-/* line 306, ../sass/search.scss */
+/* line 311, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .pager-next a, .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .pager-last a, .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .pager-first a, .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .pager-previous a {
   padding-right: 0;
   padding-left: 0;
 }
-/* line 311, ../sass/search.scss */
+/* line 316, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .pager-item a, .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .pager-current span {
   padding: 5px 10px;
 }
-/* line 314, ../sass/search.scss */
+/* line 319, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-header {
   top: -46px;
   right: 0;
   position: absolute;
 }
-/* line 320, ../sass/search.scss */
+/* line 325, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-left {
   float: left;
   width: 30%;
   position: relative;
 }
-/* line 324, ../sass/search.scss */
+/* line 329, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-left .top-text-blk-wht {
   position: absolute;
   top: 0;
   left: 0;
   padding: 5px 0;
 }
-/* line 329, ../sass/search.scss */
+/* line 334, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-left .top-text-blk-wht span {
   padding: 5px 10px;
 }
-/* line 332, ../sass/search.scss */
+/* line 337, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-left .top-text-blk-wht .black {
   color: #fff;
 }
-/* line 337, ../sass/search.scss */
+/* line 342, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-right {
   float: right;
   width: 70%;
   padding: 20px;
   box-sizing: border-box;
 }
-/* line 342, ../sass/search.scss */
+/* line 347, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-right table tbody {
   border: none;
 }
-/* line 345, ../sass/search.scss */
+/* line 350, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-right .lobby-title a {
   font-size: 1.3rem;
 }
-/* line 348, ../sass/search.scss */
+/* line 353, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-right .lobby-length {
   color: #919191;
 }
-/* line 353, ../sass/search.scss */
+/* line 356, ../sass/search.scss */
+.page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-right .table-responsive {
+  overflow: visible;
+}
+/* line 358, ../sass/search.scss */
+.page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-right .table-responsive table {
+  margin-bottom: 0;
+}
+/* line 364, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .row-custom-lobby .date {
   width: 20%;
 }
-/* line 356, ../sass/search.scss */
+/* line 367, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .row-custom-lobby .time {
   width: 11%;
 }
-/* line 359, ../sass/search.scss */
+/* line 370, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .row-custom-lobby .hall {
   width: 18%;
 }
-/* line 362, ../sass/search.scss */
+/* line 373, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .row-custom-lobby .purchase {
   float: right;
   padding-right: 0;
   padding-left: 0;
 }
-/* line 367, ../sass/search.scss */
+/* line 378, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .row-custom-lobby .title {
   width: 23%;
 }
-/* line 370, ../sass/search.scss */
+/* line 381, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .row-custom-lobby .code {
   width: 10%;
 }
 
-/* line 381, ../sass/search.scss */
+/* line 392, ../sass/search.scss */
 .select2-results__options li:first-child {
   background: none;
 }
-/* line 384, ../sass/search.scss */
+/* line 395, ../sass/search.scss */
 .select2-results__options li {
   background: url("../images/select-empty.png") no-repeat 7px center;
   padding-left: 22px;
 }
-/* line 387, ../sass/search.scss */
+/* line 398, ../sass/search.scss */
 .select2-results__options li.select2-results__option-selected {
   background: url("../images/select-gold.png") no-repeat 7px center;
 }
 
-/* line 393, ../sass/search.scss */
+/* line 404, ../sass/search.scss */
 .select2-container--default .select2-selection--single .select2-selection__arrow b:before {
   content: "\f107";
   font: normal normal normal 14px/1 FontAwesome;
@@ -471,33 +485,33 @@
   top: -4px;
 }
 
-/* line 402, ../sass/search.scss */
+/* line 413, ../sass/search.scss */
 .select2-container--default .select2-selection--single {
   border: 1px solid #c9c9c9;
 }
 
-/* line 407, ../sass/search.scss */
+/* line 418, ../sass/search.scss */
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
   background-color: #f7f7f7;
   color: #000;
 }
 
-/* line 412, ../sass/search.scss */
+/* line 423, ../sass/search.scss */
 .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b:before {
   content: "\f106";
 }
 
-/* line 416, ../sass/search.scss */
+/* line 427, ../sass/search.scss */
 .select2-container--default .select2-selection--single .select2-selection__arrow b {
   border: none;
 }
 
-/* line 420, ../sass/search.scss */
+/* line 431, ../sass/search.scss */
 input:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]), input[type="email"]:focus:not([readonly]), input[type="number"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), input[type="search-md"]:focus:not([readonly]), input[type="tel"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="time"]:focus:not([readonly]), input[type="url"]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
   border-bottom: 1px solid #b59d70;
 }
 
-/* line 424, ../sass/search.scss */
+/* line 435, ../sass/search.scss */
 .page-search-search-results #main #content .search_new, .page-search-search-results #main #content .region-content .views-field-php a {
   background: url("../images/add-event.png") no-repeat center center;
   vertical-align: top;
@@ -505,12 +519,12 @@ input:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]),
   height: 27px;
 }
 
-/* line 431, ../sass/search.scss */
+/* line 442, ../sass/search.scss */
 .select2-container--default .select2-selection--single {
   border-radius: 0;
 }
 
-/* line 435, ../sass/search.scss */
+/* line 446, ../sass/search.scss */
 .select2-dropdown {
   border-radius: 0;
 }
