@@ -83,24 +83,24 @@
     if($('.view-display-id-panel_pane_1 .view-content .views_slideshow_cycle_slide .views-field-field-cm-event-images img').length){
         $('.pane-event-ct-view-panel-pane-9').hide();
     }
-      /*****Table Header hide if empty value*******/
-        if($('.view-event-ct-view tr.item-show-1 .views-field-field-cm-event-time .hide-div').length){
-             $('.view-event-ct-view thead th.views-field-field-cm-event-time').hide();
+       /*****Table Header hide if empty value*******/
+        if($('.views-field-field-cm-event-time .hide-div').length){
+             $('thead th.views-field-field-cm-event-time').hide();
         }
-        if($('.view-event-ct-view tr.item-show-1 .views-field-field-cm-event-time-1 .hide-div').length){
-            $('.view-event-ct-view thead th.views-field-field-cm-event-time-1').hide();
+        if($('.views-field-field-cm-event-time-1 .hide-div').length){
+            $('th.views-field-field-cm-event-time-1').hide();
         }
-        if($('.view-event-ct-view tr.item-show-1 .views-field-field-cm-event-hall .hide-div').length){
-            $('.view-event-ct-view thead th.views-field-field-cm-event-hall').hide();
+        if($('.views-field-field-cm-event-hall .hide-div').length){
+            $('thead th.views-field-field-cm-event-hall').hide();
         }
-        if($('.view-event-ct-view tr.item-show-1 .views-field-field-cm-event-short-title .hide-div').length){
-            $('.view-event-ct-view thead th.views-field-field-cm-event-short-title').hide();
+        if($('.views-field-field-cm-event-short-title .hide-div').length){
+            $('thead th.views-field-field-cm-event-short-title').hide();
         }
-        if($('.view-event-ct-view tr.item-show-1 .views-field-field-cm-event-internal-id .hide-div').length){
-            $('.view-event-ct-view thead th.views-field-field-cm-event-internal-id').hide();
+        if($('.views-field-field-cm-event-internal-id .hide-div').length){
+            $('thead th.views-field-field-cm-event-internal-id').hide();
         }
-        if($('.view-event-ct-view tr.item-show-1 .views-field-field-toptix-purchase .hide-div').length){
-            $('.view-event-ct-view thead th.views-field-field-toptix-purchase').hide();
+        if($('.views-field-field-toptix-purchase .hide-div').length){
+            $('th.views-field-field-toptix-purchase').hide();
         }
         /** if short event title is empty print reference Movie title*/
         $('#cm-event-node-form .form-item-field-cm-event-lineup-und-0-target-id').on('click', function(){
