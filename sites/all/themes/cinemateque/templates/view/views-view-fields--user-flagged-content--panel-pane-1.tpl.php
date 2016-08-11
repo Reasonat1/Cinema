@@ -25,8 +25,8 @@
  */
  //dpm($row->nid);
      $node = node_load($row->nid);
-     //drupal_set_message('<pre>'.print_r($view->result, 1).'</pre>');
     $path_node = drupal_get_path_alias('node/'.$node->nid);
+    $flag = flag_create_link('favorite_', $node->nid);
     $default_user_image = '<img src="/sites/all/themes/cinemateque/images/user-default.jpg">';
     $default_image = '<img src="/sites/all/themes/cinemateque/images/default-image.png">';
     $title = l($node->title, $path_node);
@@ -90,10 +90,23 @@
     }else{
       $summary_movie = '';
     }
-    if(!empty($node->field_cm_event_body['und'][0]['value'])){
-      $summary_event = truncate_utf8($node->field_cm_event_body['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+    if(!empty($node->field_cm_event_short_description['und'][0]['value'])){
+        $summary_event = truncate_utf8($node->field_cm_event_short_description['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
     }else{
-      $summary_event = '';
+      if(!empty($node->field_cm_event_lineup['und'])){
+        $event_ext_nodes = node_load($node->field_cm_event_lineup['und'][0]['target_id']);
+        if($event_ext_nodes->type == 'cm_movie'){
+          if(!empty($event_ext_nodes->field_cm_movie_short_summary)){
+            $summary_event = truncate_utf8($event_ext_nodes->field_cm_movie_short_summary['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+          }
+        }else if($event_ext_nodes->type == 'cm_movie_group'){
+          if(!empty($event_ext_nodes->field_cm_moviegroup_short_summar)){
+              $summary_event =  truncate_utf8($event_ext_nodes->field_cm_moviegroup_short_summar['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+          }
+        }else{
+            $summary_event = '';
+        }
+      } 
     }
     if(!empty($node->field_cm_person_body['und'][0]['value'])){
       $summary_person = truncate_utf8($node->field_cm_person_body['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
@@ -174,7 +187,6 @@
             $event_title = $node_event->field_cm_event_short_title['und'][0]['value'];
          }
           $path = drupal_get_path_alias('node/'.$node->nid);
-          $flag = flag_create_link('favorite_', $node->nid);
           $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node).'</div>';
           if(!empty($node->field_cm_event_time['und'])){
               $event_date = date('l d.m.y', $node->field_cm_event_time['und'][0]['value']);
@@ -240,7 +252,7 @@
                 $node_event = node_load($node_movie->field_event_corresponding_ref['und'][0]['target_id']);
                 $event_title = $node_event->field_cm_event_short_title['und'][0]['value'];
                 $path = drupal_get_path_alias('node/'.$node_event->nid);
-                $flag = flag_create_link('favorite_', $node_event->nid);
+                $flags = flag_create_link('favorite_', $node_event->nid);
               }
               $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node_event).'</div>';
               if(!empty($node_event->field_cm_event_time['und'])){
@@ -267,7 +279,7 @@
                 else{
                 $output .= '<td class="code"></td>';
                 }
-                $output .='<td>'. $flag . '</td>';
+                $output .='<td>'. $flags . '</td>';
                 $output .='<td class="addevent">'. $addevent . '</td>';
                 if(!empty($node_event->field_toptix_purchase['und'])){
                   $toptix_code = $node_event->field_toptix_purchase['und'][0]['value'];
@@ -289,21 +301,21 @@
           $top_text = '';
         break;
         case "cm_movie_group":
-          $image = l($image_movie_group, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true));
+          $image =  '<div class="image-container-gorup"><div class="flag-new-links">'.$flag.'</div><div class="image-container">'.l($image_movie_group, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)).'</div></div>';
           $sort_summary = $summary_movie_group;
           $event_info = $output;
           $duration_info = $country . " " . $year . "|" . $length;
           $top_text = $white_text_movie_group . $black_text_movie_group;
         break;
         case "cm_movie":
-          $image = l($image_movie, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true));
+           $image = '<div class="image-container-gorup"><div class="flag-new-links">'.$flag.'</div><div class="image-container">'.l($image_movie, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)).'</div></div>';
           $sort_summary = $summary_movie;
           $event_info = $output;
           $duration_info = $country . " " . $year . "|" . $length;
           $top_text = $white_text_movie . $black_text_movie;
         break;
         case "cm_article":
-          $image = l($image_article, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true));
+          $image = '<div class="image-container-gorup"><div class="flag-new-links">'.$flag.'</div><div class="image-container">'.l($image_article, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)).'</div></div>';
           if(!empty($node->body['und'][0]['value'])){
             $sort_summary = truncate_utf8($node->body['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
           }
@@ -312,7 +324,7 @@
           $duration_info = '';
         break;
           case "cm_event":
-          $image = l($image_event, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true));
+          $image = '<div class="image-container-gorup"><div class="flag-new-links">'.$flag.'</div><div class="image-container">'.l($image_event, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)).'</div></div>';
           $sort_summary = $summary_event;
           $top_text = $white_text_event . $black_text_event;
           $event_info = $output_event;
