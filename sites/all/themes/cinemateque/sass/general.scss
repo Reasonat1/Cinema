@@ -5,7 +5,7 @@ a{
 }
 
 p{
-	font-size: 1rem;
+	font-size: 18px;
 }
 .panels-flexible-row{
 	@include width();
@@ -888,6 +888,7 @@ table{
 		position: fixed!important;
 		.inner{
 			@include width;
+			width: 1024px!important;
 			margin: 40px auto 0!important;
 		}
 	}
@@ -939,9 +940,15 @@ table{
 	    width: 25px !important;
 	    z-index: 300;
 	    background-size: 10px 10px!important;
-		right: 0;
+		right: 10px!important;
 		position: absolute !important;
 	}
+}
+
+@media screen and(-webkit-min-device-pixel-ratio:0) {
+  .popup-element-body form .form-submit{
+  	padding-bottom: 10px;
+  }
 }
 
 	.popup-style-white .popup-element-body .bottom .right,
@@ -1066,8 +1073,11 @@ table{
 	.pane-node-body{
 		@include width;
 		.pane-content{
-			margin: 30px 23%;
+			margin: 0px 23%;
 		}
+	}
+	.pane-webform-ct-panes-panel-pane-1{
+		margin-bottom: 30px;
 	}
 	.view-webform-ct-panes.view-display-id-panel_pane_1{
 		.views-field-title{
@@ -1319,14 +1329,94 @@ table{
 /*********  person page  **********/
 
 .node-type-cm-person{
+	background-color: #fff!important;
 	#content{
 		width: 100%;
 	}
 	.panels-flexible-row-node_page-4{
 		background-color: $color_alabaster_approx;
-		width: 100%;
+		width: 100%!important;
+		padding-top: 60px!important;
 		> .inside{
 			@include width;
+		}
+	}
+	.view-person-ct-view.view-display-id-panel_pane_1{
+		.person-picture{
+			img{
+				margin: 0 auto;
+				display: block;
+				border-radius: 50%;
+			}
+		}
+		.person-name{
+			font-size: 3rem;
+			padding-top: 20px;
+			padding-bottom: 10px;
+			text-align: center;
+		}
+		.person-job{
+			font-weight: bold;	
+			padding-bottom: 30px;
+			text-align: center;
+		}
+		.views-field-nothing-1{
+			width: 800px;
+			max-width: 100%;
+			margin: 0 auto 40px;
+			overflow: hidden;
+			font-weight: bold;
+			font-size: 15px;
+			.col{
+				width: 30%;
+				float: left;
+				margin: 0 1.66667%;
+				box-sizing: border-box;
+				padding-left: 44px;
+			}
+			.col-1{
+				background: url("../images/search-icon-gold.png") no-repeat scroll left 4px;
+			}
+			.col-2{
+				background: url("../images/search-icon-gold.png") no-repeat scroll left 4px;
+			}			
+			.col-3{
+				background: url("../images/search-icon-gold.png") no-repeat scroll left 4px;
+			}
+		}
+	}
+	.panels-flexible-region-node_page-content_left{
+		padding-top: 50px!important;
+	}
+	.panels-flexible-region-node_page-content_right{
+		padding-top: 65px;
+	}
+	.panels-flexible-row-node_page-6{
+		width: 100%!important;
+		background-color: #f9f4ee;
+		> .inside{
+			@include width;
+		}
+		.view-person-ct-view.view-display-id-panel_pane_2{
+			.view-content > h3{
+				text-align: center;
+				font-size: 2rem;
+			}
+			.views-row{
+				width: 49%;
+				h3{
+					font-weight: normal;
+				}
+			}
+			.views-row-odd{
+				float: left;
+			}
+			.views-row-even{
+				float: right;
+			}
+		}
+		.node-cm-movie-year{
+			font-weight: bold;
 		}
 	}
 }

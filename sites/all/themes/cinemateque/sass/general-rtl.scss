@@ -45,10 +45,9 @@ table{
 		top: 55px;
 		left: 0;
 		position: fixed!important;
-		.inner{
-			@include width;
-			margin: 40px auto 0!important;
-		}
+	}
+	form .form-group .form-text{
+		padding: 7px 2% 8px 22%;
 	}
 	#search-api-page-search-form-search-results--2{
 		.form-group {
@@ -63,11 +62,11 @@ table{
 		}
 	}
 	.popup-close{
-		left: 0;
+		left: 10px!important;
 		right: auto!important;
 	}
 	#search-api-page-search-form-search-results{
-	    padding: 42px 47px 10px 0px;
+	    padding: 0px 47px 10px 0px;
 	    left: 0px;
 	    right: auto;
 		.form-submit{
@@ -200,5 +199,41 @@ table{
 					}
 				}
 		}
+	}
+}
+
+/*********  person page  **********/
+
+.node-type-cm-person{
+	.view-person-ct-view.view-display-id-panel_pane_1{
+		.views-field-nothing-1{
+			.col{
+				float: right;
+				padding-right: 44px;
+				padding-left: 0;
+			}
+			.col-1{
+				background: url("../images/search-icon-gold.png") no-repeat scroll right 4px;
+			}
+			.col-2{
+				background: url("../images/search-icon-gold.png") no-repeat scroll right 4px;
+			}			
+			.col-3{
+				background: url("../images/search-icon-gold.png") no-repeat scroll right 4px;
+			}
+		}
+	}
+	.panels-flexible-row-node_page-6{
+		.view-person-ct-view.view-display-id-panel_pane_2{
+			.views-row-odd{
+				float: right;
+			}
+			.views-row-even{
+				float: left;
+			}
+		}
+	}
+	.panels-flexible-region-node_page-content_left {
+	    float: left!important;
 	}
 }

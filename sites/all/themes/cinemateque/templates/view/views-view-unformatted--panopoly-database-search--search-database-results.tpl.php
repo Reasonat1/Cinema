@@ -376,10 +376,10 @@
             print '<div class="lobby-length">';
               print $duration_info;
             print '</div>';
+            print $event_info;
             print '<div class="lobby-summary">';
               print strip_tags($sort_summary);
             print '</div>';
-            print $event_info;
         print '</div>';
         print '<div class="clr"></div>';
     print '</div>';

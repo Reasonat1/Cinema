@@ -1,7 +1,7 @@
 @import "init";
 
-
 .page-search{
+
 	.page-header{
 		display: block!important;
 		h1.title{
@@ -226,6 +226,11 @@
 			float: left;
 			width: 15.4%;
 			margin-left: 1.5%;
+			*:focus {
+			    outline: 0;
+			    outline-style:none;
+			    outline-width:0;
+			}
 			.select2-container{
 				width: 100%!important;
 			}
@@ -347,6 +352,12 @@
 						}
 						.lobby-length{
 							color: #919191;
+						}
+						.table-responsive{
+							overflow: visible;
+							table{
+								margin-bottom: 0;
+							}
 						}
 					}
 					.row-custom-lobby{

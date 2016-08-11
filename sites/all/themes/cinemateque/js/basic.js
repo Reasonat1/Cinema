@@ -39,6 +39,9 @@
             if (!$("div").hasClass("screen-search")){
                 $("#header").prepend("<div class='screen-search'></div>");
             }
+            else{
+                $(".screen-search").remove();
+            }
         });
 
         $(".popup-close-button").click(function() {
