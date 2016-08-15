@@ -44,7 +44,6 @@
  			.slide-left-ct{
  				color: #333;
  				.slide-eve-lobby, .slide-movie-title, .slide-movie-year{
- 					text-shadow: none;
  				}
  			}
  			 .slide-right-ct {
@@ -78,15 +77,12 @@
 		.slide-eve-lobby{
 			font-size: 22px;
 			margin-bottom: 1%;
-			text-shadow: 2px 2px 2px #000;					
 		}
 		.slide-movie-title{
 			margin-bottom: 15px;
-			text-shadow: 2px 2px 2px #000;					
 		}
 		.slide-movie-year{
 			font-size: 1.2rem;
-			text-shadow: 2px 2px 2px #000;					
 		}
 	}
 	.view-display-id-panel_pane_2 {
@@ -170,7 +166,7 @@
 	    padding: 0;
 	    position: absolute;
 	    width: 100%;
-	    z-index: 50;
+	    z-index: 5;
 	    min-height: 130px;
 	    .pane-content{
 	    	@include width;
@@ -264,6 +260,7 @@
 			height: auto;
 			left: 0;
 			right: auto;
+			z-index: 100;
 			.field{
 				float: right;
 			}

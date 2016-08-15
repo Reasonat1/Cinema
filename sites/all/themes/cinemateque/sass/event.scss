@@ -140,11 +140,9 @@
 		}
 		.slide-movie-year {
 			font-size: 1.2rem;
-			text-shadow: 2px 2px 2px #000;					
 		}
 		.slide-eve-lobby {
 			font-size: 1.2rem;
-			text-shadow: 2px 2px 2px #000;					
 		}
 		.slide-right-ct {
 			float: left;
@@ -178,11 +176,7 @@
 				.slide-over-content {
 					@include width();
 					.slide-movie-title {
-						margin-bottom: 15px;
-						text-shadow: 2px 2px 2px #000;	
-						a{
-							text-shadow: 2px 2px 2px #000;	
-						}				
+						margin-bottom: 15px;				
 					}
 				}
 			}
@@ -193,20 +187,14 @@
 			position: relative;
 			bottom: 0;
 		}
-		.slide-movie-year{
-			text-shadow: none!important;
-		}
 		.slide-left-ct{
 			color: #000!important;
-			text-shadow: none!important;
 			margin-bottom: 3%;
 			h2{
 				color: #000!important;
-				text-shadow: none!important;
 			}
 			a{
 				color: #000!important;
-				text-shadow: none!important;
 			}
 		}
 		.slide-right-ct{
@@ -320,11 +308,15 @@
 		right: 0;
 		padding: 10px 20px;
 		position: absolute;
+		z-index: 2;
 		.grp-alt {
 			border-right: 1px solid $color_star_dust_approx;
 			padding-right: 7px;
 			margin-right: 7px;
 		}
+	}
+	#views_slideshow_cycle_main_event_ct_view-panel_pane_9 .views-field-field-cm-movie-pictures .group-alttab{
+		z-index: 5;
 	}
 }
 

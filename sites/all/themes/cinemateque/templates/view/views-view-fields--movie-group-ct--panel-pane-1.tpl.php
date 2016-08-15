@@ -30,6 +30,7 @@
    
 <div class="movie-group-item">
   <div class="movie-group-item-header state-<?php print $state; ?>">
+    <div class="gradient small"></div>
     <?php if(isset($fields['field_cm_movie_pictures']->content) && (isset($fields['field_mc_teaser_toptxt_blk']->content) || isset($fields['field_mc_teaser_toptxt_white']->content))) { ?>
       <div class="top-text-blk-wht">
         <span class="black"><?php print $fields['field_mc_teaser_toptxt_blk']->content;?></span>
