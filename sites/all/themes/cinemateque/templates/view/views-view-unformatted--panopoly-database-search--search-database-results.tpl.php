@@ -215,7 +215,7 @@
         $output_event .= '<table class="table">';
          $output_event .= ' <tbody>';
          if(!empty($node_event->field_cm_event_short_title['und'])){
-            $event_title = $node_event->field_cm_event_short_title['und'][0]['value'];
+            $event_title = t($node_event->field_cm_event_short_title['und'][0]['value']);
          }
           $path = drupal_get_path_alias('node/'.$node->nid);
           $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node).'</div>';
@@ -284,7 +284,7 @@
               if(!empty($node_movie->field_event_corresponding_ref['und'])){
                 $node_event = node_load($node_movie->field_event_corresponding_ref['und'][0]['target_id']);
                 if(!empty($node_event->field_cm_event_short_title['und'])){
-                  $event_title = $node_event->field_cm_event_short_title['und'][0]['value'];
+                  $event_title = t($node_event->field_cm_event_short_title['und'][0]['value']);
                 }
                 $path = drupal_get_path_alias('node/'.$node_event->nid);
                 $flags = flag_create_link('favorite_', $node_event->nid);
@@ -296,7 +296,7 @@
               }
 
               $output .= '<tr class="row-custom-lobby">';
-                $output .= '<td class="date">'.$event_date.'</td>';
+                $output .= '<td class="date">'.t($event_date).'</td>';
                 $output .= '<td class="time">'.$event_time.'</td>';
                 if(!empty($node_event->field_cm_event_hall['und'])){
                   $hall_id = taxonomy_term_load($node_event->field_cm_event_hall['und'][0]['target_id']);
