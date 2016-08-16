@@ -47,7 +47,7 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
            $output .= '<th class="views-field views-field-field-cm-event-internal-id">'. t('Code') .'</th>';
            $output .= '<th class="views-field views-field-ops"></th>';
            $output .= '<th class="views-field views-field-php"></th>';
-           $output .= '<th class="views-field views-field-field-toptix-purchase">'. t('Order Tickets') .'</th>';
+           $output .= '<th class="views-field views-field-field-toptix-purchase">'. t('Tickets') .'</th>';
          $output .= '</tr>';
        $output .= '</thead>';
        $output .= '<tbody>';
