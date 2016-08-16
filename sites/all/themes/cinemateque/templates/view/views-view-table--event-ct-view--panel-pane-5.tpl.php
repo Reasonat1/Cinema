@@ -60,14 +60,15 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
          if($val->nid !=$current_nid){
            if(!empty($node->nid)){
              $event_title = (!empty($node->field_cm_event_short_title)) ? $node->field_cm_event_short_title['und'][0]['value'] : $node->title;
+             $title_new = t($event_title);
            }else{
-             $event_title = '<div class="hide-div"></div>';
+             $title_new = '<div class="hide-div"></div>';
            }
            $path = drupal_get_path_alias('node/'.$node->nid);
             $flag = flag_create_link('favorite_', $node->nid);
             $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node).'</div>';
             if(!empty($node->field_cm_event_internal_id['und'])){
-                $event_code = $node->field_cm_event_internal_id['und'][0]['value'];
+                $event_code = t($node->field_cm_event_internal_id['und'][0]['value']);
             }else{
               $event_code = '<div class="hide-div"></div>';
             }
@@ -83,7 +84,7 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
             }
             if(!empty($node->field_cm_event_hall['und'])){
                 $hall_id = taxonomy_term_load($node->field_cm_event_hall['und'][0]['target_id']);
-                $hall_name = $hall_id->name;
+                $hall_name = t($hall_id->name);
             }else{
               $hall_name = '<div class="hide-div"></div>';
             }
@@ -95,10 +96,10 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
              $puchase = '<div class="hide-div"></div>';
             }
           $output .= '<tr class="odd views-row-first views-row-last item-show-'.$a.'">';
-           $output .= '<td class="views-field views-field-field-cm-event-time">'. $event_date. '</td>';
+           $output .= '<td class="views-field views-field-field-cm-event-time">'. t($event_date). '</td>';
            $output .= '<td class="views-field views-field-field-cm-event-time-1">'. $event_time .'</td>';
            $output .= '<td class="views-field views-field-field-cm-event-hall">'. $hall_name .'</td>';
-           $output .= '<td class="views-field views-field-field-cm-event-short-title">'. l($event_title, $path) .'</td>';
+           $output .= '<td class="views-field views-field-field-cm-event-short-title">'. l($title_new, $path) .'</td>';
            $output .= '<td class="views-field views-field-field-cm-event-internal-id">' .$event_code .'</td>';
            $output .= '<td class="views-field views-field-ops">' .$flag .'</td>';
            $output .= '<td class="views-field views-field-php">' ._return_addthisevent_markup($node) .'</td>';
