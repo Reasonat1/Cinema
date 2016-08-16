@@ -27,7 +27,8 @@
     $default_user_image = '<img src="/sites/all/themes/cinemateque/images/user-default.jpg">';
     $path_node = drupal_get_path_alias('node/'.$node->nid);
     $flag = flag_create_link('favorite_', $node->nid);
-    $title = l($node->title, $path_node);
+    $titles = t($node->title);
+    $title = l($titles, $path_node);
     if(!empty($node->field_mc_teaser_toptxt_white['und'])){
      $white_text_movie = '<span class="white">'. $node->field_mc_teaser_toptxt_white['und'][0]['value'] . '</span>'; 
     }else{
@@ -68,10 +69,15 @@
     }else{
       $black_text_event = '';
     }
+    if(!empty($node->field_cm_event_duration)){
+      $length_intervals = $node->field_cm_event_duration['und'][0]['interval'];
+      $length_periods = $node->field_cm_event_duration['und'][0]['period'];
+      $lengths = $length_intervals.' '.$length_periods;
+    }
     if(!empty($node->field_cm_movie_duration)){
       $length_interval = $node->field_cm_movie_duration['und'][0]['interval'];
       $length_period = $node->field_cm_movie_duration['und'][0]['period'];
-      $length = $length_interval.' '.$length_period;
+      $length =  $length_interval.' '.$length_period;
     }
     elseif(!empty($node->field_cm_moviegroup_duration)){
       $length_interval = $node->field_cm_moviegroup_duration['und'][0]['interval'];
@@ -113,6 +119,16 @@
     }else{
       
       $summary_person = '';
+    }
+    if(!empty($node->field_main_event_credit['und'])){
+      $event_credit = $node->field_main_event_credit['und'][0]['value'] . "|" ;
+    }else{
+      $event_credit = '';
+    }
+    if(!empty($node->field_cm_movie_meta_credit['und'])){
+      $movie_credit = $node->field_cm_movie_meta_credit['und'][0]['value'] . "|" ;
+    }else{
+      $movie_credit = '';
     }
     if(!empty($node->field_cm_movie_year['und'])){
       $year_name = taxonomy_term_load($node->field_cm_movie_year['und'][0]['target_id']);
@@ -211,9 +227,10 @@
             $output_event .= '<td class="date">'.$event_date.'</td>';
             $output_event .= '<td class="time">'.$event_time.'</td>';
             if(!empty($node->field_cm_event_hall['und'])){
+             // drupal_set_message('<pre>'.print_r($node->field_cm_event_hall, 1).'</pre>');
                 $hall_id = taxonomy_term_load($node->field_cm_event_hall['und'][0]['target_id']);
                 $hall_name = $hall_id->name;
-                $output_event .= '<td class="hall">'.$hall_name.'</td>';
+                $output_event .= '<td class="hall">'.t($hall_name).'</td>';
             }
             else{
                 $output_event .= '<td class="hall"></td>';
@@ -223,7 +240,7 @@
             }
             if(!empty($node->field_cm_event_internal_id['und'])){
               $event_code = $node->field_cm_event_internal_id['und'][0]['value'];
-              $output_event .= '<td class="code">'.$event_code.'</td>';
+              $output_event .= '<td class="code">'.t($event_code).'</td>';
             }
             else{
               $output_event .= '<td class="code"></td>';
@@ -284,7 +301,7 @@
                 if(!empty($node_event->field_cm_event_hall['und'])){
                   $hall_id = taxonomy_term_load($node_event->field_cm_event_hall['und'][0]['target_id']);
                   $hall_name = $hall_id->name;
-                  $output .= '<td class="hall">'.$hall_name.'</td>';
+                  $output .= '<td class="hall">'.t($hall_name).'</td>';
                 }
                 else{
                   $output .= '<td class="hall"></td>';
@@ -294,7 +311,7 @@
                 }
                 if(!empty($node_event->field_cm_event_internal_id['und'])){
                   $event_code = $node_event->field_cm_event_internal_id['und'][0]['value'];
-                  $output .= '<td class="code">'.$event_code.'</td>';
+                  $output .= '<td class="code">'.t($event_code).'</td>';
                 }
                 else{
                 $output .= '<td class="code"></td>';
@@ -316,7 +333,7 @@
         case "cm_person":
           $image = '<div class="person-left-sec"><div class="person-img">'.l($image_person, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)) .'</div><div class="lobby-title">'. l($first_name .' '. $last_name, $path_node).'</div><div class="job-title">'. $job_title.'</div></div>';
           $title = '';
-          $sort_summary = $summary_person;
+          $sort_summary = t($summary_person);
           $event_info = '';
           $duration_info = '';
           $top_text = '';
@@ -324,17 +341,17 @@
         case "cm_movie_group":
           $image =  '<div class="image-container-gorup"><div class="flag-new-links">'.$flag.'</div><div class="image-container">'.l($image_movie_group, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)).'</div></div>';
           $title = $title;
-          $sort_summary = $summary_movie_group;
+          $sort_summary = t($summary_movie_group);
           $event_info = $output;
-          $duration_info = $country . " " . $year . "|" . $length;
+          $duration_info = $country . " " . $year . $length;
           $top_text = $white_text_movie_group . $black_text_movie_group;
         break;
         case "cm_movie":
           $image = '<div class="image-container-gorup"><div class="flag-new-links">'.$flag.'</div><div class="image-container">'.l($image_movie, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)).'</div></div>';
           $title = $title;
-          $sort_summary = $summary_movie;
+          $sort_summary = t($summary_movie);
           $event_info = $output;
-          $duration_info = $country . " " . $year . "|" . $length;
+          $duration_info = $movie_credit . $length;
           $top_text = $white_text_movie . $black_text_movie;
         break;
         case "cm_article":
@@ -353,7 +370,7 @@
           $sort_summary = $summary_event;
           $top_text = $white_text_event . $black_text_event;
           $event_info = $output_event;
-          $duration_info = '';
+          $duration_info = $event_credit . $lengths;
         break;
         default:
           $image = '';
@@ -374,14 +391,14 @@
         print '</div>';
         print'<div class="lobby-term-right">';
             print '<div class="lobby-title">';
-              print $title;
+              print t($title);
             print '</div>';
             print '<div class="lobby-length">';
               print $duration_info;
             print '</div>';
             print $event_info;
             print '<div class="lobby-summary">';
-              print strip_tags($sort_summary);
+              print t($sort_summary);
             print '</div>';
         print '</div>';
         print '<div class="clr"></div>';
