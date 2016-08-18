@@ -59,6 +59,12 @@
         $('.i18n-he .pane-panopoly-database-search-search-database-results .lobby-length').each(function () {
             $(this).html($(this).html().replace('minute','דקות'));
         });
+        $('.i18n-en .view-user-flagged-content .lobby-length').each(function () {
+            $(this).html($(this).html().replace('minute','m'));
+        });
+        $('.i18n-he .view-user-flagged-content .lobby-length').each(function () {
+            $(this).html($(this).html().replace('minute','דקות'));
+        });
 /*
         if (($("body").hasClass("page-node-3261")) || ($("body").hasClass("page-node-3284"))){
             $(document).ready(function() {
