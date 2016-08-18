@@ -124,12 +124,23 @@
         });
 
     });
-
    /******Hide Other screening ****/
     if($('.hide-table').length){
         $('.pane-event-ct-view-panel-pane-5 h2.pane-title').hide();
     }
-
+/*****Rename Minitue***/
+        $('.i18n-en .pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.length-movie').each(function () {
+            $(this).html($(this).html().replace('minute','m'));
+        });
+        $('.i18n-he .pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.length-movie').each(function () {
+            $(this).html($(this).html().replace('minute','דקות'));
+        });
+        $('.i18n-en .pane-panopoly-database-search-search-database-results .lobby-length').each(function () {
+            $(this).html($(this).html().replace('minute','m'));
+        });
+        $('.i18n-he .pane-panopoly-database-search-search-database-results .lobby-length').each(function () {
+            $(this).html($(this).html().replace('minute','דקות'));
+        });
   document.addEventListener("DOMContentLoaded", function() {
       var elements = document.getElementsByTagName("INPUT");
       for (var i = 0; i < elements.length; i++) {
@@ -152,4 +163,3 @@
   })
 
 })(jQuery);
-
