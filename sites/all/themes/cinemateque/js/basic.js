@@ -20,8 +20,6 @@
         $(".front .custom-slideshow, .front .custom-slideshow li").css("max-height",$fullscreenheight);
         $(".node-type-cm-article .view-article-ct-panes.view-display-id-panel_pane_1").css("max-height",$screenheight);
         $(".node-type-webform .view-webform-ct-panes.view-display-id-panel_pane_1").css("max-height",$screenheight);
-
-
         $(window).resize(function() {
             $screenheight = $(window).height()-50;
             $fullscreenheight = $(window).height();
@@ -48,7 +46,19 @@
                 $(".screen-search").remove();
         });
 
-
+        /*****Rename Minitue***/
+        $('.i18n-en .pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.length-movie').each(function () {
+            $(this).html($(this).html().replace('minute','m'));
+        });
+        $('.i18n-he .pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.length-movie').each(function () {
+            $(this).html($(this).html().replace('minute','דקות'));
+        });
+        $('.i18n-en .pane-panopoly-database-search-search-database-results .lobby-length').each(function () {
+            $(this).html($(this).html().replace('minute','m'));
+        });
+        $('.i18n-he .pane-panopoly-database-search-search-database-results .lobby-length').each(function () {
+            $(this).html($(this).html().replace('minute','דקות'));
+        });
 /*
         if (($("body").hasClass("page-node-3261")) || ($("body").hasClass("page-node-3284"))){
             $(document).ready(function() {
@@ -128,19 +138,6 @@
     if($('.hide-table').length){
         $('.pane-event-ct-view-panel-pane-5 h2.pane-title').hide();
     }
-/*****Rename Minitue***/
-        $('.i18n-en .pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.length-movie').each(function () {
-            $(this).html($(this).html().replace('minute','m'));
-        });
-        $('.i18n-he .pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.length-movie').each(function () {
-            $(this).html($(this).html().replace('minute','דקות'));
-        });
-        $('.i18n-en .pane-panopoly-database-search-search-database-results .lobby-length').each(function () {
-            $(this).html($(this).html().replace('minute','m'));
-        });
-        $('.i18n-he .pane-panopoly-database-search-search-database-results .lobby-length').each(function () {
-            $(this).html($(this).html().replace('minute','דקות'));
-        });
   document.addEventListener("DOMContentLoaded", function() {
       var elements = document.getElementsByTagName("INPUT");
       for (var i = 0; i < elements.length; i++) {
