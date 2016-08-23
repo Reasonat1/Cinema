@@ -204,10 +204,10 @@
           $file_ext_movie = file_load($picture_path_ext_movie);
           $picture_path_ext_movie = $file_ext_movie->uri;
           $image_event= '<img src="' . image_style_url('lobby', $picture_path_ext_movie) . '" alt="" />';
-        }else{
-            $image_event = $default_image;
         }
-      } 
+      }else{
+            $image_event = $default_image;
+        } 
     }
     if($node->type == 'cm_event'){
     $output_event ='';
@@ -398,7 +398,7 @@
             print '</div>';
             print $event_info;
             print '<div class="lobby-summary">';
-              print t($sort_summary);
+              print t(strip_tags($sort_summary));
             print '</div>';
         print '</div>';
         print '<div class="clr"></div>';
