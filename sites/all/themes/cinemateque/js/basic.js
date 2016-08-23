@@ -45,31 +45,34 @@
         $(".popup-close-button").click(function() {
                 $(".screen-search").remove();
         });
-
-        /*****Rename Minitue***/
+     /*****Rename Minitue***/
         $('.i18n-en .pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.length-movie').each(function () {
             $(this).html($(this).html().replace('minute','m'));
         });
         $('.i18n-he .pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.length-movie').each(function () {
             $(this).html($(this).html().replace('minute',' דקות '));
+            $(this).html($(this).html().replace('דקות',' דקות '));
         });
         $('.i18n-en .pane-panopoly-database-search-search-database-results .lobby-length').each(function () {
             $(this).html($(this).html().replace('minute','m'));
         });
         $('.i18n-he .pane-panopoly-database-search-search-database-results .lobby-length').each(function () {
-            $(this).html($(this).html().replace('minute',' דקות '));
+            $(this).html($(this).html().replace('minute','דקות'));
+            $(this).html($(this).html().replace('דקות',' דקות '));
         });
         $('.i18n-en .view-user-flagged-content .lobby-length').each(function () {
             $(this).html($(this).html().replace('minute','m'));
         });
         $('.i18n-he .view-user-flagged-content .lobby-length').each(function () {
-            $(this).html($(this).html().replace('minute',' דקות '));
+            $(this).html($(this).html().replace('minute','דקות'));
+            $(this).html($(this).html().replace('דקות',' דקות '));
         });
         $('.i18n-en .view-display-id-panel_pane_6 .views-field-nothing .field-content').each(function () {
             $(this).html($(this).html().replace('minute','m'));
         });
         $('.i18n-he .view-display-id-panel_pane_6 .views-field-nothing .field-content').each(function () {
-            $(this).html($(this).html().replace('minute',' דקות '));
+            $(this).html($(this).html().replace('minute','דקות'));
+            $(this).html($(this).html().replace('דקות',' דקות '));
         });
 /*
         if (($("body").hasClass("page-node-3261")) || ($("body").hasClass("page-node-3284"))){
