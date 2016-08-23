@@ -121,12 +121,12 @@
       $summary_person = '';
     }
     if(!empty($node->field_main_event_credit['und'])){
-      $event_credit = $node->field_main_event_credit['und'][0]['value'] . "|" ;
+      $event_credit = $node->field_main_event_credit['und'][0]['value'] . " | " ;
     }else{
       $event_credit = '';
     }
     if(!empty($node->field_cm_movie_meta_credit['und'])){
-      $movie_credit = $node->field_cm_movie_meta_credit['und'][0]['value'] . "|" ;
+      $movie_credit = $node->field_cm_movie_meta_credit['und'][0]['value'] . " | " ;
     }else{
       $movie_credit = '';
     }
