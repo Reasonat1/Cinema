@@ -128,6 +128,7 @@
             var tempStrs = $(this).text().slice(0,-3)
             $(this).text(tempStrs);
         });
+		upcoming_events_header_visibility();
 
     });
    /******Hide Other screening ****/
@@ -154,5 +155,58 @@
       }
 
   })
+  
+	function upcoming_events_header_visibility() {
+
+		//Flags initially set to hide the respective headers
+		var event_date_flag = true;
+		var event_time_flag = true;
+		var event_hall_flag = true;
+		var event_title_flag = true;
+		var event_id_flag = true;
+		var event_purchase_flag = true;
+		
+		
+		$(".up-events-item-movie").each(function(index) {
+			if( !$(this).children('.views-field-field-cm-event-time .hide-div').length ){
+				event_date_flag = false; // data for one row is visible. no need to hide the header. unset the flag.
+			}
+			if( !$(this).children('.views-field-field-cm-event-time-1 .hide-div').length ){
+				event_time_flag = false; // data for one row is visible. no need to hide the header. unset the flag.
+			}
+			if( !$(this).children('.views-field-field-cm-event-hall .hide-div').length ){
+				event_hall_flag = false; // data for one row is visible. no need to hide the header. unset the flag.
+			}
+			if( !$(this).children('.views-field-field-cm-event-short-title .hide-div').length ){
+				event_title_flag = false; // data for one row is visible. no need to hide the header. unset the flag.
+			}
+			if( !$(this).children('.views-field-field-cm-event-internal-id .hide-div').length ){
+				event_id_flag = false; // data for one row is visible. no need to hide the header. unset the flag.
+			}
+			if( !$(this).children('.views-field-field-toptix-purchase .hide-div').length ){
+				event_purchase_flag = false; // data for one row is visible. no need to hide the header. unset the flag.
+			}
+		});
+		
+		// validation. if the flag is still set, hide the header
+		if( event_date_flag ){
+			$('thead th.views-field-field-cm-event-time').hide();
+		}
+		if( event_time_flag ){
+		   $('th.views-field-field-cm-event-time-1').hide();
+		}
+		if( event_hall_flag ){
+		   $('thead th.views-field-field-cm-event-hall').hide();
+		}
+		if( event_title_flag ){
+		   $('thead th.views-field-field-cm-event-short-title').hide();
+		}
+		if( event_id_flag ){
+		   $('thead th.views-field-field-cm-event-internal-id').hide();
+		}
+		if( event_purchase_flag ){
+		   $('th.views-field-field-toptix-purchase').hide();
+		}
+	}
 
 })(jQuery);
