@@ -7,6 +7,11 @@ a{
 p{
 	font-size: 18px;
 }
+
+strong{
+	font-weight: bold;	
+}
+
 .panels-flexible-row{
 	@include width();
 	margin: 0 auto!important;
@@ -29,6 +34,25 @@ img{
 
 #da11y-toggle.active {
     box-shadow: none;
+}
+
+#pojo-a11y-toolbar{
+	overflow: hidden;
+}
+
+#da11y-plugin{
+	*:focus {
+	    outline: 0;
+	    outline-style:none;
+	    outline-width:0;
+	}
+}
+
+#da11y-options{
+	background-color: #fff;
+	li{
+		width: 100%;
+	}
 }
 
 .pane-node-field-toptix-purchase {
@@ -466,7 +490,7 @@ table.views-table {
 	width: 100%;
 }
 .slide-movie-title h2 {
-	margin: 1% 0;
+	margin: 1% -3px 1% -3px;
 	font-weight: normal;
 	color: $white;
 }

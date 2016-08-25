@@ -114,18 +114,18 @@
   float: left;
   color: #ffffff;
   margin: 0 23%;
-  position: absolute;
 }
-/* line 95, ../sass/movie.scss */
+/* line 94, ../sass/movie.scss */
 .node-type-cm-movie .view-display-id-panel_pane_2 .slide-left-ct .slide-movie-title {
   font-size: 3.56rem;
   margin: 1% 0;
   font-weight: normal;
   line-height: 110%;
 }
-/* line 102, ../sass/movie.scss */
+/* line 101, ../sass/movie.scss */
 .node-type-cm-movie .view-display-id-panel_pane_2 .slide-right-ct {
   float: left;
+  position: absolute;
 }
 /* line 106, ../sass/movie.scss */
 .node-type-cm-movie #panels-ipe-regionid-content_left .pane-movie-top-pane-view-panel-pane-4 {
@@ -191,15 +191,14 @@
 }
 /* line 163, ../sass/movie.scss */
 .node-type-cm-movie .pane-movie-top-pane-view-panel-pane-2 {
-  bottom: 6em;
+  bottom: 5em;
   color: #fff;
   padding: 0;
   position: absolute;
   width: 100%;
   z-index: 5;
-  min-height: 130px;
 }
-/* line 171, ../sass/movie.scss */
+/* line 170, ../sass/movie.scss */
 .node-type-cm-movie .pane-movie-top-pane-view-panel-pane-2 .pane-content {
   width: 1280px !important;
   max-width: 100%;
@@ -207,18 +206,18 @@
   padding: 0 3%;
   box-sizing: border-box;
 }
-/* line 175, ../sass/movie.scss */
+/* line 174, ../sass/movie.scss */
 .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_4 {
   margin-top: 50px;
 }
-/* line 177, ../sass/movie.scss */
+/* line 176, ../sass/movie.scss */
 .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_4 .views-field-title, .node-type-cm-movie .view-id-movie_top_pane_view.view-display-id-panel_pane_4 .views-field-nothing {
   color: #000000;
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 2%;
 }
-/* line 184, ../sass/movie.scss */
+/* line 183, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-6 {
   width: 100% !important;
   background-color: #fff;
@@ -230,74 +229,79 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
-/* line 190, ../sass/movie.scss */
+/* line 189, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-6 .panels-flexible-row-node_page-6-inside .panels-flexible-region {
   margin: 0 23%;
 }
-/* line 193, ../sass/movie.scss */
+/* line 192, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-6 .views-field-field-cm-movie-credits-person-ro {
   color: #b3b3b3;
+  width: 23%;
 }
 /* line 196, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-6 a {
   color: #000;
 }
-/* line 201, ../sass/movie.scss */
+/* line 199, ../sass/movie.scss */
+.node-type-cm-movie .panels-flexible-row-node_page-6 a:hover {
+  color: #b59d70;
+}
+/* line 204, ../sass/movie.scss */
 .node-type-cm-movie .pane-movie-top-pane-view-panel-pane-7 .view-movie-top-pane-view {
   overflow: visible;
 }
-/* line 203, ../sass/movie.scss */
+/* line 206, ../sass/movie.scss */
 .node-type-cm-movie .pane-movie-top-pane-view-panel-pane-7 .view-movie-top-pane-view .table-responsive {
   overflow: visible;
 }
-/* line 207, ../sass/movie.scss */
+/* line 210, ../sass/movie.scss */
 .node-type-cm-movie .pane-movie-top-pane-view-panel-pane-7 .views-field-field-cm-event-time {
   width: 23%;
 }
-/* line 210, ../sass/movie.scss */
+/* line 213, ../sass/movie.scss */
 .node-type-cm-movie .pane-movie-top-pane-view-panel-pane-7 #atedrop5-drop {
   top: 35px !important;
 }
 
-/* line 220, ../sass/movie.scss */
+/* line 223, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_7 .table-bordered {
   border: none;
 }
-/* line 222, ../sass/movie.scss */
+/* line 225, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_7 .table-bordered > thead > tr > th {
   border: none;
 }
-/* line 226, ../sass/movie.scss */
+/* line 229, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_7 tbody {
   border: none;
 }
-/* line 230, ../sass/movie.scss */
+/* line 233, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_7 tr.even {
   border: none;
 }
-/* line 233, ../sass/movie.scss */
+/* line 236, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_7 tr.odd {
   border: none;
 }
-/* line 237, ../sass/movie.scss */
+/* line 240, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_7 th {
   border-bottom: none;
   color: #bbb;
 }
-/* line 241, ../sass/movie.scss */
+/* line 244, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_7 .table > tbody > tr > td {
   border: none;
 }
-/* line 246, ../sass/movie.scss */
+/* line 249, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_1 #views_slideshow_cycle_teaser_section_movie_top_pane_view-panel_pane_1 .content {
   position: inherit;
   overflow: inherit;
 }
-/* line 250, ../sass/movie.scss */
+/* line 253, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_1 #views_slideshow_cycle_teaser_section_movie_top_pane_view-panel_pane_1 .field-label {
   display: none;
 }
-/* line 253, ../sass/movie.scss */
+/* line 256, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_1 #views_slideshow_cycle_teaser_section_movie_top_pane_view-panel_pane_1 .group-alttab {
   background-color: #312f2f;
   position: absolute;
@@ -310,11 +314,11 @@
   right: auto;
   z-index: 100;
 }
-/* line 264, ../sass/movie.scss */
+/* line 267, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_1 #views_slideshow_cycle_teaser_section_movie_top_pane_view-panel_pane_1 .group-alttab .field {
   float: right;
 }
-/* line 267, ../sass/movie.scss */
+/* line 270, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_1 #views_slideshow_cycle_teaser_section_movie_top_pane_view-panel_pane_1 .group-alttab .field-name-field-file-image-alt-text {
   margin-left: 5px;
   padding-left: 5px;
@@ -322,13 +326,13 @@
 }
 
 /**** slider  ******/
-/* line 279, ../sass/movie.scss */
+/* line 282, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-4 {
   width: 100% !important;
   padding: 20px 0 0 0 !important;
   background-color: #f9f4ee;
 }
-/* line 283, ../sass/movie.scss */
+/* line 286, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside {
   width: 1280px !important;
   max-width: 100%;
@@ -336,41 +340,41 @@
   padding: 0 3%;
   box-sizing: border-box;
 }
-/* line 285, ../sass/movie.scss */
+/* line 288, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside .field-name-field-qoutes {
   margin: 70px 23%;
 }
-/* line 288, ../sass/movie.scss */
+/* line 291, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside .views-field-field-cm-review-qoute {
   color: #b59d70;
   font-size: 25px;
   width: 100%;
 }
-/* line 293, ../sass/movie.scss */
+/* line 296, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside .views-field-field-cm-review-source {
   font-size: 12px;
   margin-top: 30px;
   color: #b59d70;
 }
-/* line 298, ../sass/movie.scss */
+/* line 301, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside .views-slideshow-pager-fields {
   clear: both;
   text-align: center;
   padding-top: 20px;
 }
-/* line 303, ../sass/movie.scss */
+/* line 306, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside .views-slideshow-pager-field-item {
   display: inline-block;
   margin: 0 14px;
 }
-/* line 306, ../sass/movie.scss */
+/* line 309, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside .views-slideshow-pager-field-item .circle {
   background-color: #afafaf;
   border-radius: 50%;
   height: 6px;
   width: 6px;
 }
-/* line 312, ../sass/movie.scss */
+/* line 315, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside .views-slideshow-pager-field-item.active .circle {
   background-color: #b59d70;
 }

@@ -486,6 +486,10 @@ img.panopoly-image-full{
 			padding-top: 10px;
 			padding-bottom: 10px!important;
 		}
+		li li a{
+			background-color: $main_color;
+		}
+
 	}
 	.screen-search{
 			position: fixed;
@@ -1038,6 +1042,23 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 		width: 100%;
 	}
 }
+
+.pane-bean-footer-social-block{
+	background-color: $main_color;
+	padding-top: 40px;
+	.field-items{
+		text-align: center;
+	}
+	.field-item{
+		display: inline-block;
+		margin: 0 10px;
+		img{
+			height: 55px;
+			width: auto;
+		}
+	}
+}
+
 /****   slide changes   ************/
 .flex-direction-nav .flex-prev:after {
 }

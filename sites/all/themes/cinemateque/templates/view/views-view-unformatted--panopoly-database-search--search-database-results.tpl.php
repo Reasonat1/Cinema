@@ -235,9 +235,11 @@
             else{
                 $output_event .= '<td class="hall"></td>';
             }
+            $output_event .= '<td class="title">';
             if(!empty($event_title)){
-              $output_event .= '<td class="title">'.l($event_title, $path).'</td>';
+              $output_event .= l($event_title, $path);
             }
+            $output_event .= '</td>';
             if(!empty($node->field_cm_event_internal_id['und'])){
               $event_code = $node->field_cm_event_internal_id['und'][0]['value'];
               $output_event .= '<td class="code">'.t($event_code).'</td>';
@@ -245,13 +247,16 @@
             else{
               $output_event .= '<td class="code"></td>';
             }
-            $output_event .='<td>'. $flag . '</td>';
+            $output_event .='<td class="flag">'. $flag . '</td>';
             $output_event .='<td>'. $addevent . '</td>';
             if(!empty($node->field_toptix_purchase['und'])){
             $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
             $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
             $output_event .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t("Purchase").'</button>'.'</td>';
             } 
+            else{
+              $output_event .= '<td class="purchase"></td>';
+            }
            $output_event .= '</tr>';
          $output_event .= '</table>';
        $output_event .= '</div>';
@@ -309,19 +314,25 @@
                 if(!empty($event_title)){
                   $output .= '<td class="title">'.l($event_title, $path).'</td>';
                 }
+                else{
+                  $output .= '<td class="title"></td>';
+                }
                 if(!empty($node_event->field_cm_event_internal_id['und'])){
                   $event_code = $node_event->field_cm_event_internal_id['und'][0]['value'];
                   $output .= '<td class="code">'.t($event_code).'</td>';
                 }
                 else{
-                $output .= '<td class="code"></td>';
+                  $output .= '<td class="code"></td>';
                 }
-                $output .='<td>'. $flags . '</td>';
+                $output .='<td class="flag">'. $flags . '</td>';
                 $output .='<td class="addevent">'. $addevent . '</td>';
                 if(!empty($node_event->field_toptix_purchase['und'])){
                   $toptix_code = $node_event->field_toptix_purchase['und'][0]['value'];
                   $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
                   $output .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">' . t("Purchase") . '</button>'.'</td>';
+                }
+                else{
+                  $output .= '<td class="purchase"></td>';
                 }
                 $output .= '</tr>';
             }

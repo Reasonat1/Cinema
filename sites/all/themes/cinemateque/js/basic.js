@@ -45,6 +45,16 @@
         $(".popup-close-button").click(function() {
                 $(".screen-search").remove();
         });
+        
+        $(".popup-close-button").click(function() {
+                $(".screen-search").remove();
+        });
+/*
+        $(document).click(function(event) { 
+          if(!$(event.target).closest('.center .center').length) {
+              $(".screen-search").remove();             
+          }        
+        }); */
      /*****Rename Minitue***/
         $('.i18n-en .pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.length-movie').each(function () {
             $(this).html($(this).html().replace('minute','m'));
