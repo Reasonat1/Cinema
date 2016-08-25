@@ -79,3 +79,24 @@ function cinemateque_preprocess_date_views_pager(&$vars) {
   } 
 }
 
+function cinemateque_facetapi_select_select_option($variables) {
+  if ($variables['show_count']) {
+    $variables['facet_text'] .= ' (' . $variables['facet_count'] . ')';
+  }
+  return $variables['facet_text'];
+  return $variables;
+}
+
+function cinemateque_form_facetapi_select_facet_form_alter(&$form, &$form_state, $form_id) {
+  //dpm($form['facets']);
+  return;
+  if ($form['facets']['#options']) {
+    $default_value = array();
+    foreach ($form['facets']['#options'] as $key => &$value) {
+      if ($value['is_active']) {
+        $default_value[] = $key;
+      }
+      $value = $value['facet_text'];
+    }
+  }
+}
