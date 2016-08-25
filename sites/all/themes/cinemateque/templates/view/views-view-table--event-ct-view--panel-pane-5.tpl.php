@@ -40,10 +40,10 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
      $output .= '<table class="views-table cols-8 table table-striped table-bordered">';
        $output .= '<thead>';
          $output .= '<tr>';
-           $output .= '<th class="views-field views-field-field-cm-event-time">'. t('Date') .'</th>';
-           $output .= '<th class="views-field views-field-field-cm-event-time-1">'. t('Time') .'</th>';
+           $output .= '<th class="views-field views-field-field-cm-event-time-1">'. t('Date') .'</th>';
+           $output .= '<th class="views-field views-field-field-cm-event-time">'. t('Time') .'</th>';
            $output .= '<th class="views-field views-field-field-cm-event-hall">'. t('Hall') .'</th>';
-           $output .= '<th class="views-field views-field-field-cm-event-short-title">'. t('Event') .'</th>';
+           $output .= '<th class="views-field views-field-field-cm-event-short-title views-field-title">'. t('Event') .'</th>';
            $output .= '<th class="views-field views-field-field-cm-event-internal-id">'. t('Code') .'</th>';
            $output .= '<th class="views-field views-field-ops"></th>';
            $output .= '<th class="views-field views-field-php"></th>';
@@ -95,11 +95,11 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
             }else{
              $puchase = '<div class="hide-div"></div>';
             }
-          $output .= '<tr class="odd views-row-first views-row-last item-show-'.$a.'">';
-           $output .= '<td class="views-field views-field-field-cm-event-time">'. t($event_date). '</td>';
-           $output .= '<td class="views-field views-field-field-cm-event-time-1">'. $event_time .'</td>';
+          $output .= '<tr class="odd views-row-first up-events-item-movie views-row-last item-show-'.$a.'">';
+           $output .= '<td class="views-field views-field-field-cm-event-time-1">'. t($event_date). '</td>';
+           $output .= '<td class="views-field views-field-field-cm-event-time">'. $event_time .'</td>';
            $output .= '<td class="views-field views-field-field-cm-event-hall">'. $hall_name .'</td>';
-           $output .= '<td class="views-field views-field-field-cm-event-short-title">'. l($title_new, $path) .'</td>';
+           $output .= '<td class="views-field views-field-title views-field-field-cm-event-short-title">'. l($title_new, $path) .'</td>';
            $output .= '<td class="views-field views-field-field-cm-event-internal-id">' .$event_code .'</td>';
            $output .= '<td class="views-field views-field-ops">' .$flag .'</td>';
            $output .= '<td class="views-field views-field-php">' ._return_addthisevent_markup($node) .'</td>';
