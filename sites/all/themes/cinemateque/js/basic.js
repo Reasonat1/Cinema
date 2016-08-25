@@ -52,7 +52,7 @@
           }        
         }); */
      /****Add class in Movie Events table****/
-     $('.view-display-id-panel_pane_7 table tbody tr').addClass('up-events-item-movie');
+     $('.view-id-movie_top_pane_view.view-display-id-panel_pane_7 table tbody tr').addClass('up-events-item-movie');
 
      /*****Rename Minitue***/
         $('.i18n-en .pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.length-movie').each(function () {
