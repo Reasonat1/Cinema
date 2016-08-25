@@ -91,7 +91,7 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
             if(!empty($node->field_toptix_purchase['und'])){
                $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
                $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
-               $puchase = '<button data-url="'.$top_link.'" class="toptix-purchase">'.t('Puchase').'</button>';
+               $puchase = '<button data-url="'.$top_link.'" class="toptix-purchase">'.t('Tickets').'</button>';
             }else{
              $puchase = '<div class="hide-div"></div>';
             }

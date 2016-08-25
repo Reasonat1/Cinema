@@ -46,7 +46,7 @@
                 $(".screen-search").remove();
         });
      /****Add class in Movie Events table****/
-     $('.view-display-id-panel_pane_7 table tbody tr').addClass('up-events-item-movie');
+     $('.pane-movie-top-pane-view-panel-pane-7 table tbody tr').addClass('up-events-item-movie');
      /*****Rename Minitue***/
         $('.i18n-en .pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.length-movie').each(function () {
             $(this).html($(this).html().replace('minute','m'));
@@ -91,7 +91,6 @@
             $(this).html($(this).html().replace('minute','דקות'));
             $(this).html($(this).html().replace('דקות',' דקות '));
         });
-/*
         if (($("body").hasClass("page-node-3261")) || ($("body").hasClass("page-node-3284"))){
             $(document).ready(function() {
               $('.calender-filter').scrollToFixed({ marginTop: 50});
@@ -106,7 +105,6 @@
             });
 
         }
-*/ 
     if (($("body").hasClass("page-node-3261")) || ($("body").hasClass("page-node-3284"))){
         $(document).scroll(function(e) {
             var detectrange = 50;
