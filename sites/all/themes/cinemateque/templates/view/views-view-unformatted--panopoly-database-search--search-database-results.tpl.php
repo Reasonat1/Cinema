@@ -252,7 +252,7 @@
             if(!empty($node->field_toptix_purchase['und'])){
             $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
             $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
-            $output_event .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t("Purchase").'</button>'.'</td>';
+            $output_event .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t("Tickets").'</button>'.'</td>';
             } 
             else{
               $output_event .= '<td class="purchase"></td>';
@@ -329,7 +329,7 @@
                 if(!empty($node_event->field_toptix_purchase['und'])){
                   $toptix_code = $node_event->field_toptix_purchase['und'][0]['value'];
                   $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
-                  $output .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">' . t("Purchase") . '</button>'.'</td>';
+                  $output .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">' . t("Tickets") . '</button>'.'</td>';
                 }
                 else{
                   $output .= '<td class="purchase"></td>';
