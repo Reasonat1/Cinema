@@ -45,6 +45,8 @@
         $(".popup-close-button").click(function() {
                 $(".screen-search").remove();
         });
+     /****Add class in Movie Events table****/
+     $('.view-display-id-panel_pane_7 table tbody tr').addClass('up-events-item-movie');
      /*****Rename Minitue***/
         $('.i18n-en .pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.length-movie').each(function () {
             $(this).html($(this).html().replace('minute','m'));
@@ -74,6 +76,21 @@
             $(this).html($(this).html().replace('minute','דקות'));
             $(this).html($(this).html().replace('דקות',' דקות '));
         });
+        
+        $('.i18n-en .view-display-id-panel_pane_4 .views-field-nothing .field-content').each(function () {
+            $(this).html($(this).html().replace('minute','m'));
+        });
+        $('.i18n-he .view-display-id-panel_pane_4 .views-field-nothing .field-content').each(function () {
+            $(this).html($(this).html().replace('minute','דקות'));
+            $(this).html($(this).html().replace('דקות',' דקות '));
+        });
+        $('.i18n-en .view-display-id-panel_pane_2 .views-field-nothing .slide-movie-year').each(function () {
+            $(this).html($(this).html().replace('minute','m'));
+        });
+        $('.i18n-he .view-display-id-panel_pane_2 .views-field-nothing .slide-movie-year').each(function () {
+            $(this).html($(this).html().replace('minute','דקות'));
+            $(this).html($(this).html().replace('דקות',' דקות '));
+        });
 /*
         if (($("body").hasClass("page-node-3261")) || ($("body").hasClass("page-node-3284"))){
             $(document).ready(function() {
@@ -89,7 +106,7 @@
             });
 
         }
-*/
+*/ 
     if (($("body").hasClass("page-node-3261")) || ($("body").hasClass("page-node-3284"))){
         $(document).scroll(function(e) {
             var detectrange = 50;
@@ -157,7 +174,6 @@
   })
   
 	function upcoming_events_header_visibility() {
-
 		//Flags initially set to hide the respective headers
 		var event_date_flag = true;
 		var event_time_flag = true;
@@ -165,47 +181,58 @@
 		var event_title_flag = true;
 		var event_id_flag = true;
 		var event_purchase_flag = true;
-		
-		
-		$(".up-events-item-movie").each(function(index) {
-			if( !$(this).children('.views-field-field-cm-event-time .hide-div').length ){
+        var event_title1_flag = true;
+		jQuery(".up-events-item-movie").each(function(index) {
+			if( !$(this).children('.views-field-field-cm-event-time').children('.hide-div').length ){
 				event_date_flag = false; // data for one row is visible. no need to hide the header. unset the flag.
 			}
-			if( !$(this).children('.views-field-field-cm-event-time-1 .hide-div').length ){
+			if( !$(this).children('.views-field-field-cm-event-time-1').children('.hide-div').length ){
 				event_time_flag = false; // data for one row is visible. no need to hide the header. unset the flag.
 			}
-			if( !$(this).children('.views-field-field-cm-event-hall .hide-div').length ){
+			if( !$(this).children('.views-field-field-cm-event-hall').children('.hide-div').length ){
 				event_hall_flag = false; // data for one row is visible. no need to hide the header. unset the flag.
 			}
-			if( !$(this).children('.views-field-field-cm-event-short-title .hide-div').length ){
+			if( !$(this).children('.views-field-title').children('.hide-div').length ){
 				event_title_flag = false; // data for one row is visible. no need to hide the header. unset the flag.
 			}
-			if( !$(this).children('.views-field-field-cm-event-internal-id .hide-div').length ){
+            if( !$(this).children('.views-field-title-1').children('.hide-div').length ){
+				event_title1_flag = false; // data for one row is visible. no need to hide the header. unset the flag.
+			}
+			if( !$(this).children('.views-field-field-cm-event-internal-id').children('.hide-div').length ){
 				event_id_flag = false; // data for one row is visible. no need to hide the header. unset the flag.
 			}
-			if( !$(this).children('.views-field-field-toptix-purchase .hide-div').length ){
+			if( !$(this).children('.views-field-field-toptix-purchase').children('.hide-div').length ){
 				event_purchase_flag = false; // data for one row is visible. no need to hide the header. unset the flag.
 			}
-		});
-		
+		});	
 		// validation. if the flag is still set, hide the header
 		if( event_date_flag ){
 			$('thead th.views-field-field-cm-event-time').hide();
+            $('td.views-field-field-cm-event-time').hide();
 		}
 		if( event_time_flag ){
 		   $('th.views-field-field-cm-event-time-1').hide();
+           $('td.views-field-field-cm-event-time-1').hide();
 		}
 		if( event_hall_flag ){
 		   $('thead th.views-field-field-cm-event-hall').hide();
+           $('td.views-field-field-cm-event-hall').hide();
 		}
 		if( event_title_flag ){
-		   $('thead th.views-field-field-cm-event-short-title').hide();
+		   $('thead th.views-field-title').hide();
+           $('td.views-field-title').hide();
+		}
+        if( event_title1_flag ){
+		   $('thead th.views-field-title-1').hide();
+           $('td.views-field-title-1').hide();
 		}
 		if( event_id_flag ){
 		   $('thead th.views-field-field-cm-event-internal-id').hide();
+           $('td.views-field-field-cm-event-internal-id').hide();
 		}
 		if( event_purchase_flag ){
 		   $('th.views-field-field-toptix-purchase').hide();
+           $('td.views-field-field-toptix-purchase').hide();
 		}
 	}
 
