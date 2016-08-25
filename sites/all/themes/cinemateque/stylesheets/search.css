@@ -451,31 +451,36 @@
   float: right;
   padding-right: 0;
   padding-left: 0;
+  width: 80px;
 }
-/* line 378, ../sass/search.scss */
+/* line 379, ../sass/search.scss */
+.page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .row-custom-lobby .flag {
+  margin-top: 6px;
+}
+/* line 382, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .row-custom-lobby .title {
   width: 23%;
 }
-/* line 381, ../sass/search.scss */
+/* line 385, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .row-custom-lobby .code {
   width: 10%;
 }
 
-/* line 392, ../sass/search.scss */
+/* line 396, ../sass/search.scss */
 .select2-results__options li:first-child {
   background: none;
 }
-/* line 395, ../sass/search.scss */
+/* line 399, ../sass/search.scss */
 .select2-results__options li {
   background: url("../images/select-empty.png") no-repeat 7px center;
   padding-left: 22px;
 }
-/* line 398, ../sass/search.scss */
+/* line 402, ../sass/search.scss */
 .select2-results__options li.select2-results__option-selected {
   background: url("../images/select-gold.png") no-repeat 7px center;
 }
 
-/* line 404, ../sass/search.scss */
+/* line 408, ../sass/search.scss */
 .select2-container--default .select2-selection--single .select2-selection__arrow b:before {
   content: "\f107";
   font: normal normal normal 14px/1 FontAwesome;
@@ -485,33 +490,33 @@
   top: -4px;
 }
 
-/* line 413, ../sass/search.scss */
+/* line 417, ../sass/search.scss */
 .select2-container--default .select2-selection--single {
   border: 1px solid #c9c9c9;
 }
 
-/* line 418, ../sass/search.scss */
+/* line 422, ../sass/search.scss */
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
   background-color: #f7f7f7;
   color: #000;
 }
 
-/* line 423, ../sass/search.scss */
+/* line 427, ../sass/search.scss */
 .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b:before {
   content: "\f106";
 }
 
-/* line 427, ../sass/search.scss */
+/* line 431, ../sass/search.scss */
 .select2-container--default .select2-selection--single .select2-selection__arrow b {
   border: none;
 }
 
-/* line 431, ../sass/search.scss */
+/* line 435, ../sass/search.scss */
 input:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]), input[type="email"]:focus:not([readonly]), input[type="number"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), input[type="search-md"]:focus:not([readonly]), input[type="tel"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="time"]:focus:not([readonly]), input[type="url"]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
   border-bottom: 1px solid #b59d70;
 }
 
-/* line 435, ../sass/search.scss */
+/* line 439, ../sass/search.scss */
 .page-search-search-results #main #content .search_new, .page-search-search-results #main #content .region-content .views-field-php a {
   background: url("../images/add-event.png") no-repeat center center;
   vertical-align: top;
@@ -519,12 +524,12 @@ input:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]),
   height: 27px;
 }
 
-/* line 442, ../sass/search.scss */
+/* line 446, ../sass/search.scss */
 .select2-container--default .select2-selection--single {
   border-radius: 0;
 }
 
-/* line 446, ../sass/search.scss */
+/* line 450, ../sass/search.scss */
 .select2-dropdown {
   border-radius: 0;
 }

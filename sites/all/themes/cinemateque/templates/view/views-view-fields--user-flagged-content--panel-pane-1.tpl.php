@@ -203,9 +203,11 @@
             else{
                 $output_event .= '<td class="hall"></td>';
             }
+            $output_event .= '<td class="title">';
             if(!empty($event_title)){
-              $output_event .= '<td class="title">'.l($event_title, $path).'</td>';
+              $output_event .= l($event_title, $path);
             }
+            $output_event .= '</td>';
             if(!empty($node->field_cm_event_internal_id['und'])){
               $event_code = $node->field_cm_event_internal_id['und'][0]['value'];
               $output_event .= '<td class="code">'.$event_code.'</td>';
