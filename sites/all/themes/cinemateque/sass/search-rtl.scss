@@ -120,6 +120,12 @@
 			background: url("../images/select-gold.png") no-repeat right 7px top 12px;
 		}
 	}
+	li[aria-selected="true"]{
+		background: url("../images/select-gold.png") no-repeat right 7px top 12px;
+	}
+	li:first-child{
+		padding-right: 7px;
+	}
 }
 
 .select2-container--default .select2-selection--single .select2-selection__arrow b:before{

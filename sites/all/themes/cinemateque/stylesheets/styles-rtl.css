@@ -371,6 +371,12 @@ table td, table th {
   float: left !important;
 }
 
+/* line 242, ../sass/general-rtl.scss */
+.content.middle .panels-flexible-region-node_page-content_left {
+  width: 77%;
+  float: left;
+}
+
 /* line 6, ../sass/search-rtl.scss */
 .page-search .search_result .text-center {
   float: left;
@@ -470,8 +476,16 @@ table td, table th {
 .select2-results__options li.select2-results__option-selected {
   background: url("../images/select-gold.png") no-repeat right 7px top 12px;
 }
+/* line 123, ../sass/search-rtl.scss */
+.select2-results__options li[aria-selected="true"] {
+  background: url("../images/select-gold.png") no-repeat right 7px top 12px;
+}
+/* line 126, ../sass/search-rtl.scss */
+.select2-results__options li:first-child {
+  padding-right: 7px;
+}
 
-/* line 125, ../sass/search-rtl.scss */
+/* line 131, ../sass/search-rtl.scss */
 .select2-container--default .select2-selection--single .select2-selection__arrow b:before {
   left: -4px;
   right: auto;
@@ -547,19 +561,15 @@ table td, table th {
   margin-right: 0px;
   margin-left: 8px;
 }
-/* line 71, ../sass/menu-rtl.scss */
-#hamburger-menu .pane-hamburgermenufooter .webform-component--name input {
-  border-radius: 0 15px 15px 0;
-}
-/* line 75, ../sass/menu-rtl.scss */
+/* line 72, ../sass/menu-rtl.scss */
 #hamburger-menu .pane-hamburgermenufooter .panel-panel:nth-child(2) span {
   float: right;
 }
-/* line 80, ../sass/menu-rtl.scss */
+/* line 77, ../sass/menu-rtl.scss */
 #hamburger-menu .pane-block-8 {
   float: left !important;
 }
-/* line 83, ../sass/menu-rtl.scss */
+/* line 80, ../sass/menu-rtl.scss */
 #hamburger-menu .pane-custom.pane-1 {
   float: left !important;
 }

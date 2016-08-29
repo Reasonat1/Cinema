@@ -83,13 +83,11 @@ function cinemateque_facetapi_select_select_option($variables) {
   if ($variables['show_count']) {
     $variables['facet_text'] .= ' (' . $variables['facet_count'] . ')';
   }
-  return $variables['facet_text'];
   return $variables;
 }
 
 function cinemateque_form_facetapi_select_facet_form_alter(&$form, &$form_state, $form_id) {
-  //dpm($form['facets']);
-  return;
+  //return;
   if ($form['facets']['#options']) {
     $default_value = array();
     foreach ($form['facets']['#options'] as $key => &$value) {
@@ -98,5 +96,9 @@ function cinemateque_form_facetapi_select_facet_form_alter(&$form, &$form_state,
       }
       $value = $value['facet_text'];
     }
+    if ($default_value) {
+      $form['facets']['#default_value'] = $default_value;
+    }
   }
+  $form['facets']['#empty_option'] = $form['facets']['#empty_option']['facet_text'];
 }
