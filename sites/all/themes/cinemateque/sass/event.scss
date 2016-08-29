@@ -142,10 +142,10 @@
 			}
 		}
 		.slide-movie-year {
-			font-size: 1.2rem;
+			font-size: 22px;
 		}
 		.slide-eve-lobby {
-			font-size: 1.2rem;
+			font-size: 22px;
 		}
 		.slide-right-ct {
 			float: left;
@@ -179,7 +179,8 @@
 				.slide-over-content {
 					@include width();
 					.slide-movie-title {
-						margin-bottom: 15px;				
+						margin-bottom: 15px;
+						font-size: 22px;				
 					}
 				}
 			}
@@ -213,9 +214,6 @@
 	}
 	.pane-event-ct-view-panel-pane-5{
 		@include width;
-		.pane-title{
-			font-size: 1rem;
-		}
 		.view-event-ct-view{
 			overflow: visible;
 			.table-responsive{
@@ -261,7 +259,7 @@
 		th {
 			border: none !important;
 			color: $color_pink_swan_approx;
-			font-size: 14px;
+			font-size: 12px;
 			font-weight: 300;
 		}
 		tr {

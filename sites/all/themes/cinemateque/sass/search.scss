@@ -235,7 +235,7 @@
 				width: 100%!important;
 			}
 		}
-		.panel-pane:nth-child(2){
+		.panel-pane:nth-child(6n+2){
 			margin-left: 0;
 		}
 		.form-type-select{
@@ -397,11 +397,18 @@
 		background: none;
 	}
 	li{
-		background: url("../images/select-empty.png") no-repeat 7px center;
+		background: url("../images/select-empty.png") no-repeat left 7px top 14px;
 		padding-left: 22px;
 		&.select2-results__option-selected{
-			background: url("../images/select-gold.png") no-repeat 7px center;
+			background: url("../images/select-gold.png") no-repeat left 7px top 14px;
 		}
+	}
+	li[aria-selected="true"]{
+		background: url("../images/select-gold.png") no-repeat left 7px top 14px;
+	}
+	li:first-child{
+		background: none;
+		padding-left: 7px;
 	}
 }
 
