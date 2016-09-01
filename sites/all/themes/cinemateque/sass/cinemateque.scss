@@ -578,6 +578,9 @@ img.panopoly-image-full{
 .festival-site {
 	float: left;
 	padding-top: 4px;
+	@include res(s-m){
+		display: none;
+	}
 	span {
 		color: $white;
 		float: left;
@@ -1007,6 +1010,10 @@ li.expanded {
 }
 
 /********   Footer  *********/
+
+#footer{
+	margin-top: 50px;
+}
 
 section.footer .view-bean-infomation-block-view table tbody tr {
 	background-color: $boulder !important;

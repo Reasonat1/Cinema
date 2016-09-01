@@ -58,3 +58,21 @@ $color_mine_shaft_approx: #312f2f;
   url('../fonts/Open-Sans.eot?#iefix') format('embedded-opentype'), 
   url('../fonts/Open-Sans.ttf') format('truetype');
 }
+
+ @mixin res($media) {
+  @if $media == s {
+    @media (max-width: 480px) { @content; }
+  }
+  @else if $media == m {
+    @media (min-width: 481px) and (max-width: 767px) { @content; }
+  }
+  @else if $media == l {
+    @media  (min-width: 768px) and (max-width: 1095px){ @content; }
+  }
+  @if $media == s-m {
+    @media (max-width: 767px) { @content; }
+  }
+  @if $media == s-m-l {
+    @media (max-width: 1095px) { @content; }
+  }
+}

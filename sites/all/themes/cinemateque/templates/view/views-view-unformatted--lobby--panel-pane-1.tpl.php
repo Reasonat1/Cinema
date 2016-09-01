@@ -183,7 +183,7 @@
            $output_event .= '<td class="code">'.$event_code.'</td>';
            $output_event .='<td>'. $flag . '</td>';
            $output_event .='<td>'. $addevent . '</td>';
-           if(!empty($top_link)) $output_event .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t(Puchase).'</button>'.'</td>';
+           if(!empty($top_link)) $output_event .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t("TICKETS").'</button>'.'</td>';
            $output_event .= '</tr>';
          $output_event .= '</table>';
        $output_event .= '</div>';
@@ -243,7 +243,7 @@
            if($event_code) $output .= '<td>'.$event_code.'</td>';
            $output .='<td>'. $flag . '</td>';
            $output .='<td>'. $addevent . '</td>';       
-           if($toptix_code) $output .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t('Puchase').'</button>'.'</td>';
+           if($toptix_code) $output .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t('TICKETS').'</button>'.'</td>';
            $output .= '</tr>';
         }
          $output .= '</table>';

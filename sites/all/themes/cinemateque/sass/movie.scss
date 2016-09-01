@@ -9,7 +9,7 @@
  			display: none;
  		}
  		.views-field-field-cm-movie-credits{
- 			bottom: 5rem;
+ 			bottom: 60px;
 		    color: #fff;
 		    padding: 0;
 		    position: absolute;
@@ -61,6 +61,18 @@
 			padding-right: 10%;
 			width: 23%;
 			margin-top: 38px;
+			@include res(s-m){
+				margin: 0;
+				bottom: 6px;
+				padding-right: 3%;
+				padding-left: 0;
+				width: 13%;
+			}
+			*:focus {
+			    outline: 0;
+			    outline-style:none;
+			    outline-width:0;
+			}
 			a {
 				background: url("../images/play-icon.png") no-repeat scroll 60% center;
 				border-radius: 30px;
@@ -70,32 +82,43 @@
 				height: 55px;
 				padding: 2%;
 				width: 55px;
+				@include res(s-m){
+					background-size: 16px;
+					height: 40px;
+					width: 40px;
+				}
 			}
 		}
-	.slide-left-ct{
-		float: left;
-		.slide-eve-lobby{
-			font-size: 22px;
-			margin-bottom: 1%;
-		}
-		.slide-movie-title{
-			margin-bottom: 15px;
-		}
-		.slide-movie-year{
-			font-size: 22px;
-		}
-	}
 	.view-display-id-panel_pane_2 {
 		overflow: visible;
 		.slide-left-ct {
 			float: left;
 			color: $white;
 			margin: 0 23%;
+			@include res(s-m){
+				text-align: center;	
+				font-size: 13px;
+			}
+			.slide-eve-lobby{
+				font-size: 1.222em;
+				margin-bottom: 1%;
+			}
+			.slide-movie-year{
+				font-size: 1.222em;
+			}
+			@include res(s-m){
+				margin: 0 15%;
+			}
 			.slide-movie-title {
-				font-size: 48px;
+				font-size: 2.667em;
 				margin: 1% 0;
 				font-weight: normal;
 				line-height: 110%;
+				margin-bottom: 15px;
+				padding: 0 2px;
+				@include res(s-m){
+					margin-bottom: 4px;
+				}
 			}
 		}
 		.slide-right-ct {
@@ -104,10 +127,7 @@
 		}
 	}
 	#panels-ipe-regionid-content_left .pane-movie-top-pane-view-panel-pane-4 {
-		margin-right: 10%;
-		margin-top: 20px;
 		width: auto;
-		padding-left: 15%;
 		.views-field-title {
 			color: $black;
 			font-weight: 600;
@@ -122,6 +142,14 @@
 	.view-movie-top-pane-view.view-display-id-panel_pane_4{
 		float: right;
 		box-sizing: border-box;
+	}
+	.panels-flexible-row-node_page-5{
+		padding-top: 50px!important;
+		@include res(s-m){
+			padding-top: 20px!important;
+			border: 2px solid #f0f0f0;
+			margin-bottom: 20px;
+		}
 	}
 	.panels-flexible-row-node_page-5 .panels-flexible-region-node_page-content_right #panels-ipe-regionid-content_right {
 		.pane-movie-top-pane-view-panel-pane-6 {
@@ -160,18 +188,20 @@
 		}
 	}
 	.pane-movie-top-pane-view-panel-pane-2{
-		bottom: 5em;
+		bottom: 60px;
 	    color: #fff;
 	    padding: 0;
 	    position: absolute;
 	    width: 100%;
 	    z-index: 5;
+	    @include res(s-m){
+	    	bottom: 10px;
+	    }
 	    .pane-content{
 	    	@include width;
 	    }
 	}
 	.view-id-movie_top_pane_view.view-display-id-panel_pane_4{
-		margin-top: 50px;
 		.views-field-title, .views-field-nothing{
 			color: #000000;
 		    font-weight: 600;
@@ -185,11 +215,22 @@
 		padding-top: 30px;
 		padding-bottom: 30px;
 		.panels-flexible-row-node_page-6-inside .panels-flexible-region{
-			margin: 0 23%;
+			padding: 0 23%;
+			@include res(s-m){
+				padding: 0;
+			}
 		}
 		.views-field-field-cm-movie-credits-person-ro{
 			color: $color_nobel_approx;
-			width: 23%;
+			width: 120px;
+			@include res(s-m){
+				width: 40%;
+			}
+		}
+		.views-field-views-conditional{
+			@include res(s-m){
+				width: 60%;
+			}
 		}
 		a{
 			color: #000;
@@ -203,6 +244,26 @@
 			overflow: visible;
 			.table-responsive{
 				overflow: visible;
+			}
+		}
+		.views-field-field-toptix-purchase{
+			width: 75px;
+		}
+		.views-field-ops{
+		    height: 23px!important;
+		    display: block;
+		    padding-top: 17px;
+		}
+		.views-field-php{
+			width: 12px;
+			padding-top: 11px;
+		}
+		thead{
+			@include res(s-m){
+				display: none;
+			}
+			th{
+				font-size: 12px;
 			}
 		}
 		.views-field-field-cm-event-time{
@@ -262,6 +323,9 @@
 			left: 0;
 			right: auto;
 			z-index: 100;
+			@include res(s-m){
+				display: none;
+			}
 			.field{
 				float: right;
 			}
@@ -279,8 +343,7 @@
 .node-type-cm-movie{
 	.panels-flexible-row-node_page-4{
 		width: 100%!important;
-		padding: 20px 0 0 0!important;
-		background-color: $color_fantasy_approx;
+		padding: 0!important;
 		.panels-flexible-row-node_page-4-inside{
 			@include width();
 			.field-name-field-qoutes{
@@ -299,6 +362,9 @@
 			.views-slideshow-pager-fields{
 				clear: both;
 				text-align: center;
+				padding-top: 20px;
+			}
+			.pane-movie-top-pane-view-panel-pane-7{
 				padding-top: 20px;
 			}
 			.views-slideshow-pager-field-item{
