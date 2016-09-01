@@ -51,6 +51,12 @@
               $(".screen-search").remove();             
           }        
         }); */
+     /*** Removed  | bar***/
+    var tempBar = $('.i18n-en .view-id-movie_top_pane_view.view-display-id-panel_pane_2 .slide-movie-year .crdt').text().slice(0,-2)
+    var barHtml = $('.i18n-en .view-id-movie_top_pane_view.view-display-id-panel_pane_2 .slide-movie-year .mnts').html();
+    if(barHtml == ''){
+        $('.i18n-en .view-id-movie_top_pane_view.view-display-id-panel_pane_2 .slide-movie-year .crdt').text(tempBar);
+    }
      /****Add class in Movie Events table****/
      $('.view-id-movie_top_pane_view.view-display-id-panel_pane_7 table tbody tr').addClass('up-events-item-movie');
 
