@@ -57,6 +57,9 @@
     if(barHtml == ''){
         $('.view-id-movie_top_pane_view.view-display-id-panel_pane_2 .slide-movie-year .crdt').text(tempBar);
     }
+    if($('.view-id-movie_top_pane_view.view-display-id-panel_pane_4 .hide-div-movie').length){
+        $('.view-id-movie_top_pane_view.view-display-id-panel_pane_4 .sub-title').hide();
+    }
      /****Add class in Movie Events table****/
      $('.view-id-movie_top_pane_view.view-display-id-panel_pane_7 table tbody tr').addClass('up-events-item-movie');
 
