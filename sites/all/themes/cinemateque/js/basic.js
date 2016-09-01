@@ -98,6 +98,9 @@
             $(this).html($(this).html().replace('minute','דקות'));
             $(this).html($(this).html().replace('דקות',' דקות '));
         });
+        $('.i18n-he .pane-event-ct-view-panel-pane-3 .views-field-nothing .slide-movie-year').each(function () {
+            $(this).html($(this).html().replace('m',' דקות '));
+        });
         if (($("body").hasClass("page-node-3261")) || ($("body").hasClass("page-node-3284"))){
             $(document).ready(function() {
               $('.calender-filter').scrollToFixed({ marginTop: 50});
