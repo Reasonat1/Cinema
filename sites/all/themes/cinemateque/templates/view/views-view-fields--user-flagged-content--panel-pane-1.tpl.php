@@ -73,12 +73,12 @@
     if(!empty($node->field_cm_movie_duration)){
       $length_interval = $node->field_cm_movie_duration['und'][0]['interval'];
       $length_period = $node->field_cm_movie_duration['und'][0]['period'];
-      $length = $length_interval.$length_period;
+      $length = $length_interval.' '.$length_period;
     }
     elseif(!empty($node->field_cm_moviegroup_duration)){
       $length_interval = $node->field_cm_moviegroup_duration['und'][0]['interval'];
       $length_period = $node->field_cm_moviegroup_duration['und'][0]['period'];
-      $length = $length_interval.$length_period;
+      $length = $length_interval.' '.$length_period;
     }
     if(!empty($node->field_cm_moviegroup_short_summar)){
       $summary_movie_group =  truncate_utf8($node->field_cm_moviegroup_short_summar['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
@@ -252,7 +252,9 @@
               } 
               if(!empty($node_movie->field_event_corresponding_ref['und'])){
                 $node_event = node_load($node_movie->field_event_corresponding_ref['und'][0]['target_id']);
-                $event_title = $node_event->field_cm_event_short_title['und'][0]['value'];
+                if(!empty($node_event->field_cm_event_short_title['und'])){
+                 $event_title = $node_event->field_cm_event_short_title['und'][0]['value'];
+                }
                 $path = drupal_get_path_alias('node/'.$node_event->nid);
                 $flags = flag_create_link('favorite_', $node_event->nid);
               }
