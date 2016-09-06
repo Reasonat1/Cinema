@@ -176,7 +176,7 @@
 		text-align: center;
 		width: 80px;
 		&:hover {
-			background-color: $main_color;
+			@include bg-main-color();
 			box-shadow: 0 0 3px 2px $wild_sand;
 			color: $white;
 			cursor: pointer;

@@ -4,18 +4,22 @@
   font-family: Open-Sans;
   src: url("../fonts/Open-Sans.eot?") format("eot"), url("../fonts/Open-Sans.woff") format("woff"), url("../fonts/Open-Sans.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans.ttf") format("truetype");
 }
-/* line 4, ../sass/menu.scss */
+/* line 3, ../sass/menu.scss */
+.hamburger {
+  color: #fff;
+}
+/* line 5, ../sass/menu.scss */
 .hamburger .modal-dialog {
   width: 100%;
   margin: 0;
 }
-/* line 8, ../sass/menu.scss */
+/* line 9, ../sass/menu.scss */
 .hamburger .modal-content {
   padding: 50px 0 0;
   background-color: #323232;
   opacity: 0.96;
 }
-/* line 12, ../sass/menu.scss */
+/* line 13, ../sass/menu.scss */
 .hamburger .modal-content .close {
   position: absolute;
   top: 20px;
@@ -28,130 +32,123 @@
   padding: 14px;
   z-index: 200;
 }
-/* line 25, ../sass/menu.scss */
+/* line 26, ../sass/menu.scss */
 .hamburger .modal-body {
   padding: 0;
   margin: 0;
 }
-/* line 28, ../sass/menu.scss */
+/* line 29, ../sass/menu.scss */
 .hamburger .modal-body .close {
   float: left;
   padding: 22px;
 }
-/* line 32, ../sass/menu.scss */
+/* line 33, ../sass/menu.scss */
 .hamburger .modal-body .pane-bean-infomation-block-view .handle {
   display: none;
 }
-/* line 35, ../sass/menu.scss */
+/* line 36, ../sass/menu.scss */
 .hamburger .modal-body .view-id-bean_infomation_block_view .form-submit {
   display: none;
 }
-/* line 38, ../sass/menu.scss */
+/* line 39, ../sass/menu.scss */
 .hamburger .modal-body .popup-loader {
   margin: 0 auto;
   display: block;
 }
-/* line 43, ../sass/menu.scss */
+/* line 44, ../sass/menu.scss */
 .hamburger .panels-flexible-region.popup.region {
   width: 100%;
 }
 
 /* line 49, ../sass/menu.scss */
+#hamburger-menu {
+  /*
+  .pane-my-backend-festival-menu-block {
+  	float: left;
+  	padding: 10px 15px 0 85px;
+  	box-sizing: border-box;
+  	.pane-title{
+  		color: #fff;
+  		font-size: 18px;
+  		margin: 13px 0 14px;
+  	}
+  	.col-md-3 {
+  		padding-left: 50px;
+  		padding-right: 50px;
+  		width: 25%;
+  	}
+  	.menu.nav li {
+  		background-image: url("../images/arrow-right.png");
+  		background-position: right center;
+  		background-repeat: no-repeat;
+  		background-size: 20px auto;
+  		border-bottom: 2px solid $color_chicago_approx;
+  		line-height: 40px;
+  		&.expanded {
+  			display: none;
+  		}
+  		a {
+  			background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  			color: $white;
+  			font-size: 16px;
+  			padding: 10px 0;
+  			&:hover {
+  				background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  			}
+  			&:active {
+  				background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  			}
+  		}
+  	}
+  	.menu.nav li.last{
+  		border-bottom: none;
+  	}
+  	.pane-content > h2 {
+  		font-size: 16px;
+  		font-weight: bold;
+  	}
+  }*/
+}
+/* line 50, ../sass/menu.scss */
 #hamburger-menu .col-md-12 {
   padding: 0;
 }
-/* line 52, ../sass/menu.scss */
-#hamburger-menu .pane-my-backend-festival-menu-block {
-  width: 27.5%;
-  float: left;
-  padding: 10px 15px 0 85px;
-  box-sizing: border-box;
-}
-/* line 57, ../sass/menu.scss */
-#hamburger-menu .pane-my-backend-festival-menu-block .pane-title {
-  color: #fff;
-  font-size: 18px;
-  margin: 13px 0 14px;
-}
-/* line 62, ../sass/menu.scss */
-#hamburger-menu .pane-my-backend-festival-menu-block .col-md-3 {
-  padding-left: 50px;
-  padding-right: 50px;
-  width: 25%;
-}
-/* line 67, ../sass/menu.scss */
-#hamburger-menu .pane-my-backend-festival-menu-block .menu.nav li {
-  background-image: url("../images/arrow-right.png");
-  background-position: right center;
-  background-repeat: no-repeat;
-  background-size: 20px auto;
-  border-bottom: 2px solid #5c5c5c;
-  line-height: 40px;
-}
-/* line 74, ../sass/menu.scss */
-#hamburger-menu .pane-my-backend-festival-menu-block .menu.nav li.expanded {
-  display: none;
-}
-/* line 77, ../sass/menu.scss */
-#hamburger-menu .pane-my-backend-festival-menu-block .menu.nav li a {
-  background: transparent none repeat scroll 0 0;
-  color: #ffffff;
-  font-size: 16px;
-  padding: 10px 0;
-}
-/* line 82, ../sass/menu.scss */
-#hamburger-menu .pane-my-backend-festival-menu-block .menu.nav li a:hover {
-  background: transparent none repeat scroll 0 0;
-}
-/* line 85, ../sass/menu.scss */
-#hamburger-menu .pane-my-backend-festival-menu-block .menu.nav li a:active {
-  background: transparent none repeat scroll 0 0;
-}
-/* line 90, ../sass/menu.scss */
-#hamburger-menu .pane-my-backend-festival-menu-block .menu.nav li.last {
-  border-bottom: none;
-}
-/* line 93, ../sass/menu.scss */
-#hamburger-menu .pane-my-backend-festival-menu-block .pane-content > h2 {
-  font-size: 16px;
-  font-weight: bold;
-}
-/* line 98, ../sass/menu.scss */
+/* line 99, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu {
-  width: 72.5%;
+  width: 100%;
   float: right;
-  padding: 0 70px 0 0;
+  padding: 0 70px;
 }
-/* line 103, ../sass/menu.scss */
+/* line 104, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu-link-demo-1 > a, #hamburger-menu .pane-menu-menu-site-main-menu .menu-link-demo-2 > a, #hamburger-menu .pane-menu-menu-site-main-menu .menu-link-demo-3 > a {
   font-size: 18px;
   font-weight: bold;
 }
-/* line 108, ../sass/menu.scss */
+/* line 109, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu h2 {
   display: none;
 }
-/* line 111, ../sass/menu.scss */
+/* line 112, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded {
   float: left;
   padding: 10px 15px 0 15px;
-  width: 33.3%;
+  width: 25%;
   box-sizing: border-box;
 }
-/* line 116, ../sass/menu.scss */
+/* line 117, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded a {
   color: #ffffff;
   padding: 10px 0;
 }
-/* line 119, ../sass/menu.scss */
+/* line 120, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded a:hover {
   background: none;
 }
-/* line 122, ../sass/menu.scss */
+/* line 123, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded a:active {
   background: none;
 }
-/* line 126, ../sass/menu.scss */
+/* line 127, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li {
   border-bottom: 2px solid #5c5c5c;
   line-height: 40px;
@@ -159,27 +156,28 @@
   background-position: right center;
   background-repeat: no-repeat;
   background-size: 20px auto;
+  width: 100%;
 }
-/* line 133, ../sass/menu.scss */
+/* line 135, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li.last {
   border-bottom: none;
 }
-/* line 136, ../sass/menu.scss */
+/* line 138, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li a {
   background: transparent none repeat scroll 0 0;
   font-size: 16px;
   color: #ffffff;
 }
-/* line 140, ../sass/menu.scss */
+/* line 142, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li a:hover {
   background: none;
 }
-/* line 143, ../sass/menu.scss */
+/* line 145, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li a:active {
   background: none;
 }
-/* line 150, ../sass/menu.scss */
-#hamburger-menu .pane-information-info-view-block {
+/* line 152, ../sass/menu.scss */
+#hamburger-menu .pane-bean-main-info-english {
   padding-left: 70px;
   padding-right: 70px;
   width: 100%;
@@ -189,24 +187,24 @@
   clear: left;
   overflow: hidden;
 }
-/* line 159, ../sass/menu.scss */
-#hamburger-menu .pane-information-info-view-block .bean-block {
+/* line 161, ../sass/menu.scss */
+#hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item {
   padding: 0 15px;
-  text-align: left;
   position: relative;
   border: none;
   width: 25%;
   margin-bottom: 27px;
+  float: left;
 }
-/* line 166, ../sass/menu.scss */
-#hamburger-menu .pane-information-info-view-block .bean-block .bean-icon {
+/* line 168, ../sass/menu.scss */
+#hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-cm-info-block-icon {
   font-size: 20px;
   width: auto;
   position: absolute;
   left: -30px;
 }
-/* line 172, ../sass/menu.scss */
-#hamburger-menu .pane-information-info-view-block .bean-block .bean-title {
+/* line 174, ../sass/menu.scss */
+#hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-label {
   font-weight: bold;
   font-size: 12px;
   font-size: 1.25rem;
@@ -215,129 +213,148 @@
   padding-right: 50px;
   padding-bottom: 5px;
 }
-/* line 181, ../sass/menu.scss */
-#hamburger-menu .pane-information-info-view-block .bean-block .bean-body p {
+/* line 183, ../sass/menu.scss */
+#hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-description {
   line-height: 1.2;
   text-align: left;
   padding-right: 50px;
   font-variant: 12px;
 }
-/* line 189, ../sass/menu.scss */
-#hamburger-menu .pane-hamburgermenufooter {
+/* line 191, ../sass/menu.scss */
+#hamburger-menu .pane-webform-client-block-19 {
   clear: both;
+  position: relative;
   background-color: #262626;
   padding: 0 70px 50px;
 }
-/* line 193, ../sass/menu.scss */
-#hamburger-menu .pane-hamburgermenufooter .pane-title {
+/* line 196, ../sass/menu.scss */
+#hamburger-menu .pane-webform-client-block-19 .pane-title {
   color: #fff;
 }
-/* line 196, ../sass/menu.scss */
-#hamburger-menu .pane-hamburgermenufooter input {
+/* line 199, ../sass/menu.scss */
+#hamburger-menu .pane-webform-client-block-19 input {
   background-color: #000;
   border: none;
   padding: 0 10px;
   box-sizing: border-box;
   height: 30px;
 }
-/* line 203, ../sass/menu.scss */
-#hamburger-menu .pane-hamburgermenufooter label {
+/* line 206, ../sass/menu.scss */
+#hamburger-menu .pane-webform-client-block-19 label {
   color: #999;
   font-size: 17px;
   font-weight: normal;
   padding: 3px 7px;
 }
-/* line 209, ../sass/menu.scss */
-#hamburger-menu .pane-hamburgermenufooter .panel-panel {
+/* line 212, ../sass/menu.scss */
+#hamburger-menu .pane-webform-client-block-19 .panel-panel {
   width: 50%;
   float: left;
   padding: 0;
 }
-/* line 214, ../sass/menu.scss */
-#hamburger-menu .pane-hamburgermenufooter .form-actions {
+/* line 217, ../sass/menu.scss */
+#hamburger-menu .pane-webform-client-block-19 .form-actions {
   margin: 0;
 }
-/* line 216, ../sass/menu.scss */
-#hamburger-menu .pane-hamburgermenufooter .form-actions input {
+/* line 219, ../sass/menu.scss */
+#hamburger-menu .pane-webform-client-block-19 .form-actions input {
   margin: 0;
   background-color: #fff;
-  color: #e41145;
   padding: 0 15px 0 10px;
 }
-/* line 221, ../sass/menu.scss */
-#hamburger-menu .pane-hamburgermenufooter .form-actions input:hover {
-  background-color: #fff !important;
+/* line 52, ../sass/init.scss */
+.domain-1 #hamburger-menu .pane-webform-client-block-19 .form-actions input {
   color: #e41145 !important;
 }
-/* line 227, ../sass/menu.scss */
-#hamburger-menu .pane-hamburgermenufooter .webform-component {
+/* line 55, ../sass/init.scss */
+.domain-2 #hamburger-menu .pane-webform-client-block-19 .form-actions input {
+  color: #b59d70 !important;
+}
+/* line 224, ../sass/menu.scss */
+#hamburger-menu .pane-webform-client-block-19 .form-actions input:hover {
+  background-color: #fff !important;
+}
+/* line 52, ../sass/init.scss */
+.domain-1 #hamburger-menu .pane-webform-client-block-19 .form-actions input:hover {
+  color: #e41145 !important;
+}
+/* line 55, ../sass/init.scss */
+.domain-2 #hamburger-menu .pane-webform-client-block-19 .form-actions input:hover {
+  color: #b59d70 !important;
+}
+/* line 230, ../sass/menu.scss */
+#hamburger-menu .pane-webform-client-block-19 .webform-component {
   margin-right: 8px;
 }
-/* line 229, ../sass/menu.scss */
-#hamburger-menu .pane-hamburgermenufooter .webform-component input {
+/* line 232, ../sass/menu.scss */
+#hamburger-menu .pane-webform-client-block-19 .webform-component input {
   border-radius: 0 !important;
 }
-/* line 233, ../sass/menu.scss */
-#hamburger-menu .pane-hamburgermenufooter .webform-component--join-our-newsletter {
+/* line 236, ../sass/menu.scss */
+#hamburger-menu .pane-webform-client-block-19 .webform-component--join-our-newsletter {
   font-size: 1.25rem;
   font-weight: 600;
   width: 100%;
   color: #fff;
 }
-/* line 239, ../sass/menu.scss */
-#hamburger-menu .pane-hamburgermenufooter .webform-component--approve-recieving-e-mail {
+/* line 242, ../sass/menu.scss */
+#hamburger-menu .pane-webform-client-block-19 .webform-component--approve-recieving-e-mail {
   position: absolute;
   bottom: -10px;
   width: 100%;
 }
-/* line 243, ../sass/menu.scss */
-#hamburger-menu .pane-hamburgermenufooter .webform-component--approve-recieving-e-mail label {
+/* line 246, ../sass/menu.scss */
+#hamburger-menu .pane-webform-client-block-19 .webform-component--approve-recieving-e-mail label {
   top: 20px;
   position: relative;
   font-size: 12px;
   color: #fff !important;
 }
-/* line 249, ../sass/menu.scss */
-#hamburger-menu .pane-hamburgermenufooter .webform-component--approve-recieving-e-mail input {
+/* line 252, ../sass/menu.scss */
+#hamburger-menu .pane-webform-client-block-19 .webform-component--approve-recieving-e-mail input {
   height: auto;
 }
-/* line 254, ../sass/menu.scss */
-#hamburger-menu .pane-hamburgermenufooter .panel-panel:nth-child(2) span {
+/* line 257, ../sass/menu.scss */
+#hamburger-menu .pane-webform-client-block-19 .panel-panel:nth-child(2) span {
   display: inline-block;
   float: left;
 }
-/* line 259, ../sass/menu.scss */
-#hamburger-menu .pane-hamburgermenufooter .pane-block-8 {
+/* line 262, ../sass/menu.scss */
+#hamburger-menu .pane-webform-client-block-19 .pane-block-8 {
   margin-top: 20px;
   float: right;
 }
-/* line 262, ../sass/menu.scss */
-#hamburger-menu .pane-hamburgermenufooter .pane-block-8 i {
+/* line 265, ../sass/menu.scss */
+#hamburger-menu .pane-webform-client-block-19 .pane-block-8 i {
   color: #e41145;
 }
-/* line 266, ../sass/menu.scss */
-#hamburger-menu .pane-hamburgermenufooter .pane-custom.pane-1 {
+/* line 269, ../sass/menu.scss */
+#hamburger-menu .pane-webform-client-block-19 .pane-custom.pane-1 {
   float: right;
   margin: 0 16px;
 }
-/* line 269, ../sass/menu.scss */
-#hamburger-menu .pane-hamburgermenufooter .pane-custom.pane-1 img {
+/* line 272, ../sass/menu.scss */
+#hamburger-menu .pane-webform-client-block-19 .pane-custom.pane-1 img {
   height: 55px;
   margin-top: 31px;
 }
+/* line 278, ../sass/menu.scss */
+#hamburger-menu .pane-bean-social-links-new {
+  float: right;
+}
 
-/* line 277, ../sass/menu.scss */
+/* line 283, ../sass/menu.scss */
 .navbar-toggle .icon-bar {
   width: 34px;
   background-color: #fff !important;
 }
 
-/* line 282, ../sass/menu.scss */
+/* line 288, ../sass/menu.scss */
 .navbar-toggle .icon-bar + .icon-bar {
   margin-top: 9px;
 }
 
-/* line 286, ../sass/menu.scss */
+/* line 292, ../sass/menu.scss */
 .hambruger.-menu.navbar-toggle {
   margin-top: 4px;
 }
