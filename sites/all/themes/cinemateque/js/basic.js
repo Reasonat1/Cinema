@@ -57,6 +57,12 @@
     if(barHtml == ''){
         $('.view-id-movie_top_pane_view.view-display-id-panel_pane_2 .slide-movie-year .crdt').text(tempBar);
     }
+    
+    var tempBars = jQuery('.view-id-event_ct_view.view-display-id-panel_pane_3 .slide-movie-year .crdt').text().slice(0,-2)
+    var barHtmls = jQuery('.view-id-event_ct_view.view-display-id-panel_pane_3 .slide-movie-year .mnts').html();
+    if(barHtmls == ''){
+        jQuery('.view-id-event_ct_view.view-display-id-panel_pane_3 .slide-movie-year .crdt').text(tempBars);
+    }
     if($('.view-id-movie_top_pane_view.view-display-id-panel_pane_4 .hide-div-movie').length){
         $('.view-id-movie_top_pane_view.view-display-id-panel_pane_4 .sub-title').hide();
     }
