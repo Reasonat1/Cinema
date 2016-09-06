@@ -420,7 +420,7 @@ body {
 		width: 77%;
 		float: right;
 		@include res(s-m){
-			width: 100%;
+			width: 100%!important;
 		}
 	}
 	.panels-flexible-region-node_page-content_right {
@@ -429,7 +429,6 @@ body {
 		margin-right: 8%;
 		@include res(s-m){
 			width: 100%;
-			position: absolute;
 		}
 		.panels-flexible-region-node_page-content_right-inside{
 			padding: 0;
@@ -482,11 +481,17 @@ table.views-table {
 .views-field-field-cm-movie-pictures img {
 	width: 100%;
 }
+
 .slide-movie-title h2 {
-	margin: 1% -3px 1% -3px;
+	margin: 1% 0;;
 	font-weight: normal;
 	color: $white;
-	font-size: 48px!important;
+	font-size: 2.66667em!important;
+	@include res(s){
+		font-size: 1.2em!important;
+		font-weight: bold;
+	}
+
 }
 
 .sharethis-wrapper span.st_sharethis_button {
@@ -949,6 +954,10 @@ table{
 			right: 0;
 			box-shadow: none;
 			top: 0px;
+			@include res(s-m){
+				width: 100%;
+				position: relative;
+			}
 		}
 	}
 	.popup-close{
@@ -1476,27 +1485,55 @@ table{
 	height: 150px!important;
 }
 
+.state-nopic .gradient.small{
+	background-image: none;
+}
 /******  responsive *********/
 
 .only-mobile{
-	display: none;
+	display: none!important;
 	@include res(s-m){
-		display: block;
+		display: block!important;
 	}
 }
 
 .only-desktop{
 	@include res(s-m){
-		display: none;
+		display: none!important;
 	}
 }
 
-.table-responsive{
-	border:none;
-	table{
-		@include res(s-m){
+.collapse{
+	display: block!important;
+	@include res(s-m){
+		padding: 0 3%;
+	}
+}
+
+@include res(s-m){
+	.table-responsive{
+		border:none;
+		overflow: hidden;
+		margin-bottom: 0;
+		table{
 			font-size: 14px;
 		}
+		.views-field-field-cm-event-hall{
+			.only-mobile{
+				color: #ccc;
+			}
+		}
+		td{
+			width: 30%!important;
+		}
+	}
+	.navbar-toggle{
+		display: none!important;
 	}
 }
 
+/*******  admin menu  **********/
+
+div#admin-toolbar div.admin-tab{
+	height: 25px;
+}

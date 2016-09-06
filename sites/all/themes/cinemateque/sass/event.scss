@@ -38,6 +38,9 @@
 			@include width;
 			.view{
 				margin: 0 23%;
+				@include res(s-m){
+					margin: 0;
+				}
 			}
 		}
 		.views-field-field-cm-movie-credits-person-ro{
@@ -137,6 +140,11 @@
 			color: $white;
 			margin-top: 3%;
 			margin: 0 23%;
+			@include res(s-m){
+				margin: 0 15%;
+				font-size: 13px;
+				width: 70%;
+			}
 			a{
 				color: $white;
 			}
@@ -163,10 +171,15 @@
 				height: 55px;
 				padding: 2%;
 				width: 55px;
+				@include res(s-m){
+					background-size: 16px;
+					height: 40px;
+					width: 40px;
+				}
 			}
 		}
 		.slide-eve-title {
-			font-size: 22px;
+			font-size: 2.667em;
 			margin-top: 1%;
 		}
 		.view-event-ct-view{
@@ -176,11 +189,19 @@
 				bottom: 60px;
 				width: 100%;
 				z-index: 15;
+				@include res(s-m){
+					text-align: center;	
+					font-size: 13px;
+					bottom: 10px;
+				}
 				.slide-over-content {
 					@include width();
 					.slide-movie-title {
 						margin-bottom: 15px;
-						font-size: 22px;				
+						@include res(s-m){
+							margin-bottom: 4px;
+							font-size: 13px;
+						}		
 					}
 				}
 			}
@@ -268,6 +289,10 @@
 	}
 	.pane-event-ct-view-panel-pane-6 {
 		margin-right: 23%;
+		@include res(s-m){
+			margin-right: 0;
+			margin-left: 0!important;
+		}
 		.views-field-field-cm-movie-body {
 			color: $color_mine_shaft_approx;
 			line-height: 28px;
@@ -297,6 +322,9 @@
 			padding: 35px 3%;
 			p {
 				margin: 0 23%;
+				@include res(s-m){
+					margin: 0;
+				}
 			}
 		}
 	}
@@ -317,6 +345,9 @@
 	}
 	#views_slideshow_cycle_main_event_ct_view-panel_pane_9 .views-field-field-cm-movie-pictures .group-alttab{
 		z-index: 5;
+		@include res(s-m){
+			display: none;
+		}
 	}
 }
 

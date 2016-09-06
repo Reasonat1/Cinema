@@ -205,9 +205,15 @@ body {
 		padding-top: 20px;
 	}
 	.webform-client-form {
+		.form-actions{
+			margin-top: 0;
+		}
 		.webform-component--join-our-newsletter{
-			width: auto!important;
-			margin-right: 30px!important;
+			width: 20%!important;
+			margin-right: 0px!important;
+			@include res(s-m){
+				widows: 100%;
+			}
 			p{
 				margin: 5px 0 0 0;
 			}
@@ -217,7 +223,10 @@ body {
 			margin-bottom: 0;
 			margin-right: 15px;
 			margin-top: 0;
-			width: 20%;
+			width: 18%;
+			@include res(s-m){
+				width: 100%;
+			}
 			input {
 				background-color: $color_clay_creek_approx;
 				color: #fff;
@@ -227,6 +236,10 @@ body {
 				margin-bottom: 0;
 				padding-left: 10px;
 				border-radius: 0!important;
+				@include res(s-m){
+					width: 100%;
+					box-sizing: border-box;
+				}
 			}
 			label{
 				color: #fff;
@@ -242,19 +255,26 @@ body {
 			width: auto;
 			cursor: default;
 			margin-left: 20%;
+			@include res(s-m){
+				margin: 0;
+			}
 			input{
 				height: auto;
+				width: auto;
 			}
 		}
 		.form-submit{
 			margin: 0 0 0 5px;
 			background: $white none repeat scroll 0 0 !important;
 			box-shadow: none;
-			color: $color_mongoose_approx !important;
+			color: $main_color !important;
 			height: 40px;
 			line-height: 0;
 			margin: 0;
 			border-radius: 0;
+			@include res(s-m){
+				width: 100%;
+			}
 		}
 		.form-control::-moz-placeholder{
 			color: #fff;
@@ -262,7 +282,7 @@ body {
 	}
 	.social {
 		&.icon {
-			background-color: $color_mongoose_approx;
+			background-color: $main_color;
 			float: left;
 			padding-top: 40px;
 			text-align: center;
@@ -286,13 +306,21 @@ body {
 		}
 		.copyright{
 			float: left;
+			@include res(s-m){
+				width: 100%;
+				text-align: center;
+			}
 		}
 		.design-development{
 			float: right;
+			@include res(s-m){
+				width: 100%;
+				text-align: center;
+			}
 		}
 	}
 	.col-md-12.news-letter {
-		background-color: $color_mongoose_approx;
+		background-color: $main_color;
 		color: $white;
 		padding: 0 0 25px 0;
 		.pane-content{
@@ -302,6 +330,9 @@ body {
 	}
 	.pane-webform-client-block-19 .pane-content {
 		margin: 0 auto;
+	}
+	.caruosel-slideshow{
+		max-width: 100%;
 	}
 }
 
@@ -348,76 +379,19 @@ img.panopoly-image-full{
 	margin-bottom: 0!important;
 }
 
-/*.sticky-header {
-	height: 56px !important;
-	line-height: 35px;
-	margin-top: 0;
-	position: fixed;
-	width: 100%;
-	z-index: 100;
-	&.header {
-		.navbar-default {
-			background-color: $black!important;
-		}
-		#site-main-menu {
-			padding-bottom: 0;
-			padding-top: 5px;
-			background-color: $black;
-			color: $color_mongoose_approx;
-			li a {
-				padding-bottom: 12px;
-				padding-top: 12px;
-				background-color: $black;
-				color: $white;
-				&:hover {
-					padding-bottom: 12px;
-					padding-top: 12px;
-					background-color: $black;
-					color: $color_mongoose_approx;
-				}
-				&:active {
-					padding-bottom: 12px;
-					padding-top: 12px;
-					background-color: $black;
-					color: $color_mongoose_approx;
-				}
-			}
-		}
-		.hambruger.-menu.navbar-toggle {
-			margin-top: 12px;
-			margin-left: 30px;
-		}
-		.navbar .navbar-brand {
-			height: 50px;
-			overflow: hidden;
-			padding: 0 0 0 5px;
-		}
-	}
-	.festival-site {
-		padding-left: 12px;
-		padding-top: 7px;
-		span{
-			line-height: 20px;
-		}
-	}
-	.navbar-header{
-		height: 54px;
-	}
-	.navbar-brand > img {
-		height: 50px;
-		padding-top: 5px;
-	}
-	.header-right > li {
-		padding-top: 9px;
-	}
-}*/
-
 .sticky-header, .not-front header{
 	height: 50px!important;
 	.navbar-brand{
 		padding-top: 6px!important;
+		@include res(s-m){
+			padding-top: 10px!important;
+			height: 40px;
+		}
 		> img {
 			height: 40px;
+			@include res(s-m){
+				height: 30px;
+			}
 		}
 	}
 }
@@ -438,6 +412,7 @@ img.panopoly-image-full{
 .navbar-header{
 	position: relative;
 	z-index: 200;
+	float: left;
 }
 
 #header {
@@ -471,13 +446,16 @@ img.panopoly-image-full{
 
 .header {
 	#site-main-menu {
-		background-color: $color_mongoose_approx;
+		background-color: $main_color;
 		color: $white;
 		transition: all 0.5s ease 0s;
 		padding: 0!important;
 		width: 100%;
 		position: absolute;
 		float: none;
+		@include res(s-m){
+			display: none;
+		}
 		li a {
 			color: $white;
 			transition: all 0.5s ease 0s;
@@ -499,6 +477,17 @@ img.panopoly-image-full{
 	.header-right{
 		width: auto;
 		float: right;
+		@include res(s-m){
+			padding: 0;
+			li{
+				padding-left: 0;
+				padding-right: 0;
+				margin-left: 10px;
+				&.shopping-cart, &#da11y-plugin{
+					display: none;
+				}
+			}
+		}
 		.search{
 			span{
 				background: url("../images/search-icon.png") no-repeat 0 2px;
@@ -562,6 +551,9 @@ img.panopoly-image-full{
 	}
 }
 
+.search .header .header-right .search span{
+	background: url("../images/search-icon-gold.png") no-repeat 0 2px;
+}
 .dropdown-menu {
 	background-color: transparent;
 	padding: 0;
@@ -590,117 +582,6 @@ img.panopoly-image-full{
 	}
 }
 
-
-[dir="rtl"] {
-	.navbar-header {
-		float: right !important;
-	}
-	.block-image {
-		float: right;
-		text-align: left;
-	}
-
-	.navbar-brand {
-		float: right;
-	}
-	#myModal {
-		.webform-component {
-			float: right;
-		}
-		.newsleter-name {
-			border-bottom-left-radius: 0!important;
-			border-top-left-radius: 0!important;
-			border-bottom-right-radius: 15px!important;
-			border-top-right-radius: 15px!important;
-		}
-		.news-leter .webform-submit.button-primary {
-			border-bottom-left-radius: 0!important;
-			border-top-left-radius: 0!important;
-			border-bottom-right-radius: 15px!important;
-			border-top-right-radius: 15px!important;
-		}
-		.form-submit{
-			border-bottom-left-radius: 15px!important;
-			border-top-left-radius: 15px!important;
-			border-bottom-right-radius: 0px!important;
-			border-top-right-radius: 0px!important;
-		}
-	}
-	.radio {
-		label {
-			padding-left: 0;
-			padding-right: 0;
-		}
-		input[type="radio"] {
-			margin-left: 6px;
-			margin-top: 0;
-			position: relative;
-		}
-	}
-	.site-custom-menu.menu.nav.navbar-nav {
-		float: right;
-	}
-	.hambruger.-menu.navbar-toggle {
-		float: right;
-		margin-left: 0;
-		margin-right: 30px;
-	}
-	.social .pane-content {
-		li {
-			float: right;
-		}
-		span {
-			float: right;
-		}
-	}
-	.sponser-pane .pane-content li {
-		float: right;
-		float: right;
-	}
-	.design-development > p {
-		text-align: left;
-	}
-	.view-bean-infomation-block-view table tr {
-		float: right;
-	}
-	.pane-menu-menu-site-main-menu .menu.nav li.expanded {
-		float: right;
-	}
-	.col-md-6.news-leter {
-		float: right;
-	}
-	.news-leter .webform-component input {
-		padding-left: 0;
-		padding-right: 4px;
-	}
-	.checkbox input[type="checkbox"] {
-		margin-left: 6px;
-		margin-top: 0;
-		position: relative;
-	}
-	.checkbox-inline input[type="checkbox"] {
-		margin-left: 6px;
-		margin-top: 0;
-		position: relative;
-	}
-	.radio-inline input[type="radio"] {
-		margin-left: 6px;
-		margin-top: 0;
-		position: relative;
-	}
-	.popup.region .views-field {
-		&.views-field-field-cm-info-block-icon {
-			float: right;
-		}
-		&.views-field-label {
-			float: right;
-		}
-		&.views-field-field-cm-info-block-text {
-			float: right;
-		}
-	}
-}
-
 .pro-grid {
 	margin: 0 auto;
 	background: $color_mercury_approx none repeat scroll 0 0;
@@ -723,7 +604,7 @@ img.panopoly-image-full{
 		background: $color_wild_sand_approx;
 	}
 	&:hover {
-		background-color: $color_mongoose_approx;
+		background-color: $main_color;
 		color: $black !important;
 		.pro-grid li {
 			.search-view-mode {
@@ -979,7 +860,7 @@ li.expanded {
 		display: none;
 	}
 	.dropdown-menu {
-		border-top: 2px solid $color_mongoose_approx;
+		border-top: 2px solid $main_color;
 	}
 }
 
@@ -1050,7 +931,8 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 
 .pane-bean-footer-social-block{
 	background-color: $main_color;
-	padding-top: 40px;
+	padding: 40px 0;
+	clear: both;
 	.field-items{
 		text-align: center;
 	}
@@ -1150,7 +1032,7 @@ span.bold {
 	width: 100%;
 }
 .calender-filter-date p.pull-left {
-	color: $color_mongoose_approx;
+	color: $main_color;
 	font-weight: bolder;
 }
 .page-taxonomy .panels-flexible-row.content {
@@ -1230,7 +1112,7 @@ span.bold {
 .custom_filter_css .item-list ul li {
 	display: inline-block;
 	padding: 6px 10px;
-	background: $color_mongoose_approx;
+	background: $main_color;
 	a {
 		color: $white !important;
 		letter-spacing: 1px;
