@@ -26,105 +26,111 @@ table td, table th {
   padding-right: 0 !important;
   padding-left: 8px !important;
 }
+@media (max-width: 767px) {
+  /* line 22, ../sass/general-rtl.scss */
+  table td, table th {
+    padding: 8px !important;
+  }
+}
 
-/* line 29, ../sass/general-rtl.scss */
+/* line 32, ../sass/general-rtl.scss */
 #page-header .tabs {
   right: auto;
   left: 0;
 }
 
-/* line 35, ../sass/general-rtl.scss */
+/* line 38, ../sass/general-rtl.scss */
 .header-right {
   float: left;
 }
-/* line 37, ../sass/general-rtl.scss */
+/* line 40, ../sass/general-rtl.scss */
 .header-right li {
   float: right !important;
 }
 
-/* line 43, ../sass/general-rtl.scss */
+/* line 46, ../sass/general-rtl.scss */
 .popup-element-body .center {
   width: 100% !important;
   top: 55px;
   left: 0;
   position: fixed !important;
 }
-/* line 49, ../sass/general-rtl.scss */
+/* line 52, ../sass/general-rtl.scss */
 .popup-element-body form .form-group .form-text {
   padding: 7px 2% 8px 22%;
 }
-/* line 54, ../sass/general-rtl.scss */
+/* line 57, ../sass/general-rtl.scss */
 .popup-element-body #search-api-page-search-form-search-results--2 .form-group .form-text {
   float: right;
   padding: 7px 2% 8px 22%;
 }
-/* line 59, ../sass/general-rtl.scss */
+/* line 62, ../sass/general-rtl.scss */
 .popup-element-body #search-api-page-search-form-search-results--2 .form-submit {
   right: auto;
   left: 0;
 }
-/* line 64, ../sass/general-rtl.scss */
+/* line 67, ../sass/general-rtl.scss */
 .popup-element-body .popup-close {
   left: 10px !important;
   right: auto !important;
 }
-/* line 68, ../sass/general-rtl.scss */
+/* line 71, ../sass/general-rtl.scss */
 .popup-element-body #search-api-page-search-form-search-results {
   padding: 0px 47px 10px 0px;
   left: 0px;
   right: auto;
 }
-/* line 72, ../sass/general-rtl.scss */
+/* line 75, ../sass/general-rtl.scss */
 .popup-element-body #search-api-page-search-form-search-results .form-submit {
   float: right;
 }
-/* line 76, ../sass/general-rtl.scss */
+/* line 79, ../sass/general-rtl.scss */
 .popup-element-body form .form-submit {
   left: 0;
   right: auto;
 }
 
 /**** lobby page  ****/
-/* line 86, ../sass/general-rtl.scss */
+/* line 89, ../sass/general-rtl.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_1 .toptix-purchase {
   float: left;
 }
-/* line 90, ../sass/general-rtl.scss */
+/* line 93, ../sass/general-rtl.scss */
 .page-term-lobby .lobby-term-left {
   float: left;
 }
-/* line 93, ../sass/general-rtl.scss */
+/* line 96, ../sass/general-rtl.scss */
 .page-term-lobby .lobby-term-right {
   float: right;
 }
-/* line 95, ../sass/general-rtl.scss */
+/* line 98, ../sass/general-rtl.scss */
 .page-term-lobby .lobby-term-right .top-text-blk-wht {
   right: 0px;
   left: auto;
 }
-/* line 101, ../sass/general-rtl.scss */
+/* line 104, ../sass/general-rtl.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-row {
   margin-left: 5%;
   margin-right: 0;
   float: right;
 }
-/* line 106, ../sass/general-rtl.scss */
+/* line 109, ../sass/general-rtl.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-row:nth-child(3n) {
   margin-left: 0;
 }
-/* line 109, ../sass/general-rtl.scss */
+/* line 112, ../sass/general-rtl.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-field-field-mc-teaser-toptxt-blk {
   right: 0;
   left: auto;
 }
-/* line 113, ../sass/general-rtl.scss */
+/* line 116, ../sass/general-rtl.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-field-ops {
   left: 15px;
   right: auto;
 }
 
 /***  article page  ****/
-/* line 123, ../sass/general-rtl.scss */
+/* line 126, ../sass/general-rtl.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) {
   width: 1280px !important;
   max-width: 100%;
@@ -132,40 +138,40 @@ table td, table th {
   padding: 0 3%;
   box-sizing: border-box;
 }
-/* line 125, ../sass/general-rtl.scss */
+/* line 128, ../sass/general-rtl.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) .radix-layouts-sidebar {
   padding-right: 0;
   padding-left: 100px;
   float: right;
 }
-/* line 130, ../sass/general-rtl.scss */
+/* line 133, ../sass/general-rtl.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) .radix-layouts-sidebar .field-name-field-cm-article-tags a {
   float: right;
   margin-left: 10px;
   margin-right: 0;
 }
-/* line 138, ../sass/general-rtl.scss */
+/* line 141, ../sass/general-rtl.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) .radix-layouts-content .pane-node-body {
   margin-left: 23%;
   margin-right: 0;
 }
 
 /******   webform  *****/
-/* line 150, ../sass/general-rtl.scss */
+/* line 153, ../sass/general-rtl.scss */
 .node-type-webform form .form-actions {
   float: left;
 }
 
 /*******  user profile  ********/
-/* line 163, ../sass/general-rtl.scss */
+/* line 166, ../sass/general-rtl.scss */
 .page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper form {
   float: right;
 }
-/* line 166, ../sass/general-rtl.scss */
+/* line 169, ../sass/general-rtl.scss */
 .page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper .edit {
   float: left;
 }
-/* line 171, ../sass/general-rtl.scss */
+/* line 174, ../sass/general-rtl.scss */
 .page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .views-widget-filter-type .form-item-edit-type-1 {
   border-left: 1px solid #000;
   border-right: none;
@@ -174,57 +180,57 @@ table td, table th {
   margin-right: 0;
   padding-right: 0;
 }
-/* line 185, ../sass/general-rtl.scss */
+/* line 188, ../sass/general-rtl.scss */
 .page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-left {
   float: right;
 }
-/* line 187, ../sass/general-rtl.scss */
+/* line 190, ../sass/general-rtl.scss */
 .page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-left .top-text-blk-wht {
   right: 0;
   left: auto;
 }
-/* line 192, ../sass/general-rtl.scss */
+/* line 195, ../sass/general-rtl.scss */
 .page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-right {
   float: left;
 }
-/* line 196, ../sass/general-rtl.scss */
+/* line 199, ../sass/general-rtl.scss */
 .page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .row-custom-lobby .purchase {
   float: left;
 }
 
 /*********  person page  **********/
-/* line 210, ../sass/general-rtl.scss */
+/* line 213, ../sass/general-rtl.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col {
   float: right;
   padding-right: 44px;
   padding-left: 0;
 }
-/* line 215, ../sass/general-rtl.scss */
+/* line 218, ../sass/general-rtl.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col-1 {
   background: url("../images/search-icon-gold.png") no-repeat scroll right 4px;
 }
-/* line 218, ../sass/general-rtl.scss */
+/* line 221, ../sass/general-rtl.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col-2 {
   background: url("../images/search-icon-gold.png") no-repeat scroll right 4px;
 }
-/* line 221, ../sass/general-rtl.scss */
+/* line 224, ../sass/general-rtl.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col-3 {
   background: url("../images/search-icon-gold.png") no-repeat scroll right 4px;
 }
-/* line 228, ../sass/general-rtl.scss */
+/* line 231, ../sass/general-rtl.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .views-row-odd {
   float: right;
 }
-/* line 231, ../sass/general-rtl.scss */
+/* line 234, ../sass/general-rtl.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .views-row-even {
   float: left;
 }
-/* line 236, ../sass/general-rtl.scss */
+/* line 239, ../sass/general-rtl.scss */
 .node-type-cm-person .panels-flexible-region-node_page-content_left {
   float: left !important;
 }
 
-/* line 242, ../sass/general-rtl.scss */
+/* line 245, ../sass/general-rtl.scss */
 .content.middle .panels-flexible-region-node_page-content_left {
   width: 77%;
   float: left;

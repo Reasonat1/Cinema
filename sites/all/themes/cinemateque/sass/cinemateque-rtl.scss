@@ -87,10 +87,141 @@
 	}
 }
 
+.header #site-main-menu{
+	li{
+		padding: 0;
+		margin: 0;
+ 		a{
+			text-align: right;
+	 	}
+	}
+	.dropdown-menu{
+		right: 0;
+		left: auto;
+	}
+}
+
 .col-md-3.header-right .shopping-cart button{
 	margin-top: 5px;
 }
 
 .col-md-3.header-right > li.search{
 	margin-top: 3px;
+}
+
+.navbar-header {
+	float: right !important;
+}
+
+.block-image {
+	float: right;
+	text-align: left;
+}
+
+.navbar-brand {
+	float: right;
+}
+
+#myModal {
+	.webform-component {
+		float: right;
+	}
+}
+
+.radio {
+	label {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	input[type="radio"] {
+		margin-left: 6px;
+		margin-top: 0;
+		position: relative;
+	}
+}
+
+.site-custom-menu.menu.nav.navbar-nav {
+	float: right;
+}
+
+.hambruger.-menu.navbar-toggle {
+	float: right;
+	margin-left: 0;
+	margin-right: 30px;
+}
+
+.social .pane-content {
+	li {
+		float: right;
+	}
+	span {
+		float: right;
+	}
+}
+
+.sponser-pane .pane-content li {
+	float: right;
+	float: right;
+}
+
+.design-development > p {
+	text-align: left;
+}
+
+.view-bean-infomation-block-view table tr {
+	float: right;
+}
+
+.pane-menu-menu-site-main-menu .menu.nav li.expanded {
+	float: right;
+}
+
+.col-md-6.news-leter {
+	float: right;
+}
+
+.news-leter .webform-component input {
+	padding-left: 0;
+	padding-right: 4px;
+}
+
+.checkbox input[type="checkbox"] {
+	margin-left: 6px;
+	margin-top: 0;
+	position: relative;
+}
+
+.checkbox-inline input[type="checkbox"] {
+	margin-left: 6px;
+	margin-top: 0;
+	position: relative;
+}
+
+.radio-inline input[type="radio"] {
+	margin-left: 6px;
+	margin-top: 0;
+	position: relative;
+}
+
+.popup.region .views-field {
+	&.views-field-field-cm-info-block-icon {
+		float: right;
+	}
+	&.views-field-label {
+		float: right;
+	}
+	&.views-field-field-cm-info-block-text {
+		float: right;
+	}
+}
+
+/***********   responsive   ***********/
+
+.navbar-header{
+	float: right;
+}
+
+.header .header-right li {
+    margin-right: 10px;
+    margin-left: 0;
 }

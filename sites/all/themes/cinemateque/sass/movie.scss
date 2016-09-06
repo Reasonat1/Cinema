@@ -43,8 +43,6 @@
  			bottom: auto;
  			.slide-left-ct{
  				color: #333;
- 				.slide-eve-lobby, .slide-movie-title, .slide-movie-year{
- 				}
  			}
  			 .slide-right-ct {
  			 	margin-top: 0;
@@ -98,16 +96,18 @@
 			@include res(s-m){
 				text-align: center;	
 				font-size: 13px;
+				margin: 0 15%;
+				width: 70%;
 			}
 			.slide-eve-lobby{
 				font-size: 1.222em;
 				margin-bottom: 1%;
+				a, a:hover{
+				color: #fff;
+				}
 			}
 			.slide-movie-year{
 				font-size: 1.222em;
-			}
-			@include res(s-m){
-				margin: 0 15%;
 			}
 			.slide-movie-title {
 				font-size: 2.667em;
@@ -115,9 +115,12 @@
 				font-weight: normal;
 				line-height: 110%;
 				margin-bottom: 15px;
-				padding: 0 2px;
 				@include res(s-m){
 					margin-bottom: 4px;
+				}
+				@include res(s){
+					font-size: 1.2em;
+					font-weight: bold;
 				}
 			}
 		}
@@ -147,7 +150,6 @@
 		padding-top: 50px!important;
 		@include res(s-m){
 			padding-top: 20px!important;
-			border: 2px solid #f0f0f0;
 			margin-bottom: 20px;
 		}
 	}
@@ -346,6 +348,15 @@
 		padding: 0!important;
 		.panels-flexible-row-node_page-4-inside{
 			@include width();
+			@include res(s-m){
+				padding:0;
+				tr{
+					@include res(s-m){
+						padding: 0 3%;
+						border-bottom: 2px solid #f0f0f0;
+					}
+				}
+			}
 			.field-name-field-qoutes{
 				margin: 70px 23%;
 			}

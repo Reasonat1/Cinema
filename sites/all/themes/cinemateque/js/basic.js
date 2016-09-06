@@ -36,14 +36,17 @@
         $(".header-right .search span").click(function() {
             if (!$("div").hasClass("screen-search")){
                 $("#header").prepend("<div class='screen-search'></div>");
+                $("body").addClass("search");
             }
             else{
                 $(".screen-search").remove();
+                $("body").removeClass("search");
             }
         });
 
         $(".popup-close-button").click(function() {
                 $(".screen-search").remove();
+                $("body").removeClass("search");
         });
 /*
         $(document).click(function(event) { 
