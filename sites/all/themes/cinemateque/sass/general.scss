@@ -1,7 +1,11 @@
 @import "init";
 
-a{
-	color: $main_color;
+.domain-1 a{
+	color: #e41145;
+}
+
+.domain-2 a{
+	color: #b59d70;
 }
 
 p{
@@ -722,22 +726,22 @@ table.views-table {
 	.pane-content {
 		@include width();
 		.view-content {
-			color: $main_color!important;
+			@include main-color();
 			padding: 50px 0;
 			overflow: hidden;
 		}
 		.views-field-name {
 			a {
-				color: $main_color!important;
+				@include main-color();
 				font-size: 1rem !important;
 			}
 		}
 		.views-field-review .field-content p {
-			color: $main_color !important;
+			@include main-color();
 			font-size: 1.35rem !important;
 			line-height: 1.35rem;
 			span {
-				color: $main_color !important;
+				@include main-color();
 				font-size: 1.15rem !important;
 			}
 		}
@@ -780,7 +784,7 @@ table.views-table {
 		width: 100%;
 		top: 0;
 		.white {
-			color: $main_color;
+			@include main-color();
 			display: block;
 			float: left;
 			padding: 1%;
@@ -815,7 +819,7 @@ table.views-table {
 	width: 100% !important;
 }
 button.toptix-purchase {
-	background-color: $main_color;
+	@include bg-main-color();
 	color: $white;
 	font-size: .8rem;
 	border: none;
@@ -883,7 +887,8 @@ button.toptix-purchase {
 }
 
 input:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]), input[type="email"]:focus:not([readonly]), input[type="number"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), input[type="search-md"]:focus:not([readonly]), input[type="tel"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="time"]:focus:not([readonly]), input[type="url"]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
-	border-bottom: 1px solid $main_color!important;
+	border-bottom: 1px solid;
+	@include border-main-color();
 }
 
 table{
@@ -946,7 +951,7 @@ table{
 		.form-submit {
 			margin: 0;
 			border-radius: 0 !important;
-			background: $main_color !important;
+			@include bg-main-color();
 			padding: 9px 25px 11px;
 			font-size: 18px;
 			width: 20%;
@@ -1159,11 +1164,11 @@ table{
 			float: right;
 			.webform-submit{
 				box-shadow: none;;
-				background-color: $main_color;
+				@include bg-main-color();
 				color: #fff;
 				margin: 0;
 				&:hover{
-					background-color: $main_color!important;
+					@include bg-main-color();
 					opacity: 0.9;
 				}
 			}
@@ -1217,7 +1222,7 @@ table{
 				margin-right: -5px; 
 				&.active{
 					color: #fff;
-					background-color: $main_color;
+					@include bg-main-color();
 				}
 			}
 			.form-item{
@@ -1246,7 +1251,7 @@ table{
 				.edit{
 					float: right;
 					a{
-						color: $main_color;
+						@include main-color();
 						border: 1px solid;
 						padding: 5px 10px;
 					}
@@ -1262,7 +1267,7 @@ table{
 					a{
 						color: #000;
 						&.active{
-							color: $main_color;
+							@include main-color();
 						}
 					}
 				}

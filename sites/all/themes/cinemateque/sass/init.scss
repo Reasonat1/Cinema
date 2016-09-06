@@ -48,6 +48,33 @@ $color_mine_shaft_approx: #312f2f;
 
 /********  mixin *********/
 
+@mixin main-color(){
+  .domain-1 &{
+    color: #e41145!important;
+  }
+  .domain-2 &{
+    color:#b59d70!important;
+  }
+}
+
+@mixin bg-main-color(){
+  .domain-1 &{
+    background-color: #e41145!important;
+  }
+  .domain-2 &{
+    background-color: #b59d70!important;
+  }
+}
+
+@mixin border-main-color(){
+  .domain-1 &{
+    border-color:#e41145!important;
+  }
+  .domain-2 &{
+    border-color:#b59d70!important;
+  }
+}
+
 @mixin width(){
   width: 1280px!important;
   max-width: 100%;

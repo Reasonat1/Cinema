@@ -94,15 +94,15 @@ body {
 		}
 		li:hover{
 			i, #da11y-toggle{
-				color: $main_color;
+				@include main-color();
 			}
 		}
 		#da11y-toggle.active{
-				color: $main_color;
+				@include main-color();
 				box-shadow: none;
 		}
 		.popup-title-active i{
-				color: $main_color;
+				@include main-color();
 		}
 		.shopping-cart{
 			button{
@@ -267,7 +267,7 @@ body {
 			margin: 0 0 0 5px;
 			background: $white none repeat scroll 0 0 !important;
 			box-shadow: none;
-			color: $main_color !important;
+			@include main-color();
 			height: 40px;
 			line-height: 0;
 			margin: 0;
@@ -282,7 +282,7 @@ body {
 	}
 	.social {
 		&.icon {
-			background-color: $main_color;
+			@include bg-main-color();
 			float: left;
 			padding-top: 40px;
 			text-align: center;
@@ -320,7 +320,7 @@ body {
 		}
 	}
 	.col-md-12.news-letter {
-		background-color: $main_color;
+		@include bg-main-color();
 		color: $white;
 		padding: 0 0 25px 0;
 		.pane-content{
@@ -446,7 +446,6 @@ img.panopoly-image-full{
 
 .header {
 	#site-main-menu {
-		background-color: $main_color;
 		color: $white;
 		transition: all 0.5s ease 0s;
 		padding: 0!important;
@@ -463,7 +462,7 @@ img.panopoly-image-full{
 			padding-bottom: 10px!important;
 		}
 		li li a{
-			background-color: $main_color;
+			@include bg-main-color();;
 		}
 
 	}
@@ -590,7 +589,7 @@ img.panopoly-image-full{
 		background: transparent;
 	}
 	> * .search-info .fa {
-		color: $main_color;
+		@include main-color();
 		font-size: 16px;
 		margin: 0 10px;
 	}
@@ -604,7 +603,7 @@ img.panopoly-image-full{
 		background: $color_wild_sand_approx;
 	}
 	&:hover {
-		background-color: $main_color;
+		@include bg-main-color();
 		color: $black !important;
 		.pro-grid li {
 			.search-view-mode {
@@ -644,38 +643,44 @@ img.panopoly-image-full{
 	}
 	> .active {
 		> a {
-			border: 1px solid $main_color!important;
+			border: 1px solid!important;
+			@include border-main-color();
 			background: transparent;
-			color: $main_color;
+			@include main-color();
 			&:focus {
-				border: 1px solid $main_color!important;
+				border: 1px solid;
+				@include border-main-color();
 				background: transparent;
-				color: $main_color;
+				@include main-color();
 			}
 			&:hover {
-				border: 1px solid $main_color!important;
+				border: 1px solid;
+				@include border-main-color();
 				background: transparent;
-				color: $main_color;
+				@include main-color();
 			}
 		}
 		> span {
-				border: 1px solid $main_color!important;
+				border: 1px solid;
+				@include border-main-color();
 				background: transparent;
-				color: $main_color;
+				@include main-color();
 			&:focus {
-				border: 1px solid $main_color!important;
+				border: 1px solid;
+				@include border-main-color();
 				background: transparent;
-				color: $main_color;
+				@include main-color();
 			}
 			&:hover {
-				border: 1px solid $main_color!important;
+				border: 1px solid;
+				@include border-main-color();
 				background: transparent;
-				color: $main_color;
+				@include main-color();
 			}
 		}
 	}
 	li a {
-		color: $main_color;
+		@include main-color();
 	}
 }
 .item-list {
@@ -713,7 +718,7 @@ img.panopoly-image-full{
 	#edit-submit {
 		margin: 0;
 		border-radius: 0 !important;
-		background: $main_color !important;
+		@include bg-main-color();
 		padding: 9px 25px 11px;
 		box-shadow: 0 1px 4px 1px $color_silver_chalice_approx;
 		font-size: 18px;
@@ -732,13 +737,13 @@ img.panopoly-image-full{
 			border-right: 1px solid $color_cararra_approx;
 			border-left: 1px solid $color_cararra_approx;
 			&.active {
-				background-color: $main_color;
+				@include bg-main-color();
 				color: $white;
 				cursor: pointer;
 				box-shadow: none;
 			}
 			&:hover {
-				background-color: $main_color;
+				@include bg-main-color();
 				box-shadow: none;
 			}
 		}
@@ -766,7 +771,7 @@ img.panopoly-image-full{
 	float: left;
 	width: 100%;
 	.pull-left {
-		color: $main_color;
+		@include main-color();
 		font-weight: bold;
 	}
 }
@@ -786,7 +791,7 @@ img.panopoly-image-full{
 }
 
 .purchase-btn {
-	background: $main_color;
+	@include bg-main-color();
 	padding: 4px 10px;
 	color: $white !important;
 	letter-spacing: 1px;
@@ -860,7 +865,8 @@ li.expanded {
 		display: none;
 	}
 	.dropdown-menu {
-		border-top: 2px solid $main_color;
+		border-top: 2px solid;
+		@include border-main-color();
 	}
 }
 
@@ -930,7 +936,7 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 }
 
 .pane-bean-footer-social-block{
-	background-color: $main_color;
+	@include bg-main-color();
 	padding: 40px 0;
 	clear: both;
 	.field-items{
@@ -1032,7 +1038,7 @@ span.bold {
 	width: 100%;
 }
 .calender-filter-date p.pull-left {
-	color: $main_color;
+	@include main-color();
 	font-weight: bolder;
 }
 .page-taxonomy .panels-flexible-row.content {
@@ -1112,14 +1118,14 @@ span.bold {
 .custom_filter_css .item-list ul li {
 	display: inline-block;
 	padding: 6px 10px;
-	background: $main_color;
+	@include bg-main-color();
 	a {
 		color: $white !important;
 		letter-spacing: 1px;
 	}
 }
 .mobile-event-accordian .accordian-hall {
-	background-color: $main_color;
+	@include bg-main-color();
 	color: $white;
 	cursor: pointer;
 	margin: 2px 0;

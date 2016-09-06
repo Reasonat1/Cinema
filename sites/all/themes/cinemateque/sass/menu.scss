@@ -1,6 +1,7 @@
 @import "init";
 
 .hamburger {
+	color: #fff;
 	.modal-dialog {
 		width: 100%;
 		margin: 0;
@@ -49,8 +50,8 @@
 	.col-md-12{
 		padding: 0;
 	}
+	/*
 	.pane-my-backend-festival-menu-block {
-		width: 27.5%;
 		float: left;
 		padding: 10px 15px 0 85px;
 		box-sizing: border-box;
@@ -94,11 +95,11 @@
 			font-size: 16px;
 			font-weight: bold;
 		}
-	}
+	}*/
 	.pane-menu-menu-site-main-menu {
-		width: 72.5%;
+		width: 100%;
 		float: right;
-		padding: 0 70px 0 0;
+		padding: 0 70px;
 		.menu-link-demo-1, .menu-link-demo-2, .menu-link-demo-3{
 			> a{
 				font-size: 18px;
@@ -111,7 +112,7 @@
 		.menu.nav li.expanded {
 			float: left;
 			padding: 10px 15px 0 15px;
-			width: 33.3%;
+			width: 25%;
 			box-sizing: border-box;
 			a {
 				color: $white;
@@ -130,6 +131,7 @@
 				background-position: right center;
 				background-repeat: no-repeat;
 				background-size: 20px auto;
+				width: 100%;
 				&.last {
 					border-bottom: none;
 				}
@@ -147,7 +149,7 @@
 			}
 		}
 	}
-	.pane-information-info-view-block{
+	.pane-bean-main-info-english{
 		padding-left: 70px;
 		padding-right: 70px;
 		width: 100%;
@@ -156,20 +158,20 @@
 		padding-top: 30px;
 		clear: left;
 		overflow: hidden;
-		.bean-block{
+		.field-name-field-content-info > .field-items > .field-item{
 			padding: 0 15px;
-			text-align: left;
 			position: relative;
 			border: none;
 			width: 25%;
 			margin-bottom: 27px;
-			.bean-icon{
+			float: left;
+			.field-name-field-cm-info-block-icon{
 				font-size: 20px;
 				width: auto;
 				position: absolute;
 				left: -30px;
 			}
-			.bean-title{
+			.field-name-field-label{
 				font-weight: bold;
 				font-size: 12px;
 				font-size: 1.25rem;
@@ -178,7 +180,7 @@
     			padding-right: 50px;
     			padding-bottom: 5px;
 			}
-			.bean-body p{
+			.field-name-field-description{
     			line-height: 1.2;
     			text-align: left;
     			padding-right: 50px;
@@ -186,8 +188,9 @@
 			}
 		}
 	}
-	.pane-hamburgermenufooter{
+	.pane-webform-client-block-19{
 		clear: both;
+		position: relative;
 		background-color: #262626;
 		padding: 0 70px 50px;
 		.pane-title{
@@ -216,11 +219,11 @@
 			input{
 				margin: 0;
 				background-color: #fff;
-				color: $main_color;
+				@include main-color();
 				padding: 0 15px 0 10px;
 				&:hover{
 					background-color: #fff!important;
-					color: $main_color!important;
+					@include main-color();
 				}
 			}
 		}
@@ -271,6 +274,9 @@
     			margin-top: 31px;
 			}
 		}
+	}
+	.pane-bean-social-links-new{
+		float: right;
 	}
 }
 

@@ -214,10 +214,17 @@
 }
 /* line 178, ../sass/calendar.scss */
 .calender-filter > p:hover {
-  background-color: #e41145;
   box-shadow: 0 0 3px 2px #f4f4f4;
   color: #ffffff;
   cursor: pointer;
+}
+/* line 61, ../sass/init.scss */
+.domain-1 .calender-filter > p:hover {
+  background-color: #e41145 !important;
+}
+/* line 64, ../sass/init.scss */
+.domain-2 .calender-filter > p:hover {
+  background-color: #b59d70 !important;
 }
 /* line 183, ../sass/calendar.scss */
 .calender-filter > p:hover span {

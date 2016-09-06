@@ -131,7 +131,7 @@
 		.form-submit {
 			margin: 0;
 			border-radius: 0 !important;
-			background: $main_color !important;
+			@include bg-main-color();
 			padding: 9px 25px 11px;
 			font-size: 18px;
 			width: 20%;
@@ -415,7 +415,7 @@
 .select2-container--default .select2-selection--single .select2-selection__arrow b:before{
 		content: "\f107";
 		font: normal normal normal 14px/1 FontAwesome;
-		color: $main_color;
+		@include main-color();
 	    position: absolute;
 	    right: -4px;
 	    top: -4px;
@@ -440,7 +440,8 @@
 }
 
 input:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]), input[type="email"]:focus:not([readonly]), input[type="number"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), input[type="search-md"]:focus:not([readonly]), input[type="tel"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="time"]:focus:not([readonly]), input[type="url"]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
-	border-bottom: 1px solid $main_color;
+	border-bottom: 1px solid;
+	@include border-main-color();
 }
 
 .page-search-search-results #main #content .search_new, .page-search-search-results #main #content .region-content .views-field-php a {
