@@ -72,17 +72,17 @@
     if(!empty($node->field_cm_event_duration)){
       $length_intervals = $node->field_cm_event_duration['und'][0]['interval'];
       $length_periods = $node->field_cm_event_duration['und'][0]['period'];
-      $lengths = $length_intervals.t($length_periods);
+      $lengths = $length_intervals.' '.t($length_periods);
     }
     if(!empty($node->field_cm_movie_duration)){
       $length_interval = $node->field_cm_movie_duration['und'][0]['interval'];
       $length_period = $node->field_cm_movie_duration['und'][0]['period'];
-      $length =  $length_interval.t($length_period);
+      $length =  $length_interval.' '.t($length_period);
     }
     elseif(!empty($node->field_cm_moviegroup_duration)){
       $length_interval = $node->field_cm_moviegroup_duration['und'][0]['interval'];
       $length_period = $node->field_cm_moviegroup_duration['und'][0]['period'];
-      $length = $length_interval.t($length_period);
+      $length = $length_interval.' '.t($length_period);
     }
     if(!empty($node->field_cm_moviegroup_short_summar)){
       $summary_movie_group =  truncate_utf8($node->field_cm_moviegroup_short_summar['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
