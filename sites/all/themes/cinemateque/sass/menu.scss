@@ -98,22 +98,23 @@
 	}*/
 	.pane-menu-menu-site-main-menu {
 		width: 100%;
-		float: right;
 		padding: 0 70px;
-		.menu-link-demo-1, .menu-link-demo-2, .menu-link-demo-3{
+		h2 {
+			display: none;
+		}
+		.menu.nav li.expanded, .menu.nav li.collapsed {
+			float: left;
+			padding: 10px 0px 0;
+			width: 22.75%;
+			margin-right: 3%;
+			box-sizing: border-box;
+			&.last{
+				margin-right: 0;
+			}
 			> a{
 				font-size: 18px;
 				font-weight: bold;
 			}
-		}
-		h2 {
-			display: none;
-		}
-		.menu.nav li.expanded {
-			float: left;
-			padding: 10px 15px 0 15px;
-			width: 25%;
-			box-sizing: border-box;
 			a {
 				color: $white;
 				padding: 10px 0;
@@ -139,6 +140,7 @@
 					background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
 					font-size: 16px;
 					color: $white;
+					padding-right: 25px;
 					&:hover {
 						background: none;
 					}
@@ -149,7 +151,7 @@
 			}
 		}
 	}
-	.pane-bean-main-info-english{
+	.pane-bean-main-info-english, .pane-bean-main-info-hebrew{
 		padding-left: 70px;
 		padding-right: 70px;
 		width: 100%;
@@ -166,8 +168,6 @@
 			margin-bottom: 27px;
 			float: left;
 			.field-name-field-cm-info-block-icon{
-				font-size: 20px;
-				width: auto;
 				position: absolute;
 				left: -30px;
 			}
@@ -177,22 +177,24 @@
 				font-size: 1.25rem;
     			line-height: 1.2;
     			text-align: left;
-    			padding-right: 50px;
     			padding-bottom: 5px;
+				padding-right: 30px;
 			}
 			.field-name-field-description{
     			line-height: 1.2;
     			text-align: left;
-    			padding-right: 50px;
-    			font-variant: 12px
+    			font-variant: 12px;
+				padding-right: 30px;
 			}
 		}
 	}
-	.pane-webform-client-block-19{
+	.pane-webform-client-block-19, .pane-webform-client-block-3322{
 		clear: both;
 		position: relative;
 		background-color: #262626;
-		padding: 0 70px 50px;
+		padding-bottom: 50px;
+		width: 50%;
+		float: left;
 		.pane-title{
 			color: #fff;
 		}
@@ -275,8 +277,18 @@
 			}
 		}
 	}
-	.pane-bean-social-links-new{
+	.pane-bean-social-links-new, .pane-bean-logos-hebrew-block, .pane-bean-logos-english-block{
 		float: right;
+		.field-name-field-social-icons > .field-items > .field-item{
+			float: left;
+			margin-left: 27px;
+		}
+	}
+	.pane-bean-social-links-new{
+		img{
+			border-radius: 50%;
+			@include bg-main-color;
+		}
 	}
 }
 

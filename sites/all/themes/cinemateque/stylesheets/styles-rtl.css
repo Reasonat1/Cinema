@@ -509,77 +509,105 @@ table td, table th {
   float: right;
 }
 
-/* line 18, ../sass/menu-rtl.scss */
-#hamburger-menu .pane-my-backend-festival-menu-block {
-  width: 27.5%;
-  padding: 10px 85px 0 15px;
-  float: right;
+/* line 17, ../sass/menu-rtl.scss */
+#hamburger-menu {
+  /*
+  .pane-my-backend-festival-menu-block {
+  	width: 27.5%;
+  	padding: 10px 85px 0 15px;
+  	float: right;
+  	.menu.nav li {
+  		background-image: url("../images/arrow-left.png");
+  		background-position: left center;
+  	}
+  }*/
 }
-/* line 22, ../sass/menu-rtl.scss */
-#hamburger-menu .pane-my-backend-festival-menu-block .menu.nav li {
-  background-image: url("../images/arrow-left.png");
-  background-position: left center;
-}
-/* line 27, ../sass/menu-rtl.scss */
-#hamburger-menu .pane-menu-menu-site-main-menu {
-  float: right;
-  padding: 0 0px 0 70px;
-}
-/* line 30, ../sass/menu-rtl.scss */
-#hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded {
+/* line 29, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed {
   float: right;
   margin: 0;
+  margin-left: 3%;
+  margin-right: 0;
 }
-/* line 33, ../sass/menu-rtl.scss */
-#hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li {
+/* line 34, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded.last, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed.last {
+  margin-left: 0;
+}
+/* line 37, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed li {
   background-image: url("../images/arrow-left.png");
   background-position: left center;
-}
-/* line 40, ../sass/menu-rtl.scss */
-#hamburger-menu .pane-information-info-view-block .bean-block {
-  text-align: right;
+  padding: 0;
+  margin: 0;
 }
 /* line 42, ../sass/menu-rtl.scss */
-#hamburger-menu .pane-information-info-view-block .bean-block .bean-icon {
-  left: auto;
-  right: -30px;
+#hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li a, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed li a {
+  padding-left: 25px;
+  padding-right: 0;
 }
-/* line 46, ../sass/menu-rtl.scss */
-#hamburger-menu .pane-information-info-view-block .bean-block .bean-title {
-  text-align: right;
-  padding-right: 0px;
-  padding-left: 50px;
+/* line 49, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-bean-main-info-hebrew {
+  clear: right;
 }
 /* line 51, ../sass/menu-rtl.scss */
-#hamburger-menu .pane-information-info-view-block .bean-block .bean-body p {
-  text-align: right;
-  padding-right: 0px;
-  padding-left: 50px;
-}
-/* line 59, ../sass/menu-rtl.scss */
-#hamburger-menu .pane-hamburgermenufooter .panel-panel {
+#hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item {
   float: right;
 }
-/* line 63, ../sass/menu-rtl.scss */
-#hamburger-menu .pane-hamburgermenufooter .form-actions input {
+/* line 53, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-cm-info-block-icon {
+  right: -30px;
+  left: auto;
+}
+/* line 57, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-label {
+  text-align: right;
+  padding-left: 30px;
+  padding-right: 0;
+}
+/* line 62, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-description {
+  text-align: right;
+  padding-left: 30px;
+  padding-right: 0;
+}
+/* line 69, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-webform-client-block-3322 {
+  float: right;
+}
+/* line 71, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-webform-client-block-3322 .panel-panel {
+  float: right;
+}
+/* line 75, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-webform-client-block-3322 .form-actions input {
   padding: 0 10px 0 15px;
 }
-/* line 67, ../sass/menu-rtl.scss */
-#hamburger-menu .pane-hamburgermenufooter .webform-component {
+/* line 79, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-webform-client-block-3322 .webform-component {
   margin-right: 0px;
   margin-left: 8px;
 }
-/* line 72, ../sass/menu-rtl.scss */
-#hamburger-menu .pane-hamburgermenufooter .panel-panel:nth-child(2) span {
+/* line 84, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-webform-client-block-3322 .panel-panel:nth-child(2) span {
   float: right;
 }
-/* line 77, ../sass/menu-rtl.scss */
-#hamburger-menu .pane-block-8 {
-  float: left !important;
+/* line 88, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-webform-client-block-3322 .pane-block-8 {
+  float: left;
 }
-/* line 80, ../sass/menu-rtl.scss */
-#hamburger-menu .pane-custom.pane-1 {
-  float: left !important;
+/* line 91, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-webform-client-block-3322 .pane-custom.pane-1 {
+  float: left;
+}
+/* line 95, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-bean-social-links-new, #hamburger-menu .pane-bean-logos-hebrew-block, #hamburger-menu .pane-bean-logos-english-block {
+  float: left;
+}
+/* line 97, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-bean-social-links-new .field-name-field-social-icons > .field-items > .field-item, #hamburger-menu .pane-bean-logos-hebrew-block .field-name-field-social-icons > .field-items > .field-item, #hamburger-menu .pane-bean-logos-english-block .field-name-field-social-icons > .field-items > .field-item {
+  float: right;
+  margin-left: 0;
+  margin-right: 27px;
 }
 
 /* line 4, ../sass/calendar-rtl.scss */
