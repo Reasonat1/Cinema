@@ -65,31 +65,31 @@
 
      /*****Rename Minitue***/
         $('.i18n-he .pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.length-movie').each(function () {
-            $(this).html($(this).html().replace('minute',' דקות '));
+            $(this).html($(this).html().replace('minutes',' דקות '));
             $(this).html($(this).html().replace('דקות',' דקות '));
         });
         $('.i18n-he .pane-panopoly-database-search-search-database-results .lobby-length').each(function () {
-            $(this).html($(this).html().replace('minute','דקות'));
+            $(this).html($(this).html().replace('minutes','דקות'));
             $(this).html($(this).html().replace('דקות',' דקות '));
         });
         $('.i18n-he .view-user-flagged-content .lobby-length').each(function () {
-            $(this).html($(this).html().replace('minute','דקות'));
+            $(this).html($(this).html().replace('minutes','דקות'));
             $(this).html($(this).html().replace('דקות',' דקות '));
         });
         $('.i18n-he .view-display-id-panel_pane_6 .views-field-nothing .field-content').each(function () {
-            $(this).html($(this).html().replace('minute','דקות'));
+            $(this).html($(this).html().replace('minutes','דקות'));
             $(this).html($(this).html().replace('דקות',' דקות '));
         });
         $('.i18n-he .view-display-id-panel_pane_4 .views-field-nothing .field-content').each(function () {
-            $(this).html($(this).html().replace('minute','דקות'));
+            $(this).html($(this).html().replace('minutes','דקות'));
             $(this).html($(this).html().replace('דקות',' דקות '));
         });
         $('.i18n-he .view-display-id-panel_pane_2 .views-field-nothing .slide-movie-year').each(function () {
-            $(this).html($(this).html().replace('minute','דקות'));
+            $(this).html($(this).html().replace('minutes','דקות'));
             $(this).html($(this).html().replace('דקות',' דקות '));
         });
         $('.i18n-he .pane-event-ct-view-panel-pane-3 .views-field-nothing .slide-movie-year').each(function () {
-            $(this).html($(this).html().replace('m',' דקות '));
+            $(this).html($(this).html().replace('minutes',' דקות '));
         });
         if (($("body").hasClass("page-node-3261")) || ($("body").hasClass("page-node-3284"))){
             $(document).ready(function() {
