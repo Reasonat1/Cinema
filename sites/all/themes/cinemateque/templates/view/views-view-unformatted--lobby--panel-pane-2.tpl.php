@@ -25,7 +25,7 @@
     $nid = $val->node_taxonomy_index_nid;
     $node = node_load($nid);
     $default_image = '<img src="/sites/all/themes/cinemateque/images/default-image.png">';
-     //drupal_set_message('<pre>'.print_r($node->field_cm_event_images, 1).'</pre>');
+     //drupal_set_message('<pre>'.print_r($node, 1).'</pre>');
     $path_node = drupal_get_path_alias('node/'.$node->nid);
     $title = l($node->title, $path_node);
     if(!empty($node->field_mc_teaser_toptxt_white['und'])){
@@ -69,12 +69,14 @@
       $black_text_event = '';
     }
     if(!empty($node->field_cm_moviegroup_short_summar)){
-      $summary_movie_group =  truncate_utf8($node->field_cm_moviegroup_short_summar['und'][0]['value'], 50, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+      //$summary_movie_group =  truncate_utf8($node->field_cm_moviegroup_short_summar['und'][0]['value'], 50, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+      $summary_movie_group =  $node->field_cm_moviegroup_short_summar['und'][0]['value'];
     }else{
       $summary_movie_group = '';
     }
     if(!empty($node->field_cm_movie_short_summary)){
-      $summary_movie = truncate_utf8($node->field_cm_movie_short_summary['und'][0]['value'], 50, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+      //$summary_movie = truncate_utf8($node->field_cm_movie_short_summary['und'][0]['value'], 50, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+      $summary_movie = $node->field_cm_movie_short_summary['und'][0]['value'];
     }else{
       $summary_movie = '';
     }
@@ -144,8 +146,13 @@
         case "cm_article":
           $flag = flag_create_link('favorite_', $node->nid);
           $image = $image_article;
-          if(!empty($node->body['und'][0]['value'])){
+          if(!empty($node->body['und'][0]['summary'])){
+            $sort_summary = $node->body['und'][0]['summary'];
+          }
+          elseif(!empty($node->body['und'][0]['value'])){
             $sort_summary = truncate_utf8($node->body['und'][0]['value'], 50, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+          }else{
+            $sort_summary = '';
           }
           $top_text = $white_text_article . $black_text_article;
         break;
