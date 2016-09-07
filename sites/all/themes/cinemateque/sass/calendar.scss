@@ -83,7 +83,7 @@
 }
 .tickets {
 	> a {
-		background-color: $main_color;
+		@include bg-main-color;
 		color: $white;
 		font-weight: bold;
 		padding: 6px 26px;
@@ -146,7 +146,7 @@
 			    right: -10px;
 			    top: 16px;
 			    width: 0;
-				border-color: transparent transparent transparent $main-color;
+				@include border-4-main-color;
 			}
 		}
 		.toptix-purchase{
@@ -185,7 +185,7 @@
 			}
 		}
 		&.active {
-			background-color: $main_color;
+			@include bg-main-color;
 			box-shadow: 0 0 3px 2px $wild_sand;
 			color: $white;
 			cursor: pointer;

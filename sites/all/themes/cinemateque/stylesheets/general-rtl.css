@@ -1,4 +1,14 @@
 /********  mixin *********/
+/* line 105, ../sass/init.scss */
+.domain-1 a {
+  color: #e41145;
+}
+
+/* line 109, ../sass/init.scss */
+.domain-2 a {
+  color: #b59d70;
+}
+
 /****  fonts  ********/
 @font-face {
   font-family: Open-Sans;
@@ -25,6 +35,7 @@
 table td, table th {
   padding-right: 0 !important;
   padding-left: 8px !important;
+  text-align: right;
 }
 @media (max-width: 767px) {
   /* line 22, ../sass/general-rtl.scss */
@@ -33,104 +44,104 @@ table td, table th {
   }
 }
 
-/* line 32, ../sass/general-rtl.scss */
+/* line 33, ../sass/general-rtl.scss */
 #page-header .tabs {
   right: auto;
   left: 0;
 }
 
-/* line 38, ../sass/general-rtl.scss */
+/* line 39, ../sass/general-rtl.scss */
 .header-right {
   float: left;
 }
-/* line 40, ../sass/general-rtl.scss */
+/* line 41, ../sass/general-rtl.scss */
 .header-right li {
   float: right !important;
 }
 
-/* line 46, ../sass/general-rtl.scss */
+/* line 47, ../sass/general-rtl.scss */
 .popup-element-body .center {
   width: 100% !important;
   top: 55px;
   left: 0;
   position: fixed !important;
 }
-/* line 52, ../sass/general-rtl.scss */
+/* line 53, ../sass/general-rtl.scss */
 .popup-element-body form .form-group .form-text {
   padding: 7px 2% 8px 22%;
 }
-/* line 57, ../sass/general-rtl.scss */
+/* line 58, ../sass/general-rtl.scss */
 .popup-element-body #search-api-page-search-form-search-results--2 .form-group .form-text {
   float: right;
   padding: 7px 2% 8px 22%;
 }
-/* line 62, ../sass/general-rtl.scss */
+/* line 63, ../sass/general-rtl.scss */
 .popup-element-body #search-api-page-search-form-search-results--2 .form-submit {
   right: auto;
   left: 0;
 }
-/* line 67, ../sass/general-rtl.scss */
+/* line 68, ../sass/general-rtl.scss */
 .popup-element-body .popup-close {
   left: 10px !important;
   right: auto !important;
 }
-/* line 71, ../sass/general-rtl.scss */
+/* line 72, ../sass/general-rtl.scss */
 .popup-element-body #search-api-page-search-form-search-results {
   padding: 0px 47px 10px 0px;
   left: 0px;
   right: auto;
 }
-/* line 75, ../sass/general-rtl.scss */
+/* line 76, ../sass/general-rtl.scss */
 .popup-element-body #search-api-page-search-form-search-results .form-submit {
   float: right;
 }
-/* line 79, ../sass/general-rtl.scss */
+/* line 80, ../sass/general-rtl.scss */
 .popup-element-body form .form-submit {
   left: 0;
   right: auto;
 }
 
 /**** lobby page  ****/
-/* line 89, ../sass/general-rtl.scss */
+/* line 90, ../sass/general-rtl.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_1 .toptix-purchase {
   float: left;
 }
-/* line 93, ../sass/general-rtl.scss */
+/* line 94, ../sass/general-rtl.scss */
 .page-term-lobby .lobby-term-left {
   float: left;
 }
-/* line 96, ../sass/general-rtl.scss */
+/* line 97, ../sass/general-rtl.scss */
 .page-term-lobby .lobby-term-right {
   float: right;
 }
-/* line 98, ../sass/general-rtl.scss */
+/* line 99, ../sass/general-rtl.scss */
 .page-term-lobby .lobby-term-right .top-text-blk-wht {
   right: 0px;
   left: auto;
 }
-/* line 104, ../sass/general-rtl.scss */
+/* line 105, ../sass/general-rtl.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-row {
   margin-left: 5%;
   margin-right: 0;
   float: right;
 }
-/* line 109, ../sass/general-rtl.scss */
+/* line 110, ../sass/general-rtl.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-row:nth-child(3n) {
   margin-left: 0;
 }
-/* line 112, ../sass/general-rtl.scss */
+/* line 113, ../sass/general-rtl.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-field-field-mc-teaser-toptxt-blk {
   right: 0;
   left: auto;
 }
-/* line 116, ../sass/general-rtl.scss */
+/* line 117, ../sass/general-rtl.scss */
 .page-term-lobby .view-lobby.view-display-id-panel_pane_2 .views-field-ops {
   left: 15px;
   right: auto;
 }
 
 /***  article page  ****/
-/* line 126, ../sass/general-rtl.scss */
+/* line 127, ../sass/general-rtl.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) {
   width: 1280px !important;
   max-width: 100%;
@@ -138,40 +149,40 @@ table td, table th {
   padding: 0 3%;
   box-sizing: border-box;
 }
-/* line 128, ../sass/general-rtl.scss */
+/* line 129, ../sass/general-rtl.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) .radix-layouts-sidebar {
   padding-right: 0;
   padding-left: 100px;
   float: right;
 }
-/* line 133, ../sass/general-rtl.scss */
+/* line 134, ../sass/general-rtl.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) .radix-layouts-sidebar .field-name-field-cm-article-tags a {
   float: right;
   margin-left: 10px;
   margin-right: 0;
 }
-/* line 141, ../sass/general-rtl.scss */
+/* line 142, ../sass/general-rtl.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) .radix-layouts-content .pane-node-body {
   margin-left: 23%;
   margin-right: 0;
 }
 
 /******   webform  *****/
-/* line 153, ../sass/general-rtl.scss */
+/* line 154, ../sass/general-rtl.scss */
 .node-type-webform form .form-actions {
   float: left;
 }
 
 /*******  user profile  ********/
-/* line 166, ../sass/general-rtl.scss */
+/* line 167, ../sass/general-rtl.scss */
 .page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper form {
   float: right;
 }
-/* line 169, ../sass/general-rtl.scss */
+/* line 170, ../sass/general-rtl.scss */
 .page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper .edit {
   float: left;
 }
-/* line 174, ../sass/general-rtl.scss */
+/* line 175, ../sass/general-rtl.scss */
 .page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .views-widget-filter-type .form-item-edit-type-1 {
   border-left: 1px solid #000;
   border-right: none;
@@ -180,57 +191,57 @@ table td, table th {
   margin-right: 0;
   padding-right: 0;
 }
-/* line 188, ../sass/general-rtl.scss */
+/* line 189, ../sass/general-rtl.scss */
 .page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-left {
   float: right;
 }
-/* line 190, ../sass/general-rtl.scss */
+/* line 191, ../sass/general-rtl.scss */
 .page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-left .top-text-blk-wht {
   right: 0;
   left: auto;
 }
-/* line 195, ../sass/general-rtl.scss */
+/* line 196, ../sass/general-rtl.scss */
 .page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-right {
   float: left;
 }
-/* line 199, ../sass/general-rtl.scss */
+/* line 200, ../sass/general-rtl.scss */
 .page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .row-custom-lobby .purchase {
   float: left;
 }
 
 /*********  person page  **********/
-/* line 213, ../sass/general-rtl.scss */
+/* line 214, ../sass/general-rtl.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col {
   float: right;
   padding-right: 44px;
   padding-left: 0;
 }
-/* line 218, ../sass/general-rtl.scss */
+/* line 219, ../sass/general-rtl.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col-1 {
   background: url("../images/search-icon-gold.png") no-repeat scroll right 4px;
 }
-/* line 221, ../sass/general-rtl.scss */
+/* line 222, ../sass/general-rtl.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col-2 {
   background: url("../images/search-icon-gold.png") no-repeat scroll right 4px;
 }
-/* line 224, ../sass/general-rtl.scss */
+/* line 225, ../sass/general-rtl.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col-3 {
   background: url("../images/search-icon-gold.png") no-repeat scroll right 4px;
 }
-/* line 231, ../sass/general-rtl.scss */
+/* line 232, ../sass/general-rtl.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .views-row-odd {
   float: right;
 }
-/* line 234, ../sass/general-rtl.scss */
+/* line 235, ../sass/general-rtl.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .views-row-even {
   float: left;
 }
-/* line 239, ../sass/general-rtl.scss */
+/* line 240, ../sass/general-rtl.scss */
 .node-type-cm-person .panels-flexible-region-node_page-content_left {
   float: left !important;
 }
 
-/* line 245, ../sass/general-rtl.scss */
+/* line 246, ../sass/general-rtl.scss */
 .content.middle .panels-flexible-region-node_page-content_left {
   width: 77%;
   float: left;

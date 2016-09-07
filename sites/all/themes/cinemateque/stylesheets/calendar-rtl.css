@@ -1,4 +1,14 @@
 /********  mixin *********/
+/* line 105, ../sass/init.scss */
+.domain-1 a {
+  color: #e41145;
+}
+
+/* line 109, ../sass/init.scss */
+.domain-2 a {
+  color: #b59d70;
+}
+
 /****  fonts  ********/
 @font-face {
   font-family: Open-Sans;
@@ -97,7 +107,14 @@
   border-width: 5px 5px 5px 0px;
   left: -10px;
   right: auto;
+}
+/* line 97, ../sass/init.scss */
+.domain-1 #calender-top-popup .read-more:before {
   border-color: transparent #e41145 transparent transparent;
+}
+/* line 100, ../sass/init.scss */
+.domain-2 #calender-top-popup .read-more:before {
+  border-color: transparent #b59d70 transparent transparent;
 }
 
 /* line 81, ../sass/calendar-rtl.scss */

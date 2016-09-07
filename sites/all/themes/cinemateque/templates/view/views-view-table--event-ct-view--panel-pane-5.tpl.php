@@ -66,7 +66,7 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
            }
            $path = drupal_get_path_alias('node/'.$node->nid);
             $flag = flag_create_link('favorite_', $node->nid);
-            $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node).'</div>';
+            $addevent = '<div class="views-field views-field-php add-event">'._return_addthisevent_markup($node).'</div>';
             if(!empty($node->field_cm_event_internal_id['und'])){
                 $event_code = t($node->field_cm_event_internal_id['und'][0]['value']);
             }else{
@@ -102,7 +102,7 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
            $output .= '<td class="views-field views-field-title views-field-field-cm-event-short-title">'. l($title_new, $path) .'</td>';
            $output .= '<td class="views-field views-field-field-cm-event-internal-id">' .$event_code .'</td>';
            $output .= '<td class="views-field views-field-ops">' .$flag .'</td>';
-           $output .= '<td class="views-field views-field-php">' ._return_addthisevent_markup($node) .'</td>';
+           $output .= '<td class="views-field views-field-php add-event">' ._return_addthisevent_markup($node) .'</td>';
            $output .= '<td class="views-field views-field-field-toptix-purchase">'.$puchase.'</td>';
           $output .= '</tr>';
          }
