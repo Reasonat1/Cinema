@@ -415,6 +415,9 @@ img.panopoly-image-full{
 
 .navbar-default{
 	background-color: transparent;
+	@include res(s-m){
+		padding: 0 3%;
+	}
 }
 
 .navbar-header{
@@ -995,15 +998,7 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 	transition: all 0.5s ease 0s;
 }
 
-.hambruger.-menu.navbar-toggle {
-	display: block;
-	float: left;
-	margin-left: 30px;
-	margin-top: 9px;
-	border: medium none;
-	margin-right: 0;
-	transition: all 0.5s ease 0s;
-}
+
 #site-main-menu > li a.dropdown-toggle.active {
 	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
 }
@@ -1016,8 +1011,11 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 	width: 100%;
 }
 .navbar .navbar-brand {
-	padding: 9px 15px 0;
+	padding: 9px 5px 0 30px;
 	overflow: hidden;
+	@include res(s-m){
+		padding: 9px 5px 0 30px;
+	}
 }
 .navbar-nav > li {
 	display: inline-block;

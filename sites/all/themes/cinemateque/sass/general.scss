@@ -1484,7 +1484,7 @@ table{
 .collapse{
 	display: block!important;
 	@include res(s-m){
-		padding: 0 3%;
+		padding: 0;
 	}
 }
 
@@ -1504,9 +1504,6 @@ table{
 		td{
 			width: 30%!important;
 		}
-	}
-	.navbar-toggle{
-		display: none!important;
 	}
 }
 
