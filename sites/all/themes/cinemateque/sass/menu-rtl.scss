@@ -101,3 +101,24 @@
 		}
 	}
 }
+
+/********** responsive menu **********/
+
+@include res(s-m){
+	.header #site-main-menu{
+	    margin-left: 0;
+	    li{	
+	    	text-align: right;
+	    	.caret{
+	    		float: left;
+			    &:after{
+			    	display: block;
+			    	content: "";
+			   		border-right: 8px solid #fff;
+			    	border-left: none;
+			    	float: left;
+			    }
+	    	}
+	    }
+	}
+}

@@ -866,6 +866,9 @@ input:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]),
 table{
 	td, th{
 		padding-left: 0!important;
+		@include res(s-m){
+			padding: 8px!important;
+		}
 	}
 }
 
