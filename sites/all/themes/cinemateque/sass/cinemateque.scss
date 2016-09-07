@@ -390,9 +390,7 @@ img.panopoly-image-full{
 .sticky-header, .not-front header{
 	height: 50px!important;
 	.navbar-brand{
-		padding-top: 6px!important;
 		@include res(s-m){
-			padding-top: 10px!important;
 			height: 40px;
 		}
 		> img {
@@ -472,8 +470,8 @@ img.panopoly-image-full{
 		li a {
 			color: $white;
 			transition: all 0.5s ease 0s;
-			padding-top: 10px;
-			padding-bottom: 10px!important;
+			padding: 10px!important;
+			line-height: 20px!important;
 		}
 		li li a{
 			@include bg-main-color();;
@@ -1011,10 +1009,11 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 	width: 100%;
 }
 .navbar .navbar-brand {
-	padding: 9px 5px 0 30px;
+	margin: 9px 5px 0 30px;
 	overflow: hidden;
+	padding: 0;
 	@include res(s-m){
-		padding: 9px 5px 0 30px;
+		margin: 9px 30px 0 5px;
 	}
 }
 .navbar-nav > li {

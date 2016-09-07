@@ -438,4 +438,76 @@
     display: block;
     cursor: pointer;
   }
+
+  /* line 341, ../sass/menu.scss */
+  .header #site-main-menu {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    display: block !important;
+    margin-right: 0;
+    margin-top: 0;
+    overflow-y: scroll;
+    position: fixed !important;
+    right: -100%;
+    top: 45px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+  }
+  /* line 352, ../sass/menu.scss */
+  .header #site-main-menu li {
+    text-align: left;
+    width: 100%;
+  }
+  /* line 355, ../sass/menu.scss */
+  .header #site-main-menu li a {
+    white-space: unset;
+    padding: 15px 10px !important;
+  }
+  /* line 359, ../sass/menu.scss */
+  .header #site-main-menu li .caret {
+    display: block;
+    float: right;
+    border: none;
+    height: 27px;
+    margin: 0;
+    width: 55px;
+  }
+  /* line 366, ../sass/menu.scss */
+  .header #site-main-menu li .caret:after {
+    display: block;
+    content: "";
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid #fff;
+    border-top: 8px solid transparent;
+    margin-top: 6px;
+    float: right;
+    width: 12px;
+  }
+  /* line 377, ../sass/menu.scss */
+  .header #site-main-menu li .dropdown-menu {
+    border: none;
+    display: none;
+    position: relative;
+    width: 100%;
+  }
+  /* line 385, ../sass/menu.scss */
+  .header #site-main-menu .responsive-open .dropdown-toggle {
+    font-weight: bold;
+  }
+  /* line 388, ../sass/menu.scss */
+  .header #site-main-menu .responsive-open .dropdown-menu {
+    display: block;
+  }
+  /* line 391, ../sass/menu.scss */
+  .header #site-main-menu .responsive-open .caret:after {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #fff;
+    border-bottom: none;
+    margin-top: 11px;
+  }
+
+  /* line 400, ../sass/menu.scss */
+  .responsive-hamburger-open #site-main-menu {
+    right: 0;
+  }
 }
