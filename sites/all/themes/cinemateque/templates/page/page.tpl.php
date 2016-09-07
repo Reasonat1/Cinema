@@ -19,12 +19,6 @@
         <nav class="navbar navbar-default" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="sr-only"><?php print t('Toggle navigation'); ?></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <!-- Trigger the modal with a button -->
                 <button  class="hambruger -menu navbar-toggle" data-target="#myModal" data-toggle="modal"  type="button">
                     <span class="sr-only">Toggle navigation</span>
@@ -51,6 +45,11 @@
                     print $festival_site_info;
                 endif;
                 ?>
+                <div class="responsive-hamburger hambruger">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </div>
             </div> <!-- /.navbar-header -->
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-collapse">

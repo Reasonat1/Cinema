@@ -1930,7 +1930,7 @@ table td, table th {
 @media (max-width: 767px) {
   /* line 1484, ../sass/general.scss */
   .collapse {
-    padding: 0 3%;
+    padding: 0;
   }
 }
 
@@ -1953,19 +1953,14 @@ table td, table th {
   .table-responsive td {
     width: 30% !important;
   }
-
-  /* line 1508, ../sass/general.scss */
-  .navbar-toggle {
-    display: none !important;
-  }
 }
 /*******  admin menu  **********/
-/* line 1515, ../sass/general.scss */
+/* line 1512, ../sass/general.scss */
 div#admin-toolbar div.admin-tab {
   height: 25px;
 }
 
-/* line 1519, ../sass/general.scss */
+/* line 1516, ../sass/general.scss */
 input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]), input[type="email"]:focus:not([readonly]), input[type="number"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), input[type="search-md"]:focus:not([readonly]), input[type="tel"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="time"]:focus:not([readonly]), input[type="url"]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
   box-shadow: none !important;
 }

@@ -386,18 +386,56 @@
   background-color: #b59d70 !important;
 }
 
-/* line 295, ../sass/menu.scss */
-.navbar-toggle .icon-bar {
-  width: 34px;
-  background-color: #fff !important;
+/******  hamburger  *********/
+/* line 298, ../sass/menu.scss */
+.responsive-hamburger {
+  display: none;
 }
 
-/* line 300, ../sass/menu.scss */
-.navbar-toggle .icon-bar + .icon-bar {
+/* line 302, ../sass/menu.scss */
+.navbar-toggle {
+  display: block;
+}
+@media (max-width: 767px) {
+  /* line 302, ../sass/menu.scss */
+  .navbar-toggle {
+    display: none;
+  }
+}
+
+/* line 309, ../sass/menu.scss */
+.navbar-header .hambruger {
+  float: left;
+  border: medium none;
+  margin-right: 0;
+  transition: all 0.5s ease 0s;
+  margin-top: 13px;
+  padding: 0;
+  border-radius: 0;
+}
+/* line 317, ../sass/menu.scss */
+.navbar-header .hambruger.navbar-toggle {
+  margin-left: 30px;
+}
+
+/* line 322, ../sass/menu.scss */
+.navbar-header .hambruger .icon-bar {
+  width: 34px;
+  background-color: #fff !important;
+  display: block;
+  height: 2px;
+}
+
+/* line 329, ../sass/menu.scss */
+.navbar-header .hambruger .icon-bar + .icon-bar {
   margin-top: 9px;
 }
 
-/* line 304, ../sass/menu.scss */
-.hambruger.-menu.navbar-toggle {
-  margin-top: 4px;
+/********** responsive menu **********/
+@media (max-width: 767px) {
+  /* line 337, ../sass/menu.scss */
+  .responsive-hamburger {
+    display: block;
+    cursor: pointer;
+  }
 }

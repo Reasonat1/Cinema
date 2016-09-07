@@ -292,15 +292,50 @@
 	}
 }
 
-.navbar-toggle .icon-bar{
-	width: 34px;
-	background-color: #fff!important;
+
+/******  hamburger  *********/
+
+.responsive-hamburger{
+	display: none;
 }
 
-.navbar-toggle .icon-bar + .icon-bar{
+.navbar-toggle{
+	display: block;
+	@include res(s-m){
+		display: none;
+	}
+}
+
+.navbar-header .hambruger {
+	float: left;
+	border: medium none;
+	margin-right: 0;
+	transition: all 0.5s ease 0s;
+	margin-top: 13px;
+	padding: 0;
+	border-radius: 0;
+	&.navbar-toggle{
+		margin-left: 30px;
+	}
+}
+
+.navbar-header .hambruger .icon-bar{
+	width: 34px;
+	background-color: #fff!important;
+    display: block;
+    height: 2px;
+}
+
+.navbar-header .hambruger .icon-bar + .icon-bar{
 	margin-top: 9px;
 }
 
-.hambruger.-menu.navbar-toggle{
-	margin-top: 4px;
+
+/********** responsive menu **********/
+
+@include res(s-m){
+	.responsive-hamburger{
+		display: block;
+		cursor: pointer;
+	}
 }
