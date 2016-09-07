@@ -1,35 +1,14 @@
 ﻿jQuery(document).ready(function(e) {
-           /****Show first 3 rows future event pane*****/
-          // jQuery('.view-display-id-panel_pane_3 .views-table tbody tr:nth-child(1)').addClass("item-show");
-          // jQuery('.view-display-id-panel_pane_3 .views-table tbody tr:nth-child(2)').addClass("item-show");
-          // jQuery('.view-display-id-panel_pane_3 .views-table tbody tr:nth-child(3)').addClass("item-show");    
-          // jQuery('.view-footer .more-event').click(function(){
-          //      jQuery('.view-display-id-panel_pane_3 .views-table tbody tr.up-events-item-movie').show('slow');
-          // });
-          //jQuery('.view-display-id-panel_pane_3 .more-event').hide();
-          //  if(jQuery('.view-display-id-panel_pane_3 .table tbody tr.row-custom-4').length){
-          //      jQuery('view-display-id-panel_pane_3 .more-event').show();
-          // }
-          // jQuery('.view-display-id-panel_pane_5 .table tbody tr:nth-child(1)').addClass("item-show");
-          // jQuery('.view-display-id-panel_pane_5 .table tbody tr:nth-child(2)').addClass("item-show");
-          // jQuery('.view-display-id-panel_pane_5 .table tbody tr:nth-child(3)').addClass("item-show");   
-          // jQuery('.view-display-id-panel_pane_5 .more-event').click(function(){
-          //      jQuery('.view-display-id-panel_pane_5 .table tbody tr.common-row').show('slow');
-          // });
-          // jQuery('.view-display-id-panel_pane_5 .more-event').hide();
-          //  if(jQuery('.view-display-id-panel_pane_5 .table tbody tr.row-custom-4').length){
-          //      jQuery('view-display-id-panel_pane_5 .more-event').show();
-          // }
-          // jQuery('.view-display-id-panel_pane_7 .table tbody tr:nth-child(1)').addClass("item-show");
-          // jQuery('.view-display-id-panel_pane_7 .table tbody tr:nth-child(2)').addClass("item-show");
-          // jQuery('.view-display-id-panel_pane_7 .table tbody tr:nth-child(3)').addClass("item-show");   
-          // jQuery('.view-display-id-panel_pane_7 .more-event').click(function(){
-          //      jQuery('.view-display-id-panel_pane_7 .table tbody tr.common-row').show('slow');
-          // });
-          // jQuery('.view-display-id-panel_pane_7 .more-event').hide();
-          //  if(jQuery('.view-display-id-panel_pane_7 .table tbody tr.row-custom-4').length){
-          //      jQuery('view-display-id-panel_pane_7 .more-event').show();
-          // }
+           //http://jer-cin.tikkewebsites.com/en/movie/movietest-title
+           jQuery('.view-movie-top-pane-view.view-display-id-panel_pane_7 tbody tr:lt(3)').show();
+           jQuery('.view-event-ct-view.view-display-id-panel_pane_5 tbody tr:lt(3)').show();
+           jQuery('.view-movie-group-ct.view-display-id-panel_pane_3 tbody tr:lt(3)').show();
+           jQuery('.view-footer .more-event').click(function () {
+                      jQuery('.view-movie-top-pane-view.view-display-id-panel_pane_7 tbody tr:lt(10)').show();
+                      jQuery('.view-event-ct-view.view-display-id-panel_pane_5 tbody tr:lt(10)').show();
+                      jQuery('.view-movie-group-ct.view-display-id-panel_pane_3 tbody tr:lt(10)').show();
+                      jQuery('.view-footer .more-event').hide();
+           });
           /****End Show first 3 rows future event pane*****/
            jQuery(".view-id-movie_group_ct.view-display-id-panel_pane_1 .img a>img").unwrap();
            /***Add class in movie group slider****/
