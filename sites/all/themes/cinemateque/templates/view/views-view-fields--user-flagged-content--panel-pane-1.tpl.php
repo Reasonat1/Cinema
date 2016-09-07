@@ -216,7 +216,7 @@
               $output_event .= '<td class="code"></td>';
             }
             $output_event .='<td>'. $flag . '</td>';
-            $output_event .='<td>'. $addevent . '</td>';
+            $output_event .='<td class="add-event">'. $addevent . '</td>';
             if(!empty($node->field_toptix_purchase['und'])){
             $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
             $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
@@ -284,7 +284,7 @@
                 $output .= '<td class="code"></td>';
                 }
                 $output .='<td>'. $flags . '</td>';
-                $output .='<td class="addevent">'. $addevent . '</td>';
+                $output .='<td class="add-event">'. $addevent . '</td>';
                 if(!empty($node_event->field_toptix_purchase['und'])){
                   $toptix_code = $node_event->field_toptix_purchase['und'][0]['value'];
                   $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';

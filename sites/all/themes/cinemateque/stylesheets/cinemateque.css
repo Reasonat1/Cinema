@@ -1,4 +1,14 @@
 /********  mixin *********/
+/* line 105, ../sass/init.scss */
+.domain-1 a {
+  color: #e41145;
+}
+
+/* line 109, ../sass/init.scss */
+.domain-2 a {
+  color: #b59d70;
+}
+
 /****  fonts  ********/
 @font-face {
   font-family: Open-Sans;
@@ -146,32 +156,28 @@ body {
   width: 20px;
   background: url("../images/shop-icon.png") no-repeat 0 0 transparent;
 }
-/* line 114, ../sass/cinemateque.scss */
-.col-md-3.header-right .shopping-cart button:hover {
-  background: url("../images/shop-icon-gold.png") no-repeat 0 0;
-}
 
-/* line 122, ../sass/cinemateque.scss */
+/* line 119, ../sass/cinemateque.scss */
 .sponser {
   width: 80%;
   min-height: 60px;
 }
 
-/* line 127, ../sass/cinemateque.scss */
+/* line 124, ../sass/cinemateque.scss */
 .news-leter h2 {
   font-size: 16px;
   margin-bottom: 0;
   margin-top: 10px;
   text-align: center;
 }
-/* line 133, ../sass/cinemateque.scss */
+/* line 130, ../sass/cinemateque.scss */
 .news-leter .webform-component input {
   border: 1px solid;
   font-size: 13px;
   height: 26px;
   padding-left: 4px;
 }
-/* line 139, ../sass/cinemateque.scss */
+/* line 136, ../sass/cinemateque.scss */
 .news-leter .webform-submit.button-primary {
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
@@ -182,12 +188,12 @@ body {
   padding-top: 0;
   width: 65px;
 }
-/* line 149, ../sass/cinemateque.scss */
+/* line 146, ../sass/cinemateque.scss */
 .news-leter .webform-client-form.webform-client-form-19 {
   padding-left: 32px;
 }
 
-/* line 153, ../sass/cinemateque.scss */
+/* line 150, ../sass/cinemateque.scss */
 .webform-component {
   float: left;
   margin-bottom: 0;
@@ -196,75 +202,83 @@ body {
   width: 25%;
 }
 
-/* line 160, ../sass/cinemateque.scss */
+/* line 157, ../sass/cinemateque.scss */
 .newsleter-name {
   border-bottom-left-radius: 15px !important;
   border-top-left-radius: 15px !important;
 }
 
 /*****  footer   **********/
-/* line 170, ../sass/cinemateque.scss */
+/* line 164, ../sass/cinemateque.scss */
+.checkbox input[type="checkbox"] {
+  margin-right: 6px;
+  margin-left: 0;
+  margin-top: 0;
+  position: relative;
+}
+
+/* line 174, ../sass/cinemateque.scss */
 .footer .view-bean-infomation-block-view table tr {
   background-color: #7a7a7a !important;
   border: medium none;
   color: #ffffff;
 }
-/* line 175, ../sass/cinemateque.scss */
+/* line 179, ../sass/cinemateque.scss */
 .footer .view-bean-infomation-block-view table tbody {
   background-color: #7a7a7a !important;
   border-top: medium none;
 }
-/* line 180, ../sass/cinemateque.scss */
+/* line 184, ../sass/cinemateque.scss */
 .footer .view-bean-infomation-block-view .handle {
   display: none;
 }
-/* line 183, ../sass/cinemateque.scss */
+/* line 187, ../sass/cinemateque.scss */
 .footer .view-bean-infomation-block-view .form-submit {
   display: none;
 }
-/* line 188, ../sass/cinemateque.scss */
+/* line 192, ../sass/cinemateque.scss */
 .footer .views-field.views-field-field-cm-info-block-text {
   margin-left: 10%;
   width: 80%;
 }
-/* line 191, ../sass/cinemateque.scss */
+/* line 195, ../sass/cinemateque.scss */
 .footer .views-field.views-field-field-cm-info-block-text p {
   font-size: 14px;
   line-height: 1.2;
 }
-/* line 196, ../sass/cinemateque.scss */
+/* line 200, ../sass/cinemateque.scss */
 .footer .views-field.views-field-field-cm-info-block-icon {
   padding-bottom: 0;
 }
-/* line 199, ../sass/cinemateque.scss */
+/* line 203, ../sass/cinemateque.scss */
 .footer .views-field.views-field-label {
   padding: 0;
 }
-/* line 203, ../sass/cinemateque.scss */
+/* line 207, ../sass/cinemateque.scss */
 .footer .pane-bean-infomation-block-view {
   background-color: #7a7a7a;
   padding-top: 20px;
 }
-/* line 208, ../sass/cinemateque.scss */
+/* line 212, ../sass/cinemateque.scss */
 .footer .webform-client-form .form-actions {
   margin-top: 0;
 }
-/* line 211, ../sass/cinemateque.scss */
+/* line 215, ../sass/cinemateque.scss */
 .footer .webform-client-form .webform-component--join-our-newsletter {
   width: 20% !important;
   margin-right: 0px !important;
 }
 @media (max-width: 767px) {
-  /* line 211, ../sass/cinemateque.scss */
+  /* line 215, ../sass/cinemateque.scss */
   .footer .webform-client-form .webform-component--join-our-newsletter {
     widows: 100%;
   }
 }
-/* line 217, ../sass/cinemateque.scss */
+/* line 221, ../sass/cinemateque.scss */
 .footer .webform-client-form .webform-component--join-our-newsletter p {
   margin: 5px 0 0 0;
 }
-/* line 221, ../sass/cinemateque.scss */
+/* line 225, ../sass/cinemateque.scss */
 .footer .webform-client-form .webform-component {
   float: left;
   margin-bottom: 0;
@@ -273,14 +287,13 @@ body {
   width: 18%;
 }
 @media (max-width: 767px) {
-  /* line 221, ../sass/cinemateque.scss */
+  /* line 225, ../sass/cinemateque.scss */
   .footer .webform-client-form .webform-component {
     width: 100%;
   }
 }
-/* line 230, ../sass/cinemateque.scss */
+/* line 234, ../sass/cinemateque.scss */
 .footer .webform-client-form .webform-component input {
-  background-color: #b20033;
   color: #fff;
   height: 40px;
   padding-left: 12px;
@@ -288,44 +301,57 @@ body {
   margin-bottom: 0;
   padding-left: 10px;
   border-radius: 0 !important;
+  border: none;
+}
+/* line 70, ../sass/init.scss */
+.domain-1 .footer .webform-client-form .webform-component input {
+  background-color: #b20033 !important;
+}
+/* line 73, ../sass/init.scss */
+.domain-2 .footer .webform-client-form .webform-component input {
+  background-color: #96825d !important;
 }
 @media (max-width: 767px) {
-  /* line 230, ../sass/cinemateque.scss */
+  /* line 234, ../sass/cinemateque.scss */
   .footer .webform-client-form .webform-component input {
     width: 100%;
     box-sizing: border-box;
   }
 }
-/* line 244, ../sass/cinemateque.scss */
+/* line 249, ../sass/cinemateque.scss */
 .footer .webform-client-form .webform-component label {
   color: #fff;
 }
-/* line 247, ../sass/cinemateque.scss */
+/* line 252, ../sass/cinemateque.scss */
 .footer .webform-client-form .webform-component.webform-component-radios {
   width: 100%;
 }
-/* line 249, ../sass/cinemateque.scss */
+/* line 254, ../sass/cinemateque.scss */
 .footer .webform-client-form .webform-component.webform-component-radios label {
   color: #ffffff;
 }
-/* line 254, ../sass/cinemateque.scss */
+/* line 259, ../sass/cinemateque.scss */
 .footer .webform-client-form .webform-component--approve-recieving-e-mail {
   width: auto;
   cursor: default;
   margin-left: 20%;
 }
 @media (max-width: 767px) {
-  /* line 254, ../sass/cinemateque.scss */
+  /* line 259, ../sass/cinemateque.scss */
   .footer .webform-client-form .webform-component--approve-recieving-e-mail {
     margin: 0;
   }
 }
-/* line 261, ../sass/cinemateque.scss */
+/* line 266, ../sass/cinemateque.scss */
+.footer .webform-client-form .webform-component--approve-recieving-e-mail label {
+  padding: 0;
+}
+/* line 269, ../sass/cinemateque.scss */
 .footer .webform-client-form .webform-component--approve-recieving-e-mail input {
   height: auto;
   width: auto;
 }
-/* line 266, ../sass/cinemateque.scss */
+/* line 274, ../sass/cinemateque.scss */
 .footer .webform-client-form .form-submit {
   margin: 0 0 0 5px;
   background: #ffffff none repeat scroll 0 0 !important;
@@ -344,44 +370,44 @@ body {
   color: #b59d70 !important;
 }
 @media (max-width: 767px) {
-  /* line 266, ../sass/cinemateque.scss */
+  /* line 274, ../sass/cinemateque.scss */
   .footer .webform-client-form .form-submit {
     width: 100%;
   }
 }
-/* line 279, ../sass/cinemateque.scss */
+/* line 287, ../sass/cinemateque.scss */
 .footer .webform-client-form .form-control::-moz-placeholder {
   color: #fff;
 }
-/* line 284, ../sass/cinemateque.scss */
+/* line 292, ../sass/cinemateque.scss */
 .footer .social.icon {
   float: left;
   padding-top: 40px;
   text-align: center;
 }
 /* line 61, ../sass/init.scss */
-.domain-1 .footer .social.icon {
+.domain-1 .footer .social.icon, .footer .social.icon.domain-1 .footer .social.icon {
   background-color: #e41145 !important;
 }
 /* line 64, ../sass/init.scss */
 .domain-2 .footer .social.icon {
   background-color: #b59d70 !important;
 }
-/* line 289, ../sass/cinemateque.scss */
+/* line 297, ../sass/cinemateque.scss */
 .footer .social.icon .pane-content {
   display: inline-block;
 }
-/* line 293, ../sass/cinemateque.scss */
+/* line 301, ../sass/cinemateque.scss */
 .footer .social .pane-content span {
   padding-left: 25px;
   padding-right: 1px;
 }
-/* line 298, ../sass/cinemateque.scss */
+/* line 306, ../sass/cinemateque.scss */
 .footer .copyrignt-block {
   background-color: #ffffff;
   width: 100%;
 }
-/* line 301, ../sass/cinemateque.scss */
+/* line 309, ../sass/cinemateque.scss */
 .footer .copyrignt-block .pane-content {
   width: 1280px !important;
   max-width: 100%;
@@ -389,46 +415,46 @@ body {
   padding: 0 3%;
   box-sizing: border-box;
 }
-/* line 304, ../sass/cinemateque.scss */
+/* line 312, ../sass/cinemateque.scss */
 .footer .copyrignt-block p {
   margin-bottom: 0;
 }
-/* line 307, ../sass/cinemateque.scss */
+/* line 315, ../sass/cinemateque.scss */
 .footer .copyrignt-block .copyright {
   float: left;
 }
 @media (max-width: 767px) {
-  /* line 307, ../sass/cinemateque.scss */
+  /* line 315, ../sass/cinemateque.scss */
   .footer .copyrignt-block .copyright {
     width: 100%;
     text-align: center;
   }
 }
-/* line 314, ../sass/cinemateque.scss */
+/* line 322, ../sass/cinemateque.scss */
 .footer .copyrignt-block .design-development {
   float: right;
 }
 @media (max-width: 767px) {
-  /* line 314, ../sass/cinemateque.scss */
+  /* line 322, ../sass/cinemateque.scss */
   .footer .copyrignt-block .design-development {
     width: 100%;
     text-align: center;
   }
 }
-/* line 322, ../sass/cinemateque.scss */
+/* line 330, ../sass/cinemateque.scss */
 .footer .col-md-12.news-letter {
   color: #ffffff;
   padding: 0 0 25px 0;
 }
 /* line 61, ../sass/init.scss */
-.domain-1 .footer .col-md-12.news-letter {
+.domain-1 .footer .col-md-12.news-letter, .footer .col-md-12.news-letter.domain-1 .footer .col-md-12.news-letter {
   background-color: #e41145 !important;
 }
 /* line 64, ../sass/init.scss */
 .domain-2 .footer .col-md-12.news-letter {
   background-color: #b59d70 !important;
 }
-/* line 326, ../sass/cinemateque.scss */
+/* line 334, ../sass/cinemateque.scss */
 .footer .col-md-12.news-letter .pane-content {
   width: 1280px !important;
   max-width: 100%;
@@ -437,20 +463,20 @@ body {
   box-sizing: border-box;
   width: 1048px !important;
 }
-/* line 331, ../sass/cinemateque.scss */
+/* line 339, ../sass/cinemateque.scss */
 .footer .pane-webform-client-block-19 .pane-content {
   margin: 0 auto;
 }
-/* line 334, ../sass/cinemateque.scss */
+/* line 342, ../sass/cinemateque.scss */
 .footer .caruosel-slideshow {
   max-width: 100%;
 }
 
-/* line 340, ../sass/cinemateque.scss */
+/* line 348, ../sass/cinemateque.scss */
 .pane-footer-mini-panel .carousel {
   padding: 0;
 }
-/* line 343, ../sass/cinemateque.scss */
+/* line 351, ../sass/cinemateque.scss */
 .pane-footer-mini-panel .social .pane-content span {
   margin: 0 auto;
   padding-top: 60px;
@@ -459,100 +485,106 @@ body {
   text-align: center;
 }
 
-/* line 351, ../sass/cinemateque.scss */
+/* line 359, ../sass/cinemateque.scss */
 .imageblock-image {
   width: 200px;
 }
 
-/* line 354, ../sass/cinemateque.scss */
+/* line 362, ../sass/cinemateque.scss */
 .imageblock-link {
   float: right;
 }
 
-/* line 357, ../sass/cinemateque.scss */
+/* line 365, ../sass/cinemateque.scss */
 .block-image {
   float: left;
 }
 
-/* line 360, ../sass/cinemateque.scss */
+/* line 368, ../sass/cinemateque.scss */
 .block-body {
   float: left;
 }
 
-/* line 363, ../sass/cinemateque.scss */
+/* line 371, ../sass/cinemateque.scss */
 .views-slideshow-cycle-main-frame {
   float: left;
   width: 100% !important;
 }
 
-/* line 367, ../sass/cinemateque.scss */
+/* line 375, ../sass/cinemateque.scss */
 .views-slideshow-controls-text-pause {
   display: none;
 }
 
-/* line 370, ../sass/cinemateque.scss */
+/* line 378, ../sass/cinemateque.scss */
 #main-wrapper {
   margin-top: 90px;
   overflow: hidden;
 }
-/* line 373, ../sass/cinemateque.scss */
+/* line 381, ../sass/cinemateque.scss */
 #main-wrapper .panels-flexible-row.popup.region {
   display: none;
 }
 
-/* line 378, ../sass/cinemateque.scss */
+/* line 386, ../sass/cinemateque.scss */
 img.panopoly-image-full {
   margin-bottom: 0 !important;
 }
 
-/* line 382, ../sass/cinemateque.scss */
+/* line 390, ../sass/cinemateque.scss */
 .sticky-header, .not-front header {
   height: 50px !important;
 }
-/* line 384, ../sass/cinemateque.scss */
+/* line 392, ../sass/cinemateque.scss */
 .sticky-header .navbar-brand, .not-front header .navbar-brand {
   padding-top: 6px !important;
 }
 @media (max-width: 767px) {
-  /* line 384, ../sass/cinemateque.scss */
+  /* line 392, ../sass/cinemateque.scss */
   .sticky-header .navbar-brand, .not-front header .navbar-brand {
     padding-top: 10px !important;
     height: 40px;
   }
 }
-/* line 390, ../sass/cinemateque.scss */
+/* line 398, ../sass/cinemateque.scss */
 .sticky-header .navbar-brand > img, .not-front header .navbar-brand > img {
   height: 40px;
 }
 @media (max-width: 767px) {
-  /* line 390, ../sass/cinemateque.scss */
+  /* line 398, ../sass/cinemateque.scss */
   .sticky-header .navbar-brand > img, .not-front header .navbar-brand > img {
     height: 30px;
   }
 }
 
-/* line 400, ../sass/cinemateque.scss */
+/* line 408, ../sass/cinemateque.scss */
 .admin-menu #header {
   top: 29px;
 }
-/* line 403, ../sass/cinemateque.scss */
+/* line 411, ../sass/cinemateque.scss */
 .admin-menu .sticky-header.header {
   margin-top: 0;
 }
 
-/* line 408, ../sass/cinemateque.scss */
+/* line 416, ../sass/cinemateque.scss */
 .navbar-default {
   background-color: transparent;
 }
 
-/* line 412, ../sass/cinemateque.scss */
+/* line 420, ../sass/cinemateque.scss */
 .navbar-header {
   position: relative;
   z-index: 200;
   float: left;
 }
+@media (max-width: 767px) {
+  /* line 420, ../sass/cinemateque.scss */
+  .navbar-header {
+    float: right;
+  }
+}
 
-/* line 418, ../sass/cinemateque.scss */
+/* line 429, ../sass/cinemateque.scss */
 #header {
   position: fixed;
   height: 68px;
@@ -562,30 +594,30 @@ img.panopoly-image-full {
   transition: all 0.5s ease-out;
   z-index: 99;
 }
-/* line 426, ../sass/cinemateque.scss */
+/* line 437, ../sass/cinemateque.scss */
 #header .container-fluid {
   padding: 0;
 }
 
-/* line 431, ../sass/cinemateque.scss */
+/* line 442, ../sass/cinemateque.scss */
 #header {
   background-color: #000000;
 }
 
-/* line 436, ../sass/cinemateque.scss */
+/* line 447, ../sass/cinemateque.scss */
 .front #header {
   background-color: transparent;
 }
-/* line 438, ../sass/cinemateque.scss */
+/* line 449, ../sass/cinemateque.scss */
 .front #header.sticky-header {
   background-color: #000000;
 }
-/* line 442, ../sass/cinemateque.scss */
+/* line 453, ../sass/cinemateque.scss */
 .front #main-wrapper {
   margin-top: 0 !important;
 }
 
-/* line 448, ../sass/cinemateque.scss */
+/* line 459, ../sass/cinemateque.scss */
 .header #site-main-menu {
   color: #ffffff;
   transition: all 0.5s ease 0s;
@@ -595,12 +627,12 @@ img.panopoly-image-full {
   float: none;
 }
 @media (max-width: 767px) {
-  /* line 448, ../sass/cinemateque.scss */
+  /* line 459, ../sass/cinemateque.scss */
   .header #site-main-menu {
     display: none;
   }
 }
-/* line 458, ../sass/cinemateque.scss */
+/* line 469, ../sass/cinemateque.scss */
 .header #site-main-menu li a {
   color: #ffffff;
   transition: all 0.5s ease 0s;
@@ -608,14 +640,14 @@ img.panopoly-image-full {
   padding-bottom: 10px !important;
 }
 /* line 61, ../sass/init.scss */
-.domain-1 .header #site-main-menu li li a {
+.domain-1 .header #site-main-menu li li a, .header #site-main-menu li li a.domain-1 .header #site-main-menu li li a {
   background-color: #e41145 !important;
 }
 /* line 64, ../sass/init.scss */
 .domain-2 .header #site-main-menu li li a {
   background-color: #b59d70 !important;
 }
-/* line 469, ../sass/cinemateque.scss */
+/* line 480, ../sass/cinemateque.scss */
 .header .screen-search {
   position: fixed;
   height: 100%;
@@ -623,28 +655,30 @@ img.panopoly-image-full {
   background-color: #000;
   opacity: 0.8;
 }
-/* line 476, ../sass/cinemateque.scss */
+/* line 487, ../sass/cinemateque.scss */
 .header .header-right {
   width: auto;
   float: right;
 }
 @media (max-width: 767px) {
-  /* line 476, ../sass/cinemateque.scss */
+  /* line 487, ../sass/cinemateque.scss */
   .header .header-right {
     padding: 0;
+    float: left;
   }
-  /* line 481, ../sass/cinemateque.scss */
+  /* line 493, ../sass/cinemateque.scss */
   .header .header-right li {
     padding-left: 0;
     padding-right: 0;
-    margin-left: 10px;
+    margin-right: 10px;
+    float: right;
   }
-  /* line 485, ../sass/cinemateque.scss */
+  /* line 498, ../sass/cinemateque.scss */
   .header .header-right li.shopping-cart, .header .header-right li#da11y-plugin {
     display: none;
   }
 }
-/* line 491, ../sass/cinemateque.scss */
+/* line 504, ../sass/cinemateque.scss */
 .header .header-right .search span {
   background: url("../images/search-icon.png") no-repeat 0 2px;
   display: inline-block;
@@ -652,30 +686,22 @@ img.panopoly-image-full {
   text-indent: -9999px;
   width: 20px;
 }
-/* line 497, ../sass/cinemateque.scss */
-.header .header-right .search span:hover {
-  background: url("../images/search-icon-gold.png") no-repeat 0 2px;
-}
-/* line 501, ../sass/cinemateque.scss */
+/* line 511, ../sass/cinemateque.scss */
 .header .header-right .search a {
   padding: 0;
 }
-/* line 505, ../sass/cinemateque.scss */
+/* line 515, ../sass/cinemateque.scss */
 .header .header-right #da11y-toggle:before {
   content: "";
 }
-/* line 508, ../sass/cinemateque.scss */
+/* line 518, ../sass/cinemateque.scss */
 .header .header-right #da11y-toggle {
   background: url("../images/access-icon.png") no-repeat 0 0;
   height: 22px;
   margin-top: 3px;
   width: 20px;
 }
-/* line 513, ../sass/cinemateque.scss */
-.header .header-right #da11y-toggle:hover {
-  background: url("../images/access-icon-gold.png") no-repeat 0 0;
-}
-/* line 518, ../sass/cinemateque.scss */
+/* line 526, ../sass/cinemateque.scss */
 .header .header-right .language-switcher-locale-url a {
   background: url("../images/hebrew-icon.png") no-repeat 0 2px;
   display: inline-block;
@@ -683,11 +709,7 @@ img.panopoly-image-full {
   text-indent: -9999px;
   width: 20px;
 }
-/* line 524, ../sass/cinemateque.scss */
-.header .header-right .language-switcher-locale-url a:hover {
-  background: url("../images/hebrew-icon-gold.png") no-repeat 0 2px;
-}
-/* line 528, ../sass/cinemateque.scss */
+/* line 533, ../sass/cinemateque.scss */
 .header .header-right .language-switcher-locale-url span {
   opacity: 0.4;
   background: url("../images/hebrew-icon.png") no-repeat 0 2px;
@@ -696,59 +718,54 @@ img.panopoly-image-full {
   text-indent: -9999px;
   width: 20px;
 }
-/* line 538, ../sass/cinemateque.scss */
+/* line 543, ../sass/cinemateque.scss */
 .header .container {
   padding: 0;
   width: 100%;
 }
-/* line 542, ../sass/cinemateque.scss */
+/* line 547, ../sass/cinemateque.scss */
 .header .site-custom-menu li {
   display: none;
 }
-/* line 544, ../sass/cinemateque.scss */
+/* line 549, ../sass/cinemateque.scss */
 .header .site-custom-menu li.expanded {
   display: inline-block;
 }
-/* line 547, ../sass/cinemateque.scss */
+/* line 552, ../sass/cinemateque.scss */
 .header .site-custom-menu li ul li {
   display: block;
 }
 
-/* line 553, ../sass/cinemateque.scss */
-.search .header .header-right .search span {
-  background: url("../images/search-icon-gold.png") no-repeat 0 2px;
-}
-
-/* line 556, ../sass/cinemateque.scss */
+/* line 558, ../sass/cinemateque.scss */
 .dropdown-menu {
   background-color: transparent;
   padding: 0;
 }
 
-/* line 560, ../sass/cinemateque.scss */
+/* line 562, ../sass/cinemateque.scss */
 .panels-flexible-region-custom_front_panel-footer_region, .panels-flexible-region-93-center {
   width: 100%;
 }
 
-/* line 563, ../sass/cinemateque.scss */
+/* line 565, ../sass/cinemateque.scss */
 .pane-block-4 {
   background-color: #ffffff;
   float: left;
   width: 100%;
 }
 
-/* line 569, ../sass/cinemateque.scss */
+/* line 571, ../sass/cinemateque.scss */
 .festival-site {
   float: left;
   padding-top: 4px;
 }
 @media (max-width: 767px) {
-  /* line 569, ../sass/cinemateque.scss */
+  /* line 571, ../sass/cinemateque.scss */
   .festival-site {
     display: none;
   }
 }
-/* line 575, ../sass/cinemateque.scss */
+/* line 577, ../sass/cinemateque.scss */
 .festival-site span {
   color: #ffffff;
   float: left;
@@ -757,17 +774,17 @@ img.panopoly-image-full {
   width: 100%;
 }
 
-/* line 584, ../sass/cinemateque.scss */
+/* line 586, ../sass/cinemateque.scss */
 .pro-grid {
   margin: 0 auto;
   background: #e3e3e3 none repeat scroll 0 0;
   padding: 0.25%;
 }
-/* line 588, ../sass/cinemateque.scss */
+/* line 590, ../sass/cinemateque.scss */
 .pro-grid:nth-child(odd) {
   background: transparent;
 }
-/* line 591, ../sass/cinemateque.scss */
+/* line 593, ../sass/cinemateque.scss */
 .pro-grid > * .search-info .fa {
   font-size: 16px;
   margin: 0 10px;
@@ -781,75 +798,75 @@ img.panopoly-image-full {
   color: #b59d70 !important;
 }
 
-/* line 597, ../sass/cinemateque.scss */
+/* line 599, ../sass/cinemateque.scss */
 .search-result {
   transition: ease 0.5s background;
 }
-/* line 599, ../sass/cinemateque.scss */
+/* line 601, ../sass/cinemateque.scss */
 .search-result:nth-child(even) {
   background: #ffffff;
 }
-/* line 602, ../sass/cinemateque.scss */
+/* line 604, ../sass/cinemateque.scss */
 .search-result:nth-child(odd) {
   background: #f5f5f5;
 }
-/* line 605, ../sass/cinemateque.scss */
+/* line 607, ../sass/cinemateque.scss */
 .search-result:hover {
   color: #000000 !important;
 }
 /* line 61, ../sass/init.scss */
-.domain-1 .search-result:hover {
+.domain-1 .search-result:hover, .search-result:hover.domain-1 .search-result:hover {
   background-color: #e41145 !important;
 }
 /* line 64, ../sass/init.scss */
 .domain-2 .search-result:hover {
   background-color: #b59d70 !important;
 }
-/* line 609, ../sass/cinemateque.scss */
+/* line 611, ../sass/cinemateque.scss */
 .search-result:hover .pro-grid li .search-view-mode {
   color: #ffffff !important;
 }
-/* line 612, ../sass/cinemateque.scss */
+/* line 614, ../sass/cinemateque.scss */
 .search-result:hover .pro-grid li .title a {
   color: #ffffff !important;
 }
 
-/* line 619, ../sass/cinemateque.scss */
+/* line 621, ../sass/cinemateque.scss */
 #edit-search-block-form--2 {
   border: 1px solid #000000;
 }
 
-/* line 622, ../sass/cinemateque.scss */
+/* line 624, ../sass/cinemateque.scss */
 .popup-element-title {
   color: #ffffff !important;
 }
 
-/* line 628, ../sass/cinemateque.scss */
+/* line 630, ../sass/cinemateque.scss */
 .pagination > li:last-child > a {
   border-radius: 0 !important;
 }
-/* line 631, ../sass/cinemateque.scss */
+/* line 633, ../sass/cinemateque.scss */
 .pagination > li:last-child > span {
   border-radius: 0 !important;
 }
-/* line 636, ../sass/cinemateque.scss */
+/* line 638, ../sass/cinemateque.scss */
 .pagination > li:first-child > a {
   border-radius: 0 !important;
 }
-/* line 639, ../sass/cinemateque.scss */
+/* line 641, ../sass/cinemateque.scss */
 .pagination > li:first-child > span {
   border-radius: 0 !important;
 }
-/* line 645, ../sass/cinemateque.scss */
+/* line 647, ../sass/cinemateque.scss */
 .pagination > .active > a {
   border: 1px solid !important;
   background: transparent;
 }
-/* line 70, ../sass/init.scss */
+/* line 79, ../sass/init.scss */
 .domain-1 .pagination > .active > a {
   border-color: #e41145 !important;
 }
-/* line 73, ../sass/init.scss */
+/* line 82, ../sass/init.scss */
 .domain-2 .pagination > .active > a {
   border-color: #b59d70 !important;
 }
@@ -861,16 +878,16 @@ img.panopoly-image-full {
 .domain-2 .pagination > .active > a {
   color: #b59d70 !important;
 }
-/* line 650, ../sass/cinemateque.scss */
+/* line 652, ../sass/cinemateque.scss */
 .pagination > .active > a:focus {
   border: 1px solid;
   background: transparent;
 }
-/* line 70, ../sass/init.scss */
+/* line 79, ../sass/init.scss */
 .domain-1 .pagination > .active > a:focus {
   border-color: #e41145 !important;
 }
-/* line 73, ../sass/init.scss */
+/* line 82, ../sass/init.scss */
 .domain-2 .pagination > .active > a:focus {
   border-color: #b59d70 !important;
 }
@@ -882,16 +899,16 @@ img.panopoly-image-full {
 .domain-2 .pagination > .active > a:focus {
   color: #b59d70 !important;
 }
-/* line 656, ../sass/cinemateque.scss */
+/* line 658, ../sass/cinemateque.scss */
 .pagination > .active > a:hover {
   border: 1px solid;
   background: transparent;
 }
-/* line 70, ../sass/init.scss */
+/* line 79, ../sass/init.scss */
 .domain-1 .pagination > .active > a:hover {
   border-color: #e41145 !important;
 }
-/* line 73, ../sass/init.scss */
+/* line 82, ../sass/init.scss */
 .domain-2 .pagination > .active > a:hover {
   border-color: #b59d70 !important;
 }
@@ -903,16 +920,16 @@ img.panopoly-image-full {
 .domain-2 .pagination > .active > a:hover {
   color: #b59d70 !important;
 }
-/* line 663, ../sass/cinemateque.scss */
+/* line 665, ../sass/cinemateque.scss */
 .pagination > .active > span {
   border: 1px solid;
   background: transparent;
 }
-/* line 70, ../sass/init.scss */
+/* line 79, ../sass/init.scss */
 .domain-1 .pagination > .active > span {
   border-color: #e41145 !important;
 }
-/* line 73, ../sass/init.scss */
+/* line 82, ../sass/init.scss */
 .domain-2 .pagination > .active > span {
   border-color: #b59d70 !important;
 }
@@ -924,16 +941,16 @@ img.panopoly-image-full {
 .domain-2 .pagination > .active > span {
   color: #b59d70 !important;
 }
-/* line 668, ../sass/cinemateque.scss */
+/* line 670, ../sass/cinemateque.scss */
 .pagination > .active > span:focus {
   border: 1px solid;
   background: transparent;
 }
-/* line 70, ../sass/init.scss */
+/* line 79, ../sass/init.scss */
 .domain-1 .pagination > .active > span:focus {
   border-color: #e41145 !important;
 }
-/* line 73, ../sass/init.scss */
+/* line 82, ../sass/init.scss */
 .domain-2 .pagination > .active > span:focus {
   border-color: #b59d70 !important;
 }
@@ -945,16 +962,16 @@ img.panopoly-image-full {
 .domain-2 .pagination > .active > span:focus {
   color: #b59d70 !important;
 }
-/* line 674, ../sass/cinemateque.scss */
+/* line 676, ../sass/cinemateque.scss */
 .pagination > .active > span:hover {
   border: 1px solid;
   background: transparent;
 }
-/* line 70, ../sass/init.scss */
+/* line 79, ../sass/init.scss */
 .domain-1 .pagination > .active > span:hover {
   border-color: #e41145 !important;
 }
-/* line 73, ../sass/init.scss */
+/* line 82, ../sass/init.scss */
 .domain-2 .pagination > .active > span:hover {
   border-color: #b59d70 !important;
 }
@@ -975,21 +992,21 @@ img.panopoly-image-full {
   color: #b59d70 !important;
 }
 
-/* line 687, ../sass/cinemateque.scss */
+/* line 689, ../sass/cinemateque.scss */
 .item-list ul li {
   margin: 0 0 0 0 !important;
 }
-/* line 690, ../sass/cinemateque.scss */
+/* line 692, ../sass/cinemateque.scss */
 .item-list .pager li {
   padding: 0.2em !important;
   font-size: 12px;
 }
-/* line 693, ../sass/cinemateque.scss */
+/* line 695, ../sass/cinemateque.scss */
 .item-list .pager li a {
   background-color: transparent !important;
 }
 
-/* line 699, ../sass/cinemateque.scss */
+/* line 701, ../sass/cinemateque.scss */
 #edit-basic .form-group {
   display: block !important;
   margin: 0;
@@ -997,11 +1014,11 @@ img.panopoly-image-full {
   width: 80%;
   background: #ffffff !important;
 }
-/* line 705, ../sass/cinemateque.scss */
+/* line 707, ../sass/cinemateque.scss */
 #edit-basic .form-group label[for="edit-keys"] {
   display: none !important;
 }
-/* line 708, ../sass/cinemateque.scss */
+/* line 710, ../sass/cinemateque.scss */
 #edit-basic .form-group #edit-keys {
   width: 96%;
   display: inline-block;
@@ -1011,7 +1028,7 @@ img.panopoly-image-full {
   padding: 15px 2%;
   box-shadow: 0 1px 3px 1px #aaa;
 }
-/* line 718, ../sass/cinemateque.scss */
+/* line 720, ../sass/cinemateque.scss */
 #edit-basic #edit-submit {
   margin: 0;
   border-radius: 0 !important;
@@ -1021,7 +1038,7 @@ img.panopoly-image-full {
   width: 20%;
 }
 /* line 61, ../sass/init.scss */
-.domain-1 #edit-basic #edit-submit {
+.domain-1 #edit-basic #edit-submit, #edit-basic #edit-submit.domain-1 #edit-basic #edit-submit {
   background-color: #e41145 !important;
 }
 /* line 64, ../sass/init.scss */
@@ -1029,12 +1046,12 @@ img.panopoly-image-full {
   background-color: #b59d70 !important;
 }
 
-/* line 729, ../sass/cinemateque.scss */
+/* line 731, ../sass/cinemateque.scss */
 .mobile-calender .calender-filter {
   border-bottom: 1px solid #b3b3b3;
   border-top: 1px solid #b3b3b3;
 }
-/* line 732, ../sass/cinemateque.scss */
+/* line 734, ../sass/cinemateque.scss */
 .mobile-calender .calender-filter > p {
   background-color: #ffffff;
   font-size: 12px;
@@ -1043,62 +1060,62 @@ img.panopoly-image-full {
   border-right: 1px solid #ececec;
   border-left: 1px solid #ececec;
 }
-/* line 739, ../sass/cinemateque.scss */
+/* line 741, ../sass/cinemateque.scss */
 .mobile-calender .calender-filter > p.active {
   color: #ffffff;
   cursor: pointer;
   box-shadow: none;
 }
 /* line 61, ../sass/init.scss */
-.domain-1 .mobile-calender .calender-filter > p.active {
+.domain-1 .mobile-calender .calender-filter > p.active, .mobile-calender .calender-filter > p.active.domain-1 .mobile-calender .calender-filter > p.active {
   background-color: #e41145 !important;
 }
 /* line 64, ../sass/init.scss */
 .domain-2 .mobile-calender .calender-filter > p.active {
   background-color: #b59d70 !important;
 }
-/* line 745, ../sass/cinemateque.scss */
+/* line 747, ../sass/cinemateque.scss */
 .mobile-calender .calender-filter > p:hover {
   box-shadow: none;
 }
 /* line 61, ../sass/init.scss */
-.domain-1 .mobile-calender .calender-filter > p:hover {
+.domain-1 .mobile-calender .calender-filter > p:hover, .mobile-calender .calender-filter > p:hover.domain-1 .mobile-calender .calender-filter > p:hover {
   background-color: #e41145 !important;
 }
 /* line 64, ../sass/init.scss */
 .domain-2 .mobile-calender .calender-filter > p:hover {
   background-color: #b59d70 !important;
 }
-/* line 751, ../sass/cinemateque.scss */
+/* line 753, ../sass/cinemateque.scss */
 .mobile-calender .mobile-accordian-content {
   display: none;
 }
-/* line 754, ../sass/cinemateque.scss */
+/* line 756, ../sass/cinemateque.scss */
 .mobile-calender .mobile-event-accordian {
   float: left;
   width: 100%;
 }
-/* line 758, ../sass/cinemateque.scss */
+/* line 760, ../sass/cinemateque.scss */
 .mobile-calender .mobile-bold-time {
   float: left;
   width: 45px;
 }
-/* line 762, ../sass/cinemateque.scss */
+/* line 764, ../sass/cinemateque.scss */
 .mobile-calender .mobile-event-title {
   float: left;
   width: 200px;
 }
-/* line 766, ../sass/cinemateque.scss */
+/* line 768, ../sass/cinemateque.scss */
 .mobile-calender .filter-cantrol {
   display: block;
 }
 
-/* line 770, ../sass/cinemateque.scss */
+/* line 772, ../sass/cinemateque.scss */
 .mobile-calender-filter-date {
   float: left;
   width: 100%;
 }
-/* line 773, ../sass/cinemateque.scss */
+/* line 775, ../sass/cinemateque.scss */
 .mobile-calender-filter-date .pull-left {
   font-weight: bold;
 }
@@ -1111,19 +1128,19 @@ img.panopoly-image-full {
   color: #b59d70 !important;
 }
 
-/* line 778, ../sass/cinemateque.scss */
+/* line 780, ../sass/cinemateque.scss */
 .filter-cantrol {
   display: none;
 }
 
-/* line 782, ../sass/cinemateque.scss */
+/* line 784, ../sass/cinemateque.scss */
 #panels-ipe-paneid-221, #panels-ipe-paneid-222, #panels-ipe-paneid-220 {
   width: 33%;
   display: inline-block;
   padding: 0 1%;
 }
 
-/* line 788, ../sass/cinemateque.scss */
+/* line 790, ../sass/cinemateque.scss */
 .wide-margins {
   width: 1280px !important;
   max-width: 100%;
@@ -1133,14 +1150,14 @@ img.panopoly-image-full {
   width: 615px !important;
 }
 
-/* line 793, ../sass/cinemateque.scss */
+/* line 795, ../sass/cinemateque.scss */
 .purchase-btn {
   padding: 4px 10px;
   color: #ffffff !important;
   letter-spacing: 1px;
 }
 /* line 61, ../sass/init.scss */
-.domain-1 .purchase-btn {
+.domain-1 .purchase-btn, .purchase-btn.domain-1 .purchase-btn {
   background-color: #e41145 !important;
 }
 /* line 64, ../sass/init.scss */
@@ -1148,36 +1165,36 @@ img.panopoly-image-full {
   background-color: #b59d70 !important;
 }
 
-/* line 799, ../sass/cinemateque.scss */
+/* line 801, ../sass/cinemateque.scss */
 .draggable.tabledrag-processed thead {
   display: none;
 }
 
-/* line 802, ../sass/cinemateque.scss */
+/* line 804, ../sass/cinemateque.scss */
 .panels-flexible-region.popup.region {
   background-color: #323232;
   color: #ffffff;
   padding-bottom: 40px;
 }
 
-/* line 809, ../sass/cinemateque.scss */
+/* line 811, ../sass/cinemateque.scss */
 .popup.region .view-bean-infomation-block-view tr {
   background: transparent none repeat scroll 0 0 !important;
   border: medium none;
 }
-/* line 813, ../sass/cinemateque.scss */
+/* line 815, ../sass/cinemateque.scss */
 .popup.region .view-bean-infomation-block-view tbody {
   background: transparent none repeat scroll 0 0 !important;
   border: medium none;
 }
-/* line 819, ../sass/cinemateque.scss */
+/* line 821, ../sass/cinemateque.scss */
 .popup.region .views-field.views-field-field-cm-info-block-icon {
   float: left;
   width: auto;
   min-height: 80px;
   border: medium none;
 }
-/* line 825, ../sass/cinemateque.scss */
+/* line 827, ../sass/cinemateque.scss */
 .popup.region .views-field.views-field-label {
   float: left;
   padding-left: 15px;
@@ -1185,11 +1202,11 @@ img.panopoly-image-full {
   width: 185px;
   border: medium none;
 }
-/* line 831, ../sass/cinemateque.scss */
+/* line 833, ../sass/cinemateque.scss */
 .popup.region .views-field.views-field-label p {
   margin-top: 0;
 }
-/* line 835, ../sass/cinemateque.scss */
+/* line 837, ../sass/cinemateque.scss */
 .popup.region .views-field.views-field-field-cm-info-block-text {
   float: left;
   padding-left: 15px;
@@ -1197,15 +1214,15 @@ img.panopoly-image-full {
   width: 185px;
   border: medium none;
 }
-/* line 841, ../sass/cinemateque.scss */
+/* line 843, ../sass/cinemateque.scss */
 .popup.region .views-field.views-field-field-cm-info-block-text p {
   margin-top: 0;
 }
-/* line 846, ../sass/cinemateque.scss */
+/* line 848, ../sass/cinemateque.scss */
 .popup.region .pane-my-backend-festival-menu-block .menu.nav li.last {
   border-bottom: none;
 }
-/* line 849, ../sass/cinemateque.scss */
+/* line 851, ../sass/cinemateque.scss */
 .popup.region .pane-menu-menu-demo-menu-1 .menu.nav li {
   background-image: url("../images/arrow-right.png");
   background-position: right center;
@@ -1214,136 +1231,136 @@ img.panopoly-image-full {
   border-bottom: 2px solid #5c5c5c;
   line-height: 40px;
 }
-/* line 856, ../sass/cinemateque.scss */
+/* line 858, ../sass/cinemateque.scss */
 .popup.region .pane-menu-menu-demo-menu-1 .menu.nav li.last {
   border-bottom: medium none;
   margin-bottom: 30px;
 }
 
-/* line 864, ../sass/cinemateque.scss */
+/* line 866, ../sass/cinemateque.scss */
 li.expanded .caret {
   display: none;
 }
-/* line 867, ../sass/cinemateque.scss */
+/* line 869, ../sass/cinemateque.scss */
 li.expanded .dropdown-menu {
   border-top: 2px solid;
 }
-/* line 70, ../sass/init.scss */
+/* line 79, ../sass/init.scss */
 .domain-1 li.expanded .dropdown-menu {
   border-color: #e41145 !important;
 }
-/* line 73, ../sass/init.scss */
+/* line 82, ../sass/init.scss */
 .domain-2 li.expanded .dropdown-menu {
   border-color: #b59d70 !important;
 }
 
-/* line 873, ../sass/cinemateque.scss */
+/* line 875, ../sass/cinemateque.scss */
 .social .pane-content span {
   float: left;
   overflow: hidden;
   width: 33%;
 }
 
-/* line 879, ../sass/cinemateque.scss */
+/* line 881, ../sass/cinemateque.scss */
 .sponser-pane .pane-content li {
   float: left;
   overflow: hidden;
   width: 33%;
 }
 
-/* line 885, ../sass/cinemateque.scss */
+/* line 887, ../sass/cinemateque.scss */
 .pane-bean-infomation-block-view.col-md-12 {
   background-color: #262626;
   padding-top: 30px;
 }
 
-/* line 890, ../sass/cinemateque.scss */
+/* line 892, ../sass/cinemateque.scss */
 .form-item-submitted-approve-recieving-e-mail.radio {
   margin: 0;
 }
 
-/* line 894, ../sass/cinemateque.scss */
+/* line 896, ../sass/cinemateque.scss */
 .webform-component-radios.webform-component--approve-recieving-e-mail {
   margin-bottom: 0;
   width: 100%;
 }
 
 /********   Footer  *********/
-/* line 901, ../sass/cinemateque.scss */
+/* line 903, ../sass/cinemateque.scss */
 #footer {
   margin-top: 50px;
 }
 
-/* line 905, ../sass/cinemateque.scss */
+/* line 907, ../sass/cinemateque.scss */
 section.footer .view-bean-infomation-block-view table tbody tr {
   background-color: #7a7a7a !important;
   border: medium none;
   color: #ffffff;
 }
 
-/* line 911, ../sass/cinemateque.scss */
+/* line 913, ../sass/cinemateque.scss */
 .panels-flexible-region-11-center, .panels-flexible-region-14-center {
   width: 100%;
 }
 
-/* line 915, ../sass/cinemateque.scss */
+/* line 917, ../sass/cinemateque.scss */
 .copyright > p {
   font-size: 14px;
   padding: 15px 0;
 }
 
-/* line 919, ../sass/cinemateque.scss */
+/* line 921, ../sass/cinemateque.scss */
 .design-development > p {
   font-size: 14px;
   padding: 15px 0;
 }
 
-/* line 924, ../sass/cinemateque.scss */
+/* line 926, ../sass/cinemateque.scss */
 .custom-sponser-pane .pane-content li {
   display: inline;
 }
-/* line 926, ../sass/cinemateque.scss */
+/* line 928, ../sass/cinemateque.scss */
 .custom-sponser-pane .pane-content li img.carousel-sponser {
   padding-top: 8px;
   width: 140px;
 }
-/* line 931, ../sass/cinemateque.scss */
+/* line 933, ../sass/cinemateque.scss */
 .custom-sponser-pane .pane-content > ul {
   float: left;
   text-align: center;
   width: 100%;
 }
 
-/* line 938, ../sass/cinemateque.scss */
+/* line 940, ../sass/cinemateque.scss */
 .pane-bean-footer-social-block {
   padding: 40px 0;
   clear: both;
 }
 /* line 61, ../sass/init.scss */
-.domain-1 .pane-bean-footer-social-block {
+.domain-1 .pane-bean-footer-social-block, .pane-bean-footer-social-block.domain-1 .pane-bean-footer-social-block {
   background-color: #e41145 !important;
 }
 /* line 64, ../sass/init.scss */
 .domain-2 .pane-bean-footer-social-block {
   background-color: #b59d70 !important;
 }
-/* line 942, ../sass/cinemateque.scss */
+/* line 944, ../sass/cinemateque.scss */
 .pane-bean-footer-social-block .field-items {
   text-align: center;
 }
-/* line 945, ../sass/cinemateque.scss */
+/* line 947, ../sass/cinemateque.scss */
 .pane-bean-footer-social-block .field-item {
   display: inline-block;
   margin: 0 10px;
 }
 
 /****   slide changes   ************/
-/* line 954, ../sass/cinemateque.scss */
+/* line 956, ../sass/cinemateque.scss */
 .pane-slider h2 {
   display: none;
 }
 
-/* line 957, ../sass/cinemateque.scss */
+/* line 959, ../sass/cinemateque.scss */
 .views_slideshow_controls_text a {
   color: rgba(0, 0, 0, 0.8);
   cursor: pointer;
@@ -1365,32 +1382,32 @@ section.footer .view-bean-infomation-block-view table tbody tr {
   width: 32px;
 }
 
-/* line 977, ../sass/cinemateque.scss */
+/* line 979, ../sass/cinemateque.scss */
 .views-slideshow-controls-text-previous a {
   left: 0;
   background-image: url("../images/left.png");
   margin-left: 15px;
 }
 
-/* line 982, ../sass/cinemateque.scss */
+/* line 984, ../sass/cinemateque.scss */
 .views-slideshow-controls-text-next a {
   right: 0;
   background-image: url("../images/right.png");
   margin-right: 15px;
 }
 
-/* line 987, ../sass/cinemateque.scss */
+/* line 989, ../sass/cinemateque.scss */
 .view-id-slider:hover .views_slideshow_controls_text a {
   opacity: 1;
 }
 
-/* line 991, ../sass/cinemateque.scss */
+/* line 993, ../sass/cinemateque.scss */
 .navbar-brand > img {
   height: 50px;
   transition: all 0.5s ease 0s;
 }
 
-/* line 996, ../sass/cinemateque.scss */
+/* line 998, ../sass/cinemateque.scss */
 .hambruger.-menu.navbar-toggle {
   display: block;
   float: left;
@@ -1401,46 +1418,46 @@ section.footer .view-bean-infomation-block-view table tbody tr {
   transition: all 0.5s ease 0s;
 }
 
-/* line 1005, ../sass/cinemateque.scss */
+/* line 1007, ../sass/cinemateque.scss */
 #site-main-menu > li a.dropdown-toggle.active {
   background: transparent none repeat scroll 0 0;
 }
 
-/* line 1008, ../sass/cinemateque.scss */
+/* line 1010, ../sass/cinemateque.scss */
 .site-custom-menu.menu.nav.navbar-nav {
   background: transparent none repeat scroll 0 0 !important;
   margin-top: 5px;
   text-align: center;
 }
 
-/* line 1013, ../sass/cinemateque.scss */
+/* line 1015, ../sass/cinemateque.scss */
 .panels-flexible-custom_front_panel .panels-flexible-region {
   width: 100%;
 }
 
-/* line 1016, ../sass/cinemateque.scss */
+/* line 1018, ../sass/cinemateque.scss */
 .navbar .navbar-brand {
   padding: 9px 15px 0;
   overflow: hidden;
 }
 
-/* line 1020, ../sass/cinemateque.scss */
+/* line 1022, ../sass/cinemateque.scss */
 .navbar-nav > li {
   display: inline-block;
   float: none;
 }
 
-/* line 1024, ../sass/cinemateque.scss */
+/* line 1026, ../sass/cinemateque.scss */
 #main #content {
   padding: 0;
 }
 
-/* line 1027, ../sass/cinemateque.scss */
+/* line 1029, ../sass/cinemateque.scss */
 span.bold {
   font-weight: bold;
 }
 
-/* line 1030, ../sass/cinemateque.scss */
+/* line 1032, ../sass/cinemateque.scss */
 .bold.time {
   float: left;
   margin-top: 70px;
@@ -1448,7 +1465,7 @@ span.bold {
   width: 100%;
 }
 
-/* line 1036, ../sass/cinemateque.scss */
+/* line 1038, ../sass/cinemateque.scss */
 .calender-filter-date p.pull-left {
   font-weight: bolder;
 }
@@ -1461,35 +1478,35 @@ span.bold {
   color: #b59d70 !important;
 }
 
-/* line 1040, ../sass/cinemateque.scss */
+/* line 1042, ../sass/cinemateque.scss */
 .page-taxonomy .panels-flexible-row.content {
   margin: 0 auto;
   width: 100%;
 }
 
 /********  new added css  ******/
-/* line 1048, ../sass/cinemateque.scss */
+/* line 1050, ../sass/cinemateque.scss */
 .search-results {
   padding: 0;
 }
 
-/* line 1051, ../sass/cinemateque.scss */
+/* line 1053, ../sass/cinemateque.scss */
 .search-results.node-results {
   padding: 0 !important;
 }
 
-/* line 1054, ../sass/cinemateque.scss */
+/* line 1056, ../sass/cinemateque.scss */
 .cm_person .pro-grid li {
   width: 46%;
   display: inline-block;
   vertical-align: middle;
   margin-bottom: 0;
 }
-/* line 1059, ../sass/cinemateque.scss */
+/* line 1061, ../sass/cinemateque.scss */
 .cm_person .pro-grid li:nth-child(1) {
   width: 6% !important;
 }
-/* line 1062, ../sass/cinemateque.scss */
+/* line 1064, ../sass/cinemateque.scss */
 .cm_person .pro-grid li .pro-img {
   max-width: 100%;
   background: #f6f6f6;
@@ -1499,13 +1516,13 @@ span.bold {
   width: 55px;
   height: 55px;
 }
-/* line 1071, ../sass/cinemateque.scss */
+/* line 1073, ../sass/cinemateque.scss */
 .cm_person .pro-grid li .title {
   text-align: left;
   text-transform: uppercase;
   font-size: 14px;
 }
-/* line 1075, ../sass/cinemateque.scss */
+/* line 1077, ../sass/cinemateque.scss */
 .cm_person .pro-grid li .title a {
   font-weight: 500;
   font-size: 14px;
@@ -1516,18 +1533,18 @@ span.bold {
   white-space: nowrap;
   display: block;
 }
-/* line 1086, ../sass/cinemateque.scss */
+/* line 1088, ../sass/cinemateque.scss */
 .cm_person .pro-grid li:nth-child(3) {
   width: 60%;
   display: inline-block;
   vertical-align: middle;
   margin-bottom: 0 !important;
 }
-/* line 1092, ../sass/cinemateque.scss */
+/* line 1094, ../sass/cinemateque.scss */
 .cm_person .pro-grid li:nth-child(2) {
   width: 25% !important;
 }
-/* line 1095, ../sass/cinemateque.scss */
+/* line 1097, ../sass/cinemateque.scss */
 .cm_person .pro-grid li .search-view-mode p {
   font-size: 13px !important;
   margin: 0 !important;
@@ -1539,35 +1556,35 @@ span.bold {
   box-orient: vertical;
 }
 
-/* line 1107, ../sass/cinemateque.scss */
+/* line 1109, ../sass/cinemateque.scss */
 .pager li > a {
   border-radius: 0 !important;
 }
-/* line 1110, ../sass/cinemateque.scss */
+/* line 1112, ../sass/cinemateque.scss */
 .pager li > span {
   border-radius: 0 !important;
 }
 
-/* line 1114, ../sass/cinemateque.scss */
+/* line 1116, ../sass/cinemateque.scss */
 .custom_filter_css .item-list ul li {
   display: inline-block;
   padding: 6px 10px;
 }
 /* line 61, ../sass/init.scss */
-.domain-1 .custom_filter_css .item-list ul li {
+.domain-1 .custom_filter_css .item-list ul li, .custom_filter_css .item-list ul li.domain-1 .custom_filter_css .item-list ul li {
   background-color: #e41145 !important;
 }
 /* line 64, ../sass/init.scss */
 .domain-2 .custom_filter_css .item-list ul li {
   background-color: #b59d70 !important;
 }
-/* line 1118, ../sass/cinemateque.scss */
+/* line 1120, ../sass/cinemateque.scss */
 .custom_filter_css .item-list ul li a {
   color: #ffffff !important;
   letter-spacing: 1px;
 }
 
-/* line 1123, ../sass/cinemateque.scss */
+/* line 1125, ../sass/cinemateque.scss */
 .mobile-event-accordian .accordian-hall {
   color: #ffffff;
   cursor: pointer;
@@ -1575,19 +1592,19 @@ span.bold {
   padding: 5px 15px;
 }
 /* line 61, ../sass/init.scss */
-.domain-1 .mobile-event-accordian .accordian-hall {
+.domain-1 .mobile-event-accordian .accordian-hall, .mobile-event-accordian .accordian-hall.domain-1 .mobile-event-accordian .accordian-hall {
   background-color: #e41145 !important;
 }
 /* line 64, ../sass/init.scss */
 .domain-2 .mobile-event-accordian .accordian-hall {
   background-color: #b59d70 !important;
 }
-/* line 1129, ../sass/cinemateque.scss */
+/* line 1131, ../sass/cinemateque.scss */
 .mobile-event-accordian .accordian-hall.open {
   background-color: #000000;
 }
 
-/* line 1133, ../sass/cinemateque.scss */
+/* line 1135, ../sass/cinemateque.scss */
 .mobile-calender-row.mobile-custom-row {
   float: left;
   padding: 2px 15px;
@@ -1595,18 +1612,18 @@ span.bold {
   border-bottom: 1px solid #b3b3b3;
   background: #ffffff none repeat scroll 0 0;
 }
-/* line 1139, ../sass/cinemateque.scss */
+/* line 1141, ../sass/cinemateque.scss */
 .mobile-calender-row.mobile-custom-row:nth-child(2n + 1) {
   background-color: #eee;
 }
 
-/* line 1143, ../sass/cinemateque.scss */
+/* line 1145, ../sass/cinemateque.scss */
 .accordian-hall .fa {
   float: right;
   padding-top: 5px;
 }
 
-/* line 1147, ../sass/cinemateque.scss */
+/* line 1149, ../sass/cinemateque.scss */
 .page-header h1.title {
   font-size: 7vh;
   padding: 10px;
@@ -1616,67 +1633,67 @@ span.bold {
   text-align: center;
 }
 
-/* line 1155, ../sass/cinemateque.scss */
+/* line 1157, ../sass/cinemateque.scss */
 div[id^="panels-ipe-paneid-22"] > * select {
   border-radius: 0 !important;
   border: 1px solid #999;
   box-shadow: none !important;
 }
 
-/* line 1162, ../sass/cinemateque.scss */
+/* line 1164, ../sass/cinemateque.scss */
 .front {
   background-color: #f9f4ee !important;
 }
-/* line 1164, ../sass/cinemateque.scss */
+/* line 1166, ../sass/cinemateque.scss */
 .front #mini-panel-myminipaneltest23rds13rd .pane-title {
   font-weight: normal;
   font-size: 20px;
   text-align: center;
 }
-/* line 1169, ../sass/cinemateque.scss */
+/* line 1171, ../sass/cinemateque.scss */
 .front p {
   line-height: 24px;
 }
-/* line 1172, ../sass/cinemateque.scss */
+/* line 1174, ../sass/cinemateque.scss */
 .front .panel-pane {
   overflow: hidden;
 }
-/* line 1175, ../sass/cinemateque.scss */
+/* line 1177, ../sass/cinemateque.scss */
 .front .panel-flexible-inside {
   height: 100%;
 }
-/* line 1179, ../sass/cinemateque.scss */
+/* line 1181, ../sass/cinemateque.scss */
 .front .pane-bundle-gallery .custom-slideshow {
   height: 1024px !important;
 }
-/* line 1182, ../sass/cinemateque.scss */
+/* line 1184, ../sass/cinemateque.scss */
 .front .pane-bundle-gallery .custom-slideshow li img {
   width: 100%;
   height: auto;
   max-width: none;
 }
-/* line 1187, ../sass/cinemateque.scss */
+/* line 1189, ../sass/cinemateque.scss */
 .front .pane-bundle-gallery li {
   height: 1024px !important;
 }
-/* line 1190, ../sass/cinemateque.scss */
+/* line 1192, ../sass/cinemateque.scss */
 .front .pane-bundle-gallery .slider-readmore {
   border-radius: 15px;
   margin-top: 20px;
 }
-/* line 1194, ../sass/cinemateque.scss */
+/* line 1196, ../sass/cinemateque.scss */
 .front .pane-bundle-gallery .slider-title {
   font-size: 3rem;
   font-weight: normal;
 }
-/* line 1198, ../sass/cinemateque.scss */
+/* line 1200, ../sass/cinemateque.scss */
 .front .pane-bundle-gallery .pinch {
   width: 100%;
   left: 0;
   padding: 0;
   text-shadow: -3px -3px 2px #969696;
 }
-/* line 1203, ../sass/cinemateque.scss */
+/* line 1205, ../sass/cinemateque.scss */
 .front .pane-bundle-gallery .pinch .wrapper {
   width: 1280px !important;
   max-width: 100%;
@@ -1684,17 +1701,17 @@ div[id^="panels-ipe-paneid-22"] > * select {
   padding: 0 3%;
   box-sizing: border-box;
 }
-/* line 1208, ../sass/cinemateque.scss */
+/* line 1210, ../sass/cinemateque.scss */
 .front .field-name-field-cm-festival-body {
   margin-top: 100px;
   margin-bottom: 20px;
 }
-/* line 1211, ../sass/cinemateque.scss */
+/* line 1213, ../sass/cinemateque.scss */
 .front .field-name-field-cm-festival-body p {
   margin-bottom: 50px;
   line-height: 25px;
 }
-/* line 1216, ../sass/cinemateque.scss */
+/* line 1218, ../sass/cinemateque.scss */
 .front .pane-panels-mini {
   width: 1280px !important;
   max-width: 100%;
@@ -1704,18 +1721,18 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: 1330px !important;
 }
 
-/* line 1222, ../sass/cinemateque.scss */
+/* line 1224, ../sass/cinemateque.scss */
 .pane-bundle-sponser {
   padding: 20px 3%;
 }
-/* line 1225, ../sass/cinemateque.scss */
+/* line 1227, ../sass/cinemateque.scss */
 .pane-bundle-sponser .field-item {
   padding: 0px 20px;
   box-sizing: border-box;
   display: inline-block;
   height: 80px;
 }
-/* line 1230, ../sass/cinemateque.scss */
+/* line 1232, ../sass/cinemateque.scss */
 .pane-bundle-sponser .field-item img {
   padding: 10px 0;
   height: 100%;

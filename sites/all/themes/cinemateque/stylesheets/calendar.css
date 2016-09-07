@@ -1,4 +1,14 @@
 /********  mixin *********/
+/* line 105, ../sass/init.scss */
+.domain-1 a {
+  color: #e41145;
+}
+
+/* line 109, ../sass/init.scss */
+.domain-2 a {
+  color: #b59d70;
+}
+
 /****  fonts  ********/
 @font-face {
   font-family: Open-Sans;
@@ -106,10 +116,17 @@
 
 /* line 85, ../sass/calendar.scss */
 .tickets > a {
-  background-color: #e41145;
   color: #ffffff;
   font-weight: bold;
   padding: 6px 26px;
+}
+/* line 61, ../sass/init.scss */
+.domain-1 .tickets > a, .tickets > a.domain-1 .tickets > a {
+  background-color: #e41145 !important;
+}
+/* line 64, ../sass/init.scss */
+.domain-2 .tickets > a {
+  background-color: #b59d70 !important;
 }
 
 /* line 93, ../sass/calendar.scss */
@@ -179,7 +196,14 @@
   right: -10px;
   top: 16px;
   width: 0;
+}
+/* line 88, ../sass/init.scss */
+.domain-1 #calender-top-popup .read-more:before {
   border-color: transparent transparent transparent #e41145;
+}
+/* line 91, ../sass/init.scss */
+.domain-2 #calender-top-popup .read-more:before {
+  border-color: transparent transparent transparent #b59d70;
 }
 /* line 152, ../sass/calendar.scss */
 #calender-top-popup .toptix-purchase {
@@ -219,7 +243,7 @@
   cursor: pointer;
 }
 /* line 61, ../sass/init.scss */
-.domain-1 .calender-filter > p:hover {
+.domain-1 .calender-filter > p:hover, .calender-filter > p:hover.domain-1 .calender-filter > p:hover {
   background-color: #e41145 !important;
 }
 /* line 64, ../sass/init.scss */
@@ -232,10 +256,17 @@
 }
 /* line 187, ../sass/calendar.scss */
 .calender-filter > p.active {
-  background-color: #e41145;
   box-shadow: 0 0 3px 2px #f4f4f4;
   color: #ffffff;
   cursor: pointer;
+}
+/* line 61, ../sass/init.scss */
+.domain-1 .calender-filter > p.active, .calender-filter > p.active.domain-1 .calender-filter > p.active {
+  background-color: #e41145 !important;
+}
+/* line 64, ../sass/init.scss */
+.domain-2 .calender-filter > p.active {
+  background-color: #b59d70 !important;
 }
 /* line 192, ../sass/calendar.scss */
 .calender-filter > p.active span {

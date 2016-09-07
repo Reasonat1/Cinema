@@ -1,13 +1,5 @@
 @import "init";
 
-.domain-1 a{
-	color: #e41145;
-}
-
-.domain-2 a{
-	color: #b59d70;
-}
-
 p{
 	font-size: 18px;
 }
@@ -59,6 +51,10 @@ img{
 	}
 }
 
+.btn-default{
+	@include bg-main-color;
+}
+
 .pane-node-field-toptix-purchase {
 	clear: both;
 	bottom: 1%;
@@ -68,6 +64,11 @@ img{
 		display: none;
 	}
 }
+
+.views-field-field-toptix-purchase{
+	padding: 6px 8px!important;
+}
+
 .clr {
 	clear: both;
 }
@@ -213,21 +214,6 @@ body {
 	tbody {
 		border: none !important;
 		font-size: 1.1rem;
-		.views-field-ops .flag{
-			background: url("../images/like-gold.png") no-repeat center center;
-			width: 18px;
-			height: 15px;
-		}
-		.views-field-ops .unflagged{
-			background: url("../images/unlike-gold.png") no-repeat center center;
-		}
-		.views-field-php a{
-			background: url("../images/add-event.png") no-repeat center center;
-			width: 30px;
-			height: 27px;
-			display: block;
-			margin-top: -2px;
-		}
 	}
 	.views-field-field-toptix-purchase{
 		float: right;
@@ -457,31 +443,11 @@ body {
 table.views-table {
 	margin: 0;
 }
+
 .view.view-display-id-panel_pane_3 {
 	overflow: visible;
 }
-.views-field-php .addthisevent-drop {
-	background-color: $white;
-	border: medium none;
-	font-size: 0;
-	z-index: 1;
-	background: rgba(0, 0, 0, 0) url("../images/add-event.png") no-repeat scroll center center;
-    display: block;
-    height: 27px;
-    margin-top: -2px;
-    width: 30px;
-	&:hover {
-		background-color: $white;
-		border: medium none;
-		font-size: 0;
-		z-index: 1;
-	}
-	.addthisevent_icon {
-		background: none;
-		height: auto;
-		width: auto;
-	}
-}
+
 .views-field-field-cm-movie-pictures img {
 	width: 100%;
 }
@@ -522,15 +488,28 @@ table.views-table {
 	margin-left: 3px;
 	border-right: none;
 }
-.add-event a {
-	background: url("../images/add-event.png") no-repeat !important;
-	display: block;
-	font-size: 0;
-	height: 37px;
-	width: 50px;
-	position: absolute;
-	bottom: 11%;
-	right: 18%;
+.add-event{ 
+	width: 60px;
+	a {
+		border: medium none;
+		display: block;
+		font-size: 0;
+		height: 23px;
+		margin-top: 2px;
+		padding: 0;
+		width: 27px;
+		&:hover {
+			background-color: $white;
+			border: medium none;
+			font-size: 0;
+			z-index: 1;
+		}
+		.addthisevent_icon {
+			background: none;
+			height: auto;
+			width: auto;
+		}
+	}
 }
 .field-name-field-toptix-purchase .field-item button {
 	background: url("../images/toptix.png") no-repeat !important;
@@ -807,12 +786,6 @@ table.views-table {
 	display: block;
 	text-indent: -9999px;
 	width: 18px;
-	&.flag-action {
-		background: url("../images/like-gold.png") no-repeat right 0 !important;
-	}
-	&.unflag-action {
-		background: url("../images/unlike-gold.png") no-repeat right 0 !important;
-	}
 }
 
 .panels-flexible-row.content .panels-flexible-region-node_page-content_region {
@@ -842,7 +815,6 @@ button.toptix-purchase {
 						position: relative;
 						padding-left: 25px;
 						a {
-							background: url("../images/add-event.png") no-repeat;
 							width: 30px;
 							height: 28px;
 							display: inline-block;
@@ -966,7 +938,8 @@ table{
 		}
 	}
 	.popup-close{
-	    background: $main-color url("../images/close42.png") no-repeat scroll center center !important;
+	    background: url("../images/close42.png") no-repeat scroll center center !important;
+		@include bg-main-color;
 	    border-radius: 50%;
 	    height: 25px !important;
 		left: auto;
@@ -1541,4 +1514,8 @@ table{
 
 div#admin-toolbar div.admin-tab{
 	height: 25px;
+}
+
+input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]), input[type="email"]:focus:not([readonly]), input[type="number"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), input[type="search-md"]:focus:not([readonly]), input[type="tel"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="time"]:focus:not([readonly]), input[type="url"]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
+	box-shadow: none!important;
 }

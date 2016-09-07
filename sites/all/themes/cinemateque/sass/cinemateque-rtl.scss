@@ -76,9 +76,6 @@
 		a{
 			height: 24px!important;
 			background: url("../images/english-icon.png") no-repeat 0 4px!important;
-			&:hover{
-				background: url("../images/english-icon-gold.png") no-repeat 0 4px!important;
-			}
 		}
 		span{
 			background: url("../images/english-icon.png") no-repeat 0 4px!important;
@@ -187,8 +184,7 @@
 
 .checkbox input[type="checkbox"] {
 	margin-left: 6px;
-	margin-top: 0;
-	position: relative;
+	margin-right: 0;
 }
 
 .checkbox-inline input[type="checkbox"] {
@@ -213,15 +209,4 @@
 	&.views-field-field-cm-info-block-text {
 		float: right;
 	}
-}
-
-/***********   responsive   ***********/
-
-.navbar-header{
-	float: right;
-}
-
-.header .header-right li {
-    margin-right: 10px;
-    margin-left: 0;
 }

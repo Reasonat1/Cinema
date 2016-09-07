@@ -238,7 +238,7 @@
 			color: #000;
 		}
 		a:hover{
-			color: $main-color;
+			@include main-color;
 		}
 	}
 	.pane-movie-top-pane-view-panel-pane-7{
@@ -255,10 +255,6 @@
 		    height: 23px!important;
 		    display: block;
 		    padding-top: 17px;
-		}
-		.views-field-php{
-			width: 12px;
-			padding-top: 11px;
 		}
 		thead{
 			@include res(s-m){
@@ -361,14 +357,14 @@
 				margin: 70px 23%;
 			}
 			.views-field-field-cm-review-qoute{
-				color: $main-color;
+				@include main-color;
 				font-size: 25px;
 				width: 100%;
 			}
 			.views-field-field-cm-review-source{
 				font-size: 12px;
 				margin-top: 30px;
-				color: $main-color;
+				@include main-color;
 			}
 			.views-slideshow-pager-fields{
 				clear: both;
@@ -388,7 +384,7 @@
 					width: 6px;
 				}
 				&.active .circle{
-					background-color: $main-color;
+					@include bg-main-color;
 				}
 			}
 		}

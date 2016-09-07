@@ -1,4 +1,14 @@
 /********  mixin *********/
+/* line 105, ../sass/init.scss */
+.domain-1 a {
+  color: #e41145;
+}
+
+/* line 109, ../sass/init.scss */
+.domain-2 a {
+  color: #b59d70;
+}
+
 /****  fonts  ********/
 @font-face {
   font-family: Open-Sans;
@@ -27,10 +37,17 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background-color: #e41145;
   opacity: 1;
   padding: 14px;
   z-index: 200;
+}
+/* line 61, ../sass/init.scss */
+.domain-1 .hamburger .modal-content .close, .hamburger .modal-content .close.domain-1 .hamburger .modal-content .close {
+  background-color: #e41145 !important;
+}
+/* line 64, ../sass/init.scss */
+.domain-2 .hamburger .modal-content .close {
+  background-color: #b59d70 !important;
 }
 /* line 26, ../sass/menu.scss */
 .hamburger .modal-body {
@@ -329,9 +346,13 @@
   margin-top: 20px;
   float: right;
 }
-/* line 267, ../sass/menu.scss */
-#hamburger-menu .pane-webform-client-block-19 .pane-block-8 i, #hamburger-menu .pane-webform-client-block-3322 .pane-block-8 i {
-  color: #e41145;
+/* line 52, ../sass/init.scss */
+.domain-1 #hamburger-menu .pane-webform-client-block-19 .pane-block-8 i, .domain-1 #hamburger-menu .pane-webform-client-block-3322 .pane-block-8 i {
+  color: #e41145 !important;
+}
+/* line 55, ../sass/init.scss */
+.domain-2 #hamburger-menu .pane-webform-client-block-19 .pane-block-8 i, .domain-2 #hamburger-menu .pane-webform-client-block-3322 .pane-block-8 i {
+  color: #b59d70 !important;
 }
 /* line 271, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .pane-custom.pane-1, #hamburger-menu .pane-webform-client-block-3322 .pane-custom.pane-1 {
@@ -357,7 +378,7 @@
   border-radius: 50%;
 }
 /* line 61, ../sass/init.scss */
-.domain-1 #hamburger-menu .pane-bean-social-links-new img {
+.domain-1 #hamburger-menu .pane-bean-social-links-new img, #hamburger-menu .pane-bean-social-links-new img.domain-1 #hamburger-menu .pane-bean-social-links-new img {
   background-color: #e41145 !important;
 }
 /* line 64, ../sass/init.scss */

@@ -182,7 +182,7 @@
            $output_event .= '<td class="hall">'.$hall_name.'</td>';
            $output_event .= '<td class="code">'.$event_code.'</td>';
            $output_event .='<td>'. $flag . '</td>';
-           $output_event .='<td>'. $addevent . '</td>';
+           $output_event .='<td class="add-event">'. $addevent . '</td>';
            if(!empty($top_link)) $output_event .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t("TICKETS").'</button>'.'</td>';
            $output_event .= '</tr>';
          $output_event .= '</table>';
@@ -242,7 +242,7 @@
            if($hall_name) $output .= '<td>'.$hall_name.'</td>';
            if($event_code) $output .= '<td>'.$event_code.'</td>';
            $output .='<td>'. $flag . '</td>';
-           $output .='<td>'. $addevent . '</td>';       
+           $output .='<td class="add-event">'. $addevent . '</td>';       
            if($toptix_code) $output .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t('TICKETS').'</button>'.'</td>';
            $output .= '</tr>';
         }
