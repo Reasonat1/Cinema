@@ -1,6 +1,13 @@
 @import "init";
 
 .footer {
+	.pane-bean-main-info-english, .pane-bean-main-info-hebrew{
+		.pane-content{
+			.field-name-field-content-info > .field-items > .field-item{
+			    float: right;
+			}
+		}
+	}
 	.views-field {
 		&.views-field-field-cm-info-block-text {
 			margin-left: 0%;

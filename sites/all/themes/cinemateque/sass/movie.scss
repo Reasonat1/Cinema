@@ -226,12 +226,12 @@
 			color: $color_nobel_approx;
 			width: 120px;
 			@include res(s-m){
-				width: 40%;
+				width: auto!important;;
 			}
 		}
 		.views-field-views-conditional{
 			@include res(s-m){
-				width: 60%;
+				width: auto!important;
 			}
 		}
 		a{

@@ -215,33 +215,35 @@ table td, table th {
   float: right;
   padding-right: 44px;
   padding-left: 0;
+  background-position: right 4px !important;
 }
-/* line 219, ../sass/general-rtl.scss */
-.node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col-1 {
-  background: url("../images/search-icon-gold.png") no-repeat scroll right 4px;
-}
-/* line 222, ../sass/general-rtl.scss */
-.node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col-2 {
-  background: url("../images/search-icon-gold.png") no-repeat scroll right 4px;
-}
-/* line 225, ../sass/general-rtl.scss */
-.node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col-3 {
-  background: url("../images/search-icon-gold.png") no-repeat scroll right 4px;
-}
-/* line 232, ../sass/general-rtl.scss */
+/* line 224, ../sass/general-rtl.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .views-row-odd {
   float: right;
 }
-/* line 235, ../sass/general-rtl.scss */
+/* line 227, ../sass/general-rtl.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .views-row-even {
   float: left;
 }
-/* line 240, ../sass/general-rtl.scss */
+/* line 232, ../sass/general-rtl.scss */
 .node-type-cm-person .panels-flexible-region-node_page-content_left {
   float: left !important;
 }
 
-/* line 246, ../sass/general-rtl.scss */
+/* line 237, ../sass/general-rtl.scss */
+.view-person-ct-view.view-display-id-panel_pane_2 .node-title-teaser-content-type:hover {
+  background: url("../images/more-white-left.png") no-repeat scroll left 10px center;
+}
+/* line 61, ../sass/init.scss */
+.domain-1 .view-person-ct-view.view-display-id-panel_pane_2 .node-title-teaser-content-type:hover, .view-person-ct-view.view-display-id-panel_pane_2 .node-title-teaser-content-type:hover.domain-1 .view-person-ct-view.view-display-id-panel_pane_2 .node-title-teaser-content-type:hover {
+  background-color: #e41145 !important;
+}
+/* line 64, ../sass/init.scss */
+.domain-2 .view-person-ct-view.view-display-id-panel_pane_2 .node-title-teaser-content-type:hover {
+  background-color: #b59d70 !important;
+}
+
+/* line 243, ../sass/general-rtl.scss */
 .content.middle .panels-flexible-region-node_page-content_left {
   width: 77%;
   float: left;

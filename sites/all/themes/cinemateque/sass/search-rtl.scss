@@ -61,9 +61,25 @@
 			float: right;
 			margin-right: 1.5%;
 			margin-left: 0;
+			@include res(s-m){
+				margin-right: 0!important;
+			}
 		}
-		.panel-pane:nth-child(2){
+		.panel-pane:nth-child(odd){
+			@include res(m){
+				float: left;
+			}
+		}
+		.panel-pane:nth-child(6n+2){
 			margin-right: 0;
+			@include res(l){
+				margin-right: 1.5%;
+			}
+		}
+		.panel-pane:nth-child(3n+2){
+			@include res(l){
+				margin-right: 0%!important;
+			}
 		}
 	}
 	.current-search-item {
@@ -113,22 +129,19 @@
 
 .select2-results__options{
 	li{
-		background: url("../images/select-empty.png") no-repeat right 7px top 12px;
+		background: url("../images/select-empty.png") no-repeat right 7px top 14px;
 		padding-right: 22px;
 		padding-left: 0;
 		&.select2-results__option-selected{
-			background: url("../images/select-gold.png") no-repeat right 7px top 12px;
+			background-position: right 7px top 14px!important;
 		}
 	}
 	li[aria-selected="true"]{
-		background: url("../images/select-gold.png") no-repeat right 7px top 12px;
-	}
-	li:first-child{
-		padding-right: 7px;
+		background-position: right 7px top 14px!important;
 	}
 }
 
 .select2-container--default .select2-selection--single .select2-selection__arrow b:before{
-	    left: -4px;
+	    left: 0px;
 	    right: auto;
 }

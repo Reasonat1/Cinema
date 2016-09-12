@@ -221,11 +221,12 @@
           $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node).'</div>';
           if(!empty($node->field_cm_event_time['und'])){
               $event_date = date('l d.m.y', $node->field_cm_event_time['und'][0]['value']);
+              $event_date_mobile = date('d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
               $event_time = date('G:i', $node->field_cm_event_time['und'][0]['value']);
           }
            $output_event .= '<tr class="row-custom-lobby">';
-            $output_event .= '<td class="date">'.t($event_date).'</td>';
-            $output_event .= '<td class="time">'.$event_time.'</td>';
+            $output_event .= '<td class="date only-desktop">'.t($event_date).'</td>';
+            $output_event .= '<td class="time"><div class="only-mobile">'.$event_date_mobile.'</div>'.$event_time.'</td>';
             if(!empty($node->field_cm_event_hall['und'])){
              // drupal_set_message('<pre>'.print_r($node->field_cm_event_hall, 1).'</pre>');
                 $hall_id = taxonomy_term_load($node->field_cm_event_hall['und'][0]['target_id']);
@@ -297,12 +298,13 @@
               $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node_event).'</div>';
               if(!empty($node_event->field_cm_event_time['und'])){
                   $event_date = date('l d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
+                  $event_date_mobile = date('d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
                   $event_time = date('G:i', $node_event->field_cm_event_time['und'][0]['value']);
               }
 
               $output .= '<tr class="row-custom-lobby">';
-                $output .= '<td class="date">'.t($event_date).'</td>';
-                $output .= '<td class="time">'.$event_time.'</td>';
+                $output .= '<td class="date only-desktop">'.t($event_date).'</td>';
+                $output_event .= '<td class="time"><div class="only-mobile">'.$event_date_mobile.'</div>'.$event_time.'</td>';
                 if(!empty($node_event->field_cm_event_hall['und'])){
                   $hall_id = taxonomy_term_load($node_event->field_cm_event_hall['und'][0]['target_id']);
                   $hall_name = $hall_id->name;

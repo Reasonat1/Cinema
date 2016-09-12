@@ -215,15 +215,7 @@ table{
 				float: right;
 				padding-right: 44px;
 				padding-left: 0;
-			}
-			.col-1{
-				background: url("../images/search-icon-gold.png") no-repeat scroll right 4px;
-			}
-			.col-2{
-				background: url("../images/search-icon-gold.png") no-repeat scroll right 4px;
-			}			
-			.col-3{
-				background: url("../images/search-icon-gold.png") no-repeat scroll right 4px;
+				background-position: right 4px!important;
 			}
 		}
 	}
@@ -240,6 +232,11 @@ table{
 	.panels-flexible-region-node_page-content_left {
 	    float: left!important;
 	}
+}
+
+.view-person-ct-view.view-display-id-panel_pane_2 .node-title-teaser-content-type:hover{
+	background: url("../images/more-white-left.png") no-repeat scroll left 10px center;
+	@include bg-main-color;
 }
 
 .content.middle {

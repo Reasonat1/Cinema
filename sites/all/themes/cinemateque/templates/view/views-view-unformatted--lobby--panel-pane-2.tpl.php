@@ -24,7 +24,7 @@
   foreach ($results as $val) {
     $nid = $val->node_taxonomy_index_nid;
     $node = node_load($nid);
-    $default_image = '<img src="/sites/all/themes/cinemateque/images/default-image.png">';
+    $default_image = '<img src="/sites/all/themes/cinemateque/images/default-image-pane-2.png">';
      //drupal_set_message('<pre>'.print_r($node, 1).'</pre>');
     $path_node = drupal_get_path_alias('node/'.$node->nid);
     $title = l($node->title, $path_node);

@@ -219,7 +219,7 @@
   float: left;
 }
 /* line 170, ../sass/menu.scss */
-#hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-cm-info-block-icon, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-cm-info-block-icon {
+#hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-info-icon, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-info-icon {
   position: absolute;
   left: -30px;
 }
@@ -230,7 +230,7 @@
   font-size: 1.25rem;
   line-height: 1.2;
   text-align: left;
-  padding-bottom: 5px;
+  padding-bottom: 13px;
   padding-right: 30px;
 }
 /* line 183, ../sass/menu.scss */
@@ -240,7 +240,15 @@
   font-variant: 12px;
   padding-right: 30px;
 }
+/* line 188, ../sass/menu.scss */
+#hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-description p, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-description p {
+  line-height: 16px;
+}
 /* line 191, ../sass/menu.scss */
+#hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-description a, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-description a {
+  color: #fff;
+}
+/* line 197, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19, #hamburger-menu .pane-webform-client-block-3322 {
   clear: both;
   position: relative;
@@ -249,11 +257,11 @@
   width: 50%;
   float: left;
 }
-/* line 198, ../sass/menu.scss */
+/* line 204, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .pane-title, #hamburger-menu .pane-webform-client-block-3322 .pane-title {
   color: #fff;
 }
-/* line 201, ../sass/menu.scss */
+/* line 207, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 input, #hamburger-menu .pane-webform-client-block-3322 input {
   background-color: #000;
   border: none;
@@ -261,27 +269,27 @@
   box-sizing: border-box;
   height: 30px;
 }
-/* line 208, ../sass/menu.scss */
+/* line 214, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 label, #hamburger-menu .pane-webform-client-block-3322 label {
   color: #999;
   font-size: 17px;
   font-weight: normal;
   padding: 3px 7px;
 }
-/* line 214, ../sass/menu.scss */
+/* line 220, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .panel-panel, #hamburger-menu .pane-webform-client-block-3322 .panel-panel {
   width: 50%;
   float: left;
   padding: 0;
 }
-/* line 219, ../sass/menu.scss */
+/* line 225, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .form-actions, #hamburger-menu .pane-webform-client-block-3322 .form-actions {
   margin: 0;
 }
-/* line 221, ../sass/menu.scss */
+/* line 227, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .form-actions input, #hamburger-menu .pane-webform-client-block-3322 .form-actions input {
   margin: 0;
-  background-color: #fff;
+  background-color: #fff !important;
   padding: 0 15px 0 10px;
 }
 /* line 52, ../sass/init.scss */
@@ -292,7 +300,7 @@
 .domain-2 #hamburger-menu .pane-webform-client-block-19 .form-actions input, .domain-2 #hamburger-menu .pane-webform-client-block-3322 .form-actions input {
   color: #b59d70 !important;
 }
-/* line 226, ../sass/menu.scss */
+/* line 232, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .form-actions input:hover, #hamburger-menu .pane-webform-client-block-3322 .form-actions input:hover {
   background-color: #fff !important;
 }
@@ -304,44 +312,44 @@
 .domain-2 #hamburger-menu .pane-webform-client-block-19 .form-actions input:hover, .domain-2 #hamburger-menu .pane-webform-client-block-3322 .form-actions input:hover {
   color: #b59d70 !important;
 }
-/* line 232, ../sass/menu.scss */
+/* line 238, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .webform-component, #hamburger-menu .pane-webform-client-block-3322 .webform-component {
   margin-right: 8px;
 }
-/* line 234, ../sass/menu.scss */
+/* line 240, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .webform-component input, #hamburger-menu .pane-webform-client-block-3322 .webform-component input {
   border-radius: 0 !important;
 }
-/* line 238, ../sass/menu.scss */
+/* line 244, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .webform-component--join-our-newsletter, #hamburger-menu .pane-webform-client-block-3322 .webform-component--join-our-newsletter {
   font-size: 1.25rem;
   font-weight: 600;
   width: 100%;
   color: #fff;
 }
-/* line 244, ../sass/menu.scss */
+/* line 250, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .webform-component--approve-recieving-e-mail, #hamburger-menu .pane-webform-client-block-3322 .webform-component--approve-recieving-e-mail {
   position: absolute;
   bottom: -10px;
   width: 100%;
 }
-/* line 248, ../sass/menu.scss */
+/* line 254, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .webform-component--approve-recieving-e-mail label, #hamburger-menu .pane-webform-client-block-3322 .webform-component--approve-recieving-e-mail label {
   top: 20px;
   position: relative;
   font-size: 12px;
   color: #fff !important;
 }
-/* line 254, ../sass/menu.scss */
+/* line 260, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .webform-component--approve-recieving-e-mail input, #hamburger-menu .pane-webform-client-block-3322 .webform-component--approve-recieving-e-mail input {
   height: auto;
 }
-/* line 259, ../sass/menu.scss */
+/* line 265, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .panel-panel:nth-child(2) span, #hamburger-menu .pane-webform-client-block-3322 .panel-panel:nth-child(2) span {
   display: inline-block;
   float: left;
 }
-/* line 264, ../sass/menu.scss */
+/* line 270, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .pane-block-8, #hamburger-menu .pane-webform-client-block-3322 .pane-block-8 {
   margin-top: 20px;
   float: right;
@@ -354,26 +362,26 @@
 .domain-2 #hamburger-menu .pane-webform-client-block-19 .pane-block-8 i, .domain-2 #hamburger-menu .pane-webform-client-block-3322 .pane-block-8 i {
   color: #b59d70 !important;
 }
-/* line 271, ../sass/menu.scss */
+/* line 277, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .pane-custom.pane-1, #hamburger-menu .pane-webform-client-block-3322 .pane-custom.pane-1 {
   float: right;
   margin: 0 16px;
 }
-/* line 274, ../sass/menu.scss */
+/* line 280, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .pane-custom.pane-1 img, #hamburger-menu .pane-webform-client-block-3322 .pane-custom.pane-1 img {
   height: 55px;
   margin-top: 31px;
 }
-/* line 280, ../sass/menu.scss */
+/* line 286, ../sass/menu.scss */
 #hamburger-menu .pane-bean-social-links-new, #hamburger-menu .pane-bean-logos-hebrew-block, #hamburger-menu .pane-bean-logos-english-block {
   float: right;
 }
-/* line 282, ../sass/menu.scss */
+/* line 288, ../sass/menu.scss */
 #hamburger-menu .pane-bean-social-links-new .field-name-field-social-icons > .field-items > .field-item, #hamburger-menu .pane-bean-logos-hebrew-block .field-name-field-social-icons > .field-items > .field-item, #hamburger-menu .pane-bean-logos-english-block .field-name-field-social-icons > .field-items > .field-item {
   float: left;
   margin-left: 27px;
 }
-/* line 288, ../sass/menu.scss */
+/* line 294, ../sass/menu.scss */
 #hamburger-menu .pane-bean-social-links-new img {
   border-radius: 50%;
 }
@@ -387,23 +395,23 @@
 }
 
 /******  hamburger  *********/
-/* line 298, ../sass/menu.scss */
+/* line 304, ../sass/menu.scss */
 .responsive-hamburger {
   display: none;
 }
 
-/* line 302, ../sass/menu.scss */
+/* line 308, ../sass/menu.scss */
 .navbar-toggle {
   display: block;
 }
 @media (max-width: 767px) {
-  /* line 302, ../sass/menu.scss */
+  /* line 308, ../sass/menu.scss */
   .navbar-toggle {
     display: none;
   }
 }
 
-/* line 309, ../sass/menu.scss */
+/* line 315, ../sass/menu.scss */
 .navbar-header .hambruger {
   float: left;
   border: medium none;
@@ -413,12 +421,12 @@
   padding: 0;
   border-radius: 0;
 }
-/* line 317, ../sass/menu.scss */
+/* line 323, ../sass/menu.scss */
 .navbar-header .hambruger.navbar-toggle {
   margin-left: 30px;
 }
 
-/* line 322, ../sass/menu.scss */
+/* line 328, ../sass/menu.scss */
 .navbar-header .hambruger .icon-bar {
   width: 34px;
   background-color: #fff !important;
@@ -426,20 +434,20 @@
   height: 2px;
 }
 
-/* line 329, ../sass/menu.scss */
+/* line 335, ../sass/menu.scss */
 .navbar-header .hambruger .icon-bar + .icon-bar {
   margin-top: 9px;
 }
 
 /********** responsive menu **********/
 @media (max-width: 767px) {
-  /* line 337, ../sass/menu.scss */
+  /* line 343, ../sass/menu.scss */
   .responsive-hamburger {
     display: block;
     cursor: pointer;
   }
 
-  /* line 341, ../sass/menu.scss */
+  /* line 347, ../sass/menu.scss */
   .header #site-main-menu {
     background-color: rgba(0, 0, 0, 0.9) !important;
     display: block !important;
@@ -452,17 +460,17 @@
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
   }
-  /* line 352, ../sass/menu.scss */
+  /* line 358, ../sass/menu.scss */
   .header #site-main-menu li {
     text-align: left;
     width: 100%;
   }
-  /* line 355, ../sass/menu.scss */
+  /* line 361, ../sass/menu.scss */
   .header #site-main-menu li a {
     white-space: unset;
     padding: 15px 10px !important;
   }
-  /* line 359, ../sass/menu.scss */
+  /* line 365, ../sass/menu.scss */
   .header #site-main-menu li .caret {
     display: block;
     float: right;
@@ -471,7 +479,7 @@
     margin: 0;
     width: 55px;
   }
-  /* line 366, ../sass/menu.scss */
+  /* line 372, ../sass/menu.scss */
   .header #site-main-menu li .caret:after {
     display: block;
     content: "";
@@ -482,22 +490,22 @@
     float: right;
     width: 12px;
   }
-  /* line 377, ../sass/menu.scss */
+  /* line 383, ../sass/menu.scss */
   .header #site-main-menu li .dropdown-menu {
     border: none;
     display: none;
     position: relative;
     width: 100%;
   }
-  /* line 385, ../sass/menu.scss */
+  /* line 391, ../sass/menu.scss */
   .header #site-main-menu .responsive-open .dropdown-toggle {
     font-weight: bold;
   }
-  /* line 388, ../sass/menu.scss */
+  /* line 394, ../sass/menu.scss */
   .header #site-main-menu .responsive-open .dropdown-menu {
     display: block;
   }
-  /* line 391, ../sass/menu.scss */
+  /* line 397, ../sass/menu.scss */
   .header #site-main-menu .responsive-open .caret:after {
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
@@ -506,7 +514,7 @@
     margin-top: 11px;
   }
 
-  /* line 400, ../sass/menu.scss */
+  /* line 406, ../sass/menu.scss */
   .responsive-hamburger-open #site-main-menu {
     right: 0;
   }

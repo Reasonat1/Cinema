@@ -167,7 +167,7 @@
 			width: 25%;
 			margin-bottom: 27px;
 			float: left;
-			.field-name-field-cm-info-block-icon{
+			.field-name-field-info-icon{
 				position: absolute;
 				left: -30px;
 			}
@@ -177,7 +177,7 @@
 				font-size: 1.25rem;
     			line-height: 1.2;
     			text-align: left;
-    			padding-bottom: 5px;
+    			padding-bottom: 13px;
 				padding-right: 30px;
 			}
 			.field-name-field-description{
@@ -185,6 +185,12 @@
     			text-align: left;
     			font-variant: 12px;
 				padding-right: 30px;
+				p{
+					line-height: 16px;
+				}
+				a{
+					color: #fff;
+				}
 			}
 		}
 	}
@@ -220,7 +226,7 @@
 			margin: 0;
 			input{
 				margin: 0;
-				background-color: #fff;
+				background-color: #fff!important;
 				@include main-color();
 				padding: 0 15px 0 10px;
 				&:hover{

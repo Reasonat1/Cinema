@@ -300,7 +300,34 @@ body {
 }
 .share-pane-container {
 	border-top: 5px solid $black;
+	.link a{
+	    border-bottom: 1px solid #afafaf;
+	    color: #000;
+	    display: block;
+	    font-size: 16px;
+	    padding: 10px 30px;
+	}
+	.link:last-child a{
+		border-bottom: none;
+	}
+	.flag-wrapper{
+		position: relative;
+		height: 42px;
+		a.flag-action, a.unflag-action{
+			width: 100%;
+			display: block;
+			background-position: left center!important;
+		}
+		.title{
+			position: absolute;
+			top: 10px;
+			left: 30px;
+			font-size: 16px;
+			z-index: -1;
+		}
+	}
 }
+
 .field-name-field-tag {
 	a {
 		color: $color_pink_swan_approx;
@@ -595,14 +622,16 @@ table.views-table {
 		.top-text-blk-wht {
 			position: absolute;
 			left: 0px;
-			top: 2px;
+			top: 0px;
+			padding: 6px 0;
+			font-size: 15px;
 			.white{
 				background-color: rgba(256, 256, 256, 0.9);
-				padding: 3px;
+				padding: 6px 12px;
 			}
 			.black {
 				color: $white !important;
-				padding: 3px;
+				padding: 6px 12px;
 			}
 		}
 	}
@@ -649,14 +678,16 @@ table.views-table {
 		}
 		.views-field-field-mc-teaser-toptxt-blk{
 			position: absolute;
-			top: 4px;
+			top: 0px;
 			left: 0;
+			padding: 6px 0;
+			font-size: 15px;
 			.black{
 				color: #fff;
-				padding: 5px;
+				padding: 6px 12px;
 			}
 			.white{
-				padding: 5px;
+				padding: 6px 12px;
 			}
 		}
 		.views-field-ops{
@@ -866,6 +897,7 @@ input:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]),
 table{
 	td, th{
 		padding-left: 0!important;
+		white-space: unset!important;
 		@include res(s-m){
 			padding: 8px!important;
 		}
@@ -1400,15 +1432,11 @@ table{
 				margin: 0 1.66667%;
 				box-sizing: border-box;
 				padding-left: 44px;
-			}
-			.col-1{
-				background: url("../images/search-icon-gold.png") no-repeat scroll left 4px;
-			}
-			.col-2{
-				background: url("../images/search-icon-gold.png") no-repeat scroll left 4px;
-			}			
-			.col-3{
-				background: url("../images/search-icon-gold.png") no-repeat scroll left 4px;
+				min-height: 27px;
+				@include res(s-m){
+					width: 100%;
+					margin: 0 0 20px 0;
+				}
 			}
 		}
 	}
@@ -1431,6 +1459,9 @@ table{
 			}
 			.views-row{
 				width: 49%;
+				@include res(s-m){
+					width: 100%;
+				}
 				h3{
 					font-weight: normal;
 				}
@@ -1446,6 +1477,11 @@ table{
 			font-weight: bold;
 		}
 	}
+}
+
+.view-person-ct-view.view-display-id-panel_pane_2 .node-title-teaser-content-type:hover{
+	background: url("../images/more-white-right.png") no-repeat scroll right 10px center;
+	@include bg-main-color;
 }
 
 .gradient{
