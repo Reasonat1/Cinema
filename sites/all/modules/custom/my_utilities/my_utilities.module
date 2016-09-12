@@ -138,21 +138,21 @@ function share_this_view_block_content(){
     $type = $node->type;
     switch($type){
      case 'cm_person':
-       $favorite_type = t('persons');
+       $favorite_type = t('Add to my persons');
        break;
      case 'cm_movie':
-       $favorite_type = t('movies');
+       $favorite_type = t('Add to my movies');
        break;
     case 'cm_article':
-       $favorite_type = t('articles');
+       $favorite_type = t('Add to my articles');
        break;
     case 'cm_event':
-       $favorite_type = t('events');
+       $favorite_type = t('Add to my events');
        break;
     }
     $output .='<div class="share-pane-container">';
     if ( $user->uid ) {
-      $output .= '<div class="flag-wrapper link">' . flag_create_link('favorite_', $node->nid) . '<div class="title">Add to my '.$favorite_type.'</div></div>';
+      $output .= '<div class="flag-custom share-pane flag-wrapper link">' . flag_create_link('favorite_', $node->nid) . '<div class="title">'.$favorite_type.'</div></div>';
     }
     $output .= '<div class="facebook link"><a class="fb-share" href="https://www.facebook.com/sharer/sharer.php?u='.$base_url.'/node/'.$node->nid.'" target="_blank">'.t("Share").'</a>
   </div>';

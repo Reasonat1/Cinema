@@ -245,3 +245,36 @@ table{
 		float: left;
 	}
 }
+
+/****  share blcok  *****/
+
+.share-pane-container {
+	.facebook a{
+        background-position: right 4px center!important;
+	}
+    .whatsapp a{
+        background-position: right center!important;
+    }
+	.flag-wrapper{
+		a.flag-action, a.unflag-action{
+			background-position: right center!important;
+		}
+		.title{
+			right: 30px;
+			left: auto;
+		}
+	}
+}
+
+/******  tags  *******/
+
+.field-name-field-tag {
+	.field-item {
+		&.even {
+			float: right;
+		}
+		&.odd {
+			float: left;
+		}
+	}
+}

@@ -87,6 +87,7 @@ img{
 .pane-node-field-tag {
 	.pane-content {
 		border-top: 5px solid $black;
+		margin-top: 100px;
 		padding-top: 20px;
 	}
 	h2.pane-title {
@@ -302,7 +303,7 @@ body {
 	border-top: 5px solid $black;
 	.link a{
 	    border-bottom: 1px solid #afafaf;
-	    color: #000;
+	    color: #333;
 	    display: block;
 	    font-size: 16px;
 	    padding: 10px 30px;
@@ -330,12 +331,15 @@ body {
 
 .field-name-field-tag {
 	a {
-		color: $color_pink_swan_approx;
+		color: #828282;
 		font-size: 14px;
 		border-bottom: 1px solid;
 		padding-bottom: 5px;
 		margin-bottom: 10px;
 		display: inline-block;
+		&:hover{
+			@include main-color;
+		}
 	}
 	.field-item {
 		&.even {
@@ -491,24 +495,11 @@ table.views-table {
 
 }
 
-.sharethis-wrapper span.st_sharethis_button {
-	border-bottom: 2px solid $color_alto_approx;
-	display: block;
-	margin-top: 6%;
-	padding-bottom: 15px;
-}
 #panels-ipe-regionid-content_right .pane-sharethis-sharethis-block .st_facebook_button {
 	display: block;
 	margin-top: 5%;
 }
 
-.share-pane {
-	border-bottom: 2px solid $color_alto_approx;
-	padding: 10px 30px;
-}
-.facebook-custom.share-pane{
-	background: url("../images/facebook-gold.png") no-repeat center center!important;
-}
 .i18n-he .views_slideshow_cycle_slide .field-content .slide-alt-title .grp-alt {
 	border-left: 1px solid $color_star_dust_approx;
 	padding-left: 7px;
