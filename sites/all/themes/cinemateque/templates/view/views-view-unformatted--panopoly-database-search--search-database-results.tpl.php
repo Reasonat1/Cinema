@@ -23,7 +23,7 @@
   $results=$view->result;
   foreach ($results as $val) {
     $node = node_load($val->entity);
-    $default_image = '<img src="/sites/all/themes/cinemateque/images/default-image.png">';
+    $default_image = '<img src="/sites/all/themes/cinemateque/images/default-image-pane-2.png">';
     $default_user_image = '<img src="/sites/all/themes/cinemateque/images/user-default.jpg">';
     $path_node = drupal_get_path_alias('node/'.$node->nid);
     $flag = flag_create_link('favorite_', $node->nid);
@@ -231,25 +231,26 @@
              // drupal_set_message('<pre>'.print_r($node->field_cm_event_hall, 1).'</pre>');
                 $hall_id = taxonomy_term_load($node->field_cm_event_hall['und'][0]['target_id']);
                 $hall_name = $hall_id->name;
-                $output_event .= '<td class="hall">'.t($hall_name).'</td>';
+                $output_event .= '<td class="hall only-desktop">'.t($hall_name).'</td>';
             }
             else{
-                $output_event .= '<td class="hall"></td>';
+                $hall_name = "";
+                $output_event .= '<td class="hall only-desktop"></td>';
             }
-            $output_event .= '<td class="title">';
+            $output_event .= '<td class="title only-desktop">';
             if(!empty($event_title)){
               $output_event .= l($event_title, $path);
             }
             $output_event .= '</td>';
             if(!empty($node->field_cm_event_internal_id['und'])){
               $event_code = $node->field_cm_event_internal_id['und'][0]['value'];
-              $output_event .= '<td class="code">'.t($event_code).'</td>';
+              $output_event .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div>'.t($event_code).'</td>';
             }
             else{
-              $output_event .= '<td class="code"></td>';
+              $output_event .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div></td>';
             }
-            $output_event .='<td class="flag">'. $flag . '</td>';
-            $output_event .='<td class="add-event">'. $addevent . '</td>';
+            $output_event .='<td class="flag only-desktop">'. $flag . '</td>';
+            $output_event .='<td class="add-event only-desktop">'. $addevent . '</td>';
             if(!empty($node->field_toptix_purchase['und'])){
             $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
             $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
@@ -304,30 +305,31 @@
 
               $output .= '<tr class="row-custom-lobby">';
                 $output .= '<td class="date only-desktop">'.t($event_date).'</td>';
-                $output_event .= '<td class="time"><div class="only-mobile">'.$event_date_mobile.'</div>'.$event_time.'</td>';
+                $output .= '<td class="time"><div class="only-mobile">'.$event_date_mobile.'</div>'.$event_time.'</td>';
                 if(!empty($node_event->field_cm_event_hall['und'])){
                   $hall_id = taxonomy_term_load($node_event->field_cm_event_hall['und'][0]['target_id']);
                   $hall_name = $hall_id->name;
-                  $output .= '<td class="hall">'.t($hall_name).'</td>';
+                  $output .= '<td class="hall only-desktop">'.$hall_name.'</td>';
                 }
                 else{
-                  $output .= '<td class="hall"></td>';
+                  $hall_name = "";
+                  $output .= '<td class="hall only-desktop"></td>';
                 }
                 if(!empty($event_title)){
-                  $output .= '<td class="title">'.l($event_title, $path).'</td>';
+                  $output .= '<td class="title only-desktop">'.l($event_title, $path).'</td>';
                 }
                 else{
-                  $output .= '<td class="title"></td>';
+                  $output .= '<td class="title only-desktop"></td>';
                 }
                 if(!empty($node_event->field_cm_event_internal_id['und'])){
                   $event_code = $node_event->field_cm_event_internal_id['und'][0]['value'];
-                  $output .= '<td class="code">'.t($event_code).'</td>';
+                  $output .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div>'.t($event_code).'</td>';
                 }
                 else{
-                  $output .= '<td class="code"></td>';
+                  $output .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div></td>';
                 }
-                $output .='<td class="flag">'. $flags . '</td>';
-                $output .='<td class="add-event">'. $addevent . '</td>';
+                $output .='<td class="flag only-desktop">'. $flags . '</td>';
+                $output .='<td class="add-event only-desktop">'. $addevent . '</td>';
                 if(!empty($node_event->field_toptix_purchase['und'])){
                   $toptix_code = $node_event->field_toptix_purchase['und'][0]['value'];
                   $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';

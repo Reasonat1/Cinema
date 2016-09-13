@@ -35,99 +35,8 @@
 		    position: relative!important;
 		}
 	}
- 	&.noheaderimage .panels-flexible-row-node_page-3{
- 		height: auto!important;
- 		padding-top: 75px!important;
- 		.pane-movie-top-pane-view-panel-pane-2{
- 			position: relative;
- 			bottom: auto;
- 			.slide-left-ct{
- 				color: #333;
- 			}
- 			 .slide-right-ct {
- 			 	margin-top: 0;
-				a {
-					background: url("../images/play-icon-black.png") no-repeat scroll 60% center;
-					border:1px solid #000;
-				}
-			}
- 		}
- 	}
- 	.slide-right-ct {
-			float: left;
-			padding-left: 6%;
-			padding-right: 10%;
-			width: 23%;
-			margin-top: 38px;
-			@include res(s-m){
-				margin: 0;
-				bottom: 6px;
-				padding-right: 3%;
-				padding-left: 0;
-				width: 13%;
-			}
-			*:focus {
-			    outline: 0;
-			    outline-style:none;
-			    outline-width:0;
-			}
-			a {
-				background: url("../images/play-icon.png") no-repeat scroll 60% center;
-				border-radius: 30px;
-				border:1px solid #fff;
-				display: inline-block;
-				font-size: 0;
-				height: 55px;
-				padding: 2%;
-				width: 55px;
-				@include res(s-m){
-					background-size: 16px;
-					height: 40px;
-					width: 40px;
-				}
-			}
-		}
 	.view-display-id-panel_pane_2 {
 		overflow: visible;
-		.slide-left-ct {
-			float: left;
-			color: $white;
-			margin: 0 23%;
-			@include res(s-m){
-				text-align: center;	
-				font-size: 13px;
-				margin: 0 15%;
-				width: 70%;
-			}
-			.slide-eve-lobby{
-				font-size: 1.222em;
-				margin-bottom: 1%;
-				a, a:hover{
-				color: #fff;
-				}
-			}
-			.slide-movie-year{
-				font-size: 1.222em;
-			}
-			.slide-movie-title {
-				font-size: 2.667em;
-				margin: 1% 0;
-				font-weight: normal;
-				line-height: 110%;
-				margin-bottom: 15px;
-				@include res(s-m){
-					margin-bottom: 4px;
-				}
-				@include res(s){
-					font-size: 1.2em;
-					font-weight: bold;
-				}
-			}
-		}
-		.slide-right-ct {
-			float: left;
-			position: absolute;
-		}
 	}
 	#panels-ipe-regionid-content_left .pane-movie-top-pane-view-panel-pane-4 {
 		width: auto;
@@ -188,20 +97,6 @@
 		.views-slideshow-cycle-main-frame-row{
 			width: 100%!important;
 		}
-	}
-	.pane-movie-top-pane-view-panel-pane-2{
-		bottom: 60px;
-	    color: #fff;
-	    padding: 0;
-	    position: absolute;
-	    width: 100%;
-	    z-index: 5;
-	    @include res(s-m){
-	    	bottom: 10px;
-	    }
-	    .pane-content{
-	    	@include width;
-	    }
 	}
 	.view-id-movie_top_pane_view.view-display-id-panel_pane_4{
 		.views-field-title, .views-field-nothing{
@@ -309,29 +204,6 @@
 		}
 		.field-label {
 			display: none;
-		}
-		.group-alttab{
-			background-color: $color_mine_shaft_approx;
-			position: absolute;
-			bottom: 0px;
-			color: $color_star_dust_approx;
-			font-size: 12px;
-			padding: 10px 10px;
-			height: auto;
-			left: 0;
-			right: auto;
-			z-index: 100;
-			@include res(s-m){
-				display: none;
-			}
-			.field{
-				float: right;
-			}
-			.field-name-field-file-image-alt-text{
-				margin-left: 5px;
-				padding-left: 5px;
-				border-left: 1px solid;
-			}
 		}
 	}
 }

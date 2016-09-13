@@ -384,6 +384,11 @@
 						}
 					}
 					.row-custom-lobby{
+						td{
+							@include res(s-m){
+								padding-right: 0!important;
+							}
+						}
 						.date{
 							width: 20%;
 						}
@@ -397,7 +402,7 @@
 							float: right;
 							padding-right: 0;
 							padding-left: 0;
-							width: 80px;
+							width: 80px!important;
 						}
 						.flag{
 							margin-top: 6px;

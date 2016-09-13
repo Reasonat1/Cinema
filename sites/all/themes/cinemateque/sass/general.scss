@@ -1,5 +1,14 @@
 @import "init";
 
+
+/*********  general  ***********/
+
+body{
+	font-family: Open-Sans;
+	display: block!important;
+	font-size:18px;
+}
+
 p{
 	font-size: 18px;
 }
@@ -8,14 +17,20 @@ strong{
 	font-weight: bold;	
 }
 
+.ajax-progress{
+  position: absolute;
+}
+
+.container{
+	width: 100%!important;
+}
+
+/*******  panels margin  *********/
+
 .panels-flexible-row{
 	@include width();
 	margin: 0 auto!important;
 	padding: 0 3%!important;
-}
-
-.ajax-progress{
-  position: absolute;
 }
 
 .ctr {
@@ -87,6 +102,7 @@ img{
 .pane-node-field-tag {
 	.pane-content {
 		border-top: 5px solid $black;
+		margin-top: 100px;
 		padding-top: 20px;
 	}
 	h2.pane-title {
@@ -96,25 +112,6 @@ img{
 
 .panels-flexible-node_page .panels-flexible-region-inside{
 	padding: 0!important;	
-}
-
-body {
-	&.node-type-cm-movie {
-		background-color: $white !important;
-		.container {
-			#page-header .page-header h1.title {
-				display: none;
-			}
-		}
-		#content {
-			width: 100% !important;
-		}
-	}
-	&.node-type-cm-article{
-		#content {
-			width: 100% !important;
-		}
-	}
 }
 
 .prev-custom {
@@ -302,7 +299,7 @@ body {
 	border-top: 5px solid $black;
 	.link a{
 	    border-bottom: 1px solid #afafaf;
-	    color: #000;
+	    color: #333;
 	    display: block;
 	    font-size: 16px;
 	    padding: 10px 30px;
@@ -330,12 +327,15 @@ body {
 
 .field-name-field-tag {
 	a {
-		color: $color_pink_swan_approx;
+		color: #828282;
 		font-size: 14px;
 		border-bottom: 1px solid;
 		padding-bottom: 5px;
 		margin-bottom: 10px;
 		display: inline-block;
+		&:hover{
+			@include main-color;
+		}
 	}
 	.field-item {
 		&.even {
@@ -491,24 +491,11 @@ table.views-table {
 
 }
 
-.sharethis-wrapper span.st_sharethis_button {
-	border-bottom: 2px solid $color_alto_approx;
-	display: block;
-	margin-top: 6%;
-	padding-bottom: 15px;
-}
 #panels-ipe-regionid-content_right .pane-sharethis-sharethis-block .st_facebook_button {
 	display: block;
 	margin-top: 5%;
 }
 
-.share-pane {
-	border-bottom: 2px solid $color_alto_approx;
-	padding: 10px 30px;
-}
-.facebook-custom.share-pane{
-	background: url("../images/facebook-gold.png") no-repeat center center!important;
-}
 .i18n-he .views_slideshow_cycle_slide .field-content .slide-alt-title .grp-alt {
 	border-left: 1px solid $color_star_dust_approx;
 	padding-left: 7px;
@@ -516,13 +503,12 @@ table.views-table {
 	border-right: none;
 }
 .add-event{ 
-	width: 60px;
+	width: 60px!important;
 	a {
 		border: medium none;
 		display: block;
 		font-size: 0;
 		height: 23px;
-		margin-top: 2px;
 		padding: 0;
 		width: 27px;
 		&:hover {
@@ -1089,6 +1075,127 @@ table{
 	}
 }
 
+/***** movie, movie group, event & article  ********/
+
+.text-main-image{
+	position: absolute;
+	bottom: 60px;
+	color: #fff;
+	width: 100%;
+	padding: 0;
+	z-index: 100;
+	@include res(s-m){
+		bottom: 10px;
+	}
+	.wrapper{
+		@include width;
+		a, a:hover{
+			color: #fff;
+		}
+		.slide-left-ct{
+			margin: 0 23%;
+			@include res(s-m){
+				text-align: center;	
+				font-size: 13px;
+				margin: 0 15%;
+				width: 70%;
+			}
+			.slide-small-text{
+				font-size: 22px;
+				@include res(s){
+					font-size: 15px;
+				}
+			}
+			.slide-big-text{
+				font-size: 48px;
+				margin: 1% 0 15px;
+				line-height: 110%;
+				@include res(s-m){
+					margin-bottom: 4px;
+				}
+				@include res(s){
+					font-size: 27px;
+					font-weight: bold;
+				}
+			}
+		}
+		.slide-right-ct {
+			float: left;
+			position: absolute;
+			top: 0;
+			padding-left: 6%;
+			padding-right: 10%;
+			width: 23%;
+			margin-top: 38px;
+			@include res(s-m){
+				margin: 0;
+				bottom: 6px;
+				top: auto;
+				padding-right: 3%;
+				padding-left: 0;
+				width: 13%;
+			}
+			*:focus {
+			    outline: 0;
+			    outline-style:none;
+			    outline-width:0;
+			}
+			a {
+				background: url("../images/play-icon.png") no-repeat scroll 60% center;
+				border-radius: 30px;
+				border:1px solid #fff;
+				display: inline-block;
+				font-size: 0;
+				height: 55px;
+				padding: 2%;
+				width: 55px;
+				@include res(s-m){
+					background-size: 16px;
+					height: 40px;
+					width: 40px;
+				}
+			}
+		}
+	}
+	a {
+		color: #fff;
+	}
+}
+
+.noheaderimage{
+	.text-main-image{
+		position: relative;
+		color: #333;
+		margin-top: 115px;
+		.wrapper{
+			a, a:hover{
+				color: #333;
+			}
+			.slide-right-ct{
+				margin-top: 0;
+				a {
+					background: url("../images/play-icon-black.png") no-repeat scroll 60% center;
+					border:1px solid #000;
+				}
+			}
+		}
+	}	
+}
+
+.slide-alt-title {
+	background-color: $color_mine_shaft_approx;
+	bottom: 0px;
+	color: $color_star_dust_approx;
+	font-size: 12px;
+	left: 0;
+	padding: 10px 20px;
+	position: absolute;
+	z-index: 2;
+	@include res(s-m){
+		display: none;
+	}
+}
+
 /*****  slideshow controls  *******/
 
 .views-slideshow-controls-top{
@@ -1383,6 +1490,12 @@ table{
 	}
 	.code{
 		width: 10%;
+		@include res(s-m){
+			color: #ccc;
+			.only-mobile{
+				color: #333;
+			}
+		}
 	}
 }
 
@@ -1533,6 +1646,9 @@ table{
 		border:none;
 		overflow: hidden;
 		margin-bottom: 0;
+		thead{
+			display: none;
+		}
 		table{
 			font-size: 14px;
 		}
@@ -1542,7 +1658,12 @@ table{
 			}
 		}
 		td{
-			width: 30%!important;
+			width: calc(49% - 44px)!important;
+			display: inline-block;
+			&.purchase, &.views-field-field-toptix-purchase{
+				width: 88px!important;
+				box-sizing:border-box;
+			}
 		}
 	}
 }

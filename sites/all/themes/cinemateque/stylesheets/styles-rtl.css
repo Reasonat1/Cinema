@@ -128,54 +128,22 @@ table th {
 .node-type-cm-movie-group .view-id-movie_group_ct.view-display-id-panel_pane_1 .flag a {
   left: 0;
 }
-/* line 34, ../sass/movie-group-rtl.scss */
-.node-type-cm-movie-group .views_slideshow_cycle_slide .field-content .slide-alt-title {
-  right: auto;
-  left: 0;
-}
-/* line 37, ../sass/movie-group-rtl.scss */
-.node-type-cm-movie-group .views_slideshow_cycle_slide .field-content .slide-alt-title .grp-alt {
-  padding-right: 0px;
-  margin-right: 0px;
-  border-left: 1px solid #a0a0a0;
-  padding-left: 7px;
-  margin-left: 7px;
-  float: right;
-}
 
-/* line 5, ../sass/movie-rtl.scss */
-.node-type-cm-movie .slide-right-ct {
-  float: right;
-  padding-right: 6%;
-  padding-left: 10%;
-}
-/* line 10, ../sass/movie-rtl.scss */
-.node-type-cm-movie .slide-left-ct {
-  float: right;
-}
-/* line 14, ../sass/movie-rtl.scss */
-.node-type-cm-movie .view-display-id-panel_pane_2 .slide-left-ct {
-  float: right;
-}
-/* line 17, ../sass/movie-rtl.scss */
-.node-type-cm-movie .view-display-id-panel_pane_2 .slide-right-ct {
-  float: right;
-}
-/* line 23, ../sass/movie-rtl.scss */
+/* line 7, ../sass/movie-rtl.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-5 .panels-flexible-region-node_page-content_right #panels-ipe-regionid-content_right .pane-movie-top-pane-view-panel-pane-3 .pane-content .view-display-id-panel_pane_3 .flag-wrapper a {
   margin-left: 0;
   margin-right: 47%;
 }
-/* line 29, ../sass/movie-rtl.scss */
+/* line 13, ../sass/movie-rtl.scss */
 .node-type-cm-movie .group-alttab {
   right: 0 !important;
   left: auto !important;
 }
-/* line 32, ../sass/movie-rtl.scss */
+/* line 16, ../sass/movie-rtl.scss */
 .node-type-cm-movie .group-alttab .field {
   float: right;
 }
-/* line 38, ../sass/movie-rtl.scss */
+/* line 22, ../sass/movie-rtl.scss */
 .node-type-cm-movie .view-display-id-panel_pane_2 .slide-left-ct .slide-movie-title {
   padding: 0;
   margin: 1% 0px;
@@ -413,6 +381,35 @@ table td, table th {
 /* line 243, ../sass/general-rtl.scss */
 .content.middle .panels-flexible-region-node_page-content_left {
   width: 77%;
+  float: left;
+}
+
+/****  share blcok  *****/
+/* line 252, ../sass/general-rtl.scss */
+.share-pane-container .facebook a {
+  background-position: right 3px center !important;
+}
+/* line 255, ../sass/general-rtl.scss */
+.share-pane-container .whatsapp a {
+  background-position: right center !important;
+}
+/* line 259, ../sass/general-rtl.scss */
+.share-pane-container .flag-wrapper a.flag-action, .share-pane-container .flag-wrapper a.unflag-action {
+  background-position: right center !important;
+}
+/* line 262, ../sass/general-rtl.scss */
+.share-pane-container .flag-wrapper .title {
+  right: 30px;
+  left: auto;
+}
+
+/******  tags  *******/
+/* line 273, ../sass/general-rtl.scss */
+.field-name-field-tag .field-item.even {
+  float: right;
+}
+/* line 276, ../sass/general-rtl.scss */
+.field-name-field-tag .field-item.odd {
   float: left;
 }
 
