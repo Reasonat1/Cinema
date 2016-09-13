@@ -1,11 +1,5 @@
 @import "init";
 
-body {
-	background-color: #eef3fa!important;
-	font-family: Open-Sans;
-	display: block!important;
-	font-size:18px;
-}
 .tabledrag-toggle-weight-wrapper {
 	display: none;
 }
@@ -294,6 +288,7 @@ body {
 			}
 			label{
 				color: #fff;
+				padding: 10px;
 			}
 			&.webform-component-radios {
 				width: 100%;
@@ -311,6 +306,10 @@ body {
 			}
 			label{
 				padding: 0;
+				position: relative!important;
+				&.element-invisible{
+					display: none;
+				}
 			}
 			input{
 				height: auto;

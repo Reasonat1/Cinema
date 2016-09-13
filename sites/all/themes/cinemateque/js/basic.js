@@ -50,7 +50,8 @@
 
         $screenheight = $(window).height()-50;
         $fullscreenheight = $(window).height();
-        $(".movie-group-slide-container").css("max-height",$screenheight);
+        $(".node-type-cm-movie-group .views-slideshow-cycle-main-frame, .node-type-cm-movie-group .movie-group-slide-container").css("max-height",$screenheight);
+        
         $(".node-type-cm-movie .panels-flexible-region-node_page-slider-inside").css("max-height",$screenheight);
         $(".node-type-cm-movie .views_slideshow_cycle_main .content").css("max-height",$screenheight);
         $(".node-type-cm-event .panels-flexible-region-node_page-slider-inside").css("max-height",$screenheight);
@@ -61,8 +62,7 @@
         $(window).resize(function() {
             $screenheight = $(window).height()-50;
             $fullscreenheight = $(window).height();
-            $(".movie-group-slide-container").css("max-height",$screenheight);
-            $(".node-type-cm-movie .panels-flexible-region-node_page-slider-inside").css("max-height",$screenheight);
+            $(".node-type-cm-movie-group .views-slideshow-cycle-main-frame, .node-type-cm-movie-group .movie-group-slide-container").css("max-height",$screenheight);
             $(".node-type-cm-movie .views_slideshow_cycle_main .content").css("max-height",$screenheight);
             $(".front .custom-slideshow, .front .custom-slideshow li").css("max-height",$fullscreenheight);
             $(".node-type-cm-event .panels-flexible-region-node_page-slider-inside").css("max-height",$screenheight);

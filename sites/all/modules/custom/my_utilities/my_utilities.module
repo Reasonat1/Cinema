@@ -156,7 +156,7 @@ function share_this_view_block_content(){
     }
     $output .= '<div class="facebook link"><a class="fb-share" href="https://www.facebook.com/sharer/sharer.php?u='.$base_url.'/node/'.$node->nid.'" target="_blank">'.t("Share").'</a>
   </div>';
-    $output .= '<div  class="whatsapp link" id="whatsApp-share"><a href="whatsapp://send?text=The text to share!" data-action="share/whatsapp/share">'.t("Send to a friend").'</a></div>';
+    $output .= '<div  class="whatsapp link" id="whatsApp-share"><a href="whatsapp://send?text='.$base_url.'/node/'.$node->nid.'">'.t("Send to a friend").'</a></div>';
     $output .='</div>';
   
 
