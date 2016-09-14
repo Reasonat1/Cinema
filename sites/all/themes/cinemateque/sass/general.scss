@@ -25,6 +25,10 @@ strong{
 	width: 100%!important;
 }
 
+
+.view .content, .view .mask{
+	position: relative!important;
+}
 /*******  panels margin  *********/
 
 .panels-flexible-row{
@@ -1015,24 +1019,6 @@ table{
 		.content{
 			position: relative;
 		}
-		.views-field-title{
-			color: #fff;
-			position: absolute;
-			bottom: 60px;
-			width: 100%;
-			text-shadow: 2px 2px 2px #000;	
-			.field-content{
-				@include width;				
-				display: block;
-				.sub-title{
-					font-size: 20px;
-					margin: 0 23%;
-				}
-				h2{
-					margin: 0 23%;
-				}
-			}
-		}
 	}
 	.container-fluid .row:nth-child(2){
 		@include width;
@@ -1062,15 +1048,6 @@ table{
 			.pane-node-body{
 				margin-right: 23%;
 			}
-		}
-	}
-	&.noheaderimage{
-		.view-article-ct-panes.view-display-id-panel_pane_1 .views-field-title.views-field-title{
-			position: relative;
-			color: #000;
-			text-shadow: none;
-			bottom: auto;
-			margin: 50px 0 20px;
 		}
 	}
 }

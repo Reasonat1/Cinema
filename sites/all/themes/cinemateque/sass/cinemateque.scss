@@ -1278,20 +1278,3 @@ div[id^="panels-ipe-paneid-22"] > * select {
 		}
 	}
 }
-
-/********  alt text on big image  ********/
-
-.alt-text-big-image{
-	z-index: 2;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: auto;
-	padding: 10px 10px;
-	background-color: #312f2f;
-	font-size: 12px;
-	color: #a0a0a0;
-	@include res(s-m){
-		display: none;
-	}
-}

@@ -1799,23 +1799,3 @@ div[id^="panels-ipe-paneid-22"] > * select {
   height: 100%;
   width: auto;
 }
-
-/********  alt text on big image  ********/
-/* line 1284, ../sass/cinemateque.scss */
-.alt-text-big-image {
-  z-index: 2;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: auto;
-  padding: 10px 10px;
-  background-color: #312f2f;
-  font-size: 12px;
-  color: #a0a0a0;
-}
-@media (max-width: 767px) {
-  /* line 1284, ../sass/cinemateque.scss */
-  .alt-text-big-image {
-    display: none;
-  }
-}
