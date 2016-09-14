@@ -509,12 +509,14 @@ table.views-table {
 .add-event{ 
 	width: 60px!important;
 	a {
+		float: right;
 		border: medium none;
 		display: block;
 		font-size: 0;
 		height: 23px;
 		padding: 0;
 		width: 27px;
+		z-index: 50;
 		&:hover {
 			background-color: $white;
 			border: medium none;
@@ -528,6 +530,11 @@ table.views-table {
 		}
 	}
 }
+
+.addthisevent_dropdown{
+	top: 32px!important;
+}
+
 .field-name-field-toptix-purchase .field-item button {
 	background: url("../images/toptix.png") no-repeat !important;
 	border: medium none;
@@ -550,6 +557,7 @@ table.views-table {
 /**** lobby page  ****/
 
 .page-term-lobby{
+	background-color: $color_fantasy_approx;
 	.panels-flexible-row-node_page-1{
 		padding: 0!important;
 		width: 100%!important;
@@ -609,21 +617,6 @@ table.views-table {
 		img{
 			width: 100%;
 		}
-		.top-text-blk-wht {
-			position: absolute;
-			left: 0px;
-			top: 0px;
-			padding: 6px 0;
-			font-size: 15px;
-			.white{
-				background-color: rgba(256, 256, 256, 0.9);
-				padding: 6px 12px;
-			}
-			.black {
-				color: $white !important;
-				padding: 6px 12px;
-			}
-		}
 	}
 	.pane-lobby-panel-pane-1 {
 		.pane-content {
@@ -664,20 +657,6 @@ table.views-table {
 			width: 100%;
 			a{
 				color: #fff;
-			}
-		}
-		.views-field-field-mc-teaser-toptxt-blk{
-			position: absolute;
-			top: 0px;
-			left: 0;
-			padding: 6px 0;
-			font-size: 15px;
-			.black{
-				color: #fff;
-				padding: 6px 12px;
-			}
-			.white{
-				padding: 6px 12px;
 			}
 		}
 		.views-field-ops{
@@ -778,24 +757,6 @@ table.views-table {
 
 .img-like-wrapper {
 	position: relative;
-	.top-text-blk-wht {
-		left: 36em;
-		position: absolute;
-		width: 100%;
-		top: 0;
-		.white {
-			@include main-color();
-			display: block;
-			float: left;
-			padding: 1%;
-		}
-		.black {
-			color: $white;
-			display: block;
-			float: left;
-			padding: 1%;
-		}
-	}
 	.like-btn {
 		left: 3em;
 		position: absolute;
@@ -807,6 +768,7 @@ table.views-table {
 	display: block;
 	text-indent: -9999px;
 	width: 18px;
+	margin-top: 5px;
 }
 
 .panels-flexible-row.content .panels-flexible-region-node_page-content_region {
@@ -1173,6 +1135,21 @@ table{
 	}
 }
 
+.top-text-blk-wht{
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 6px 0;
+	font-size: 14px;
+	span{
+		padding: 6px 12px;
+		opacity: 0.9;
+	}
+	.black{
+		color: #fff;
+	}
+}
+
 /*****  slideshow controls  *******/
 
 .views-slideshow-controls-top{
@@ -1411,18 +1388,6 @@ table{
 						float: left;
 						width: 30%;
 						position: relative;
-						.top-text-blk-wht{
-							position: absolute;
-							top: 0;
-							left: 0;
-							padding: 5px 0;
-							span{
-								padding: 5px 10px;
-							}
-							.black{
-								color: #fff;
-							}
-						}
 					}
 					.lobby-term-right{
 						float: right;
@@ -1461,6 +1426,7 @@ table{
 		float: right;
 		padding-right: 0;
 		padding-left: 0;
+		width: 88px;
 	}
 	.title{
 		width: 23%;
