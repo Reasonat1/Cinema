@@ -609,11 +609,17 @@ table.views-table {
 		float: right;
 		width: 80%;
 		padding: 30px;
+		@include res(s-m){
+			width: 100%;
+		}
 	}
 	.lobby-term-right {
 		float: left;
 		width: 20%;
 		position: relative;
+		@include res(s-m){
+			width: 100%;
+		}
 		img{
 			width: 100%;
 		}
@@ -635,6 +641,14 @@ table.views-table {
 			position: relative;
 			overflow: hidden;
 			margin-bottom: 30px;
+			@include res(m){
+				width: 48%;
+				margin-right: 0;
+			}
+			@include res(s){
+				width: 100%;
+				margin-right: 0;
+			}
 			img{
 				width: 100%;
 				height: auto;
@@ -646,8 +660,21 @@ table.views-table {
 		.views-row:nth-child(3n){
 			margin-right: 0;
 		}
+		.views-row:nth-child(odd){
+			@include res(m){
+				float: left;
+			}
+		}
+		.views-row:nth-child(even){
+			@include res(m){
+				float: right;
+			}
+		}
 		.views-row:nth-child(3n+1){
 			clear: both;
+			@include res(m){
+				clear: none;
+			}
 		}
 		.views-field-field-cm-moviegroup-short-summar, .views-field-name{
 			position: absolute;
@@ -1603,6 +1630,7 @@ table{
 		td{
 			width: calc(49% - 44px)!important;
 			display: inline-block;
+			padding-left: 0!important;
 			&.purchase, &.views-field-field-toptix-purchase{
 				width: 88px!important;
 				box-sizing:border-box;
