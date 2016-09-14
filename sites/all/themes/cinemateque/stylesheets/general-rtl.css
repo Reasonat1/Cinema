@@ -277,3 +277,38 @@ table td, table th {
 .field-name-field-tag .field-item.odd {
   float: left;
 }
+
+/******  responsive *********/
+@media (max-width: 767px) {
+  /* line 286, ../sass/general-rtl.scss */
+  .table-responsive td {
+    padding-left: 8px !important;
+    padding-right: 0 !important;
+  }
+}
+/***** movie, movie group, event & article  ********/
+/* line 297, ../sass/general-rtl.scss */
+.text-main-image .wrapper .slide-right-ct {
+  float: right;
+  padding-right: 6%;
+  padding-left: 10%;
+}
+@media (max-width: 767px) {
+  /* line 297, ../sass/general-rtl.scss */
+  .text-main-image .wrapper .slide-right-ct {
+    padding-left: 3%;
+    padding-right: 0;
+  }
+}
+
+/* line 309, ../sass/general-rtl.scss */
+.slide-alt-title {
+  left: auto;
+  right: 0;
+}
+
+/* line 314, ../sass/general-rtl.scss */
+.top-text-blk-wht {
+  right: 0;
+  left: auto;
+}

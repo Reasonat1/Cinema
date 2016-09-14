@@ -278,3 +278,40 @@ table{
 		}
 	}
 }
+
+/******  responsive *********/
+
+@include res(s-m){
+	.table-responsive{
+		td{
+			padding-left: 8px!important;
+			padding-right: 0!important;
+		}
+	}
+}
+
+/***** movie, movie group, event & article  ********/
+
+.text-main-image{
+	.wrapper{
+		.slide-right-ct {
+			float: right;
+			padding-right: 6%;
+			padding-left: 10%;
+			@include res(s-m){
+				padding-left: 3%;
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+.slide-alt-title {
+	left: auto;
+	right: 0;
+}
+
+.top-text-blk-wht{
+	right: 0;
+	left: auto;
+}
