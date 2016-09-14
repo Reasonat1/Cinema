@@ -29,13 +29,6 @@ strong{
 .view .content, .view .mask{
 	position: relative!important;
 }
-/*******  panels margin  *********/
-
-.panels-flexible-row{
-	@include width();
-	margin: 0 auto!important;
-	padding: 0 3%!important;
-}
 
 .ctr {
 	clear: both;
@@ -45,6 +38,13 @@ img{
 	max-width: 100%;
 	height: auto;
 	width: auto;
+}
+/*******  panels margin  *********/
+
+.panels-flexible-row{
+	@include width();
+	margin: 0 auto!important;
+	padding: 0 3%!important;
 }
 
 #da11y-toggle.active {
@@ -302,14 +302,23 @@ img{
 .share-pane-container {
 	border-top: 5px solid $black;
 	.link a{
-	    border-bottom: 1px solid #afafaf;
+	    border-top: 1px solid #afafaf;
 	    color: #333;
 	    display: block;
 	    font-size: 16px;
 	    padding: 10px 30px;
 	}
-	.link:last-child a{
-		border-bottom: none;
+	.link:first-child a{
+		border-top: none;
+	}
+	.whatsapp{
+		display: none;
+		@include res(s-m){
+			display: block;
+		}
+		iframe{
+			display: none;
+		}
 	}
 	.flag-wrapper{
 		position: relative;
@@ -1606,7 +1615,8 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	.text-main-image{
 		position: relative;
 		color: #333;
-		margin-top: 115px;
+		margin: 50px 0 30px;
+		bottom: auto;
 		.wrapper{
 			a, a:hover{
 				color: #333;

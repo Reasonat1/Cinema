@@ -369,6 +369,9 @@
 			@include res(s-m){
 				width: 100%;
 				text-align: center;
+				p{
+					text-align: center;
+				}
 			}
 		}
 	}
@@ -480,6 +483,9 @@ img.panopoly-image-full{
 	width: 100%;
 	transition: all 0.5s ease-out;
 	z-index: 99;
+	@include res(s-m){
+		z-index: 400;
+	}
 	.container-fluid {
 		padding: 0;
 	}
