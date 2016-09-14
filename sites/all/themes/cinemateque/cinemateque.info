@@ -1,0 +1,73 @@
+name        = cinemateque
+description = A theme based on Radix.
+screenshot  = screenshot.png
+core        = 7.x
+
+; Base - Radix
+base theme  = radix
+
+
+; Regions
+regions[header] = Header
+regions[help] = Help
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[highlighted] = Highlighted
+
+regions[featured] = Featured
+regions[content] = Content
+regions[sidebar_first] = Sidebar first
+;regions[sidebar_second] = Sidebar second
+
+;regions[triptych_first] = Triptych first
+;regions[triptych_middle] = Triptych middle
+;regions[triptych_last] = Triptych last
+
+;regions[footer_firstcolumn] = Footer first column
+;regions[footer_secondcolumn] = Footer second column
+;regions[footer_thirdcolumn] = Footer third column
+;regions[footer_fourthcolumn] = Footer fourth column
+;regions[footer] = Footer
+regions[footer1] = First Footer
+regions[footer2] = Second Footer
+
+; Breakpoints
+breakpoints[xs] = (max-width: 767px)
+breakpoints[sm] = (min-width: 768px) and (max-width: 991px)
+breakpoints[md] = (min-width: 992px) and (max-width: 1199px)
+breakpoints[lg] = (min-width: 1200px)
+
+; Panels
+plugins[panels][layouts] = panels/layouts
+plugins[panels][styles] = panels/styles
+
+; CSS - General
+stylesheets[all][]     = assets/css/cinemateque.style.css
+stylesheets[all][] = ../MDB/css/mdb.min.css
+;stylesheets[all][]  = css/custom-style.css
+;stylesheets[all][]  = css/general.css
+;stylesheets[all][]  = css/ricky.css
+;;stylesheets[all][]  = css/select2.min.css
+stylesheets[all][]     = stylesheets/styles.css
+
+
+; Javascript
+scripts[] = js/basic.js
+scripts[] = js/cinemateque.script.js
+;;scripts[] = js/select2.min.js
+scripts[] = js/searchfacets.script.js
+;scripts[] = ../MDB/js/mdb.min.js
+;scripts[] = ../MDB/js/bootstrap.min.js
+;scripts[] = ../MDB/js/jquery.min.js
+;scripts[] = ../MDB/js/modules/forms-basic.js
+;scripts[] = ../MDB/js/modules/mdb.js
+
+; Panels layouts. You can place multiple layouts under the "layouts" folder.
+plugins[panels][layouts] = layouts
+
+; Information added by Drupal.org packaging script on 2016-02-01
+version = "7.x-3.3"
+core = "7.x"
+project = "radix"
+datestamp = "1454337570"
+

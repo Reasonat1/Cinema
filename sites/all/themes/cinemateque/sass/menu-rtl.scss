@@ -1,0 +1,124 @@
+@import "init";
+
+.hamburger {
+	.modal-content{
+		.close{
+			left: auto;
+			right: 20px;
+		}
+	}
+	.modal-body {
+		.close {
+			float: right;
+		}
+	}
+}
+
+#hamburger-menu{
+	/*
+	.pane-my-backend-festival-menu-block {
+		width: 27.5%;
+		padding: 10px 85px 0 15px;
+		float: right;
+		.menu.nav li {
+			background-image: url("../images/arrow-left.png");
+			background-position: left center;
+		}
+	}*/
+	.pane-menu-menu-site-main-menu {
+		.menu.nav li.expanded, .menu.nav li.collapsed {
+			float: right;
+			margin: 0;
+			margin-left: 3%;
+			margin-right: 0;
+			&.last{
+				margin-left: 0;
+			}
+			li {
+				background-image: url("../images/arrow-left.png");
+				background-position: left center;
+				padding: 0;
+				margin: 0;
+				a{
+					padding-left: 25px;
+					padding-right: 0;
+				}
+			}
+		}
+	}
+	.pane-bean-main-info-hebrew{
+		clear: right;
+		.field-name-field-content-info > .field-items > .field-item{
+			float: right;
+			.field-name-field-info-icon{
+				right: -30px;
+				left: auto;
+			}
+			.field-name-field-label{
+    			text-align: right;
+				padding-left: 30px;
+				padding-right: 0;
+			}
+			.field-name-field-description{
+    			text-align: right;
+				padding-left: 30px;
+				padding-right: 0;
+			}
+		}
+	}
+	.pane-webform-client-block-3322{
+		float: right;
+		.panel-panel{
+			float: right;
+		}
+		.form-actions{
+			input{
+				padding: 0 10px 0 15px;
+			}
+		}
+		.webform-component{
+			margin-right: 0px;
+			margin-left: 8px;
+		}
+		.panel-panel:nth-child(2){
+			span{
+				float: right;
+			}
+		}
+		.pane-block-8{
+			float: left;
+		}
+		.pane-custom.pane-1{
+			float: left;
+		}
+	}
+	.pane-bean-social-links-new, .pane-bean-logos-hebrew-block, .pane-bean-logos-english-block{
+		float: left;
+		.field-name-field-social-icons > .field-items > .field-item{
+			float: right;
+			margin-left: 0;
+			margin-right: 27px;
+		}
+	}
+}
+
+/********** responsive menu **********/
+
+@include res(s-m){
+	.header #site-main-menu{
+	    margin-left: 0;
+	    li{	
+	    	text-align: right;
+	    	.caret{
+	    		float: left;
+			    &:after{
+			    	display: block;
+			    	content: "";
+			   		border-right: 8px solid #fff;
+			    	border-left: none;
+			    	float: left;
+			    }
+	    	}
+	    }
+	}
+}

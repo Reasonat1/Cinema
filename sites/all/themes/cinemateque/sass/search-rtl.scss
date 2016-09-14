@@ -1,0 +1,147 @@
+@import "init";
+
+
+.page-search{
+	.search_result{
+		.text-center{
+			float: left;
+		}
+	}
+	.cm_event .pro-grid {
+		li {
+			div.search-snippet-info {
+				padding-right: 0 !important;
+			}
+		}
+	}
+	.search-performance{
+		float: right;
+	}
+	.pager{
+		float: left;
+	}
+	.cm_movie .pro-grid {
+		li {
+			div.search-snippet-info {
+				padding-right: 0 !important;
+			}
+		}
+	}
+	#search-api-page-search-form-search-results {
+		.form-group {
+			.form-text {
+				float: right;
+				padding: 7px 2% 8px 22%;
+			}
+		}
+		.form-submit {
+			right: auto;
+			left: 0;
+		}
+	}
+	.search_new {
+		.region .block {
+			float: right;
+			margin-left: 2%;
+			margin-right: 0;
+		}
+	}
+	#RemoveFilters{
+		text-align: right;
+	}
+	.views-row {
+		&.views-field {
+			.field-content {
+				text-align: right;
+			}
+		}
+	}
+	.panels-flexible-row-node_page-3{
+		.pane-facet{
+			float: right;
+			margin-right: 1.5%;
+			margin-left: 0;
+			@include res(s-m){
+				margin-right: 0!important;
+			}
+		}
+		.panel-pane:nth-child(odd){
+			@include res(m){
+				float: left;
+			}
+		}
+		.panel-pane:nth-child(6n+2){
+			margin-right: 0;
+			@include res(l){
+				margin-right: 1.5%;
+			}
+		}
+		.panel-pane:nth-child(3n+2){
+			@include res(l){
+				margin-right: 0%!important;
+			}
+		}
+	}
+	.current-search-item {
+		li{
+			float: right;
+			margin-left: 30px!important;
+			margin-right: 0!important;
+		}
+	}
+	.pane-current-search-search-results-facets-block{
+		a{
+			&:before{
+			    float: right;
+			    margin-left: 5px;
+			    margin-right: 0;
+			}
+		}
+	}
+	.pane-panopoly-database-search-search-database-results{
+		.pane-content{
+			.view-panopoly-database-search{
+				.view-header{
+					left: 0;
+					right: auto;
+				}
+				.view-content{
+					.lobby-term-left{
+						float: right;
+						.top-text-blk-wht{
+							right: 0;
+							left: auto;
+						}
+					}
+					.lobby-term-right{
+						float: left;
+					}
+					.row-custom-lobby{
+						.purchase{
+							float: left;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.select2-results__options{
+	li{
+		background: url("../images/select-empty.png") no-repeat right 7px top 14px;
+		padding-right: 22px;
+		padding-left: 0;
+		&.select2-results__option-selected{
+			background-position: right 7px top 14px!important;
+		}
+	}
+	li[aria-selected="true"]{
+		background-position: right 7px top 14px!important;
+	}
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b:before{
+	    left: 0px;
+	    right: auto;
+}

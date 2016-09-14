@@ -1,0 +1,139 @@
+@import "init";
+
+
+.calender-header {
+	float: right;
+	left: 0;
+	right: auto;
+}
+.calender-body {
+	float: right;
+	left: auto;
+	right: 0;
+}
+.calender-filter-date{
+	float: right;
+	margin-right: 3%;
+	margin-left: 0;
+	p{
+		float: right!important;
+	}
+}
+.calender-full-row {
+	float: right;
+	> div {
+		float: right;
+	}
+}
+.calender-row {
+	&.inner {
+		float: right;
+	}
+	.time {
+		float: right;
+	}
+	.title {
+		float: right;
+	}
+	.subtitle {
+		float: right;
+	}
+}
+.calendar-agenda-items {
+	float: right;
+}
+.tickets {
+    right: auto;
+    left: 15px;
+}
+
+.calender-row .internal-id {
+    left: auto;
+    right: 15px;
+}
+
+.calender-popup {
+	margin-right: 80px;
+	margin-left: 0;
+	.tickets {
+		float: right;
+	}
+	> img.close-calender-popup {
+		float: left;
+		left: -8px;
+		right: auto;
+	}
+}
+
+#calender-top-popup{
+		.read-more{
+			float: right;
+			&:before{
+			    border-width: 5px 5px 5px 0px;
+			    left: -10px;
+			    right: auto;
+				@include border-2-main-color;
+			}
+		}
+}
+
+.calender-filter {
+	span {
+		float: right;
+	}
+}
+.calendar-dayview-hour {
+	float: right;
+}
+
+#calender-top-popup {
+	float: right;
+	left: auto;
+	right: 40%;
+	.close-calender-popup {
+		left: -10px;
+		right: auto;
+	}
+	.tickets {
+		float: right;
+		span {
+		    padding: 8px 0 8px 8px;
+  		}
+	}
+}
+
+.pane-complex-calender-view-pane{
+	.ajax-inner {
+		float: right;
+	}
+	.flag-wrapper{
+		float: left;
+	}
+}
+
+.calender-scroll{
+	float: left;
+	padding-left: 30px;
+	padding-right: 0;
+	margin-left: 3%;
+	margin-right: 0;
+	text-align: left;
+	p{
+	    margin-left: 0px;
+	    margin-right: 20px;
+	}
+	> span {
+		  margin-left: 5px;
+		  margin-right: 0;
+	}
+	.scrollright{
+		background: url("../images/more-gold-left.png") no-repeat center center;
+		margin-left: 0px;
+		margin-right: 20px;
+	}
+	.scrollleft{
+		background: url("../images/more-gold-right.png") no-repeat center center;
+		margin-left: 20px;
+		margin-right: 0;
+	}
+}
