@@ -74,18 +74,7 @@
   left: 0;
   top: 0;
 }
-.black-content {
-  background: #000000 none repeat scroll 0 0;
-  float: left;
-  padding: 2px 8px;
-  color: #fff;
-}
-.black-white {
-  background: #ffffff none repeat scroll 0 0;
-  color: #daa520;
-  float: left;
-  padding: 2px 8px;
-}
+
 .person-image > img {
   height: 100%;
   width: 100%;
@@ -117,10 +106,6 @@
 .movie-image > img {
   height: 270px;
   width: 100%;
-}
-.movie-date-black-white-background {
-  position: absolute;
-  top: 0;
 }
 .movie-flag {
   position: absolute;
@@ -166,7 +151,7 @@
   background-color: #ffffff;
   min-height: 100px;
 }
-.no-image .movie_play,.no-image .movie-date-black-white-background, .no-image .movie-flag {
+.no-image .movie_play, .no-image .movie-flag {
   display: none;
 }
 .node-teaser .teaser-row.side-image {
