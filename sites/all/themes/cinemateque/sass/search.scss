@@ -129,6 +129,10 @@
 				padding: 7px 22% 8px 2%;
 				font-size: 25px;
 				border:none;
+				@include res(s-m){
+					font-size: 15px;
+					padding: 13px;
+				}
 			}
 		}
 		.form-submit {
@@ -142,6 +146,10 @@
 			right: 0px;
 			box-shadow: none;
 			top: 0px;
+			@include res(s-m){
+				width: 100%;
+				position: relative;
+			}
 		}
 	}
 	.search_new {

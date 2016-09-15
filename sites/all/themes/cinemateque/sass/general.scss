@@ -85,7 +85,7 @@ img{
 }
 
 .views-field-field-toptix-purchase{
-	padding: 6px 8px!important;
+	padding: 4px 8px!important;
 }
 
 .clr {
@@ -215,13 +215,6 @@ img{
 	tbody {
 		border: none !important;
 		font-size: 1.1rem;
-	}
-	.views-field-field-toptix-purchase{
-		float: right;
-		width: 90px;
-		button{
-			float: left;
-		}
 	}
 	th {
 		border: none !important;
@@ -543,25 +536,6 @@ table.views-table {
 .addthisevent_dropdown{
 	top: 32px!important;
 }
-
-.field-name-field-toptix-purchase .field-item button {
-	background: url("../images/toptix.png") no-repeat !important;
-	border: medium none;
-	display: block;
-	font-size: 0;
-	height: 40px;
-	width: 104px;
-}
-.movie-flag a {
-	background: url("../images/like-event.png") no-repeat !important;
-	display: inline-block;
-	font-size: 0;
-	height: 37px;
-	width: 50px;
-	position: absolute;
-	left: 190px;
-}
-
 
 /**** lobby page  ****/
 
@@ -892,6 +866,10 @@ table{
 			padding: 8px!important;
 		}
 	}
+	.purchase, .views-field-field-toptix-purchase{
+		width: 88px!important;
+		box-sizing:border-box;
+	}
 }
 
 #page-header{
@@ -943,6 +921,10 @@ table{
 				padding: 7px 22% 8px 2%;
 				font-size: 25px;
 				border:none;
+				@include res(s-m){
+					font-size: 15px;
+					padding: 13px;
+				}
 			}
 		}
 		.form-submit {
@@ -1504,11 +1486,11 @@ table{
 		}
 		td{
 			width: calc(49% - 44px)!important;
-			display: inline-block;
 			padding-left: 0!important;
 			&.purchase, &.views-field-field-toptix-purchase{
-				width: 88px!important;
-				box-sizing:border-box;
+				padding-left: 0!important;
+				padding-right: 0!important;
+				width: 80px!important;
 			}
 		}
 	}
