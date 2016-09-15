@@ -19,7 +19,7 @@
 /********  remove kwyboard open when click on select2 at mobile  *********/
 
 $(document).on('touchend', function(){
-$(".select2-search, .select2-focusser").remove();
+$(".select2-search, .select2-focusser, .select2-selection__rendered").remove();
 })
 
 
