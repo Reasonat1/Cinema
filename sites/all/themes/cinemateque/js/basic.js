@@ -276,7 +276,7 @@
 	}
 
 /********  remove kwyboard open when click on select2 at mobile  *********/
-$('.facetapi-select').each(function () {
+$('.select2-container').each(function () {
 $(this).find('.select2-search, .select2-focusser').hide();
 });
 
