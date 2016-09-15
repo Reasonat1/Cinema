@@ -52,17 +52,15 @@
 
         $screenheight = $(window).height()-50;
         $fullscreenheight = $(window).height();
-
         $(".full-screen-image, .full-screen-image .wrapper-image .content").css("max-height",$screenheight);
+        $(".front .full-screen-image, .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
 
-        $(".front .custom-slideshow, .front .custom-slideshow li").css("max-height",$fullscreenheight);
         $(window).resize(function() {
             $screenheight = $(window).height()-50;
             $fullscreenheight = $(window).height();
-
             $(".full-screen-image, .wrapper-image .content").css("max-height",$screenheight);
+            $(".front .full-screen-image, .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
 
-            $(".front .custom-slideshow, .front .custom-slideshow li").css("max-height",$fullscreenheight);
         });
 
         $(".header-right .search span").click(function() {
