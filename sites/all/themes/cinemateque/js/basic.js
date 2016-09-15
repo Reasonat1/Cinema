@@ -277,7 +277,7 @@
 
 /********  remove kwyboard open when click on select2 at mobile  *********/
 $('.select2-container').each(function () {
-$(this).find('.select2-search, .select2-focusser').hide();
+$(this).find('.select2-search, .select2-focusser, .select2-container--open').hide();
 });
 
 
