@@ -15,6 +15,13 @@
             window.open($(this).attr('href'), 'fbShareWindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 275) + ', left=' + ($(window).width() / 2 - 225) + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
             return false;
         });
+
+/********  remove kwyboard open when click on select2 at mobile  *********/
+$('.select2-container').each(function () {
+  $(this).find('.select2-search, .select2-focusser, .').hide();
+});
+
+
  /*******  responsive menu   **********/
 
     $(".responsive-hamburger").click(function(){
@@ -275,10 +282,6 @@
 		}
 	}
 
-/********  remove kwyboard open when click on select2 at mobile  *********/
-$('.select2-container').each(function () {
-$(this).find('.select2-search, .select2-focusser, .select2-container--open').hide();
-});
 
 
 })(jQuery);
