@@ -19,7 +19,7 @@
 /********  remove kwyboard open when click on select2 at mobile  *********/
 
 $('.select2-container').datepicker({
-   beforeShow: function(){$('input').blur();}
+   beforeShow: function(){$('span').blur();}
 });
 
 
