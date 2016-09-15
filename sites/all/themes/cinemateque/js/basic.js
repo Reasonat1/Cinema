@@ -18,9 +18,9 @@
 
 /********  remove kwyboard open when click on select2 at mobile  *********/
 
-$('.select2-container').datepicker({
-   beforeShow: function(){$('span').blur();}
-});
+$(document).on('touchend', function(){
+$(".select2-search, .select2-focusser").remove();
+})
 
 
  /*******  responsive menu   **********/
