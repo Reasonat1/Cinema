@@ -74,6 +74,9 @@
 	}
 	.pager{
 		float: right;
+		@include res(s-m){
+			float: left;
+		}
 	}
 	.cm_movie .pro-grid {
 		li {
@@ -344,6 +347,10 @@
 					top: -46px;
 					right: 0;
 					position: absolute;
+					@include res(s-m){
+						position: relative;
+						top: auto;
+					}
 				}
 				.view-content{
 					.lobby-term-left{
@@ -352,19 +359,6 @@
 						position: relative;
 						@include res(s-m){
 							width: 100%;
-						}
-						.top-text-blk-wht{
-							position: absolute;
-							top: 0;
-							left: 0;
-							padding: 6px 0;
-							font-size: 15px;
-							span{
-								padding: 6px 12px;
-							}
-							.black{
-								color: #fff;
-							}
 						}
 					}
 					.lobby-term-right{

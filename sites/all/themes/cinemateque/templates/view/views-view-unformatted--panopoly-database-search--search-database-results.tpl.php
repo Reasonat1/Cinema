@@ -359,7 +359,7 @@
           $sort_summary = t($summary_movie_group);
           $event_info = $output;
           $duration_info = $country . " " . $year . $length;
-          $top_text = $white_text_movie_group . $black_text_movie_group;
+          $top_text = $black_text_movie_group . $white_text_movie_group;
         break;
         case "cm_movie":
           $image = '<div class="image-container-gorup"><div class="flag-new-links">'.$flag.'</div><div class="image-container">'.l($image_movie, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)).'</div></div>';
@@ -367,7 +367,7 @@
           $sort_summary = t($summary_movie);
           $event_info = $output;
           $duration_info = $movie_credit . $length;
-          $top_text = $white_text_movie . $black_text_movie;
+          $top_text = $black_text_movie . $white_text_movie;
         break;
         case "cm_article":
           $image = '<div class="image-container-gorup"><div class="flag-new-links">'.$flag.'</div><div class="image-container">'.l($image_article, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)).'</div></div>';
@@ -375,7 +375,7 @@
           if(!empty($node->body['und'][0]['value'])){
             $sort_summary = truncate_utf8($node->body['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
           }
-          $top_text = $white_text_article . $black_text_article;
+          $top_text = $black_text_article . $white_text_article;
           $event_info = '';
           $duration_info = '';
         break;
@@ -383,7 +383,7 @@
           $image = '<div class="image-container-gorup"><div class="flag-new-links">'.$flag.'</div><div class="image-container">'.l($image_event, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)).'</div></div>';
           $title = $title;
           $sort_summary = $summary_event;
-          $top_text = $white_text_event . $black_text_event;
+          $top_text = $black_text_event . $white_text_event;
           $event_info = $output_event;
           $duration_info = $event_credit . $lengths;
         break;

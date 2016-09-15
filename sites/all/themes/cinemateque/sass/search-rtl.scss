@@ -19,6 +19,9 @@
 	}
 	.pager{
 		float: left;
+		@include res(s-m){
+		  float: right;
+		}
 	}
 	.cm_movie .pro-grid {
 		li {

@@ -16,12 +16,6 @@
             return false;
         });
 
-/********  remove kwyboard open when click on select2 at mobile  *********/
-
-$(document).on('touchend', function(){
-$(".select2-search, .select2-focusser, .select2-selection__rendered").remove();
-})
-
 
  /*******  responsive menu   **********/
 
@@ -59,7 +53,7 @@ $(".select2-search, .select2-focusser, .select2-selection__rendered").remove();
         $screenheight = $(window).height()-50;
         $fullscreenheight = $(window).height();
 
-        $(".full-screen-image, .wrapper-image .content").css("max-height",$screenheight);
+        $(".full-screen-image, .full-screen-image .wrapper-image .content").css("max-height",$screenheight);
 
         $(".front .custom-slideshow, .front .custom-slideshow li").css("max-height",$fullscreenheight);
         $(window).resize(function() {

@@ -103,11 +103,29 @@ img{
 	background-color: transparent !important;
 }
 
-.pane-node-field-tag {
+.pane-node-field-tag, .pane-node-field-cm-article-tags {
 	.pane-content {
 		border-top: 5px solid $black;
 		margin-top: 100px;
 		padding-top: 20px;
+		.field-item{
+		    width: 48%;
+		}
+		a{
+		    border-bottom: 1px solid;
+		    color: #828282;
+		    display: block;
+		    float: left;
+		    font-size: 14px;
+		    margin-right: 2%;
+		    padding-bottom: 5px;
+		    &:hover{
+		    	@include main-color;
+		    }
+		}
+		.field-item:nth-child(even){
+			float: right;
+		}
 	}
 	h2.pane-title {
 		display: none;
@@ -1009,20 +1027,6 @@ table{
 			width: 23%;
 			padding-right: 100px;
 			box-sizing: border-box;
-			.field-name-field-cm-article-tags{
-				border-top: 5px solid $black;
-				padding-top: 20px;
-				margin-top: 12px;
-				a{
-				    border-bottom: 1px solid;
-				    color: #828282;
-				    display: block;
-				    float: left;
-				    font-size: 14px;
-				    margin-right: 10px;
-				    padding-bottom: 5px;
-				}
-			}
 		}
 		.radix-layouts-content{
 			padding: 0;
@@ -1614,6 +1618,12 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	}	
 }
 
+@media (max-height: 320px){
+	.full-screen-image, .full-screen-image .wrapper-image .content{
+		max-height: none!important;
+	}
+}
+
 .slide-alt-title {
 	background-color: $color_mine_shaft_approx;
 	bottom: 0px;
@@ -1640,11 +1650,11 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	position: absolute;
 	top: 0;
 	left: 0;
-	padding: 6px 0;
 	font-size: 14px;
 	span{
 		padding: 6px 12px;
 		opacity: 0.9;
+		float: left;
 	}
 	.black{
 		color: #fff;
