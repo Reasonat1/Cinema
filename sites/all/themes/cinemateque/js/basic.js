@@ -17,8 +17,9 @@
         });
 
 /********  remove kwyboard open when click on select2 at mobile  *********/
-$('.select2-container').each(function () {
-  $(this).find('.select2-search, .select2-focusser, .').hide();
+
+$('.select2-container').datepicker({
+   beforeShow: function(){$('input').blur();}
 });
 
 
