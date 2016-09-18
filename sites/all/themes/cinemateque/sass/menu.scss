@@ -171,6 +171,9 @@
 		padding-top: 30px;
 		clear: left;
 		overflow: hidden;
+		.field-name-field-background-image{
+			display: none;
+		}
 		.field-name-field-content-info > .field-items > .field-item{
 			padding: 0 15px 0 0;
 			position: relative;
@@ -368,6 +371,11 @@
 		display: block;
 		cursor: pointer;
 	}
+	#main-menu{
+		display: none;
+	}
+}
+
 	.header #site-main-menu{
 	    display: block !important;
 	    margin-right: 0;
@@ -427,4 +435,3 @@
 	.responsive-hamburger-open #site-main-menu{
 		right: 0;
 	}
-}
