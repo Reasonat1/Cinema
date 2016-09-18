@@ -166,9 +166,24 @@
 	.pane-bean-main-info-english, .pane-bean-main-info-hebrew{
 		/*background: url("../images/info-bg.png") no-repeat scroll center center / cover;*/
 		@include bg-main-color;
-		padding: 54px 0;
+		overflow: hidden;
+		position: relative;
 		.pane-content{
 			@include width;
+			.field-name-field-background-image{
+				position: absolute;
+				width: 100%;
+				left: 0;
+				top: 0;
+				img{
+					width: 100%;
+					height: auto;
+				}
+			}
+			.field-name-field-content-info{
+				padding: 54px 0;
+				overflow: hidden;
+			}
 			.field-name-field-content-info > .field-items > .field-item{
 			   color: #fff;
 			    float: left;
