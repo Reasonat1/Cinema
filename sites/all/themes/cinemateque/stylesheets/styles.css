@@ -6185,17 +6185,18 @@ div[id^="panels-ipe-paneid-22"] > * select {
   float: left;
   border: medium none;
   margin-right: 0;
-  transition: all 0.5s ease 0s;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
   margin-top: 13px;
   padding: 0;
   border-radius: 0;
 }
-/* line 323, ../sass/menu.scss */
+/* line 324, ../sass/menu.scss */
 .navbar-header .hambruger.navbar-toggle {
   margin-left: 30px;
 }
 
-/* line 328, ../sass/menu.scss */
+/* line 329, ../sass/menu.scss */
 .navbar-header .hambruger .icon-bar {
   width: 34px;
   background-color: #fff !important;
@@ -6203,22 +6204,21 @@ div[id^="panels-ipe-paneid-22"] > * select {
   height: 2px;
 }
 
-/* line 335, ../sass/menu.scss */
+/* line 336, ../sass/menu.scss */
 .navbar-header .hambruger .icon-bar + .icon-bar {
   margin-top: 9px;
 }
 
 /********** responsive menu **********/
 @media (max-width: 767px) {
-  /* line 343, ../sass/menu.scss */
+  /* line 344, ../sass/menu.scss */
   .responsive-hamburger {
     display: block;
     cursor: pointer;
   }
 
-  /* line 347, ../sass/menu.scss */
+  /* line 348, ../sass/menu.scss */
   .header #site-main-menu {
-    background-color: rgba(0, 0, 0, 0.9) !important;
     display: block !important;
     margin-right: 0;
     margin-top: 0;
@@ -6233,13 +6233,15 @@ div[id^="panels-ipe-paneid-22"] > * select {
   .header #site-main-menu li {
     text-align: left;
     width: 100%;
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    border-bottom: 1px solid #fff;
   }
-  /* line 361, ../sass/menu.scss */
+  /* line 363, ../sass/menu.scss */
   .header #site-main-menu li a {
     white-space: unset;
     padding: 15px 10px !important;
   }
-  /* line 365, ../sass/menu.scss */
+  /* line 367, ../sass/menu.scss */
   .header #site-main-menu li .caret {
     display: block;
     float: right;
@@ -6248,42 +6250,39 @@ div[id^="panels-ipe-paneid-22"] > * select {
     margin: 0;
     width: 55px;
   }
-  /* line 372, ../sass/menu.scss */
+  /* line 374, ../sass/menu.scss */
   .header #site-main-menu li .caret:after {
-    display: block;
+    background: url("../images/plus.png") no-repeat;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
     content: "";
-    border-bottom: 8px solid transparent;
-    border-left: 8px solid #fff;
-    border-top: 8px solid transparent;
-    margin-top: 6px;
     float: right;
+    height: 12px;
+    transition: all 0.5s ease 0s;
     width: 12px;
+    margin-top: 5px;
   }
-  /* line 383, ../sass/menu.scss */
+  /* line 386, ../sass/menu.scss */
   .header #site-main-menu li .dropdown-menu {
     border: none;
     display: none;
     position: relative;
     width: 100%;
   }
-  /* line 391, ../sass/menu.scss */
+  /* line 394, ../sass/menu.scss */
   .header #site-main-menu .responsive-open .dropdown-toggle {
     font-weight: bold;
   }
-  /* line 394, ../sass/menu.scss */
+  /* line 397, ../sass/menu.scss */
   .header #site-main-menu .responsive-open .dropdown-menu {
     display: block;
   }
-  /* line 397, ../sass/menu.scss */
+  /* line 400, ../sass/menu.scss */
   .header #site-main-menu .responsive-open .caret:after {
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 8px solid #fff;
-    border-bottom: none;
-    margin-top: 11px;
+    transform: rotate(134deg);
   }
 
-  /* line 406, ../sass/menu.scss */
+  /* line 405, ../sass/menu.scss */
   .responsive-hamburger-open #site-main-menu {
     right: 0;
   }
