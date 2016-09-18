@@ -92,19 +92,11 @@
 			float: left;
 		}
 	}
-	.pane-bean-social-links-new, .pane-bean-logos-hebrew-block, .pane-bean-logos-english-block{
-		float: left;
-		.field-name-field-social-icons > .field-items > .field-item{
-			float: right;
-			margin-left: 0;
-			margin-right: 27px;
-		}
-	}
 }
 
 /********** responsive menu **********/
 
-@include res(s-m){
+@include res(menu){
 	.header #site-main-menu{
 	    margin-left: 0;
 	    li{	
