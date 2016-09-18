@@ -1424,10 +1424,14 @@ table{
 	}
 }
 
-.view-person-ct-view.view-display-id-panel_pane_2 .node-title-teaser-content-type:hover{
-	background: url("../images/more-white-right.png") no-repeat scroll right 10px center;
-	@include bg-main-color;
+.node-title-teaser-content-type{
+	background-color: #fff!important;
+	&:hover{
+		background: url("../images/more-white-right.png") no-repeat scroll right 10px center;
+		@include bg-main-color;		
+	}
 }
+
 
 .gradient{
 	position: absolute;
@@ -1552,6 +1556,17 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 					font-size: 27px;
 					font-weight: bold;
 				}
+			}
+			.button{
+  				font-size: 14px;
+  				padding: 5px 12px;
+    			margin: 22px 0 0 0;
+    			@include bg-main-color;
+    			border-radius: 15px;
+    			float: left;
+    			a{
+    				color: #fff;
+    			}
 			}
 		}
 		.slide-right-ct {

@@ -507,6 +507,14 @@ img.panopoly-image-full{
 	}
 }
 
+.teaser-row .ticket {
+  @include bg-main-color;
+  margin-left: 10px;
+  padding: 4px 13px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
 .header {
 	#site-main-menu {
 		color: $white;
@@ -1060,7 +1068,7 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 	width: 100%;
 }
 .navbar .navbar-brand {
-	margin: 9px 5px 0 30px;
+	margin: 6px 5px 0 30px;
 	overflow: hidden;
 	padding: 0;
 	@include res(s-m){
@@ -1226,33 +1234,16 @@ div[id^="panels-ipe-paneid-22"] > * select {
 			height: 100%;
 	}
 	.pane-bundle-gallery{
-		.custom-slideshow{
+		/*.custom-slideshow, li{
 			height: 1024px!important;
-		}
+		}*/
 		.custom-slideshow li img{
 			width: 100%;
 			height: auto;
 			max-width: none;
 		}
-		li{
-			height: 1024px!important;
-		}
-		.slider-readmore{
-			border-radius: 15px;
-			margin-top: 20px;
-		}
-		.slider-title{
-			font-size: 3rem;
-			font-weight: normal;
-		}
-		.pinch{
-			width: 100%;
-			left: 0;
-			padding: 0;
-			text-shadow: -3px -3px 2px rgba(150, 150, 150, 1);
-			.wrapper{
-				@include width;
-			}
+		.custom-slideshow{
+			overflow: hidden;
 		}
 	}
 	.field-name-field-cm-festival-body{
