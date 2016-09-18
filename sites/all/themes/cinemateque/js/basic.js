@@ -54,7 +54,7 @@
         $fullscreenheight = $(window).height();
         $(".full-screen-image, .full-screen-image .wrapper-image .content").css("max-height",$screenheight);
         $(".front .full-screen-image, .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
-        $frontimage - $(".front .pane-bundle-gallery img").height();
+        $frontimage = $(".front .pane-bundle-gallery img").height();
         $(".front .pane-bundle-gallery .custom-slideshow, .front .pane-bundle-gallery li").css("height",$frontimage);
 
         $(window).resize(function() {
