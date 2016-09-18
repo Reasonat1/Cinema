@@ -2,14 +2,18 @@
 
 .hamburger {
 	color: #fff;
+	min-height: 100%;
 	.modal-dialog {
 		width: 100%;
 		margin: 0;
+		min-height: 100%;
 	}
 	.modal-content{
-		padding: 50px 0 0;
-		background-color: $mine_shaft;
+		padding: 0 0 0;
 		opacity: 0.96;
+		min-height: 100%;
+		background-color: #262626;
+		border: none;
 		.close{
 			position: absolute;
 			top: 20px;
@@ -49,6 +53,12 @@
 #hamburger-menu{
 	.col-md-12{
 		padding: 0;
+	}
+	.radix-layouts-column1, .radix-layouts-column2{
+		display: none;
+	}
+	.radix-layouts-footer{
+		padding: 24px 70px;
 	}
 	/*
 	.pane-my-backend-festival-menu-block {
@@ -98,7 +108,8 @@
 	}*/
 	.pane-menu-menu-site-main-menu {
 		width: 100%;
-		padding: 0 70px;
+		padding: 50px 70px 0;
+		background-color: $mine_shaft;
 		h2 {
 			display: none;
 		}
@@ -141,6 +152,7 @@
 					font-size: 16px;
 					color: $white;
 					padding-right: 25px;
+					line-height: 24px;
 					&:hover {
 						background: none;
 					}
@@ -156,20 +168,25 @@
 		padding-right: 70px;
 		width: 100%;
 		color: #fff;
-		background-color: #262626;
 		padding-top: 30px;
 		clear: left;
 		overflow: hidden;
 		.field-name-field-content-info > .field-items > .field-item{
-			padding: 0 15px;
+			padding: 0 15px 0 0;
 			position: relative;
 			border: none;
-			width: 25%;
+			width: 22.75%;
+			margin-right: 3%;
 			margin-bottom: 27px;
 			float: left;
 			.field-name-field-info-icon{
 				position: absolute;
-				left: -30px;
+				left: -50px;
+				width: 35px;
+				height: 25px;
+				img{
+					float: right;
+				}
 			}
 			.field-name-field-label{
 				font-weight: bold;
@@ -186,7 +203,12 @@
     			font-variant: 12px;
 				padding-right: 30px;
 				p{
-					line-height: 16px;
+					line-height: 25px;
+					margin: 0;
+					@include res(l){
+						line-height: 18px;
+						font-size: 12px;
+					}
 				}
 				a{
 					color: #fff;
@@ -194,10 +216,12 @@
 			}
 		}
 	}
+	.field-name-field-content-info > .field-items > .field-item:last-child{
+		margin-right: 0;
+	}
 	.pane-webform-client-block-19, .pane-webform-client-block-3322{
 		clear: both;
 		position: relative;
-		background-color: #262626;
 		padding-bottom: 50px;
 		width: 50%;
 		float: left;
@@ -248,11 +272,8 @@
     		color: #fff;
 		}
 		.webform-component--approve-recieving-e-mail{
-			position: absolute;
-			bottom: -10px;
 			width: 100%;
 			label{
-				top: 20px;
 				position: relative;
 				font-size: 12px;
 				color: #fff!important;
@@ -284,10 +305,12 @@
 		}
 	}
 	.pane-bean-social-links-new, .pane-bean-logos-hebrew-block, .pane-bean-logos-english-block{
-		float: right;
-		.field-name-field-social-icons > .field-items > .field-item{
-			float: left;
-			margin-left: 27px;
+		.field-name-field-social-icons > .field-items{
+			text-align: center;
+			> .field-item{
+				display: inline-block;
+				margin: 0 13px;
+			}
 		}
 	}
 	.pane-bean-social-links-new{
@@ -307,7 +330,7 @@
 
 .navbar-toggle{
 	display: block;
-	@include res(s-m){
+	@include res(menu){
 		display: none;
 	}
 }
@@ -340,7 +363,7 @@
 
 /********** responsive menu **********/
 
-@include res(s-m){
+@include res(menu){
 	.responsive-hamburger{
 		display: block;
 		cursor: pointer;
@@ -362,7 +385,7 @@
 	    	border-bottom: 1px solid #fff;
 	    	a{
 	    		white-space: unset;
-	    		padding: 15px 10px!important;
+	    		padding: 15px 3%!important;
 	    	}
 	    	.caret{
 	    		display: block;
@@ -379,7 +402,7 @@
     				float: right;
     				height: 12px;
     				width: 12px;
-    				margin: 5px 4px;
+    				margin: 5px 0px;
                 }
             }
 	    	.dropdown-menu{

@@ -77,10 +77,16 @@
 	&.header-right{
 		> li {
 			display: inline-block;
-			padding-left: 15px;
-			padding-right: 15px;
+			padding-left: 0px;
+			padding-right: 30px;
 			padding-top: 12px;
 			transition: all 0.5s ease 0s;
+			@include res(s-m){
+				padding-right: 15px;
+			}
+			@include res(menu){
+				float: right;
+			}
 		}
 		i{
 			color: #fff;
@@ -271,7 +277,7 @@
 			width: 20%!important;
 			margin-right: 0px!important;
 			@include res(s-m){
-				widows: 100%;
+				width: 100%!important;
 			}
 			p{
 				margin: 5px 0 0 0;
@@ -285,6 +291,7 @@
 			width: 18%;
 			@include res(s-m){
 				width: 100%;
+				margin: 3px 0;
 			}
 			input {
 				@include bg-second-color;
@@ -377,6 +384,9 @@
 			@include res(s-m){
 				width: 100%;
 				text-align: center;
+				p{
+					padding: 5px 0;
+				}
 			}
 		}
 		.design-development{
@@ -386,6 +396,7 @@
 				text-align: center;
 				p{
 					text-align: center;
+					padding: 5px 0;
 				}
 			}
 		}
@@ -465,6 +476,10 @@ img.panopoly-image-full{
 	}
 }
 
+.navbar-collapse{
+	padding: 0;
+}
+
 .admin-menu {
 	#header {
 		top: 29px;
@@ -476,7 +491,7 @@ img.panopoly-image-full{
 
 .navbar-default{
 	background-color: transparent;
-	@include res(s-m){
+	@include res(menu){
 		padding: 0 3%;
 	}
 }
@@ -485,7 +500,7 @@ img.panopoly-image-full{
 	position: relative;
 	z-index: 200;
 	float: left;
-	@include res(s-m){
+	@include res(menu){
 		float: right;
 	}
 }
@@ -498,7 +513,7 @@ img.panopoly-image-full{
 	width: 100%;
 	transition: all 0.5s ease-out;
 	z-index: 99;
-	@include res(s-m){
+	@include res(menu){
 		z-index: 400;
 	}
 	.container-fluid {
@@ -562,16 +577,16 @@ img.panopoly-image-full{
 	.header-right{
 		width: auto;
 		float: right;
-		@include res(s-m){
+		@include res(menu){
 			padding: 0;
 			float: left;
-			li{
-				padding-left: 0;
-				padding-right: 0;
-				margin-right: 10px;
-				float: right;
-				&.shopping-cart, &#da11y-plugin{
-					display: none;
+			@include res(s-m){
+				li{
+					margin-right: 10px;
+					float: right;
+						&.shopping-cart, &#da11y-plugin{
+							display: none;
+						}
 				}
 			}
 		}
@@ -1023,6 +1038,12 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 		display: inline-block;
 		margin: 0 10px;
 	}
+	.field-item:nth-child(1){
+		@include res(s-m){
+			width: 100%;
+			margin: 0 0 5px 0;
+		}
+	}
 }
 
 /****   slide changes   ************/
@@ -1087,7 +1108,10 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 	overflow: hidden;
 	padding: 0;
 	@include res(s-m){
-		margin: 9px 30px 0 5px;
+		margin: 10px 30px 0 5px!important;
+	}
+	@include res(menu){
+		margin: 6px 30px 0 5px;
 	}
 }
 .navbar-nav > li {

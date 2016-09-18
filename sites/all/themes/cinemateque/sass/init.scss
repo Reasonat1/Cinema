@@ -144,4 +144,7 @@ $color_mine_shaft_approx: #312f2f;
   @if $media == s-m-l {
     @media (max-width: 1095px) { @content; }
   }
+  @if $media == menu {
+    @media (max-width: 960px) { @content; }
+  }
 }
