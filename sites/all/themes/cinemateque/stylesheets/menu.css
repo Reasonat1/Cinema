@@ -503,24 +503,43 @@
   margin-top: 0;
   overflow-y: scroll;
   position: fixed !important;
+  overflow-y: scroll;
   right: -100%;
   top: 45px;
+  width: 100%;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
+  padding: 0;
 }
-/* line 398, ../sass/menu.scss */
+/* line 401, ../sass/menu.scss */
 .header #site-main-menu li {
   text-align: left;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.9) !important;
   border-bottom: 1px solid #fff;
 }
-/* line 403, ../sass/menu.scss */
+/* line 406, ../sass/menu.scss */
 .header #site-main-menu li a {
   white-space: unset;
   padding: 15px 3% !important;
 }
-/* line 407, ../sass/menu.scss */
+/* line 61, ../sass/init.scss */
+.domain-1 .header #site-main-menu li ul li, .header #site-main-menu li ul li.domain-1 .header #site-main-menu li ul li {
+  background-color: #e41145 !important;
+}
+/* line 64, ../sass/init.scss */
+.domain-2 .header #site-main-menu li ul li {
+  background-color: #b59d70 !important;
+}
+/* line 412, ../sass/menu.scss */
+.header #site-main-menu li ul li a {
+  color: #fff;
+}
+/* line 414, ../sass/menu.scss */
+.header #site-main-menu li ul li a:hover, .header #site-main-menu li ul li a:focus {
+  background-color: transparent;
+}
+/* line 419, ../sass/menu.scss */
 .header #site-main-menu li .caret {
   display: block;
   float: right;
@@ -529,7 +548,7 @@
   margin: 0;
   width: 55px;
 }
-/* line 414, ../sass/menu.scss */
+/* line 426, ../sass/menu.scss */
 .header #site-main-menu li .caret:after {
   background: url("../images/plus.png") no-repeat;
   transition: all 0.5s;
@@ -540,27 +559,27 @@
   width: 12px;
   margin: 5px 0px;
 }
-/* line 425, ../sass/menu.scss */
+/* line 437, ../sass/menu.scss */
 .header #site-main-menu li .dropdown-menu {
   border: none;
   display: none;
   position: relative;
   width: 100%;
 }
-/* line 433, ../sass/menu.scss */
+/* line 445, ../sass/menu.scss */
 .header #site-main-menu .responsive-open .dropdown-toggle {
   font-weight: bold;
 }
-/* line 436, ../sass/menu.scss */
+/* line 448, ../sass/menu.scss */
 .header #site-main-menu .responsive-open .dropdown-menu {
   display: block;
 }
-/* line 439, ../sass/menu.scss */
+/* line 451, ../sass/menu.scss */
 .header #site-main-menu .responsive-open .caret:after {
   transform: rotate(134deg);
 }
 
-/* line 444, ../sass/menu.scss */
+/* line 457, ../sass/menu.scss */
 .responsive-hamburger-open #site-main-menu {
   right: 0;
 }

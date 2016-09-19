@@ -370,15 +370,16 @@ h2{
 		}
 	}
 	.field-item {
+		min-width: 50%;
+		padding-top: 3%;
+		@include res(s-m){
+			min-width: 25%;
+		}
 		&.even {
 			float: left;
-			width: 50%;
-			padding-top: 3%;
 		}
 		&.odd {
 			float: right;
-			padding-top: 3%;
-			width: 50%;
 		}
 	}
 }
@@ -1649,13 +1650,13 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 		display: none;
 	}	
 }
-
+/*
 @media (max-height: 320px){
 	.full-screen-image, .full-screen-image .wrapper-image .content{
 		max-height: none!important;
 	}
 }
-
+*/
 .slide-alt-title {
 	background-color: $color_mine_shaft_approx;
 	bottom: 0px;
