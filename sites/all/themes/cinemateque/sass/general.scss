@@ -109,15 +109,25 @@ h2{
 
 .table-responsive tbody tr {
 	background-color: transparent !important;
+	a{
+		color: #333!important;
+	}
 }
 
-.pane-node-field-tag, .pane-node-field-cm-article-tags {
+.pane-node-field-tag, .pane-node-field-cm-article-tags, .pane-node-field-cm-movie-tags {
 	.pane-content {
 		border-top: 5px solid $black;
 		margin-top: 100px;
 		padding-top: 20px;
 		.field-item{
-		    width: 48%;
+		    min-width: 48%;
+		    float: left;
+		    @include res(s-m){
+		    	min-width: 25%;
+		    }
+		}
+		h2{
+			line-height: 18px;
 		}
 		a{
 		    border-bottom: 1px solid;
@@ -130,9 +140,6 @@ h2{
 		    &:hover{
 		    	@include main-color;
 		    }
-		}
-		.field-item:nth-child(even){
-			float: right;
 		}
 	}
 	h2.pane-title {
@@ -370,8 +377,9 @@ h2{
 		}
 	}
 	.field-item {
-		min-width: 50%;
+		min-width: 48%;
 		padding-top: 3%;
+		float: left;
 		@include res(s-m){
 			min-width: 25%;
 		}
