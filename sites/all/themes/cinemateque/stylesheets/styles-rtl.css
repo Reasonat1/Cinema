@@ -636,76 +636,79 @@ table td, table th {
   padding-left: 25px;
   padding-right: 0;
 }
-/* line 49, ../sass/menu-rtl.scss */
-#hamburger-menu .pane-bean-main-info-hebrew {
-  clear: right;
-}
-/* line 51, ../sass/menu-rtl.scss */
+/* line 50, ../sass/menu-rtl.scss */
 #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item {
+  padding: 0 0 0 15px;
+  margin-right: 0%;
+  margin-left: 3%;
   float: right;
 }
-/* line 53, ../sass/menu-rtl.scss */
+/* line 55, ../sass/menu-rtl.scss */
 #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-info-icon {
-  right: -30px;
-  left: auto;
+  right: -50px;
+  left: 0;
 }
-/* line 57, ../sass/menu-rtl.scss */
+/* line 58, ../sass/menu-rtl.scss */
+#hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-info-icon img {
+  float: left;
+}
+/* line 62, ../sass/menu-rtl.scss */
 #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-label {
   text-align: right;
   padding-left: 30px;
   padding-right: 0;
 }
-/* line 62, ../sass/menu-rtl.scss */
+/* line 67, ../sass/menu-rtl.scss */
 #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-description {
   text-align: right;
+  padding-right: 0px;
   padding-left: 30px;
-  padding-right: 0;
 }
-/* line 69, ../sass/menu-rtl.scss */
+/* line 74, ../sass/menu-rtl.scss */
 #hamburger-menu .pane-webform-client-block-3322 {
   float: right;
 }
-/* line 71, ../sass/menu-rtl.scss */
+/* line 76, ../sass/menu-rtl.scss */
 #hamburger-menu .pane-webform-client-block-3322 .panel-panel {
   float: right;
 }
-/* line 75, ../sass/menu-rtl.scss */
+/* line 80, ../sass/menu-rtl.scss */
 #hamburger-menu .pane-webform-client-block-3322 .form-actions input {
   padding: 0 10px 0 15px;
 }
-/* line 79, ../sass/menu-rtl.scss */
+/* line 84, ../sass/menu-rtl.scss */
 #hamburger-menu .pane-webform-client-block-3322 .webform-component {
   margin-right: 0px;
   margin-left: 8px;
 }
-/* line 84, ../sass/menu-rtl.scss */
+/* line 89, ../sass/menu-rtl.scss */
 #hamburger-menu .pane-webform-client-block-3322 .panel-panel:nth-child(2) span {
   float: right;
 }
-/* line 88, ../sass/menu-rtl.scss */
+/* line 93, ../sass/menu-rtl.scss */
 #hamburger-menu .pane-webform-client-block-3322 .pane-block-8 {
   float: left;
 }
-/* line 91, ../sass/menu-rtl.scss */
+/* line 96, ../sass/menu-rtl.scss */
 #hamburger-menu .pane-webform-client-block-3322 .pane-custom.pane-1 {
   float: left;
 }
 
 /********** responsive menu **********/
 @media (max-width: 960px) {
-  /* line 100, ../sass/menu-rtl.scss */
+  /* line 105, ../sass/menu-rtl.scss */
   .header #site-main-menu {
     margin-left: 0;
   }
-  /* line 102, ../sass/menu-rtl.scss */
+  /* line 107, ../sass/menu-rtl.scss */
   .header #site-main-menu li {
     text-align: right;
   }
-  /* line 104, ../sass/menu-rtl.scss */
+  /* line 109, ../sass/menu-rtl.scss */
   .header #site-main-menu li .caret {
     float: left;
   }
-  /* line 106, ../sass/menu-rtl.scss */
+  /* line 111, ../sass/menu-rtl.scss */
   .header #site-main-menu li .caret:after {
     float: left;
   }

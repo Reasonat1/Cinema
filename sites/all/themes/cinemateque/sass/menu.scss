@@ -7,13 +7,15 @@
 		width: 100%;
 		margin: 0;
 		min-height: 100%;
+		background-color: #262626;
 	}
 	.modal-content{
 		padding: 0 0 0;
 		opacity: 0.96;
 		min-height: 100%;
-		background-color: #262626;
 		border: none;
+		background-color: #262626;
+		box-shadow: none;
 		.close{
 			position: absolute;
 			top: 20px;
@@ -59,6 +61,9 @@
 	}
 	.radix-layouts-footer{
 		padding: 24px 70px;
+		.cps-region-inner{
+			text-align: center;
+		}
 	}
 	/*
 	.pane-my-backend-festival-menu-block {
@@ -220,7 +225,7 @@
 		}
 	}
 	.field-name-field-content-info > .field-items > .field-item:last-child{
-		margin-right: 0;
+		margin: 0 !important;
 	}
 	.pane-webform-client-block-19, .pane-webform-client-block-3322{
 		clear: both;
@@ -308,6 +313,7 @@
 		}
 	}
 	.pane-bean-social-links-new, .pane-bean-logos-hebrew-block, .pane-bean-logos-english-block{
+		display: inline-block;
 		.field-name-field-social-icons > .field-items{
 			text-align: center;
 			> .field-item{

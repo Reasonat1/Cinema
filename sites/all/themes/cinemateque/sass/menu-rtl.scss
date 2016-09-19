@@ -47,12 +47,17 @@
 		}
 	}
 	.pane-bean-main-info-hebrew{
-		clear: right;
 		.field-name-field-content-info > .field-items > .field-item{
+			padding: 0 0 0 15px;
+			margin-right: 0%;
+			margin-left: 3%;
 			float: right;
 			.field-name-field-info-icon{
-				right: -30px;
-				left: auto;
+				right: -50px;
+				left: 0;
+				img{
+					float: left;
+				}
 			}
 			.field-name-field-label{
     			text-align: right;
@@ -61,8 +66,8 @@
 			}
 			.field-name-field-description{
     			text-align: right;
+				padding-right: 0px;
 				padding-left: 30px;
-				padding-right: 0;
 			}
 		}
 	}
