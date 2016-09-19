@@ -516,8 +516,9 @@
 .responsive-menu-wrapper #site-main-menu {
   padding: 0;
   margin: 0;
+  width: 100%;
 }
-/* line 405, ../sass/menu.scss */
+/* line 406, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li {
   text-align: left;
   width: 100%;
@@ -526,7 +527,7 @@
   margin: 0;
   padding: 0;
 }
-/* line 412, ../sass/menu.scss */
+/* line 413, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li a {
   white-space: unset;
   padding: 15px 3% !important;
@@ -534,7 +535,7 @@
   color: #fff;
   background-color: transparent !important;
 }
-/* line 418, ../sass/menu.scss */
+/* line 419, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li a:hover, .responsive-menu-wrapper #site-main-menu li a:focus {
   background-color: transparent !important;
 }
@@ -546,11 +547,11 @@
 .domain-2 .responsive-menu-wrapper #site-main-menu li ul li {
   background-color: #b59d70 !important;
 }
-/* line 424, ../sass/menu.scss */
+/* line 425, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li ul li a {
   color: #fff;
 }
-/* line 428, ../sass/menu.scss */
+/* line 429, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li .caret {
   display: block;
   float: right;
@@ -559,7 +560,7 @@
   margin: 0;
   width: 55px;
 }
-/* line 435, ../sass/menu.scss */
+/* line 436, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li .caret:after {
   background: url("../images/plus.png") no-repeat;
   transition: all 0.5s;
@@ -570,7 +571,7 @@
   width: 12px;
   margin: 5px 0px;
 }
-/* line 446, ../sass/menu.scss */
+/* line 447, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li .dropdown-menu {
   border: none;
   display: none;
@@ -578,20 +579,20 @@
   width: 100%;
 }
 
-/* line 458, ../sass/menu.scss */
+/* line 459, ../sass/menu.scss */
 .responsive-menu-wrapper .responsive-open .dropdown-toggle {
   font-weight: bold;
 }
-/* line 461, ../sass/menu.scss */
+/* line 462, ../sass/menu.scss */
 .responsive-menu-wrapper .responsive-open .dropdown-menu {
   display: block !important;
 }
-/* line 464, ../sass/menu.scss */
+/* line 465, ../sass/menu.scss */
 .responsive-menu-wrapper .responsive-open .caret:after {
   transform: rotate(134deg);
 }
 
-/* line 470, ../sass/menu.scss */
+/* line 471, ../sass/menu.scss */
 .responsive-hamburger-open .responsive-menu-wrapper {
   right: 0;
 }
