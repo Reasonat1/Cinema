@@ -168,6 +168,33 @@
 	position: relative;
 }
 
+/*****  owl carusel *******/
+.owl-next{
+	background: url("../images/more-red-left.png") no-repeat scroll center center;
+    font-size: 0;
+    height: 19px;
+    left: -30px;
+    position: absolute;
+    top: 33%;
+    width: 10px;	
+}
+.owl-carousel{
+	width: calc(100% - 100px)!important;
+	margin: 0 auto;
+}
+.owl-prev{
+	background: url("../images/more-red-right.png") no-repeat scroll center center;
+    font-size: 0;
+    height: 19px;
+    right: -30px;
+    position: absolute;
+    top: 33%;
+    width: 10px;
+}
+.view-footer-credit-slogan-for-mobile{
+	margin-bottom: 30px;
+}
+
 .footer {
 	.pane-bean-main-info-english, .pane-bean-main-info-hebrew{
 		/*background: url("../images/info-bg.png") no-repeat scroll center center / cover;*/
@@ -526,10 +553,7 @@ img.panopoly-image-full{
 	top: 0;
 	width: 100%;
 	transition: all 0.5s ease-out;
-	z-index: 99;
-	@include res(menu){
-		z-index: 400;
-	}
+	z-index: 400;
 	.container-fluid {
 		padding: 0;
 	}
