@@ -53,16 +53,13 @@
         $screenheight = $(window).height()-50;
         $fullscreenheight = $(window).height();
         $(".full-screen-image, .full-screen-image .wrapper-image .content").css("max-height",$screenheight);
-        $(".front .full-screen-image, .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
-        $frontimage = $(".front .pane-bundle-gallery img").height();
-        $(".front .pane-bundle-gallery li").css("height",$frontimage);
+        $(".front .full-screen-image, .front .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
 
         $(window).resize(function() {
             $screenheight = $(window).height()-50;
             $fullscreenheight = $(window).height();
             $(".full-screen-image, .wrapper-image .content").css("max-height",$screenheight);
-            $(".front .full-screen-image, .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
-
+            $(".front .full-screen-image, .front .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
         });
 
         $(".header-right .search span").click(function() {

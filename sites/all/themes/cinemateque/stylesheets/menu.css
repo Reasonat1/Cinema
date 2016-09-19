@@ -24,16 +24,18 @@
   width: 100%;
   margin: 0;
   min-height: 100%;
+  background-color: #262626;
 }
-/* line 11, ../sass/menu.scss */
+/* line 12, ../sass/menu.scss */
 .hamburger .modal-content {
   padding: 0 0 0;
   opacity: 0.96;
   min-height: 100%;
-  background-color: #262626;
   border: none;
+  background-color: #262626;
+  box-shadow: none;
 }
-/* line 17, ../sass/menu.scss */
+/* line 19, ../sass/menu.scss */
 .hamburger .modal-content .close {
   position: absolute;
   top: 20px;
@@ -53,35 +55,35 @@
 .domain-2 .hamburger .modal-content .close {
   background-color: #b59d70 !important;
 }
-/* line 30, ../sass/menu.scss */
+/* line 32, ../sass/menu.scss */
 .hamburger .modal-body {
   padding: 0;
   margin: 0;
 }
-/* line 33, ../sass/menu.scss */
+/* line 35, ../sass/menu.scss */
 .hamburger .modal-body .close {
   float: left;
   padding: 22px;
 }
-/* line 37, ../sass/menu.scss */
+/* line 39, ../sass/menu.scss */
 .hamburger .modal-body .pane-bean-infomation-block-view .handle {
   display: none;
 }
-/* line 40, ../sass/menu.scss */
+/* line 42, ../sass/menu.scss */
 .hamburger .modal-body .view-id-bean_infomation_block_view .form-submit {
   display: none;
 }
-/* line 43, ../sass/menu.scss */
+/* line 45, ../sass/menu.scss */
 .hamburger .modal-body .popup-loader {
   margin: 0 auto;
   display: block;
 }
-/* line 48, ../sass/menu.scss */
+/* line 50, ../sass/menu.scss */
 .hamburger .panels-flexible-region.popup.region {
   width: 100%;
 }
 
-/* line 53, ../sass/menu.scss */
+/* line 55, ../sass/menu.scss */
 #hamburger-menu {
   /*
   .pane-my-backend-festival-menu-block {
@@ -130,29 +132,33 @@
   	}
   }*/
 }
-/* line 54, ../sass/menu.scss */
+/* line 56, ../sass/menu.scss */
 #hamburger-menu .col-md-12 {
   padding: 0;
 }
-/* line 57, ../sass/menu.scss */
+/* line 59, ../sass/menu.scss */
 #hamburger-menu .radix-layouts-column1, #hamburger-menu .radix-layouts-column2 {
   display: none;
 }
-/* line 60, ../sass/menu.scss */
+/* line 62, ../sass/menu.scss */
 #hamburger-menu .radix-layouts-footer {
   padding: 24px 70px;
 }
-/* line 109, ../sass/menu.scss */
+/* line 64, ../sass/menu.scss */
+#hamburger-menu .radix-layouts-footer .cps-region-inner {
+  text-align: center;
+}
+/* line 114, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu {
   width: 100%;
   padding: 50px 70px 0;
   background-color: #323232;
 }
-/* line 113, ../sass/menu.scss */
+/* line 118, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu h2 {
   display: none;
 }
-/* line 116, ../sass/menu.scss */
+/* line 121, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed {
   float: left;
   padding: 10px 0px 0;
@@ -160,29 +166,29 @@
   margin-right: 3%;
   box-sizing: border-box;
 }
-/* line 122, ../sass/menu.scss */
+/* line 127, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded.last, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed.last {
   margin-right: 0;
 }
-/* line 125, ../sass/menu.scss */
+/* line 130, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded > a, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed > a {
   font-size: 18px;
   font-weight: bold;
 }
-/* line 129, ../sass/menu.scss */
+/* line 134, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded a, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed a {
   color: #ffffff;
   padding: 10px 0;
 }
-/* line 132, ../sass/menu.scss */
+/* line 137, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded a:hover, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed a:hover {
   background: none;
 }
-/* line 135, ../sass/menu.scss */
+/* line 140, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded a:active, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed a:active {
   background: none;
 }
-/* line 139, ../sass/menu.scss */
+/* line 144, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed li {
   border-bottom: 2px solid #5c5c5c;
   line-height: 40px;
@@ -192,11 +198,11 @@
   background-size: 20px auto;
   width: 100%;
 }
-/* line 147, ../sass/menu.scss */
+/* line 152, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li.last, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed li.last {
   border-bottom: none;
 }
-/* line 150, ../sass/menu.scss */
+/* line 155, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li a, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed li a {
   background: transparent none repeat scroll 0 0;
   font-size: 16px;
@@ -204,15 +210,15 @@
   padding-right: 25px;
   line-height: 24px;
 }
-/* line 156, ../sass/menu.scss */
+/* line 161, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li a:hover, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed li a:hover {
   background: none;
 }
-/* line 159, ../sass/menu.scss */
+/* line 164, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li a:active, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed li a:active {
   background: none;
 }
-/* line 166, ../sass/menu.scss */
+/* line 171, ../sass/menu.scss */
 #hamburger-menu .pane-bean-main-info-english, #hamburger-menu .pane-bean-main-info-hebrew {
   padding-left: 70px;
   padding-right: 70px;
@@ -222,11 +228,11 @@
   clear: left;
   overflow: hidden;
 }
-/* line 174, ../sass/menu.scss */
+/* line 179, ../sass/menu.scss */
 #hamburger-menu .pane-bean-main-info-english .field-name-field-background-image, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-background-image {
   display: none;
 }
-/* line 177, ../sass/menu.scss */
+/* line 182, ../sass/menu.scss */
 #hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item {
   padding: 0 15px 0 0;
   position: relative;
@@ -236,18 +242,18 @@
   margin-bottom: 27px;
   float: left;
 }
-/* line 185, ../sass/menu.scss */
+/* line 190, ../sass/menu.scss */
 #hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-info-icon, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-info-icon {
   position: absolute;
   left: -50px;
   width: 35px;
   height: 25px;
 }
-/* line 190, ../sass/menu.scss */
+/* line 195, ../sass/menu.scss */
 #hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-info-icon img, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-info-icon img {
   float: right;
 }
-/* line 194, ../sass/menu.scss */
+/* line 199, ../sass/menu.scss */
 #hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-label, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-label {
   font-weight: bold;
   font-size: 12px;
@@ -257,34 +263,34 @@
   padding-bottom: 13px;
   padding-right: 30px;
 }
-/* line 203, ../sass/menu.scss */
+/* line 208, ../sass/menu.scss */
 #hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-description, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-description {
   line-height: 1.2;
   text-align: left;
   font-variant: 12px;
   padding-right: 30px;
 }
-/* line 208, ../sass/menu.scss */
+/* line 213, ../sass/menu.scss */
 #hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-description p, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-description p {
   line-height: 25px;
   margin: 0;
 }
 @media (min-width: 768px) and (max-width: 1095px) {
-  /* line 208, ../sass/menu.scss */
+  /* line 213, ../sass/menu.scss */
   #hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-description p, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-description p {
     line-height: 18px;
     font-size: 12px;
   }
 }
-/* line 216, ../sass/menu.scss */
+/* line 221, ../sass/menu.scss */
 #hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-description a, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-description a {
   color: #fff;
 }
-/* line 222, ../sass/menu.scss */
+/* line 227, ../sass/menu.scss */
 #hamburger-menu .field-name-field-content-info > .field-items > .field-item:last-child {
-  margin-right: 0;
+  margin: 0 !important;
 }
-/* line 225, ../sass/menu.scss */
+/* line 230, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19, #hamburger-menu .pane-webform-client-block-3322 {
   clear: both;
   position: relative;
@@ -292,11 +298,11 @@
   width: 50%;
   float: left;
 }
-/* line 231, ../sass/menu.scss */
+/* line 236, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .pane-title, #hamburger-menu .pane-webform-client-block-3322 .pane-title {
   color: #fff;
 }
-/* line 234, ../sass/menu.scss */
+/* line 239, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 input, #hamburger-menu .pane-webform-client-block-3322 input {
   background-color: #000;
   border: none;
@@ -304,24 +310,24 @@
   box-sizing: border-box;
   height: 30px;
 }
-/* line 241, ../sass/menu.scss */
+/* line 246, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 label, #hamburger-menu .pane-webform-client-block-3322 label {
   color: #999;
   font-size: 17px;
   font-weight: normal;
   padding: 3px 7px;
 }
-/* line 247, ../sass/menu.scss */
+/* line 252, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .panel-panel, #hamburger-menu .pane-webform-client-block-3322 .panel-panel {
   width: 50%;
   float: left;
   padding: 0;
 }
-/* line 252, ../sass/menu.scss */
+/* line 257, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .form-actions, #hamburger-menu .pane-webform-client-block-3322 .form-actions {
   margin: 0;
 }
-/* line 254, ../sass/menu.scss */
+/* line 259, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .form-actions input, #hamburger-menu .pane-webform-client-block-3322 .form-actions input {
   margin: 0;
   background-color: #fff !important;
@@ -335,7 +341,7 @@
 .domain-2 #hamburger-menu .pane-webform-client-block-19 .form-actions input, .domain-2 #hamburger-menu .pane-webform-client-block-3322 .form-actions input {
   color: #b59d70 !important;
 }
-/* line 259, ../sass/menu.scss */
+/* line 264, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .form-actions input:hover, #hamburger-menu .pane-webform-client-block-3322 .form-actions input:hover {
   background-color: #fff !important;
 }
@@ -347,41 +353,41 @@
 .domain-2 #hamburger-menu .pane-webform-client-block-19 .form-actions input:hover, .domain-2 #hamburger-menu .pane-webform-client-block-3322 .form-actions input:hover {
   color: #b59d70 !important;
 }
-/* line 265, ../sass/menu.scss */
+/* line 270, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .webform-component, #hamburger-menu .pane-webform-client-block-3322 .webform-component {
   margin-right: 8px;
 }
-/* line 267, ../sass/menu.scss */
+/* line 272, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .webform-component input, #hamburger-menu .pane-webform-client-block-3322 .webform-component input {
   border-radius: 0 !important;
 }
-/* line 271, ../sass/menu.scss */
+/* line 276, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .webform-component--join-our-newsletter, #hamburger-menu .pane-webform-client-block-3322 .webform-component--join-our-newsletter {
   font-size: 1.25rem;
   font-weight: 600;
   width: 100%;
   color: #fff;
 }
-/* line 277, ../sass/menu.scss */
+/* line 282, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .webform-component--approve-recieving-e-mail, #hamburger-menu .pane-webform-client-block-3322 .webform-component--approve-recieving-e-mail {
   width: 100%;
 }
-/* line 279, ../sass/menu.scss */
+/* line 284, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .webform-component--approve-recieving-e-mail label, #hamburger-menu .pane-webform-client-block-3322 .webform-component--approve-recieving-e-mail label {
   position: relative;
   font-size: 12px;
   color: #fff !important;
 }
-/* line 284, ../sass/menu.scss */
+/* line 289, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .webform-component--approve-recieving-e-mail input, #hamburger-menu .pane-webform-client-block-3322 .webform-component--approve-recieving-e-mail input {
   height: auto;
 }
-/* line 289, ../sass/menu.scss */
+/* line 294, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .panel-panel:nth-child(2) span, #hamburger-menu .pane-webform-client-block-3322 .panel-panel:nth-child(2) span {
   display: inline-block;
   float: left;
 }
-/* line 294, ../sass/menu.scss */
+/* line 299, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .pane-block-8, #hamburger-menu .pane-webform-client-block-3322 .pane-block-8 {
   margin-top: 20px;
   float: right;
@@ -394,26 +400,30 @@
 .domain-2 #hamburger-menu .pane-webform-client-block-19 .pane-block-8 i, .domain-2 #hamburger-menu .pane-webform-client-block-3322 .pane-block-8 i {
   color: #b59d70 !important;
 }
-/* line 301, ../sass/menu.scss */
+/* line 306, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .pane-custom.pane-1, #hamburger-menu .pane-webform-client-block-3322 .pane-custom.pane-1 {
   float: right;
   margin: 0 16px;
 }
-/* line 304, ../sass/menu.scss */
+/* line 309, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .pane-custom.pane-1 img, #hamburger-menu .pane-webform-client-block-3322 .pane-custom.pane-1 img {
   height: 55px;
   margin-top: 31px;
 }
-/* line 311, ../sass/menu.scss */
+/* line 315, ../sass/menu.scss */
+#hamburger-menu .pane-bean-social-links-new, #hamburger-menu .pane-bean-logos-hebrew-block, #hamburger-menu .pane-bean-logos-english-block {
+  display: inline-block;
+}
+/* line 317, ../sass/menu.scss */
 #hamburger-menu .pane-bean-social-links-new .field-name-field-social-icons > .field-items, #hamburger-menu .pane-bean-logos-hebrew-block .field-name-field-social-icons > .field-items, #hamburger-menu .pane-bean-logos-english-block .field-name-field-social-icons > .field-items {
   text-align: center;
 }
-/* line 313, ../sass/menu.scss */
+/* line 319, ../sass/menu.scss */
 #hamburger-menu .pane-bean-social-links-new .field-name-field-social-icons > .field-items > .field-item, #hamburger-menu .pane-bean-logos-hebrew-block .field-name-field-social-icons > .field-items > .field-item, #hamburger-menu .pane-bean-logos-english-block .field-name-field-social-icons > .field-items > .field-item {
   display: inline-block;
   margin: 0 13px;
 }
-/* line 320, ../sass/menu.scss */
+/* line 326, ../sass/menu.scss */
 #hamburger-menu .pane-bean-social-links-new img {
   border-radius: 50%;
 }
@@ -427,23 +437,23 @@
 }
 
 /******  hamburger  *********/
-/* line 330, ../sass/menu.scss */
+/* line 336, ../sass/menu.scss */
 .responsive-hamburger {
   display: none;
 }
 
-/* line 334, ../sass/menu.scss */
+/* line 340, ../sass/menu.scss */
 .navbar-toggle {
   display: block;
 }
 @media (max-width: 960px) {
-  /* line 334, ../sass/menu.scss */
+  /* line 340, ../sass/menu.scss */
   .navbar-toggle {
     display: none;
   }
 }
 
-/* line 341, ../sass/menu.scss */
+/* line 347, ../sass/menu.scss */
 .navbar-header .hambruger {
   float: left;
   border: medium none;
@@ -454,12 +464,12 @@
   padding: 0;
   border-radius: 0;
 }
-/* line 350, ../sass/menu.scss */
+/* line 356, ../sass/menu.scss */
 .navbar-header .hambruger.navbar-toggle {
   margin-left: 30px;
 }
 
-/* line 355, ../sass/menu.scss */
+/* line 361, ../sass/menu.scss */
 .navbar-header .hambruger .icon-bar {
   width: 34px;
   background-color: #fff !important;
@@ -467,25 +477,25 @@
   height: 2px;
 }
 
-/* line 362, ../sass/menu.scss */
+/* line 368, ../sass/menu.scss */
 .navbar-header .hambruger .icon-bar + .icon-bar {
   margin-top: 9px;
 }
 
 /********** responsive menu **********/
 @media (max-width: 960px) {
-  /* line 370, ../sass/menu.scss */
+  /* line 376, ../sass/menu.scss */
   .responsive-hamburger {
     display: block;
     cursor: pointer;
   }
 
-  /* line 374, ../sass/menu.scss */
+  /* line 380, ../sass/menu.scss */
   #main-menu {
     display: none;
   }
 }
-/* line 379, ../sass/menu.scss */
+/* line 385, ../sass/menu.scss */
 .header #site-main-menu {
   display: block !important;
   margin-right: 0;
@@ -497,19 +507,19 @@
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
 }
-/* line 389, ../sass/menu.scss */
+/* line 395, ../sass/menu.scss */
 .header #site-main-menu li {
   text-align: left;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.9) !important;
   border-bottom: 1px solid #fff;
 }
-/* line 394, ../sass/menu.scss */
+/* line 400, ../sass/menu.scss */
 .header #site-main-menu li a {
   white-space: unset;
   padding: 15px 3% !important;
 }
-/* line 398, ../sass/menu.scss */
+/* line 404, ../sass/menu.scss */
 .header #site-main-menu li .caret {
   display: block;
   float: right;
@@ -518,7 +528,7 @@
   margin: 0;
   width: 55px;
 }
-/* line 405, ../sass/menu.scss */
+/* line 411, ../sass/menu.scss */
 .header #site-main-menu li .caret:after {
   background: url("../images/plus.png") no-repeat;
   transition: all 0.5s;
@@ -529,27 +539,27 @@
   width: 12px;
   margin: 5px 0px;
 }
-/* line 416, ../sass/menu.scss */
+/* line 422, ../sass/menu.scss */
 .header #site-main-menu li .dropdown-menu {
   border: none;
   display: none;
   position: relative;
   width: 100%;
 }
-/* line 424, ../sass/menu.scss */
+/* line 430, ../sass/menu.scss */
 .header #site-main-menu .responsive-open .dropdown-toggle {
   font-weight: bold;
 }
-/* line 427, ../sass/menu.scss */
+/* line 433, ../sass/menu.scss */
 .header #site-main-menu .responsive-open .dropdown-menu {
   display: block;
 }
-/* line 430, ../sass/menu.scss */
+/* line 436, ../sass/menu.scss */
 .header #site-main-menu .responsive-open .caret:after {
   transform: rotate(134deg);
 }
 
-/* line 435, ../sass/menu.scss */
+/* line 441, ../sass/menu.scss */
 .responsive-hamburger-open #site-main-menu {
   right: 0;
 }
