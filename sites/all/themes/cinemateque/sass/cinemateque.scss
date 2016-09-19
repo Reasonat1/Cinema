@@ -556,6 +556,9 @@ img.panopoly-image-full{
 		@include res(s-m){
 			display: none;
 		}
+		@include res(menu){
+			width: 94%;
+		}
 		li a {
 			color: $white;
 			transition: all 0.5s ease 0s;
