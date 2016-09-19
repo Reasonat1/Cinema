@@ -119,21 +119,15 @@
 }
 
 /********** responsive menu **********/
-@media (max-width: 960px) {
-  /* line 105, ../sass/menu-rtl.scss */
-  .header #site-main-menu {
-    margin-left: 0;
-  }
-  /* line 107, ../sass/menu-rtl.scss */
-  .header #site-main-menu li {
-    text-align: right;
-  }
-  /* line 109, ../sass/menu-rtl.scss */
-  .header #site-main-menu li .caret {
-    float: left;
-  }
-  /* line 111, ../sass/menu-rtl.scss */
-  .header #site-main-menu li .caret:after {
-    float: left;
-  }
+/* line 106, ../sass/menu-rtl.scss */
+.responsive-menu-wrapper #site-main-menu li {
+  text-align: right;
+}
+/* line 108, ../sass/menu-rtl.scss */
+.responsive-menu-wrapper #site-main-menu li .caret {
+  float: left;
+}
+/* line 110, ../sass/menu-rtl.scss */
+.responsive-menu-wrapper #site-main-menu li .caret:after {
+  float: left;
 }

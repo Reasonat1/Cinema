@@ -6369,50 +6369,61 @@ div[id^="panels-ipe-paneid-22"] > * select {
   }
 }
 /* line 388, ../sass/menu.scss */
-.header #site-main-menu {
-  display: block !important;
+.responsive-menu-wrapper {
+  display: block;
   margin-right: 0;
   margin-top: 0;
   overflow-y: scroll;
-  position: fixed !important;
-  overflow-y: scroll;
+  position: fixed;
+  height: calc(100% - 44px);
   right: -100%;
   top: 45px;
   width: 100%;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
   padding: 0;
+  z-index: 500;
 }
-/* line 401, ../sass/menu.scss */
-.header #site-main-menu li {
+/* line 402, ../sass/menu.scss */
+.responsive-menu-wrapper #site-main-menu {
+  padding: 0;
+  margin: 0;
+}
+/* line 405, ../sass/menu.scss */
+.responsive-menu-wrapper #site-main-menu li {
   text-align: left;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.9) !important;
   border-bottom: 1px solid #fff;
+  margin: 0;
+  padding: 0;
 }
-/* line 406, ../sass/menu.scss */
-.header #site-main-menu li a {
+/* line 412, ../sass/menu.scss */
+.responsive-menu-wrapper #site-main-menu li a {
   white-space: unset;
   padding: 15px 3% !important;
+  line-height: 20px !important;
+  color: #fff;
+  background-color: transparent !important;
+}
+/* line 418, ../sass/menu.scss */
+.responsive-menu-wrapper #site-main-menu li a:hover, .responsive-menu-wrapper #site-main-menu li a:focus {
+  background-color: transparent !important;
 }
 /* line 61, ../sass/init.scss */
-.domain-1 .header #site-main-menu li ul li, .header #site-main-menu li ul li.domain-1 .header #site-main-menu li ul li {
+.domain-1 .responsive-menu-wrapper #site-main-menu li ul li, .responsive-menu-wrapper #site-main-menu li ul li.domain-1 .responsive-menu-wrapper #site-main-menu li ul li {
   background-color: #e41145 !important;
 }
 /* line 64, ../sass/init.scss */
-.domain-2 .header #site-main-menu li ul li {
+.domain-2 .responsive-menu-wrapper #site-main-menu li ul li {
   background-color: #b59d70 !important;
 }
-/* line 412, ../sass/menu.scss */
-.header #site-main-menu li ul li a {
+/* line 424, ../sass/menu.scss */
+.responsive-menu-wrapper #site-main-menu li ul li a {
   color: #fff;
 }
-/* line 414, ../sass/menu.scss */
-.header #site-main-menu li ul li a:hover, .header #site-main-menu li ul li a:focus {
-  background-color: transparent;
-}
-/* line 419, ../sass/menu.scss */
-.header #site-main-menu li .caret {
+/* line 428, ../sass/menu.scss */
+.responsive-menu-wrapper #site-main-menu li .caret {
   display: block;
   float: right;
   border: none;
@@ -6420,8 +6431,8 @@ div[id^="panels-ipe-paneid-22"] > * select {
   margin: 0;
   width: 55px;
 }
-/* line 426, ../sass/menu.scss */
-.header #site-main-menu li .caret:after {
+/* line 435, ../sass/menu.scss */
+.responsive-menu-wrapper #site-main-menu li .caret:after {
   background: url("../images/plus.png") no-repeat;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
@@ -6431,28 +6442,29 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: 12px;
   margin: 5px 0px;
 }
-/* line 437, ../sass/menu.scss */
-.header #site-main-menu li .dropdown-menu {
+/* line 446, ../sass/menu.scss */
+.responsive-menu-wrapper #site-main-menu li .dropdown-menu {
   border: none;
   display: none;
   position: relative;
   width: 100%;
 }
-/* line 445, ../sass/menu.scss */
-.header #site-main-menu .responsive-open .dropdown-toggle {
+
+/* line 458, ../sass/menu.scss */
+.responsive-menu-wrapper .responsive-open .dropdown-toggle {
   font-weight: bold;
 }
-/* line 448, ../sass/menu.scss */
-.header #site-main-menu .responsive-open .dropdown-menu {
-  display: block;
+/* line 461, ../sass/menu.scss */
+.responsive-menu-wrapper .responsive-open .dropdown-menu {
+  display: block !important;
 }
-/* line 451, ../sass/menu.scss */
-.header #site-main-menu .responsive-open .caret:after {
+/* line 464, ../sass/menu.scss */
+.responsive-menu-wrapper .responsive-open .caret:after {
   transform: rotate(134deg);
 }
 
-/* line 457, ../sass/menu.scss */
-.responsive-hamburger-open #site-main-menu {
+/* line 470, ../sass/menu.scss */
+.responsive-hamburger-open .responsive-menu-wrapper {
   right: 0;
 }
 

@@ -14,6 +14,11 @@
 <script type='text/javascript'>
     jQuery.noConflict();
 </script> 
+<div class="responsive-menu-wrapper">
+    <ul id="site-main-menu" class="site-custom-menu menu nav navbar-nav col-md-4">
+        <?php print render($site_main_menu); ?>
+    </ul>
+</div>
 <header id="header" class="header" role="header">
     <div class="container-fluid">
         <nav class="navbar navbar-default" role="navigation">
@@ -60,9 +65,6 @@
 				if ($main_menu): ?>
                     <ul id="main-menu" class="site-custom-menu menu nav navbar-nav col-md-4">
                         <?php print render($main_menu); ?>
-                    </ul>
-                    <ul id="site-main-menu" class="site-custom-menu menu nav navbar-nav col-md-4">
-                        <?php print render($site_main_menu); ?>
                     </ul>
                     <ul class="col-md-3 header-right">
                         <li class="search">
