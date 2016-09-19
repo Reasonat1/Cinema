@@ -174,16 +174,28 @@
 		@include bg-main-color;
 		overflow: hidden;
 		position: relative;
+		z-index: -1;
 		.pane-content{
 			@include width;
 			.field-name-field-background-image{
 				position: absolute;
 				width: 100%;
+				height: 100%;
 				left: 0;
 				top: 0;
-				img{
+				.field-items{
+					height: 100%;
 					width: 100%;
-					height: auto;
+				}
+				img{
+				  position: absolute; 
+				  top: 0; 
+				  left: 0; 
+				  right: 0; 
+				  margin: auto; 
+				  min-width: 50%;
+				  min-height: 50%;
+				  overflow-x: hidden;
 				}
 			}
 			.field-name-field-content-info{
