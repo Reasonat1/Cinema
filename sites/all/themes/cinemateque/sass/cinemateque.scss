@@ -168,32 +168,44 @@
 	position: relative;
 }
 
-/*****  owl carusel *******/
-.owl-next{
-	background: url("../images/more-red-left.png") no-repeat scroll center center;
-    font-size: 0;
-    height: 19px;
-    left: -30px;
-    position: absolute;
-    top: 33%;
-    width: 10px;	
-}
-.owl-carousel{
-	width: calc(100% - 100px)!important;
-	margin: 0 auto;
-}
-.owl-prev{
-	background: url("../images/more-red-right.png") no-repeat scroll center center;
-    font-size: 0;
-    height: 19px;
-    right: -30px;
-    position: absolute;
-    top: 33%;
-    width: 10px;
-}
+/*****  footer credit for mobile *******/
+
 .view-footer-credit-slogan-for-mobile{
 	margin-bottom: 30px;
+	.owl-next{
+		background: url("../images/more-red-left.png") no-repeat scroll center center;
+	    font-size: 0;
+	    height: 19px;
+	    left: -30px;
+	    position: absolute;
+	    top: 33%;
+	    width: 10px;	
+	}
+	.owl-carousel{
+		width: calc(100% - 100px)!important;
+		margin: 0 auto;
+	}
+	.owl-prev{
+		background: url("../images/more-red-right.png") no-repeat scroll center center;
+	    font-size: 0;
+	    height: 19px;
+	    right: -30px;
+	    position: absolute;
+	    top: 33%;
+	    width: 10px;
+	}
+	.view-footer-credit-slogan-for-mobile{
+		margin-bottom: 30px;
+	}
+
+	.owl-carousel .owl-item img{
+		max-height: 50px;
+		width: auto;
+		margin: 0 auto !important;
+	}
 }
+
+
 
 .footer {
 	.pane-bean-main-info-english, .pane-bean-main-info-hebrew{
@@ -584,7 +596,7 @@ img.panopoly-image-full{
 }
 
 .header {
-	#site-main-menu, #main-menu {
+	#main-menu {
 		color: $white;
 		transition: all 0.5s ease 0s;
 		padding: 0!important;
@@ -602,9 +614,10 @@ img.panopoly-image-full{
 			transition: all 0.5s ease 0s;
 			padding: 10px!important;
 			line-height: 20px!important;
+			background-color: transparent;
 		}
 		li li a{
-			@include bg-main-color();;
+			@include bg-main-color();
 		}
 
 	}
@@ -623,7 +636,6 @@ img.panopoly-image-full{
 			float: left;
 			@include res(s-m){
 				li{
-					margin-right: 10px;
 					float: right;
 						&.shopping-cart, &#da11y-plugin{
 							display: none;
@@ -1123,10 +1135,6 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 	transition: all 0.5s ease 0s;
 }
 
-
-#site-main-menu > li a.dropdown-toggle.active {
-	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-}
 .site-custom-menu.menu.nav.navbar-nav {
 	background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
 	margin-top: 5px;

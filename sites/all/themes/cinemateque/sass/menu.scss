@@ -385,62 +385,75 @@
 	}
 }
 
-	.header #site-main-menu{
-	    display: block !important;
-	    margin-right: 0;
-	    margin-top: 0;
-	    overflow-y: scroll;
-	    position: fixed !important;
-	    right: -100%;
-	    top: 45px;
-	    transition: all 0.5s;
-    	-webkit-transition: all 0.5s;
-	    li{	
-	    	text-align: left;
-	    	width: 100%;
-	    	background-color: rgba(0, 0, 0, 0.9) !important;
-	    	border-bottom: 1px solid #fff;
-	    	a{
-	    		white-space: unset;
-	    		padding: 15px 3%!important;
-	    	}
-	    	.caret{
-	    		display: block;
-	    		float: right;
-			    border:none;
-			    height: 27px;
-			    margin: 0;
-			    width: 55px;
-                &:after{
-			    	background: url("../images/plus.png") no-repeat;
-			    	transition: all 0.5s;
-                    -webkit-transition: all 0.5s;
-                    content: "";
-    				float: right;
-    				height: 12px;
-    				width: 12px;
-    				margin: 5px 0px;
-                }
+.header #site-main-menu{
+    display: block !important;
+    margin-right: 0;
+    margin-top: 0;
+    overflow-y: scroll;
+    position: fixed !important;
+    overflow-y: scroll; 
+    right: -100%;
+    top: 45px;
+    width: 100%;
+    transition: all 0.5s;
+   	-webkit-transition: all 0.5s;
+   	padding: 0;
+    li{	
+    	text-align: left;
+    	width: 100%;
+    	background-color: rgba(0, 0, 0, 0.9) !important;
+    	border-bottom: 1px solid #fff;
+    	a{
+    		white-space: unset;
+    		padding: 15px 3%!important;
+    	}
+    	ul li{
+    		@include bg-main-color;
+    		a{
+    			color: #fff;
+    			&:hover, &:focus{
+    				background-color: transparent;
+    			}
+    		}
+    	}
+    	.caret{
+    		display: block;
+    		float: right;
+		    border:none;
+		    height: 27px;
+		    margin: 0;
+		    width: 55px;
+            &:after{
+		    	background: url("../images/plus.png") no-repeat;
+		    	transition: all 0.5s;
+                -webkit-transition: all 0.5s;
+                content: "";
+ 				float: right;
+  				height: 12px;
+   				width: 12px;
+   				margin: 5px 0px;
             }
-	    	.dropdown-menu{
-	    		border:none;
-	    		display: none;
-	    		position: relative;
-	    		width: 100%;
-	    	}
-	    }
-	    .responsive-open{
-	    	.dropdown-toggle{
-	    		font-weight:bold;
-	    	}
-	    	.dropdown-menu{
-	    		display: block;
-	    	}
-	    	.caret:after{
-	    		transform: rotate(134deg);
-	    	}
-	    }
-	}
-	.responsive-hamburger-open #site-main-menu{
-		right: 0;
-	}
+        }
+    	.dropdown-menu{
+    		border:none;
+    		display: none;
+    		position: relative;
+    		width: 100%;
+    	}
+    }
+    .responsive-open{
+    	.dropdown-toggle{
+    		font-weight:bold;
+    	}
+    	.dropdown-menu{
+    		display: block;
+    	}
+    	.caret:after{
+    		transform: rotate(134deg);
+    	}
+    }
+}
+
+.responsive-hamburger-open #site-main-menu{
+	right: 0;
+}
