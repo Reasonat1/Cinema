@@ -101,17 +101,17 @@
 
 /********** responsive menu **********/
 
-@include res(menu){
-	.header #site-main-menu{
-	    margin-left: 0;
+.responsive-menu-wrapper{
+   	#site-main-menu{
 	    li{	
 	    	text-align: right;
 	    	.caret{
 	    		float: left;
-			    &:after{
-			    	float: left;
-			    }
-	    	}
+	            &:after{
+	 				float: left;
+	            }
+	        }
 	    }
 	}
 }
+
