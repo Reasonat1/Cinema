@@ -63,7 +63,7 @@
 
 
 $(document).ready(function() { $("select").select2(
-.on("select2-selecting", function(e) {
+.on("select2-selection__rendered", function(e) {
 setTimeout(function() {
 document.activeElement.blur();
 }, 500);
