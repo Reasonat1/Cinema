@@ -1058,7 +1058,6 @@ table{
 		padding: 0!important;
 	}
 	.pane-node-body{
-		@include width();
 		.field-name-body{
 			line-height: 1.8;
 		}
@@ -1082,6 +1081,20 @@ table{
 			width: 77%;
 			.pane-node-body{
 				margin-right: 23%;
+			}
+		}
+	}
+	.panels-flexible-row-node_page-5{
+		@include res(s-m){
+			padding: 0!important;
+			margin-top: 20px;
+			.panels-flexible-region-node_page-content_left{
+				padding: 0 5%;
+			}
+			.panels-flexible-region-node_page-content_right{
+				padding: 0 5% 25px;
+				border-top: 1px solid #cdcdcd;
+				border-bottom: 1px solid #cdcdcd;
 			}
 		}
 	}
