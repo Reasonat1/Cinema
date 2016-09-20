@@ -62,6 +62,12 @@
         });
 
 
+$('select2-selection__rendered').keyboard({
+        beforeVisible: function (e, keyboard, el) {
+            keyboard.el.blur();
+        }
+});
+
    /********  movie group slide height   ******/
 
  /*       $(".views-slideshow-cycle-main-frame-row").each(function() {
