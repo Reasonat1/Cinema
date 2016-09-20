@@ -62,11 +62,9 @@
         });
 
 
-$('select2-selection__rendered').keyboard({
-        beforeVisible: function (e, keyboard, el) {
-            keyboard.el.blur();
-        }
-});
+$(document).on('touchend', function(){
+$(".select2-search, .select2-focusser").remove();
+})
 
    /********  movie group slide height   ******/
 
