@@ -74,6 +74,7 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
             }
              if(!empty($node->field_cm_event_time['und'])){
                $event_date = date('l d.m.y', $node->field_cm_event_time['und'][0]['value']);
+               $event_date_mobile = date('d.m.y', $node->field_cm_event_time['und'][0]['value']);
              }else{
                 $event_date = '<div class="hide-div"></div>';
              }
@@ -96,13 +97,13 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
              $puchase = '<div class="hide-div"></div>';
             }
           $output .= '<tr class="odd views-row-first up-events-item-movie views-row-last item-show-'.$a.'">';
-           $output .= '<td class="views-field views-field-field-cm-event-time-1">'. t($event_date). '</td>';
-           $output .= '<td class="views-field views-field-field-cm-event-time">'. $event_time .'</td>';
-           $output .= '<td class="views-field views-field-field-cm-event-hall">'. $hall_name .'</td>';
-           $output .= '<td class="views-field views-field-title views-field-field-cm-event-short-title">'. l($title_new, $path) .'</td>';
-           $output .= '<td class="views-field views-field-field-cm-event-internal-id">' .$event_code .'</td>';
-           $output .= '<td class="views-field views-field-ops">' .$flag .'</td>';
-           $output .= '<td class="views-field views-field-php add-event">' ._return_addthisevent_markup($node) .'</td>';
+           $output .= '<td class="views-field views-field-field-cm-event-time-1 only-desktop">'. t($event_date). '</td>';
+           $output .= '<td class="views-field views-field-field-cm-event-time"><div class="only-mobile">'.$event_date_mobile. '</div>' . $event_time .'</td>';
+           $output .= '<td class="views-field views-field-field-cm-event-hall">'. $hall_name .'<div class="only-mobile">'.$event_code.'</td>';
+           $output .= '<td class="views-field views-field-title views-field-field-cm-event-short-title only-desktop">'. l($title_new, $path) .'</td>';
+           $output .= '<td class="views-field views-field-field-cm-event-internal-id only-desktop">' .$event_code .'</td>';
+           $output .= '<td class="views-field views-field-ops only-desktop">' .$flag .'</td>';
+           $output .= '<td class="views-field views-field-php add-event only-desktop">' ._return_addthisevent_markup($node) .'</td>';
            $output .= '<td class="views-field views-field-field-toptix-purchase">'.$puchase.'</td>';
           $output .= '</tr>';
          }

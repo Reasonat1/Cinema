@@ -54,6 +54,9 @@
 			@include main-color;
 		}
 	}
+	table td, table, table tr, tbody {
+		border: none !important;
+	}
 	.pane-event-ct-view-panel-pane-7 {
 		background-color: $color_alabaster_approx;
 		width: 100%;
@@ -64,60 +67,11 @@
 				overflow: visible;
 			}
 		}
-		.views-table {
-			border: none;
-			margin-bottom: 0;
-			tbody {
-				border: none;
-				tr {
-					border: none;
-				}
-			}
-		}
-		.views-field-field-cm-event-time-1{
-			width: 23%;
-		}
 		.view-content {
 			padding: 22px 0;
 		}
 		.pane-content {
 			@include width();
-		}
-		table tr td, table tr th {
-			border: medium none;
-			width: calc(15% - 19.25px);
-			display: inline-block;
-			float: left;
-		}
-		.views-field-ops{
-			height: 40px;
-			padding-top: 14px;
-			width: 60px;
-		}
-		.views-field-field-toptix-purchase{
-			width: 80px;
-			float: right;
-		}
-		.table-responsive tbody tr {
-			background-color: $color_alabaster_approx !important;
-		}
-	}
-	.view-display-id-panel_pane_5{
-		.views-field-field-cm-event-time{
-			width: 23%;
-		}
-		table tr td, table tr th {
-			width: calc(15% - 19.25px);
-			float: left;
-		}
-		.views-field-ops{
-			height: 40px;
-			padding-top: 13px;
-			width: 60px;
-		}
-		.views-field-field-toptix-purchase{
-			width: 80px;
-			float: right;
 		}
 	}
 	.pane-event-ct-view-panel-pane-3{
@@ -147,17 +101,14 @@
 				top: 36px!important;
 			}
 		}
-		.views-field-field-cm-event-time{
-			width: 23%;
+		.pane-title{
+			margin-bottom: 15px;
 		}
 		td {
 			border: none !important;
 			a {
 				color: $black;
 			}
-		}
-		table {
-			border: none !important;
 		}
 		tbody {
 			border: none !important;
