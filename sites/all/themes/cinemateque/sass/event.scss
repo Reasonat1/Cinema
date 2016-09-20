@@ -51,13 +51,22 @@
 			}
 		}
 	}
-	table td, table, table tr, tbody {
+	table{
 		border: none !important;
+		td, tr, tbody, th {
+			border: none !important;
+		}
 	}
 	.pane-event-ct-view-panel-pane-7 {
 		background-color: $color_alabaster_approx;
 		width: 100%;
 		float: left;
+		table tr{
+			border:none!important;
+			.views-field-field-toptix-purchase{
+				width: 80px!important;
+			}
+		}
 		.view-event-ct-view{
 			overflow: visible;
 			.table-responsive{
@@ -83,48 +92,20 @@
 	}
 	.pane-event-ct-view-panel-pane-5{
 		@include width;
+		@include res(s-m){
+			padding: 0;
+			.pane-title{
+				padding: 0 5%;
+			}
+		}
 		.view-event-ct-view{
 			overflow: visible;
-			.table-responsive{
-				overflow: visible;
-				.views-field-field-cm-event-time-1{
-					width: 23%;
-				}
-				.views-field-field-cm-event-time{
-					width: calc(15% - 19.25px);
-				}
-			}
 			#atedrop2-drop{
 				top: 36px!important;
 			}
 		}
 		.pane-title{
 			margin-bottom: 15px;
-		}
-		td {
-			border: none !important;
-			a {
-				color: $black;
-			}
-		}
-		tbody {
-			border: none !important;
-			.views-field-ops .flag{
-				width: 18px;
-				height: 15px;
-			}
-		}
-		.views-field-field-toptix-purchase{
-			float: right;
-		}
-		th {
-			border: none !important;
-			color: $color_pink_swan_approx;
-			font-size: 12px;
-			font-weight: 300;
-		}
-		tr {
-			border: none !important;
 		}
 	}
 	.pane-event-ct-view-panel-pane-6 {
