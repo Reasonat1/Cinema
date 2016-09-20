@@ -130,13 +130,6 @@ table{
 			padding-right: 0;
 			padding-left: 100px;
 			float: right;
-			.field-name-field-cm-article-tags{
-				a{
-				    float: right;
-				    margin-left: 10px;
-				    margin-right: 0;
-				}
-			}
 		}
 		.radix-layouts-content{
 			.pane-node-body{
@@ -268,13 +261,15 @@ table{
 
 /******  tags  *******/
 
-.field-name-field-tag {
-	.field-item {
-		&.even {
-			float: right;
+.pane-node-field-tag, .pane-node-field-cm-article-tags, .pane-node-field-cm-movie-tags {
+	.pane-content {
+		.field-item{
+		    float: right;
+		    margin-right: 0;
+		    margin-left: 2%;
 		}
-		&.odd {
-			float: left;
+		a{
+		    float: right;
 		}
 	}
 }

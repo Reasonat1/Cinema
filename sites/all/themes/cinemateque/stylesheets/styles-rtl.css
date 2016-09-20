@@ -32,58 +32,28 @@
   background: url("/sites/all/themes/cinemateque/images/more-gold-right.png") no-repeat left 10px center #fff;
 }
 
-/* line 5, ../sass/event-rtl.scss */
+/* line 6, ../sass/event-rtl.scss */
 .node-type-cm-event .panels-flexible-region-node_page-content_left {
   float: left;
 }
-/* line 8, ../sass/event-rtl.scss */
+/* line 9, ../sass/event-rtl.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-7 {
   float: right;
 }
-/* line 10, ../sass/event-rtl.scss */
-.node-type-cm-event .pane-event-ct-view-panel-pane-7 table tr td {
-  float: right;
-}
 /* line 13, ../sass/event-rtl.scss */
-.node-type-cm-event .pane-event-ct-view-panel-pane-7 .views-field-field-toptix-purchase {
-  float: left;
-}
-/* line 18, ../sass/event-rtl.scss */
-.node-type-cm-event .view-display-id-panel_pane_5 table tr td, .node-type-cm-event .view-display-id-panel_pane_5 table tr th {
-  float: right;
-}
-/* line 21, ../sass/event-rtl.scss */
-.node-type-cm-event .view-display-id-panel_pane_5 .views-field-field-toptix-purchase {
-  float: left;
-}
-/* line 26, ../sass/event-rtl.scss */
-.node-type-cm-event .pane-event-ct-view-panel-pane-3 .slide-left-ct {
-  float: right;
-}
-/* line 29, ../sass/event-rtl.scss */
-.node-type-cm-event .pane-event-ct-view-panel-pane-3 .slide-right-ct {
-  float: right;
-  padding-right: 6%;
-  padding-left: 10%;
-}
-/* line 35, ../sass/event-rtl.scss */
-.node-type-cm-event .pane-event-ct-view-panel-pane-6 {
-  margin-left: 23%;
-  margin-right: 0;
-}
-/* line 40, ../sass/event-rtl.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-5 .views-field-field-toptix-purchase {
   float: left;
 }
-/* line 45, ../sass/event-rtl.scss */
-.node-type-cm-event .panels-flexible-row-node_page-6 .views-slideshow-cycle-main-frame-row {
-  right: 0;
-  left: auto !important;
+/* line 17, ../sass/event-rtl.scss */
+.node-type-cm-event .pane-event-ct-view-panel-pane-6 {
+  margin-right: 0;
+  margin-left: 23%;
 }
-
-/* line 52, ../sass/event-rtl.scss */
-table th {
-  text-align: right;
+@media (max-width: 767px) {
+  /* line 17, ../sass/event-rtl.scss */
+  .node-type-cm-event .pane-event-ct-view-panel-pane-6 {
+    margin-right: 0 !important;
+  }
 }
 
 /* line 8, ../sass/movie-group-rtl.scss */
@@ -263,10 +233,10 @@ table td, table th {
 /***  article page  ****/
 /* line 127, ../sass/general-rtl.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) {
-  width: 1280px !important;
+  width: 1355px !important;
   max-width: 100%;
   margin: 0 auto;
-  padding: 0 3%;
+  padding: 0 5%;
   box-sizing: border-box;
 }
 /* line 129, ../sass/general-rtl.scss */
@@ -275,34 +245,28 @@ table td, table th {
   padding-left: 100px;
   float: right;
 }
-/* line 134, ../sass/general-rtl.scss */
-.node-type-cm-article .container-fluid .row:nth-child(2) .radix-layouts-sidebar .field-name-field-cm-article-tags a {
-  float: right;
-  margin-left: 10px;
-  margin-right: 0;
-}
-/* line 142, ../sass/general-rtl.scss */
+/* line 135, ../sass/general-rtl.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) .radix-layouts-content .pane-node-body {
   margin-left: 23%;
   margin-right: 0;
 }
 
 /******   webform  *****/
-/* line 154, ../sass/general-rtl.scss */
+/* line 147, ../sass/general-rtl.scss */
 .node-type-webform form .form-actions {
   float: left;
 }
 
 /*******  user profile  ********/
-/* line 167, ../sass/general-rtl.scss */
+/* line 160, ../sass/general-rtl.scss */
 .page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper form {
   float: right;
 }
-/* line 170, ../sass/general-rtl.scss */
+/* line 163, ../sass/general-rtl.scss */
 .page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper .edit {
   float: left;
 }
-/* line 175, ../sass/general-rtl.scss */
+/* line 168, ../sass/general-rtl.scss */
 .page-user .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .views-widget-filter-type .form-item-edit-type-1 {
   border-left: 1px solid #000;
   border-right: none;
@@ -311,46 +275,46 @@ table td, table th {
   margin-right: 0;
   padding-right: 0;
 }
-/* line 189, ../sass/general-rtl.scss */
+/* line 182, ../sass/general-rtl.scss */
 .page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-left {
   float: right;
 }
-/* line 191, ../sass/general-rtl.scss */
+/* line 184, ../sass/general-rtl.scss */
 .page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-left .top-text-blk-wht {
   right: 0;
   left: auto;
 }
-/* line 196, ../sass/general-rtl.scss */
+/* line 189, ../sass/general-rtl.scss */
 .page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-right {
   float: left;
 }
-/* line 200, ../sass/general-rtl.scss */
+/* line 193, ../sass/general-rtl.scss */
 .page-user .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .row-custom-lobby .purchase {
   float: left;
 }
 
 /*********  person page  **********/
-/* line 214, ../sass/general-rtl.scss */
+/* line 207, ../sass/general-rtl.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col {
   float: right;
   padding-right: 44px;
   padding-left: 0;
   background-position: right 4px !important;
 }
-/* line 224, ../sass/general-rtl.scss */
+/* line 217, ../sass/general-rtl.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .views-row-odd {
   float: right;
 }
-/* line 227, ../sass/general-rtl.scss */
+/* line 220, ../sass/general-rtl.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .views-row-even {
   float: left;
 }
-/* line 232, ../sass/general-rtl.scss */
+/* line 225, ../sass/general-rtl.scss */
 .node-type-cm-person .panels-flexible-region-node_page-content_left {
   float: left !important;
 }
 
-/* line 237, ../sass/general-rtl.scss */
+/* line 230, ../sass/general-rtl.scss */
 .view-person-ct-view.view-display-id-panel_pane_2 .node-title-teaser-content-type:hover {
   background: url("../images/more-white-left.png") no-repeat scroll left 10px center;
 }
@@ -363,74 +327,76 @@ table td, table th {
   background-color: #b59d70 !important;
 }
 
-/* line 243, ../sass/general-rtl.scss */
+/* line 236, ../sass/general-rtl.scss */
 .content.middle .panels-flexible-region-node_page-content_left {
   width: 77%;
   float: left;
 }
 
 /****  share blcok  *****/
-/* line 252, ../sass/general-rtl.scss */
+/* line 245, ../sass/general-rtl.scss */
 .share-pane-container .facebook a {
   background-position: right 3px center !important;
 }
-/* line 255, ../sass/general-rtl.scss */
+/* line 248, ../sass/general-rtl.scss */
 .share-pane-container .whatsapp a {
   background-position: right center !important;
 }
-/* line 259, ../sass/general-rtl.scss */
+/* line 252, ../sass/general-rtl.scss */
 .share-pane-container .flag-wrapper a.flag-action, .share-pane-container .flag-wrapper a.unflag-action {
   background-position: right center !important;
 }
-/* line 262, ../sass/general-rtl.scss */
+/* line 255, ../sass/general-rtl.scss */
 .share-pane-container .flag-wrapper .title {
   right: 30px;
   left: auto;
 }
 
 /******  tags  *******/
-/* line 273, ../sass/general-rtl.scss */
-.field-name-field-tag .field-item.even {
+/* line 266, ../sass/general-rtl.scss */
+.pane-node-field-tag .pane-content .field-item, .pane-node-field-cm-article-tags .pane-content .field-item, .pane-node-field-cm-movie-tags .pane-content .field-item {
   float: right;
+  margin-right: 0;
+  margin-left: 2%;
 }
-/* line 276, ../sass/general-rtl.scss */
-.field-name-field-tag .field-item.odd {
-  float: left;
+/* line 271, ../sass/general-rtl.scss */
+.pane-node-field-tag .pane-content a, .pane-node-field-cm-article-tags .pane-content a, .pane-node-field-cm-movie-tags .pane-content a {
+  float: right;
 }
 
 /******  responsive *********/
 @media (max-width: 767px) {
-  /* line 286, ../sass/general-rtl.scss */
+  /* line 281, ../sass/general-rtl.scss */
   .table-responsive td {
     padding-left: 8px !important;
     padding-right: 0 !important;
   }
 }
 /***** movie, movie group, event & article  ********/
-/* line 297, ../sass/general-rtl.scss */
+/* line 292, ../sass/general-rtl.scss */
 .text-main-image .wrapper .slide-right-ct {
   float: right;
   padding-right: 6%;
   padding-left: 10%;
 }
 @media (max-width: 767px) {
-  /* line 297, ../sass/general-rtl.scss */
+  /* line 292, ../sass/general-rtl.scss */
   .text-main-image .wrapper .slide-right-ct {
     padding-left: 3%;
     padding-right: 0;
   }
 }
 
-/* line 309, ../sass/general-rtl.scss */
+/* line 304, ../sass/general-rtl.scss */
 .slide-alt-title {
   left: auto;
   right: 0;
 }
-/* line 312, ../sass/general-rtl.scss */
+/* line 307, ../sass/general-rtl.scss */
 .slide-alt-title .field {
   float: right;
 }
-/* line 315, ../sass/general-rtl.scss */
+/* line 310, ../sass/general-rtl.scss */
 .slide-alt-title .field-name-field-file-image-title-text {
   margin-right: 10px;
   padding-right: 10px;
@@ -440,12 +406,12 @@ table td, table th {
   border-left: none;
 }
 
-/* line 325, ../sass/general-rtl.scss */
+/* line 320, ../sass/general-rtl.scss */
 .top-text-blk-wht {
   right: 0;
   left: auto;
 }
-/* line 328, ../sass/general-rtl.scss */
+/* line 323, ../sass/general-rtl.scss */
 .top-text-blk-wht span {
   float: right;
 }
