@@ -108,10 +108,22 @@ h2{
 	margin-top: 50px !important;
 }
 
-.table-responsive tbody tr {
-	background-color: transparent !important;
-	a{
-		color: #333!important;
+.table-responsive{
+	thead{
+		color: $color_pink_swan_approx;
+		font-size: 12px;
+		font-weight: 300;
+	}
+	tbody{
+		tr {
+			background-color: transparent !important;
+			@include res(s-m){
+				border-bottom: 1px solid #cdcdcd!important;
+			}
+			a{
+				color: #333!important;
+			}
+		}
 	}
 }
 
@@ -916,9 +928,13 @@ table{
 			padding: 8px!important;
 		}
 	}
-	.purchase, .views-field-field-toptix-purchase{
+	.purchase, .views-field-field-toptix-purchase, .views-field-field-toptix-purchase{
 		width: 88px!important;
 		box-sizing:border-box;
+		@include res(s-m){
+			vertical-align: middle !important;
+			width: 101px!important;
+		}
 	}
 }
 
@@ -1343,10 +1359,12 @@ table{
 		width: 18%;
 	}
 	.purchase{
-		float: right;
 		padding-right: 0;
 		padding-left: 0;
 		width: 88px;
+		@include res(s-m){
+			width: 101px;
+		}
 	}
 	.title{
 		width: 23%;
@@ -1530,7 +1548,17 @@ table{
 			&.purchase, &.views-field-field-toptix-purchase{
 				padding-left: 0!important;
 				padding-right: 0!important;
-				width: 80px!important;
+				width: 101px!important;
+			}
+		}
+		td, th{
+			&.first-mobile{
+				padding-left: 5%!important;
+			}
+		}
+		td, th{
+			&.last-mobile{
+				padding-right: 5%!important;
 			}
 		}
 	}
@@ -1724,6 +1752,9 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 		@include res(s-m){
 			width: auto;
 		}
+	}
+	table tr{
+		border:none!important;
 	}
 	a{
 		color: #000;

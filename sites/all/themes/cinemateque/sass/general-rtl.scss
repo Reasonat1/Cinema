@@ -2,8 +2,6 @@
 
 .pane-movie-group-ct-panel-pane-3 {
 	.views-field-field-toptix-purchase{
-		float: left;
-		width: 83px;
 		button{
 			float: right;
 		}
@@ -281,6 +279,18 @@ table{
 		td{
 			padding-left: 8px!important;
 			padding-right: 0!important;
+		}
+		td, th{
+			&.first-mobile{
+				padding-right: 5%!important;
+				padding-left: 0!important;
+			}
+		}
+		td, th{
+			&.last-mobile{
+				padding-left: 5%!important;
+				padding-right: 0!important;
+			}
 		}
 	}
 }

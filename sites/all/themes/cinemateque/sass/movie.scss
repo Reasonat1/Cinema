@@ -60,6 +60,7 @@
 		@include res(s-m){
 			padding: 20px 0 0!important;
 			margin-bottom: 20px;
+			border:1px solid #cdcdcd;
 			.panels-flexible-region-node_page-content_left{
 				padding: 0 5%!important;
 			}
@@ -208,7 +209,6 @@
 				tr{
 					@include res(s-m){
 						padding: 0 5%;
-						border-bottom: 2px solid #f0f0f0;
 					}
 				}
 			}
