@@ -526,6 +526,7 @@ img.panopoly-image-full{
 .sticky-header, .not-front header{
 	height: 50px!important;
 	.navbar-brand{
+		height: 44px!important;
 		@include res(s-m){
 			height: 40px;
 		}
@@ -605,6 +606,9 @@ img.panopoly-image-full{
 }
 
 .header {
+	.navbar{
+		margin-bottom: 0;
+	}
 	#main-menu {
 		color: $white;
 		transition: all 0.5s ease 0s;
@@ -643,6 +647,7 @@ img.panopoly-image-full{
 	.header-right{
 		width: auto;
 		float: right;
+		margin-bottom: 0;
 		@include res(menu){
 			padding: 0;
 			float: left;
@@ -665,6 +670,8 @@ img.panopoly-image-full{
 			    height: 20px;
 			    text-indent: -9999px;
 			    width: 20px;
+			    transition: all 0.5s;
+                -webkit-transition: all 0.5s;
 			}
 		    a{
 		    	padding: 0;
