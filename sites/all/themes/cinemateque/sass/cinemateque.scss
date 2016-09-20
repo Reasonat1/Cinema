@@ -173,7 +173,6 @@
 .view-footer-credit-slogan-for-mobile{
 	margin-bottom: 30px;
 	.owl-next{
-		background: url("../images/more-red-left.png") no-repeat scroll center center;
 	    font-size: 0;
 	    height: 19px;
 	    left: -30px;
@@ -186,7 +185,6 @@
 		margin: 0 auto;
 	}
 	.owl-prev{
-		background: url("../images/more-red-right.png") no-repeat scroll center center;
 	    font-size: 0;
 	    height: 19px;
 	    right: -30px;
@@ -256,10 +254,18 @@
 			    .field-name-field-label{
 			    	font-weight: bold;
 			    	margin-bottom: 12px;
+			    	@include res(l){
+			    		margin-bottom: 3px;
+			    	}
 			    }
 			    .field-name-field-description{
 			    	p{
-			    		line-height: 14px;
+			    		line-height: 22px;
+			    		margin: 0;
+			    		@include res(l){
+			    			font-size: 13px;
+			    			line-height: 17px;
+			    		}
 			    		a{
 			    			color: #fff;
 			    		}
@@ -323,6 +329,9 @@
 		padding-top: 20px;
 	}
 	.webform-client-form {
+		.form-required{
+			display: none;
+		}
 		.form-actions{
 			margin-top: 0;
 		}
@@ -333,7 +342,7 @@
 				width: 100%!important;
 			}
 			p{
-				margin: 5px 0 0 0;
+				margin: 4px 0 0;
 			}
 		}
 		.webform-component {
@@ -363,7 +372,7 @@
 			}
 			label{
 				color: #fff;
-				padding: 10px;
+				padding: 12px 10px;
 			}
 			&.webform-component-radios {
 				width: 100%;
@@ -615,6 +624,9 @@ img.panopoly-image-full{
 			padding: 10px!important;
 			line-height: 20px!important;
 			background-color: transparent;
+			&:hover{
+				@include main-color;
+			}
 		}
 		li li a{
 			@include bg-main-color();
