@@ -62,9 +62,13 @@
         });
 
 
-$(document).on('touchend', function(){
-$(".select2-search, .select2-focusser").remove();
-})
+$(document).ready(function() { $("select").select2(
+.on("select2-selecting", function(e) {
+setTimeout(function() {
+document.activeElement.blur();
+}, 500);
+});
+});
 
    /********  movie group slide height   ******/
 
