@@ -933,7 +933,6 @@ table{
 		box-sizing:border-box;
 		@include res(s-m){
 			vertical-align: middle !important;
-			width: 101px!important;
 		}
 	}
 }
@@ -1362,9 +1361,6 @@ table{
 		padding-right: 0;
 		padding-left: 0;
 		width: 88px;
-		@include res(s-m){
-			width: 101px;
-		}
 	}
 	.title{
 		width: 23%;
@@ -1548,17 +1544,7 @@ table{
 			&.purchase, &.views-field-field-toptix-purchase{
 				padding-left: 0!important;
 				padding-right: 0!important;
-				width: 101px!important;
-			}
-		}
-		td, th{
-			&.first-mobile{
-				padding-left: 5%!important;
-			}
-		}
-		td, th{
-			&.last-mobile{
-				padding-right: 5%!important;
+				width: 80px!important;
 			}
 		}
 	}
