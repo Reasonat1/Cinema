@@ -211,15 +211,16 @@
 
   })
   
+
+  /*
 	function upcoming_events_header_visibility() {
-		//Flags initially set to hide the respective headers
 		var event_date_flag = true;
 		var event_time_flag = true;
 		var event_hall_flag = true;
 		var event_title_flag = true;
 		var event_id_flag = true;
 		var event_purchase_flag = true;
-        var event_title1_flag = true;
+    var event_title1_flag = true;
 		jQuery(".up-events-item-movie").each(function(index) {
 			if( !$(this).children('.views-field-field-cm-event-time').children('.hide-div').length ){
 				event_date_flag = false; // data for one row is visible. no need to hide the header. unset the flag.
@@ -273,7 +274,7 @@
            $('td.views-field-field-toptix-purchase').hide();
 		}
 	}
-
+*/
 
 
 })(jQuery);
