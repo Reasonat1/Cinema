@@ -62,13 +62,7 @@
         });
 
 
-$(document).ready(function() { $("select").select2(
-.on("select2-selection__rendered", function(e) {
-setTimeout(function() {
-document.activeElement.blur();
-}, 500);
-});
-});
+ $('.select2-selection').click(function(e) { $(this).find('span').getkeyboard().reveal();});
 
    /********  movie group slide height   ******/
 
