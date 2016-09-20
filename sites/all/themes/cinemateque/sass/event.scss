@@ -7,10 +7,6 @@
 	#content {
 		width: 100% !important;
 	}
-	.view .content, .view .mask {
-	    left: auto;
-	    position: relative!important;
-	}
 	.panels-flexible-row-node_page-3,
 	.panels-flexible-row-node_page-4,
 	.panels-flexible-row-node_page-6{
@@ -24,6 +20,18 @@
 		float: right;
 	}
 	.panels-flexible-row-node_page-5{
+		@include res(s-m){
+			padding: 0!important;
+			.panels-flexible-region-node_page-content_left{
+				padding: 0 5%!important;
+			}
+			.panels-flexible-region-node_page-content_right{
+				padding: 0 5% 25px !important;
+				border-top: 1px solid #cdcdcd;
+				border-bottom: 1px solid #cdcdcd;
+				margin-top: 5px!important;
+			}
+		}
 		.panels-flexible-row-node_page-5-inside{
 			padding-top: 40px;
 		}
@@ -33,7 +41,6 @@
 	}
 	.pane-test-view-for-movie-credit-panel-pane-2{
 		background-color: #fff;
-		padding: 30px 0;
 		.pane-content{
 			@include width;
 			.view{
@@ -42,16 +49,6 @@
 					margin: 0;
 				}
 			}
-		}
-		.views-field-field-cm-movie-credits-person-ro{
-			color: $color_nobel_approx;
-			width: 23%;
-		}
-		a{
-			color: #000;
-		}
-		a:hover{
-			@include main-color;
 		}
 	}
 	table td, table, table tr, tbody {
@@ -162,7 +159,7 @@
 		.views-field-field-cm-event-body {
 			line-height: 28px;
 			@include width();
-			padding: 35px 3%;
+			padding: 35px 5%;
 			p {
 				margin: 0 23%;
 				@include res(s-m){

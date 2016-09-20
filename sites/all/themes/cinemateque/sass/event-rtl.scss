@@ -1,54 +1,24 @@
 @import "init";
 
 
+
 .node-type-cm-event {
 	.panels-flexible-region-node_page-content_left{
 		float: left;
 	}
 	.pane-event-ct-view-panel-pane-7 {
 		float: right;
-		table tr td{
-			float: right;
-		}
-		.views-field-field-toptix-purchase{
-			float: left;
-		}
-	}
-	.view-display-id-panel_pane_5{
-		table tr td, table tr th {
-			float: right;
-		}
-		.views-field-field-toptix-purchase{
-			float: left;
-		}
-	}
-	.pane-event-ct-view-panel-pane-3{
-		.slide-left-ct {
-			float: right;
-		}
-		.slide-right-ct {
-			float: right;
-			padding-right: 6%;
-			padding-left: 10%;
-		}
-	}
-	.pane-event-ct-view-panel-pane-6 {
-		margin-left: 23%;
-		margin-right: 0;
 	}
 	.pane-event-ct-view-panel-pane-5{
 		.views-field-field-toptix-purchase{
 			float: left;
 		}
 	}
-	.panels-flexible-row-node_page-6{
-		.views-slideshow-cycle-main-frame-row{
-			right: 0;
-			left: auto!important;
+	.pane-event-ct-view-panel-pane-6 {
+		margin-right: 0;
+		margin-left: 23%;
+		@include res(s-m){
+			margin-right: 0!important;
 		}
 	}
-}
-
-table th{
-	text-align: right;
 }

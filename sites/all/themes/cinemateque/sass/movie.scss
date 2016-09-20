@@ -58,8 +58,17 @@
 	.panels-flexible-row-node_page-5{
 		padding-top: 50px!important;
 		@include res(s-m){
-			padding-top: 20px!important;
+			padding: 20px 0 0!important;
 			margin-bottom: 20px;
+			.panels-flexible-region-node_page-content_left{
+				padding: 0 5%!important;
+			}
+			.panels-flexible-region-node_page-content_right{
+				padding: 0 5% 25px!important;
+				border-top: 1px solid #cdcdcd;
+				border-bottom: 1px solid #cdcdcd;
+				margin-top: 5px;
+			}
 		}
 	}
 	.panels-flexible-row-node_page-5 .panels-flexible-region-node_page-content_right #panels-ipe-regionid-content_right {
@@ -110,30 +119,12 @@
 		background-color: #fff;
 		@include width;
 		padding-top: 30px;
-		padding-bottom: 30px;
+		padding-bottom: 30px;		
 		.panels-flexible-row-node_page-6-inside .panels-flexible-region{
 			padding: 0 23%;
 			@include res(s-m){
 				padding: 0;
 			}
-		}
-		.views-field-field-cm-movie-credits-person-ro{
-			color: $color_nobel_approx;
-			width: 120px;
-			@include res(s-m){
-				width: auto!important;;
-			}
-		}
-		.views-field-views-conditional{
-			@include res(s-m){
-				width: auto!important;
-			}
-		}
-		a{
-			color: #000;
-		}
-		a:hover{
-			@include main-color;
 		}
 	}
 	.pane-movie-top-pane-view-panel-pane-7{
@@ -216,7 +207,7 @@
 			@include res(s-m){
 				tr{
 					@include res(s-m){
-						padding: 0 3%;
+						padding: 0 5%;
 						border-bottom: 2px solid #f0f0f0;
 					}
 				}
