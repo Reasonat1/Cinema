@@ -234,7 +234,7 @@
   })
   
 
-  /*
+  
 	function upcoming_events_header_visibility() {
 		var event_date_flag = true;
 		var event_time_flag = true;
@@ -268,35 +268,35 @@
 		});	
 		// validation. if the flag is still set, hide the header
 		if( event_date_flag ){
-			$('thead th.views-field-field-cm-event-time').hide();
-            $('td.views-field-field-cm-event-time').hide();
+			$('thead th.views-field-field-cm-event-time').css("font-size","0");
+       //     $('td.views-field-field-cm-event-time').hide();
 		}
 		if( event_time_flag ){
-		   $('th.views-field-field-cm-event-time-1').hide();
-           $('td.views-field-field-cm-event-time-1').hide();
+		   $('th.views-field-field-cm-event-time-1').css("font-size","0");
+        //   $('td.views-field-field-cm-event-time-1').hide();
 		}
 		if( event_hall_flag ){
-		   $('thead th.views-field-field-cm-event-hall').hide();
-           $('td.views-field-field-cm-event-hall').hide();
+		   $('thead th.views-field-field-cm-event-hall').css("font-size","0");
+       //   $('td.views-field-field-cm-event-hall').hide();
 		}
 		if( event_title_flag ){
-		   $('thead th.views-field-title').hide();
-           $('td.views-field-title').hide();
+		   $('thead th.views-field-title').css("font-size","0");
+       //    $('td.views-field-title').hide();
 		}
         if( event_title1_flag ){
-		   $('thead th.views-field-title-1').hide();
-           $('td.views-field-title-1').hide();
+		   $('thead th.views-field-title-1').css("font-size","0");
+       //    $('td.views-field-title-1').hide();
 		}
 		if( event_id_flag ){
-		   $('thead th.views-field-field-cm-event-internal-id').hide();
-           $('td.views-field-field-cm-event-internal-id').hide();
+		   $('thead th.views-field-field-cm-event-internal-id').css("font-size","0");
+       //    $('td.views-field-field-cm-event-internal-id').hide();
 		}
 		if( event_purchase_flag ){
-		   $('th.views-field-field-toptix-purchase').hide();
-           $('td.views-field-field-toptix-purchase').hide();
+		   $('th.views-field-field-toptix-purchase').css("font-size","0");
+       //    $('td.views-field-field-toptix-purchase').hide();
 		}
 	}
-*/
+
 
 
 })(jQuery);
