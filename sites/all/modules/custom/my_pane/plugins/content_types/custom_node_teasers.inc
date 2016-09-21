@@ -223,24 +223,24 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
             if ($top_black_title == '') {
                 if (!empty($val->black_content)) {
                     $data_b = $val->black_content;
-                    $black_content = "<span class='black-content'>$data_b</span>";
+                    $black_content = "<span class='black'>$data_b</span>";
                 } else {
                     $black_content = '';
                 }
             } else {
-                $black_content = "<span class='black-content'>$top_black_title</span>";
+                $black_content = "<span class='black'>$top_black_title</span>";
             }
 
            // event white box content
             if ($top_white_title == '') {
                 if (!empty($val->white_content)) {
                     $data_w = $val->white_content;
-                    $white_content = "<span class='black-white'>$data_w</span>";
+                    $white_content = "<span class='white'>$data_w</span>";
                 } else {
                     $white_content = '';
                 }
             }else{
-                $white_content = "<span class='black-white'>$top_white_title</span>";
+                $white_content = "<span class='white'>$top_white_title</span>";
             }
 
             // show teaser text
@@ -273,7 +273,7 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
             $alias = $base_url . '/' . drupal_lookup_path('alias', "node/" . $val->nid);
             $html.= "<div class='row-$row_class teaser-row $class'>";
             $html.= "<div class='wrapper-image'><div class='event-image'>$imgae</div>";
-            $html.= "<div class='event-date-black-white-background'>$black_content $white_content</div>";
+            $html.= "<div class='top-text-blk-wht'>$black_content $white_content</div>";
             $html.= "<div class='event-flag'>$flag</div>";
             $html.= "<div class='event-title'><span>$title</span></div>";
             $html.= "<div class='event-time'><span class='time'>$time</span><span class='date'>$date</span><a href='$alias'><span class='ticket'>Ticket</span></a></div></div>";
@@ -355,12 +355,12 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
             if ($top_white_title == '') {
                 if (!empty($val->white_content)) {
                     $data_w = $val->white_content;
-                    $white_content = "<span class='black-white'>$data_w</span>";
+                    $white_content = "<span class='white'>$data_w</span>";
                 } else {
                     $white_content = "";
                 }
             } else {
-                $white_content = "<span class='black-white'>$top_white_title</span>";
+                $white_content = "<span class='white'>$top_white_title</span>";
             }
 
             // check for movie video
@@ -406,7 +406,7 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
 
             $html.= "<div class='row-$row_class teaser-row $class'>";
             $html.= "<div class='wrapper-image'><div class='movie-image'>$imgae</div>";
-            $html.= "<div class='movie-date-black-white-background'>$black_content $white_content</div>";
+            $html.= "<div class='top-text-blk-wht'>$black_content $white_content</div>";
             $html.= "<div class='movie-flag'>$flag</div>";
             $html.= "<div class='movie-title'><span>$title</span></div>";
             $html.= "<div class='movie_play'><span>$play_icon</span></div></div>";
@@ -475,12 +475,12 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
             if ($top_black_title == '') {
                 if (!empty($val->black_content)) {
                     $data_b = $val->black_content;
-                    $black_content = "<span class='black-content'>$data_b</span>";
+                    $black_content = "<span class='black'>$data_b</span>";
                 } else {
                     $black_content = "";
                 }
             } else {
-                $black_content = "<span class='black-content'>$top_black_title</span>";
+                $black_content = "<span class='black'>$top_black_title</span>";
             }
 
 
@@ -488,12 +488,12 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
             if ($top_white_title == '') {
                 if (!empty($val->white_content)) {
                     $data_w = $val->white_content;
-                    $white_content = "<span class='black-white'>$data_w</span>";
+                    $white_content = "<span class='white'>$data_w</span>";
                 } else {
                     $white_content = "";
                 }
             } else {
-                $white_content = "<span class='black-white'>$top_white_title</span>";
+                $white_content = "<span class='white'>$top_white_title</span>";
             }
 
             // check for movie video
@@ -536,7 +536,7 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
 
             $html.= "<div class='row-$row_class teaser-row $class'>";
             $html.= "<div class='wrapper-image'><div class='moviegroup-image'>$imgae</div>";
-            $html.= "<div class='movie-date-black-white-background'>$black_content $white_content</div>";
+            $html.= "<div class='top-text-blk-wht'>$black_content $white_content</div>";
             $html.= "<div class='moviegroup-flag'>$flag</div>";
             $html.= "<div class='moviegroup-title'><span>$title</span></div>";
             $html.= "<div class='moviegroup_play'><span>$play_icon</span></div></div>";
@@ -704,12 +704,12 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
             if ($top_black_title == '') {
                 if (!empty($val->black_content)) {
                     $data_b = $val->black_content;
-                    $black_content = "<span class='black-content'>$data_b</span>";
+                    $black_content = "<span class='black'>$data_b</span>";
                 } else {
                     $black_content = "";
                 }
             } else {
-                $black_content = "<span class='black-content'>$top_black_title</span>";
+                $black_content = "<span class='black'>$top_black_title</span>";
             }
 
 
@@ -717,12 +717,12 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
             if ($top_white_title == '') {
                 if (!empty($val->white_content)) {
                     $data_w = $val->white_content;
-                    $white_content = "<span class='black-white'>$data_w</span>";
+                    $white_content = "<span class='white'>$data_w</span>";
                 } else {
                     $white_content = "";
                 }
             } else {
-                $white_content = "<span class='black-white'>$top_white_title</span>";
+                $white_content = "<span class='white'>$top_white_title</span>";
             }
 
 
@@ -748,7 +748,7 @@ function my_pane_node_content_form_render($subtype, $conf, $args, $context) {
 
             $html.= "<div class='row-$row_class teaser-row $class'>";
             $html.= "<div class='article-image'>$imgae</div>";
-            $html.= "<div class='article-date-black-white-background'>$black_content $white_content</div>";
+            $html.= "<div class='top-text-blk-wht'>$black_content $white_content</div>";
             $html.= "<div class='article-flag'>$flag</div>";
             $html.= "<div class='article-title'><span>$title</span></div>";
             $html.= "<div class='article-subtitle'><span>$subtitle</span></div>";

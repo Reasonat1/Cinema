@@ -1,0 +1,19 @@
+@import "init";
+
+.domain-1{ //cinemateqe domain - red
+ 	.header .header-right .language-switcher-locale-url a:hover{
+    	background: url("../images/english-icon-red.png") no-repeat 0 4px!important;
+ 	}
+ 	.node-title-teaser-content-type{
+  		background: url("/sites/all/themes/cinemateque/images/more-red-right.png") no-repeat left 10px center #fff; 
+ 	}
+}
+
+.domain-2{ //festival domain - gold
+ 	.header .header-right .language-switcher-locale-url a:hover{
+    	background: url("../images/english-icon-gold.png") no-repeat 0 4px!important;
+ 	}
+  	.node-title-teaser-content-type{
+  		background: url("/sites/all/themes/cinemateque/images/more-gold-right.png") no-repeat left 10px center #fff; 
+ 	}
+}

@@ -6,10 +6,11 @@
   bottom: 20px;
   padding: 0 5%;
   width: 100%;
+  color: #fff;
 }
 
 .text-on-image a, .text-on-image a:hover{
-    color: #fff;
+    color: #fff!important;
   }
 
 #edit-node-teaser .option-text-aligner.clearfix {
@@ -74,18 +75,7 @@
   left: 0;
   top: 0;
 }
-.black-content {
-  background: #000000 none repeat scroll 0 0;
-  float: left;
-  padding: 2px 8px;
-  color: #fff;
-}
-.black-white {
-  background: #ffffff none repeat scroll 0 0;
-  color: #daa520;
-  float: left;
-  padding: 2px 8px;
-}
+
 .person-image > img {
   height: 100%;
   width: 100%;
@@ -117,10 +107,6 @@
 .movie-image > img {
   height: 270px;
   width: 100%;
-}
-.movie-date-black-white-background {
-  position: absolute;
-  top: 0;
 }
 .movie-flag {
   position: absolute;
@@ -166,7 +152,7 @@
   background-color: #ffffff;
   min-height: 100px;
 }
-.no-image .movie_play,.no-image .movie-date-black-white-background, .no-image .movie-flag {
+.no-image .movie_play, .no-image .movie-flag {
   display: none;
 }
 .node-teaser .teaser-row.side-image {
@@ -272,13 +258,7 @@
   min-height: 168px;
   width: 98%;
 }
-.teaser-row .ticket {
-  background: #b6a072 none repeat scroll 0 0;
-  margin-left: 10px;
-  padding: 4px 13px;
-  color: #ffffff;
-  cursor: pointer;
-}
+
 fieldset#panopoly-form-widget-preview {
   display: none;
 }
@@ -374,7 +354,6 @@ fieldset#panopoly-form-widget-preview {
 .node-title-teaser-content-type{
   font-size: 20px;
   padding: 23px 26px 23px 10px;
-  background: url("/sites/all/themes/cinemateque/images/more-gold-right.png") no-repeat right 10px center #fff; 
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
     margin-bottom: 20px;
@@ -399,7 +378,6 @@ fieldset#panopoly-form-widget-preview {
 }
 
 .node-title-teaser-content-type:hover{
-  background: url("/sites/all/themes/cinemateque/images/more-white-right.png") no-repeat right 10px center #b59d70; 
   color: #fff;
 }
 

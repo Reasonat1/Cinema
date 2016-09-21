@@ -23,7 +23,7 @@
   $results=$view->result;
   foreach ($results as $val) {
     $node = node_load($val->entity);
-    $default_image = '<img src="/sites/all/themes/cinemateque/images/default-image.png">';
+    $default_image = '<img src="/sites/all/themes/cinemateque/images/default-image-pane-2.png">';
     $default_user_image = '<img src="/sites/all/themes/cinemateque/images/user-default.jpg">';
     $path_node = drupal_get_path_alias('node/'.$node->nid);
     $flag = flag_create_link('favorite_', $node->nid);
@@ -221,34 +221,36 @@
           $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node).'</div>';
           if(!empty($node->field_cm_event_time['und'])){
               $event_date = date('l d.m.y', $node->field_cm_event_time['und'][0]['value']);
+              $event_date_mobile = date('d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
               $event_time = date('G:i', $node->field_cm_event_time['und'][0]['value']);
           }
            $output_event .= '<tr class="row-custom-lobby">';
-            $output_event .= '<td class="date">'.t($event_date).'</td>';
-            $output_event .= '<td class="time">'.$event_time.'</td>';
+            $output_event .= '<td class="date only-desktop">'.t($event_date).'</td>';
+            $output_event .= '<td class="time"><div class="only-mobile">'.$event_date_mobile.'</div>'.$event_time.'</td>';
             if(!empty($node->field_cm_event_hall['und'])){
              // drupal_set_message('<pre>'.print_r($node->field_cm_event_hall, 1).'</pre>');
                 $hall_id = taxonomy_term_load($node->field_cm_event_hall['und'][0]['target_id']);
                 $hall_name = $hall_id->name;
-                $output_event .= '<td class="hall">'.t($hall_name).'</td>';
+                $output_event .= '<td class="hall only-desktop">'.t($hall_name).'</td>';
             }
             else{
-                $output_event .= '<td class="hall"></td>';
+                $hall_name = "";
+                $output_event .= '<td class="hall only-desktop"></td>';
             }
-            $output_event .= '<td class="title">';
+            $output_event .= '<td class="title only-desktop">';
             if(!empty($event_title)){
               $output_event .= l($event_title, $path);
             }
             $output_event .= '</td>';
             if(!empty($node->field_cm_event_internal_id['und'])){
               $event_code = $node->field_cm_event_internal_id['und'][0]['value'];
-              $output_event .= '<td class="code">'.t($event_code).'</td>';
+              $output_event .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div>'.t($event_code).'</td>';
             }
             else{
-              $output_event .= '<td class="code"></td>';
+              $output_event .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div></td>';
             }
-            $output_event .='<td class="flag">'. $flag . '</td>';
-            $output_event .='<td class="add-event">'. $addevent . '</td>';
+            $output_event .='<td class="flag only-desktop">'. $flag . '</td>';
+            $output_event .='<td class="add-event only-desktop">'. $addevent . '</td>';
             if(!empty($node->field_toptix_purchase['und'])){
             $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
             $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
@@ -297,35 +299,37 @@
               $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node_event).'</div>';
               if(!empty($node_event->field_cm_event_time['und'])){
                   $event_date = date('l d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
+                  $event_date_mobile = date('d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
                   $event_time = date('G:i', $node_event->field_cm_event_time['und'][0]['value']);
               }
 
               $output .= '<tr class="row-custom-lobby">';
-                $output .= '<td class="date">'.t($event_date).'</td>';
-                $output .= '<td class="time">'.$event_time.'</td>';
+                $output .= '<td class="date only-desktop">'.t($event_date).'</td>';
+                $output .= '<td class="time"><div class="only-mobile">'.$event_date_mobile.'</div>'.$event_time.'</td>';
                 if(!empty($node_event->field_cm_event_hall['und'])){
                   $hall_id = taxonomy_term_load($node_event->field_cm_event_hall['und'][0]['target_id']);
                   $hall_name = $hall_id->name;
-                  $output .= '<td class="hall">'.t($hall_name).'</td>';
+                  $output .= '<td class="hall only-desktop">'.$hall_name.'</td>';
                 }
                 else{
-                  $output .= '<td class="hall"></td>';
+                  $hall_name = "";
+                  $output .= '<td class="hall only-desktop"></td>';
                 }
                 if(!empty($event_title)){
-                  $output .= '<td class="title">'.l($event_title, $path).'</td>';
+                  $output .= '<td class="title only-desktop">'.l($event_title, $path).'</td>';
                 }
                 else{
-                  $output .= '<td class="title"></td>';
+                  $output .= '<td class="title only-desktop"></td>';
                 }
                 if(!empty($node_event->field_cm_event_internal_id['und'])){
                   $event_code = $node_event->field_cm_event_internal_id['und'][0]['value'];
-                  $output .= '<td class="code">'.t($event_code).'</td>';
+                  $output .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div>'.t($event_code).'</td>';
                 }
                 else{
-                  $output .= '<td class="code"></td>';
+                  $output .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div></td>';
                 }
-                $output .='<td class="flag">'. $flags . '</td>';
-                $output .='<td class="add-event">'. $addevent . '</td>';
+                $output .='<td class="flag only-desktop">'. $flags . '</td>';
+                $output .='<td class="add-event only-desktop">'. $addevent . '</td>';
                 if(!empty($node_event->field_toptix_purchase['und'])){
                   $toptix_code = $node_event->field_toptix_purchase['und'][0]['value'];
                   $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
@@ -355,7 +359,7 @@
           $sort_summary = t($summary_movie_group);
           $event_info = $output;
           $duration_info = $country . " " . $year . $length;
-          $top_text = $white_text_movie_group . $black_text_movie_group;
+          $top_text = $black_text_movie_group . $white_text_movie_group;
         break;
         case "cm_movie":
           $image = '<div class="image-container-gorup"><div class="flag-new-links">'.$flag.'</div><div class="image-container">'.l($image_movie, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)).'</div></div>';
@@ -363,7 +367,7 @@
           $sort_summary = t($summary_movie);
           $event_info = $output;
           $duration_info = $movie_credit . $length;
-          $top_text = $white_text_movie . $black_text_movie;
+          $top_text = $black_text_movie . $white_text_movie;
         break;
         case "cm_article":
           $image = '<div class="image-container-gorup"><div class="flag-new-links">'.$flag.'</div><div class="image-container">'.l($image_article, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)).'</div></div>';
@@ -371,7 +375,7 @@
           if(!empty($node->body['und'][0]['value'])){
             $sort_summary = truncate_utf8($node->body['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
           }
-          $top_text = $white_text_article . $black_text_article;
+          $top_text = $black_text_article . $white_text_article;
           $event_info = '';
           $duration_info = '';
         break;
@@ -379,7 +383,7 @@
           $image = '<div class="image-container-gorup"><div class="flag-new-links">'.$flag.'</div><div class="image-container">'.l($image_event, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)).'</div></div>';
           $title = $title;
           $sort_summary = $summary_event;
-          $top_text = $white_text_event . $black_text_event;
+          $top_text = $black_text_event . $white_text_event;
           $event_info = $output_event;
           $duration_info = $event_credit . $lengths;
         break;

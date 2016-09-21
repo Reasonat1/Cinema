@@ -1,67 +1,19 @@
 @import "init";
 
 
+
 .node-type-cm-event {
 	.panels-flexible-region-node_page-content_left{
 		float: left;
 	}
 	.pane-event-ct-view-panel-pane-7 {
 		float: right;
-		table tr td{
-			float: right;
-		}
-		.views-field-field-toptix-purchase{
-			float: left;
-		}
-	}
-	.view-display-id-panel_pane_5{
-		table tr td, table tr th {
-			float: right;
-		}
-		.views-field-field-toptix-purchase{
-			float: left;
-		}
-	}
-	.pane-event-ct-view-panel-pane-3{
-		.slide-left-ct {
-			float: right;
-		}
-		.slide-right-ct {
-			float: right;
-			padding-right: 6%;
-			padding-left: 10%;
-		}
 	}
 	.pane-event-ct-view-panel-pane-6 {
-		margin-left: 23%;
 		margin-right: 0;
-	}
-	.pane-event-ct-view-panel-pane-5{
-		.views-field-field-toptix-purchase{
-			float: left;
+		margin-left: 23%;
+		@include res(s-m){
+			margin-right: 0!important;
 		}
 	}
-	.panels-flexible-row-node_page-6{
-		.views-slideshow-cycle-main-frame-row{
-			right: 0;
-			left: auto!important;
-		}
-	}
-	.views_slideshow_cycle_slide .field-content .slide-alt-title {
-		right: auto;
-		left: 0;
-		.grp-alt {
-			border-left: 1px solid $color_star_dust_approx;
-			border-right: 0;
-			padding-left: 7px;
-			padding-right: 0;
-			margin-left: 7px;
-			margin-right: 0;
-			float: right;
-		}
-	}
-}
-
-table th{
-	text-align: right;
 }

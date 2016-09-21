@@ -24,7 +24,7 @@
   foreach ($results as $val) {
     $nid = $val->node_taxonomy_index_nid;
     $node = node_load($nid);
-    $default_image = '<img src="/sites/all/themes/cinemateque/images/default-image.png">';
+    $default_image = '<img src="/sites/all/themes/cinemateque/images/default-image-pane-2.png">';
      //drupal_set_message('<pre>'.print_r($node, 1).'</pre>');
     $path_node = drupal_get_path_alias('node/'.$node->nid);
     $title = l($node->title, $path_node);
@@ -135,13 +135,13 @@
           $flag = flag_create_link('favorite_', $node->nid);
           $image = $image_movie_group;
           $sort_summary = $summary_movie_group;
-          $top_text = $white_text_movie_group . $black_text_movie_group;
+          $top_text = $black_text_movie_group . $white_text_movie_group;
         break;
         case "cm_movie":
           $flag = flag_create_link('favorite_', $node->nid);
           $image = $image_movie;
           $sort_summary = $summary_movie;
-          $top_text = $white_text_movie . $black_text_movie;
+          $top_text = $black_text_movie . $white_text_movie;
         break;
         case "cm_article":
           $flag = flag_create_link('favorite_', $node->nid);
@@ -154,13 +154,13 @@
           }else{
             $sort_summary = '';
           }
-          $top_text = $white_text_article . $black_text_article;
+          $top_text = $black_text_article . $white_text_article;
         break;
           case "cm_event":
           $flag = flag_create_link('favorite_', $node->nid);
           $image = $image_event;
           $sort_summary = $summary_event;
-          $top_text = $white_text_event . $black_text_event;
+          $top_text = $black_text_event . $white_text_event;
         break;
         default:
           $image = '';
@@ -180,7 +180,7 @@
                 print '<div class="short-summery">' . strip_tags($sort_summary) .'</div>';
             print '</span>';
         print '</div>';
-        print '<div class="views-field views-field-field-mc-teaser-toptxt-blk">';
+        print '<div class="views-field views-field-field-mc-teaser-toptxt-blk top-text-blk-wht">';
             print '<div class="field-content">' . $top_text . '</div>';
         print '</div>';
     print '</div>';
