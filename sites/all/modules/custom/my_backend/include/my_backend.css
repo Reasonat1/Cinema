@@ -3,7 +3,8 @@
 }*/
 .pane-movie-top-pane-view-panel-pane-7 .view-movie-top-pane-view .view-content .table-responsive tbody tr,
 .view-event-ct-view.view-display-id-panel_pane_5 .view-content .table-responsive tbody tr,
-.view-movie-group-ct.view-display-id-panel_pane_3 .view-content .table-responsive tbody tr{
+.view-movie-group-ct.view-display-id-panel_pane_3 .view-content .table-responsive tbody tr,
+.page-term-lobby #messages .alert.alert-danger{
   display: none;
 }
 .article-image .alt-text{
@@ -23,6 +24,17 @@
     border-radius: 5px;
     font-size: 15px;
     cursor: pointer;
+}
+.article-big-image .article-image .alt-text{
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: auto;
+    padding: 10px 10px;
+    background-color: #312f2f;
+    font-size: 12px;
+    color: #a0a0a0;
 }
 .i18n-en .view-footer .more-event{
     width: 11%;
