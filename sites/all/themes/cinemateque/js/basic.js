@@ -8,6 +8,18 @@
      * Hamburger menu popup
      */
     $(document).ready(function () {
+/****Add active class in views slide show****/
+$('.views-slideshow-cycle-main-frame').cycle({
+     fx: 'fade',
+     speed: 'slow',
+     timeout: 5000,
+     before: function(){
+           $(this).parent('.views-slideshow-cycle-main-frame').find('.active-slide').removeClass('active-slide');
+     },
+      after: function(){
+           $(this).addClass('active-slide');
+     }
+});
         
  /*******  responsive menu   **********/
 
