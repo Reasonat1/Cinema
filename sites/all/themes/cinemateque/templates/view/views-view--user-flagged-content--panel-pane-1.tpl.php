@@ -37,11 +37,11 @@
   <?php if ($exposed): ?>
     <div class="view-filters">
       <div class="wrapper">
-      <?php print $exposed; ?>
-      <div class="edit">
-	  <?php print l(t('Edit profile'),'user/'.(arg(1)). '/edit');?>
-    </div>
-    </div>
+        <div class="edit">
+          <?php print l(t('Edit profile'),'user/'.(arg(1)). '/edit');?>
+        </div>
+        <?php print $exposed; ?>
+      </div>
     </div>
   <?php endif; ?>
   
