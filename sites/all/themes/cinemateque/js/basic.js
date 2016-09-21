@@ -9,12 +9,12 @@
      */
     $(document).ready(function () {
 /****Add active class in views slide show****/
-$('.views-slideshow-cycle-main-frame').cycle({
+$('#views_slideshow_cycle_teaser_section_movie_group_ct-panel_pane_2').cycle({
      fx: 'fade',
      speed: 'slow',
      timeout: 5000,
      before: function(){
-           $(this).parent('.views-slideshow-cycle-main-frame').find('.active-slide').removeClass('active-slide');
+           $(this).parent('#views_slideshow_cycle_teaser_section_movie_group_ct-panel_pane_2').find('.active-slide').removeClass('active-slide');
      },
       after: function(){
            $(this).addClass('active-slide');
