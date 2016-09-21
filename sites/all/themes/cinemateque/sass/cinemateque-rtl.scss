@@ -1,6 +1,13 @@
 @import "init";
 
 .footer {
+	.pane-bean-main-info-english, .pane-bean-main-info-hebrew{
+		.pane-content{
+			.field-name-field-content-info > .field-items > .field-item{
+			    float: right;
+			}
+		}
+	}
 	.views-field {
 		&.views-field-field-cm-info-block-text {
 			margin-left: 0%;
@@ -66,8 +73,15 @@
 	}
 }
 
-.front .pane-bundle-gallery .slider-readmore{
-	float: right;
+.front{
+	.pane-bundle-gallery .slider-readmore{
+		float: right;
+	}
+}
+
+.teaser-row .ticket {
+  margin-right: 10px;
+  margin-left: 0;
 }
 
 .header-right{
@@ -117,8 +131,8 @@
 
 .navbar-brand {
 	float: right;
-	margin: 9px 30px 0 5px!important;
-	@include res(s-m){
+	margin: 6px 30px 0 5px!important;
+	@include res(menu){
 		float:left;
 	}
 }

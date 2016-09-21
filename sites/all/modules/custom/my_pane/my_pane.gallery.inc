@@ -506,9 +506,9 @@ function theme_panopoly_gallery_wrapper($variables){
   $items = $variables['element']['#items'];
   $duration = $variables['element']['#duration'];
   $pager_style = $variables['element']['#pager_style'];  
-  $output .= '<div class="panopoly-spotlight-widget-wrapper">';
+  $output .= '<div class="panopoly-spotlight-widget-wrapper full-screen-image">';
   if(count($items) > 1)   $output.= '<div class="nav"><a href="#" id="prev2">Prev</a> <a href="#" id="next2">Next</a></div>';
-  $output .= "<ul class='custom-slideshow'>".render($variables['element']['slides']). "</ul>";
+  $output .= "<div class='wrapper-image'><ul class='custom-slideshow content'>".render($variables['element']['slides']). "</ul></div>";
   
   $output .= '</div>';  // class="panopoly-spotlight-widget-wrapper"
 
@@ -537,19 +537,19 @@ function theme_panopoly_gallery_view($variables) {
      $output = '<li>';
      if ($link) {
         $output .= l($image_markup, $link, array('html' => TRUE));
-        $output .= "<div class='pinch'><div class='wrapper'>";
-        $output.="<span class='slider-title'>$title</span>";
-        $output.="<span class='slider-subtitle'>$subtitle</span>";
-        $output.="<span class='slider-readmore'><a href='$link' target='_blank'>$link_title</a></span>";
-         $output .= "</div></div>";
+        $output .= "<div class='pinch text-main-image'><div class='wrapper'><div class='slide-left-ct'>";
+        $output.="<div class='slider-title slide-big-text'>$title</div>";
+        $output.="<div class='slider-subtitle slide-small-text'>$subtitle</div>";
+        $output.="<div class='slider-readmore button'><a href='$link' target='_blank'>$link_title</a></div></div>";
+         $output .= "</div></div><div class='gradient'></div>";
       }
       else {
         $output .= $image_markup;
-        $output .= "<div class='pinch'><div class='wrapper'>";
-        $output.="<span class='slider-title'>$title</span>";
-        $output.="<span class='slider-subtitle'>$subtitle</span>";
-        $output.="<span class='slider-readmore'><a href='$link' target='_blank'>Read More</a></span>";
-         $output .= "</div></div>";
+        $output .= "<div class='pinch text-main-image'><div class='wrapper'><div class='slide-left-ct'>";
+        $output.="<div class='slider-title slide-big-text'>$title</div>";
+        $output.="<div class='slider-subtitle slide-small-text'>$subtitle</div>";
+        $output.="<div class='slider-readmore button'><a href='$link' target='_blank'>Read More</a></div>";
+         $output .= "</div></div><div class='gradient'></div>";
       }
        $output .= '</li>';
 

@@ -7,10 +7,6 @@
 	#content {
 		width: 100% !important;
 	}
-	.view .content, .view .mask {
-	    left: auto;
-	    position: relative!important;
-	}
 	.panels-flexible-row-node_page-3,
 	.panels-flexible-row-node_page-4,
 	.panels-flexible-row-node_page-6{
@@ -24,6 +20,18 @@
 		float: right;
 	}
 	.panels-flexible-row-node_page-5{
+		@include res(s-m){
+			padding: 0!important;
+			.panels-flexible-region-node_page-content_left{
+				padding: 0 5%!important;
+			}
+			.panels-flexible-region-node_page-content_right{
+				padding: 0 5% 25px !important;
+				border-top: 1px solid #cdcdcd;
+				border-bottom: 1px solid #cdcdcd;
+				margin-top: 5px!important;
+			}
+		}
 		.panels-flexible-row-node_page-5-inside{
 			padding-top: 40px;
 		}
@@ -33,7 +41,6 @@
 	}
 	.pane-test-view-for-movie-credit-panel-pane-2{
 		background-color: #fff;
-		padding: 30px 0;
 		.pane-content{
 			@include width;
 			.view{
@@ -43,15 +50,11 @@
 				}
 			}
 		}
-		.views-field-field-cm-movie-credits-person-ro{
-			color: $color_nobel_approx;
-			width: 23%;
-		}
-		a{
-			color: #000;
-		}
-		a:hover{
-			@include main-color;
+	}
+	table{
+		border: none !important;
+		td, tr, tbody, th {
+			border: none !important;
 		}
 	}
 	.pane-event-ct-view-panel-pane-7 {
@@ -64,60 +67,16 @@
 				overflow: visible;
 			}
 		}
-		.views-table {
-			border: none;
-			margin-bottom: 0;
-			tbody {
-				border: none;
-				tr {
-					border: none;
-				}
+		table{
+			tr{
+				border:none!important;
 			}
-		}
-		.views-field-field-cm-event-time-1{
-			width: 23%;
 		}
 		.view-content {
 			padding: 22px 0;
 		}
 		.pane-content {
 			@include width();
-		}
-		table tr td, table tr th {
-			border: medium none;
-			width: calc(15% - 19.25px);
-			display: inline-block;
-			float: left;
-		}
-		.views-field-ops{
-			height: 40px;
-			padding-top: 14px;
-			width: 60px;
-		}
-		.views-field-field-toptix-purchase{
-			width: 80px;
-			float: right;
-		}
-		.table-responsive tbody tr {
-			background-color: $color_alabaster_approx !important;
-		}
-	}
-	.view-display-id-panel_pane_5{
-		.views-field-field-cm-event-time{
-			width: 23%;
-		}
-		table tr td, table tr th {
-			width: calc(15% - 19.25px);
-			float: left;
-		}
-		.views-field-ops{
-			height: 40px;
-			padding-top: 13px;
-			width: 60px;
-		}
-		.views-field-field-toptix-purchase{
-			width: 80px;
-			float: right;
 		}
 	}
 	.pane-event-ct-view-panel-pane-3{
@@ -126,103 +85,9 @@
 				margin-bottom: 0;
 			}
 		}
-		.slide-left-ct {
-			float: left;
-			color: $white;
-			margin-top: 3%;
-			margin: 0 23%;
-			@include res(s-m){
-				margin: 0 15%;
-				font-size: 13px;
-				width: 70%;
-			}
-			a{
-				color: $white;
-			}
-		}
-		.slide-movie-year {
-			font-size: 22px;
-		}
-		.slide-eve-lobby {
-			font-size: 22px;
-		}
-		.slide-right-ct {
-			float: left;
-			bottom: 25px;
-			padding-left: 6%;
-			padding-right: 10%;
-			width: 23%;
-			position: absolute;
-			a {
-				background: url("../images/play-icon.png") no-repeat scroll 60% center;
-				border-radius: 30px;
-				border:1px solid #fff;
-				display: inline-block;
-				font-size: 0;
-				height: 55px;
-				padding: 2%;
-				width: 55px;
-				@include res(s-m){
-					background-size: 16px;
-					height: 40px;
-					width: 40px;
-				}
-			}
-		}
-		.slide-eve-title {
-			font-size: 2.667em;
-			margin-top: 1%;
-		}
 		.view-event-ct-view{
 			overflow: visible;
-			.views-field-nothing{
-				position: absolute;
-				bottom: 60px;
-				width: 100%;
-				z-index: 15;
-				@include res(s-m){
-					text-align: center;	
-					font-size: 13px;
-					bottom: 10px;
-				}
-				.slide-over-content {
-					@include width();
-					.slide-movie-title {
-						margin-bottom: 15px;
-						@include res(s-m){
-							margin-bottom: 4px;
-							font-size: 13px;
-						}		
-					}
-				}
-			}
 		}
-	}
-	&.noheaderimage{
-		.pane-event-ct-view-panel-pane-3 .view-event-ct-view .views-field-nothing{
-			position: relative;
-			bottom: 0;
-		}
-		.slide-left-ct{
-			color: #000!important;
-			margin-bottom: 3%;
-			h2{
-				color: #000!important;
-			}
-			a{
-				color: #000!important;
-			}
-		}
-		.slide-right-ct{
-			margin-bottom: 41px;
-		}
-		.slide-right-ct a {
-    		background: rgba(0, 0, 0, 0) url("../images/play-icon-black.png") no-repeat scroll 60% center;
-    		border-color: #000;
-    	}
-    	.slide-over-content{
-    		margin: 50px auto 25px!important;
-    	}
 	}
 	.pane-event-ct-view-panel-pane-5{
 		@include width;
@@ -241,36 +106,8 @@
 				top: 36px!important;
 			}
 		}
-		.views-field-field-cm-event-time{
-			width: 23%;
-		}
-		td {
-			border: none !important;
-			a {
-				color: $black;
-			}
-		}
-		table {
-			border: none !important;
-		}
-		tbody {
-			border: none !important;
-			.views-field-ops .flag{
-				width: 18px;
-				height: 15px;
-			}
-		}
-		.views-field-field-toptix-purchase{
-			float: right;
-		}
-		th {
-			border: none !important;
-			color: $color_pink_swan_approx;
-			font-size: 12px;
-			font-weight: 300;
-		}
-		tr {
-			border: none !important;
+		.pane-title{
+			margin-bottom: 15px;
 		}
 	}
 	.pane-event-ct-view-panel-pane-6 {
@@ -305,34 +142,13 @@
 		.views-field-field-cm-event-body {
 			line-height: 28px;
 			@include width();
-			padding: 35px 3%;
+			padding: 35px 5%;
 			p {
 				margin: 0 23%;
 				@include res(s-m){
 					margin: 0;
 				}
 			}
-		}
-	}
-	.views_slideshow_cycle_slide .field-content .slide-alt-title {
-		background-color: $color_mine_shaft_approx;
-		bottom: 0px;
-		color: $color_star_dust_approx;
-		font-size: 12px;
-		right: 0;
-		padding: 10px 20px;
-		position: absolute;
-		z-index: 2;
-		.grp-alt {
-			border-right: 1px solid $color_star_dust_approx;
-			padding-right: 7px;
-			margin-right: 7px;
-		}
-	}
-	#views_slideshow_cycle_main_event_ct_view-panel_pane_9 .views-field-field-cm-movie-pictures .group-alttab{
-		z-index: 5;
-		@include res(s-m){
-			display: none;
 		}
 	}
 }

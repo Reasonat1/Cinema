@@ -47,12 +47,17 @@
 		}
 	}
 	.pane-bean-main-info-hebrew{
-		clear: right;
 		.field-name-field-content-info > .field-items > .field-item{
+			padding: 0 0 0 15px;
+			margin-right: 0%;
+			margin-left: 3%;
 			float: right;
-			.field-name-field-cm-info-block-icon{
-				right: -30px;
-				left: auto;
+			.field-name-field-info-icon{
+				right: -50px;
+				left: 0;
+				img{
+					float: left;
+				}
 			}
 			.field-name-field-label{
     			text-align: right;
@@ -61,8 +66,8 @@
 			}
 			.field-name-field-description{
     			text-align: right;
+				padding-right: 0px;
 				padding-left: 30px;
-				padding-right: 0;
 			}
 		}
 	}
@@ -92,33 +97,21 @@
 			float: left;
 		}
 	}
-	.pane-bean-social-links-new, .pane-bean-logos-hebrew-block, .pane-bean-logos-english-block{
-		float: left;
-		.field-name-field-social-icons > .field-items > .field-item{
-			float: right;
-			margin-left: 0;
-			margin-right: 27px;
-		}
-	}
 }
 
 /********** responsive menu **********/
 
-@include res(s-m){
-	.header #site-main-menu{
-	    margin-left: 0;
+.responsive-menu-wrapper{
+   	#site-main-menu{
 	    li{	
 	    	text-align: right;
 	    	.caret{
 	    		float: left;
-			    &:after{
-			    	display: block;
-			    	content: "";
-			   		border-right: 8px solid #fff;
-			    	border-left: none;
-			    	float: left;
-			    }
-	    	}
+	            &:after{
+	 				float: left;
+	            }
+	        }
 	    }
 	}
 }
+

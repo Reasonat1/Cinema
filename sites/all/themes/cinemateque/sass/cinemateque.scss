@@ -1,11 +1,5 @@
 @import "init";
 
-body {
-	background-color: #eef3fa!important;
-	font-family: Open-Sans;
-	display: block!important;
-	font-size:18px;
-}
 .tabledrag-toggle-weight-wrapper {
 	display: none;
 }
@@ -83,10 +77,16 @@ body {
 	&.header-right{
 		> li {
 			display: inline-block;
-			padding-left: 15px;
-			padding-right: 15px;
+			padding-left: 0px;
+			padding-right: 30px;
 			padding-top: 12px;
 			transition: all 0.5s ease 0s;
+			@include res(s-m){
+				padding-right: 15px;
+			}
+			@include res(menu){
+				float: right;
+			}
 		}
 		i{
 			color: #fff;
@@ -168,7 +168,127 @@ body {
 	position: relative;
 }
 
+/*****  footer credit for mobile *******/
+
+.view-footer-credit-slogan-for-mobile{
+	margin-bottom: 30px;
+	.owl-next{
+	    font-size: 0;
+	    height: 19px;
+	    left: -30px;
+	    position: absolute;
+	    top: 33%;
+	    width: 10px;	
+	}
+	.owl-carousel{
+		width: calc(100% - 100px)!important;
+		margin: 0 auto;
+	}
+	.owl-prev{
+	    font-size: 0;
+	    height: 19px;
+	    right: -30px;
+	    position: absolute;
+	    top: 33%;
+	    width: 10px;
+	}
+	.view-footer-credit-slogan-for-mobile{
+		margin-bottom: 30px;
+	}
+
+	.owl-carousel .owl-item img{
+		max-height: 50px;
+		width: auto;
+		margin: 0 auto !important;
+	}
+}
+
+
+
 .footer {
+	.pane-bean-main-info-english, .pane-bean-main-info-hebrew{
+		/*background: url("../images/info-bg.png") no-repeat scroll center center / cover;*/
+		@include bg-main-color;
+		overflow: hidden;
+		position: relative;
+		z-index: -1;
+		.pane-content{
+			@include width;
+			.field-name-field-background-image{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+				z-index: -1;
+				opacity: 0.5;
+				.field-items{
+					height: 100%;
+					width: 100%;
+				}
+				img{
+				  position: absolute; 
+				  top: 0; 
+				  left: 0; 
+				  right: 0; 
+				  margin: auto; 
+				  min-width: 50%;
+				  min-height: 50%;
+				  overflow-x: hidden;
+				}
+			}
+			.field-name-field-content-info{
+				padding: 54px 0;
+				overflow: hidden;
+			}
+			.field-name-field-content-info > .field-items > .field-item{
+			   color: #fff;
+			    float: left;
+			    padding: 0 2%;
+			    text-align: center;
+			    width: 25%;
+			    .field-name-field-info-icon{
+			    	margin-bottom: 10px;
+			    	height: 30px;
+			    }
+			    .field-name-field-label{
+			    	font-weight: bold;
+			    	margin-bottom: 12px;
+			    	@include res(l){
+			    		margin-bottom: 3px;
+			    	}
+			    }
+			    .field-name-field-description{
+			    	p{
+			    		line-height: 22px;
+			    		margin: 0;
+			    		@include res(l){
+			    			font-size: 13px;
+			    			line-height: 17px;
+			    		}
+			    		a{
+			    			color: #fff;
+			    		}
+			    	}
+			    }
+			}
+		}
+	}
+	.pane-bean-logos-block, .pane-bean-sponsor-block{
+		max-width: 1500px;
+		margin: 0 auto;
+		.field-name-field-sponsor-logos-links > .field-items{
+			text-align: center;
+			> .field-item{
+				display: inline-block;
+				img{
+					height: 40px;
+					width: auto;
+					margin: 10px;
+				}
+			}
+		}
+	}
 	.view-bean-infomation-block-view {
 		table {
 			tr {
@@ -209,6 +329,9 @@ body {
 		padding-top: 20px;
 	}
 	.webform-client-form {
+		.form-required{
+			display: none;
+		}
 		.form-actions{
 			margin-top: 0;
 		}
@@ -216,10 +339,10 @@ body {
 			width: 20%!important;
 			margin-right: 0px!important;
 			@include res(s-m){
-				widows: 100%;
+				width: 100%!important;
 			}
 			p{
-				margin: 5px 0 0 0;
+				margin: 4px 0 0;
 			}
 		}
 		.webform-component {
@@ -230,6 +353,7 @@ body {
 			width: 18%;
 			@include res(s-m){
 				width: 100%;
+				margin: 3px 0;
 			}
 			input {
 				@include bg-second-color;
@@ -248,6 +372,7 @@ body {
 			}
 			label{
 				color: #fff;
+				padding: 12px 10px;
 			}
 			&.webform-component-radios {
 				width: 100%;
@@ -265,6 +390,10 @@ body {
 			}
 			label{
 				padding: 0;
+				position: relative!important;
+				&.element-invisible{
+					display: none;
+				}
 			}
 			input{
 				height: auto;
@@ -317,6 +446,9 @@ body {
 			@include res(s-m){
 				width: 100%;
 				text-align: center;
+				p{
+					padding: 5px 0;
+				}
 			}
 		}
 		.design-development{
@@ -324,6 +456,10 @@ body {
 			@include res(s-m){
 				width: 100%;
 				text-align: center;
+				p{
+					text-align: center;
+					padding: 5px 0;
+				}
 			}
 		}
 	}
@@ -390,6 +526,7 @@ img.panopoly-image-full{
 .sticky-header, .not-front header{
 	height: 50px!important;
 	.navbar-brand{
+		height: 44px!important;
 		@include res(s-m){
 			height: 40px;
 		}
@@ -400,6 +537,10 @@ img.panopoly-image-full{
 			}
 		}
 	}
+}
+
+.navbar-collapse{
+	padding: 0;
 }
 
 .admin-menu {
@@ -413,7 +554,7 @@ img.panopoly-image-full{
 
 .navbar-default{
 	background-color: transparent;
-	@include res(s-m){
+	@include res(menu){
 		padding: 0 3%;
 	}
 }
@@ -422,7 +563,7 @@ img.panopoly-image-full{
 	position: relative;
 	z-index: 200;
 	float: left;
-	@include res(s-m){
+	@include res(menu){
 		float: right;
 	}
 }
@@ -434,7 +575,7 @@ img.panopoly-image-full{
 	top: 0;
 	width: 100%;
 	transition: all 0.5s ease-out;
-	z-index: 99;
+	z-index: 400;
 	.container-fluid {
 		padding: 0;
 	}
@@ -456,8 +597,19 @@ img.panopoly-image-full{
 	}
 }
 
+.teaser-row .ticket {
+  @include bg-main-color;
+  margin-left: 10px;
+  padding: 4px 13px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
 .header {
-	#site-main-menu {
+	.navbar{
+		margin-bottom: 0;
+	}
+	#main-menu {
 		color: $white;
 		transition: all 0.5s ease 0s;
 		padding: 0!important;
@@ -467,14 +619,21 @@ img.panopoly-image-full{
 		@include res(s-m){
 			display: none;
 		}
+		@include res(menu){
+			width: 94%;
+		}
 		li a {
 			color: $white;
 			transition: all 0.5s ease 0s;
 			padding: 10px!important;
 			line-height: 20px!important;
+			background-color: transparent;
+			&:hover{
+				@include main-color;
+			}
 		}
 		li li a{
-			@include bg-main-color();;
+			@include bg-main-color();
 		}
 
 	}
@@ -488,18 +647,21 @@ img.panopoly-image-full{
 	.header-right{
 		width: auto;
 		float: right;
-		@include res(s-m){
+		margin-bottom: 0;
+		@include res(menu){
 			padding: 0;
 			float: left;
-			li{
-				padding-left: 0;
-				padding-right: 0;
-				margin-right: 10px;
-				float: right;
-				&.shopping-cart, &#da11y-plugin{
-					display: none;
+			@include res(s-m){
+				li{
+					float: right;
+						&.shopping-cart, &#da11y-plugin{
+							display: none;
+						}
 				}
 			}
+		}
+		.popup_search{
+			display: none;
 		}
 		.search{
 			span{
@@ -508,6 +670,8 @@ img.panopoly-image-full{
 			    height: 20px;
 			    text-indent: -9999px;
 			    width: 20px;
+			    transition: all 0.5s;
+                -webkit-transition: all 0.5s;
 			}
 		    a{
 		    	padding: 0;
@@ -544,15 +708,6 @@ img.panopoly-image-full{
 	.container {
 		padding: 0;
 		width: 100%;
-	}
-	.site-custom-menu li {
-		display: none;
-		&.expanded {
-			display: inline-block;
-		}
-		ul li {
-			display: block;
-		}
 	}
 }
 
@@ -940,7 +1095,7 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 
 .pane-bean-footer-social-block{
 	@include bg-main-color();
-	padding: 40px 0;
+	padding: 40px 0 25px;
 	clear: both;
 	.field-items{
 		text-align: center;
@@ -948,6 +1103,12 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 	.field-item{
 		display: inline-block;
 		margin: 0 10px;
+	}
+	.field-item:nth-child(1){
+		@include res(s-m){
+			width: 100%;
+			margin: 0 0 5px 0;
+		}
 	}
 }
 
@@ -996,10 +1157,6 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 	transition: all 0.5s ease 0s;
 }
 
-
-#site-main-menu > li a.dropdown-toggle.active {
-	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-}
 .site-custom-menu.menu.nav.navbar-nav {
 	background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
 	margin-top: 5px;
@@ -1009,11 +1166,14 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 	width: 100%;
 }
 .navbar .navbar-brand {
-	margin: 9px 5px 0 30px;
+	margin: 6px 5px 0 30px;
 	overflow: hidden;
 	padding: 0;
 	@include res(s-m){
-		margin: 9px 30px 0 5px;
+		margin: 10px 30px 0 5px!important;
+	}
+	@include res(menu){
+		margin: 6px 30px 0 5px;
 	}
 }
 .navbar-nav > li {
@@ -1175,33 +1335,16 @@ div[id^="panels-ipe-paneid-22"] > * select {
 			height: 100%;
 	}
 	.pane-bundle-gallery{
-		.custom-slideshow{
+		/*.custom-slideshow, li{
 			height: 1024px!important;
-		}
+		}*/
 		.custom-slideshow li img{
 			width: 100%;
 			height: auto;
 			max-width: none;
 		}
-		li{
-			height: 1024px!important;
-		}
-		.slider-readmore{
-			border-radius: 15px;
-			margin-top: 20px;
-		}
-		.slider-title{
-			font-size: 3rem;
-			font-weight: normal;
-		}
-		.pinch{
-			width: 100%;
-			left: 0;
-			padding: 0;
-			text-shadow: -3px -3px 2px rgba(150, 150, 150, 1);
-			.wrapper{
-				@include width;
-			}
+		.custom-slideshow{
+			overflow: hidden;
 		}
 	}
 	.field-name-field-cm-festival-body{

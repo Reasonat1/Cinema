@@ -2,8 +2,6 @@
 
 .pane-movie-group-ct-panel-pane-3 {
 	.views-field-field-toptix-purchase{
-		float: left;
-		width: 83px;
 		button{
 			float: right;
 		}
@@ -130,13 +128,6 @@ table{
 			padding-right: 0;
 			padding-left: 100px;
 			float: right;
-			.field-name-field-cm-article-tags{
-				a{
-				    float: right;
-				    margin-left: 10px;
-				    margin-right: 0;
-				}
-			}
 		}
 		.radix-layouts-content{
 			.pane-node-body{
@@ -215,15 +206,7 @@ table{
 				float: right;
 				padding-right: 44px;
 				padding-left: 0;
-			}
-			.col-1{
-				background: url("../images/search-icon-gold.png") no-repeat scroll right 4px;
-			}
-			.col-2{
-				background: url("../images/search-icon-gold.png") no-repeat scroll right 4px;
-			}			
-			.col-3{
-				background: url("../images/search-icon-gold.png") no-repeat scroll right 4px;
+				background-position: right 4px!important;
 			}
 		}
 	}
@@ -242,9 +225,100 @@ table{
 	}
 }
 
+.view-person-ct-view.view-display-id-panel_pane_2 .node-title-teaser-content-type:hover{
+	background: url("../images/more-white-left.png") no-repeat scroll left 10px center;
+	@include bg-main-color;
+}
+
 .content.middle {
 	.panels-flexible-region-node_page-content_left {
 		width: 77%;
 		float: left;
+	}
+}
+
+/****  share blcok  *****/
+
+.share-pane-container {
+	.facebook a{
+        background-position: right 3px center!important;
+	}
+    .whatsapp a{
+        background-position: right center!important;
+    }
+	.flag-wrapper{
+		a.flag-action, a.unflag-action{
+			background-position: right center!important;
+		}
+		.title{
+			right: 30px;
+			left: auto;
+		}
+	}
+}
+
+/******  tags  *******/
+
+.pane-node-field-tag, .pane-node-field-cm-article-tags, .pane-node-field-cm-movie-tags {
+	.pane-content {
+		.field-item{
+		    float: right;
+		    margin-right: 0;
+		    margin-left: 2%;
+		}
+		a{
+		    float: right;
+		}
+	}
+}
+
+/******  responsive *********/
+
+@include res(s-m){
+	.table-responsive{
+		td{
+			padding-left: 8px!important;
+			padding-right: 0!important;
+		}
+	}
+}
+
+/***** movie, movie group, event & article  ********/
+
+.text-main-image{
+	.wrapper{
+		.slide-right-ct {
+			float: right;
+			padding-right: 6%;
+			padding-left: 10%;
+			@include res(s-m){
+				padding-left: 3%;
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+.slide-alt-title {
+	left: auto;
+	right: 0;
+	.field{
+		float: right;
+	}
+	.field-name-field-file-image-title-text{
+		margin-right: 10px;
+		padding-right: 10px;
+		border-right: 1px solid;
+		margin-left: 0px;
+		padding-left: 0px;
+		border-left: none;
+	}
+}
+
+.top-text-blk-wht{
+	right: 0;
+	left: auto;
+	span{
+		float: right;
 	}
 }

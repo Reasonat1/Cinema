@@ -1,5 +1,14 @@
 @import "init";
 
+
+/*********  general  ***********/
+
+body{
+	font-family: Open-Sans;
+	display: block!important;
+	font-size:18px;
+}
+
 p{
 	font-size: 18px;
 }
@@ -8,14 +17,17 @@ strong{
 	font-weight: bold;	
 }
 
-.panels-flexible-row{
-	@include width();
-	margin: 0 auto!important;
-	padding: 0 3%!important;
-}
-
 .ajax-progress{
   position: absolute;
+}
+
+.container{
+	width: 100%!important;
+}
+
+
+.view .content, .view .mask{
+	position: relative!important;
 }
 
 .ctr {
@@ -26,6 +38,21 @@ img{
 	max-width: 100%;
 	height: auto;
 	width: auto;
+}
+
+h2{
+	margin: 0;
+}
+
+#messages{
+	margin-top: 21px;
+}
+/*******  panels margin  *********/
+
+.panels-flexible-row{
+	@include width();
+	margin: 0 auto!important;
+	padding: 0 5%!important;
 }
 
 #da11y-toggle.active {
@@ -53,6 +80,7 @@ img{
 
 .btn-default{
 	@include bg-main-color;
+	color: #fff !important;
 }
 
 .pane-node-field-toptix-purchase {
@@ -66,7 +94,7 @@ img{
 }
 
 .views-field-field-toptix-purchase{
-	padding: 6px 8px!important;
+	padding: 4px 8px!important;
 }
 
 .clr {
@@ -80,14 +108,58 @@ img{
 	margin-top: 50px !important;
 }
 
-.table-responsive tbody tr {
-	background-color: transparent !important;
+.table-responsive{
+	thead{
+		color: $color_pink_swan_approx;
+		font-size: 12px;
+		font-weight: 300;
+	}
+	tbody{
+		tr {
+			background-color: transparent !important;
+			@include res(s-m){
+				border-bottom: 1px solid #cdcdcd!important;
+			}
+			a{
+				color: #333!important;
+			}
+		}
+	}
 }
 
-.pane-node-field-tag {
+.pane-node-field-tag, .pane-node-field-cm-article-tags, .pane-node-field-cm-movie-tags {
 	.pane-content {
 		border-top: 5px solid $black;
+		margin-top: 100px;
 		padding-top: 20px;
+		@include res(s-m){
+			border:none;
+			margin: 0;
+			padding-top: 30px;
+		}
+		.field-item{
+		    min-width: 48%;
+		    float: left;
+		    margin-right: 2%;
+		    @include res(s-m){
+		    	min-width: 25%;
+		    }
+		}
+		h2{
+			line-height: 18px;
+		}
+		a{
+		    border-bottom: 1px solid;
+		    color: #828282;
+		    display: block;
+		    float: left;
+		    font-size: 14px;
+		    padding-bottom: 5px;
+		    margin-bottom: 15px;
+		    &:hover{
+		    	@include main-color;
+		    }
+		}
 	}
 	h2.pane-title {
 		display: none;
@@ -96,25 +168,6 @@ img{
 
 .panels-flexible-node_page .panels-flexible-region-inside{
 	padding: 0!important;	
-}
-
-body {
-	&.node-type-cm-movie {
-		background-color: $white !important;
-		.container {
-			#page-header .page-header h1.title {
-				display: none;
-			}
-		}
-		#content {
-			width: 100% !important;
-		}
-	}
-	&.node-type-cm-article{
-		#content {
-			width: 100% !important;
-		}
-	}
 }
 
 .prev-custom {
@@ -215,13 +268,6 @@ body {
 		border: none !important;
 		font-size: 1.1rem;
 	}
-	.views-field-field-toptix-purchase{
-		float: right;
-		width: 90px;
-		button{
-			float: left;
-		}
-	}
 	th {
 		border: none !important;
 		font-size: 1.1rem;
@@ -300,26 +346,70 @@ body {
 }
 .share-pane-container {
 	border-top: 5px solid $black;
+	@include res(s-m){
+		display: none;
+	}
+	.link a{
+	    border-top: 1px solid #afafaf;
+	    color: #333;
+	    display: block;
+	    font-size: 16px;
+	    padding: 10px 30px;
+	}
+	.link:first-child a{
+		border-top: none;
+	}
+	.whatsapp{
+		display: none;
+		@include res(s-m){
+			display: block;
+		}
+		iframe{
+			display: none;
+		}
+	}
+	.flag-wrapper{
+		position: relative;
+		height: 42px;
+		a.flag-action, a.unflag-action{
+			width: 100%;
+			display: block;
+			background-position: left center!important;
+		}
+		.title{
+			position: absolute;
+			top: 10px;
+			left: 30px;
+			font-size: 16px;
+			z-index: -1;
+		}
+	}
 }
+
 .field-name-field-tag {
 	a {
-		color: $color_pink_swan_approx;
+		color: #828282;
 		font-size: 14px;
 		border-bottom: 1px solid;
 		padding-bottom: 5px;
 		margin-bottom: 10px;
 		display: inline-block;
+		&:hover{
+			@include main-color;
+		}
 	}
 	.field-item {
+		min-width: 48%;
+		padding-top: 3%;
+		float: left;
+		@include res(s-m){
+			min-width: 25%;
+		}
 		&.even {
 			float: left;
-			width: 50%;
-			padding-top: 3%;
 		}
 		&.odd {
 			float: right;
-			padding-top: 3%;
-			width: 50%;
 		}
 	}
 }
@@ -417,8 +507,11 @@ body {
 		float: left;
 		width: 15%;
 		margin-right: 8%;
+		padding-top: 7px;
 		@include res(s-m){
 			width: 100%;
+			margin: 0;
+			padding-top: 0;
 		}
 		.panels-flexible-region-node_page-content_right-inside{
 			padding: 0;
@@ -464,24 +557,11 @@ table.views-table {
 
 }
 
-.sharethis-wrapper span.st_sharethis_button {
-	border-bottom: 2px solid $color_alto_approx;
-	display: block;
-	margin-top: 6%;
-	padding-bottom: 15px;
-}
 #panels-ipe-regionid-content_right .pane-sharethis-sharethis-block .st_facebook_button {
 	display: block;
 	margin-top: 5%;
 }
 
-.share-pane {
-	border-bottom: 2px solid $color_alto_approx;
-	padding: 10px 30px;
-}
-.facebook-custom.share-pane{
-	background: url("../images/facebook-gold.png") no-repeat center center!important;
-}
 .i18n-he .views_slideshow_cycle_slide .field-content .slide-alt-title .grp-alt {
 	border-left: 1px solid $color_star_dust_approx;
 	padding-left: 7px;
@@ -489,15 +569,16 @@ table.views-table {
 	border-right: none;
 }
 .add-event{ 
-	width: 60px;
+	width: 60px!important;
 	a {
+		float: right;
 		border: medium none;
 		display: block;
 		font-size: 0;
 		height: 23px;
-		margin-top: 2px;
 		padding: 0;
 		width: 27px;
+		z-index: 50;
 		&:hover {
 			background-color: $white;
 			border: medium none;
@@ -511,36 +592,29 @@ table.views-table {
 		}
 	}
 }
-.field-name-field-toptix-purchase .field-item button {
-	background: url("../images/toptix.png") no-repeat !important;
-	border: medium none;
-	display: block;
-	font-size: 0;
-	height: 40px;
-	width: 104px;
-}
-.movie-flag a {
-	background: url("../images/like-event.png") no-repeat !important;
-	display: inline-block;
-	font-size: 0;
-	height: 37px;
-	width: 50px;
-	position: absolute;
-	left: 190px;
-}
 
+.addthisevent_dropdown{
+	top: 32px!important;
+}
 
 /**** lobby page  ****/
 
 .page-term-lobby{
+	background-color: $color_fantasy_approx;
 	.panels-flexible-row-node_page-1{
 		padding: 0!important;
 		width: 100%!important;
 	}
 	.view-lobby.view-display-id-panel_pane_1{
 		overflow: visible;
+		.lobby-container{
+			margin-bottom: 30px;
+		}
 		.table-responsive{
 			overflow: visible;
+			.flag{
+				margin-top: 5px;
+			}
 		}
 		#atedrop7-drop{
 			top: 35px!important
@@ -583,27 +657,21 @@ table.views-table {
 	.lobby-term-left {
 		float: right;
 		width: 80%;
-		padding: 30px;
+		padding: 30px 30px 0;
+		@include res(s-m){
+			width: 100%;
+			padding: 0 0 30px;
+		}
 	}
 	.lobby-term-right {
 		float: left;
 		width: 20%;
 		position: relative;
-		img{
+		@include res(s-m){
 			width: 100%;
 		}
-		.top-text-blk-wht {
-			position: absolute;
-			left: 0px;
-			top: 2px;
-			.white{
-				background-color: rgba(256, 256, 256, 0.9);
-				padding: 3px;
-			}
-			.black {
-				color: $white !important;
-				padding: 3px;
-			}
+		img{
+			width: 100%;
 		}
 	}
 	.pane-lobby-panel-pane-1 {
@@ -623,6 +691,14 @@ table.views-table {
 			position: relative;
 			overflow: hidden;
 			margin-bottom: 30px;
+			@include res(m){
+				width: 48%;
+				margin-right: 0;
+			}
+			@include res(s){
+				width: 100%;
+				margin-right: 0;
+			}
 			img{
 				width: 100%;
 				height: auto;
@@ -634,8 +710,21 @@ table.views-table {
 		.views-row:nth-child(3n){
 			margin-right: 0;
 		}
+		.views-row:nth-child(odd){
+			@include res(m){
+				float: left;
+			}
+		}
+		.views-row:nth-child(even){
+			@include res(m){
+				float: right;
+			}
+		}
 		.views-row:nth-child(3n+1){
 			clear: both;
+			@include res(m){
+				clear: none;
+			}
 		}
 		.views-field-field-cm-moviegroup-short-summar, .views-field-name{
 			position: absolute;
@@ -645,18 +734,6 @@ table.views-table {
 			width: 100%;
 			a{
 				color: #fff;
-			}
-		}
-		.views-field-field-mc-teaser-toptxt-blk{
-			position: absolute;
-			top: 4px;
-			left: 0;
-			.black{
-				color: #fff;
-				padding: 5px;
-			}
-			.white{
-				padding: 5px;
 			}
 		}
 		.views-field-ops{
@@ -757,24 +834,6 @@ table.views-table {
 
 .img-like-wrapper {
 	position: relative;
-	.top-text-blk-wht {
-		left: 36em;
-		position: absolute;
-		width: 100%;
-		top: 0;
-		.white {
-			@include main-color();
-			display: block;
-			float: left;
-			padding: 1%;
-		}
-		.black {
-			color: $white;
-			display: block;
-			float: left;
-			padding: 1%;
-		}
-	}
 	.like-btn {
 		left: 3em;
 		position: absolute;
@@ -866,8 +925,16 @@ input:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]),
 table{
 	td, th{
 		padding-left: 0!important;
+		white-space: unset!important;
 		@include res(s-m){
 			padding: 8px!important;
+		}
+	}
+	.purchase, .views-field-field-toptix-purchase, .views-field-field-toptix-purchase{
+		width: 88px!important;
+		box-sizing:border-box;
+		@include res(s-m){
+			vertical-align: middle !important;
 		}
 	}
 }
@@ -921,6 +988,10 @@ table{
 				padding: 7px 22% 8px 2%;
 				font-size: 25px;
 				border:none;
+				@include res(s-m){
+					font-size: 15px;
+					padding: 13px;
+				}
 			}
 		}
 		.form-submit {
@@ -987,7 +1058,6 @@ table{
 		padding: 0!important;
 	}
 	.pane-node-body{
-		@include width();
 		.field-name-body{
 			line-height: 1.8;
 		}
@@ -997,24 +1067,6 @@ table{
 		.content{
 			position: relative;
 		}
-		.views-field-title{
-			color: #fff;
-			position: absolute;
-			bottom: 60px;
-			width: 100%;
-			text-shadow: 2px 2px 2px #000;	
-			.field-content{
-				@include width;				
-				display: block;
-				.sub-title{
-					font-size: 20px;
-					margin: 0 23%;
-				}
-				h2{
-					margin: 0 23%;
-				}
-			}
-		}
 	}
 	.container-fluid .row:nth-child(2){
 		@include width;
@@ -1023,20 +1075,6 @@ table{
 			width: 23%;
 			padding-right: 100px;
 			box-sizing: border-box;
-			.field-name-field-cm-article-tags{
-				border-top: 5px solid $black;
-				padding-top: 20px;
-				margin-top: 12px;
-				a{
-				    border-bottom: 1px solid;
-				    color: #828282;
-				    display: block;
-				    float: left;
-				    font-size: 14px;
-				    margin-right: 10px;
-				    padding-bottom: 5px;
-				}
-			}
 		}
 		.radix-layouts-content{
 			padding: 0;
@@ -1046,13 +1084,18 @@ table{
 			}
 		}
 	}
-	&.noheaderimage{
-		.view-article-ct-panes.view-display-id-panel_pane_1 .views-field-title.views-field-title{
-			position: relative;
-			color: #000;
-			text-shadow: none;
-			bottom: auto;
-			margin: 50px 0 20px;
+	.panels-flexible-row-node_page-5{
+		@include res(s-m){
+			padding: 0!important;
+			margin-top: 20px;
+			.panels-flexible-region-node_page-content_left{
+				padding: 0 5%;
+			}
+			.panels-flexible-region-node_page-content_right{
+				padding: 0 5% 25px;
+				border-top: 1px solid #cdcdcd;
+				border-bottom: 1px solid #cdcdcd;
+			}
 		}
 	}
 }
@@ -1155,6 +1198,7 @@ table{
 .alert{
 	position: relative;
 	z-index: 200;
+	
 }
 
 /*******  user profile  ********/
@@ -1294,18 +1338,6 @@ table{
 						float: left;
 						width: 30%;
 						position: relative;
-						.top-text-blk-wht{
-							position: absolute;
-							top: 0;
-							left: 0;
-							padding: 5px 0;
-							span{
-								padding: 5px 10px;
-							}
-							.black{
-								color: #fff;
-							}
-						}
 					}
 					.lobby-term-right{
 						float: right;
@@ -1341,15 +1373,21 @@ table{
 		width: 18%;
 	}
 	.purchase{
-		float: right;
 		padding-right: 0;
 		padding-left: 0;
+		width: 88px;
 	}
 	.title{
 		width: 23%;
 	}
 	.code{
 		width: 10%;
+		@include res(s-m){
+			color: #ccc;
+			.only-mobile{
+				color: #333;
+			}
+		}
 	}
 }
 
@@ -1400,15 +1438,11 @@ table{
 				margin: 0 1.66667%;
 				box-sizing: border-box;
 				padding-left: 44px;
-			}
-			.col-1{
-				background: url("../images/search-icon-gold.png") no-repeat scroll left 4px;
-			}
-			.col-2{
-				background: url("../images/search-icon-gold.png") no-repeat scroll left 4px;
-			}			
-			.col-3{
-				background: url("../images/search-icon-gold.png") no-repeat scroll left 4px;
+				min-height: 27px;
+				@include res(s-m){
+					width: 100%;
+					margin: 0 0 20px 0;
+				}
 			}
 		}
 	}
@@ -1431,6 +1465,9 @@ table{
 			}
 			.views-row{
 				width: 49%;
+				@include res(s-m){
+					width: 100%;
+				}
 				h3{
 					font-weight: normal;
 				}
@@ -1447,6 +1484,15 @@ table{
 		}
 	}
 }
+
+.node-title-teaser-content-type{
+	background-color: #fff!important;
+	&:hover{
+		background: url("../images/more-white-right.png") no-repeat scroll right 10px center;
+		@include bg-main-color;		
+	}
+}
+
 
 .gradient{
 	position: absolute;
@@ -1496,6 +1542,9 @@ table{
 		border:none;
 		overflow: hidden;
 		margin-bottom: 0;
+		thead{
+			display: none;
+		}
 		table{
 			font-size: 14px;
 		}
@@ -1505,7 +1554,13 @@ table{
 			}
 		}
 		td{
-			width: 30%!important;
+			width: calc(49% - 44px)!important;
+			padding-left: 0!important;
+			&.purchase, &.views-field-field-toptix-purchase{
+				padding-left: 0!important;
+				padding-right: 0!important;
+				width: 80px!important;
+			}
 		}
 	}
 }
@@ -1518,4 +1573,194 @@ div#admin-toolbar div.admin-tab{
 
 input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]), input[type="email"]:focus:not([readonly]), input[type="number"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), input[type="search-md"]:focus:not([readonly]), input[type="tel"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="time"]:focus:not([readonly]), input[type="url"]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
 	box-shadow: none!important;
+}
+
+/***** movie, movie group, event & article  ********/
+
+.text-main-image{
+	position: absolute;
+	bottom: 60px;
+	color: #fff;
+	width: 100%;
+	padding: 0;
+	z-index: 100;
+	@include res(s-m){
+		bottom: 10px;
+	}
+	.wrapper{
+		@include width;
+		a, a:hover{
+			color: #fff;
+		}
+		.slide-left-ct{
+			margin: 0 23%;
+			@include res(s-m){
+				text-align: center;	
+				font-size: 13px;
+				margin: 0 15%;
+				width: 70%;
+			}
+			.slide-small-text{
+				font-size: 22px;
+				@include res(s){
+					font-size: 15px;
+				}
+			}
+			.slide-big-text{
+				font-size: 48px;
+				margin: 1% 0 15px;
+				line-height: 110%;
+				@include res(s-m){
+					margin-bottom: 4px;
+				}
+				@include res(s){
+					font-size: 27px;
+					font-weight: bold;
+				}
+			}
+			.button{
+  				font-size: 14px;
+  				padding: 5px 12px;
+    			margin: 22px 0 0 0;
+    			@include bg-main-color;
+    			border-radius: 15px;
+    			float: left;
+    			a{
+    				color: #fff;
+    			}
+			}
+		}
+		.slide-right-ct {
+			float: left;
+			position: absolute;
+			top: 0;
+			padding-left: 6%;
+			padding-right: 10%;
+			width: 23%;
+			margin-top: 38px;
+			@include res(s-m){
+				margin: 0;
+				bottom: 6px;
+				top: auto;
+				padding-right: 3%;
+				padding-left: 0;
+				width: 13%;
+			}
+			*:focus {
+			    outline: 0;
+			    outline-style:none;
+			    outline-width:0;
+			}
+			a {
+				background: url("../images/play-icon.png") no-repeat scroll 60% center;
+				border-radius: 30px;
+				border:1px solid #fff;
+				display: inline-block;
+				font-size: 0;
+				height: 55px;
+				padding: 2%;
+				width: 55px;
+				@include res(s-m){
+					background-size: 16px;
+					height: 40px;
+					width: 40px;
+				}
+			}
+		}
+	}
+	a {
+		color: #fff;
+	}
+}
+
+
+
+.noheaderimage{
+	.text-main-image{
+		position: relative;
+		color: #333;
+		margin: 50px 0 30px;
+		bottom: auto;
+		.wrapper{
+			a, a:hover{
+				color: #333;
+			}
+			.slide-right-ct{
+				margin-top: 0;
+				a {
+					background: url("../images/play-icon-black.png") no-repeat scroll 60% center;
+					border:1px solid #000;
+				}
+			}
+		}
+	}
+	.gradient{
+		display: none;
+	}	
+}
+/*
+@media (max-height: 320px){
+	.full-screen-image, .full-screen-image .wrapper-image .content{
+		max-height: none!important;
+	}
+}
+*/
+.slide-alt-title {
+	background-color: $color_mine_shaft_approx;
+	bottom: 0px;
+	color: $color_star_dust_approx;
+	font-size: 12px;
+	left: 0;
+	padding: 10px 20px;
+	position: absolute;
+	z-index: 2;
+	@include res(s-m){
+		display: none;
+	}
+	.field{
+		float: left;
+	}
+	.field-name-field-file-image-title-text{
+		margin-left: 10px;
+		padding-left: 10px;
+		border-left: 1px solid;
+	}
+}
+
+.top-text-blk-wht{
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 14px;
+	span{
+		padding: 6px 12px;
+		opacity: 0.9;
+		float: left;
+	}
+	.black{
+		color: #fff;
+	}
+}
+
+
+// credit
+
+.credits-view{
+	padding: 30px 0;
+	.profession{
+		width: 120px;
+		color: $color_nobel_approx;
+		@include res(s-m){
+			width: auto;
+		}
+	}
+	table tr{
+		border:none!important;
+	}
+	a{
+		color: #000;
+	}
+	a:hover{
+		@include main-color;
+	}
 }

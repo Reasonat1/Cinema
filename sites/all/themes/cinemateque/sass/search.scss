@@ -74,6 +74,9 @@
 	}
 	.pager{
 		float: right;
+		@include res(s-m){
+			float: left;
+		}
 	}
 	.cm_movie .pro-grid {
 		li {
@@ -129,6 +132,10 @@
 				padding: 7px 22% 8px 2%;
 				font-size: 25px;
 				border:none;
+				@include res(s-m){
+					font-size: 15px;
+					padding: 13px;
+				}
 			}
 		}
 		.form-submit {
@@ -142,6 +149,10 @@
 			right: 0px;
 			box-shadow: none;
 			top: 0px;
+			@include res(s-m){
+				width: 100%;
+				position: relative;
+			}
 		}
 	}
 	.search_new {
@@ -225,10 +236,25 @@
 		background: $white;
 	}
 	.panels-flexible-row-node_page-3{
+		.pane-search-api-page-search-results{
+			width: 100%;
+		}
 		.pane-facet{
 			float: left;
 			width: 15.4%;
 			margin-left: 1.5%;
+			@include res(l){
+				width: 32.3%;
+			}
+			@include res(s-m){
+				margin-left: 0!important;
+			}
+			@include res(s){
+				width: 100%;
+			}
+			@include res(m){
+				width: 48%;
+			}
 			*:focus {
 			    outline: 0;
 			    outline-style:none;
@@ -238,29 +264,27 @@
 				width: 100%!important;
 			}
 		}
+		.panel-pane:nth-child(odd){
+			@include res(m){
+				float: right;
+			}
+		}
 		.panel-pane:nth-child(6n+2){
 			margin-left: 0;
+			@include res(l){
+				margin-left: 1.5%;
+			}
+			@include res(s-m){
+				margin: 0!important;
+			}
+		}
+		.panel-pane:nth-child(3n+2){
+			@include res(l){
+				margin-left: 0%!important;
+			}
 		}
 		.form-type-select{
 			margin-top: 0;
-		}
-	}
-	.current-search-item {
-		clear: both;
-		li{
-			float: left;
-			margin-right: 30px!important;
-			border-bottom: 1px solid;
-			color: #c9c9c9;
-			a{
-				color: #c9c9c9;
-			}
-		}
-		li:hover{
-			@include main-color;
-			a{
-				@include main-color;
-			}
 		}
 	}
 	.pane-search-current{
@@ -323,23 +347,18 @@
 					top: -46px;
 					right: 0;
 					position: absolute;
+					@include res(s-m){
+						position: relative;
+						top: auto;
+					}
 				}
 				.view-content{
 					.lobby-term-left{
 						float: left;
 						width: 30%;
 						position: relative;
-						.top-text-blk-wht{
-							position: absolute;
-							top: 0;
-							left: 0;
-							padding: 5px 0;
-							span{
-								padding: 5px 10px;
-							}
-							.black{
-								color: #fff;
-							}
+						@include res(s-m){
+							width: 100%;
 						}
 					}
 					.lobby-term-right{
@@ -347,6 +366,9 @@
 						width: 70%;
 						padding: 20px;
 						box-sizing: border-box;
+						@include res(s-m){
+							width: 100%;
+						}
 						table tbody{
 							border: none;
 						}
@@ -364,6 +386,11 @@
 						}
 					}
 					.row-custom-lobby{
+						td{
+							@include res(s-m){
+								padding-right: 0!important;
+							}
+						}
 						.date{
 							width: 20%;
 						}
@@ -374,10 +401,9 @@
 							width: 18%;
 						}
 						.purchase{
-							float: right;
 							padding-right: 0;
 							padding-left: 0;
-							width: 80px;
+							width: 80px!important;
 						}
 						.flag{
 							margin-top: 6px;
@@ -395,6 +421,25 @@
 	}
 }
 
+.current-search-item {
+	clear: both;
+	li{
+		float: left;
+		margin-right: 30px!important;
+		border-bottom: 1px solid;
+		color: #c9c9c9;
+		a{
+			color: #c9c9c9;
+		}
+	}
+	li:hover{
+		@include main-color;
+		a{
+			@include main-color;
+		}
+	}
+}
+
 .select2-results__options{
 	li:first-child{
 		background: none;
@@ -402,16 +447,6 @@
 	li{
 		background: url("../images/select-empty.png") no-repeat left 7px top 14px;
 		padding-left: 22px;
-		&.select2-results__option-selected{
-			background: url("../images/select-gold.png") no-repeat left 7px top 14px;
-		}
-	}
-	li[aria-selected="true"]{
-		background: url("../images/select-gold.png") no-repeat left 7px top 14px;
-	}
-	li:first-child{
-		background: none;
-		padding-left: 7px;
 	}
 }
 
