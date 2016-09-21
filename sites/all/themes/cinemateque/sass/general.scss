@@ -44,7 +44,7 @@ h2{
 	margin: 0;
 }
 
-#messages{
+#messages div{
 	margin-top: 21px;
 }
 /*******  panels margin  *********/
@@ -1087,7 +1087,6 @@ table{
 	.panels-flexible-row-node_page-5{
 		@include res(s-m){
 			padding: 0!important;
-			margin-top: 20px;
 			.panels-flexible-region-node_page-content_left{
 				padding: 0 5%;
 			}
@@ -1095,6 +1094,7 @@ table{
 				padding: 0 5% 25px;
 				border-top: 1px solid #cdcdcd;
 				border-bottom: 1px solid #cdcdcd;
+				margin-top: 20px;
 			}
 		}
 	}
@@ -1211,153 +1211,171 @@ table{
 	.panels-flexible-region-homepage_panel-center {
 	    width: 100%;
 	}
-	.pane-user-page-pane-panel-pane-1{
-		background-color: #999b9c;
-		.pane-content{
-			@include width;
-			padding-top: 60px; 
-			.views-field-name{
-				text-align: center;
-				.field-content{
-					font-size: 3rem;
-				}
+}
+
+.pane-user-page-pane-panel-pane-1{
+	background-color: #999b9c;
+	.pane-content{
+		@include width;
+		padding-top: 60px; 
+		.views-field-name{
+			text-align: center;
+			.field-content{
+				font-size: 3rem;
 			}
-		}
-	}
-	#views-exposed-form-user-flagged-content-panel-pane-1{
-		.views-widget-filter-gid{
-			width: 100%;
-			background-color: #999b9c;
-			overflow: hidden;
-			padding-bottom: 30px;
-			position: absolute;
-			left: 0;
-			top: 0;
-			a{
-				color: #000;
-				border:1px solid #fff;
-				padding: 5px 10px;
-				display: block;	
-				width: 160px;
-				margin-right: -5px; 
-				&.active{
-					color: #fff;
-					@include bg-main-color();
-				}
-			}
-			.form-item{
-				text-align: center;
-				.form-item{
-					display: inline-block;
-				}
-			}
-		}
-		.form-item-edit-gid-all{
-			display: none!important;
-		}
-	}
-	.view-user-flagged-content.view-display-id-panel_pane_1{
-		.view-filters{
-			background-color: #c0c1c3;	
-			overflow: hidden;
-			padding-top: 90px;
-			padding-bottom: 13px;
-			margin-bottom: 50px;
-			.wrapper{
-				@include width;
-				form{
-					float: left;
-				}
-				.edit{
-					float: right;
-					a{
-						@include main-color();
-						border: 1px solid;
-						padding: 5px 10px;
-					}
-				}
-			}
-			.views-widget-filter-type{
-				padding: 0;
-				.form-item-edit-type-all{
-					display: none!important;
-				}	
-				.form-item{
-					display: inline-block;
-					a{
-						color: #000;
-						&.active{
-							@include main-color();
-						}
-					}
-				}
-				.form-item-edit-type-1{
-					border-right: 1px solid #000;
-					margin-right: 40px;
-					padding-right: 40px;
-				}
-			}
-		}
-		.text-center{
-			overflow: hidden;
-			padding-bottom: 50px;
-			.item-list{
-				@include width;
-				ul{
-					margin: 0;
-				}
-			}
-			.pagination{
-				float: right;
-			}
-			.pager-next, .pager-last, .pager-first, .pager-previous{
-				a{
-					padding-right: 0;
-					padding-left: 0;
-				}
-			}
-			.pager-item a, .pager-current span{
-				padding: 5px 10px;
-			}
-		}
-	}
-	.pane-user-flagged-content-panel-pane-1 .view-content{
-		padding-bottom: 20px;
-		.item-list{
-			@include width;
-			.view{
-				overflow: visible;
-			}
-				.lobby-container{
-					margin-bottom: 20px;
-					clear: both;
-					background-color: #fff;
-				}
-				.lobby-container{
-					.lobby-term-left{
-						float: left;
-						width: 30%;
-						position: relative;
-					}
-					.lobby-term-right{
-						float: right;
-						width: 70%;
-						padding: 20px;
-						box-sizing: border-box;
-						table tbody{
-							border: none;
-						}
-						.lobby-title a{
-							font-size: 1.3rem;
-						}
-						.lobby-length{
-							color: #919191;
-						}
-					}
-				}
 		}
 	}
 }
+
+#views-exposed-form-user-flagged-content-panel-pane-1{
+	.views-widget-filter-gid{
+		width: 100%;
+		background-color: #999b9c;
+		overflow: hidden;
+		padding-bottom: 30px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		a{
+			color: #000;
+			border:1px solid #fff;
+			padding: 5px 10px;
+			display: block;	
+			margin-right: 5px; 
+			transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+			&.active, &:hover{
+				color: #fff;
+				@include bg-main-color;
+			}
+		}
+		.form-item{
+			text-align: center;
+			.form-item{
+				display: inline-block;
+			}
+		}
+	}
+	.form-item-edit-gid-all{
+		display: none!important;
+	}
+}
+.view-user-flagged-content.view-display-id-panel_pane_1{
+	.view-filters{
+		background-color: #c0c1c3;	
+		overflow: hidden;
+		padding-top: 90px;
+		padding-bottom: 13px;
+		margin-bottom: 50px;
+		.wrapper{
+			@include width;
+			form{
+				float: left;
+			}
+			.edit{
+				float: right;
+				padding-top: 3px;
+				a{
+					@include main-color();
+					border: 1px solid;
+					padding: 5px 10px;
+					transition: all 0.5s;
+                    -webkit-transition: all 0.5s;	
+                    &:hover{
+                    	background-color: #fff;
+                    }
+				}
+			}
+		}
+		.views-widget-filter-type{
+			padding: 0;
+			.form-item-edit-type-all{
+				display: none!important;
+			}	
+			.form-item{
+				display: inline-block;
+				a{
+					color: #000;
+					transition: all 0.5s;
+        			-webkit-transition: all 0.5s;
+					&.active, &:hover{
+						@include main-color();
+					}
+				}
+			}
+			.form-item-edit-type-1{
+				border-right: 1px solid #000;
+				margin-right: 40px;
+			padding-right: 40px;
+			}
+		}
+	}
+	.text-center{
+		overflow: hidden;
+		padding-bottom: 50px;
+		.item-list{
+			@include width;
+			ul{
+				margin: 0;
+			}
+		}
+		.pagination{
+			float: right;
+		}
+		.pager-next, .pager-last, .pager-first, .pager-previous{
+			a{
+				padding-right: 0;
+				padding-left: 0;
+			}
+		}
+		.pager-item a, .pager-current span{
+			padding: 5px 10px;
+		}
+	}
+}
+.pane-user-flagged-content-panel-pane-1 .view-content{
+	padding-bottom: 20px;
+	.item-list{
+		@include width;
+		.view{
+			overflow: visible;
+		}
+			.lobby-container{
+				margin-bottom: 20px;
+				clear: both;
+				background-color: #fff;
+			}
+			.lobby-container{
+				.lobby-term-left{
+					float: left;
+					width: 30%;
+					position: relative;
+					@include res(s-m){
+						width: 100%;
+					}
+				}
+				.lobby-term-right{
+					float: right;
+					width: 70%;
+					padding: 20px 20px 0;
+					box-sizing: border-box;
+					@include res(s-m){
+						width: 100%;
+					}
+					table tbody{
+						border: none;
+					}
+					.lobby-title a{
+						font-size: 1.3rem;
+					}
+					.lobby-length{
+						color: #919191;
+					}
+				}
+			}
+	}
+}
+
 
 
 /********  table with date **********/
@@ -1743,7 +1761,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 }
 
 
-// credit
+// credits
 
 .credits-view{
 	padding: 30px 0;
