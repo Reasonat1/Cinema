@@ -532,10 +532,7 @@ img.panopoly-image-full{
 			height: 40px;
 		}
 		> img {
-			height: 40px;
-			@include res(s-m){
-				height: 30px;
-			}
+			height: 36px;
 		}
 	}
 }
@@ -688,7 +685,7 @@ img.panopoly-image-full{
 
 		}
 		.favorite a{
-			background: url("../images/favorite.png") no-repeat 0 0;
+			background: url("../images/favorite.png") no-repeat 0 bottom;
 			text-indent: -9999px;
 			height: 20px;
 			width: 24px;
@@ -1173,14 +1170,14 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 	width: 100%;
 }
 .navbar .navbar-brand {
-	margin: 6px 5px 0 30px;
+	margin:11px 5px 0 30px;
 	overflow: hidden;
 	padding: 0;
 	@include res(s-m){
 		margin: 10px 30px 0 5px!important;
 	}
 	@include res(menu){
-		margin: 6px 30px 0 5px;
+		margin: 11px 30px 0 5px;
 	}
 }
 .navbar-nav > li {
