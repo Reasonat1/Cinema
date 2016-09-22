@@ -1829,18 +1829,20 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 .view-footer{
 	overflow: hidden;
 	text-align: center;
-	@include res(s-m){
-		margin: 10px auto;
-	}
 	.wrapper-more{
 		display: inline-block;
 	}
 	.more-event{
 		float: right;
+		cursor: pointer;
 		@include main-color;
 		font-size: 0.8rem;
 		border-bottom: 1px solid;
 		padding-bottom: 5px;
+		overflow: hidden;
+		@include res(s-m){
+			margin: 10px auto;
+		}
 		@include res(s-m){
 			float: none;
 			text-align: center;
