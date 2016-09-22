@@ -266,7 +266,7 @@ table{
 
 /******  tags  *******/
 
-.pane-node-field-tag, .pane-node-field-cm-article-tags, .pane-node-field-cm-movie-tags {
+.pane-node-field-tag, .pane-node-field-cm-article-tags, .pane-node-field-cm-movie-tags, .pane-node-field-cm-person-tags {
 	.pane-content {
 		.field-item{
 		    float: right;
@@ -328,4 +328,26 @@ table{
 	span{
 		float: right;
 	}
+}
+
+.flag-new-links{
+    left: 10px;
+    right: auto;
+}
+
+/******  node teaser  ******/
+
+.node-title-teaser-cm-movie .node-cm-movie-year{
+  float: right;
+  border-left: 2px solid #f9f4ee;
+  border-right: none;
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.node-title-teaser-cm-movie a .node-title-teaser-title{
+  padding: 26px 10px 23px 26px;
+  @include res(s-m){
+  	padding: 9px 10px 8px 26px;
+  }
 }

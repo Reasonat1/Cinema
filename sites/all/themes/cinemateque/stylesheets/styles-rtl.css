@@ -20,7 +20,7 @@
 }
 /* line 7, ../sass/icons-rtl.scss */
 .domain-1 .node-title-teaser-content-type {
-  background: url("/sites/all/themes/cinemateque/images/more-red-right.png") no-repeat left 10px center #fff;
+  background: url("/sites/all/themes/cinemateque/images/more-red-left.png") no-repeat left 10px center #fff;
 }
 
 /* line 13, ../sass/icons-rtl.scss */
@@ -29,7 +29,7 @@
 }
 /* line 16, ../sass/icons-rtl.scss */
 .domain-2 .node-title-teaser-content-type {
-  background: url("/sites/all/themes/cinemateque/images/more-gold-right.png") no-repeat left 10px center #fff;
+  background: url("/sites/all/themes/cinemateque/images/more-gold-left.png") no-repeat left 10px center #fff;
 }
 
 /* line 6, ../sass/event-rtl.scss */
@@ -356,13 +356,13 @@ table td, table th {
 
 /******  tags  *******/
 /* line 271, ../sass/general-rtl.scss */
-.pane-node-field-tag .pane-content .field-item, .pane-node-field-cm-article-tags .pane-content .field-item, .pane-node-field-cm-movie-tags .pane-content .field-item {
+.pane-node-field-tag .pane-content .field-item, .pane-node-field-cm-article-tags .pane-content .field-item, .pane-node-field-cm-movie-tags .pane-content .field-item, .pane-node-field-cm-person-tags .pane-content .field-item {
   float: right;
   margin-right: 0;
   margin-left: 2%;
 }
 /* line 276, ../sass/general-rtl.scss */
-.pane-node-field-tag .pane-content a, .pane-node-field-cm-article-tags .pane-content a, .pane-node-field-cm-movie-tags .pane-content a {
+.pane-node-field-tag .pane-content a, .pane-node-field-cm-article-tags .pane-content a, .pane-node-field-cm-movie-tags .pane-content a, .pane-node-field-cm-person-tags .pane-content a {
   float: right;
 }
 
@@ -416,6 +416,33 @@ table td, table th {
 /* line 328, ../sass/general-rtl.scss */
 .top-text-blk-wht span {
   float: right;
+}
+
+/* line 333, ../sass/general-rtl.scss */
+.flag-new-links {
+  left: 10px;
+  right: auto;
+}
+
+/******  node teaser  ******/
+/* line 340, ../sass/general-rtl.scss */
+.node-title-teaser-cm-movie .node-cm-movie-year {
+  float: right;
+  border-left: 2px solid #f9f4ee;
+  border-right: none;
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+/* line 348, ../sass/general-rtl.scss */
+.node-title-teaser-cm-movie a .node-title-teaser-title {
+  padding: 26px 10px 23px 26px;
+}
+@media (max-width: 767px) {
+  /* line 348, ../sass/general-rtl.scss */
+  .node-title-teaser-cm-movie a .node-title-teaser-title {
+    padding: 9px 10px 8px 26px;
+  }
 }
 
 /* line 6, ../sass/search-rtl.scss */
