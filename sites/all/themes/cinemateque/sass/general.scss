@@ -419,11 +419,11 @@ h2{
 	}
 	.flag-wrapper a{
 		&.flag-action{
-			background: url("../images/like-white.png") no-repeat scroll center center!important;
+			background: url("../images/like-white.png") no-repeat scroll top 8px center!important;
 			@include bg-main-color;
 		}
 		&.unflag-action{
-			background: url("../images/unlike-white.png") no-repeat scroll center center!important;
+			background: url("../images/unlike-white.png") no-repeat scroll top 8px center!important;
 			@include bg-main-color;
 		}
 	}
@@ -1120,6 +1120,9 @@ table{
 	}
 	.view-article-ct-panes.view-display-id-panel_pane_1{
 		margin-bottom: 30px;
+		@include res(s-m){
+			margin-bottom: 0;
+		}
 		.content{
 			position: relative;
 		}
@@ -1439,7 +1442,7 @@ table{
 }
 /********  table with date **********/
 
-.row-custom-lobby{
+.table-responsive{
 	.date{
 		width: 20%;
 	}
@@ -1458,7 +1461,7 @@ table{
 		width: 23%;
 		font-weight: normal;
 	}
-	.flag{
+	.flag, .views-field-ops{
 		height: 23px;
 		display: block;
 		padding-top: 13px;
@@ -1482,12 +1485,16 @@ table{
 		width: 100%;
 	}
 	.panels-flexible-row-node_page-4{
-		background-color: $color_alabaster_approx;
 		width: 100%!important;
-		padding-top: 60px!important;
-		margin-bottom: 50px!important;
-		> .inside{
+		padding: 0!important;
+		.pane-person-ct-view-panel-pane-1{
+			background-color: $color_alabaster_approx;
+			padding-top: 60px!important;
+			margin-bottom: 50px!important;
 			@include width;
+			@include res(s-m){
+				margin-bottom: 0!important;
+			}
 		}
 	}
 	.view-person-ct-view.view-display-id-panel_pane_1{
