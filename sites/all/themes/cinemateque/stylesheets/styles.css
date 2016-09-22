@@ -2933,6 +2933,17 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   }
 }
 
+/* line 1926, ../sass/general.scss */
+.menu-link-examples {
+  display: none;
+}
+@media (max-width: 960px) {
+  /* line 1926, ../sass/general.scss */
+  .menu-link-examples {
+    display: block;
+  }
+}
+
 /* line 5, ../sass/movie-group.scss */
 .node-type-cm-movie-group #content {
   width: 100% !important;

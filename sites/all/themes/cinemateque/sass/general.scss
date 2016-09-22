@@ -1921,3 +1921,11 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   	padding: 9px 26px 8px 10px;
   }
 }
+
+
+.menu-link-examples{
+	display: none;
+	@include res(menu){
+		display: block;
+	}
+}
