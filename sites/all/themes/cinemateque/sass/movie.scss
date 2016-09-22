@@ -231,6 +231,9 @@
 			}
 			.pane-movie-top-pane-view-panel-pane-7{
 				padding-top: 20px;
+				@include res(s-m){
+				   padding-top: 0;
+				}
 			}
 			.views-slideshow-pager-field-item{
 				display: inline-block;

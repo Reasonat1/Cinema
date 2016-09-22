@@ -16,13 +16,11 @@
 
 
     //  person page
-    if ($("body").hasClass(".node-type-cm-person")){
       $(".view-person-ct-view.view-display-id-panel_pane_1 .col").each(function(){
           if ( $(this).children(".col-container").children().length == 0 ) {
               $(this).hide();
           }
       });
-    }
 
  /*******  responsive menu   **********/
 

@@ -301,12 +301,18 @@
 .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside .pane-movie-top-pane-view-panel-pane-7 {
   padding-top: 20px;
 }
-/* line 235, ../sass/movie.scss */
+@media (max-width: 767px) {
+  /* line 232, ../sass/movie.scss */
+  .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside .pane-movie-top-pane-view-panel-pane-7 {
+    padding-top: 0;
+  }
+}
+/* line 238, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside .views-slideshow-pager-field-item {
   display: inline-block;
   margin: 0 14px;
 }
-/* line 238, ../sass/movie.scss */
+/* line 241, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside .views-slideshow-pager-field-item .circle {
   background-color: #afafaf;
   border-radius: 50%;

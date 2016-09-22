@@ -337,68 +337,75 @@ table td, table th {
 
 /****  share blcok  *****/
 /* line 250, ../sass/general-rtl.scss */
-.share-pane-container .facebook a {
+.share-this-pane .facebook a {
   background-position: right 3px center !important;
 }
 /* line 253, ../sass/general-rtl.scss */
-.share-pane-container .whatsapp a {
+.share-this-pane .whatsapp a {
   background-position: right center !important;
 }
 /* line 257, ../sass/general-rtl.scss */
-.share-pane-container .flag-wrapper a.flag-action, .share-pane-container .flag-wrapper a.unflag-action {
+.share-this-pane .flag-wrapper a.flag-action, .share-this-pane .flag-wrapper a.unflag-action {
   background-position: right center !important;
 }
 /* line 260, ../sass/general-rtl.scss */
-.share-pane-container .flag-wrapper .title {
+.share-this-pane .flag-wrapper .title {
   right: 30px;
   left: auto;
 }
 
+/* line 268, ../sass/general-rtl.scss */
+.share-this-pane-mobile .link {
+  float: right;
+  margin-left: 20px;
+  margin-right: 0;
+}
+
 /******  tags  *******/
-/* line 271, ../sass/general-rtl.scss */
+/* line 279, ../sass/general-rtl.scss */
 .pane-node-field-tag .pane-content .field-item, .pane-node-field-cm-article-tags .pane-content .field-item, .pane-node-field-cm-movie-tags .pane-content .field-item, .pane-node-field-cm-person-tags .pane-content .field-item {
   float: right;
   margin-right: 0;
   margin-left: 2%;
 }
-/* line 276, ../sass/general-rtl.scss */
+/* line 284, ../sass/general-rtl.scss */
 .pane-node-field-tag .pane-content a, .pane-node-field-cm-article-tags .pane-content a, .pane-node-field-cm-movie-tags .pane-content a, .pane-node-field-cm-person-tags .pane-content a {
   float: right;
 }
 
 /******  responsive *********/
 @media (max-width: 767px) {
-  /* line 286, ../sass/general-rtl.scss */
+  /* line 294, ../sass/general-rtl.scss */
   .table-responsive td {
     padding-left: 8px !important;
     padding-right: 0 !important;
   }
 }
 /***** movie, movie group, event & article  ********/
-/* line 297, ../sass/general-rtl.scss */
+/* line 305, ../sass/general-rtl.scss */
 .text-main-image .wrapper .slide-right-ct {
   float: right;
   padding-right: 6%;
   padding-left: 10%;
 }
 @media (max-width: 767px) {
-  /* line 297, ../sass/general-rtl.scss */
+  /* line 305, ../sass/general-rtl.scss */
   .text-main-image .wrapper .slide-right-ct {
     padding-left: 3%;
     padding-right: 0;
   }
 }
 
-/* line 309, ../sass/general-rtl.scss */
+/* line 317, ../sass/general-rtl.scss */
 .slide-alt-title {
   left: auto;
   right: 0;
 }
-/* line 312, ../sass/general-rtl.scss */
+/* line 320, ../sass/general-rtl.scss */
 .slide-alt-title .field {
   float: right;
 }
-/* line 315, ../sass/general-rtl.scss */
+/* line 323, ../sass/general-rtl.scss */
 .slide-alt-title .field-name-field-file-image-title-text {
   margin-right: 10px;
   padding-right: 10px;
@@ -408,24 +415,24 @@ table td, table th {
   border-left: none;
 }
 
-/* line 325, ../sass/general-rtl.scss */
+/* line 333, ../sass/general-rtl.scss */
 .top-text-blk-wht {
   right: 0;
   left: auto;
 }
-/* line 328, ../sass/general-rtl.scss */
+/* line 336, ../sass/general-rtl.scss */
 .top-text-blk-wht span {
   float: right;
 }
 
-/* line 333, ../sass/general-rtl.scss */
+/* line 341, ../sass/general-rtl.scss */
 .flag-new-links {
   left: 10px;
   right: auto;
 }
 
 /******  node teaser  ******/
-/* line 340, ../sass/general-rtl.scss */
+/* line 348, ../sass/general-rtl.scss */
 .node-title-teaser-cm-movie .node-cm-movie-year {
   float: right;
   border-left: 2px solid #f9f4ee;
@@ -434,12 +441,12 @@ table td, table th {
   margin-right: 0;
 }
 
-/* line 348, ../sass/general-rtl.scss */
+/* line 356, ../sass/general-rtl.scss */
 .node-title-teaser-cm-movie a .node-title-teaser-title {
   padding: 26px 10px 23px 26px;
 }
 @media (max-width: 767px) {
-  /* line 348, ../sass/general-rtl.scss */
+  /* line 356, ../sass/general-rtl.scss */
   .node-title-teaser-cm-movie a .node-title-teaser-title {
     padding: 9px 10px 8px 26px;
   }
