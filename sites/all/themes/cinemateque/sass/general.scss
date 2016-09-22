@@ -1788,13 +1788,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 		display: none;
 	}	
 }
-/*
-@media (max-height: 320px){
-	.full-screen-image, .full-screen-image .wrapper-image .content{
-		max-height: none!important;
-	}
-}
-*/
+
 .slide-alt-title {
 	background-color: $color_mine_shaft_approx;
 	bottom: 0px;
@@ -1832,6 +1826,37 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	}
 }
 
+.view-footer{
+	overflow: hidden;
+	text-align: center;
+	@include res(s-m){
+		margin: 10px auto;
+	}
+	.wrapper-more{
+		display: inline-block;
+	}
+	.more-event{
+		float: right;
+		@include main-color;
+		font-size: 0.8rem;
+		border-bottom: 1px solid;
+		padding-bottom: 5px;
+		@include res(s-m){
+			float: none;
+			text-align: center;
+			border:none;
+			font-size: 15px;
+		}
+		span{
+			@include res(s-m){
+				float: left;
+			}
+		}
+		.text{
+			margin: 5px 0;
+		}
+	}
+}
 
 // credits
 
