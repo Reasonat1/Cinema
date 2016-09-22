@@ -1256,6 +1256,13 @@ table{
 	.panels-flexible-region-homepage_panel-center {
 	    width: 100%;
 	}
+	.header-right .favorite a{
+		pointer-events: none;
+   		cursor: default;
+   	}
+   	#page-header .tabs{
+   		display: none;
+   	}
 }
 
 .pane-user-page-pane-panel-pane-1{
@@ -1829,9 +1836,6 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 .view-footer{
 	overflow: hidden;
 	text-align: center;
-	.wrapper-more{
-		display: inline-block;
-	}
 	.more-event{
 		float: right;
 		cursor: pointer;
@@ -1842,12 +1846,11 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 		overflow: hidden;
 		@include res(s-m){
 			margin: 10px auto;
-		}
-		@include res(s-m){
 			float: none;
 			text-align: center;
 			border:none;
 			font-size: 15px;
+			display: inline-block;
 		}
 		span{
 			@include res(s-m){
