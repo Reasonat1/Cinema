@@ -2933,17 +2933,6 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   }
 }
 
-/* line 1926, ../sass/general.scss */
-.menu-link-examples {
-  display: none;
-}
-@media (max-width: 960px) {
-  /* line 1926, ../sass/general.scss */
-  .menu-link-examples {
-    display: block;
-  }
-}
-
 /* line 5, ../sass/movie-group.scss */
 .node-type-cm-movie-group #content {
   width: 100% !important;
@@ -6228,6 +6217,10 @@ div[id^="panels-ipe-paneid-22"] > * select {
   box-shadow: none;
 }
 /* line 19, ../sass/menu.scss */
+.hamburger .modal-content .menu-link-examples {
+  display: none;
+}
+/* line 21, ../sass/menu.scss */
 .hamburger .modal-content .close {
   position: absolute;
   top: 20px;
@@ -6247,35 +6240,35 @@ div[id^="panels-ipe-paneid-22"] > * select {
 .domain-2 .hamburger .modal-content .close {
   background-color: #b59d70 !important;
 }
-/* line 32, ../sass/menu.scss */
+/* line 34, ../sass/menu.scss */
 .hamburger .modal-body {
   padding: 0;
   margin: 0;
 }
-/* line 35, ../sass/menu.scss */
+/* line 37, ../sass/menu.scss */
 .hamburger .modal-body .close {
   float: left;
   padding: 22px;
 }
-/* line 39, ../sass/menu.scss */
+/* line 41, ../sass/menu.scss */
 .hamburger .modal-body .pane-bean-infomation-block-view .handle {
   display: none;
 }
-/* line 42, ../sass/menu.scss */
+/* line 44, ../sass/menu.scss */
 .hamburger .modal-body .view-id-bean_infomation_block_view .form-submit {
   display: none;
 }
-/* line 45, ../sass/menu.scss */
+/* line 47, ../sass/menu.scss */
 .hamburger .modal-body .popup-loader {
   margin: 0 auto;
   display: block;
 }
-/* line 50, ../sass/menu.scss */
+/* line 52, ../sass/menu.scss */
 .hamburger .panels-flexible-region.popup.region {
   width: 100%;
 }
 
-/* line 55, ../sass/menu.scss */
+/* line 57, ../sass/menu.scss */
 #hamburger-menu {
   /*
   .pane-my-backend-festival-menu-block {
@@ -6324,33 +6317,33 @@ div[id^="panels-ipe-paneid-22"] > * select {
   	}
   }*/
 }
-/* line 56, ../sass/menu.scss */
+/* line 58, ../sass/menu.scss */
 #hamburger-menu .col-md-12 {
   padding: 0;
 }
-/* line 59, ../sass/menu.scss */
+/* line 61, ../sass/menu.scss */
 #hamburger-menu .radix-layouts-column1, #hamburger-menu .radix-layouts-column2 {
   display: none;
 }
-/* line 62, ../sass/menu.scss */
+/* line 64, ../sass/menu.scss */
 #hamburger-menu .radix-layouts-footer {
   padding: 24px 70px;
 }
-/* line 64, ../sass/menu.scss */
+/* line 66, ../sass/menu.scss */
 #hamburger-menu .radix-layouts-footer .cps-region-inner {
   text-align: center;
 }
-/* line 114, ../sass/menu.scss */
+/* line 116, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu {
   width: 100%;
   padding: 50px 70px 0;
   background-color: #323232;
 }
-/* line 118, ../sass/menu.scss */
+/* line 120, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu h2 {
   display: none;
 }
-/* line 121, ../sass/menu.scss */
+/* line 123, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed {
   float: left;
   padding: 10px 0px 0;
@@ -6358,29 +6351,29 @@ div[id^="panels-ipe-paneid-22"] > * select {
   margin-right: 3%;
   box-sizing: border-box;
 }
-/* line 127, ../sass/menu.scss */
+/* line 129, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded.last, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed.last {
   margin-right: 0;
 }
-/* line 130, ../sass/menu.scss */
+/* line 132, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded > a, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed > a {
   font-size: 18px;
   font-weight: bold;
 }
-/* line 134, ../sass/menu.scss */
+/* line 136, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded a, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed a {
   color: #ffffff;
   padding: 10px 0;
 }
-/* line 137, ../sass/menu.scss */
+/* line 139, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded a:hover, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed a:hover {
   background: none;
 }
-/* line 140, ../sass/menu.scss */
+/* line 142, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded a:active, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed a:active {
   background: none;
 }
-/* line 144, ../sass/menu.scss */
+/* line 146, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed li {
   border-bottom: 2px solid #5c5c5c;
   line-height: 40px;
@@ -6390,11 +6383,11 @@ div[id^="panels-ipe-paneid-22"] > * select {
   background-size: 20px auto;
   width: 100%;
 }
-/* line 152, ../sass/menu.scss */
+/* line 154, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li.last, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed li.last {
   border-bottom: none;
 }
-/* line 155, ../sass/menu.scss */
+/* line 157, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li a, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed li a {
   background: transparent none repeat scroll 0 0;
   font-size: 16px;
@@ -6402,15 +6395,15 @@ div[id^="panels-ipe-paneid-22"] > * select {
   padding-right: 25px;
   line-height: 24px;
 }
-/* line 161, ../sass/menu.scss */
+/* line 163, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li a:hover, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed li a:hover {
   background: none;
 }
-/* line 164, ../sass/menu.scss */
+/* line 166, ../sass/menu.scss */
 #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li a:active, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed li a:active {
   background: none;
 }
-/* line 171, ../sass/menu.scss */
+/* line 173, ../sass/menu.scss */
 #hamburger-menu .pane-bean-main-info-english, #hamburger-menu .pane-bean-main-info-hebrew {
   padding-left: 70px;
   padding-right: 70px;
@@ -6420,11 +6413,11 @@ div[id^="panels-ipe-paneid-22"] > * select {
   clear: left;
   overflow: hidden;
 }
-/* line 179, ../sass/menu.scss */
+/* line 181, ../sass/menu.scss */
 #hamburger-menu .pane-bean-main-info-english .field-name-field-background-image, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-background-image {
   display: none;
 }
-/* line 182, ../sass/menu.scss */
+/* line 184, ../sass/menu.scss */
 #hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item {
   padding: 0 15px 0 0;
   position: relative;
@@ -6434,18 +6427,18 @@ div[id^="panels-ipe-paneid-22"] > * select {
   margin-bottom: 27px;
   float: left;
 }
-/* line 190, ../sass/menu.scss */
+/* line 192, ../sass/menu.scss */
 #hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-info-icon, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-info-icon {
   position: absolute;
   left: -50px;
   width: 35px;
   height: 25px;
 }
-/* line 195, ../sass/menu.scss */
+/* line 197, ../sass/menu.scss */
 #hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-info-icon img, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-info-icon img {
   float: right;
 }
-/* line 199, ../sass/menu.scss */
+/* line 201, ../sass/menu.scss */
 #hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-label, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-label {
   font-weight: bold;
   font-size: 12px;
@@ -6455,34 +6448,34 @@ div[id^="panels-ipe-paneid-22"] > * select {
   padding-bottom: 13px;
   padding-right: 30px;
 }
-/* line 208, ../sass/menu.scss */
+/* line 210, ../sass/menu.scss */
 #hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-description, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-description {
   line-height: 1.2;
   text-align: left;
   font-variant: 12px;
   padding-right: 30px;
 }
-/* line 213, ../sass/menu.scss */
+/* line 215, ../sass/menu.scss */
 #hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-description p, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-description p {
   line-height: 25px;
   margin: 0;
 }
 @media (min-width: 768px) and (max-width: 1095px) {
-  /* line 213, ../sass/menu.scss */
+  /* line 215, ../sass/menu.scss */
   #hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-description p, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-description p {
     line-height: 18px;
     font-size: 12px;
   }
 }
-/* line 221, ../sass/menu.scss */
+/* line 223, ../sass/menu.scss */
 #hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-description a, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-description a {
   color: #fff;
 }
-/* line 227, ../sass/menu.scss */
+/* line 229, ../sass/menu.scss */
 #hamburger-menu .field-name-field-content-info > .field-items > .field-item:last-child {
   margin: 0 !important;
 }
-/* line 230, ../sass/menu.scss */
+/* line 232, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19, #hamburger-menu .pane-webform-client-block-3322 {
   clear: both;
   position: relative;
@@ -6490,11 +6483,11 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: 50%;
   float: left;
 }
-/* line 236, ../sass/menu.scss */
+/* line 238, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .pane-title, #hamburger-menu .pane-webform-client-block-3322 .pane-title {
   color: #fff;
 }
-/* line 239, ../sass/menu.scss */
+/* line 241, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 input, #hamburger-menu .pane-webform-client-block-3322 input {
   background-color: #000;
   border: none;
@@ -6502,24 +6495,24 @@ div[id^="panels-ipe-paneid-22"] > * select {
   box-sizing: border-box;
   height: 30px;
 }
-/* line 246, ../sass/menu.scss */
+/* line 248, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 label, #hamburger-menu .pane-webform-client-block-3322 label {
   color: #999;
   font-size: 17px;
   font-weight: normal;
   padding: 3px 7px;
 }
-/* line 252, ../sass/menu.scss */
+/* line 254, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .panel-panel, #hamburger-menu .pane-webform-client-block-3322 .panel-panel {
   width: 50%;
   float: left;
   padding: 0;
 }
-/* line 257, ../sass/menu.scss */
+/* line 259, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .form-actions, #hamburger-menu .pane-webform-client-block-3322 .form-actions {
   margin: 0;
 }
-/* line 259, ../sass/menu.scss */
+/* line 261, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .form-actions input, #hamburger-menu .pane-webform-client-block-3322 .form-actions input {
   margin: 0;
   background-color: #fff !important;
@@ -6533,7 +6526,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
 .domain-2 #hamburger-menu .pane-webform-client-block-19 .form-actions input, .domain-2 #hamburger-menu .pane-webform-client-block-3322 .form-actions input {
   color: #b59d70 !important;
 }
-/* line 264, ../sass/menu.scss */
+/* line 266, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .form-actions input:hover, #hamburger-menu .pane-webform-client-block-3322 .form-actions input:hover {
   background-color: #fff !important;
 }
@@ -6545,41 +6538,41 @@ div[id^="panels-ipe-paneid-22"] > * select {
 .domain-2 #hamburger-menu .pane-webform-client-block-19 .form-actions input:hover, .domain-2 #hamburger-menu .pane-webform-client-block-3322 .form-actions input:hover {
   color: #b59d70 !important;
 }
-/* line 270, ../sass/menu.scss */
+/* line 272, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .webform-component, #hamburger-menu .pane-webform-client-block-3322 .webform-component {
   margin-right: 8px;
 }
-/* line 272, ../sass/menu.scss */
+/* line 274, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .webform-component input, #hamburger-menu .pane-webform-client-block-3322 .webform-component input {
   border-radius: 0 !important;
 }
-/* line 276, ../sass/menu.scss */
+/* line 278, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .webform-component--join-our-newsletter, #hamburger-menu .pane-webform-client-block-3322 .webform-component--join-our-newsletter {
   font-size: 1.25rem;
   font-weight: 600;
   width: 100%;
   color: #fff;
 }
-/* line 282, ../sass/menu.scss */
+/* line 284, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .webform-component--approve-recieving-e-mail, #hamburger-menu .pane-webform-client-block-3322 .webform-component--approve-recieving-e-mail {
   width: 100%;
 }
-/* line 284, ../sass/menu.scss */
+/* line 286, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .webform-component--approve-recieving-e-mail label, #hamburger-menu .pane-webform-client-block-3322 .webform-component--approve-recieving-e-mail label {
   position: relative;
   font-size: 12px;
   color: #fff !important;
 }
-/* line 289, ../sass/menu.scss */
+/* line 291, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .webform-component--approve-recieving-e-mail input, #hamburger-menu .pane-webform-client-block-3322 .webform-component--approve-recieving-e-mail input {
   height: auto;
 }
-/* line 294, ../sass/menu.scss */
+/* line 296, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .panel-panel:nth-child(2) span, #hamburger-menu .pane-webform-client-block-3322 .panel-panel:nth-child(2) span {
   display: inline-block;
   float: left;
 }
-/* line 299, ../sass/menu.scss */
+/* line 301, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .pane-block-8, #hamburger-menu .pane-webform-client-block-3322 .pane-block-8 {
   margin-top: 20px;
   float: right;
@@ -6592,30 +6585,30 @@ div[id^="panels-ipe-paneid-22"] > * select {
 .domain-2 #hamburger-menu .pane-webform-client-block-19 .pane-block-8 i, .domain-2 #hamburger-menu .pane-webform-client-block-3322 .pane-block-8 i {
   color: #b59d70 !important;
 }
-/* line 306, ../sass/menu.scss */
+/* line 308, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .pane-custom.pane-1, #hamburger-menu .pane-webform-client-block-3322 .pane-custom.pane-1 {
   float: right;
   margin: 0 16px;
 }
-/* line 309, ../sass/menu.scss */
+/* line 311, ../sass/menu.scss */
 #hamburger-menu .pane-webform-client-block-19 .pane-custom.pane-1 img, #hamburger-menu .pane-webform-client-block-3322 .pane-custom.pane-1 img {
   height: 55px;
   margin-top: 31px;
 }
-/* line 315, ../sass/menu.scss */
+/* line 317, ../sass/menu.scss */
 #hamburger-menu .pane-bean-social-links-new, #hamburger-menu .pane-bean-logos-hebrew-block, #hamburger-menu .pane-bean-logos-english-block {
   display: inline-block;
 }
-/* line 317, ../sass/menu.scss */
+/* line 319, ../sass/menu.scss */
 #hamburger-menu .pane-bean-social-links-new .field-name-field-social-icons > .field-items, #hamburger-menu .pane-bean-logos-hebrew-block .field-name-field-social-icons > .field-items, #hamburger-menu .pane-bean-logos-english-block .field-name-field-social-icons > .field-items {
   text-align: center;
 }
-/* line 319, ../sass/menu.scss */
+/* line 321, ../sass/menu.scss */
 #hamburger-menu .pane-bean-social-links-new .field-name-field-social-icons > .field-items > .field-item, #hamburger-menu .pane-bean-logos-hebrew-block .field-name-field-social-icons > .field-items > .field-item, #hamburger-menu .pane-bean-logos-english-block .field-name-field-social-icons > .field-items > .field-item {
   display: inline-block;
   margin: 0 13px;
 }
-/* line 326, ../sass/menu.scss */
+/* line 328, ../sass/menu.scss */
 #hamburger-menu .pane-bean-social-links-new img {
   border-radius: 50%;
 }
@@ -6629,23 +6622,23 @@ div[id^="panels-ipe-paneid-22"] > * select {
 }
 
 /******  hamburger  *********/
-/* line 336, ../sass/menu.scss */
+/* line 338, ../sass/menu.scss */
 .responsive-hamburger {
   display: none;
 }
 
-/* line 340, ../sass/menu.scss */
+/* line 342, ../sass/menu.scss */
 .navbar-toggle {
   display: block;
 }
 @media (max-width: 960px) {
-  /* line 340, ../sass/menu.scss */
+  /* line 342, ../sass/menu.scss */
   .navbar-toggle {
     display: none;
   }
 }
 
-/* line 347, ../sass/menu.scss */
+/* line 349, ../sass/menu.scss */
 .navbar-header .hambruger {
   float: left;
   border: medium none;
@@ -6656,12 +6649,12 @@ div[id^="panels-ipe-paneid-22"] > * select {
   padding: 0;
   border-radius: 0;
 }
-/* line 356, ../sass/menu.scss */
+/* line 358, ../sass/menu.scss */
 .navbar-header .hambruger.navbar-toggle {
   margin-left: 30px;
 }
 
-/* line 361, ../sass/menu.scss */
+/* line 363, ../sass/menu.scss */
 .navbar-header .hambruger .icon-bar {
   width: 34px;
   background-color: #fff !important;
@@ -6669,26 +6662,26 @@ div[id^="panels-ipe-paneid-22"] > * select {
   height: 2px;
 }
 
-/* line 368, ../sass/menu.scss */
+/* line 370, ../sass/menu.scss */
 .navbar-header .hambruger .icon-bar + .icon-bar {
   margin-top: 9px;
 }
 
 /********** responsive menu **********/
 @media (max-width: 960px) {
-  /* line 376, ../sass/menu.scss */
+  /* line 378, ../sass/menu.scss */
   .responsive-hamburger {
     display: block;
     cursor: pointer;
   }
 }
 @media (max-width: 767px) {
-  /* line 383, ../sass/menu.scss */
+  /* line 385, ../sass/menu.scss */
   #main-menu {
     display: none;
   }
 }
-/* line 388, ../sass/menu.scss */
+/* line 390, ../sass/menu.scss */
 .responsive-menu-wrapper {
   display: block;
   margin-right: 0;
@@ -6704,13 +6697,13 @@ div[id^="panels-ipe-paneid-22"] > * select {
   padding: 0;
   z-index: 500;
 }
-/* line 402, ../sass/menu.scss */
+/* line 404, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu {
   padding: 0;
   margin: 0;
   width: 100%;
 }
-/* line 406, ../sass/menu.scss */
+/* line 408, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li {
   text-align: left;
   width: 100%;
@@ -6719,7 +6712,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   margin: 0;
   padding: 0;
 }
-/* line 413, ../sass/menu.scss */
+/* line 415, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li a {
   white-space: unset;
   padding: 15px 3% !important;
@@ -6727,7 +6720,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   color: #fff;
   background-color: transparent !important;
 }
-/* line 419, ../sass/menu.scss */
+/* line 421, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li a:hover, .responsive-menu-wrapper #site-main-menu li a:focus {
   background-color: transparent !important;
 }
@@ -6739,11 +6732,11 @@ div[id^="panels-ipe-paneid-22"] > * select {
 .domain-2 .responsive-menu-wrapper #site-main-menu li ul li {
   background-color: #b59d70 !important;
 }
-/* line 425, ../sass/menu.scss */
+/* line 427, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li ul li a {
   color: #fff;
 }
-/* line 429, ../sass/menu.scss */
+/* line 431, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li .caret {
   display: block;
   float: right;
@@ -6752,7 +6745,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   margin: 0;
   width: 55px;
 }
-/* line 436, ../sass/menu.scss */
+/* line 438, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li .caret:after {
   background: url("../images/plus.png") no-repeat;
   transition: all 0.5s;
@@ -6763,7 +6756,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: 12px;
   margin: 5px 0px;
 }
-/* line 447, ../sass/menu.scss */
+/* line 449, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li .dropdown-menu {
   border: none;
   display: none;
@@ -6771,20 +6764,20 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: 100%;
 }
 
-/* line 459, ../sass/menu.scss */
+/* line 461, ../sass/menu.scss */
 .responsive-menu-wrapper .responsive-open .dropdown-toggle {
   font-weight: bold;
 }
-/* line 462, ../sass/menu.scss */
+/* line 464, ../sass/menu.scss */
 .responsive-menu-wrapper .responsive-open .dropdown-menu {
   display: block !important;
 }
-/* line 465, ../sass/menu.scss */
+/* line 467, ../sass/menu.scss */
 .responsive-menu-wrapper .responsive-open .caret:after {
   transform: rotate(134deg);
 }
 
-/* line 471, ../sass/menu.scss */
+/* line 473, ../sass/menu.scss */
 .responsive-hamburger-open .responsive-menu-wrapper {
   right: 0;
 }
