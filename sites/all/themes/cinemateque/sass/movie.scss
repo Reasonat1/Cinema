@@ -202,6 +202,9 @@
 	.panels-flexible-row-node_page-4{
 		width: 100%!important;
 		padding: 0!important;
+		@include res(s-m){
+			background-color: $color_alabaster_approx;
+		}
 		.panels-flexible-row-node_page-4-inside{
 			@include width();
 			@include res(s-m){
