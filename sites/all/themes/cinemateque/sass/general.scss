@@ -1515,7 +1515,6 @@ table{
 		.person-name{
 			font-size: 3rem;
 			padding-top: 20px;
-			padding-bottom: 10px;
 			text-align: center;
 		}
 		.person-job{
@@ -1892,7 +1891,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 			.panels-flexible-region-node_page-content_left{
 				padding: 0 5%;
 			}
-			.panels-flexible-region-node_page-content_right{
+			.panels-flexible-region-node_page-content_right .pane-entity-field{
 				padding: 0 5% 25px;
 				border-top: 1px solid #cdcdcd;
 				border-bottom: 1px solid #cdcdcd;
