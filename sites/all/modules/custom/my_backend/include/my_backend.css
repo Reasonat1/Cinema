@@ -395,3 +395,20 @@ ul.tips, div.description, .form-item div.description {
     margin-left: .5%;
     display: inline-block;
 }
+.share-pane-container .flag-custom.share-pane{
+  position: relative;
+  height: 40px;
+}
+.share-pane-container .flag-custom.share-pane a{
+    width: 100%;
+    display: block;
+    background-position: left center !important;
+    padding: 15px 0 0 0;
+}
+.share-pane-container .flag-custom.share-pane .title {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    font-size: 16px;
+    z-index: -1;
+}
