@@ -564,6 +564,7 @@ h2{
 		width: 180px;
 		margin-right: 8%;
 		padding-top: 7px;
+		margin-bottom: 20px;
 		@include res(s-m){
 			width: 100%;
 			margin: 0;
@@ -1498,7 +1499,6 @@ table{
 			background-color: $color_alabaster_approx;
 			padding-top: 60px!important;
 			margin-bottom: 50px!important;
-			@include width;
 			@include res(s-m){
 				margin-bottom: 0!important;
 			}
