@@ -619,12 +619,6 @@ table.views-table {
 	margin-top: 5%;
 }
 
-.i18n-he .views_slideshow_cycle_slide .field-content .slide-alt-title .grp-alt {
-	border-left: 1px solid $color_star_dust_approx;
-	padding-left: 7px;
-	margin-left: 3px;
-	border-right: none;
-}
 .add-event{ 
 	width: 60px!important;
 	a {
@@ -1796,7 +1790,22 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	}	
 }
 
-.slide-alt-title {
+.top-text-blk-wht{
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 14px;
+	span{
+		padding: 6px 12px;
+		opacity: 0.9;
+		float: left;
+	}
+	.black{
+		color: #fff;
+	}
+}
+
+.image-alt-title {
 	background-color: $color_mine_shaft_approx;
 	bottom: 0px;
 	color: $color_star_dust_approx;
@@ -1811,25 +1820,10 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	.field{
 		float: left;
 	}
-	.field-name-field-file-image-title-text{
+	.grp-title, .field-name-field-file-image-title-text{
 		margin-left: 10px;
 		padding-left: 10px;
 		border-left: 1px solid;
-	}
-}
-
-.top-text-blk-wht{
-	position: absolute;
-	top: 0;
-	left: 0;
-	font-size: 14px;
-	span{
-		padding: 6px 12px;
-		opacity: 0.9;
-		float: left;
-	}
-	.black{
-		color: #fff;
 	}
 }
 
