@@ -325,10 +325,12 @@ ul.tips, div.description, .form-item div.description {
 #modal-content .panopoly-magic-preview-link:hover .content-type-button a, #modal-content .panopoly-magic-preview-link > a:focus + .content-type-button a, #modal-content .panopoly-magic-preview-link .content-type-button a:focus {
   opacity: 1 !important;
 }
-
+.node-type-cm-movie-group .pane-title{
+  font-size: 1em;
+}
 .space-bar{
     color: #000;
-    font-size: 1rem;
+    font-size: .9em;
     font-weight: 600;
 }
 .space-bar.length-movie{
@@ -389,27 +391,27 @@ ul.tips, div.description, .form-item div.description {
     font-size: 16px;
     z-index: -1;
 }
-.credit-inner{
+.movie-gorup-item-credit .table-responsive .credit-inner{
   clear: both;
 }
-.movie-gorup-item-credit .views-field-field-cm-movie-credits-person-ro{
+.movie-gorup-item-credit .table-responsive .credit-inner .views-field-field-cm-movie-credits-person-ro{
   width: 120px;
   color: #b3b3b3;
   padding: 8px;
   line-height: 1.42857143;
   vertical-align: top;
   float: left;
-    font-size: 1.1rem;
+  font-size: .9em;
 }
-.movie-gorup-item-credit .views-field-views-conditional{
+.movie-gorup-item-credit .table-responsive .credit-inner .views-field-views-conditional{
   padding: 8px;
   line-height: 1.42857143;
   vertical-align: top;
-  font-size: 1.1rem;
+  font-size: .9em;
 }
-.movie-gorup-item-credit .views-field-views-conditional a{
+.movie-gorup-item-credit .table-responsive .credit-inner .views-field-views-conditional a{
   color: #333;
 }
-.movie-gorup-item-credit .views-field-views-conditional a:hover{
+.movie-gorup-item-credit .table-responsive .credit-inner .views-field-views-conditional a:hover{
   color: #e41145;
 }
