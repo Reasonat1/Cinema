@@ -15,6 +15,13 @@
         });
 
 
+    //  person page
+      $(".view-person-ct-view.view-display-id-panel_pane_1 .col").each(function(){
+          if ( $(this).children(".col-container").children().length == 0 ) {
+              $(this).hide();
+          }
+      });
+
  /*******  responsive menu   **********/
 
     $(".responsive-hamburger").click(function(){
@@ -104,7 +111,7 @@
           }        
         }); */
     /****Add active class in views slide show****/
-    $('#views_slideshow_cycle_teaser_section_movie_group_ct-panel_pane_2').cycle({
+ /*   $('#views_slideshow_cycle_teaser_section_movie_group_ct-panel_pane_2').cycle({
          fx: 'fade',
          speed: 'slow',
          timeout: 5000,
@@ -114,7 +121,7 @@
           after: function(){
                $(this).addClass('active-slide');
          }
-    });
+    });*/
      /*** Removed  | bar***/
     var tempBar = $('.view-id-movie_top_pane_view.view-display-id-panel_pane_2 .slide-movie-year .crdt').text().slice(0,-2)
     var barHtml = $('.view-id-movie_top_pane_view.view-display-id-panel_pane_2 .slide-movie-year .mnts').html();

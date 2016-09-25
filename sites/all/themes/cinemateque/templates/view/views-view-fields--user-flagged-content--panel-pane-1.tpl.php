@@ -224,6 +224,9 @@
             $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
             $output_event .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t("TICKETS").'</button>'.'</td>';
             } 
+            else{
+              $output_event .= '<td class="purchase"></td>';
+            }            
            $output_event .= '</tr>';
          $output_event .= '</table>';
        $output_event .= '</div>';
@@ -263,7 +266,7 @@
               $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node_event).'</div>';
               if(!empty($node_event->field_cm_event_time['und'])){
                   $event_date = date('l d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
-                  $event_date = date('d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
+                  $event_date_mobile = date('d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
                   $event_time = date('G:i', $node_event->field_cm_event_time['und'][0]['value']);
               }
 
@@ -294,6 +297,9 @@
                   $toptix_code = $node_event->field_toptix_purchase['und'][0]['value'];
                   $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
                   $output .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">' . t("TICKETS") . '</button>'.'</td>';
+                }
+                else{
+                  $output .= '<td class="purchase"></td>';
                 }
                 $output .= '</tr>';
             }

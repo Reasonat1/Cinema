@@ -70,7 +70,13 @@
                         <li class="search">
                             <?php print render($page['sidebar_first']); ?>
                         </li>
-
+                        <?php 
+                            global $user;
+                            if ($user->uid > 0){ ?>
+                            <li class="favorite">
+                                <a href="/user/<?php print $user->uid ?>">favorite</a>
+                            </li>
+                        <?php  } ?>
                     <?php endif; ?>
                     <?php if ($search_form): ?>
                         <?php

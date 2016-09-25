@@ -213,7 +213,12 @@ table{
 				float: right;
 				padding-right: 44px;
 				padding-left: 0;
+				margin-right: 0;
+				margin-left: 3.5%;
 				background-position: right 4px!important;
+				&.col-3{
+					margin-left: 0;
+				}
 			}
 		}
 	}
@@ -246,7 +251,7 @@ table{
 
 /****  share blcok  *****/
 
-.share-pane-container {
+.share-this-pane {
 	.facebook a{
         background-position: right 3px center!important;
 	}
@@ -264,9 +269,17 @@ table{
 	}
 }
 
+.share-this-pane-mobile{
+	.link{
+		float: right;
+		margin-left: 20px;
+		margin-right: 0;
+	}
+}
+
 /******  tags  *******/
 
-.pane-node-field-tag, .pane-node-field-cm-article-tags, .pane-node-field-cm-movie-tags {
+.pane-node-field-tag, .pane-node-field-cm-article-tags, .pane-node-field-cm-movie-tags, .pane-node-field-cm-person-tags {
 	.pane-content {
 		.field-item{
 		    float: right;
@@ -306,26 +319,54 @@ table{
 	}
 }
 
-.slide-alt-title {
-	left: auto;
-	right: 0;
-	.field{
-		float: right;
-	}
-	.field-name-field-file-image-title-text{
-		margin-right: 10px;
-		padding-right: 10px;
-		border-right: 1px solid;
-		margin-left: 0px;
-		padding-left: 0px;
-		border-left: none;
-	}
-}
-
 .top-text-blk-wht{
 	right: 0;
 	left: auto;
 	span{
 		float: right;
 	}
+}
+
+.image-alt-title {
+	left: auto;
+	right: 0;
+	.field{
+		float: right;
+	}
+	.grp-title, .field-name-field-file-image-title-text{
+		margin-left: 0px;
+		padding-left: 0px;
+		border-left: none;
+		margin-right: 10px;
+		padding-right: 10px;
+		border-right: 1px solid;
+	}
+}
+
+.flag-new-links{
+    left: 10px;
+    right: auto;
+}
+
+.view-footer{
+	.more-event{
+		float: left;
+	}
+}
+
+/******  node teaser  ******/
+
+.node-title-teaser-cm-movie .node-cm-movie-year{
+  float: right;
+  border-left: 2px solid #f9f4ee;
+  border-right: none;
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.node-title-teaser-cm-movie a .node-title-teaser-title{
+  padding: 26px 10px 23px 26px;
+  @include res(s-m){
+  	padding: 9px 10px 8px 26px;
+  }
 }
