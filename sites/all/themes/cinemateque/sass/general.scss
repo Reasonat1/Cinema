@@ -1493,7 +1493,15 @@ table{
 			background-color: $color_alabaster_approx;
 			padding-top: 60px!important;
 			margin-bottom: 50px!important;
-			padding: 0 5%;
+			overflow: hidden;
+			padding-bottom: 20px;
+    		.pane-content{
+    			@include width;
+    			.view{
+					float: right;
+    				width: calc(92% - 180px);
+    			}
+    		}
 			@include res(s-m){
 				margin-bottom: 0!important;
 			}
@@ -1518,22 +1526,23 @@ table{
 			text-align: center;
 		}
 		.views-field-nothing-1{
-			width: 800px;
-			max-width: 100%;
-			margin: 0 auto 40px;
 			overflow: hidden;
 			font-weight: bold;
 			font-size: 15px;
 			.col{
-				width: 30%;
+				width: 31%;
 				float: left;
-				margin: 0 1.66667%;
+				margin-right: 3.5%;
 				box-sizing: border-box;
 				padding-left: 44px;
 				min-height: 27px;
+				box-sizing: border-box;
 				@include res(s-m){
 					width: 100%;
 					margin: 0 0 20px 0;
+				}
+				&.col-3{
+					margin-right: 0;
 				}
 				a{
 					color: #333;

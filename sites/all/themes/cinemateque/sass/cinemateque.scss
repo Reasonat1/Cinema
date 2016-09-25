@@ -527,7 +527,7 @@ img.panopoly-image-full{
 .sticky-header, .not-front header{
 	height: 50px!important;
 	.navbar-brand{
-		height: 44px!important;
+		height: 36px!important;
 		@include res(s-m){
 			height: 40px;
 		}
@@ -539,6 +539,7 @@ img.panopoly-image-full{
 
 .navbar-collapse{
 	padding: 0;
+	border:none;
 }
 
 .admin-menu {
@@ -552,6 +553,7 @@ img.panopoly-image-full{
 
 .navbar-default{
 	background-color: transparent;
+	border:none;
 	@include res(menu){
 		padding: 0 3%;
 	}

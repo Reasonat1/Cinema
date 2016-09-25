@@ -213,7 +213,12 @@ table{
 				float: right;
 				padding-right: 44px;
 				padding-left: 0;
+				margin-right: 0;
+				margin-left: 3.5%;
 				background-position: right 4px!important;
+				&.col-3{
+					margin-left: 0;
+				}
 			}
 		}
 	}
