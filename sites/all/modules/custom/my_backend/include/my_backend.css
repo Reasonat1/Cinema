@@ -4,7 +4,8 @@
 .pane-movie-top-pane-view-panel-pane-7 .view-movie-top-pane-view .view-content .table-responsive tbody tr,
 .view-event-ct-view.view-display-id-panel_pane_5 .view-content .table-responsive tbody tr,
 .view-movie-group-ct.view-display-id-panel_pane_3 .view-content .table-responsive tbody tr,
-.page-term-lobby #messages .alert.alert-danger{
+.page-term-lobby #messages .alert.alert-danger,
+.node-type-cm-movie-group #messages .alert.alert-danger{
   display: none;
 }
 .article-image .alt-text{
@@ -411,4 +412,28 @@ ul.tips, div.description, .form-item div.description {
     left: 30px;
     font-size: 16px;
     z-index: -1;
+}
+.credit-inner{
+  clear: both;
+}
+.movie-gorup-item-credit .views-field-field-cm-movie-credits-person-ro{
+  width: 120px;
+  color: #b3b3b3;
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  float: left;
+    font-size: 1.1rem;
+}
+.movie-gorup-item-credit .views-field-views-conditional{
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  font-size: 1.1rem;
+}
+.movie-gorup-item-credit .views-field-views-conditional a{
+  color: #333;
+}
+.movie-gorup-item-credit .views-field-views-conditional a:hover{
+  color: #e41145;
 }
