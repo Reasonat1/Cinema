@@ -372,7 +372,9 @@
 			}
 			label{
 				color: #fff;
-				padding: 12px 10px;
+				padding: 10px;
+				font-size: 14px;
+				font-weight: normal;
 			}
 			&.webform-component-radios {
 				width: 100%;
@@ -409,6 +411,8 @@
 			line-height: 0;
 			margin: 0;
 			border-radius: 0;
+			font-size: 16px;
+			font-weight: bold;
 			@include res(s-m){
 				width: 100%;
 				margin: 0!important;

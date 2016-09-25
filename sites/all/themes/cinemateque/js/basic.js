@@ -105,6 +105,16 @@
                 $("body").removeClass("search");
         });
 /*
+          $(document).click(function(event) { 
+            if ($("body").hasClass("search")){
+              if(!$(event.target).closest('#popup-active-overlay .center').length) {
+                $("body").removeClass("search");
+                $(".popup-element-body").css("display","none");
+                $(".screen-search").remove();
+              }        
+            }
+        });
+
         $(document).click(function(event) { 
           if(!$(event.target).closest('.center .center').length) {
               $(".screen-search").remove();             
