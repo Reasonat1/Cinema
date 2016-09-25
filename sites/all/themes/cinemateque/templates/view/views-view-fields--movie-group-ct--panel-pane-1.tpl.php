@@ -58,5 +58,12 @@
 	  }
       ?>
     </div>
+	<div class="movie-gorup-item-credit">
+      <?php
+	  if(!empty($fields['php']->content)){
+              print $fields['php']->content;
+	  }
+      ?>
+    </div>
   </div>
 </div>
