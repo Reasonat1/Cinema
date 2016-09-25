@@ -221,7 +221,7 @@
           $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node).'</div>';
           if(!empty($node->field_cm_event_time['und'])){
               $event_date = date('l d.m.y', $node->field_cm_event_time['und'][0]['value']);
-              $event_date_mobile = date('d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
+              $event_date_mobile = date('d.m.y', $node->field_cm_event_time['und'][0]['value']);
               $event_time = date('G:i', $node->field_cm_event_time['und'][0]['value']);
           }
            $output_event .= '<tr class="row-custom-lobby">';

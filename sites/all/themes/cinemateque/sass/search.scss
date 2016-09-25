@@ -149,6 +149,7 @@
 			right: 0px;
 			box-shadow: none;
 			top: 0px;
+			height: 51px;
 			@include res(s-m){
 				width: 100%;
 				position: relative;
@@ -181,7 +182,7 @@
 			box-shadow: 0 0 4px 1px $color_mountain_mist_approx;
 		}
 	}
-	#RemoveFilters{
+	#emoveFilters{
 		text-align: left;
 	}
 	.views-row {
@@ -329,6 +330,7 @@
 				overflow: visible;
 			}
 			.view-panopoly-database-search{
+				position: relative;
 				.lobby-container{
 					background-color: #fff;
 					margin-bottom: 20px;
@@ -373,7 +375,7 @@
 							border: none;
 						}
 						.lobby-title a{
-							font-size: 1.3rem;
+							font-size: 1.3em;
 						}
 						.lobby-length{
 							color: #919191;
@@ -404,9 +406,6 @@
 							padding-right: 0;
 							padding-left: 0;
 							width: 80px!important;
-						}
-						.flag{
-							margin-top: 6px;
 						}
 						.title{
 							width: 23%;

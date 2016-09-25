@@ -47,6 +47,28 @@ h2{
 #messages div{
 	margin-top: 21px;
 }
+
+ul{
+	padding: 0;
+}
+
+li{
+	list-style-type: none;
+}
+
+.pager li > a, .pager li > span {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+.item-list .pager li{
+	display: inline-block;
+}
+
+a:hover{
+	text-decoration: none;
+}
 /*******  panels margin  *********/
 
 .panels-flexible-row{
@@ -251,42 +273,42 @@ h2{
 
 
 .pane-title {
-	font-size: 1.25rem;
+	font-size: 1.25em;
 	font-weight: 600;
 }
 .pane-movie-group-ct-panel-pane-3 {
 	@include width;
 	td {
 		border: none !important;
-		font-size: 1.1rem;
+		font-size: 1.1em;
 		a {
 			color: $black;
 		}
 	}
 	table {
 		border: none !important;
-		font-size: 1.1rem;
+		font-size: 1.1em;
 	}
 	tbody {
 		border: none !important;
-		font-size: 1.1rem;
+		font-size: 1.1em;
 	}
 	th {
 		border: none !important;
-		font-size: 1.1rem;
+		font-size: 1.1em;
 		color: $color_pink_swan_approx;
 		font-size: 14px;
 		font-weight: 300;
 	}
 	tr {
 		border: none !important;
-		font-size: 1.1rem;
+		font-size: 1.1em;
 	}
 }
 .bottom-content {
 	table, tbody, tr, th, td {
 		border: none !important;
-		font-size: 1.1rem;
+		font-size: 1.1em;
 	}
 	.pane-test-view-for-movie-cmain_colorit-panel-pane-2 {
 		.pane-content {
@@ -309,11 +331,11 @@ h2{
 .views-field {
 	&.views-field-field-cm-movie-cmain_colorits-person-ro {
 		color: $color_nobel_approx;
-		font-size: 1.1rem;
+		font-size: 1.1em;
 		font-weight: normal;
 	}
 	&.views-field-field-cm-movie-cmain_colorits-person {
-		font-size: 1.1rem;
+		font-size: 1.1em;
 		font-weight: normal;
 		> a {
 			color: $color_black_approx;
@@ -520,11 +542,11 @@ h2{
 
 
 .lobby-summary {
-	font-size: 1.1rem;
+	font-size: 1.1em;
 	line-height: 28px;
 }
 .lobby-length {
-	font-size: 1.1rem;
+	font-size: 0.9em;
 	line-height: 28px;
 }
 .view-id-movie_group_ct {
@@ -621,6 +643,7 @@ table.views-table {
 
 .add-event{ 
 	width: 60px!important;
+	padding-top: 1px;
 	a {
 		float: right;
 		border: medium none;
@@ -630,6 +653,7 @@ table.views-table {
 		padding: 0;
 		width: 27px;
 		z-index: 50;
+		margin-top: 2px;
 		&:hover {
 			background-color: $white;
 			border: medium none;
@@ -811,7 +835,7 @@ table.views-table {
 
 .row-custom-lobby > td {
 	border: medium none !important;
-	font-size: 1rem;
+	font-size: 0.9em;
 	a {
 		color: $black !important;
 	}
@@ -821,7 +845,7 @@ table.views-table {
 }
 .lobby-title a {
 	color: $black;
-	font-size: 1.1rem;
+	font-size: 1.1em;
 	font-weight: 600;
 	margin-bottom: 2%;
 }
@@ -840,16 +864,16 @@ table.views-table {
 		.views-field-name {
 			a {
 				@include main-color();
-				font-size: 1rem !important;
+				font-size: 1em !important;
 			}
 		}
 		.views-field-review .field-content p {
 			@include main-color();
-			font-size: 1.35rem !important;
-			line-height: 1.35rem;
+			font-size: 1.35em !important;
+			line-height: 1.35em;
 			span {
 				@include main-color();
-				font-size: 1.15rem !important;
+				font-size: 1.15em !important;
 			}
 		}
 	}
@@ -879,7 +903,7 @@ table.views-table {
 	font-weight: bold;
 }
 .movie-grp-body p {
-	font-size: 1.1rem;
+	font-size: 1.1em;
 }
 
 
@@ -904,7 +928,7 @@ table.views-table {
 button.toptix-purchase {
 	@include bg-main-color();
 	color: $white;
-	font-size: .8rem;
+	font-size: .8em;
 	border: none;
 	padding: 4px 14px;
 	width: 80px;
@@ -1011,7 +1035,6 @@ table{
 		position: fixed!important;
 		.inner{
 			@include width;
-			width: 1024px!important;
 			margin: 40px auto 0!important;
 		}
 	}
@@ -1039,6 +1062,7 @@ table{
 				padding: 7px 22% 8px 2%;
 				font-size: 25px;
 				border:none;
+				border-radius: 0;
 				@include res(s-m){
 					font-size: 15px;
 					padding: 13px;
@@ -1056,6 +1080,7 @@ table{
 			right: 0;
 			box-shadow: none;
 			top: 0px;
+			height: 51px;
 			@include res(s-m){
 				width: 100%;
 				position: relative;
@@ -1078,8 +1103,8 @@ table{
 }
 
 @media screen and(-webkit-min-device-pixel-ratio:0) {
-  .popup-element-body form .form-submit{
-  	padding-bottom: 10px;
+  .popup-element-body form .form-submit, .page-search #search-api-page-search-form-search-results .form-submit{
+  	height: 50px;
   }
 }
 
@@ -1268,7 +1293,7 @@ table{
 		.views-field-name{
 			text-align: center;
 			.field-content{
-				font-size: 3rem;
+				font-size: 3em;
 			}
 		}
 	}
@@ -1308,6 +1333,10 @@ table{
 	}
 }
 .view-user-flagged-content.view-display-id-panel_pane_1{
+	font-size: 18px;
+	li{
+		list-style-type: none;
+	}
 	.view-filters{
 		background-color: #c0c1c3;	
 		overflow: hidden;
@@ -1425,7 +1454,7 @@ table{
 						border: none;
 					}
 					.lobby-title a{
-						font-size: 1.3rem;
+						font-size: 1.3em;
 					}
 					.lobby-length{
 						color: #919191;
@@ -1466,7 +1495,7 @@ table{
 	.flag, .views-field-ops{
 		height: 23px;
 		display: block;
-		padding-top: 13px;
+		padding-top: 14px;
 	}
 	.code{
 		width: 10%;
@@ -1516,7 +1545,7 @@ table{
 			}
 		}
 		.person-name{
-			font-size: 3rem;
+			font-size: 3em;
 			padding-top: 20px;
 			text-align: center;
 		}
@@ -1560,7 +1589,7 @@ table{
 				margin-bottom: 10px;
 				> h3{
 					text-align: center;
-					font-size: 2rem;
+					font-size: 2em;
 				}
 			}
 			.views-row{
@@ -1773,7 +1802,10 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	}
 }
 
-
+.full-screen-image{
+	overflow: hidden;
+	position: relative;
+}
 
 .noheaderimage{
 	.text-main-image{
@@ -1811,6 +1843,10 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	}
 	.black{
 		color: #fff;
+		background-color: #333;
+	}
+	.white{
+		background-color: #fff;
 	}
 }
 
@@ -1843,7 +1879,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 		float: right;
 		cursor: pointer;
 		@include main-color;
-		font-size: 0.8rem;
+		font-size: 0.8em;
 		border-bottom: 1px solid;
 		padding-bottom: 5px;
 		overflow: hidden;
