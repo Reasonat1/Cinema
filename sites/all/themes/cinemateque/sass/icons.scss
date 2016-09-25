@@ -13,6 +13,10 @@
     .header .header-right #da11y-toggle:hover{
         background: url("../images/access-icon-red.png") no-repeat 0 0;
     }
+    .header .header-right .favorite a:hover,
+    &.page-user .header .header-right .favorite a{
+        background: url("../images/favorite-red.png") no-repeat 0 bottom;
+    }
     .header .header-right .language-switcher-locale-url a:hover{
 		background: url("../images/hebrew-icon-red.png") no-repeat 0 2px!important;
     }
@@ -54,7 +58,7 @@
             background: url("../images/select-red.png") no-repeat left 7px top 14px;
         }
     }
-    .share-pane-container{
+    .share-this-pane{
         .facebook a{
             background: url("../images/facebook-red.png") no-repeat left 3px center;
         }
@@ -84,6 +88,10 @@
     }
     .header .header-right #da11y-toggle:hover{
         background: url("../images/access-icon-gold.png") no-repeat 0 0;
+    }
+    .header .header-right .favorite a:hover,
+    &.page-user .header .header-right .favorite a{
+        background: url("../images/favorite-gold.png") no-repeat 0 bottom;
     }
     .header .header-right .language-switcher-locale-url a:hover{
 		background: url("../images/hebrew-icon-gold.png") no-repeat 0 2px;
@@ -126,7 +134,7 @@
             background: url("../images/select-gold.png") no-repeat left 7px top 14px;
         }
     }
-    .share-pane-container{
+    .share-this-pane{
         .facebook a{
             background: url("../images/facebook-gold.png") no-repeat left 3px center;
         }

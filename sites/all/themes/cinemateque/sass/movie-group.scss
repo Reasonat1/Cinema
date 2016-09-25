@@ -111,7 +111,11 @@
 					z-index: 2;
 					&.nopic{
 						position: relative;
-						left: 0;
+						padding: 30px 30px 0;
+						background-color: #fff;
+						left: auto;
+						right: auto; 
+						bottom: auto;
 						a{
 							color: #000;
 						}
@@ -173,9 +177,6 @@
 				&.flag-action {
 					background-image: url("../images/like-gold-movie.png");
 				}
-			}
-			.state-nopic .flag{
-				top: -5px;
 			}
 			.views-field {
 				&.views-field-field-cm-movie-short-summary {

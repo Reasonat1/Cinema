@@ -58,9 +58,11 @@
 		}
 	}
 	.pane-event-ct-view-panel-pane-7 {
-		background-color: $color_alabaster_approx;
 		width: 100%;
 		float: left;
+		@include res(s-m){
+			background-color: $color_alabaster_approx;
+		}
 		.view-event-ct-view{
 			overflow: visible;
 			.table-responsive{
@@ -74,6 +76,9 @@
 		}
 		.view-content {
 			padding: 22px 0;
+			@include res(s-m){
+				padding: 0;
+			}
 		}
 		.pane-content {
 			@include width();
