@@ -76,9 +76,7 @@
 }
 .calendar-agenda-items {
 	float: left;
-	font-weight: bold;
 	text-align: center;
-	width: 217px;
 	margin: 0;
 }
 .tickets {
@@ -386,3 +384,241 @@
 		}
 	}
 }
+
+
+
+
+/******  calendar this month page  ********/
+
+.page-node-3487{
+	#header{
+		background-color: transparent;
+		&.sticky-header{
+			background-color: #000;
+		}
+	}
+	#main-wrapper{
+		margin-top: 0!important;
+	}
+}
+
+.pane-custom-calendar-floating-pane-panel-pane-1{
+	position: absolute;
+	width: 100%;
+	top:50px;
+	.pane-content{
+		padding: 0 30px;
+		box-sizing: border-box;
+	}
+	.calendar-calendar div.calendar{
+		font-size: 18px;
+	}
+	.contents{
+		display: inline-block;
+		font-size: 0.8em;
+		color: #333;
+		width: 100%;
+		a{
+			color: #333;
+		}
+	}
+	.toptix-purchase{
+		float: right;
+	}
+	.view-custom-calendar-floating-pane{
+		position: relative!important;
+		left: auto!important;
+		width: 300px!important;
+	}
+	.calendar-agenda-items{
+		width: 300px;
+		padding: 0!important;
+	}
+	.date-nav-wrapper{
+
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.pane-calendar-full-width-calendar .pane-title{
+    display: none;
+}
+.pane-calendar-full-width-calendar .ajax-inner{
+   background-color: #f9f4ee;
+   margin-top: 3%;
+}
+.loading{
+    background: url("loading-small.gif") no-repeat scroll 0 0;
+    width: 2%;
+    height: 30px;
+    margin: auto;
+    background-position: 0px 6px;
+    padding-top: 2%;
+}
+.pane-calendar-full-width-calendar .ajax-inner .calendar-full-container{
+    width: 1280px !important;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 6%;
+    box-sizing: border-box;
+   background-color: #f9f4ee;
+}
+.pane-calendar-full-width-calendar .calenders-filter-date p,
+.pane-calendar-full-width-calendar .calendar-floating-top-content span,
+.pane-calendar-full-width-calendar .lobby-title a{
+    color: #000000;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 2%;
+}
+.pane-calendar-full-width-calendar .lobby-summary {
+    font-size: 1.1em;
+    line-height: 28px;
+}
+.pane-calendar-full-width-calendar .lobby-container{
+  margin-top: 3%;  
+}
+.pane-calendar-full-width-calendar .lobby-term-left {
+    float: left;
+    width: 80%;
+    padding: 0 3% 0 0;
+}
+.pane-calendar-full-width-calendar .lobby-term-right {
+    float: right;
+    width: 20%;
+    position: relative;
+}
+
+.pane-calendar-full-width-calendar .addthisevent-drop{
+    padding-top: 20px !important;
+}
+.cal-add-event {
+    margin-left: 45%;
+}
+.pane-calendar-full-width-calendar .calenders-filter-date p{
+    margin: 3% 0 2%;
+}
+.ajax-data-calendar .calenders-filter-date p{
+    margin-left: 6% !important;
+}
+.ajax-inner .top-text-blk-wht{
+    position: absolute;
+    left: 0px;
+    top: 2px;
+    width: 100%;
+}
+.pane-calendar-full-width-calendar .flag-event{
+    float: right;
+    width: 15%;
+}
+.pane-calendar-full-width-calendar .flag-event a{
+    display: inline-block;
+}
+.ajax-inner .flag-wrapper a {
+    display: block;
+    text-indent: -9999px;
+    z-index: 200;
+}
+.ajax-inner .flag-wrapper a.unflag-action {
+    background: url("../images/unlike-gold.png") no-repeat right 0 !important;
+}
+.ajax-inner a.flag-action {
+    background: url("../images/like-gold.png") no-repeat right 0 !important;
+}
+.ajax-inner .black {
+    background-color: #000!important;
+    padding: 2px 4px 4px 4px;
+    color: #fff;
+}
+.ajax-inner .white {
+    background-color: #FFF!important;
+    padding: 2px 4px 4px 4px;
+}
+.view-custom-calendar-floating-pane{
+    width: 20%;
+    margin: 0;
+    padding: 0;
+}
+.view-custom-calendar-floating-pane .view-header{
+   background-color: #000; 
+}
+.view-custom-calendar-floating-pane #multi-day-container{
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+    height: 100% !important;
+}
+.view-custom-calendar-floating-pane #multi-day-container,
+.view-custom-calendar-floating-pane #multi-day-container tbody,
+.view-custom-calendar-floating-pane #multi-day-container tbody tr,
+.view-custom-calendar-floating-pane #multi-day-container table,
+.view-custom-calendar-floating-pane #multi-day-container tr td{
+    border: none;
+}
+.view-custom-calendar-floating-pane .header-body-divider,
+.view-custom-calendar-floating-pane #single-day-container,
+.view-custom-calendar-floating-pane .single-day-footer,
+.view-custom-calendar-floating-pane tbody tr td.calendar-agenda-hour{
+ display: none;   
+}
+.view-custom-calendar-floating-pane #multi-day-container tr td .calendar{
+    padding: 0;
+    margin: 0;
+}
+.view-custom-calendar-floating-pane  h3.pull-left{
+    color: #fff;
+    font-size: 1em;
+    margin: 15px 0;
+    text-align: center;
+    width: 100%;
+}
+.view-custom-calendar-floating-pane .view-header .btn-group{
+    position: initial;
+}
+
+.view-custom-calendar-floating-pane .date-nav-wrapper .btn-group a:first-child{
+    background: url("../images/more-white-left.png") no-repeat right 0 !important;
+    text-indent: -9999px;
+    position: absolute;
+    left: 0;
+    margin: 5% 0 0;
+    box-shadow: none;
+    padding: 0px 10px;
+    border:none;
+    border-radius: 0;
+    outline: 0;
+}
+.view-custom-calendar-floating-pane .date-nav-wrapper .btn-group a:last-child{
+    background: url("../images/more-white-right.png") no-repeat right 0 !important;
+    text-indent: -9999px;
+    position: absolute;
+    right: 4%;
+    margin: 5% 0 0;
+    box-shadow: none;
+    padding: 0px 5px;
+    border:none;
+    border-radius: 0;
+    outline: 0;
+}
+.view-custom-calendar-floating-pane .calendar.dayview{
+    border-radius: 0 !important;
+    background-color: #ECECEB !important;
+}
+.view-custom-calendar-floating-pane #multi-day-container tr td .item{
+    background-color: #ECECEB !important;
+    border-bottom: 1px solid #B3B3B3;
+}
+.view-custom-calendar-floating-pane #multi-day-container tr td .item .view-item-custom_calendar_floating_pane{
+    padding: 4% 3%;
+}
+

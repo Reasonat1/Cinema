@@ -372,7 +372,9 @@
 			}
 			label{
 				color: #fff;
-				padding: 12px 10px;
+				padding: 10px;
+				font-size: 14px;
+				font-weight: normal;
 			}
 			&.webform-component-radios {
 				width: 100%;
@@ -409,6 +411,8 @@
 			line-height: 0;
 			margin: 0;
 			border-radius: 0;
+			font-size: 16px;
+			font-weight: bold;
 			@include res(s-m){
 				width: 100%;
 				margin: 0!important;
@@ -1175,8 +1179,11 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 	margin:11px 5px 0 30px;
 	overflow: hidden;
 	padding: 0;
-	@include res(s-m){
+	@include res(m){
 		margin: 10px 30px 0 5px!important;
+	}
+	@include res(s){
+		margin: 10px 5px 0 5px!important;
 	}
 	@include res(menu){
 		margin: 11px 30px 0 5px;

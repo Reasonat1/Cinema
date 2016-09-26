@@ -55,7 +55,7 @@ $index = 0;
     <?php if (isset($item->continues) && $item->continues) : ?>
     <div class="continues">&raquo;</div>
     <?php else : ?>
-    <div class="cutoff">&nbsp;</div>
+    <!-- <div class="cutoff">&nbsp;</div> -->
     <?php endif;?>
   </div> 
   </div>   

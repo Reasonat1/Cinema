@@ -44,15 +44,7 @@
 .calendar-calendar th a {
   font-weight: bold;
 }
-.calendar-calendar td {
-  width: 14%;
-  border: 1px solid #ccc;
-  color: #777;
-  text-align: right;
-  vertical-align: top;
-  margin: 0;
-  padding: 0;
-}
+
 
 /**
  * simplify the mini calendar by removing borders
@@ -348,7 +340,6 @@ table.calendar-legend tr.even .stripe {
  */
 .calendar-calendar div.calendar {
   border: none;
-  font-size: x-small;
 }
 .calendar-calendar td .inner div.calendar div,
 .calendar-calendar td .inner div.calendar div a {
@@ -368,12 +359,6 @@ table.calendar-legend tr.even .stripe {
   font-weight: normal;
 }
 
-.calendar-calendar td span.date-display-single,
-.calendar-calendar td span.date-display-start,
-.calendar-calendar td span.date-display-end,
-.calendar-calendar td span.date-display-separator {
-  font-weight: bold;
-}
 .calendar-calendar td .inner div.day a {
   color: #4b85ac;
 }
@@ -443,12 +428,6 @@ table.calendar-legend tr.even .stripe {
 .calendar-calendar .month-view .full tr.single-day .no-entry .inner {
   height: 44px !important;
   line-height: 44px;
-}
-
-.calendar-calendar .month-view .full tr.single-day .noentry-multi-day,
-.calendar-calendar .month-view .full tr.single-day .noentry-multi-day .inner {
-  height: 22px !important;
-  line-height: 22px;
 }
 
 .calendar-calendar .month-view .full td,
@@ -607,17 +586,6 @@ table.calendar-legend tr.even .stripe {
 
 .calendar-calendar .day-view td div.dayview {
   padding: 0px;
-}
-
-.calendar-calendar .month-view .full td.multi-day div.monthview,
-.calendar-calendar .week-view .full td.multi-day div.weekview,
-.calendar-calendar .day-view .full td.multi-day div.dayview {
-  background: #74a5d7;
-  height: 1.9em;
-  overflow: hidden;
-  margin: 0px auto;
-  color: #ffffff;
-  position: relative;
 }
 
 .calendar-calendar .week-view .full td.multi-day div.weekview {

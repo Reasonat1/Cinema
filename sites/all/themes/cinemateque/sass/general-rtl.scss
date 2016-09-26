@@ -207,6 +207,16 @@ table{
 /*********  person page  **********/
 
 .node-type-cm-person{
+	.panels-flexible-row-node_page-4{
+		.pane-person-ct-view-panel-pane-1{
+    		.pane-content{
+    			@include width;
+    			.view{
+					float: left;
+    			}
+    		}
+		}
+	}
 	.view-person-ct-view.view-display-id-panel_pane_1{
 		.views-field-nothing-1{
 			.col{
