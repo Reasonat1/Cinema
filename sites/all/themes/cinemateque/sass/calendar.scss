@@ -224,12 +224,6 @@
 			height: 16px;
 			overflow: hidden;
 			width: 18px;
-			&.unflag-action {
-				background-image: url("../images/unlike-gold.png");
-			}
-			&.flag-action {
-				background-image: url("../images/like-gold.png");
-			}
 		}
 	}
 }
@@ -469,6 +463,12 @@
 			@include res(s-m){
 				width: 100%;
 			}
+			.flag {
+			    position: absolute;
+			    right: 10px;
+			    z-index: 100;
+			    top: 10px;
+			}
 		}
 		.lobby-term-right{
 			float: right;
@@ -607,18 +607,7 @@
     top: 2px;
     width: 100%;
 }
-.pane-calendar-full-width-calendar .flag-event{
-    float: right;
-    width: 15%;
-}
-.pane-calendar-full-width-calendar .flag-event a{
-    display: inline-block;
-}
-.ajax-inner .flag-wrapper a {
-    display: block;
-    text-indent: -9999px;
-    z-index: 200;
-}
+
 .ajax-inner .black {
     background-color: #000!important;
     padding: 2px 4px 4px 4px;

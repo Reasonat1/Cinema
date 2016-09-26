@@ -160,7 +160,7 @@ function calendar_full_width_block_content(){
           $picture_path_event = $node->field_cm_event_images['und'][0]['uri'];
           $image_event = '<img src="' . image_style_url('lobby', $picture_path_event) . '" alt="" />';
         }else{
-            $image_event = '';
+            $image_event = '<img src="/sites/all/themes/cinemateque/images/default-image-pane-2.png">';
         }
         if(!empty($node->field_event_top_text_white['und'])){
             $white_text_event = '<span class="white">'. $node->field_event_top_text_white['und'][0]['value'] . '</span>'; 
