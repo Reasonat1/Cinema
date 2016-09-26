@@ -109,6 +109,20 @@
         });
 */
 
+
+/*******  calendat fixed  *********/
+
+        $(window).scroll(function() {
+            $targetScroll = $('body').position().top+$(window).height();
+            $currentScroll = $('html').scrollTop() || $('body').scrollTop();
+            if ($currentScroll >= $targetScroll){
+                $('.calender-filter').addClass("fixedPos");
+            }
+            else{
+                $('.calender-filter').removeClass("fixedPos");
+            }
+        });
+
         $(".header-right .search span").click(function() {
             if (!$("div").hasClass("screen-search")){
                 $("#header").prepend("<div class='screen-search'></div>");
@@ -212,6 +226,8 @@
             });
 
         }
+
+
     if (($("body").hasClass("page-node-3261")) || ($("body").hasClass("page-node-3284"))){
         $(document).scroll(function(e) {
             var detectrange = 50;

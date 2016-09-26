@@ -197,7 +197,7 @@ function calendar_full_width_block_content(){
                                </table>
                             </div>';
                 $output .= '<div class="lobby-title">'.l($node->title, $path).'</div>';
-                $output .= '<div class="calendar-below-title-content"><span class="cal-hall">'.$hall_name.'</span> | <span class="cal-length">'.$length.'</span> | <span class="cal-sort-title">'.$sort_title.'</span></div>';
+                $output .= '<div class="calendar-below-title-content"><span class="cal-hall">'.$hall_name.'</span><span class="cal-length">'.$length.'</span><span class="cal-sort-title">'.$sort_title.'</span></div>';
                 $output .= '<div class="lobby-summary">'.strip_tags($summary_event).'</div>';
             $output .= '</div>';
             $output .='<div class="clr"></div>';
@@ -318,7 +318,7 @@ function ajax_calender_full_width_filter(){
                                </table>
                             </div>';
                 $output .= '<div class="lobby-title">'.l($node->title, $path).'</div>';
-                $output .= '<div class="calendar-below-title-content"><span class="cal-hall">'.$hall_name.'</span> | <span class="cal-length">'.$length.'</span> | <span class="cal-sort-title">'.$sort_title.'</span>
+                $output .= '<div class="calendar-below-title-content"><span class="cal-hall">'.$hall_name.'</span><span class="cal-length">'.$length.'</span><span class="cal-sort-title">'.$sort_title.'</span>
                 </tr></tbody></table></div>';
                 $output .= '<div class="lobby-summary">'.strip_tags($summary_event).'</div>';
             $output .= '</div>';
