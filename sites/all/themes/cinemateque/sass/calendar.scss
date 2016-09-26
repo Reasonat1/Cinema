@@ -403,13 +403,16 @@
 	    width: 100%;
 	    z-index: 100;
 	}
+	.gradient {
+    	display: block;
+	}
 	.calender-filter.fixedPos{
 		position: fixed;
-		    background-color: #fff;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 200;
+		background-color: #fff;
+	    position: fixed;
+	    top: 0;
+	    width: 100%;
+	    z-index: 200;
 	}
 }
 
@@ -601,22 +604,7 @@
 .ajax-data-calendar .calenders-filter-date p{
     margin-left: 6% !important;
 }
-.ajax-inner .top-text-blk-wht{
-    position: absolute;
-    left: 0px;
-    top: 2px;
-    width: 100%;
-}
 
-.ajax-inner .black {
-    background-color: #000!important;
-    padding: 2px 4px 4px 4px;
-    color: #fff;
-}
-.ajax-inner .white {
-    background-color: #FFF!important;
-    padding: 2px 4px 4px 4px;
-}
 .view-custom-calendar-floating-pane{
     width: 20%;
     margin: 0;

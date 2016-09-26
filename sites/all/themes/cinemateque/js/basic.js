@@ -59,7 +59,7 @@
         $fullscreenheight = $(window).height();
         $(".full-screen-image, .full-screen-image .wrapper-image .content").css("max-height",$screenheight);
         $(".front .full-screen-image, .front .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
-        $(".page-node-3487 .full-screen-image, .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
+        $(".page-node-3487 .full-screen-image, .full-screen-image .wrapper-image .content, .full-screen-image li").css("max-height",$fullscreenheight);
 
 
         $(window).resize(function() {
@@ -67,7 +67,7 @@
             $fullscreenheight = $(window).height();
             $(".full-screen-image, .wrapper-image .content").css("max-height",$screenheight);
             $(".front .full-screen-image, .front .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
-            $(".page-node-3487 .full-screen-image, .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
+            $(".page-node-3487 .full-screen-image, .full-screen-image .wrapper-image .content, .full-screen-image li").css("max-height",$fullscreenheight);
         });
 
 /*********  claendat pane on slider  
