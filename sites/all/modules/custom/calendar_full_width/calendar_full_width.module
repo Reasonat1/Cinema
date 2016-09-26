@@ -116,7 +116,9 @@ function calendar_full_width_block_content(){
       foreach($result as $val){
         $node = node_load($val->nid);
         //echo'<pre>'.print_r($node, 1).'</pre>';
-        $event_title = $node->field_cm_event_short_title['und'][0]['value'];
+        if(!empty($node->field_cm_event_short_title)){
+          $event_title = $node->field_cm_event_short_title['und'][0]['value'];
+        }
         $path = drupal_get_path_alias('node/'.$node->nid);
         $flag = '<span class="flag-event">'.flag_create_link('favorite_', $node->nid).'</span>';
         if(!empty($node->field_cm_event_duration['und'])){
