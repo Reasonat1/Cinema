@@ -2367,7 +2367,6 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   font-size: 14px;
   padding: 5px 12px;
   margin: 22px 0 0 0;
-  border-radius: 15px;
   float: left;
 }
 /* line 61, ../sass/init.scss */
@@ -2378,11 +2377,11 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 .domain-2 .text-main-image .wrapper .slide-left-ct .button {
   background-color: #b59d70 !important;
 }
-/* line 1778, ../sass/general.scss */
+/* line 1777, ../sass/general.scss */
 .text-main-image .wrapper .slide-left-ct .button a {
   color: #fff;
 }
-/* line 1783, ../sass/general.scss */
+/* line 1782, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct {
   float: left;
   position: absolute;
@@ -2393,7 +2392,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   margin-top: 38px;
 }
 @media (max-width: 767px) {
-  /* line 1783, ../sass/general.scss */
+  /* line 1782, ../sass/general.scss */
   .text-main-image .wrapper .slide-right-ct {
     margin: 0;
     bottom: 6px;
@@ -2403,13 +2402,13 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
     width: 13%;
   }
 }
-/* line 1799, ../sass/general.scss */
+/* line 1798, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct *:focus {
   outline: 0;
   outline-style: none;
   outline-width: 0;
 }
-/* line 1804, ../sass/general.scss */
+/* line 1803, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct a {
   background: url("../images/play-icon.png") no-repeat scroll 60% center;
   border-radius: 30px;
@@ -2421,73 +2420,73 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   width: 55px;
 }
 @media (max-width: 767px) {
-  /* line 1804, ../sass/general.scss */
+  /* line 1803, ../sass/general.scss */
   .text-main-image .wrapper .slide-right-ct a {
     background-size: 16px;
     height: 40px;
     width: 40px;
   }
 }
-/* line 1821, ../sass/general.scss */
+/* line 1820, ../sass/general.scss */
 .text-main-image a {
   color: #fff;
 }
 
-/* line 1826, ../sass/general.scss */
+/* line 1825, ../sass/general.scss */
 .full-screen-image {
   overflow: hidden;
   position: relative;
 }
 
-/* line 1832, ../sass/general.scss */
+/* line 1831, ../sass/general.scss */
 .noheaderimage .text-main-image {
   position: relative;
   color: #333;
   margin: 50px 0 30px;
   bottom: auto;
 }
-/* line 1838, ../sass/general.scss */
+/* line 1837, ../sass/general.scss */
 .noheaderimage .text-main-image .wrapper a, .noheaderimage .text-main-image .wrapper a:hover {
   color: #333;
 }
-/* line 1841, ../sass/general.scss */
+/* line 1840, ../sass/general.scss */
 .noheaderimage .text-main-image .wrapper .slide-right-ct {
   margin-top: 0;
 }
-/* line 1843, ../sass/general.scss */
+/* line 1842, ../sass/general.scss */
 .noheaderimage .text-main-image .wrapper .slide-right-ct a {
   background: url("../images/play-icon-black.png") no-repeat scroll 60% center;
   border: 1px solid #000;
 }
-/* line 1850, ../sass/general.scss */
+/* line 1849, ../sass/general.scss */
 .noheaderimage .gradient {
   display: none;
 }
 
-/* line 1855, ../sass/general.scss */
+/* line 1854, ../sass/general.scss */
 .top-text-blk-wht {
   position: absolute;
   top: 0;
   left: 0;
   font-size: 14px;
 }
-/* line 1860, ../sass/general.scss */
+/* line 1859, ../sass/general.scss */
 .top-text-blk-wht span {
   padding: 6px 12px;
   opacity: 0.9;
   float: left;
 }
-/* line 1865, ../sass/general.scss */
+/* line 1864, ../sass/general.scss */
 .top-text-blk-wht .black {
   color: #fff;
   background-color: #333;
 }
-/* line 1869, ../sass/general.scss */
+/* line 1868, ../sass/general.scss */
 .top-text-blk-wht .white {
   background-color: #fff;
 }
 
-/* line 1874, ../sass/general.scss */
+/* line 1873, ../sass/general.scss */
 .image-alt-title {
   background-color: #312f2f;
   bottom: 0px;
@@ -2499,28 +2498,28 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   z-index: 2;
 }
 @media (max-width: 767px) {
-  /* line 1874, ../sass/general.scss */
+  /* line 1873, ../sass/general.scss */
   .image-alt-title {
     display: none;
   }
 }
-/* line 1886, ../sass/general.scss */
+/* line 1885, ../sass/general.scss */
 .image-alt-title .field {
   float: left;
 }
-/* line 1889, ../sass/general.scss */
+/* line 1888, ../sass/general.scss */
 .image-alt-title .grp-title, .image-alt-title .field-name-field-file-image-title-text {
   margin-left: 10px;
   padding-left: 10px;
   border-left: 1px solid;
 }
 
-/* line 1896, ../sass/general.scss */
+/* line 1895, ../sass/general.scss */
 .view-footer {
   overflow: hidden;
   text-align: center;
 }
-/* line 1899, ../sass/general.scss */
+/* line 1898, ../sass/general.scss */
 .view-footer .more-event {
   float: right;
   cursor: pointer;
@@ -2538,7 +2537,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   color: #b59d70 !important;
 }
 @media (max-width: 767px) {
-  /* line 1899, ../sass/general.scss */
+  /* line 1898, ../sass/general.scss */
   .view-footer .more-event {
     margin: 10px auto;
     float: none;
@@ -2549,36 +2548,36 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   }
 }
 @media (max-width: 767px) {
-  /* line 1915, ../sass/general.scss */
+  /* line 1914, ../sass/general.scss */
   .view-footer .more-event span {
     float: left;
   }
 }
-/* line 1920, ../sass/general.scss */
+/* line 1919, ../sass/general.scss */
 .view-footer .more-event .text {
   margin: 0 5px;
 }
 
-/* line 1928, ../sass/general.scss */
+/* line 1927, ../sass/general.scss */
 .credits-view {
   padding: 30px 0;
 }
-/* line 1930, ../sass/general.scss */
+/* line 1929, ../sass/general.scss */
 .credits-view .profession {
   width: 120px;
   color: #b3b3b3;
 }
 @media (max-width: 767px) {
-  /* line 1930, ../sass/general.scss */
+  /* line 1929, ../sass/general.scss */
   .credits-view .profession {
     width: auto;
   }
 }
-/* line 1937, ../sass/general.scss */
+/* line 1936, ../sass/general.scss */
 .credits-view table tr {
   border: none !important;
 }
-/* line 1940, ../sass/general.scss */
+/* line 1939, ../sass/general.scss */
 .credits-view a {
   color: #000;
 }
@@ -2592,15 +2591,15 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 }
 
 @media (max-width: 767px) {
-  /* line 1949, ../sass/general.scss */
+  /* line 1948, ../sass/general.scss */
   .node-type-cm-person .panels-flexible-row-node_page-5, .node-type-cm-article .panels-flexible-row-node_page-5 {
     padding: 0 !important;
   }
-  /* line 1952, ../sass/general.scss */
+  /* line 1951, ../sass/general.scss */
   .node-type-cm-person .panels-flexible-row-node_page-5 .panels-flexible-region-node_page-content_left, .node-type-cm-article .panels-flexible-row-node_page-5 .panels-flexible-region-node_page-content_left {
     padding: 0 5%;
   }
-  /* line 1955, ../sass/general.scss */
+  /* line 1954, ../sass/general.scss */
   .node-type-cm-person .panels-flexible-row-node_page-5 .panels-flexible-region-node_page-content_right .pane-entity-field, .node-type-cm-article .panels-flexible-row-node_page-5 .panels-flexible-region-node_page-content_right .pane-entity-field {
     padding: 0 5% 25px;
     border-top: 1px solid #cdcdcd;
@@ -2610,7 +2609,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 }
 
 /******  node teaser  ******/
-/* line 1968, ../sass/general.scss */
+/* line 1967, ../sass/general.scss */
 .node-title-teaser-cm-movie .node-cm-movie-year {
   padding: 23px 10px;
   float: left;
@@ -2618,18 +2617,18 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   margin-right: 10px;
 }
 @media (max-width: 767px) {
-  /* line 1968, ../sass/general.scss */
+  /* line 1967, ../sass/general.scss */
   .node-title-teaser-cm-movie .node-cm-movie-year {
     padding: 8px 10px;
   }
 }
 
-/* line 1978, ../sass/general.scss */
+/* line 1977, ../sass/general.scss */
 .node-title-teaser-cm-movie a .node-title-teaser-title {
   padding: 26px 26px 23px 10px;
 }
 @media (max-width: 767px) {
-  /* line 1978, ../sass/general.scss */
+  /* line 1977, ../sass/general.scss */
   .node-title-teaser-cm-movie a .node-title-teaser-title {
     padding: 9px 26px 8px 10px;
   }

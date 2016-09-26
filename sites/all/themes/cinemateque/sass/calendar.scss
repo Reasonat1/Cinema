@@ -400,12 +400,20 @@
 	#main-wrapper{
 		margin-top: 0!important;
 	}
+	.text-main-image {
+	    bottom: 60px;
+	    color: #fff!important;
+	    padding: 0;
+	    position: absolute!important;
+	    width: 100%;
+	    z-index: 100;
+	}
 }
 
 .pane-custom-calendar-floating-pane-panel-pane-1{
 	position: absolute;
 	width: 100%;
-	top:50px;
+	top:120px;
 	.pane-content{
 		padding: 0 30px;
 		box-sizing: border-box;
@@ -429,6 +437,8 @@
 		position: relative!important;
 		left: auto!important;
 		width: 300px!important;
+		float: right;
+		z-index: 50;
 	}
 	.calendar-agenda-items{
 		width: 300px;
@@ -439,9 +449,67 @@
 	}
 }
 
-
-
-
+.pane-calendar-full-width-calendar{
+		.lobby-term-left{
+			float: left;
+			width: 30%;
+			position: relative;
+			@include res(s-m){
+				width: 100%;
+			}
+		}
+		.lobby-term-right{
+			float: right;
+			width: 70%;
+			padding: 0 20px;
+			box-sizing: border-box;
+			@include res(s-m){
+				width: 100%;
+			}
+			table tbody{
+				border: none;
+			}
+			.lobby-length{
+				color: #919191;
+			}
+			.table-responsive{
+				overflow: visible;
+				table{
+					margin-bottom: 0;
+				}
+			}
+		}
+		.row-custom-lobby{
+			td{
+				padding-top: 0;
+				padding-bottom: 0;
+				@include res(s-m){
+					padding-right: 0!important;
+				}
+			}
+			.left{
+				float: left;
+				width: auto;
+				border-right: 2px solid!important;
+				margin-right: 8px;
+				font-weight: bold;
+				font-size: 19px;
+				line-height: 23px;
+			}
+			.hall{
+				border:none!important;
+			}
+			.right{
+				float: right;
+			}
+			.purchase{
+				padding-right: 0;
+				padding-left: 0;
+				width: 80px!important;
+				min-height: 1px;
+			}
+		}
+}
 
 
 
@@ -488,16 +556,6 @@
 }
 .pane-calendar-full-width-calendar .lobby-container{
   margin-top: 3%;  
-}
-.pane-calendar-full-width-calendar .lobby-term-left {
-    float: left;
-    width: 80%;
-    padding: 0 3% 0 0;
-}
-.pane-calendar-full-width-calendar .lobby-term-right {
-    float: right;
-    width: 20%;
-    position: relative;
 }
 
 .pane-calendar-full-width-calendar .addthisevent-drop{
