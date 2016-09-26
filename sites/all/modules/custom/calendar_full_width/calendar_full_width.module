@@ -22,17 +22,17 @@ function calendar_full_width_block_info() {
     switch($delta){
       case 'calendar':
         $block['subject'] = t('Calendar Full Width Block');
-		$block['content'] = array();
+    $block['content'] = array();
         $block['content']['#markup'] =calendar_full_width_block_content();
-		$block['content']['#attached'] = array(
-			'js' => array(
-				drupal_get_path('module', 'calendar_full_width') . '/include/calendar_full_width.js',
-			),
-			'css' => array(
-				drupal_get_path('module', 'calendar_full_width') . '/include/calendar_full_width.css',
-			),
-		
-		);
+    $block['content']['#attached'] = array(
+      'js' => array(
+        drupal_get_path('module', 'calendar_full_width') . '/include/calendar_full_width.js',
+      ),
+      'css' => array(
+        drupal_get_path('module', 'calendar_full_width') . '/include/calendar_full_width.css',
+      ),
+    
+    );
         break;
      }
     return $block;
@@ -116,22 +116,18 @@ function calendar_full_width_block_content(){
       foreach($result as $val){
         $node = node_load($val->nid);
         //echo'<pre>'.print_r($node, 1).'</pre>';
-		if(!empty($node->field_cm_event_short_title)){
-			$event_title = $node->field_cm_event_short_title['und'][0]['value'];
-		}
+        $event_title = $node->field_cm_event_short_title['und'][0]['value'];
         $path = drupal_get_path_alias('node/'.$node->nid);
         $flag = '<span class="flag-event">'.flag_create_link('favorite_', $node->nid).'</span>';
         if(!empty($node->field_cm_event_duration['und'])){
             $interval = $node->field_cm_event_duration['und'][0]['interval'];
             $period = $node->field_cm_event_duration['und'][0]['period'];
-            $length = ' | '. $interval. ' '.$period;
-			$bar = ' | ';
+            $length = $interval. ' '.$period;
         }else{
             $length = '';
-			$bar = '';
         }
         if(!empty($node->field_cm_event_short_title['und'])){
-            $sort_title = $bar . $node->field_cm_event_short_title['und'][0]['value'];
+            $sort_title = $node->field_cm_event_short_title['und'][0]['value'];
         }else{
             $sort_title = '';
         }
@@ -175,17 +171,7 @@ function calendar_full_width_block_content(){
             $black_text_event = '';
         }
         $output.='<div class="lobby-container" style="clear:both;">';
-<<<<<<< HEAD
             $output .='<div class="lobby-term-left">';
-=======
-            $output .= '<div class="lobby-term-left">';
-                $output .= '<div class="calendar-floating-top-content"><span class="cal-day">'.$Day.'</span> | <span class="cal-date">'.$event_date.'</span> | <span class="cal-time">'.$event_time.'</span><span class="cal-add-event views-field-php" style="display:inline-block">'._return_addthisevent_markup($node).'</span><span class="cal-toptix">'.$purchase.'</span></div>';
-                $output .= '<div class="lobby-title">'.l($node->title, $path).'</div>';
-                $output .= '<div class="calendar-below-title-content"><span class="cal-hall">'.$hall_name.'</span><span class="cal-length">'.$length.'</span> <span class="cal-sort-title">'.$sort_title.'</span></div>';
-                $output .= '<div class="lobby-summary">'.strip_tags($summary_event).'</div>';
-            $output .= '</div>';
-            $output .='<div class="lobby-term-right">';
->>>>>>> b7b76a375ad17e146798172385ead93dbca3916f
                 $output .= '<div class="image-lobby">';
                 $output .= $image_event;
                 $output .= '</div>';
@@ -252,21 +238,17 @@ function ajax_calender_full_width_filter(){
       foreach($result as $val){
         $node = node_load($val->nid);
         $flag = '<span class="flag-event">'.flag_create_link('favorite_', $node->nid).'</span>';
-		if(!empty($node->field_cm_event_short_title)){
-			$event_title = $node->field_cm_event_short_title['und'][0]['value'];
-		}
+        $event_title = $node->field_cm_event_short_title['und'][0]['value'];
         $path = drupal_get_path_alias('node/'.$node->nid);
         if(!empty($node->field_cm_event_duration['und'])){
             $interval = $node->field_cm_event_duration['und'][0]['interval'];
             $period = $node->field_cm_event_duration['und'][0]['period'];
-            $length = ' | '. $interval. ' '.$period;
-			$bar = ' | ';
+            $length = $interval. ' '.$period;
         }else{
             $length = '';
-			$bar ='';
         }
         if(!empty($node->field_cm_event_short_title['und'])){
-            $sort_title = $bar . $node->field_cm_event_short_title['und'][0]['value'];
+            $sort_title = $node->field_cm_event_short_title['und'][0]['value'];
         }else{
             $sort_title = '';
         }
@@ -310,17 +292,7 @@ function ajax_calender_full_width_filter(){
             $black_text_event = '';
         }
         $output.='<div class="lobby-container" style="clear:both;">';
-<<<<<<< HEAD
             $output .='<div class="lobby-term-left">';
-=======
-            $output .= '<div class="lobby-term-left">';
-                $output .= '<div class="calendar-floating-top-content"><span class="cal-day">'.$Day.'</span> | <span class="cal-date">'.$event_date.'</span> | <span class="cal-time">'.$event_time.'</span><span class="cal-add-event views-field-php" style="display:inline-block">'._return_addthisevent_markup($node).'</span><span class="cal-toptix">'.$purchase.'</span></div>';
-                $output .= '<div class="lobby-title">'.l($node->title, $path).'</div>';
-                $output .= '<div class="calendar-below-title-content"><span class="cal-hall">'.$hall_name.'</span><span class="cal-length">'.$length.'</span><span class="cal-sort-title">'.$sort_title.'</span></div>';
-                $output .= '<div class="lobby-summary">'.strip_tags($summary_event).'</div>';
-            $output .= '</div>';
-            $output .='<div class="lobby-term-right">';
->>>>>>> b7b76a375ad17e146798172385ead93dbca3916f
                 $output .= '<div class="image-lobby">';
                 $output .= $image_event;
                 $output .= '</div>';
