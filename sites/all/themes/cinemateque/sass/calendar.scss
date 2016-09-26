@@ -77,7 +77,6 @@
 .calendar-agenda-items {
 	float: left;
 	text-align: center;
-	width: 217px;
 	margin: 0;
 }
 .tickets {
@@ -391,10 +390,22 @@
 
 /******  calendar this month page  ********/
 
+.page-node-3487{
+	#header{
+		background-color: transparent;
+		&.sticky-header{
+			background-color: #000;
+		}
+	}
+	#main-wrapper{
+		margin-top: 0!important;
+	}
+}
+
 .pane-custom-calendar-floating-pane-panel-pane-1{
 	position: absolute;
-	top: 13%;
 	width: 100%;
+	top:50px;
 	.pane-content{
 		padding: 0 30px;
 		box-sizing: border-box;
@@ -404,18 +415,27 @@
 	}
 	.contents{
 		display: inline-block;
-		font-size: 0.9em;
+		font-size: 0.8em;
 		color: #333;
 		width: 100%;
 		a{
 			color: #333;
 		}
 	}
-	td.calendar-agenda-items{
-		width: 376px;
-	}
 	.toptix-purchase{
 		float: right;
+	}
+	.view-custom-calendar-floating-pane{
+		position: relative!important;
+		left: auto!important;
+		width: 300px!important;
+	}
+	.calendar-agenda-items{
+		width: 300px;
+		padding: 0!important;
+	}
+	.date-nav-wrapper{
+
 	}
 }
 
@@ -556,31 +576,39 @@
     margin: 0;
 }
 .view-custom-calendar-floating-pane  h3.pull-left{
-    font-size: 1em;
-    margin: 5% 0 5% 26%;
     color: #fff;
+    font-size: 1em;
+    margin: 15px 0;
+    text-align: center;
+    width: 100%;
 }
 .view-custom-calendar-floating-pane .view-header .btn-group{
     position: initial;
 }
 
 .view-custom-calendar-floating-pane .date-nav-wrapper .btn-group a:first-child{
-    background: url("cal-prev.png") no-repeat right 0 !important;
+    background: url("../images/more-white-left.png") no-repeat right 0 !important;
     text-indent: -9999px;
     position: absolute;
     left: 0;
     margin: 5% 0 0;
     box-shadow: none;
     padding: 0px 10px;
+    border:none;
+    border-radius: 0;
+    outline: 0;
 }
 .view-custom-calendar-floating-pane .date-nav-wrapper .btn-group a:last-child{
-    background: url("cal-next.png") no-repeat right 0 !important;
+    background: url("../images/more-white-right.png") no-repeat right 0 !important;
     text-indent: -9999px;
     position: absolute;
     right: 4%;
     margin: 5% 0 0;
     box-shadow: none;
     padding: 0px 5px;
+    border:none;
+    border-radius: 0;
+    outline: 0;
 }
 .view-custom-calendar-floating-pane .calendar.dayview{
     border-radius: 0 !important;

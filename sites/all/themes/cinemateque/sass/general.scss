@@ -85,6 +85,13 @@ table td{
 .container-fluid{
 	padding: 0;
 }
+
+.row{
+	margin:0;
+	.radix-layouts-content{
+		padding: 0;
+	}
+}
 /*******  panels margin  *********/
 
 .panels-flexible-row{
@@ -1531,6 +1538,7 @@ table{
 	.panels-flexible-row-node_page-4{
 		width: 100%!important;
 		padding: 0!important;
+		top: 50px;
 		.pane-person-ct-view-panel-pane-1{
 			background-color: $color_alabaster_approx;
 			padding-top: 60px!important;

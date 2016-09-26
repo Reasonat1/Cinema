@@ -71,11 +71,6 @@
   border-bottom: 1px solid #CCCCCC;
 }
 
-.calendar-calendar .week-view #multi-day-container,
-.calendar-calendar .day-view #multi-day-container {
-  height: 57px;
-}
-
 .calendar-calendar .week-view #multi-day-container .expand {
   height: 100%;
 }
@@ -237,9 +232,7 @@
 }
 
 .calendar-calendar .week-view .full td.multi-day .inner .weekview .continues,
-.calendar-calendar .week-view .full td.multi-day .inner .weekview .cutoff,
-.calendar-calendar .day-view .full td.multi-day .inner .dayview .continues,
-.calendar-calendar .day-view .full td.multi-day .inner .dayview .cutoff {
+.calendar-calendar .day-view .full td.multi-day .inner .dayview .continues {
   height: 22px;
   padding-top: 0px;
 }

@@ -59,13 +59,33 @@
         $fullscreenheight = $(window).height();
         $(".full-screen-image, .full-screen-image .wrapper-image .content").css("max-height",$screenheight);
         $(".front .full-screen-image, .front .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
+        $(".page-node-3487 .full-screen-image, .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
+
+
         $(window).resize(function() {
             $screenheight = $(window).height()-50;
             $fullscreenheight = $(window).height();
             $(".full-screen-image, .wrapper-image .content").css("max-height",$screenheight);
             $(".front .full-screen-image, .front .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
+            $(".page-node-3487 .full-screen-image, .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
         });
 
+/*********  claendat pane on slider  *********/
+
+        $calendarheight = ($screenheight - $(".pane-custom-calendar-floating-pane-panel-pane-1").height())/2+50;
+        if ($calendarheight > 50){
+          $(".pane-custom-calendar-floating-pane-panel-pane-1").css("top",$calendarheight);
+        }
+
+        $(window).resize(function() {
+          $calendarheight = ($screenheight - $(".pane-custom-calendar-floating-pane-panel-pane-1").height())/2+50;
+          if ($calendarheight > 50){
+            $(".pane-custom-calendar-floating-pane-panel-pane-1").css("top",$calendarheight);
+          }
+          else{
+            $(".pane-custom-calendar-floating-pane-panel-pane-1").css("top","50");
+          }
+        });
 
    /********  movie group slide height   ******/
 
