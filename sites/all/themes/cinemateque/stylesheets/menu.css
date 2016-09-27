@@ -15,35 +15,27 @@
   src: url("../fonts/Open-Sans.eot?") format("eot"), url("../fonts/Open-Sans.woff") format("woff"), url("../fonts/Open-Sans.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans.ttf") format("truetype");
 }
 /* line 3, ../sass/menu.scss */
-.hamburger {
+#mini-panel-hamburgermenufooter {
   color: #fff;
   min-height: 100%;
-}
-/* line 6, ../sass/menu.scss */
-.hamburger .modal-dialog {
   width: 100%;
   margin: 0;
   min-height: 100%;
   background-color: #262626;
 }
-/* line 12, ../sass/menu.scss */
-.hamburger .modal-content {
-  padding: 0 0 0;
-  opacity: 0.96;
-  min-height: 100%;
-  border: none;
-  background-color: #262626;
-  box-shadow: none;
+/* line 10, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .panel-col {
+  padding: 0;
 }
-/* line 19, ../sass/menu.scss */
-.hamburger .modal-content .menu-link-examples {
+/* line 13, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .menu-link-examples {
   display: none;
 }
-/* line 21, ../sass/menu.scss */
-.hamburger .modal-content .close {
+/* line 16, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .close {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 30px;
+  left: 30px;
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -52,148 +44,78 @@
   z-index: 200;
 }
 /* line 61, ../sass/init.scss */
-.domain-1 .hamburger .modal-content .close, .hamburger .modal-content .close.domain-1 .hamburger .modal-content .close {
+.domain-1 #mini-panel-hamburgermenufooter .close, #mini-panel-hamburgermenufooter .close.domain-1 #mini-panel-hamburgermenufooter .close {
   background-color: #e41145 !important;
 }
 /* line 64, ../sass/init.scss */
-.domain-2 .hamburger .modal-content .close {
+.domain-2 #mini-panel-hamburgermenufooter .close {
   background-color: #b59d70 !important;
 }
-/* line 34, ../sass/menu.scss */
-.hamburger .modal-body {
+
+/* line 31, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .col-md-12 {
   padding: 0;
-  margin: 0;
+}
+/* line 34, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .radix-layouts-column1, #mini-panel-hamburgermenufooter .radix-layouts-column2 {
+  display: none;
 }
 /* line 37, ../sass/menu.scss */
-.hamburger .modal-body .close {
-  float: left;
-  padding: 22px;
+#mini-panel-hamburgermenufooter .radix-layouts-footer {
+  padding: 24px 110px;
 }
-/* line 41, ../sass/menu.scss */
-.hamburger .modal-body .pane-bean-infomation-block-view .handle {
-  display: none;
-}
-/* line 44, ../sass/menu.scss */
-.hamburger .modal-body .view-id-bean_infomation_block_view .form-submit {
-  display: none;
-}
-/* line 47, ../sass/menu.scss */
-.hamburger .modal-body .popup-loader {
-  margin: 0 auto;
-  display: block;
-}
-/* line 52, ../sass/menu.scss */
-.hamburger .panels-flexible-region.popup.region {
-  width: 100%;
-}
-
-/* line 57, ../sass/menu.scss */
-#hamburger-menu {
-  /*
-  .pane-my-backend-festival-menu-block {
-  	float: left;
-  	padding: 10px 15px 0 85px;
-  	box-sizing: border-box;
-  	.pane-title{
-  		color: #fff;
-  		font-size: 18px;
-  		margin: 13px 0 14px;
-  	}
-  	.col-md-3 {
-  		padding-left: 50px;
-  		padding-right: 50px;
-  		width: 25%;
-  	}
-  	.menu.nav li {
-  		background-image: url("../images/arrow-right.png");
-  		background-position: right center;
-  		background-repeat: no-repeat;
-  		background-size: 20px auto;
-  		border-bottom: 2px solid $color_chicago_approx;
-  		line-height: 40px;
-  		&.expanded {
-  			display: none;
-  		}
-  		a {
-  			background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-  			color: $white;
-  			font-size: 16px;
-  			padding: 10px 0;
-  			&:hover {
-  				background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-  			}
-  			&:active {
-  				background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-  			}
-  		}
-  	}
-  	.menu.nav li.last{
-  		border-bottom: none;
-  	}
-  	.pane-content > h2 {
-  		font-size: 16px;
-  		font-weight: bold;
-  	}
-  }*/
-}
-/* line 58, ../sass/menu.scss */
-#hamburger-menu .col-md-12 {
-  padding: 0;
-}
-/* line 61, ../sass/menu.scss */
-#hamburger-menu .radix-layouts-column1, #hamburger-menu .radix-layouts-column2 {
-  display: none;
-}
-/* line 64, ../sass/menu.scss */
-#hamburger-menu .radix-layouts-footer {
-  padding: 24px 70px;
-}
-/* line 66, ../sass/menu.scss */
-#hamburger-menu .radix-layouts-footer .cps-region-inner {
+/* line 39, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .radix-layouts-footer .cps-region-inner {
   text-align: center;
 }
-/* line 116, ../sass/menu.scss */
-#hamburger-menu .pane-menu-menu-site-main-menu {
+/* line 43, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 {
   width: 100%;
-  padding: 50px 70px 0;
+  padding: 60px 110px 30px;
   background-color: #323232;
 }
-/* line 120, ../sass/menu.scss */
-#hamburger-menu .pane-menu-menu-site-main-menu h2 {
+/* line 47, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu h2, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 h2 {
   display: none;
 }
-/* line 123, ../sass/menu.scss */
-#hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed {
+/* line 50, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.expanded, #mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.collapsed, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.expanded, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.collapsed {
   float: left;
   padding: 10px 0px 0;
   width: 22.75%;
   margin-right: 3%;
   box-sizing: border-box;
 }
-/* line 129, ../sass/menu.scss */
-#hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded.last, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed.last {
+/* line 56, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.expanded.last, #mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.collapsed.last, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.expanded.last, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.collapsed.last {
   margin-right: 0;
 }
-/* line 132, ../sass/menu.scss */
-#hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded > a, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed > a {
-  font-size: 18px;
+/* line 59, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.expanded > a, #mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.collapsed > a, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.expanded > a, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.collapsed > a {
+  font-size: 22px;
   font-weight: bold;
 }
-/* line 136, ../sass/menu.scss */
-#hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded a, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed a {
+/* line 63, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.expanded a, #mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.collapsed a, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.expanded a, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.collapsed a {
   color: #ffffff;
-  padding: 10px 0;
+  padding: 15px 0 17px;
 }
-/* line 139, ../sass/menu.scss */
-#hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded a:hover, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed a:hover {
+@media (min-width: 768px) and (max-width: 1095px) {
+  /* line 63, ../sass/menu.scss */
+  #mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.expanded a, #mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.collapsed a, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.expanded a, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.collapsed a {
+    padding: 7px 0 9px;
+  }
+}
+/* line 69, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.expanded a:hover, #mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.collapsed a:hover, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.expanded a:hover, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.collapsed a:hover {
   background: none;
 }
-/* line 142, ../sass/menu.scss */
-#hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded a:active, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed a:active {
+/* line 72, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.expanded a:active, #mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.collapsed a:active, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.expanded a:active, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.collapsed a:active {
   background: none;
 }
-/* line 146, ../sass/menu.scss */
-#hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed li {
+/* line 76, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.expanded li, #mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.collapsed li, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.expanded li, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.collapsed li {
   border-bottom: 2px solid #5c5c5c;
   line-height: 40px;
   background-image: url("../images/arrow-right.png");
@@ -202,42 +124,48 @@
   background-size: 20px auto;
   width: 100%;
 }
-/* line 154, ../sass/menu.scss */
-#hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li.last, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed li.last {
+/* line 84, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.expanded li.last, #mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.collapsed li.last, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.expanded li.last, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.collapsed li.last {
   border-bottom: none;
 }
-/* line 157, ../sass/menu.scss */
-#hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li a, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed li a {
+/* line 87, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.expanded li a, #mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.collapsed li a, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.expanded li a, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.collapsed li a {
   background: transparent none repeat scroll 0 0;
-  font-size: 16px;
+  font-size: 18px;
   color: #ffffff;
   padding-right: 25px;
   line-height: 24px;
 }
-/* line 163, ../sass/menu.scss */
-#hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li a:hover, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed li a:hover {
+@media (min-width: 768px) and (max-width: 1095px) {
+  /* line 87, ../sass/menu.scss */
+  #mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.expanded li a, #mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.collapsed li a, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.expanded li a, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.collapsed li a {
+    font-size: 15px;
+  }
+}
+/* line 96, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.expanded li a:hover, #mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.collapsed li a:hover, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.expanded li a:hover, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.collapsed li a:hover {
   background: none;
 }
-/* line 166, ../sass/menu.scss */
-#hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.expanded li a:active, #hamburger-menu .pane-menu-menu-site-main-menu .menu.nav li.collapsed li a:active {
+/* line 99, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.expanded li a:active, #mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu .menu.nav li.collapsed li a:active, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.expanded li a:active, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 .menu.nav li.collapsed li a:active {
   background: none;
 }
-/* line 173, ../sass/menu.scss */
-#hamburger-menu .pane-bean-main-info-english, #hamburger-menu .pane-bean-main-info-hebrew {
-  padding-left: 70px;
-  padding-right: 70px;
+/* line 106, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-bean-main-info-english, #mini-panel-hamburgermenufooter .pane-bean-main-info-hebrew {
+  padding-left: 110px;
+  padding-right: 110px;
   width: 100%;
   color: #fff;
   padding-top: 30px;
   clear: left;
   overflow: hidden;
 }
-/* line 181, ../sass/menu.scss */
-#hamburger-menu .pane-bean-main-info-english .field-name-field-background-image, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-background-image {
+/* line 114, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-bean-main-info-english .field-name-field-background-image, #mini-panel-hamburgermenufooter .pane-bean-main-info-hebrew .field-name-field-background-image {
   display: none;
 }
-/* line 184, ../sass/menu.scss */
-#hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item {
+/* line 117, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item, #mini-panel-hamburgermenufooter .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item {
   padding: 0 15px 0 0;
   position: relative;
   border: none;
@@ -246,19 +174,19 @@
   margin-bottom: 27px;
   float: left;
 }
-/* line 192, ../sass/menu.scss */
-#hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-info-icon, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-info-icon {
+/* line 125, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-info-icon, #mini-panel-hamburgermenufooter .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-info-icon {
   position: absolute;
   left: -50px;
   width: 35px;
   height: 25px;
 }
-/* line 197, ../sass/menu.scss */
-#hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-info-icon img, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-info-icon img {
+/* line 130, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-info-icon img, #mini-panel-hamburgermenufooter .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-info-icon img {
   float: right;
 }
-/* line 201, ../sass/menu.scss */
-#hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-label, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-label {
+/* line 134, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-label, #mini-panel-hamburgermenufooter .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-label {
   font-weight: bold;
   font-size: 12px;
   font-size: 1.25em;
@@ -267,197 +195,197 @@
   padding-bottom: 13px;
   padding-right: 30px;
 }
-/* line 210, ../sass/menu.scss */
-#hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-description, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-description {
+/* line 143, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-description, #mini-panel-hamburgermenufooter .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-description {
   line-height: 1.2;
   text-align: left;
   font-variant: 12px;
   padding-right: 30px;
 }
-/* line 215, ../sass/menu.scss */
-#hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-description p, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-description p {
+/* line 148, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-description p, #mini-panel-hamburgermenufooter .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-description p {
   line-height: 25px;
   margin: 0;
 }
 @media (min-width: 768px) and (max-width: 1095px) {
-  /* line 215, ../sass/menu.scss */
-  #hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-description p, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-description p {
+  /* line 148, ../sass/menu.scss */
+  #mini-panel-hamburgermenufooter .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-description p, #mini-panel-hamburgermenufooter .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-description p {
     line-height: 18px;
     font-size: 12px;
   }
 }
-/* line 223, ../sass/menu.scss */
-#hamburger-menu .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-description a, #hamburger-menu .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-description a {
+/* line 156, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-bean-main-info-english .field-name-field-content-info > .field-items > .field-item .field-name-field-description a, #mini-panel-hamburgermenufooter .pane-bean-main-info-hebrew .field-name-field-content-info > .field-items > .field-item .field-name-field-description a {
   color: #fff;
 }
-/* line 229, ../sass/menu.scss */
-#hamburger-menu .field-name-field-content-info > .field-items > .field-item:last-child {
+/* line 162, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .field-name-field-content-info > .field-items > .field-item:last-child {
   margin: 0 !important;
 }
-/* line 232, ../sass/menu.scss */
-#hamburger-menu .pane-webform-client-block-19, #hamburger-menu .pane-webform-client-block-3322 {
+/* line 165, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-webform-client-block-19, #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 {
   clear: both;
   position: relative;
   padding-bottom: 50px;
   width: 50%;
   float: left;
 }
-/* line 238, ../sass/menu.scss */
-#hamburger-menu .pane-webform-client-block-19 .pane-title, #hamburger-menu .pane-webform-client-block-3322 .pane-title {
+/* line 171, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-webform-client-block-19 .pane-title, #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 .pane-title {
   color: #fff;
 }
-/* line 241, ../sass/menu.scss */
-#hamburger-menu .pane-webform-client-block-19 input, #hamburger-menu .pane-webform-client-block-3322 input {
+/* line 174, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-webform-client-block-19 input, #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 input {
   background-color: #000;
   border: none;
   padding: 0 10px;
   box-sizing: border-box;
   height: 30px;
 }
-/* line 248, ../sass/menu.scss */
-#hamburger-menu .pane-webform-client-block-19 label, #hamburger-menu .pane-webform-client-block-3322 label {
+/* line 181, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-webform-client-block-19 label, #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 label {
   color: #999;
   font-size: 17px;
   font-weight: normal;
   padding: 3px 7px;
 }
-/* line 254, ../sass/menu.scss */
-#hamburger-menu .pane-webform-client-block-19 .panel-panel, #hamburger-menu .pane-webform-client-block-3322 .panel-panel {
+/* line 187, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-webform-client-block-19 .panel-panel, #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 .panel-panel {
   width: 50%;
   float: left;
   padding: 0;
 }
-/* line 259, ../sass/menu.scss */
-#hamburger-menu .pane-webform-client-block-19 .form-actions, #hamburger-menu .pane-webform-client-block-3322 .form-actions {
+/* line 192, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-webform-client-block-19 .form-actions, #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 .form-actions {
   margin: 0;
 }
-/* line 261, ../sass/menu.scss */
-#hamburger-menu .pane-webform-client-block-19 .form-actions input, #hamburger-menu .pane-webform-client-block-3322 .form-actions input {
+/* line 194, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-webform-client-block-19 .form-actions input, #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 .form-actions input {
   margin: 0;
   background-color: #fff !important;
   padding: 0 15px 0 10px;
 }
 /* line 52, ../sass/init.scss */
-.domain-1 #hamburger-menu .pane-webform-client-block-19 .form-actions input, .domain-1 #hamburger-menu .pane-webform-client-block-3322 .form-actions input {
+.domain-1 #mini-panel-hamburgermenufooter .pane-webform-client-block-19 .form-actions input, .domain-1 #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 .form-actions input {
   color: #e41145 !important;
 }
 /* line 55, ../sass/init.scss */
-.domain-2 #hamburger-menu .pane-webform-client-block-19 .form-actions input, .domain-2 #hamburger-menu .pane-webform-client-block-3322 .form-actions input {
+.domain-2 #mini-panel-hamburgermenufooter .pane-webform-client-block-19 .form-actions input, .domain-2 #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 .form-actions input {
   color: #b59d70 !important;
 }
-/* line 266, ../sass/menu.scss */
-#hamburger-menu .pane-webform-client-block-19 .form-actions input:hover, #hamburger-menu .pane-webform-client-block-3322 .form-actions input:hover {
+/* line 199, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-webform-client-block-19 .form-actions input:hover, #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 .form-actions input:hover {
   background-color: #fff !important;
 }
 /* line 52, ../sass/init.scss */
-.domain-1 #hamburger-menu .pane-webform-client-block-19 .form-actions input:hover, .domain-1 #hamburger-menu .pane-webform-client-block-3322 .form-actions input:hover {
+.domain-1 #mini-panel-hamburgermenufooter .pane-webform-client-block-19 .form-actions input:hover, .domain-1 #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 .form-actions input:hover {
   color: #e41145 !important;
 }
 /* line 55, ../sass/init.scss */
-.domain-2 #hamburger-menu .pane-webform-client-block-19 .form-actions input:hover, .domain-2 #hamburger-menu .pane-webform-client-block-3322 .form-actions input:hover {
+.domain-2 #mini-panel-hamburgermenufooter .pane-webform-client-block-19 .form-actions input:hover, .domain-2 #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 .form-actions input:hover {
   color: #b59d70 !important;
 }
-/* line 272, ../sass/menu.scss */
-#hamburger-menu .pane-webform-client-block-19 .webform-component, #hamburger-menu .pane-webform-client-block-3322 .webform-component {
+/* line 205, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-webform-client-block-19 .webform-component, #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 .webform-component {
   margin-right: 8px;
 }
-/* line 274, ../sass/menu.scss */
-#hamburger-menu .pane-webform-client-block-19 .webform-component input, #hamburger-menu .pane-webform-client-block-3322 .webform-component input {
+/* line 207, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-webform-client-block-19 .webform-component input, #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 .webform-component input {
   border-radius: 0 !important;
 }
-/* line 278, ../sass/menu.scss */
-#hamburger-menu .pane-webform-client-block-19 .webform-component--join-our-newsletter, #hamburger-menu .pane-webform-client-block-3322 .webform-component--join-our-newsletter {
+/* line 211, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-webform-client-block-19 .webform-component--join-our-newsletter, #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 .webform-component--join-our-newsletter {
   font-size: 1.25em;
   font-weight: 600;
   width: 100%;
   color: #fff;
 }
-/* line 284, ../sass/menu.scss */
-#hamburger-menu .pane-webform-client-block-19 .webform-component--approve-recieving-e-mail, #hamburger-menu .pane-webform-client-block-3322 .webform-component--approve-recieving-e-mail {
+/* line 217, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-webform-client-block-19 .webform-component--approve-recieving-e-mail, #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 .webform-component--approve-recieving-e-mail {
   width: 100%;
 }
-/* line 286, ../sass/menu.scss */
-#hamburger-menu .pane-webform-client-block-19 .webform-component--approve-recieving-e-mail label, #hamburger-menu .pane-webform-client-block-3322 .webform-component--approve-recieving-e-mail label {
+/* line 219, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-webform-client-block-19 .webform-component--approve-recieving-e-mail label, #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 .webform-component--approve-recieving-e-mail label {
   position: relative;
   font-size: 12px;
   color: #fff !important;
 }
-/* line 291, ../sass/menu.scss */
-#hamburger-menu .pane-webform-client-block-19 .webform-component--approve-recieving-e-mail input, #hamburger-menu .pane-webform-client-block-3322 .webform-component--approve-recieving-e-mail input {
+/* line 224, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-webform-client-block-19 .webform-component--approve-recieving-e-mail input, #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 .webform-component--approve-recieving-e-mail input {
   height: auto;
 }
-/* line 296, ../sass/menu.scss */
-#hamburger-menu .pane-webform-client-block-19 .panel-panel:nth-child(2) span, #hamburger-menu .pane-webform-client-block-3322 .panel-panel:nth-child(2) span {
+/* line 229, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-webform-client-block-19 .panel-panel:nth-child(2) span, #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 .panel-panel:nth-child(2) span {
   display: inline-block;
   float: left;
 }
-/* line 301, ../sass/menu.scss */
-#hamburger-menu .pane-webform-client-block-19 .pane-block-8, #hamburger-menu .pane-webform-client-block-3322 .pane-block-8 {
+/* line 234, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-webform-client-block-19 .pane-block-8, #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 .pane-block-8 {
   margin-top: 20px;
   float: right;
 }
 /* line 52, ../sass/init.scss */
-.domain-1 #hamburger-menu .pane-webform-client-block-19 .pane-block-8 i, .domain-1 #hamburger-menu .pane-webform-client-block-3322 .pane-block-8 i {
+.domain-1 #mini-panel-hamburgermenufooter .pane-webform-client-block-19 .pane-block-8 i, .domain-1 #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 .pane-block-8 i {
   color: #e41145 !important;
 }
 /* line 55, ../sass/init.scss */
-.domain-2 #hamburger-menu .pane-webform-client-block-19 .pane-block-8 i, .domain-2 #hamburger-menu .pane-webform-client-block-3322 .pane-block-8 i {
+.domain-2 #mini-panel-hamburgermenufooter .pane-webform-client-block-19 .pane-block-8 i, .domain-2 #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 .pane-block-8 i {
   color: #b59d70 !important;
 }
-/* line 308, ../sass/menu.scss */
-#hamburger-menu .pane-webform-client-block-19 .pane-custom.pane-1, #hamburger-menu .pane-webform-client-block-3322 .pane-custom.pane-1 {
+/* line 241, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-webform-client-block-19 .pane-custom.pane-1, #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 .pane-custom.pane-1 {
   float: right;
   margin: 0 16px;
 }
-/* line 311, ../sass/menu.scss */
-#hamburger-menu .pane-webform-client-block-19 .pane-custom.pane-1 img, #hamburger-menu .pane-webform-client-block-3322 .pane-custom.pane-1 img {
+/* line 244, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-webform-client-block-19 .pane-custom.pane-1 img, #mini-panel-hamburgermenufooter .pane-webform-client-block-3322 .pane-custom.pane-1 img {
   height: 55px;
   margin-top: 31px;
 }
-/* line 317, ../sass/menu.scss */
-#hamburger-menu .pane-bean-social-links-new, #hamburger-menu .pane-bean-logos-hebrew-block, #hamburger-menu .pane-bean-logos-english-block {
+/* line 250, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-bean-social-links-new, #mini-panel-hamburgermenufooter .pane-bean-logos-hebrew-block, #mini-panel-hamburgermenufooter .pane-bean-logos-english-block {
   display: inline-block;
 }
-/* line 319, ../sass/menu.scss */
-#hamburger-menu .pane-bean-social-links-new .field-name-field-social-icons > .field-items, #hamburger-menu .pane-bean-logos-hebrew-block .field-name-field-social-icons > .field-items, #hamburger-menu .pane-bean-logos-english-block .field-name-field-social-icons > .field-items {
+/* line 252, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-bean-social-links-new .field-name-field-social-icons > .field-items, #mini-panel-hamburgermenufooter .pane-bean-logos-hebrew-block .field-name-field-social-icons > .field-items, #mini-panel-hamburgermenufooter .pane-bean-logos-english-block .field-name-field-social-icons > .field-items {
   text-align: center;
 }
-/* line 321, ../sass/menu.scss */
-#hamburger-menu .pane-bean-social-links-new .field-name-field-social-icons > .field-items > .field-item, #hamburger-menu .pane-bean-logos-hebrew-block .field-name-field-social-icons > .field-items > .field-item, #hamburger-menu .pane-bean-logos-english-block .field-name-field-social-icons > .field-items > .field-item {
+/* line 254, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-bean-social-links-new .field-name-field-social-icons > .field-items > .field-item, #mini-panel-hamburgermenufooter .pane-bean-logos-hebrew-block .field-name-field-social-icons > .field-items > .field-item, #mini-panel-hamburgermenufooter .pane-bean-logos-english-block .field-name-field-social-icons > .field-items > .field-item {
   display: inline-block;
   margin: 0 13px;
 }
-/* line 328, ../sass/menu.scss */
-#hamburger-menu .pane-bean-social-links-new img {
+/* line 261, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-bean-social-links-new img {
   border-radius: 50%;
 }
 /* line 61, ../sass/init.scss */
-.domain-1 #hamburger-menu .pane-bean-social-links-new img, #hamburger-menu .pane-bean-social-links-new img.domain-1 #hamburger-menu .pane-bean-social-links-new img {
+.domain-1 #mini-panel-hamburgermenufooter .pane-bean-social-links-new img, #mini-panel-hamburgermenufooter .pane-bean-social-links-new img.domain-1 #mini-panel-hamburgermenufooter .pane-bean-social-links-new img {
   background-color: #e41145 !important;
 }
 /* line 64, ../sass/init.scss */
-.domain-2 #hamburger-menu .pane-bean-social-links-new img {
+.domain-2 #mini-panel-hamburgermenufooter .pane-bean-social-links-new img {
   background-color: #b59d70 !important;
 }
 
 /******  hamburger  *********/
-/* line 338, ../sass/menu.scss */
+/* line 271, ../sass/menu.scss */
 .responsive-hamburger {
   display: none;
 }
 
-/* line 342, ../sass/menu.scss */
+/* line 275, ../sass/menu.scss */
 .navbar-toggle {
   display: block;
 }
 @media (max-width: 960px) {
-  /* line 342, ../sass/menu.scss */
+  /* line 275, ../sass/menu.scss */
   .navbar-toggle {
     display: none;
   }
 }
 
-/* line 349, ../sass/menu.scss */
+/* line 282, ../sass/menu.scss */
 .navbar-header .hambruger {
   float: left;
   border: medium none;
@@ -468,12 +396,12 @@
   padding: 0;
   border-radius: 0;
 }
-/* line 358, ../sass/menu.scss */
+/* line 291, ../sass/menu.scss */
 .navbar-header .hambruger.navbar-toggle {
   margin-left: 30px;
 }
 
-/* line 363, ../sass/menu.scss */
+/* line 296, ../sass/menu.scss */
 .navbar-header .hambruger .icon-bar {
   width: 34px;
   background-color: #fff !important;
@@ -481,26 +409,26 @@
   height: 2px;
 }
 
-/* line 370, ../sass/menu.scss */
+/* line 303, ../sass/menu.scss */
 .navbar-header .hambruger .icon-bar + .icon-bar {
   margin-top: 9px;
 }
 
 /********** responsive menu **********/
 @media (max-width: 960px) {
-  /* line 378, ../sass/menu.scss */
+  /* line 311, ../sass/menu.scss */
   .responsive-hamburger {
     display: block;
     cursor: pointer;
   }
 }
 @media (max-width: 767px) {
-  /* line 385, ../sass/menu.scss */
+  /* line 318, ../sass/menu.scss */
   #main-menu {
     display: none;
   }
 }
-/* line 390, ../sass/menu.scss */
+/* line 323, ../sass/menu.scss */
 .responsive-menu-wrapper {
   display: block;
   margin-right: 0;
@@ -516,13 +444,13 @@
   padding: 0;
   z-index: 500;
 }
-/* line 404, ../sass/menu.scss */
+/* line 337, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu {
   padding: 0;
   margin: 0;
   width: 100%;
 }
-/* line 408, ../sass/menu.scss */
+/* line 341, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li {
   text-align: left;
   width: 100%;
@@ -531,7 +459,7 @@
   margin: 0;
   padding: 0;
 }
-/* line 415, ../sass/menu.scss */
+/* line 348, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li a {
   white-space: unset;
   padding: 15px 3% !important;
@@ -539,7 +467,7 @@
   color: #fff;
   background-color: transparent !important;
 }
-/* line 421, ../sass/menu.scss */
+/* line 354, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li a:hover, .responsive-menu-wrapper #site-main-menu li a:focus {
   background-color: transparent !important;
 }
@@ -551,11 +479,11 @@
 .domain-2 .responsive-menu-wrapper #site-main-menu li ul li {
   background-color: #b59d70 !important;
 }
-/* line 427, ../sass/menu.scss */
+/* line 360, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li ul li a {
   color: #fff;
 }
-/* line 431, ../sass/menu.scss */
+/* line 364, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li .caret {
   display: block;
   float: right;
@@ -564,7 +492,7 @@
   margin: 0;
   width: 55px;
 }
-/* line 438, ../sass/menu.scss */
+/* line 371, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li .caret:after {
   background: url("../images/plus.png") no-repeat;
   transition: all 0.5s;
@@ -575,7 +503,7 @@
   width: 12px;
   margin: 5px 0px;
 }
-/* line 449, ../sass/menu.scss */
+/* line 382, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li .dropdown-menu {
   border: none;
   display: none;
@@ -583,20 +511,30 @@
   width: 100%;
 }
 
-/* line 461, ../sass/menu.scss */
+/* line 394, ../sass/menu.scss */
 .responsive-menu-wrapper .responsive-open .dropdown-toggle {
   font-weight: bold;
 }
-/* line 464, ../sass/menu.scss */
+/* line 397, ../sass/menu.scss */
 .responsive-menu-wrapper .responsive-open .dropdown-menu {
   display: block !important;
 }
-/* line 467, ../sass/menu.scss */
+/* line 400, ../sass/menu.scss */
 .responsive-menu-wrapper .responsive-open .caret:after {
   transform: rotate(134deg);
 }
 
-/* line 473, ../sass/menu.scss */
+/* line 406, ../sass/menu.scss */
 .responsive-hamburger-open .responsive-menu-wrapper {
   right: 0;
+}
+
+/* line 412, ../sass/menu.scss */
+.domain-1 .pane-menu-cinematic-festival-12 {
+  display: none;
+}
+
+/* line 418, ../sass/menu.scss */
+.domain-2 .pane-menu-menu-site-main-menu {
+  display: none;
 }

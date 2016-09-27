@@ -59,7 +59,7 @@
         $fullscreenheight = $(window).height();
         $(".full-screen-image, .full-screen-image .wrapper-image .content").css("max-height",$screenheight);
         $(".front .full-screen-image, .front .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
-        $(".page-node-3487 .full-screen-image, .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
+        $(".page-node-3487 .full-screen-image, .full-screen-image .wrapper-image .content, .full-screen-image li").css("max-height",$fullscreenheight);
 
 
         $(window).resize(function() {
@@ -67,10 +67,10 @@
             $fullscreenheight = $(window).height();
             $(".full-screen-image, .wrapper-image .content").css("max-height",$screenheight);
             $(".front .full-screen-image, .front .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
-            $(".page-node-3487 .full-screen-image, .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
+            $(".page-node-3487 .full-screen-image, .full-screen-image .wrapper-image .content, .full-screen-image li").css("max-height",$fullscreenheight);
         });
 
-/*********  claendat pane on slider  *********/
+/*********  claendat pane on slider  
 
         $calendarheight = ($screenheight - $(".pane-custom-calendar-floating-pane-panel-pane-1").height())/2+50;
         if ($calendarheight > 50){
@@ -86,7 +86,7 @@
             $(".pane-custom-calendar-floating-pane-panel-pane-1").css("top","50");
           }
         });
-
+******/
    /********  movie group slide height   ******/
 
  /*       $(".views-slideshow-cycle-main-frame-row").each(function() {
@@ -109,22 +109,59 @@
         });
 */
 
-        $(".header-right .search span").click(function() {
-            if (!$("div").hasClass("screen-search")){
-                $("#header").prepend("<div class='screen-search'></div>");
-                $("body").addClass("search");
+
+/*******  calendat fixed  *********/
+
+        $(window).scroll(function() {
+            $targetScroll = $('body').position().top+$(window).height();
+            $currentScroll = $('html').scrollTop() || $('body').scrollTop();
+            if ($currentScroll >= $targetScroll){
+                $('.calender-filter').addClass("fixedPos");
             }
             else{
-                $(".screen-search").remove();
-                $("body").removeClass("search");
+                $('.calender-filter').removeClass("fixedPos");
             }
         });
 
+
+/******  search overlay  ******/
+
+        $(".header-right .search span").click(function() {
+            if ($("body").hasClass("search-overlay")){
+                $("body").removeClass("search-overlay");
+            }
+            else{
+                $("body").addClass("search-overlay");
+            }
+        });
+
+        $('.region-overlay').on('click', function(e) {
+          if($(e.target).closest('#search-api-page-search-form-search-results').length == 0) {
+              $("body").removeClass("search-overlay");
+          }
+      });
+
+/******  search overlay  ******/
+
+        $(".hambruger.navbar-toggle").click(function() {
+            if ($("body").hasClass("hambruger-overlay")){
+                $("body").removeClass("hambruger-overlay");
+            }
+            else{
+                $("body").addClass("hambruger-overlay");
+            }
+        });
+
+        $(".pane-custom .close").click(function() {
+                $("body").removeClass("hambruger-overlay");
+        });
+        
+
+/*
+
         $(".popup-close-button").click(function() {
-                $(".screen-search").remove();
                 $("body").removeClass("search");
         });
-/*
           $(document).click(function(event) { 
             if ($("body").hasClass("search")){
               if(!$(event.target).closest('#popup-active-overlay .center').length) {
@@ -212,6 +249,8 @@
             });
 
         }
+
+
     if (($("body").hasClass("page-node-3261")) || ($("body").hasClass("page-node-3284"))){
         $(document).scroll(function(e) {
             var detectrange = 50;

@@ -159,7 +159,7 @@
 }
 /* line 103, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-5 .view-event-ct-view .table-responsive .views-field-field-cm-event-time-1 {
-  width: 23%;
+  width: calc(8% + 180px);
 }
 /* line 106, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-5 .view-event-ct-view .table-responsive .views-field-field-cm-event-time {
@@ -221,7 +221,8 @@
 }
 /* line 151, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-8 .views-field-field-cm-event-body p {
-  margin: 0 23%;
+  margin: 0 auto;
+  width: calc(84% - 360px);
 }
 @media (max-width: 767px) {
   /* line 151, ../sass/event.scss */
@@ -230,12 +231,12 @@
   }
 }
 
-/* line 161, ../sass/event.scss */
+/* line 162, ../sass/event.scss */
 #atedrop1-drop {
   top: 35px !important;
 }
 
-/* line 165, ../sass/event.scss */
+/* line 166, ../sass/event.scss */
 .panels-flexible-region-node_page-bottom_content {
   width: 100%;
 }

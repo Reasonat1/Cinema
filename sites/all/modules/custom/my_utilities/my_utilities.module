@@ -152,7 +152,7 @@ function share_this_view_block_content(){
     }
     $output .='<div class="share-pane-container">';
     if ( $user->uid ) {
-      $output .= '<div class="flag-custom share-pane">' . flag_create_link('favorite_', $node->nid) . '<div class="title">'.$favorite_type.'</div></div>';
+      $output .= '<div class="flag-custom share-pane link">' . flag_create_link('favorite_', $node->nid) . '<div class="title">'.$favorite_type.'</div></div>';
     }
     $output .= '<div class="facebook link"><a class="fb-share" href="https://www.facebook.com/sharer/sharer.php?u='.$base_url.'/node/'.$node->nid.'" target="_blank">'.t("Share").'</a>
   </div>';
