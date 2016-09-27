@@ -108,8 +108,17 @@
           $("#views_slideshow_cycle_teaser_section_movie_group_ct-panel_pane_2").css("height",$imageheight);
         });
 */
+/********  videos  ********/
 
+        $(".slide-right-ct .play-button").click(function() {
+            $(".slide-right-ct .video-wrapper").addClass("play");
+        });
 
+        $('.video-wrapper').on('click', function(e) {
+          if($(e.target).closest('.video-wrapper iframe').length == 0) {
+              $(".slide-right-ct .video-wrapper").removeClass("play");
+          }
+      });
 /*******  calendat fixed  *********/
 
         $(window).scroll(function() {

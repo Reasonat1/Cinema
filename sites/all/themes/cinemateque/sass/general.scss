@@ -1730,7 +1730,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 			    outline-style:none;
 			    outline-width:0;
 			}
-			a {
+			.play-button {
 				background: url("../images/play-icon.png") no-repeat scroll 60% center;
 				border-radius: 30px;
 				border:1px solid #fff;
@@ -1739,10 +1739,45 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 				height: 55px;
 				padding: 2%;
 				width: 55px;
+				cursor: pointer;
 				@include res(s-m){
 					background-size: 16px;
 					height: 40px;
 					width: 40px;
+				}
+			}
+			.video-wrapper{
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				background-color: #000;
+				display: none;
+				&.play{
+					display: block;
+				}
+				.close-button{
+					background:url("../images/close42.png") no-repeat scroll center center;
+					position: fixed;
+					width: 20px;
+					height: 20px;
+					top: 70px;
+					left: 10%;
+					cursor: pointer;
+				}
+				.content {
+					position: relative;
+					padding-bottom: 56.25%; /* 16:9 */
+					padding-top: 25px;
+					height: 0;
+					iframe {
+						position: absolute;
+						top: 110px;
+						left: 15%;
+						width: 70%;
+						height: 70%;
+					}
 				}
 			}
 		}
@@ -1769,7 +1804,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 			}
 			.slide-right-ct{
 				margin-top: 0;
-				a {
+				.play-button {
 					background: url("../images/play-icon-black.png") no-repeat scroll 60% center;
 					border:1px solid #000;
 				}
