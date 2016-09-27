@@ -2656,3 +2656,16 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 .search-overlay .region-overlay .block-search-api-page {
   display: block;
 }
+
+/* line 2004, ../sass/general.scss */
+.hambruger-overlay .region-overlay {
+  display: block;
+  opacity: 1;
+  background-color: #262626;
+  z-index: 500;
+  overflow-y: auto;
+}
+/* line 2010, ../sass/general.scss */
+.hambruger-overlay .region-overlay #mini-panel-hamburgermenufooter {
+  display: block;
+}

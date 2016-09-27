@@ -26,7 +26,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <!-- Trigger the modal with a button -->
-                <button  class="hambruger -menu navbar-toggle" data-target="#myModal" data-toggle="modal"  type="button">
+                <button  class="hambruger -menu navbar-toggle">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>

@@ -1999,3 +1999,16 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 		}
 	}
 }
+
+.hambruger-overlay{
+	.region-overlay{
+		display: block;
+		opacity: 1;
+		background-color: #262626;
+		z-index: 500;
+		overflow-y: auto;
+		#mini-panel-hamburgermenufooter{
+			display: block;
+		}
+	}	
+}

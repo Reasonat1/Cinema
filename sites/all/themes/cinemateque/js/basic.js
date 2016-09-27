@@ -141,12 +141,27 @@
           }
       });
 
+/******  search overlay  ******/
 
+        $(".hambruger.navbar-toggle").click(function() {
+            if ($("body").hasClass("hambruger-overlay")){
+                $("body").removeClass("hambruger-overlay");
+            }
+            else{
+                $("body").addClass("hambruger-overlay");
+            }
+        });
+
+        $(".pane-custom .close").click(function() {
+                $("body").removeClass("hambruger-overlay");
+        });
+        
+
+/*
 
         $(".popup-close-button").click(function() {
                 $("body").removeClass("search");
         });
-/*
           $(document).click(function(event) { 
             if ($("body").hasClass("search")){
               if(!$(event.target).closest('#popup-active-overlay .center').length) {
