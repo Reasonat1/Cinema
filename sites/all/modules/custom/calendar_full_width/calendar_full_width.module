@@ -175,7 +175,7 @@ function calendar_full_width_block_content(){
         $output.='<div class="lobby-container" style="clear:both;">';
             $output .='<div class="lobby-term-left">';
                 $output .= '<div class="image-lobby">';
-                $output .= $image_event;
+                $output .= l($image_event, "$path", array('attributes' => array('class' =>'link-image'),'html' => true));
                 $output .= '</div>';
                 $output .= '<div class="top-text-blk-wht">';
                 $output .= $black_text_event . $white_text_event;
@@ -296,11 +296,11 @@ function ajax_calender_full_width_filter(){
         $output.='<div class="lobby-container" style="clear:both;">';
             $output .='<div class="lobby-term-left">';
                 $output .= '<div class="image-lobby">';
-                $output .= $image_event;
+                $output .= l($image_event, "$path", array('attributes' => array('class' =>'link-image'),'html' => true));
                 $output .= '</div>';
                 $output .= '<div class="top-text-blk-wht">';
-                $output .= $white_text_event . $black_text_event . $flag;
-                $output .= '</div>';
+                $output .= $black_text_event . $white_text_event;
+                $output .= '</div><div class="flag">'.$flag.'</div>';
             $output .="</div>";
             $output .= '<div class="lobby-term-right">';
             $output .= '<div class="table-responsive">
