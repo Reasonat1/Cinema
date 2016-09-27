@@ -1922,7 +1922,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	z-index: 200;
 	display: none;
 	top: 0;
-	.block-search-api-page{
+	.block{
 		display: none;
 	}
 		form{
@@ -2007,7 +2007,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 		background-color: #262626;
 		z-index: 500;
 		overflow-y: auto;
-		#mini-panel-hamburgermenufooter{
+		.block-panels-mini{
 			display: block;
 		}
 	}	
