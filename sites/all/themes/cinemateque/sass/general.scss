@@ -448,13 +448,13 @@ table td{
 	}
 	.link{
 		float: left;
-		margin-right: 20px;
+		padding-right: 20px;
 		.title{
 			display: none;
 		}
 		a{
 			font-size: 0;
-			width: 30px;
+			width: 30px!important;
 			height: 30px;
 			border-radius: 50%;
 			display: block;
@@ -1048,81 +1048,6 @@ table{
 	}
 }
 
-.popup-element-body{
-	.center{
-		width: 100%!important;
-		top: 55px;
-		left: 0;
-		position: fixed!important;
-		.inner{
-			@include width;
-			margin: 40px auto 0!important;
-		}
-	}
-	form{
-		position: relative;
-		> div{
-			position: relative;
-		}
-		.form-group {
-			overflow: hidden;
-			-webkit-box-shadow: -1px 1px 10px -3px rgba(0,0,0,0.75);
-			-moz-box-shadow: -1px 1px 10px -3px rgba(0,0,0,0.75);
-			box-shadow: -1px 1px 10px -3px rgba(0,0,0,0.75);
-			label[for="edit-keys-1"] {
-				display: none !important;
-			}
-			.form-text {
-				width: 100%;
-				box-sizing: border-box;
-				display: inline-block;
-				float: left;
-				background: $white;
-				margin-bottom: 0;
-				height: auto;
-				padding: 7px 22% 8px 2%;
-				font-size: 25px;
-				border:none;
-				border-radius: 0;
-				@include res(s-m){
-					font-size: 15px;
-					padding: 13px;
-				}
-			}
-		}
-		.form-submit {
-			margin: 0;
-			border-radius: 0 !important;
-			@include bg-main-color();
-			padding: 9px 25px 11px;
-			font-size: 18px;
-			width: 20%;
-			position: absolute;
-			right: 0;
-			box-shadow: none;
-			top: 0px;
-			height: 51px;
-			@include res(s-m){
-				width: 100%;
-				position: relative;
-			}
-		}
-	}
-	.popup-close{
-	    background: url("../images/close42.png") no-repeat scroll center center !important;
-		@include bg-main-color;
-	    border-radius: 50%;
-	    height: 25px !important;
-		left: auto;
-		top: -32px !important;
-	    width: 25px !important;
-	    z-index: 300;
-	    background-size: 10px 10px!important;
-		right: 10px!important;
-		position: absolute !important;
-	}
-}
-
 @media screen and(-webkit-min-device-pixel-ratio:0) {
   .popup-element-body form .form-submit, .page-search #search-api-page-search-form-search-results .form-submit{
   	height: 50px;
@@ -1551,6 +1476,9 @@ table{
     			.view{
 					float: right;
     				width: calc(92% - 180px);
+    				@include res(s-m){
+    					width: 100%;
+    				}
     			}
     		}
 			@include res(s-m){
@@ -1744,7 +1672,8 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 			color: #fff;
 		}
 		.slide-left-ct{
-			margin: 0 23%;
+			width: calc(84% - 360px);
+			margin: 0 auto;
 			@include res(s-m){
 				text-align: center;	
 				font-size: 13px;
@@ -1980,4 +1909,92 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   @include res(s-m){
   	padding: 9px 26px 8px 10px;
   }
+}
+
+/*******  overlay region  *******/
+
+.region-overlay{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background-color: #000;
+	opacity: 0.9;
+	z-index: 200;
+	display: none;
+	#block-search-api-page{
+		display: none;
+	}
+		form{
+			@include width;
+			margin: 40px auto 0!important;
+			position: relative;
+			> div{
+				position: relative;
+			}
+			.form-group {
+				overflow: hidden;
+				-webkit-box-shadow: -1px 1px 10px -3px rgba(0,0,0,0.75);
+				-moz-box-shadow: -1px 1px 10px -3px rgba(0,0,0,0.75);
+				box-shadow: -1px 1px 10px -3px rgba(0,0,0,0.75);
+				label[for="edit-keys-1"] {
+					display: none !important;
+				}
+				.form-text {
+					width: 100%;
+					box-sizing: border-box;
+					display: inline-block;
+					float: left;
+					background: $white;
+					margin-bottom: 0;
+					height: auto;
+					padding: 7px 22% 8px 2%;
+					font-size: 25px;
+					border:none;
+					border-radius: 0;
+					@include res(s-m){
+						font-size: 15px;
+						padding: 13px;
+					}
+				}
+			}
+			.form-submit {
+				margin: 0;
+				border-radius: 0 !important;
+				@include bg-main-color();
+				padding: 9px 25px 11px;
+				font-size: 18px;
+				width: 20%;
+				position: absolute;
+				right: 0;
+				box-shadow: none;
+				top: 0px;
+				height: 51px;
+				@include res(s-m){
+					width: 100%;
+					position: relative;
+				}
+			}
+		}
+		.popup-close{
+		    background: url("../images/close42.png") no-repeat scroll center center !important;
+			@include bg-main-color;
+		    border-radius: 50%;
+		    height: 25px !important;
+			left: auto;
+			top: -32px !important;
+		    width: 25px !important;
+		    z-index: 300;
+		    background-size: 10px 10px!important;
+			right: 10px!important;
+			position: absolute !important;
+		}
+}
+
+.search-overlay{
+	.region-overlay{
+		display: block;
+		#block-search-api-page{
+			display: block;
+		}
+	}
 }

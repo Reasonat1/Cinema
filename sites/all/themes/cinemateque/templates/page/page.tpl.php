@@ -11,6 +11,7 @@
 ?>
 
 <!--<script src="/misc/jquery.js" type="text/javascript"></script>-->
+<?php print render($page['overlay']); ?>
 <script type='text/javascript'>
     jQuery.noConflict();
 </script> 
@@ -68,7 +69,7 @@
                     </ul>
                     <ul class="col-md-3 header-right">
                         <li class="search">
-                            <?php print render($page['sidebar_first']); ?>
+                            <span></span>
                         </li>
                         <?php 
                             global $user;

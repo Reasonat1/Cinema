@@ -123,19 +123,27 @@
             }
         });
 
+
+/******  search overlay  ******/
+
         $(".header-right .search span").click(function() {
-            if (!$("div").hasClass("screen-search")){
-                $("#header").prepend("<div class='screen-search'></div>");
-                $("body").addClass("search");
+            if ($("body").hasClass("search-overlay")){
+                $("body").removeClass("search-overlay");
             }
             else{
-                $(".screen-search").remove();
-                $("body").removeClass("search");
+                $("body").addClass("search-overlay");
             }
         });
 
+        $('.region-overlay').on('click', function(e) {
+          if($(e.target).closest('#search-api-page-search-form-search-results').length == 0) {
+              $("body").removeClass("search-overlay");
+          }
+      });
+
+
+
         $(".popup-close-button").click(function() {
-                $(".screen-search").remove();
                 $("body").removeClass("search");
         });
 /*
