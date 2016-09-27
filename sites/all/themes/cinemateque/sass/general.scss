@@ -1921,12 +1921,13 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	opacity: 0.9;
 	z-index: 200;
 	display: none;
-	#block-search-api-page{
+	top: 0;
+	.block-search-api-page{
 		display: none;
 	}
 		form{
 			@include width;
-			margin: 40px auto 0!important;
+			margin: 100px auto 0!important;
 			position: relative;
 			> div{
 				position: relative;
@@ -1993,7 +1994,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 .search-overlay{
 	.region-overlay{
 		display: block;
-		#block-search-api-page{
+		.block-search-api-page{
 			display: block;
 		}
 	}
