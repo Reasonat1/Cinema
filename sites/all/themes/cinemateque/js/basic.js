@@ -110,13 +110,17 @@
 */
 /********  videos  ********/
 
-        $(".slide-right-ct .play-button").click(function() {
+        $(".slide-right-ct .play-button").click(function(ev) {
             $(".slide-right-ct .video-wrapper").addClass("play");
+            $(".media-youtube-player")[0].src += "&enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1";
+            ev.preventDefault();
         });
 
         $('.video-wrapper').on('click', function(e) {
           if($(e.target).closest('.video-wrapper iframe').length == 0) {
               $(".slide-right-ct .video-wrapper").removeClass("play");
+            $(".media-youtube-player")[0].src += "&enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=0";
+            e.preventDefault();
           }
       });
 /*******  calendat fixed  *********/
