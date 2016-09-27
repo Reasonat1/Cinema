@@ -108,8 +108,21 @@
           $("#views_slideshow_cycle_teaser_section_movie_group_ct-panel_pane_2").css("height",$imageheight);
         });
 */
+/********  videos  ********/
 
+        $(".slide-right-ct .play-button").click(function(ev) {
+            $(".slide-right-ct .video-wrapper").addClass("play");
+            $(".media-youtube-player")[0].src += "&enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1";
+            ev.preventDefault();
+        });
 
+        $('.video-wrapper').on('click', function(e) {
+          if($(e.target).closest('.video-wrapper iframe').length == 0) {
+              $(".slide-right-ct .video-wrapper").removeClass("play");
+            $(".media-youtube-player")[0].src += "&enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=0";
+            e.preventDefault();
+          }
+      });
 /*******  calendat fixed  *********/
 
         $(window).scroll(function() {
@@ -123,22 +136,45 @@
             }
         });
 
+
+/******  search overlay  ******/
+
         $(".header-right .search span").click(function() {
-            if (!$("div").hasClass("screen-search")){
-                $("#header").prepend("<div class='screen-search'></div>");
-                $("body").addClass("search");
+            if ($("body").hasClass("search-overlay")){
+                $("body").removeClass("search-overlay");
             }
             else{
-                $(".screen-search").remove();
-                $("body").removeClass("search");
+                $("body").addClass("search-overlay");
             }
         });
 
+        $('.region-overlay').on('click', function(e) {
+          if($(e.target).closest('#search-api-page-search-form-search-results').length == 0) {
+              $("body").removeClass("search-overlay");
+          }
+      });
+
+/******  search overlay  ******/
+
+        $(".hambruger.navbar-toggle").click(function() {
+            if ($("body").hasClass("hambruger-overlay")){
+                $("body").removeClass("hambruger-overlay");
+            }
+            else{
+                $("body").addClass("hambruger-overlay");
+            }
+        });
+
+        $(".pane-custom .close").click(function() {
+                $("body").removeClass("hambruger-overlay");
+        });
+        
+
+/*
+
         $(".popup-close-button").click(function() {
-                $(".screen-search").remove();
                 $("body").removeClass("search");
         });
-/*
           $(document).click(function(event) { 
             if ($("body").hasClass("search")){
               if(!$(event.target).closest('#popup-active-overlay .center').length) {
