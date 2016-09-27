@@ -1,68 +1,49 @@
 @import "init";
 
-.hamburger {
-	.modal-content{
-		.close{
-			left: auto;
-			right: 20px;
-		}
-	}
-	.modal-body {
-		.close {
-			float: right;
-		}
+#mini-panel-hamburgermenufooter {
+	.close{
+		left: auto;
+		right: 30px;
 	}
 }
 
-#hamburger-menu{
-	/*
-	.pane-my-backend-festival-menu-block {
-		width: 27.5%;
-		padding: 10px 85px 0 15px;
-		float: right;
-		.menu.nav li {
-			background-image: url("../images/arrow-left.png");
-			background-position: left center;
-		}
-	}*/
-	.pane-menu-menu-site-main-menu {
+#mini-panel-hamburgermenufooter {
+	.pane-menu-menu-site-main-menu, .pane-menu-cinematic-festival-12 {
 		.menu.nav li.expanded, .menu.nav li.collapsed {
 			float: right;
-			margin: 0;
+			margin-right: 0%;
 			margin-left: 3%;
-			margin-right: 0;
 			&.last{
 				margin-left: 0;
 			}
 			li {
 				background-image: url("../images/arrow-left.png");
 				background-position: left center;
-				padding: 0;
-				margin: 0;
-				a{
+				a {
+					padding-right: 0px;
 					padding-left: 25px;
-					padding-right: 0;
 				}
 			}
 		}
 	}
-	.pane-bean-main-info-hebrew{
+	.pane-bean-main-info-english, .pane-bean-main-info-hebrew{
+		clear: right;
 		.field-name-field-content-info > .field-items > .field-item{
 			padding: 0 0 0 15px;
-			margin-right: 0%;
+			margin-right: 0;
 			margin-left: 3%;
 			float: right;
 			.field-name-field-info-icon{
 				right: -50px;
-				left: 0;
+				left: auto;
 				img{
 					float: left;
 				}
 			}
 			.field-name-field-label{
     			text-align: right;
+    			padding-right: 0px;
 				padding-left: 30px;
-				padding-right: 0;
 			}
 			.field-name-field-description{
     			text-align: right;
@@ -71,7 +52,7 @@
 			}
 		}
 	}
-	.pane-webform-client-block-3322{
+	.pane-webform-client-block-19, .pane-webform-client-block-3322{
 		float: right;
 		.panel-panel{
 			float: right;
@@ -82,8 +63,8 @@
 			}
 		}
 		.webform-component{
-			margin-right: 0px;
 			margin-left: 8px;
+			margin-right: 0;
 		}
 		.panel-panel:nth-child(2){
 			span{
@@ -98,6 +79,7 @@
 		}
 	}
 }
+
 
 /********** responsive menu **********/
 
@@ -114,4 +96,3 @@
 	    }
 	}
 }
-

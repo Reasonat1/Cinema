@@ -160,6 +160,7 @@
 	background-color: #fff;
 	width: 100%!important;
 	left: 0!important;
+	margin-top: 50px;
 	&.scroll-to-fixed-fixed{
 		padding-bottom: 107px;
 	}
@@ -223,12 +224,6 @@
 			height: 16px;
 			overflow: hidden;
 			width: 18px;
-			&.unflag-action {
-				background-image: url("../images/unlike-gold.png");
-			}
-			&.flag-action {
-				background-image: url("../images/like-gold.png");
-			}
 		}
 	}
 }
@@ -400,12 +395,31 @@
 	#main-wrapper{
 		margin-top: 0!important;
 	}
+	.text-main-image {
+	    bottom: 60px;
+	    color: #fff!important;
+	    padding: 0;
+	    position: absolute!important;
+	    width: 100%;
+	    z-index: 100;
+	}
+	.gradient {
+    	display: block;
+	}
+	.calender-filter.fixedPos{
+		position: fixed;
+		background-color: #fff;
+	    position: fixed;
+	    top: 0;
+	    width: 100%;
+	    z-index: 200;
+	}
 }
 
 .pane-custom-calendar-floating-pane-panel-pane-1{
 	position: absolute;
 	width: 100%;
-	top:50px;
+	top:120px;
 	.pane-content{
 		padding: 0 30px;
 		box-sizing: border-box;
@@ -429,6 +443,8 @@
 		position: relative!important;
 		left: auto!important;
 		width: 300px!important;
+		float: right;
+		z-index: 50;
 	}
 	.calendar-agenda-items{
 		width: 300px;
@@ -439,9 +455,95 @@
 	}
 }
 
-
-
-
+.pane-calendar-full-width-calendar{
+	.lobby-container{
+		margin-bottom: 20px;
+	}
+		.lobby-term-left{
+			float: left;
+			width: 30%;
+			position: relative;
+			@include res(s-m){
+				width: 100%;
+			}
+			.flag {
+			    position: absolute;
+			    right: 10px;
+			    z-index: 100;
+			    top: 10px;
+			}
+		}
+		.lobby-term-right{
+			float: right;
+			width: 70%;
+			padding: 0 20px;
+			box-sizing: border-box;
+			@include res(s-m){
+				width: 100%;
+			}
+			table tbody{
+				border: none;
+			}
+			.lobby-length{
+				color: #919191;
+			}
+			.table-responsive{
+				overflow: visible;
+				table{
+					margin-bottom: 0;
+				}
+			}
+			.lobby-title{
+				margin: 6px 0;
+			}
+			.calendar-below-title-content{
+				   color: #919191;
+    				font-size: 0.9em;
+    				line-height: 28px;
+    				margin-bottom: 6px;
+    				span{
+    					border-right: 2px solid;
+    					padding-right: 8px;
+    					margin-right: 8px;
+    					line-height: 20px;
+    					display: inline-block;
+    				}
+    				span:last-child{
+    					border:none;
+    				}
+    			}
+		}
+		.row-custom-lobby{
+			td{
+				padding-top: 0;
+				padding-bottom: 0;
+				@include res(s-m){
+					padding-right: 0!important;
+				}
+			}
+			.left{
+				float: left;
+				width: auto;
+				border-right: 2px solid!important;
+				margin-right: 8px;
+				font-weight: bold;
+				font-size: 19px;
+				line-height: 23px;
+			}
+			.hall{
+				border:none!important;
+			}
+			.right{
+				float: right;
+			}
+			.purchase{
+				padding-right: 0;
+				padding-left: 0;
+				width: 80px!important;
+				min-height: 1px;
+			}
+		}
+}
 
 
 
@@ -489,16 +591,6 @@
 .pane-calendar-full-width-calendar .lobby-container{
   margin-top: 3%;  
 }
-.pane-calendar-full-width-calendar .lobby-term-left {
-    float: left;
-    width: 80%;
-    padding: 0 3% 0 0;
-}
-.pane-calendar-full-width-calendar .lobby-term-right {
-    float: right;
-    width: 20%;
-    position: relative;
-}
 
 .pane-calendar-full-width-calendar .addthisevent-drop{
     padding-top: 20px !important;
@@ -512,39 +604,7 @@
 .ajax-data-calendar .calenders-filter-date p{
     margin-left: 6% !important;
 }
-.ajax-inner .top-text-blk-wht{
-    position: absolute;
-    left: 0px;
-    top: 2px;
-    width: 100%;
-}
-.pane-calendar-full-width-calendar .flag-event{
-    float: right;
-    width: 15%;
-}
-.pane-calendar-full-width-calendar .flag-event a{
-    display: inline-block;
-}
-.ajax-inner .flag-wrapper a {
-    display: block;
-    text-indent: -9999px;
-    z-index: 200;
-}
-.ajax-inner .flag-wrapper a.unflag-action {
-    background: url("../images/unlike-gold.png") no-repeat right 0 !important;
-}
-.ajax-inner a.flag-action {
-    background: url("../images/like-gold.png") no-repeat right 0 !important;
-}
-.ajax-inner .black {
-    background-color: #000!important;
-    padding: 2px 4px 4px 4px;
-    color: #fff;
-}
-.ajax-inner .white {
-    background-color: #FFF!important;
-    padding: 2px 4px 4px 4px;
-}
+
 .view-custom-calendar-floating-pane{
     width: 20%;
     margin: 0;

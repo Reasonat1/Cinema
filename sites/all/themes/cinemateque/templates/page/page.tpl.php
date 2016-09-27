@@ -11,6 +11,7 @@
 ?>
 
 <!--<script src="/misc/jquery.js" type="text/javascript"></script>-->
+<?php print render($page['overlay']); ?>
 <script type='text/javascript'>
     jQuery.noConflict();
 </script> 
@@ -25,7 +26,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <!-- Trigger the modal with a button -->
-                <button  class="hambruger -menu navbar-toggle" data-target="#myModal" data-toggle="modal"  type="button">
+                <button  class="hambruger -menu navbar-toggle">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -68,7 +69,7 @@
                     </ul>
                     <ul class="col-md-3 header-right">
                         <li class="search">
-                            <?php print render($page['sidebar_first']); ?>
+                            <span></span>
                         </li>
                         <?php 
                             global $user;
