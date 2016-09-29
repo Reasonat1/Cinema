@@ -26,7 +26,6 @@
         }
         if ($('.form-item-node-id select').val() == '0') {
             var type = $('.form-item-content-type select').val();
-            node_type_ajax(type);
         }
 
         $('.form-item-content-type select').off('change').on('change', function () {
@@ -53,46 +52,25 @@
                 $('.form-item-top-black-title').show();
                 $('.form-item-top-white-title').show();
             }
-            node_type_ajax($(this).val());
+            node_title_autocomplete_ajax($(this).val(), $("#selected_content_type input.form-autocomplete").val());
         });
-
     });
 
 })(jQuery);
 
-//function node_type_ajax(type) {
-//    var default_nid = jQuery('.node_id_default').val();
-//    var url = Drupal.settings.basePath + "ajax/content-type/node";
-//    jQuery.ajax({
-//        type: 'post',
-//        url: url,
-//        dataType: 'json',
-//        data: {
-//            content_type: type,
-//            default_nid: default_nid
-//        },
-//        success: function (data) {
-//            jQuery('.form-item-node-id select').html(data.output);
-//        }
-//    });
-//}
 
-function node_type_ajax(type) {
-    var default_nid = jQuery('.node_id_default').val();
-    var url = Drupal.settings.basePath + "node/autocomplete";
-    console.log(url);
-    
+function node_title_autocomplete_ajax(type, str) {
+    var url = Drupal.settings.basePath + "node/title/autocomplete/";
     jQuery.ajax({
         type: 'post',
         url: url,
         dataType: 'json',
         data: {
             content_type: type,
-            default_nid: default_nid
+            str         : str
         },
         success: function (data) {
-             console.log(data);
-            jQuery('.form-item-node-id span').html(data.output);
+            jQuery('.form-item-node-id span').html(data);
         }
     });
 }
