@@ -73,6 +73,9 @@
                         <?php print render($main_menu); ?>
                     </ul>
                     <ul class="col-md-3 header-right">
+                        <li class="today only-mobile">
+                            <span>Today</span>
+                        </li>
                         <li class="search">
                             <span></span>
                         </li>

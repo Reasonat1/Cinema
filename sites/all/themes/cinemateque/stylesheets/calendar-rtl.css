@@ -195,18 +195,24 @@
   right: auto;
   padding: 30px 30px 0 0px;
 }
-/* line 147, ../sass/calendar-rtl.scss */
+@media (max-width: 767px) {
+  /* line 143, ../sass/calendar-rtl.scss */
+  .float-calendar-wrapper {
+    left: 0;
+  }
+}
+/* line 150, ../sass/calendar-rtl.scss */
 .float-calendar-wrapper .close-button {
   right: 0;
   left: auto;
 }
 
-/* line 155, ../sass/calendar-rtl.scss */
+/* line 158, ../sass/calendar-rtl.scss */
 .view-custom-calendar-floating-pane .toptix-purchase {
   float: left;
 }
 
-/* line 160, ../sass/calendar-rtl.scss */
+/* line 163, ../sass/calendar-rtl.scss */
 .calendar-calendar div.calendar {
   text-align: right;
 }

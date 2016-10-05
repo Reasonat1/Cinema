@@ -129,14 +129,23 @@
 
 /********  mini calendar  ********/
 
-        $(".float-calendar-wrapper .close-button").click(function(ev) {
+        $(".float-calendar-wrapper .close-button").click(function() {
             $(".float-calendar-wrapper").css("display","none");
         });
 
-        $("#main-menu .mini-calendar").click(function(ev) {
+        $("#main-menu .mini-calendar").click(function() {
             $(".float-calendar-wrapper").css("display","block");
         });
 
+        $(".header-right .today").click(function() {
+            $(".float-calendar-wrapper").toggleClass("hide");
+        });
+
+        $(".calendar-agenda-items").css("width",$(".view-custom-calendar-floating-pane").width());
+
+        $(window).resize(function() {
+          $(".calendar-agenda-items").css("width",$(".view-custom-calendar-floating-pane").width());
+        });
 /*******  calendat fixed  *********/
 
         $(window).scroll(function() {
