@@ -70,8 +70,10 @@ function calendar_full_width_block_content(){
         if(!empty($current_date)){
             $day = date( 'Y-m-d');
         }
-        $filter.= " <div class ='calender-filter'>" ;
         $filter.= " <span class ='prevday filter-cantrol' ><i class='fa fa-angle-left '></i></span>" ;
+         $filter.= " <span class ='nextday filter-cantrol'><i class='fa fa-angle-right'></i></span>" ;
+
+        $filter.= " <div class ='calender-filter'>" ;
              $a = 1; $filter_class = '';
              if($a == '6'){ $filter_class = 'active';}
             for ( $i = 0; $i < 11; $i++ ) {
@@ -92,7 +94,6 @@ function calendar_full_width_block_content(){
               $prev = date("Y-m-d",$prev);
             }
         
-         $filter.= " <span class ='nextday filter-cantrol'><i class='fa fa-angle-right'></i></span>" ;
         $filter.= " </div>" ;
         
         if(!empty($current_date)){

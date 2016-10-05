@@ -142,20 +142,57 @@
         $(window).resize(function() {
           $(".calendar-agenda-items").css("width",$(".view-custom-calendar-floating-pane").width());
         });
-/*******  calendat fixed  *********/
 
-        $(window).scroll(function() {
-            $targetScroll = $('body').position().top+$(window).height();
-            $currentScroll = $('html').scrollTop() || $('body').scrollTop();
-            if ($currentScroll >= $targetScroll){
-                $('.calender-filter').addClass("fixedPos");
-            }
-            else{
-                $('.calender-filter').removeClass("fixedPos");
-            }
+
+/*******  calendat fixed  area*********/
+
+        if ($(window).width() > 767){
+          $(window).scroll(function() {
+              $targetScroll = $('body').position().top+$(window).height();
+              $currentScroll = $('html').scrollTop() || $('body').scrollTop();
+              if ($currentScroll >= $targetScroll){
+                  $('.calender-filter').addClass("fixedPos");
+              }
+              else{
+                  $('.calender-filter').removeClass("fixedPos");
+              }
+          });
+        }
+
+        $(window).resize(function() {
+          if ($(window).width() > 767){
+            $(window).scroll(function() {
+                $targetScroll = $('body').position().top+$(window).height();
+                $currentScroll = $('html').scrollTop() || $('body').scrollTop();
+                if ($currentScroll >= $targetScroll){
+                    $('.calender-filter').addClass("fixedPos");
+                }
+                else{
+                    $('.calender-filter').removeClass("fixedPos");
+                }
+            });
+          }
         });
 
-
+        if ($(window).width() < 768){
+          $filterwidth = $(".calender-filter p").size()*70+30;
+          $(".calender-filter").css("width",$filterwidth);
+          $left = 0;
+          $maxleft = ($filterwidth - $(window).width())*(-1); 
+          alert($maxleft);
+          $(".nextday").click(function(){
+            if ($left > $maxleft){
+              $left = $left - 70;
+              $(".calender-filter").css("margin-left",$left);
+            }
+          });
+          $(".prevday").click(function(){
+            if ($left < 0){
+              $left = $left + 70;
+              $(".calender-filter").css("margin-left",$left);
+            }
+          });
+        }
 /******  search overlay  ******/
 
         $(".header-right .search span").click(function() {

@@ -158,9 +158,16 @@
 	box-sizing: border-box;
 	width: 100%;
 	background-color: #fff;
-	width: 100%!important;
+	width: 100%;
 	left: 0!important;
 	margin-top: 50px;
+	transition: margin-left 0.5s;
+    -webkit-transition: margin-left 0.5s;
+    @include res(s-m){
+    	padding-left: 30px;
+    	position: relative;
+    	margin-top: 20px;
+    }
 	&.scroll-to-fixed-fixed{
 		padding-bottom: 107px;
 	}
@@ -174,6 +181,13 @@
 		padding-top: 5px;
 		text-align: center;
 		width: 80px;
+		@include res(s-m){
+			margin: 0;
+			border-left: 1px solid;
+			width: 70px;
+			padding-top: 2px;
+			padding-bottom: 5px;
+		}
 		&:hover {
 			@include bg-main-color();
 			box-shadow: 0 0 3px 2px $wild_sand;
@@ -201,6 +215,31 @@
 		width: 100%;
 	}
 }
+
+.calenders{
+	position: relative;
+	@include res(s-m){
+		.filter-cantrol{
+    		@include main-color;
+    		position: absolute;
+    		z-index: 300;
+    		font-size: 35px;
+    		background-color: #fff;
+    		padding-bottom: 5px;
+    		cursor: pointer;
+    	}
+    	.prevday{
+    		padding-left: 5px;
+    		padding-right: 12px;
+    	}
+    	.nextday{
+    		padding-right: 5px;
+    		padding-left: 12px;
+    		right: 0;
+    	}
+	}
+}
+
 .calendar-dayview-hour {
 	float: left;
 	height: 30px;
@@ -388,12 +427,18 @@
 .page-node-3487{
 	#header{
 		background-color: transparent;
+		@include res(s-m){
+			background-color: #000;
+		}
 		&.sticky-header{
 			background-color: #000;
 		}
 	}
 	#main-wrapper{
 		margin-top: 0!important;
+		@include res(s-m){
+			margin-top: 50px!important;
+		}
 	}
 	.text-main-image {
 	    bottom: 60px;
@@ -402,6 +447,9 @@
 	    position: absolute!important;
 	    width: 100%;
 	    z-index: 100;
+	    @include res(s-m){
+	    	bottom: 10px;
+	    }
 	}
 	.gradient {
     	display: block;
@@ -425,6 +473,7 @@
 	box-sizing: border-box;
 	width: 300px;
 	right: 30px;
+	margin-top: 2px;
 	@include res(s-m){
 		position: relative;
 		width: 100%;
@@ -510,6 +559,11 @@
 .pane-calendar-full-width-calendar{
 	.lobby-container{
 		margin-bottom: 20px;
+	}
+	.filter-cantrol{
+		@include res(s-m){
+			display: block;
+		}
 	}
 		.lobby-term-left{
 			float: left;
