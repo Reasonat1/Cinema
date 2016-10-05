@@ -423,9 +423,9 @@
 	position: absolute;
 	top:90px;
 	box-sizing: border-box;
-	width: 330px;
+	width: 300px;
 	right: 30px;
-	padding: 10px 0 0 15px;
+	border: 1px solid #B3B3B3;
 	@include res(s-m){
 		position: relative;
 		width: 100%;
@@ -440,9 +440,7 @@
 	}
 	.close-button{
 		background-color: #ececeb;
-		border: 1px solid #B3B3B3;
-		border-top: none;
-		padding: 20px 12px;
+		padding: 17px 12px;
 		overflow: hidden;
 		.close{
 			@include main-color;
@@ -493,7 +491,7 @@
 		width: 300px;
 	}
 	.date-nav-wrapper{
-
+		margin: 0;
 	}
 	.holder td{
 		padding: 0!important;
@@ -717,12 +715,8 @@
 .view-custom-calendar-floating-pane #multi-day-container tr td .item{
     background-color: #ECECEB !important;
     border-bottom: 1px solid #B3B3B3;
-    border-right: 1px solid #B3B3B3;
 }
 
-.view-custom-calendar-floating-pane #multi-day-container tr td .item:last-child{
-	border-bottom: none;
-}
 .view-custom-calendar-floating-pane #multi-day-container tr td .item .view-item-custom_calendar_floating_pane{
     padding: 4% 3%;
 }
