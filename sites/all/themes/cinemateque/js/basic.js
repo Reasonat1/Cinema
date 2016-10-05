@@ -114,28 +114,180 @@
             $(".slide-right-ct .video-wrapper").addClass("play");
             $(".media-youtube-player")[0].src += "&enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1";
             ev.preventDefault();
+            $("video").play();
         });
 
         $('.video-wrapper').on('click', function(e) {
-          if($(e.target).closest('.video-wrapper iframe').length == 0) {
-              $(".slide-right-ct .video-wrapper").removeClass("play");
-            $(".media-youtube-player")[0].src += "&enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=0";
+          if($(e.target).closest('.video-wrapper .content').length == 0) {
+            $(".slide-right-ct .video-wrapper").removeClass("play");
+            $(".media-youtube-player")[0].src += "&autoplay=0";
+            $("video").pause();
             e.preventDefault();
           }
       });
-/*******  calendat fixed  *********/
 
-        $(window).scroll(function() {
-            $targetScroll = $('body').position().top+$(window).height();
-            $currentScroll = $('html').scrollTop() || $('body').scrollTop();
-            if ($currentScroll >= $targetScroll){
-                $('.calender-filter').addClass("fixedPos");
-            }
-            else{
-                $('.calender-filter').removeClass("fixedPos");
-            }
+
+/********  mini calendar  ********/
+
+        $(".float-calendar-wrapper .close-button").click(function() {
+            $(".float-calendar-wrapper").addClass("hide-float");
         });
 
+        $(".header-right .today").click(function() {
+            $(".float-calendar-wrapper").toggleClass("hide-float");
+        });
+
+        $(".calendar-agenda-items").css("width",$(".view-custom-calendar-floating-pane").width());
+
+        $(window).resize(function() {
+          $(".calendar-agenda-items").css("width",$(".view-custom-calendar-floating-pane").width());
+        });
+
+
+/*******  calendat fixed  area*********/
+
+        if ($(window).width() > 767){
+          $(window).scroll(function() {
+              $targetScroll = $('body').position().top+$(window).height();
+              $currentScroll = $('html').scrollTop() || $('body').scrollTop();
+              if ($currentScroll >= $targetScroll){
+                  $('.calender-filter').addClass("fixedPos");
+              }
+              else{
+                  $('.calender-filter').removeClass("fixedPos");
+              }
+          });
+        }
+
+        $(window).resize(function() {
+          if ($(window).width() > 767){
+            $(window).scroll(function() {
+                $targetScroll = $('body').position().top+$(window).height();
+                $currentScroll = $('html').scrollTop() || $('body').scrollTop();
+                if ($currentScroll >= $targetScroll){
+                    $('.calender-filter').addClass("fixedPos");
+                }
+                else{
+                    $('.calender-filter').removeClass("fixedPos");
+                }
+            });
+          }
+        });
+
+        if ($(window).width() < 768){
+          $filterwidth = $(".calender-filter p").size()*70+30;
+          $(".calender-filter").css("width",$filterwidth);
+          $maxleft = ($filterwidth - $(window).width())*(-1)-30; 
+          $left = 0;
+          $i = 0;
+          $('.calender-filter p').each(function () {
+            if (!$(this).hasClass("active")){
+              $i ++;
+            }
+            if ($(this).hasClass("active")){
+              return false;            
+            }
+          });
+          $left = $left + (-70)*($i-1);
+          if ($left < $maxleft){
+              $left = $maxleft;
+          }
+          if ($left > 0){
+              $left = 0;
+          }
+          $(".calender-filter").css("margin-left",$left);
+          $(".calender-filter p").click(function(){
+            $left = 0;
+            $i = 0
+            $('.calender-filter p').each(function () {
+              if (!$(this).hasClass("active")){
+                $i ++;
+              }
+              if ($(this).hasClass("active")){
+                return false;            
+              }
+            });
+            $left = $left + (-70)*($i-1);
+            if ($left < $maxleft){
+              $left = $maxleft;
+            }
+            if ($left > 0){
+              $left = 0;
+            }
+            $(".calender-filter").css("margin-left",$left);
+          });
+          $(".nextday").click(function(){
+            if ($left > $maxleft){
+              $left = $left - 70;
+              $(".calender-filter").css("margin-left",$left);
+            }
+          });
+          $(".prevday").click(function(){
+            if ($left < 0){
+              $left = $left + 70;
+              $(".calender-filter").css("margin-left",$left);
+            }
+          });
+        }
+
+        $(window).resize(function() {
+        $(".calender-filter").css("margin","50px auto");
+        if ($(window).width() < 768){
+          $filterwidth = $(".calender-filter p").size()*70+30;
+          $(".calender-filter").css("width",$filterwidth);
+          $maxleft = ($filterwidth - $(window).width())*(-1)-30; 
+          $left = 0;
+          $i = 0;
+          $('.calender-filter p').each(function () {
+            if (!$(this).hasClass("active")){
+              $i ++;
+            }
+            if ($(this).hasClass("active")){
+              return false;            
+            }
+          });
+          $left = $left + (-70)*($i-1);
+          if ($left < $maxleft){
+              $left = $maxleft;
+          }
+          if ($left > 0){
+              $left = 0;
+          }
+          $(".calender-filter").css("margin-left",$left);
+          $(".calender-filter p").click(function(){
+            $left = 0;
+            $i = 0
+            $('.calender-filter p').each(function () {
+              if (!$(this).hasClass("active")){
+                $i ++;
+              }
+              if ($(this).hasClass("active")){
+                return false;            
+              }
+            });
+            $left = $left + (-70)*($i-1);
+            if ($left < $maxleft){
+              $left = $maxleft;
+            }
+            if ($left > 0){
+              $left = 0;
+            }
+            $(".calender-filter").css("margin-left",$left);
+          });
+          $(".nextday").click(function(){
+            if ($left > $maxleft){
+              $left = $left - 70;
+              $(".calender-filter").css("margin-left",$left);
+            }
+          });
+          $(".prevday").click(function(){
+            if ($left < 0){
+              $left = $left + 70;
+              $(".calender-filter").css("margin-left",$left);
+            }
+          });
+        }
+        });
 
 /******  search overlay  ******/
 
