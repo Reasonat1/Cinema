@@ -65,6 +65,9 @@
 			overflow: visible;
 			.table-responsive{
 				overflow: visible;
+				.views-field-field-cm-event-time-1{
+					width: 23%;
+				}
 			}
 		}
 		table{
@@ -99,7 +102,7 @@
 			.table-responsive{
 				overflow: visible;
 				.views-field-field-cm-event-time-1{
-					width: calc(8% + 180px);
+					width: 23%;
 				}
 				.views-field-field-cm-event-time{
 					width: calc(15% - 19.25px);
@@ -151,6 +154,7 @@
     			width: calc(84% - 360px);
     			@include res(s-m){
 					margin: 0;
+					width: 100%;
 				}
 			}
 		}

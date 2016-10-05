@@ -12,6 +12,11 @@
 
 <!--<script src="/misc/jquery.js" type="text/javascript"></script>-->
 <?php print render($page['overlay']); ?>
+<div class="float-calendar-wrapper">
+    <div class="close-button"><img class="close" src="/sites/all/themes/cinemateque/images/close42.png"></div>
+    <?php print render($page['float_calendar']); ?>
+</div>
+
 <script type='text/javascript'>
     jQuery.noConflict();
 </script> 
@@ -68,6 +73,9 @@
                         <?php print render($main_menu); ?>
                     </ul>
                     <ul class="col-md-3 header-right">
+                        <li class="today only-mobile">
+                            <span>Today</span>
+                        </li>
                         <li class="search">
                             <span></span>
                         </li>

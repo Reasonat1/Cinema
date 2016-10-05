@@ -416,14 +416,56 @@
 	}
 }
 
-.pane-custom-calendar-floating-pane-panel-pane-1{
+/******  float-calendar  ***********/
+
+.float-calendar-wrapper{
+	z-index: 400;
 	position: absolute;
-	width: 100%;
-	top:120px;
-	.pane-content{
-		padding: 0 30px;
-		box-sizing: border-box;
+	top:90px;
+	box-sizing: border-box;
+	width: 330px;
+	right: 30px;
+	padding: 30px 0 0 30px;
+	@include res(s-m){
+		width: 100%;
+		padding: 0!important;
+		left: 0;
+		top: 50px;
+		height: 60%;
+		overflow-y: auto;
 	}
+	&.hide{
+		display: none;
+	}
+	.close-button{
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include bg-main-color;
+		border-radius: 50%;
+    	width: 26px;
+    	height: 26px;
+    	padding: 6px;
+    	@include res(s-m){
+    		display: none;
+    	}
+		img{
+			opacity: 1;
+			width: 15px;
+			height: 15px;
+		}
+	}
+
+}
+
+#main-menu .mini-calendar {
+	cursor: pointer;
+	&:hover{
+		@include main-color;
+	}
+}
+
+.view-custom-calendar-floating-pane{
 	.calendar-calendar div.calendar{
 		font-size: 18px;
 	}
@@ -447,11 +489,14 @@
 		z-index: 50;
 	}
 	.calendar-agenda-items{
-		width: 300px;
 		padding: 0!important;
+		width: 300px;
 	}
 	.date-nav-wrapper{
 
+	}
+	.holder td{
+		padding: 0!important;
 	}
 }
 
@@ -605,11 +650,6 @@
     margin-left: 6% !important;
 }
 
-.view-custom-calendar-floating-pane{
-    width: 20%;
-    margin: 0;
-    padding: 0;
-}
 .view-custom-calendar-floating-pane .view-header{
    background-color: #000; 
 }
@@ -651,7 +691,7 @@
     text-indent: -9999px;
     position: absolute;
     left: 0;
-    margin: 5% 0 0;
+    margin: 15px 0 0;
     box-shadow: none;
     padding: 0px 10px;
     border:none;
@@ -663,7 +703,7 @@
     text-indent: -9999px;
     position: absolute;
     right: 4%;
-    margin: 5% 0 0;
+    margin: 15px 0 0;
     box-shadow: none;
     padding: 0px 5px;
     border:none;
