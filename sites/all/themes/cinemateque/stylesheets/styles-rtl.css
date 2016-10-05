@@ -899,7 +899,7 @@ table td, table th {
 .float-calendar-wrapper {
   left: 30px;
   right: auto;
-  padding: 30px 30px 0 0px;
+  padding: 10px 15px 0 0px;
 }
 @media (max-width: 767px) {
   /* line 143, ../sass/calendar-rtl.scss */
@@ -907,18 +907,20 @@ table td, table th {
     left: 0;
   }
 }
-/* line 150, ../sass/calendar-rtl.scss */
-.float-calendar-wrapper .close-button {
-  right: 0;
-  left: auto;
+/* line 151, ../sass/calendar-rtl.scss */
+.float-calendar-wrapper .close-button .close {
+  background-position: right center !important;
+  padding-right: 30px;
 }
 
-/* line 158, ../sass/calendar-rtl.scss */
+/* line 159, ../sass/calendar-rtl.scss */
 .view-custom-calendar-floating-pane .toptix-purchase {
   float: left;
+  margin-left: 5px;
+  margin-right: 0;
 }
 
-/* line 163, ../sass/calendar-rtl.scss */
+/* line 166, ../sass/calendar-rtl.scss */
 .calendar-calendar div.calendar {
   text-align: right;
 }
@@ -1093,104 +1095,115 @@ table td, table th {
 }
 
 /* line 156, ../sass/cinemateque-rtl.scss */
+.navbar-brand > img {
+  float: right;
+}
+/* line 159, ../sass/cinemateque-rtl.scss */
+.navbar-brand .site-name {
+  float: left;
+  margin-right: 10px;
+  margin-left: 0;
+}
+
+/* line 168, ../sass/cinemateque-rtl.scss */
 #myModal .webform-component {
   float: right;
 }
 
-/* line 162, ../sass/cinemateque-rtl.scss */
+/* line 174, ../sass/cinemateque-rtl.scss */
 .radio label {
   padding-left: 0;
   padding-right: 0;
 }
-/* line 166, ../sass/cinemateque-rtl.scss */
+/* line 178, ../sass/cinemateque-rtl.scss */
 .radio input[type="radio"] {
   margin-left: 6px;
   margin-top: 0;
   position: relative;
 }
 
-/* line 173, ../sass/cinemateque-rtl.scss */
+/* line 185, ../sass/cinemateque-rtl.scss */
 .site-custom-menu.menu.nav.navbar-nav {
   float: right;
 }
 
-/* line 177, ../sass/cinemateque-rtl.scss */
+/* line 189, ../sass/cinemateque-rtl.scss */
 .hambruger.-menu.navbar-toggle {
   float: right;
   margin-left: 0;
   margin-right: 30px;
 }
 
-/* line 184, ../sass/cinemateque-rtl.scss */
+/* line 196, ../sass/cinemateque-rtl.scss */
 .social .pane-content li {
   float: right;
 }
-/* line 187, ../sass/cinemateque-rtl.scss */
+/* line 199, ../sass/cinemateque-rtl.scss */
 .social .pane-content span {
   float: right;
 }
 
-/* line 192, ../sass/cinemateque-rtl.scss */
+/* line 204, ../sass/cinemateque-rtl.scss */
 .sponser-pane .pane-content li {
   float: right;
   float: right;
 }
 
-/* line 197, ../sass/cinemateque-rtl.scss */
+/* line 209, ../sass/cinemateque-rtl.scss */
 .design-development > p {
   text-align: left;
 }
 
-/* line 201, ../sass/cinemateque-rtl.scss */
+/* line 213, ../sass/cinemateque-rtl.scss */
 .view-bean-infomation-block-view table tr {
   float: right;
 }
 
-/* line 205, ../sass/cinemateque-rtl.scss */
+/* line 217, ../sass/cinemateque-rtl.scss */
 .pane-menu-menu-site-main-menu .menu.nav li.expanded {
   float: right;
 }
 
-/* line 209, ../sass/cinemateque-rtl.scss */
+/* line 221, ../sass/cinemateque-rtl.scss */
 .col-md-6.news-leter {
   float: right;
 }
 
-/* line 213, ../sass/cinemateque-rtl.scss */
+/* line 225, ../sass/cinemateque-rtl.scss */
 .news-leter .webform-component input {
   padding-left: 0;
   padding-right: 4px;
 }
 
-/* line 218, ../sass/cinemateque-rtl.scss */
+/* line 230, ../sass/cinemateque-rtl.scss */
 .checkbox input[type="checkbox"] {
   margin-left: 6px;
   margin-right: 0;
 }
 
-/* line 223, ../sass/cinemateque-rtl.scss */
+/* line 235, ../sass/cinemateque-rtl.scss */
 .checkbox-inline input[type="checkbox"] {
   margin-left: 6px;
   margin-top: 0;
   position: relative;
 }
 
-/* line 229, ../sass/cinemateque-rtl.scss */
+/* line 241, ../sass/cinemateque-rtl.scss */
 .radio-inline input[type="radio"] {
   margin-left: 6px;
   margin-top: 0;
   position: relative;
 }
 
-/* line 236, ../sass/cinemateque-rtl.scss */
+/* line 248, ../sass/cinemateque-rtl.scss */
 .popup.region .views-field.views-field-field-cm-info-block-icon {
   float: right;
 }
-/* line 239, ../sass/cinemateque-rtl.scss */
+/* line 251, ../sass/cinemateque-rtl.scss */
 .popup.region .views-field.views-field-label {
   float: right;
 }
-/* line 242, ../sass/cinemateque-rtl.scss */
+/* line 254, ../sass/cinemateque-rtl.scss */
 .popup.region .views-field.views-field-field-cm-info-block-text {
   float: right;
 }

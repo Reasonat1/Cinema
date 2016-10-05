@@ -130,11 +130,7 @@
 /********  mini calendar  ********/
 
         $(".float-calendar-wrapper .close-button").click(function() {
-            $(".float-calendar-wrapper").css("display","none");
-        });
-
-        $("#main-menu .mini-calendar").click(function() {
-            $(".float-calendar-wrapper").css("display","block");
+            $(".float-calendar-wrapper").addClass("hide");
         });
 
         $(".header-right .today").click(function() {

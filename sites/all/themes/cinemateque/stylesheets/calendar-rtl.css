@@ -193,7 +193,7 @@
 .float-calendar-wrapper {
   left: 30px;
   right: auto;
-  padding: 30px 30px 0 0px;
+  padding: 10px 15px 0 0px;
 }
 @media (max-width: 767px) {
   /* line 143, ../sass/calendar-rtl.scss */
@@ -201,18 +201,20 @@
     left: 0;
   }
 }
-/* line 150, ../sass/calendar-rtl.scss */
-.float-calendar-wrapper .close-button {
-  right: 0;
-  left: auto;
+/* line 151, ../sass/calendar-rtl.scss */
+.float-calendar-wrapper .close-button .close {
+  background-position: right center !important;
+  padding-right: 30px;
 }
 
-/* line 158, ../sass/calendar-rtl.scss */
+/* line 159, ../sass/calendar-rtl.scss */
 .view-custom-calendar-floating-pane .toptix-purchase {
   float: left;
+  margin-left: 5px;
+  margin-right: 0;
 }
 
-/* line 163, ../sass/calendar-rtl.scss */
+/* line 166, ../sass/calendar-rtl.scss */
 .calendar-calendar div.calendar {
   text-align: right;
 }

@@ -425,8 +425,9 @@
 	box-sizing: border-box;
 	width: 330px;
 	right: 30px;
-	padding: 30px 0 0 30px;
+	padding: 10px 0 0 15px;
 	@include res(s-m){
+		position: relative;
 		width: 100%;
 		padding: 0!important;
 		left: 0;
@@ -438,21 +439,18 @@
 		display: none;
 	}
 	.close-button{
-		position: absolute;
-		top: 0;
-		left: 0;
-		@include bg-main-color;
-		border-radius: 50%;
-    	width: 26px;
-    	height: 26px;
-    	padding: 6px;
-    	@include res(s-m){
-    		display: none;
-    	}
-		img{
+		background-color: #ececeb;
+		border: 1px solid #B3B3B3;
+		border-top: none;
+		padding: 20px 12px;
+		overflow: hidden;
+		.close{
+			@include main-color;
 			opacity: 1;
-			width: 15px;
-			height: 15px;
+			background-position: left center!important;
+			padding-left: 30px;
+			font-size: 16px;
+			font-weight: normal;
 		}
 	}
 
@@ -480,6 +478,7 @@
 	}
 	.toptix-purchase{
 		float: right;
+		margin-right: 5px;
 	}
 	.view-custom-calendar-floating-pane{
 		position: relative!important;
@@ -717,6 +716,11 @@
 .view-custom-calendar-floating-pane #multi-day-container tr td .item{
     background-color: #ECECEB !important;
     border-bottom: 1px solid #B3B3B3;
+    border-right: 1px solid #B3B3B3;
+}
+
+.view-custom-calendar-floating-pane #multi-day-container tr td .item:last-child{
+	border-bottom: none;
 }
 .view-custom-calendar-floating-pane #multi-day-container tr td .item .view-item-custom_calendar_floating_pane{
     padding: 4% 3%;

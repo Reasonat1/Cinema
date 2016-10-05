@@ -696,9 +696,9 @@ img.panopoly-image-full{
 			display: block;
 		}
 		.today span{
-			background: url("../images/favorite.png") no-repeat 0 bottom;
+			background: url("../images/time.png") no-repeat 0 bottom;
 			text-indent: -9999px;
-			height: 20px;
+			height: 22px;
 			width: 24px;
 			display: block;
 			cursor: pointer;
@@ -1168,9 +1168,24 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 	opacity: 1;
 }
 
-.navbar-brand > img {
-	height: 50px;
-	transition: all 0.5s ease 0s;
+.navbar-brand{
+	> img {
+		height: 50px;
+		transition: all 0.5s ease 0s;
+		float: left;
+	}
+	.site-name{
+	    color: #fff;
+	    float: right;
+	    font-size: 16px;
+	    line-height: 18px;
+	    margin-left: 10px;
+	    margin-top: -4px;
+	    width: 140px;
+	    @include res(s-m){
+	    	display: none;
+	    }
+	}
 }
 
 .site-custom-menu.menu.nav.navbar-nav {

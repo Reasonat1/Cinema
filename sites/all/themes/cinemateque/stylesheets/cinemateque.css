@@ -942,9 +942,9 @@ img.panopoly-image-full {
 }
 /* line 698, ../sass/cinemateque.scss */
 .header .header-right .today span {
-  background: url("../images/favorite.png") no-repeat 0 bottom;
+  background: url("../images/time.png") no-repeat 0 bottom;
   text-indent: -9999px;
-  height: 20px;
+  height: 22px;
   width: 24px;
   display: block;
   cursor: pointer;
@@ -1644,66 +1644,83 @@ section.footer .view-bean-infomation-block-view table tbody tr {
   opacity: 1;
 }
 
-/* line 1171, ../sass/cinemateque.scss */
+/* line 1172, ../sass/cinemateque.scss */
 .navbar-brand > img {
   height: 50px;
   transition: all 0.5s ease 0s;
+  float: left;
+}
+/* line 1177, ../sass/cinemateque.scss */
+.navbar-brand .site-name {
+  color: #fff;
+  float: right;
+  font-size: 16px;
+  line-height: 18px;
+  margin-left: 10px;
+  margin-top: -4px;
+  width: 140px;
+}
+@media (max-width: 767px) {
+  /* line 1177, ../sass/cinemateque.scss */
+  .navbar-brand .site-name {
+    display: none;
+  }
 }
 
-/* line 1176, ../sass/cinemateque.scss */
+/* line 1191, ../sass/cinemateque.scss */
 .site-custom-menu.menu.nav.navbar-nav {
   background: transparent none repeat scroll 0 0 !important;
   margin-top: 5px;
   text-align: center;
 }
 
-/* line 1181, ../sass/cinemateque.scss */
+/* line 1196, ../sass/cinemateque.scss */
 .panels-flexible-custom_front_panel .panels-flexible-region {
   width: 100%;
 }
 
-/* line 1184, ../sass/cinemateque.scss */
+/* line 1199, ../sass/cinemateque.scss */
 .navbar .navbar-brand {
   margin: 11px 5px 0 30px;
   overflow: hidden;
   padding: 0;
 }
 @media (min-width: 481px) and (max-width: 767px) {
-  /* line 1184, ../sass/cinemateque.scss */
+  /* line 1199, ../sass/cinemateque.scss */
   .navbar .navbar-brand {
     margin: 10px 30px 0 5px !important;
   }
 }
 @media (max-width: 480px) {
-  /* line 1184, ../sass/cinemateque.scss */
+  /* line 1199, ../sass/cinemateque.scss */
   .navbar .navbar-brand {
     margin: 10px 5px 0 5px !important;
   }
 }
 @media (max-width: 960px) {
-  /* line 1184, ../sass/cinemateque.scss */
+  /* line 1199, ../sass/cinemateque.scss */
   .navbar .navbar-brand {
     margin: 11px 30px 0 5px;
   }
 }
 
-/* line 1198, ../sass/cinemateque.scss */
+/* line 1213, ../sass/cinemateque.scss */
 .navbar-nav > li {
   display: inline-block;
   float: none;
 }
 
-/* line 1202, ../sass/cinemateque.scss */
+/* line 1217, ../sass/cinemateque.scss */
 #main #content {
   padding: 0;
 }
 
-/* line 1205, ../sass/cinemateque.scss */
+/* line 1220, ../sass/cinemateque.scss */
 span.bold {
   font-weight: bold;
 }
 
-/* line 1208, ../sass/cinemateque.scss */
+/* line 1223, ../sass/cinemateque.scss */
 .bold.time {
   float: left;
   margin-top: 70px;
@@ -1711,7 +1728,7 @@ span.bold {
   width: 100%;
 }
 
-/* line 1214, ../sass/cinemateque.scss */
+/* line 1229, ../sass/cinemateque.scss */
 .calender-filter-date p.pull-left {
   font-weight: bolder;
 }
@@ -1724,35 +1741,35 @@ span.bold {
   color: #b59d70 !important;
 }
 
-/* line 1218, ../sass/cinemateque.scss */
+/* line 1233, ../sass/cinemateque.scss */
 .page-taxonomy .panels-flexible-row.content {
   margin: 0 auto;
   width: 100%;
 }
 
 /********  new added css  ******/
-/* line 1226, ../sass/cinemateque.scss */
+/* line 1241, ../sass/cinemateque.scss */
 .search-results {
   padding: 0;
 }
 
-/* line 1229, ../sass/cinemateque.scss */
+/* line 1244, ../sass/cinemateque.scss */
 .search-results.node-results {
   padding: 0 !important;
 }
 
-/* line 1232, ../sass/cinemateque.scss */
+/* line 1247, ../sass/cinemateque.scss */
 .cm_person .pro-grid li {
   width: 46%;
   display: inline-block;
   vertical-align: middle;
   margin-bottom: 0;
 }
-/* line 1237, ../sass/cinemateque.scss */
+/* line 1252, ../sass/cinemateque.scss */
 .cm_person .pro-grid li:nth-child(1) {
   width: 6% !important;
 }
-/* line 1240, ../sass/cinemateque.scss */
+/* line 1255, ../sass/cinemateque.scss */
 .cm_person .pro-grid li .pro-img {
   max-width: 100%;
   background: #f6f6f6;
@@ -1762,13 +1779,13 @@ span.bold {
   width: 55px;
   height: 55px;
 }
-/* line 1249, ../sass/cinemateque.scss */
+/* line 1264, ../sass/cinemateque.scss */
 .cm_person .pro-grid li .title {
   text-align: left;
   text-transform: uppercase;
   font-size: 14px;
 }
-/* line 1253, ../sass/cinemateque.scss */
+/* line 1268, ../sass/cinemateque.scss */
 .cm_person .pro-grid li .title a {
   font-weight: 500;
   font-size: 14px;
@@ -1779,18 +1796,18 @@ span.bold {
   white-space: nowrap;
   display: block;
 }
-/* line 1264, ../sass/cinemateque.scss */
+/* line 1279, ../sass/cinemateque.scss */
 .cm_person .pro-grid li:nth-child(3) {
   width: 60%;
   display: inline-block;
   vertical-align: middle;
   margin-bottom: 0 !important;
 }
-/* line 1270, ../sass/cinemateque.scss */
+/* line 1285, ../sass/cinemateque.scss */
 .cm_person .pro-grid li:nth-child(2) {
   width: 25% !important;
 }
-/* line 1273, ../sass/cinemateque.scss */
+/* line 1288, ../sass/cinemateque.scss */
 .cm_person .pro-grid li .search-view-mode p {
   font-size: 13px !important;
   margin: 0 !important;
@@ -1802,16 +1819,16 @@ span.bold {
   box-orient: vertical;
 }
 
-/* line 1285, ../sass/cinemateque.scss */
+/* line 1300, ../sass/cinemateque.scss */
 .pager li > a {
   border-radius: 0 !important;
 }
-/* line 1288, ../sass/cinemateque.scss */
+/* line 1303, ../sass/cinemateque.scss */
 .pager li > span {
   border-radius: 0 !important;
 }
 
-/* line 1292, ../sass/cinemateque.scss */
+/* line 1307, ../sass/cinemateque.scss */
 .custom_filter_css .item-list ul li {
   display: inline-block;
   padding: 6px 10px;
@@ -1824,13 +1841,13 @@ span.bold {
 .domain-2 .custom_filter_css .item-list ul li {
   background-color: #b59d70 !important;
 }
-/* line 1296, ../sass/cinemateque.scss */
+/* line 1311, ../sass/cinemateque.scss */
 .custom_filter_css .item-list ul li a {
   color: #ffffff !important;
   letter-spacing: 1px;
 }
 
-/* line 1301, ../sass/cinemateque.scss */
+/* line 1316, ../sass/cinemateque.scss */
 .mobile-event-accordian .accordian-hall {
   color: #ffffff;
   cursor: pointer;
@@ -1845,12 +1862,12 @@ span.bold {
 .domain-2 .mobile-event-accordian .accordian-hall {
   background-color: #b59d70 !important;
 }
-/* line 1307, ../sass/cinemateque.scss */
+/* line 1322, ../sass/cinemateque.scss */
 .mobile-event-accordian .accordian-hall.open {
   background-color: #000000;
 }
 
-/* line 1311, ../sass/cinemateque.scss */
+/* line 1326, ../sass/cinemateque.scss */
 .mobile-calender-row.mobile-custom-row {
   float: left;
   padding: 2px 15px;
@@ -1858,18 +1875,18 @@ span.bold {
   border-bottom: 1px solid #b3b3b3;
   background: #ffffff none repeat scroll 0 0;
 }
-/* line 1317, ../sass/cinemateque.scss */
+/* line 1332, ../sass/cinemateque.scss */
 .mobile-calender-row.mobile-custom-row:nth-child(2n + 1) {
   background-color: #eee;
 }
 
-/* line 1321, ../sass/cinemateque.scss */
+/* line 1336, ../sass/cinemateque.scss */
 .accordian-hall .fa {
   float: right;
   padding-top: 5px;
 }
 
-/* line 1325, ../sass/cinemateque.scss */
+/* line 1340, ../sass/cinemateque.scss */
 .page-header h1.title {
   font-size: 7vh;
   padding: 10px;
@@ -1879,62 +1896,62 @@ span.bold {
   text-align: center;
 }
 
-/* line 1333, ../sass/cinemateque.scss */
+/* line 1348, ../sass/cinemateque.scss */
 div[id^="panels-ipe-paneid-22"] > * select {
   border-radius: 0 !important;
   border: 1px solid #999;
   box-shadow: none !important;
 }
 
-/* line 1340, ../sass/cinemateque.scss */
+/* line 1355, ../sass/cinemateque.scss */
 .front {
   background-color: #f9f4ee !important;
 }
-/* line 1342, ../sass/cinemateque.scss */
+/* line 1357, ../sass/cinemateque.scss */
 .front #mini-panel-myminipaneltest23rds13rd .pane-title {
   font-weight: normal;
   font-size: 20px;
   text-align: center;
 }
-/* line 1347, ../sass/cinemateque.scss */
+/* line 1362, ../sass/cinemateque.scss */
 .front p {
   line-height: 24px;
 }
-/* line 1350, ../sass/cinemateque.scss */
+/* line 1365, ../sass/cinemateque.scss */
 .front .panel-pane {
   overflow: hidden;
 }
-/* line 1353, ../sass/cinemateque.scss */
+/* line 1368, ../sass/cinemateque.scss */
 .front .panel-flexible-inside {
   height: 100%;
 }
-/* line 1356, ../sass/cinemateque.scss */
+/* line 1371, ../sass/cinemateque.scss */
 .front .pane-bundle-gallery {
   /*.custom-slideshow, li{
   	height: 1024px!important;
   }*/
 }
-/* line 1360, ../sass/cinemateque.scss */
+/* line 1375, ../sass/cinemateque.scss */
 .front .pane-bundle-gallery .custom-slideshow li img {
   width: 100%;
   height: auto;
   max-width: none;
 }
-/* line 1365, ../sass/cinemateque.scss */
+/* line 1380, ../sass/cinemateque.scss */
 .front .pane-bundle-gallery .custom-slideshow {
   overflow: hidden;
 }
-/* line 1369, ../sass/cinemateque.scss */
+/* line 1384, ../sass/cinemateque.scss */
 .front .field-name-field-cm-festival-body {
   margin-top: 100px;
   margin-bottom: 20px;
 }
-/* line 1372, ../sass/cinemateque.scss */
+/* line 1387, ../sass/cinemateque.scss */
 .front .field-name-field-cm-festival-body p {
   margin-bottom: 50px;
   line-height: 25px;
 }
-/* line 1377, ../sass/cinemateque.scss */
+/* line 1392, ../sass/cinemateque.scss */
 .front .pane-panels-mini {
   width: 1355px !important;
   max-width: 100%;
@@ -1944,18 +1961,18 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: 1330px !important;
 }
 
-/* line 1383, ../sass/cinemateque.scss */
+/* line 1398, ../sass/cinemateque.scss */
 .pane-bundle-sponser {
   padding: 20px 3%;
 }
-/* line 1386, ../sass/cinemateque.scss */
+/* line 1401, ../sass/cinemateque.scss */
 .pane-bundle-sponser .field-item {
   padding: 0px 20px;
   box-sizing: border-box;
   display: inline-block;
   height: 80px;
 }
-/* line 1391, ../sass/cinemateque.scss */
+/* line 1406, ../sass/cinemateque.scss */
 .pane-bundle-sponser .field-item img {
   padding: 10px 0;
   height: 100%;

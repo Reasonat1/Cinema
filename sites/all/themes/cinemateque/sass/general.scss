@@ -437,6 +437,7 @@ table td{
 	}
 }
 
+
 .share-this-pane-mobile{
 	display: none;
 	@include width;
@@ -486,6 +487,10 @@ table td{
 	iframe{
 		display: none;
 	}
+}
+
+.node-type-cm-movie .share-this-pane-mobile{
+	padding: 0;
 }
 
 .field-name-field-tag {
