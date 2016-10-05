@@ -12,6 +12,11 @@
 
 <!--<script src="/misc/jquery.js" type="text/javascript"></script>-->
 <?php print render($page['overlay']); ?>
+<div class="float-calendar-wrapper">
+    <div class="close-button"><img class="close" src="/sites/all/themes/cinemateque/images/close42.png"></div>
+    <?php print render($page['float_calendar']); ?>
+</div>
+
 <script type='text/javascript'>
     jQuery.noConflict();
 </script> 

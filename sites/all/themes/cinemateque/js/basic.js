@@ -125,6 +125,18 @@
             e.preventDefault();
           }
       });
+
+
+/********  mini calendar  ********/
+
+        $(".float-calendar-wrapper .close-button").click(function(ev) {
+            $(".float-calendar-wrapper").css("display","none");
+        });
+
+        $("#main-menu .mini-calendar").click(function(ev) {
+            $(".float-calendar-wrapper").css("display","block");
+        });
+
 /*******  calendat fixed  *********/
 
         $(window).scroll(function() {

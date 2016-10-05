@@ -3631,99 +3631,101 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 }
 /* line 123, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-6 .panels-flexible-row-node_page-6-inside .panels-flexible-region {
-  padding: 0 23%;
+  width: calc(92% - 180px);
+  float: right;
 }
 @media (max-width: 767px) {
   /* line 123, ../sass/movie.scss */
   .node-type-cm-movie .panels-flexible-row-node_page-6 .panels-flexible-row-node_page-6-inside .panels-flexible-region {
     padding: 0;
+    width: 100%;
   }
 }
-/* line 131, ../sass/movie.scss */
+/* line 133, ../sass/movie.scss */
 .node-type-cm-movie .pane-movie-top-pane-view-panel-pane-7 .view-movie-top-pane-view {
   overflow: visible;
 }
-/* line 133, ../sass/movie.scss */
+/* line 135, ../sass/movie.scss */
 .node-type-cm-movie .pane-movie-top-pane-view-panel-pane-7 .view-movie-top-pane-view .table-responsive {
   overflow: visible;
 }
-/* line 137, ../sass/movie.scss */
+/* line 139, ../sass/movie.scss */
 .node-type-cm-movie .pane-movie-top-pane-view-panel-pane-7 .views-field-ops {
   height: 23px !important;
   display: block;
   padding-top: 13px;
 }
 @media (max-width: 767px) {
-  /* line 142, ../sass/movie.scss */
+  /* line 144, ../sass/movie.scss */
   .node-type-cm-movie .pane-movie-top-pane-view-panel-pane-7 thead {
     display: none;
   }
 }
-/* line 146, ../sass/movie.scss */
+/* line 148, ../sass/movie.scss */
 .node-type-cm-movie .pane-movie-top-pane-view-panel-pane-7 thead th {
   font-size: 12px;
 }
-/* line 150, ../sass/movie.scss */
+/* line 152, ../sass/movie.scss */
 .node-type-cm-movie .pane-movie-top-pane-view-panel-pane-7 .views-field-field-cm-event-time {
   width: 23%;
 }
-/* line 153, ../sass/movie.scss */
+/* line 155, ../sass/movie.scss */
 .node-type-cm-movie .pane-movie-top-pane-view-panel-pane-7 #atedrop5-drop {
   top: 35px !important;
 }
 
-/* line 163, ../sass/movie.scss */
+/* line 165, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_7 .table-bordered {
   border: none;
 }
-/* line 165, ../sass/movie.scss */
+/* line 167, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_7 .table-bordered > thead > tr > th {
   border: none;
 }
-/* line 169, ../sass/movie.scss */
+/* line 171, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_7 tbody {
   border: none;
 }
-/* line 173, ../sass/movie.scss */
+/* line 175, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_7 tr.even {
   border: none;
 }
-/* line 176, ../sass/movie.scss */
+/* line 178, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_7 tr.odd {
   border: none;
 }
-/* line 180, ../sass/movie.scss */
+/* line 182, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_7 th {
   border-bottom: none;
   color: #bbb;
 }
-/* line 184, ../sass/movie.scss */
+/* line 186, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_7 .table > tbody > tr > td {
   border: none;
 }
-/* line 189, ../sass/movie.scss */
+/* line 191, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_1 #views_slideshow_cycle_teaser_section_movie_top_pane_view-panel_pane_1 .content {
   position: inherit;
   overflow: inherit;
 }
-/* line 193, ../sass/movie.scss */
+/* line 195, ../sass/movie.scss */
 .view-id-movie_top_pane_view.view-display-id-panel_pane_1 #views_slideshow_cycle_teaser_section_movie_top_pane_view-panel_pane_1 .field-label {
   display: none;
 }
 
 /**** slider  ******/
-/* line 202, ../sass/movie.scss */
+/* line 204, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-4 {
   width: 100% !important;
   padding: 0 !important;
 }
 @media (max-width: 767px) {
-  /* line 202, ../sass/movie.scss */
+  /* line 204, ../sass/movie.scss */
   .node-type-cm-movie .panels-flexible-row-node_page-4 {
     background-color: #f9fafb;
   }
 }
-/* line 208, ../sass/movie.scss */
+/* line 210, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside {
   width: 1355px !important;
   max-width: 100%;
@@ -3732,17 +3734,17 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   box-sizing: border-box;
 }
 @media (max-width: 767px) and (max-width: 767px) {
-  /* line 211, ../sass/movie.scss */
+  /* line 213, ../sass/movie.scss */
   .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside tr {
     padding: 0 5%;
   }
 }
 
-/* line 217, ../sass/movie.scss */
+/* line 219, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside .field-name-field-qoutes {
   margin: 70px 23%;
 }
-/* line 220, ../sass/movie.scss */
+/* line 222, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside .views-field-field-cm-review-qoute {
   font-size: 25px;
   width: 100%;
@@ -3755,7 +3757,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 .domain-2 .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside .views-field-field-cm-review-qoute {
   color: #b59d70 !important;
 }
-/* line 225, ../sass/movie.scss */
+/* line 227, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside .views-field-field-cm-review-source {
   font-size: 12px;
   margin-top: 30px;
@@ -3768,28 +3770,28 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 .domain-2 .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside .views-field-field-cm-review-source {
   color: #b59d70 !important;
 }
-/* line 230, ../sass/movie.scss */
+/* line 232, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside .views-slideshow-pager-fields {
   clear: both;
   text-align: center;
   padding-top: 20px;
 }
-/* line 235, ../sass/movie.scss */
+/* line 237, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside .pane-movie-top-pane-view-panel-pane-7 {
   padding-top: 20px;
 }
 @media (max-width: 767px) {
-  /* line 235, ../sass/movie.scss */
+  /* line 237, ../sass/movie.scss */
   .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside .pane-movie-top-pane-view-panel-pane-7 {
     padding-top: 0;
   }
 }
-/* line 241, ../sass/movie.scss */
+/* line 243, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside .views-slideshow-pager-field-item {
   display: inline-block;
   margin: 0 14px;
 }
-/* line 244, ../sass/movie.scss */
+/* line 246, ../sass/movie.scss */
 .node-type-cm-movie .panels-flexible-row-node_page-4 .panels-flexible-row-node_page-4-inside .views-slideshow-pager-field-item .circle {
   background-color: #afafaf;
   border-radius: 50%;
@@ -7420,74 +7422,112 @@ div[id^="panels-ipe-paneid-22"] > * select {
   z-index: 200;
 }
 
-/* line 419, ../sass/calendar.scss */
-.pane-custom-calendar-floating-pane-panel-pane-1 {
+/******  float-calendar  ***********/
+/* line 421, ../sass/calendar.scss */
+.float-calendar-wrapper {
+  z-index: 400;
   position: absolute;
-  width: 100%;
-  top: 120px;
-}
-/* line 423, ../sass/calendar.scss */
-.pane-custom-calendar-floating-pane-panel-pane-1 .pane-content {
-  padding: 0 30px;
+  top: 90px;
   box-sizing: border-box;
+  width: 330px;
+  right: 30px;
+  padding: 30px 0 0 30px;
 }
-/* line 427, ../sass/calendar.scss */
-.pane-custom-calendar-floating-pane-panel-pane-1 .calendar-calendar div.calendar {
+/* line 429, ../sass/calendar.scss */
+.float-calendar-wrapper .close-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  padding: 6px;
+}
+/* line 61, ../sass/init.scss */
+.domain-1 .float-calendar-wrapper .close-button, .float-calendar-wrapper .close-button.domain-1 .float-calendar-wrapper .close-button {
+  background-color: #e41145 !important;
+}
+/* line 64, ../sass/init.scss */
+.domain-2 .float-calendar-wrapper .close-button {
+  background-color: #b59d70 !important;
+}
+/* line 438, ../sass/calendar.scss */
+.float-calendar-wrapper .close-button img {
+  opacity: 1;
+  width: 15px;
+  height: 15px;
+}
+
+/* line 447, ../sass/calendar.scss */
+#main-menu .mini-calendar {
+  cursor: pointer;
+}
+/* line 52, ../sass/init.scss */
+.domain-1 #main-menu .mini-calendar:hover {
+  color: #e41145 !important;
+}
+/* line 55, ../sass/init.scss */
+.domain-2 #main-menu .mini-calendar:hover {
+  color: #b59d70 !important;
+}
+
+/* line 455, ../sass/calendar.scss */
+.view-custom-calendar-floating-pane .calendar-calendar div.calendar {
   font-size: 18px;
 }
-/* line 430, ../sass/calendar.scss */
-.pane-custom-calendar-floating-pane-panel-pane-1 .contents {
+/* line 458, ../sass/calendar.scss */
+.view-custom-calendar-floating-pane .contents {
   display: inline-block;
   font-size: 0.8em;
   color: #333;
   width: 100%;
 }
-/* line 435, ../sass/calendar.scss */
-.pane-custom-calendar-floating-pane-panel-pane-1 .contents a {
+/* line 463, ../sass/calendar.scss */
+.view-custom-calendar-floating-pane .contents a {
   color: #333;
 }
-/* line 439, ../sass/calendar.scss */
-.pane-custom-calendar-floating-pane-panel-pane-1 .toptix-purchase {
+/* line 467, ../sass/calendar.scss */
+.view-custom-calendar-floating-pane .toptix-purchase {
   float: right;
 }
-/* line 442, ../sass/calendar.scss */
-.pane-custom-calendar-floating-pane-panel-pane-1 .view-custom-calendar-floating-pane {
+/* line 470, ../sass/calendar.scss */
+.view-custom-calendar-floating-pane .view-custom-calendar-floating-pane {
   position: relative !important;
   left: auto !important;
   width: 300px !important;
   float: right;
   z-index: 50;
 }
-/* line 449, ../sass/calendar.scss */
-.pane-custom-calendar-floating-pane-panel-pane-1 .calendar-agenda-items {
+/* line 477, ../sass/calendar.scss */
+.view-custom-calendar-floating-pane .calendar-agenda-items {
   width: 300px;
   padding: 0 !important;
 }
 
-/* line 459, ../sass/calendar.scss */
+/* line 487, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-container {
   margin-bottom: 20px;
 }
-/* line 462, ../sass/calendar.scss */
+/* line 490, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-left {
   float: left;
   width: 30%;
   position: relative;
 }
 @media (max-width: 767px) {
-  /* line 462, ../sass/calendar.scss */
+  /* line 490, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .lobby-term-left {
     width: 100%;
   }
 }
-/* line 469, ../sass/calendar.scss */
+/* line 497, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-left .flag {
   position: absolute;
   right: 10px;
   z-index: 100;
   top: 10px;
 }
-/* line 476, ../sass/calendar.scss */
+/* line 504, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right {
   float: right;
   width: 70%;
@@ -7495,39 +7535,39 @@ div[id^="panels-ipe-paneid-22"] > * select {
   box-sizing: border-box;
 }
 @media (max-width: 767px) {
-  /* line 476, ../sass/calendar.scss */
+  /* line 504, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .lobby-term-right {
     width: 100%;
   }
 }
-/* line 484, ../sass/calendar.scss */
+/* line 512, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right table tbody {
   border: none;
 }
-/* line 487, ../sass/calendar.scss */
+/* line 515, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .lobby-length {
   color: #919191;
 }
-/* line 490, ../sass/calendar.scss */
+/* line 518, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .table-responsive {
   overflow: visible;
 }
-/* line 492, ../sass/calendar.scss */
+/* line 520, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .table-responsive table {
   margin-bottom: 0;
 }
-/* line 496, ../sass/calendar.scss */
+/* line 524, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .lobby-title {
   margin: 6px 0;
 }
-/* line 499, ../sass/calendar.scss */
+/* line 527, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .calendar-below-title-content {
   color: #919191;
   font-size: 0.9em;
   line-height: 28px;
   margin-bottom: 6px;
 }
-/* line 504, ../sass/calendar.scss */
+/* line 532, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .calendar-below-title-content span {
   border-right: 2px solid;
   padding-right: 8px;
@@ -7535,22 +7575,22 @@ div[id^="panels-ipe-paneid-22"] > * select {
   line-height: 20px;
   display: inline-block;
 }
-/* line 511, ../sass/calendar.scss */
+/* line 539, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .calendar-below-title-content span:last-child {
   border: none;
 }
-/* line 517, ../sass/calendar.scss */
+/* line 545, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby td {
   padding-top: 0;
   padding-bottom: 0;
 }
 @media (max-width: 767px) {
-  /* line 517, ../sass/calendar.scss */
+  /* line 545, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .row-custom-lobby td {
     padding-right: 0 !important;
   }
 }
-/* line 524, ../sass/calendar.scss */
+/* line 552, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby .left {
   float: left;
   width: auto;
@@ -7560,15 +7600,15 @@ div[id^="panels-ipe-paneid-22"] > * select {
   font-size: 19px;
   line-height: 23px;
 }
-/* line 533, ../sass/calendar.scss */
+/* line 561, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby .hall {
   border: none !important;
 }
-/* line 536, ../sass/calendar.scss */
+/* line 564, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby .right {
   float: right;
 }
-/* line 539, ../sass/calendar.scss */
+/* line 567, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby .purchase {
   padding-right: 0;
   padding-left: 0;
@@ -7576,18 +7616,18 @@ div[id^="panels-ipe-paneid-22"] > * select {
   min-height: 1px;
 }
 
-/* line 556, ../sass/calendar.scss */
+/* line 584, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .pane-title {
   display: none;
 }
 
-/* line 559, ../sass/calendar.scss */
+/* line 587, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .ajax-inner {
   background-color: #f9f4ee;
   margin-top: 3%;
 }
 
-/* line 563, ../sass/calendar.scss */
+/* line 591, ../sass/calendar.scss */
 .loading {
   background: url("loading-small.gif") no-repeat scroll 0 0;
   width: 2%;
@@ -7597,7 +7637,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   padding-top: 2%;
 }
 
-/* line 571, ../sass/calendar.scss */
+/* line 599, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .ajax-inner .calendar-full-container {
   width: 1280px !important;
   max-width: 100%;
@@ -7607,7 +7647,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   background-color: #f9f4ee;
 }
 
-/* line 579, ../sass/calendar.scss */
+/* line 607, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .calenders-filter-date p,
 .pane-calendar-full-width-calendar .calendar-floating-top-content span,
 .pane-calendar-full-width-calendar .lobby-title a {
@@ -7617,57 +7657,50 @@ div[id^="panels-ipe-paneid-22"] > * select {
   margin-bottom: 2%;
 }
 
-/* line 587, ../sass/calendar.scss */
+/* line 615, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-summary {
   font-size: 1.1em;
   line-height: 28px;
 }
 
-/* line 591, ../sass/calendar.scss */
+/* line 619, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-container {
   margin-top: 3%;
 }
 
-/* line 595, ../sass/calendar.scss */
+/* line 623, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .addthisevent-drop {
   padding-top: 20px !important;
 }
 
-/* line 598, ../sass/calendar.scss */
+/* line 626, ../sass/calendar.scss */
 .cal-add-event {
   margin-left: 45%;
 }
 
-/* line 601, ../sass/calendar.scss */
+/* line 629, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .calenders-filter-date p {
   margin: 3% 0 2%;
 }
 
-/* line 604, ../sass/calendar.scss */
+/* line 632, ../sass/calendar.scss */
 .ajax-data-calendar .calenders-filter-date p {
   margin-left: 6% !important;
 }
 
-/* line 608, ../sass/calendar.scss */
-.view-custom-calendar-floating-pane {
-  width: 20%;
-  margin: 0;
-  padding: 0;
-}
-
-/* line 613, ../sass/calendar.scss */
+/* line 636, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .view-header {
   background-color: #000;
 }
 
-/* line 616, ../sass/calendar.scss */
+/* line 639, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container {
   overflow-y: hidden !important;
   overflow-x: hidden !important;
   height: 100% !important;
 }
 
-/* line 621, ../sass/calendar.scss */
+/* line 644, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container,
 .view-custom-calendar-floating-pane #multi-day-container tbody,
 .view-custom-calendar-floating-pane #multi-day-container tbody tr,
@@ -7676,7 +7709,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   border: none;
 }
 
-/* line 628, ../sass/calendar.scss */
+/* line 651, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .header-body-divider,
 .view-custom-calendar-floating-pane #single-day-container,
 .view-custom-calendar-floating-pane .single-day-footer,
@@ -7684,13 +7717,13 @@ div[id^="panels-ipe-paneid-22"] > * select {
   display: none;
 }
 
-/* line 634, ../sass/calendar.scss */
+/* line 657, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container tr td .calendar {
   padding: 0;
   margin: 0;
 }
 
-/* line 638, ../sass/calendar.scss */
+/* line 661, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane h3.pull-left {
   color: #fff;
   font-size: 1em;
@@ -7699,12 +7732,12 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: 100%;
 }
 
-/* line 645, ../sass/calendar.scss */
+/* line 668, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .view-header .btn-group {
   position: initial;
 }
 
-/* line 649, ../sass/calendar.scss */
+/* line 672, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .date-nav-wrapper .btn-group a:first-child {
   background: url("../images/more-white-left.png") no-repeat right 0 !important;
   text-indent: -9999px;
@@ -7718,7 +7751,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   outline: 0;
 }
 
-/* line 661, ../sass/calendar.scss */
+/* line 684, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .date-nav-wrapper .btn-group a:last-child {
   background: url("../images/more-white-right.png") no-repeat right 0 !important;
   text-indent: -9999px;
@@ -7732,19 +7765,19 @@ div[id^="panels-ipe-paneid-22"] > * select {
   outline: 0;
 }
 
-/* line 673, ../sass/calendar.scss */
+/* line 696, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .calendar.dayview {
   border-radius: 0 !important;
   background-color: #ECECEB !important;
 }
 
-/* line 677, ../sass/calendar.scss */
+/* line 700, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container tr td .item {
   background-color: #ECECEB !important;
   border-bottom: 1px solid #B3B3B3;
 }
 
-/* line 681, ../sass/calendar.scss */
+/* line 704, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container tr td .item .view-item-custom_calendar_floating_pane {
   padding: 4% 3%;
 }
