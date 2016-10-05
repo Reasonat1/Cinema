@@ -130,11 +130,11 @@
 /********  mini calendar  ********/
 
         $(".float-calendar-wrapper .close-button").click(function() {
-            $(".float-calendar-wrapper").addClass("hide");
+            $(".float-calendar-wrapper").addClass("hide-float");
         });
 
         $(".header-right .today").click(function() {
-            $(".float-calendar-wrapper").toggleClass("hide");
+            $(".float-calendar-wrapper").toggleClass("hide-float");
         });
 
         $(".calendar-agenda-items").css("width",$(".view-custom-calendar-floating-pane").width());
@@ -231,6 +231,7 @@
         }
 
         $(window).resize(function() {
+        $(".calender-filter").css("margin-left",0);
         if ($(window).width() < 768){
           $filterwidth = $(".calender-filter p").size()*70+30;
           $(".calender-filter").css("width",$filterwidth);

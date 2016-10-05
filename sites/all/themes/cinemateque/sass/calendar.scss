@@ -468,12 +468,16 @@
 
 .float-calendar-wrapper{
 	z-index: 300;
-	position: absolute;
+	position: fixed;
 	top:90px;
 	box-sizing: border-box;
 	width: 300px;
 	right: 30px;
 	margin-top: 2px;
+	margin-left: 0;
+	opacity: 1;
+	transition: all 0.5s;
+    -webkit-transition: all 0.5s;
 	@include res(s-m){
 		position: relative;
 		width: 100%;
@@ -483,8 +487,9 @@
 		height: 60%;
 		overflow-y: auto;
 	}
-	&.hide{
-		display: none;
+	&.hide-float{
+		top: -100px;
+		opacity: 0;
 	}
 	.close-button{
 		background-color: #ececeb;
