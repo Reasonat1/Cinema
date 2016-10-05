@@ -179,7 +179,6 @@
           $(".calender-filter").css("width",$filterwidth);
           $left = 0;
           $maxleft = ($filterwidth - $(window).width())*(-1); 
-          alert($maxleft);
           $(".nextday").click(function(){
             if ($left > $maxleft){
               $left = $left - 70;
@@ -193,6 +192,27 @@
             }
           });
         }
+
+        $(window).resize(function() {
+          if ($(window).width() < 768){
+            $filterwidth = $(".calender-filter p").size()*70+30;
+            $(".calender-filter").css("width",$filterwidth);
+            $left = 0;
+            $maxleft = ($filterwidth - $(window).width())*(-1); 
+            $(".nextday").click(function(){
+              if ($left > $maxleft){
+                $left = $left - 70;
+                $(".calender-filter").css("margin-left",$left);
+              }
+            });
+            $(".prevday").click(function(){
+              if ($left < 0){
+                $left = $left + 70;
+                $(".calender-filter").css("margin-left",$left);
+              }
+            });
+          }
+        });
 /******  search overlay  ******/
 
         $(".header-right .search span").click(function() {
