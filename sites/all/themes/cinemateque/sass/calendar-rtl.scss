@@ -137,3 +137,32 @@
 		margin-right: 0;
 	}
 }
+
+/******  float-calendar  ***********/
+
+.float-calendar-wrapper{
+	left: 30px;
+	right: auto;
+	@include res(s-m){
+		left: 0;
+	}
+	.close-button{
+		.close{
+			background-position: right center!important;
+			padding-right: 30px;
+			float: right;
+		}
+	}
+}
+
+.view-custom-calendar-floating-pane{
+	.toptix-purchase{
+		float: left;
+		margin-left: 5px;
+		margin-right: 0;
+	}
+}
+
+.calendar-calendar div.calendar{
+	text-align: right;
+}

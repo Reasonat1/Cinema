@@ -17,7 +17,7 @@ $plugin = array(
  */
 function node_teaser_node_content_form($form, &$form_state) {
     $conf = $form_state['conf'];
-
+    //drupal_set_message('<prre>'.print_r($conf, 1).'</pre>');
     $content_type = db_query("select type,name from node_type")->fetchAll();
     $option = array();
     foreach ($content_type as $val) {
@@ -25,7 +25,6 @@ function node_teaser_node_content_form($form, &$form_state) {
             $option[$val->type] = $val->name;
         }
     }
-
     $type = array('0' => '-select-');
     $form['#prefix'] = '<fieldset id="edit-node-teaser" class="form-wrapper">
                                      <legend><span class="fieldset-legend"><a href="#" class="fieldset-title">Node Teaser View Setting</a><span class="summary"></span></span></legend>
@@ -49,8 +48,10 @@ function node_teaser_node_content_form($form, &$form_state) {
         '#type' => 'textfield',
         '#title' => t('Select Node'),
         '#description' => t('Choose  the node to display'),
-        //'#default_value' => $conf['node_id'],
-        '#autocomplete_path' => 'node/autocomplete',
+        '#default_value' => $conf['node_id'],
+        '#autocomplete_path' => 'node/title/autocomplete',
+        '#prefix' => '<div id="selected_content_type">',
+        '#suffix' => '</div>',
     );
 
     $form['top_black_title'] = array(
@@ -117,6 +118,7 @@ function node_teaser_node_content_form($form, &$form_state) {
  * Edit form submit function.
  */
 function node_teaser_node_content_form_submit($form, &$form_state) {
+    //drupal_set_message('<prre>'.print_r($form_state, 1).'</pre>');
     $form_state['conf']['content_type'] = $form_state['values']['content_type'];
     $form_state['conf']['node_id'] = $form_state['values']['node_id'];
     $form_state['conf']['top_black_title'] = $form_state['values']['top_black_title'];
@@ -138,10 +140,13 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             return;
         }
     }
-
+    
     global $base_url;
     $content_type = $conf['content_type'];
-    $nid = $conf['node_id'];
+    $nid_string = $conf['node_id'];
+    $nid_string_parts = explode( "(" , $nid_string );
+    $nid_parts = explode( ")" , $nid_string_parts[1]);
+    $nid = $nid_parts[0];
     $top_black_title = $conf['top_black_title'];
     $top_white_title = $conf['top_white_title'];
     $movie_image = $conf['movie_image'];
@@ -151,7 +156,6 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
     $upcomming_event = $conf['upcomming_event'];
     $override_title_text = $conf['override_title_text'];
     $movie_teaser_text = $conf['movie_teaser_text'];
-
     // Render as a block.
     $block = new stdClass();
     $block->module = 'node_teaser';
@@ -213,24 +217,24 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             if ($top_black_title == '') {
                 if (!empty($val->black_content)) {
                     $data_b = $val->black_content;
-                    $black_content = "<span class='black'>$data_b</span>";
+                    $black_content = "<span class='black-content'>$data_b</span>";
                 } else {
                     $black_content = '';
                 }
             } else {
-                $black_content = "<span class='black'>$top_black_title</span>";
+                $black_content = "<span class='black-content'>$top_black_title</span>";
             }
 
            // event white box content
             if ($top_white_title == '') {
                 if (!empty($val->white_content)) {
                     $data_w = $val->white_content;
-                    $white_content = "<span class='white'>$data_w</span>";
+                    $white_content = "<span class='black-white'>$data_w</span>";
                 } else {
                     $white_content = '';
                 }
             }else{
-                $white_content = "<span class='white'>$top_white_title</span>";
+                $white_content = "<span class='black-white'>$top_white_title</span>";
             }
 
             // show teaser text
@@ -258,17 +262,95 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             } else {
                 $movie_duration = $movie_metainfo;
             }
-
+        // Event other screening
+        if($upcomming_event == 1){
+            $results_rel_events = db_query("SELECT DISTINCT node_field_data_field_cm_event_lineup.nid AS node_field_data_field_cm_event_lineup_nid, field_data_field_cm_event_time.field_cm_event_time_value AS field_data_field_cm_event_time_field_cm_event_time_value
+            FROM {node} node LEFT JOIN {field_data_field_cm_event_lineup} field_data_field_cm_event_lineup ON node.nid = field_data_field_cm_event_lineup.entity_id AND (field_data_field_cm_event_lineup.entity_type = 'node' AND field_data_field_cm_event_lineup.deleted = '0') INNER JOIN {node} node_field_data_field_cm_event_lineup ON field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = node_field_data_field_cm_event_lineup.nid LEFT JOIN {field_data_field_cm_event_time} field_data_field_cm_event_time ON node.nid = field_data_field_cm_event_time.entity_id AND (field_data_field_cm_event_time.entity_type = 'node' AND field_data_field_cm_event_time.deleted = '0') WHERE (( (node.nid = '$nid' ) )AND(( (node.status = '1') AND (node.type IN  ('cm_event')) AND (node.language IN  ('$lang_name')) ))) ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAll();
+            $event_rel_event = '';
+            $movie_rel_nid = $results_rel_events[0]->node_field_data_field_cm_event_lineup_nid;
+            $node_type = node_load($movie_rel_nid);
+            $types = $node_type->type;
+            $current_nid = $nid;
+             $result_rel_movie_rel_movie = db_query("SELECT DISTINCT node.nid AS nid, field_data_field_cm_event_time.field_cm_event_time_value AS field_data_field_cm_event_time_field_cm_event_time_value FROM {node} node LEFT JOIN {field_data_field_cm_event_lineup} field_data_field_cm_event_lineup ON node.nid = field_data_field_cm_event_lineup.entity_id AND (field_data_field_cm_event_lineup.entity_type = 'node' AND field_data_field_cm_event_lineup.deleted = '0') LEFT JOIN {node} node_field_data_field_cm_event_lineup ON field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = node_field_data_field_cm_event_lineup.nid LEFT JOIN {field_data_field_cm_event_time} field_data_field_cm_event_time ON node.nid = field_data_field_cm_event_time.entity_id AND (field_data_field_cm_event_time.entity_type = 'node' AND field_data_field_cm_event_time.deleted = '0')
+          WHERE (( (field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = '$movie_rel_nid' ) )AND(( (node.status = '1') AND (node_field_data_field_cm_event_lineup.type IN  ('$types')) AND (node.language IN  ('$lang_name')) )))
+          ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAll();
+            //$row_count = count($result_rel_movie_rel_movie);
+              $event_rel_event .= '<div class="table-responsive">';
+               $event_rel_event .= '<table class="table">';
+                 $event_rel_event .= '<tbody>';
+                 $a= 0;
+                 //$row_count = count($result_rel_movie);
+                 foreach($result_rel_movie_rel_movie as $val_event){
+                   $a++;
+                   $node_val_event = node_load($val_event->nid);
+                   
+                   if($node_val_event->nid !=$current_nid){
+                     if(!empty($node_val_event->nid)){
+                       $event_title = (!empty($node_val_event->field_cm_event_short_title)) ? $node_val_event->field_cm_event_short_title['und'][0]['value'] : $node_val_event->title;
+                       $title_new = t($event_title);
+                     }else{
+                       $title_new = '<div class="hide-div"></div>';
+                     }
+                     $path = drupal_get_path_alias('node/'.$node_val_event->nid);
+                      $flag_rel_event = flag_create_link('favorite_', $node_val_event->nid);
+                      $addevent = '<div class="views-field views-field-php add-event">'._return_addthisevent_markup($node_val_event).'</div>';
+                      if(!empty($node_val_event->field_cm_event_internal_id['und'])){
+                          $event_code = t($node_val_event->field_cm_event_internal_id['und'][0]['value']);
+                      }else{
+                        $event_code = '<div class="hide-div"></div>';
+                      }
+                       if(!empty($node_val_event->field_cm_event_time['und'])){
+                         $event_date = date('l d.m.y', $node_val_event->field_cm_event_time['und'][0]['value']);
+                         $event_date_mobile = date('d.m.y', $node_val_event->field_cm_event_time['und'][0]['value']);
+                       }else{
+                          $event_date = '<div class="hide-div"></div>';
+                       }
+                      if(!empty($node_val_event->field_cm_event_time['und'])){
+                          $event_time = date('G:i', $node_val_event->field_cm_event_time['und'][0]['value']);
+                      }else{
+                          $event_time = '<div class="hide-div"></div>';
+                      }
+                      if(!empty($node_val_event->field_cm_event_hall['und'])){
+                          $hall_id = taxonomy_term_load($node_val_event->field_cm_event_hall['und'][0]['target_id']);
+                          $hall_name = t($hall_id->name);
+                      }else{
+                        $hall_name = '<div class="hide-div"></div>';
+                      }
+                      if(!empty($node_val_event->field_toptix_purchase['und'])){
+                         $toptix_code = $node_val_event->field_toptix_purchase['und'][0]['value'];
+                         $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
+                         $puchase = '<button data-url="'.$top_link.'" class="toptix-purchase">'.t('TICKETS').'</button>';
+                      }else{
+                       $puchase = '<div class="hide-div"></div>';
+                      }
+                    $event_rel_event .= '<tr class="row-custom-lobby">';
+                     $event_rel_event .= '<td class="date only-desktop">'. t($event_date). '</td>';
+                     $event_rel_event .= '<td class="time"><div class="only-mobile">'.$event_date_mobile.'</div>'.$event_time.'</td>';
+                     $event_rel_event .= '<td class="hall only-desktop">'. $hall_name .'<div class="only-mobile">'.$event_code.'</td>';
+                     $event_rel_event .= '<td class="title only-desktop">'. l($title_new, $path) .'</td>';
+                     $event_rel_event .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div>'.t($event_code).'</td>';
+                     $event_rel_event .= '<td class="flag only-desktop">' .$flag_rel_event .'</td>';
+                     $event_rel_event .= '<td class="add-event only-desktop">' ._return_addthisevent_markup($node_val_event) .'</td>';
+                     $event_rel_event .= '<td class="views-field views-field-field-toptix-purchase last-mobile">'.$puchase.'</td>';
+                    $event_rel_event .= '</tr>';
+                   }
+                 }
+                 $event_rel_event .= '</tbody>';
+               $event_rel_event .= '</table>';
+              $event_rel_event .= '</div>';
+        }
+        //
             $title = $val->title;
             $alias = $base_url . '/' . drupal_lookup_path('alias', "node/" . $val->nid);
             $html.= "<div class='row-$row_class teaser-row $class'>";
             $html.= "<div class='wrapper-image'><div class='event-image'>$imgae</div>";
-            $html.= "<div class='top-text-blk-wht'>$black_content $white_content</div>";
+            $html.= "<div class='event-date-black-white-background'>$black_content $white_content</div>";
             $html.= "<div class='event-flag'>$flag</div>";
             $html.= "<div class='text-on-image'><div class='event-title'><span>".l($title,'node/'.$val->nid,array('html'=>TRUE))."</span></div>";
             $html.= "<div class='event-time'><span class='time'>$time</span><span class='date'>$date</span><a href='$alias'><span class='ticket'>Ticket</span></a></div></div></div>";
             $html.= "<div class='movie_metainfo'><span>$movie_duration</span></div>";
             $html.= "<div class='event-summery'>$description</div>";
+            $html.= "<div class='movie-teaser-related-event'>$event_rel_event</div>";
             $html.= "</div>";
             $no++;
         }
@@ -332,12 +414,12 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             if ($top_black_title == '') {
                 if (!empty($val->black_content)) {
                     $data_b = $val->black_content;
-                    $black_content = "<span class='black'>$data_b</span>";
+                    $black_content = "<span class='black-content'>$data_b</span>";
                 } else {
                     $black_content = "";
                 }
             } else {
-                $black_content = "<span class='black'>$top_black_title</span>";
+                $black_content = "<span class='black-content'>$top_black_title</span>";
             }
 
 
@@ -345,12 +427,12 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             if ($top_white_title == '') {
                 if (!empty($val->white_content)) {
                     $data_w = $val->white_content;
-                    $white_content = "<span class='white'>$data_w</span>";
+                    $white_content = "<span class='black-white'>$data_w</span>";
                 } else {
                     $white_content = "";
                 }
             } else {
-                $white_content = "<span class='white'>$top_white_title</span>";
+                $white_content = "<span class='black-white'>$top_white_title</span>";
             }
 
             // check for movie video
@@ -393,15 +475,79 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             } else {
                 $title = $movie_title;
             }
-
+           //Movie related event
+        if($upcomming_event == 1){
+               $results = db_query("SELECT DISTINCT node.nid AS nid, field_data_field_cm_event_time.field_cm_event_time_value AS field_data_field_cm_event_time_field_cm_event_time_value
+    FROM {node} node LEFT JOIN {field_data_field_cm_event_lineup} field_data_field_cm_event_lineup ON node.nid = field_data_field_cm_event_lineup.entity_id AND (field_data_field_cm_event_lineup.entity_type = 'node' AND field_data_field_cm_event_lineup.deleted = '0') LEFT JOIN {node} node_field_data_field_cm_event_lineup ON field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = node_field_data_field_cm_event_lineup.nid LEFT JOIN {field_data_field_cm_event_time} field_data_field_cm_event_time ON node.nid = field_data_field_cm_event_time.entity_id AND (field_data_field_cm_event_time.entity_type = 'node' AND field_data_field_cm_event_time.deleted = '0')
+    WHERE (( (field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = '$nid' ) )AND(( (node.status = '1') AND (node_field_data_field_cm_event_lineup.type IN  ('cm_movie')) AND (node.language IN  ('$lang_name')))))
+    ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAll();
+            //$row_count = count($results);
+            $output_movie_event ='';
+            $output_movie_event .='<div class="table-responsive">';
+              $output_movie_event .= '<table class="table">';
+                $output_movie_event .= ' <tbody>';
+                foreach($results as $val){
+                  $movie_event_nid = $val->nid;
+                  $movie_event_info = node_load($movie_event_nid);
+                  $flag_moviegroup_event = flag_create_link('favorite_', $movie_event_info->nid);
+                  $event_title = t($movie_event_info->title);
+                 $path = drupal_get_path_alias('node/'.$movie_event_info->nid);
+                 $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($movie_event_info).'</div>';
+                 if(!empty($movie_event_info->field_cm_event_time['und'])){
+                  $event_date = date('l d.m.y', $movie_event_info->field_cm_event_time['und'][0]['value']);
+                  $event_date_mobile = date('d.m.y', $movie_event_info->field_cm_event_time['und'][0]['value']);
+                  $event_time = date('G:i', $movie_event_info->field_cm_event_time['und'][0]['value']);
+                 }
+                  $output_movie_event .= '<tr class="row-custom-lobby">';
+                   $output_movie_event .= '<td class="date only-desktop">'.t($event_date).'</td>';
+                   $output_movie_event .= '<td class="time"><div class="only-mobile">'.$event_date_mobile.'</div>'.$event_time.'</td>';
+                   if(!empty($movie_event_info->field_cm_event_hall['und'])){
+                       $hall_id = taxonomy_term_load($movie_event_info->field_cm_event_hall['und'][0]['target_id']);
+                       $hall_name = $hall_id->name;
+                       $output_movie_event .= '<td class="hall only-desktop">'.t($hall_name).'</td>';
+                   }
+                   else{
+                       $hall_name = "";
+                       $output_movie_event .= '<td class="hall only-desktop"></td>';
+                   }
+                   $output_movie_event .= '<td class="title only-desktop">';
+                   if(!empty($event_title)){
+                     $output_movie_event .= l($event_title, $path);
+                   }
+                   $output_movie_event .= '</td>';
+                   if(!empty($movie_event_info->field_cm_event_internal_id['und'])){
+                     $event_code = $movie_event_info->field_cm_event_internal_id['und'][0]['value'];
+                     $output_movie_event .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div>'.t($event_code).'</td>';
+                   }
+                   else{
+                     $output_movie_event .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div></td>';
+                   }
+                   $output_movie_event .='<td class="flag only-desktop">'. $flag_moviegroup_event . '</td>';
+                   $output_movie_event .='<td class="add-event only-desktop">'. $addevent . '</td>';
+                   if(!empty($movie_event_info->field_toptix_purchase['und'])){
+                   $toptix_code = $movie_event_info->field_toptix_purchase['und'][0]['value'];
+                   $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
+                   $output_movie_event .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t("TICKETS").'</button>'.'</td>';
+                   } 
+                   else{
+                     $output_movie_event .= '<td class="purchase"></td>';
+                   }
+                  $output_movie_event .= '</tr>';
+                }
+                $output_movie_event .= ' </tbody>';
+              $output_movie_event .= '</table>';
+            $output_movie_event .= '</div>';
+        }
+           //
             $html.= "<div class='row-$row_class teaser-row $class'>";
             $html.= "<div class='wrapper-image'><div class='movie-image'>$imgae</div>";
-            $html.= "<div class='top-text-blk-wht'>$black_content $white_content</div>";
+            $html.= "<div class='movie-date-black-white-background'>$black_content $white_content</div>";
             $html.= "<div class='movie-flag'>$flag</div>";
             $html.= "<div class='text-on-image'><div class='movie-title'><span>".l($title,'node/'.$val->nid,array('html'=>TRUE))."</span></div>";
             $html.= "<div class='movie_play'><span>$play_icon</span></div></div></div>";
             $html.= "<div class='movie_metainfo'><span>$movie_duration</span></div>";
             $html.= "<div class='movie_summery'><span>$description</span></div>";
+            $html.= "<div class='movie-teaser-related-event'>$output_movie_event</div>";
             $html.= "</div>";
             $no++;
         }
@@ -465,12 +611,12 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             if ($top_black_title == '') {
                 if (!empty($val->black_content)) {
                     $data_b = $val->black_content;
-                    $black_content = "<span class='black'>$data_b</span>";
+                    $black_content = "<span class='black-content'>$data_b</span>";
                 } else {
                     $black_content = "";
                 }
             } else {
-                $black_content = "<span class='black'>$top_black_title</span>";
+                $black_content = "<span class='black-content'>$top_black_title</span>";
             }
 
 
@@ -478,12 +624,12 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             if ($top_white_title == '') {
                 if (!empty($val->white_content)) {
                     $data_w = $val->white_content;
-                    $white_content = "<span class='white'>$data_w</span>";
+                    $white_content = "<span class='black-white'>$data_w</span>";
                 } else {
                     $white_content = "";
                 }
             } else {
-                $white_content = "<span class='white'>$top_white_title</span>";
+                $white_content = "<span class='black-white'>$top_white_title</span>";
             }
 
             // check for movie video
@@ -523,15 +669,76 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             } else {
                 $title = $movie_title;
             }
-
+           // Movie group related events
+            if($upcomming_event == 1){
+                $result = db_query("SELECT DISTINCT node.nid AS nid, field_data_field_cm_event_time.field_cm_event_time_value AS field_data_field_cm_event_time_field_cm_event_time_value FROM {node} node LEFT JOIN {field_data_field_cm_event_lineup} field_data_field_cm_event_lineup ON node.nid = field_data_field_cm_event_lineup.entity_id AND (field_data_field_cm_event_lineup.entity_type = 'node' AND field_data_field_cm_event_lineup.deleted = '0') LEFT JOIN {node} node_field_data_field_cm_event_lineup ON field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = node_field_data_field_cm_event_lineup.nid LEFT JOIN {field_data_field_cm_event_time} field_data_field_cm_event_time ON node.nid = field_data_field_cm_event_time.entity_id AND (field_data_field_cm_event_time.entity_type = 'node' AND field_data_field_cm_event_time.deleted = '0') WHERE (( (field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = '$nid') )AND(( (node.status = '1') AND (node_field_data_field_cm_event_lineup.type IN  ('cm_movie_group'))))) ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAll();
+                //$row_count = count($result);
+                $output_movie_group_event ='';
+                $output_movie_group_event .='<div class="table-responsive">';
+                    $output_movie_group_event .= '<table class="table">';
+                        $output_movie_group_event .= ' <tbody>';
+                        foreach($result as $val){
+                        $movie_group_event_nid = $val->nid;
+                        $movie_group_event_info = node_load($movie_group_event_nid);
+                        $flag_moviegroup_event = flag_create_link('favorite_', $movie_group_event_info->nid);
+                        $event_title = t($movie_group_event_info->title);
+                        $path = drupal_get_path_alias('node/'.$movie_group_event_info->nid);
+                        $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($movie_group_event_info).'</div>';
+                        if(!empty($movie_group_event_info->field_cm_event_time['und'])){
+                        $event_date = date('l d.m.y', $movie_group_event_info->field_cm_event_time['und'][0]['value']);
+                        $event_date_mobile = date('d.m.y', $movie_group_event_info->field_cm_event_time['und'][0]['value']);
+                        $event_time = date('G:i', $movie_group_event_info->field_cm_event_time['und'][0]['value']);
+                        }
+                            $output_movie_group_event .= '<tr class="row-custom-lobby">';
+                                $output_movie_group_event .= '<td class="date only-desktop">'.t($event_date).'</td>';
+                                $output_movie_group_event .= '<td class="time"><div class="only-mobile">'.$event_date_mobile.'</div>'.$event_time.'</td>';
+                                if(!empty($movie_group_event_info->field_cm_event_hall['und'])){
+                                $hall_id = taxonomy_term_load($movie_group_event_info->field_cm_event_hall['und'][0]['target_id']);
+                                $hall_name = $hall_id->name;
+                                $output_movie_group_event .= '<td class="hall only-desktop">'.t($hall_name).'</td>';
+                                }
+                                else{
+                                $hall_name = "";
+                                $output_movie_group_event .= '<td class="hall only-desktop"></td>';
+                                }
+                                $output_movie_group_event .= '<td class="title only-desktop">';
+                                if(!empty($event_title)){
+                                $output_movie_group_event .= l($event_title, $path);
+                                }
+                                $output_movie_group_event .= '</td>';
+                                if(!empty($movie_group_event_info->field_cm_event_internal_id['und'])){
+                                $event_code = $movie_group_event_info->field_cm_event_internal_id['und'][0]['value'];
+                                $output_movie_group_event .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div>'.t($event_code).'</td>';
+                                }
+                                else{
+                                $output_movie_group_event .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div></td>';
+                                }
+                                $output_movie_group_event .='<td class="flag only-desktop">'. $flag_moviegroup_event . '</td>';
+                                $output_movie_group_event .='<td class="add-event only-desktop">'. $addevent . '</td>';
+                                if(!empty($movie_group_event_info->field_toptix_purchase['und'])){
+                                $toptix_code = $movie_group_event_info->field_toptix_purchase['und'][0]['value'];
+                                $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
+                                $output_movie_group_event .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t("TICKETS").'</button>'.'</td>';
+                                } 
+                                else{
+                                $output_movie_group_event .= '<td class="purchase"></td>';
+                            }
+                            $output_movie_group_event .= '</tr>';
+                        }
+                        $output_movie_group_event .= ' </tbody>';
+                    $output_movie_group_event .= '</table>';
+                $output_movie_group_event .= '</div>';
+            }
+           //end
             $html.= "<div class='row-$row_class teaser-row $class'>";
             $html.= "<div class='wrapper-image'><div class='moviegroup-image'>$imgae</div>";
-            $html.= "<div class='top-text-blk-wht'>$black_content $white_content</div>";
+            $html.= "<div class='movie-date-black-white-background'>$black_content $white_content</div>";
             $html.= "<div class='moviegroup-flag'>$flag</div>";
             $html.= "<div class='text-on-image'><div class='moviegroup-title'><span>".l($title,'node/'.$val->nid,array('html'=>TRUE))."</span></div>";
             $html.= "<div class='moviegroup_play'><span>$play_icon</span></div></div></div>";
             $html.= "<div class='moviegroup_metainfo'><span>$moviegroup_duration</span></div>";
             $html.= "<div class='moviegroup_summery'><span>$description</span></div>";
+            $html.= "<div class='movie-teaser-related-event'>$output_movie_group_event</div>";
             $html.= "</div>";
             $no++;
         }
@@ -694,12 +901,12 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             if ($top_black_title == '') {
                 if (!empty($val->black_content)) {
                     $data_b = $val->black_content;
-                    $black_content = "<span class='black'>$data_b</span>";
+                    $black_content = "<span class='black-content'>$data_b</span>";
                 } else {
                     $black_content = "";
                 }
             } else {
-                $black_content = "<span class='black'>$top_black_title</span>";
+                $black_content = "<span class='black-content'>$top_black_title</span>";
             }
 
 
@@ -707,12 +914,12 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
             if ($top_white_title == '') {
                 if (!empty($val->white_content)) {
                     $data_w = $val->white_content;
-                    $white_content = "<span class='white'>$data_w</span>";
+                    $white_content = "<span class='black-white'>$data_w</span>";
                 } else {
                     $white_content = "";
                 }
             } else {
-                $white_content = "<span class='white'>$top_white_title</span>";
+                $white_content = "<span class='black-white'>$top_white_title</span>";
             }
 
 
@@ -765,3 +972,4 @@ function node_teaser_node_content_form_info($subtype, $conf, $contexts) {
         return node_teaser_node_content_form_render($subtype, $conf, $args = null, $context = null);
     }
 }
+

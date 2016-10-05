@@ -99,6 +99,9 @@
 	.favorite a{
 		height: 24px!important;
 	}
+	.today span{
+		height: 24px!important;
+	}
 }
 
 .header #site-main-menu{
@@ -148,6 +151,19 @@
 		float:left;
 	}
 }
+
+.navbar-brand{
+	> img {
+		float: right;
+	}
+	.site-name{
+	    float: left;
+	    margin-right: 10px;
+	    margin-left: 0;
+	    width: 140px;
+	}
+}
+
 
 #myModal {
 	.webform-component {

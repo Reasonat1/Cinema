@@ -434,7 +434,7 @@
           $duration_info = $event_credit . $lengths;
         break;
         default:
-          $image = '';
+          $image = $default_user_image;
           $title = '';
           $sort_summary = '';
           $event_info = '';

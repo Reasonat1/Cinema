@@ -94,3 +94,12 @@ function cinematic_festival_taxonomy_term_update($term) {
     ))
     ->execute();
 }
+
+function cinematic_festival_taxonomy_term_delete($term) {
+  if ($term->vocabulary_machine_name != 'festival') {
+    return;
+  }
+  db_delete('cinematic_term_menu')
+    ->condition('tid', $term->tid)
+    ->execute();
+}

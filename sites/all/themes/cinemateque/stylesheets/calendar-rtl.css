@@ -187,3 +187,34 @@
   margin-left: 20px;
   margin-right: 0;
 }
+
+/******  float-calendar  ***********/
+/* line 143, ../sass/calendar-rtl.scss */
+.float-calendar-wrapper {
+  left: 30px;
+  right: auto;
+}
+@media (max-width: 767px) {
+  /* line 143, ../sass/calendar-rtl.scss */
+  .float-calendar-wrapper {
+    left: 0;
+  }
+}
+/* line 150, ../sass/calendar-rtl.scss */
+.float-calendar-wrapper .close-button .close {
+  background-position: right center !important;
+  padding-right: 30px;
+  float: right;
+}
+
+/* line 159, ../sass/calendar-rtl.scss */
+.view-custom-calendar-floating-pane .toptix-purchase {
+  float: left;
+  margin-left: 5px;
+  margin-right: 0;
+}
+
+/* line 166, ../sass/calendar-rtl.scss */
+.calendar-calendar div.calendar {
+  text-align: right;
+}

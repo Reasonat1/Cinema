@@ -695,6 +695,14 @@ img.panopoly-image-full{
 			width: 24px;
 			display: block;
 		}
+		.today span{
+			background: url("../images/time.png") no-repeat 0 bottom;
+			text-indent: -9999px;
+			height: 22px;
+			width: 24px;
+			display: block;
+			cursor: pointer;
+		}
 		.language-switcher-locale-url{
 			a{
 				background: url("../images/hebrew-icon.png") no-repeat 0 2px;
@@ -1160,9 +1168,24 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 	opacity: 1;
 }
 
-.navbar-brand > img {
-	height: 50px;
-	transition: all 0.5s ease 0s;
+.navbar-brand{
+	> img {
+		height: 50px;
+		transition: all 0.5s ease 0s;
+		float: left;
+	}
+	.site-name{
+	    color: #fff;
+	    float: right;
+	    font-size: 16px;
+	    line-height: 18px;
+	    margin-left: 10px;
+	    margin-top: -4px;
+	    width: 140px;
+	    @include res(s-m){
+	    	display: none;
+	    }
+	}
 }
 
 .site-custom-menu.menu.nav.navbar-nav {

@@ -121,9 +121,11 @@
 		padding-top: 30px;
 		padding-bottom: 30px;		
 		.panels-flexible-row-node_page-6-inside .panels-flexible-region{
-			padding: 0 23%;
+			width: calc(92% - 180px);
+			float: right;
 			@include res(s-m){
 				padding: 0;
+				width: 100%;
 			}
 		}
 	}
