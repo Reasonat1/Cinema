@@ -425,7 +425,6 @@
 	box-sizing: border-box;
 	width: 300px;
 	right: 30px;
-	border: 1px solid #B3B3B3;
 	@include res(s-m){
 		position: relative;
 		width: 100%;
@@ -442,6 +441,8 @@
 		background-color: #ececeb;
 		padding: 17px 12px;
 		overflow: hidden;
+		border: 1px solid #B3B3B3;
+		border-top: none;
 		.close{
 			@include main-color;
 			opacity: 1;
@@ -465,6 +466,14 @@
 .view-custom-calendar-floating-pane{
 	.calendar-calendar div.calendar{
 		font-size: 18px;
+	}
+	.view-content{
+		border: 1px solid #B3B3B3;
+		border-top: none;
+		@include res(s-m){
+			max-height: 270px;
+			overflow-y: auto;
+		}
 	}
 	.contents{
 		display: inline-block;
@@ -715,6 +724,10 @@
 .view-custom-calendar-floating-pane #multi-day-container tr td .item{
     background-color: #ECECEB !important;
     border-bottom: 1px solid #B3B3B3;
+}
+
+.view-custom-calendar-floating-pane #multi-day-container tr td .item:last-child{
+    border: none;
 }
 
 .view-custom-calendar-floating-pane #multi-day-container tr td .item .view-item-custom_calendar_floating_pane{
