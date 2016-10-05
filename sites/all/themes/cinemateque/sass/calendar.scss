@@ -458,8 +458,6 @@
 	box-sizing: border-box;
 	width: 300px;
 	right: 30px;
-	margin-top: 2px;
-	margin-left: 0;
 	opacity: 1;
 	transition: all 0.5s;
     -webkit-transition: all 0.5s;
@@ -468,7 +466,6 @@
 		padding: 0!important;
 		left: 0;
 		top: 50px;
-		height: 60%;
 		overflow-y: auto;
 	}
 	&.hide-float{
@@ -493,6 +490,8 @@
 	}
 
 }
+
+
 
 #main-menu .mini-calendar {
 	cursor: pointer;
@@ -696,9 +695,7 @@
 .pane-calendar-full-width-calendar .calenders-filter-date p{
     margin: 3% 0 2%;
 }
-.ajax-data-calendar .calenders-filter-date p{
-    margin-left: 6% !important;
-}
+
 
 .view-custom-calendar-floating-pane .view-header{
    background-color: #000; 

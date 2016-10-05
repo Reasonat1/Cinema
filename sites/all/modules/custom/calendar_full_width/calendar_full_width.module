@@ -111,7 +111,6 @@ function calendar_full_width_block_content(){
      $output.="<div class='calenders'>";
      $output.= $filter;
      $output.="<div class='ajax-inner'>";
-     $output.="<div class='load-inner'></div>";
      $output.="<div class='calendar-full-container'>";
       $output.="<div class='calenders-filter-date'><p class='pull-left'>$selected_filter</p></div>";
       foreach($result as $val){
@@ -212,7 +211,8 @@ function calendar_full_width_block_content(){
  * Ajax filteration of complex calender
  */
 function ajax_calender_full_width_filter(){
-    
+    $default_image = '<img src="/sites/all/themes/cinemateque/images/default-image-pane-2.png">';
+    $default_user_image = '<img src="/sites/all/themes/cinemateque/images/user-default.jpg">';
     global $language ;
     $lang_name = isset($language->language) ? $language->language : '';
     if($lang_name == ''){
@@ -235,9 +235,8 @@ function ajax_calender_full_width_filter(){
               ORDER BY event_start_time ASC")->fetchAll();
     $result_count = count($result);
      $output.="<div class='ajax-inner ajax-data-calendar'>";
-      $output.="<div class='load-inner'></div>";
-     $output.="<div class='calenders-filter-date'><p class='pull-left'>$selected_filter</p></div>";
       $output.="<div class='calendar-full-container'>";
+      $output.="<div class='calenders-filter-date'><p class='pull-left'>$selected_filter</p></div>";
       foreach($result as $val){
         $node = node_load($val->nid);
         $flag = '<span class="flag-event">'.flag_create_link('favorite_', $node->nid).'</span>';
@@ -282,7 +281,7 @@ function ajax_calender_full_width_filter(){
           $picture_path_event = $node->field_cm_event_images['und'][0]['uri'];
           $image_event = '<img src="' . image_style_url('lobby', $picture_path_event) . '" alt="" />';
         }else{
-            $image_event = '';
+            $image_event = $default_image;
         }
         if(!empty($node->field_event_top_text_white['und'])){
             $white_text_event = '<span class="white">'. $node->field_event_top_text_white['und'][0]['value'] . '</span>'; 

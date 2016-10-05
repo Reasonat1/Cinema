@@ -231,7 +231,7 @@
         }
 
         $(window).resize(function() {
-        $(".calender-filter").css("margin-left",0);
+        $(".calender-filter").css("margin","50px auto");
         if ($(window).width() < 768){
           $filterwidth = $(".calender-filter p").size()*70+30;
           $(".calender-filter").css("width",$filterwidth);
@@ -288,6 +288,7 @@
           });
         }
         });
+
 /******  search overlay  ******/
 
         $(".header-right .search span").click(function() {
