@@ -177,8 +177,45 @@
         if ($(window).width() < 768){
           $filterwidth = $(".calender-filter p").size()*70+30;
           $(".calender-filter").css("width",$filterwidth);
+          $maxleft = ($filterwidth - $(window).width())*(-1)-30; 
           $left = 0;
-          $maxleft = ($filterwidth - $(window).width())*(-1); 
+          $i = 0;
+          $('.calender-filter p').each(function () {
+            if (!$(this).hasClass("active")){
+              $i ++;
+            }
+            if ($(this).hasClass("active")){
+              return false;            
+            }
+          });
+          $left = $left + (-70)*($i-1);
+          if ($left < $maxleft){
+              $left = $maxleft;
+          }
+          if ($left > 0){
+              $left = 0;
+          }
+          $(".calender-filter").css("margin-left",$left);
+          $(".calender-filter p").click(function(){
+            $left = 0;
+            $i = 0
+            $('.calender-filter p').each(function () {
+              if (!$(this).hasClass("active")){
+                $i ++;
+              }
+              if ($(this).hasClass("active")){
+                return false;            
+              }
+            });
+            $left = $left + (-70)*($i-1);
+            if ($left < $maxleft){
+              $left = $maxleft;
+            }
+            if ($left > 0){
+              $left = 0;
+            }
+            $(".calender-filter").css("margin-left",$left);
+          });
           $(".nextday").click(function(){
             if ($left > $maxleft){
               $left = $left - 70;
@@ -194,24 +231,61 @@
         }
 
         $(window).resize(function() {
-          if ($(window).width() < 768){
-            $filterwidth = $(".calender-filter p").size()*70+30;
-            $(".calender-filter").css("width",$filterwidth);
-            $left = 0;
-            $maxleft = ($filterwidth - $(window).width())*(-1); 
-            $(".nextday").click(function(){
-              if ($left > $maxleft){
-                $left = $left - 70;
-                $(".calender-filter").css("margin-left",$left);
-              }
-            });
-            $(".prevday").click(function(){
-              if ($left < 0){
-                $left = $left + 70;
-                $(".calender-filter").css("margin-left",$left);
-              }
-            });
+        if ($(window).width() < 768){
+          $filterwidth = $(".calender-filter p").size()*70+30;
+          $(".calender-filter").css("width",$filterwidth);
+          $maxleft = ($filterwidth - $(window).width())*(-1)-30; 
+          $left = 0;
+          $i = 0;
+          $('.calender-filter p').each(function () {
+            if (!$(this).hasClass("active")){
+              $i ++;
+            }
+            if ($(this).hasClass("active")){
+              return false;            
+            }
+          });
+          $left = $left + (-70)*($i-1);
+          if ($left < $maxleft){
+              $left = $maxleft;
           }
+          if ($left > 0){
+              $left = 0;
+          }
+          $(".calender-filter").css("margin-left",$left);
+          $(".calender-filter p").click(function(){
+            $left = 0;
+            $i = 0
+            $('.calender-filter p').each(function () {
+              if (!$(this).hasClass("active")){
+                $i ++;
+              }
+              if ($(this).hasClass("active")){
+                return false;            
+              }
+            });
+            $left = $left + (-70)*($i-1);
+            if ($left < $maxleft){
+              $left = $maxleft;
+            }
+            if ($left > 0){
+              $left = 0;
+            }
+            $(".calender-filter").css("margin-left",$left);
+          });
+          $(".nextday").click(function(){
+            if ($left > $maxleft){
+              $left = $left - 70;
+              $(".calender-filter").css("margin-left",$left);
+            }
+          });
+          $(".prevday").click(function(){
+            if ($left < 0){
+              $left = $left + 70;
+              $(".calender-filter").css("margin-left",$left);
+            }
+          });
+        }
         });
 /******  search overlay  ******/
 
