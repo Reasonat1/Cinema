@@ -426,6 +426,8 @@
 	width: 330px;
 	right: 30px;
 	padding: 30px 0 0 30px;
+	height: 60%;
+	overflow-y: scroll;
 	@include res(s-m){
 		width: 100%;
 		padding: 0!important;
@@ -489,6 +491,7 @@
 	}
 	.calendar-agenda-items{
 		padding: 0!important;
+		width: 300px;
 	}
 	.date-nav-wrapper{
 
