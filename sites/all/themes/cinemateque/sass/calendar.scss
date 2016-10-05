@@ -425,21 +425,6 @@
 /******  calendar this month page  ********/
 
 .page-node-3487{
-	#header{
-		background-color: transparent;
-		@include res(s-m){
-			background-color: #000;
-		}
-		&.sticky-header{
-			background-color: #000;
-		}
-	}
-	#main-wrapper{
-		margin-top: 0!important;
-		@include res(s-m){
-			margin-top: 50px!important;
-		}
-	}
 	.text-main-image {
 	    bottom: 60px;
 	    color: #fff!important;
@@ -479,7 +464,6 @@
 	transition: all 0.5s;
     -webkit-transition: all 0.5s;
 	@include res(s-m){
-		position: relative;
 		width: 100%;
 		padding: 0!important;
 		left: 0;
