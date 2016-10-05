@@ -329,7 +329,7 @@ table td{
 .bottom-content {
 	table, tbody, tr, th, td {
 		border: none !important;
-		font-size: 1.1em;
+		font-size: 1em;
 	}
 	.pane-test-view-for-movie-cmain_colorit-panel-pane-2 {
 		.pane-content {
@@ -394,6 +394,9 @@ table td{
 	border-top: 5px solid $black;
 	@include res(s-m){
 		display: none;
+	}
+	a{
+		outline: 0;
 	}
 	.link a{
 	    border-top: 1px solid #afafaf;
@@ -1367,6 +1370,11 @@ table{
 		}
 	}
 }
+
+.pane-user-flagged-content-panel-pane-1{
+	position: relative;
+}
+
 .pane-user-flagged-content-panel-pane-1 .view-content{
 	padding-bottom: 20px;
 	.item-list{
@@ -1766,17 +1774,23 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 					left: 10%;
 					cursor: pointer;
 				}
+				.file{
+					width: 70%;
+					height: 70%;
+					margin: 0 auto;
+				}
 				.content {
 					position: relative;
 					padding-bottom: 56.25%; /* 16:9 */
 					padding-top: 25px;
 					height: 0;
-					iframe {
+					iframe, video {
 						position: absolute;
-						top: 110px;
-						left: 15%;
-						width: 70%;
-						height: 70%;
+						width: 100%;
+						height: 100%;
+					}
+					video{
+						padding-top: 46px;
 					}
 				}
 			}

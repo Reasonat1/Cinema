@@ -114,12 +114,14 @@
             $(".slide-right-ct .video-wrapper").addClass("play");
             $(".media-youtube-player")[0].src += "&enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1";
             ev.preventDefault();
+            $("video").play();
         });
 
         $('.video-wrapper').on('click', function(e) {
-          if($(e.target).closest('.video-wrapper iframe').length == 0) {
-              $(".slide-right-ct .video-wrapper").removeClass("play");
-            $(".media-youtube-player")[0].src += "&enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=0";
+          if($(e.target).closest('.video-wrapper .content').length == 0) {
+            $(".slide-right-ct .video-wrapper").removeClass("play");
+            $(".media-youtube-player")[0].src += "&autoplay=0";
+            $("video").pause();
             e.preventDefault();
           }
       });
