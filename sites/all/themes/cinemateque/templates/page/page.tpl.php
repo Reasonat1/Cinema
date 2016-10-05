@@ -46,8 +46,8 @@
                         <?php if ($logo): ?>
                             <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" id="logo" />
                         <?php endif; ?>
-                        <?php if ($site_name): ?>
-                            <span class="site-name"></span>
+                        <?php if ($site_name && $GLOBALS['_domain']['domain_id'] == 1 ): ?>
+                            <span class="site-name"><?php print $site_name; ?></span>
                         <?php endif; ?>
                     </a>
                 <?php endif; ?>
