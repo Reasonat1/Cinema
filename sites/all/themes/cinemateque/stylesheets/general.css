@@ -2602,7 +2602,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   width: 100%;
   background-color: #000;
   opacity: 0.9;
-  z-index: 200;
+  z-index: 400;
   display: none;
   top: 0;
 }
@@ -2611,7 +2611,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   display: none;
 }
 /* line 1977, ../sass/general.scss */
-.region-overlay form {
+.region-overlay .block-search-api-page form {
   width: 1355px !important;
   max-width: 100%;
   margin: 0 auto;
@@ -2621,22 +2621,22 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   position: relative;
 }
 /* line 1981, ../sass/general.scss */
-.region-overlay form > div {
+.region-overlay .block-search-api-page form > div {
   position: relative;
 }
 /* line 1984, ../sass/general.scss */
-.region-overlay form .form-group {
+.region-overlay .block-search-api-page form .form-group {
   overflow: hidden;
   -webkit-box-shadow: -1px 1px 10px -3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 1px 10px -3px rgba(0, 0, 0, 0.75);
   box-shadow: -1px 1px 10px -3px rgba(0, 0, 0, 0.75);
 }
 /* line 1989, ../sass/general.scss */
-.region-overlay form .form-group label[for="edit-keys-1"] {
+.region-overlay .block-search-api-page form .form-group label[for="edit-keys-1"] {
   display: none !important;
 }
 /* line 1992, ../sass/general.scss */
-.region-overlay form .form-group .form-text {
+.region-overlay .block-search-api-page form .form-group .form-text {
   width: 100%;
   box-sizing: border-box;
   display: inline-block;
@@ -2651,13 +2651,13 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 }
 @media (max-width: 767px) {
   /* line 1992, ../sass/general.scss */
-  .region-overlay form .form-group .form-text {
+  .region-overlay .block-search-api-page form .form-group .form-text {
     font-size: 15px;
     padding: 13px;
   }
 }
 /* line 2010, ../sass/general.scss */
-.region-overlay form .form-submit {
+.region-overlay .block-search-api-page form .form-submit {
   margin: 0;
   border-radius: 0 !important;
   padding: 9px 25px 11px;
@@ -2670,16 +2670,16 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   height: 51px;
 }
 /* line 61, ../sass/init.scss */
-.domain-1 .region-overlay form .form-submit, .region-overlay form .form-submit.domain-1 .region-overlay form .form-submit {
+.domain-1 .region-overlay .block-search-api-page form .form-submit, .region-overlay .block-search-api-page form .form-submit.domain-1 .region-overlay .block-search-api-page form .form-submit {
   background-color: #e41145 !important;
 }
 /* line 64, ../sass/init.scss */
-.domain-2 .region-overlay form .form-submit {
+.domain-2 .region-overlay .block-search-api-page form .form-submit {
   background-color: #b59d70 !important;
 }
 @media (max-width: 767px) {
   /* line 2010, ../sass/general.scss */
-  .region-overlay form .form-submit {
+  .region-overlay .block-search-api-page form .form-submit {
     width: 100%;
     position: relative;
   }
@@ -2719,7 +2719,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 .hambruger-overlay .region-overlay {
   display: block;
   opacity: 1;
-  background-color: #262626;
+  background-color: #242424;
   z-index: 500;
   overflow-y: auto;
 }
