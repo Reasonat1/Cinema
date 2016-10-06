@@ -12,6 +12,11 @@
 
 <!--<script src="/misc/jquery.js" type="text/javascript"></script>-->
 <?php print render($page['overlay']); ?>
+<div class="float-calendar-wrapper hide-float">
+    <?php print render($page['float_calendar']); ?>
+    <div class="close-button"><div class="close"><?php print t("Close");?></div></div>
+</div>
+
 <script type='text/javascript'>
     jQuery.noConflict();
 </script> 
@@ -41,8 +46,9 @@
                         <?php if ($logo): ?>
                             <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" id="logo" />
                         <?php endif; ?>
-                        <?php if ($site_name): ?>
-                            <span class="site-name"></span>
+                        <?php if ($site_name && $GLOBALS['_domain']['domain_id'] == 1 ): ?>
+                            <span class="site-name"><?php print t('Jerusalem Cinematheque – Israel Film Archive
+'); ?></span>
                         <?php endif; ?>
                     </a>
                 <?php endif; ?>
@@ -68,6 +74,9 @@
                         <?php print render($main_menu); ?>
                     </ul>
                     <ul class="col-md-3 header-right">
+                        <li class="today">
+                            <span>Today</span>
+                        </li>
                         <li class="search">
                             <span></span>
                         </li>

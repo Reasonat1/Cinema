@@ -5,7 +5,7 @@
     .header .header-right .search span:hover, 
     &.search .header .header-right .search span,
     &.page-search .header .header-right .search span{
-        background: rgba(0, 0, 0, 0) url("../images/search-icon-red.png") no-repeat scroll 0 2px;
+        background: rgba(0, 0, 0, 0) url("../images/search-icon-red.png") no-repeat scroll 0 1px;
     }
     .col-md-3.header-right .shopping-cart button:hover{
         background: url("../images/shop-icon-red.png") no-repeat 0 0;
@@ -18,7 +18,7 @@
         background: url("../images/favorite-red.png") no-repeat 0 bottom;
     }
     .header .header-right .language-switcher-locale-url a:hover{
-		background: url("../images/hebrew-icon-red.png") no-repeat 0 2px!important;
+		background: url("../images/hebrew-icon-red.png") no-repeat 0 1px!important;
     }
     .flag-wrapper a {
         &.flag-action {
@@ -74,6 +74,9 @@
             background: url("../images/more-red-right.png") no-repeat scroll center center;
         }
     }
+    .float-calendar-wrapper .close-button .close{
+            background: url("../images/close42-red.png") no-repeat;
+    }
 }
 
 //festival domain - gold
@@ -81,7 +84,7 @@
     .header .header-right .search span:hover, 
     &.search .header .header-right .search span,
     &.page-search .header .header-right .search span{    
-        background: rgba(0, 0, 0, 0) url("../images/search-icon-gold.png") no-repeat scroll 0 2px;
+        background: rgba(0, 0, 0, 0) url("../images/search-icon-gold.png") no-repeat scroll 0 1px;
     }
     .col-md-3.header-right .shopping-cart button:hover{
         background: url("../images/shop-icon-gold.png") no-repeat 0 0;
@@ -94,7 +97,7 @@
         background: url("../images/favorite-gold.png") no-repeat 0 bottom;
     }
     .header .header-right .language-switcher-locale-url a:hover{
-		background: url("../images/hebrew-icon-gold.png") no-repeat 0 2px;
+		background: url("../images/hebrew-icon-gold.png") no-repeat 0 1px;
     }
     .flag-wrapper a {
         &.flag-action {
@@ -149,5 +152,8 @@
         .owl-prev{
             background: url("../images/more-gold-right.png") no-repeat scroll center center;
         }
+    }
+    .float-calendar-wrapper .close-button .close{
+            background: url("../images/close42-gold.png") no-repeat;
     }
 }

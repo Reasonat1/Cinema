@@ -110,7 +110,7 @@ table td{
 }
 
 #da11y-plugin{
-	padding-top: 15px;
+	padding-top: 11px;
 	*:focus {
 	    outline: 0;
 	    outline-style:none;
@@ -301,7 +301,6 @@ table td{
 	@include width;
 	td {
 		border: none !important;
-		font-size: 1.1em;
 		a {
 			color: $black;
 		}
@@ -419,23 +418,30 @@ table td{
 	}
 	.flag-wrapper{
 		position: relative;
+		float: left;
+		width: 30px;
+		margin-top: 4px;
 		a.flag-action, a.unflag-action{
 			width: 100%;
 			display: block;
 			background-position: left center!important;
 		}
-		.title{
-			position: absolute;
-			top: 10px;
-			left: 30px;
-			font-size: 16px;
-			z-index: -1;
-		}
 		.flag-throbber{
 			position: absolute;
 		}
 	}
+	.flag-custom{
+		overflow: hidden;
+		.title{
+			font-size: 16px;
+			margin-top: 12px;
+			margin-bottom: 12px;
+			width: calc(100% - 30px);
+			float: right;
+		}
+	}
 }
+
 
 .share-this-pane-mobile{
 	display: none;
@@ -486,6 +492,10 @@ table td{
 	iframe{
 		display: none;
 	}
+}
+
+.node-type-cm-movie .share-this-pane-mobile{
+	padding: 0;
 }
 
 .field-name-field-tag {
@@ -599,7 +609,8 @@ table td{
 		display: none;
 	}
 	.panels-flexible-region-node_page-content_left {
-		width: calc(92% - 180px);
+		width: 77%;
+		padding-right: 23%;
 		float: right;
 		@include res(s-m){
 			width: 100%!important;
@@ -607,7 +618,7 @@ table td{
 	}
 	.panels-flexible-region-node_page-content_right {
 		float: left;
-		width: 180px;
+		width: 15%;
 		margin-right: 8%;
 		padding-top: 7px;
 		margin-bottom: 20px;
@@ -873,37 +884,6 @@ table.views-table {
 	font-weight: 600;
 	margin-bottom: 2%;
 }
-
-.pane-views-panes.pane-review-panel-pane-1 {
-	margin-top: 50px;
-	background-color: $color_fantasy_approx;
-	overflow: hidden;
-	.pane-content {
-		@include width();
-		.view-content {
-			@include main-color();
-			padding: 50px 0;
-			overflow: hidden;
-		}
-		.views-field-name {
-			a {
-				@include main-color();
-				font-size: 1em !important;
-			}
-		}
-		.views-field-review .field-content p {
-			@include main-color();
-			font-size: 1.35em !important;
-			line-height: 1.35em;
-			span {
-				@include main-color();
-				font-size: 1.15em !important;
-			}
-		}
-	}
-}
-
-
 
 .view-share-this-pane .flag {
 	&.flag-action {
@@ -1483,7 +1463,7 @@ table{
     			@include width;
     			.view{
 					float: right;
-    				width: calc(92% - 180px);
+    				width: 77%;
     				@include res(s-m){
     					width: 100%;
     				}
@@ -1670,7 +1650,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	color: #fff;
 	width: 100%;
 	padding: 0;
-	z-index: 100;
+	z-index: 99;
 	@include res(s-m){
 		bottom: 10px;
 	}
@@ -1680,7 +1660,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 			color: #fff;
 		}
 		.slide-left-ct{
-			width: calc(84% - 360px);
+			width: 54%;
 			margin: 0 auto;
 			@include res(s-m){
 				text-align: center;	
@@ -1712,6 +1692,11 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
     			margin: 22px 0 0 0;
     			@include bg-main-color;
     			float: left;
+    			@include res(s-m){
+    				float: none;
+    				display: inline-block;
+    				margin: 22px auto;
+    			}
     			a{
     				color: #fff;
     			}
@@ -1905,6 +1890,8 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 
 .credits-view{
 	padding: 30px 0;
+	float: right;
+    width: 77%;
 	.profession{
 		width: 120px;
 		color: $color_nobel_approx;
@@ -1923,6 +1910,58 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	}
 }
 
+//review 
+
+.view-reviews-field-collection-view {
+	margin-top: 50px;
+	background-color: $color_fantasy_approx;
+	overflow: hidden;
+	.view-content{
+		@include width;
+		> div{
+			width: 77%;
+			float: right;
+			box-sizing: border-box;
+			@include main-color;
+			padding: 50px 23% 50px 0;
+			overflow: hidden;
+			@include res(s-m){
+				width: 100%;
+				padding-right: 0;
+			}
+		}
+		.views-field-field-cm-review-source {
+		    display: block;
+		    font-size: 0.9em !important;
+		    padding: 25px 0 0 0;
+		    width: 100%
+		}
+		.views-field-field-cm-review-qoute {
+			@include main-color();
+			font-size: 1.35em !important;
+			line-height: 1.35em;
+		}
+	}
+	.views-slideshow-controls-bottom{
+		clear: both;
+		text-align: center;
+		padding: 25px 0;
+		.views-slideshow-pager-field-item{
+			display: inline-block;
+		}
+		.circle{
+			width: 8px;
+			height: 8px;
+			background-color: #b0b0b0;
+			border-radius: 50%;
+		}
+		.active .circle{
+			@include bg-main-color;
+		}
+	}
+}
+
+
 .node-type-cm-person, .node-type-cm-article{
 	.panels-flexible-row-node_page-5{
 		@include res(s-m){
@@ -1933,7 +1972,6 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 			.panels-flexible-region-node_page-content_right .pane-entity-field{
 				padding: 0 5% 25px;
 				border-top: 1px solid #cdcdcd;
-				border-bottom: 1px solid #cdcdcd;
 				margin-top: 20px;
 			}
 		}
@@ -1968,13 +2006,13 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	width: 100%;
 	background-color: #000;
 	opacity: 0.9;
-	z-index: 200;
+	z-index: 400;
 	display: none;
 	top: 0;
 	.block{
 		display: none;
 	}
-		form{
+	.block-search-api-page	form{
 			@include width;
 			margin: 100px auto 0!important;
 			position: relative;
@@ -2053,7 +2091,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	.region-overlay{
 		display: block;
 		opacity: 1;
-		background-color: #262626;
+		background-color: #242424;
 		z-index: 500;
 		overflow-y: auto;
 		.block-panels-mini{

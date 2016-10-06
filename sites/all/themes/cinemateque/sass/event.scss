@@ -41,12 +41,6 @@
 		background-color: #fff;
 		.pane-content{
 			@include width;
-			.view{
-				margin: 0 23%;
-				@include res(s-m){
-					margin: 0;
-				}
-			}
 		}
 	}
 	table{
@@ -151,7 +145,7 @@
 			padding: 35px 5%;
 			p {
    				margin: 0 auto;
-    			width: calc(84% - 360px);
+    			width: 54%;
     			@include res(s-m){
 					margin: 0;
 					width: 100%;

@@ -1,5 +1,9 @@
 @import "init";
 
+.pull-left{
+	float: right!important;
+}
+
 .pane-movie-group-ct-panel-pane-3 {
 	.views-field-field-toptix-purchase{
 		button{
@@ -16,6 +20,8 @@
 	}
 	.panels-flexible-region-node_page-content_left{
 		float: left;
+		padding-left: 23%;
+		padding-right: 0;
 	}
 }
 
@@ -84,6 +90,9 @@ table{
 	}
 }
 
+#da11y-plugin{
+	padding-top: 15px;
+}
 /**** lobby page  ****/
 
 .page-term-lobby{
@@ -265,13 +274,13 @@ table{
         background-position: right center!important;
     }
 	.flag-wrapper{
+		float: right;
 		a.flag-action, a.unflag-action{
 			background-position: right center!important;
 		}
-		.title{
-			right: 30px;
-			left: auto;
-		}
+	}
+	.flag-custom .title{
+		float: left;
 	}
 }
 
@@ -360,6 +369,26 @@ table{
 	}
 }
 
+// credits
+
+.credits-view{
+	float: left;
+}
+
+//review 
+
+.view-reviews-field-collection-view {
+	.view-content{
+		> div{
+			float: left;
+			padding-left: 23%;
+			padding-right: 0;
+			@include res(s-m){
+				padding-left: 0;
+			}
+		}
+	}
+}
 /******  node teaser  ******/
 
 .node-title-teaser-cm-movie .node-cm-movie-year{

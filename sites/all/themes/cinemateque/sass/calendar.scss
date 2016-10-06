@@ -158,9 +158,16 @@
 	box-sizing: border-box;
 	width: 100%;
 	background-color: #fff;
-	width: 100%!important;
+	width: 100%;
 	left: 0!important;
 	margin-top: 50px;
+	transition: margin-left 0.5s;
+    -webkit-transition: margin-left 0.5s;
+    @include res(s-m){
+    	padding-left: 30px;
+    	position: relative;
+    	margin-top: 20px;
+    }
 	&.scroll-to-fixed-fixed{
 		padding-bottom: 107px;
 	}
@@ -174,6 +181,15 @@
 		padding-top: 5px;
 		text-align: center;
 		width: 80px;
+		box-sizing: border-box;
+		@include res(s-m){
+			margin: 0;
+			border-left: 1px solid;
+			border-right: 1px solid;
+			width: 70px;
+			padding-top: 2px;
+			padding-bottom: 5px;
+		}
 		&:hover {
 			@include bg-main-color();
 			box-shadow: 0 0 3px 2px $wild_sand;
@@ -201,6 +217,31 @@
 		width: 100%;
 	}
 }
+
+.calenders{
+	position: relative;
+	@include res(s-m){
+		.filter-cantrol{
+    		@include main-color;
+    		position: absolute;
+    		z-index: 200;
+    		font-size: 35px;
+    		background-color: #fff;
+    		padding-bottom: 5px;
+    		cursor: pointer;
+    	}
+    	.prevday{
+    		padding-left: 5px;
+    		padding-right: 12px;
+    	}
+    	.nextday{
+    		padding-right: 5px;
+    		padding-left: 12px;
+    		right: 0;
+    	}
+	}
+}
+
 .calendar-dayview-hour {
 	float: left;
 	height: 30px;
@@ -386,15 +427,6 @@
 /******  calendar this month page  ********/
 
 .page-node-3487{
-	#header{
-		background-color: transparent;
-		&.sticky-header{
-			background-color: #000;
-		}
-	}
-	#main-wrapper{
-		margin-top: 0!important;
-	}
 	.text-main-image {
 	    bottom: 60px;
 	    color: #fff!important;
@@ -402,6 +434,9 @@
 	    position: absolute!important;
 	    width: 100%;
 	    z-index: 100;
+	    @include res(s-m){
+	    	bottom: 10px;
+	    }
 	}
 	.gradient {
     	display: block;
@@ -411,21 +446,101 @@
 		background-color: #fff;
 	    position: fixed;
 	    top: 0;
-	    width: 100%;
+	    width: 100%!important;
 	    z-index: 200;
 	}
 }
 
-.pane-custom-calendar-floating-pane-panel-pane-1{
-	position: absolute;
-	width: 100%;
-	top:120px;
-	.pane-content{
-		padding: 0 30px;
-		box-sizing: border-box;
+/******  float-calendar  ***********/
+
+.float-calendar-wrapper{
+	z-index: 300;
+	position: fixed;
+	top:90px;
+	box-sizing: border-box;
+	width: 300px;
+	right: 30px;
+	opacity: 1;
+	transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+	@include res(s-m){
+		width: 100%;
+		padding: 0!important;
+		left: 0;
+		top: 50px;
+		overflow-y: auto;
 	}
+	&.hide-float{
+		top: -100px;
+		opacity: 0;
+		z-index: -100;
+	}
+	.close-button{
+		background-color: #ececeb;
+		padding: 17px 12px;
+		overflow: hidden;
+		border: 1px solid #B3B3B3;
+		border-top: none;
+		.close{
+			@include main-color;
+			opacity: 1;
+			background-position: left center!important;
+			padding-left: 30px;
+			font-size: 16px;
+			font-weight: normal;
+			float: left;
+		}
+	}
+
+}
+
+.play .float-calendar-wrapper{
+	z-index: -1;
+}
+
+@media (min-width: 768px){
+	.float-calendar-wrapper .calender-filter{
+		margin: 50px auto!important;
+	}
+}
+
+.ajax-data-calendar .load-inner.loading{
+    background-color: #000;
+    height: 100%;
+    opacity: 0.1;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 500;
+    .image{
+	    background: url("../images/ajax-loader.gif") no-repeat scroll 0 0;
+	    height: 38px;
+	    left: 48%;
+	    position: absolute;
+	    top: 48%;
+	    width: 38px;
+    }
+}
+
+#main-menu .mini-calendar {
+	cursor: pointer;
+	&:hover{
+		@include main-color;
+	}
+}
+
+.view-custom-calendar-floating-pane{
 	.calendar-calendar div.calendar{
 		font-size: 18px;
+	}
+	.view-content{
+		border: 1px solid #B3B3B3;
+		border-top: none;
+		@include res(s-m){
+			max-height: 270px;
+			overflow-y: auto;
+		}
 	}
 	.contents{
 		display: inline-block;
@@ -438,6 +553,7 @@
 	}
 	.toptix-purchase{
 		float: right;
+		margin-right: 5px;
 	}
 	.view-custom-calendar-floating-pane{
 		position: relative!important;
@@ -447,17 +563,28 @@
 		z-index: 50;
 	}
 	.calendar-agenda-items{
-		width: 300px;
 		padding: 0!important;
+		width: 300px;
 	}
 	.date-nav-wrapper{
-
+		margin: 0;
+	}
+	.holder td{
+		padding: 0!important;
 	}
 }
 
 .pane-calendar-full-width-calendar{
 	.lobby-container{
 		margin-bottom: 20px;
+		@include res(s-m){
+			margin-bottom: 80px;
+		}
+	}
+	.filter-cantrol{
+		@include res(s-m){
+			display: block;
+		}
 	}
 		.lobby-term-left{
 			float: left;
@@ -480,6 +607,7 @@
 			box-sizing: border-box;
 			@include res(s-m){
 				width: 100%;
+				padding: 0;
 			}
 			table tbody{
 				border: none;
@@ -514,6 +642,9 @@
     			}
 		}
 		.row-custom-lobby{
+			@include res(s-m){
+				margin-top: 20px;
+			}
 			td{
 				padding-top: 0;
 				padding-bottom: 0;
@@ -529,12 +660,30 @@
 				font-weight: bold;
 				font-size: 19px;
 				line-height: 23px;
+				@include res(l){
+					font-size: 13px;
+				}
+				@include res(s-m){
+					font-size: 13px;
+					border:none!important;
+					font-weight: normal;
+					margin: 0;
+					vertical-align: middle;
+					float: none!important;
+				}
+				&.hall{
+					border:none!important;
+				}
 			}
 			.hall{
 				border:none!important;
 			}
 			.right{
 				float: right;
+				@include res(s-m){
+					float: none!important;
+					vertical-align: middle;
+				}
 			}
 			.purchase{
 				padding-right: 0;
@@ -601,15 +750,8 @@
 .pane-calendar-full-width-calendar .calenders-filter-date p{
     margin: 3% 0 2%;
 }
-.ajax-data-calendar .calenders-filter-date p{
-    margin-left: 6% !important;
-}
 
-.view-custom-calendar-floating-pane{
-    width: 20%;
-    margin: 0;
-    padding: 0;
-}
+
 .view-custom-calendar-floating-pane .view-header{
    background-color: #000; 
 }
@@ -651,7 +793,7 @@
     text-indent: -9999px;
     position: absolute;
     left: 0;
-    margin: 5% 0 0;
+    margin: 15px 0 0;
     box-shadow: none;
     padding: 0px 10px;
     border:none;
@@ -663,7 +805,7 @@
     text-indent: -9999px;
     position: absolute;
     right: 4%;
-    margin: 5% 0 0;
+    margin: 15px 0 0;
     box-shadow: none;
     padding: 0px 5px;
     border:none;
@@ -678,6 +820,11 @@
     background-color: #ECECEB !important;
     border-bottom: 1px solid #B3B3B3;
 }
+
+.view-custom-calendar-floating-pane #multi-day-container tr td .item:last-child{
+    border: none;
+}
+
 .view-custom-calendar-floating-pane #multi-day-container tr td .item .view-item-custom_calendar_floating_pane{
     padding: 4% 3%;
 }

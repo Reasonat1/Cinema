@@ -59,15 +59,20 @@
         $fullscreenheight = $(window).height();
         $(".full-screen-image, .full-screen-image .wrapper-image .content").css("max-height",$screenheight);
         $(".front .full-screen-image, .front .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
-        $(".page-node-3487 .full-screen-image, .full-screen-image .wrapper-image .content, .full-screen-image li").css("max-height",$fullscreenheight);
-
+        $imgspace = ($(".full-screen-image img").height() - $screenheight)/(-2);
+        if ($imgspace < 0){
+          $(".full-screen-image img").css("margin-top",$imgspace);
+        }
 
         $(window).resize(function() {
             $screenheight = $(window).height()-50;
             $fullscreenheight = $(window).height();
             $(".full-screen-image, .wrapper-image .content").css("max-height",$screenheight);
             $(".front .full-screen-image, .front .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
-            $(".page-node-3487 .full-screen-image, .full-screen-image .wrapper-image .content, .full-screen-image li").css("max-height",$fullscreenheight);
+            $imgspace = ($(".full-screen-image img").height() - $screenheight)/(-2);
+            if ($imgspace < 0){
+              $(".full-screen-image img").css("margin-top",$imgspace);
+            }
         });
 
 /*********  claendat pane on slider  
@@ -112,6 +117,7 @@
 
         $(".slide-right-ct .play-button").click(function(ev) {
             $(".slide-right-ct .video-wrapper").addClass("play");
+            $("body").addClass("play");
             $(".media-youtube-player")[0].src += "&enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1";
             ev.preventDefault();
             $("video").play();
@@ -120,22 +126,194 @@
         $('.video-wrapper').on('click', function(e) {
           if($(e.target).closest('.video-wrapper .content').length == 0) {
             $(".slide-right-ct .video-wrapper").removeClass("play");
-            $(".media-youtube-player")[0].src += "&autoplay=0";
+            $("body").removeClass("play");
+            $(".media-youtube-player").stopVideo();
             $("video").pause();
             e.preventDefault();
+
           }
       });
-/*******  calendat fixed  *********/
 
-        $(window).scroll(function() {
-            $targetScroll = $('body').position().top+$(window).height();
-            $currentScroll = $('html').scrollTop() || $('body').scrollTop();
-            if ($currentScroll >= $targetScroll){
-                $('.calender-filter').addClass("fixedPos");
+/********  mini calendar  ********/
+
+        if ($(window).width() > 767){
+          $(".float-calendar-wrapper").removeClass("hide-float");
+        }
+
+        $(".front .float-calendar-wrapper").removeClass("hide-float");
+
+        $(".float-calendar-wrapper .close-button").click(function() {
+            $(".float-calendar-wrapper").addClass("hide-float");
+        });
+
+        $(".header-right .today").click(function() {
+            $(".float-calendar-wrapper").toggleClass("hide-float");
+        });
+
+        $(".calendar-agenda-items").css("width",$(".view-custom-calendar-floating-pane").width());
+
+        $(window).resize(function() {
+          $(".calendar-agenda-items").css("width",$(".view-custom-calendar-floating-pane").width());
+        });
+
+
+/*******  calendar fixed  area*********/
+
+        
+          $(window).scroll(function() {
+              if ($(window).width() > 767){
+                $targetScroll = $('body').position().top+$(window).height();
+              }
+              $currentScroll = $('html').scrollTop() || $('body').scrollTop();
+              if ($currentScroll >= $targetScroll){
+                  $('.calender-filter').addClass("fixedPos");
+              }
+              else{
+                  $('.calender-filter').removeClass("fixedPos");
+              }
+          });
+
+        $(window).resize(function() {
+          if ($(window).width() > 767){
+            $(window).scroll(function() {
+                $targetScroll = $('body').position().top+$(window).height();
+                $currentScroll = $('html').scrollTop() || $('body').scrollTop();
+                if ($currentScroll >= $targetScroll){
+                    $('.calender-filter').addClass("fixedPos");
+                }
+                else{
+                    $('.calender-filter').removeClass("fixedPos");
+                }
+            });
+          }
+        });
+
+        if ($(window).width() < 768){
+          $filterwidth = $(".calender-filter p").size()*70+30;
+          $(".calender-filter").css("width",$filterwidth);
+          $maxleft = ($filterwidth - $(window).width())*(-1)-30; 
+          $left = 0;
+          $i = 0;
+          $('.calender-filter p').each(function () {
+            if (!$(this).hasClass("active")){
+              $i ++;
             }
-            else{
-                $('.calender-filter').removeClass("fixedPos");
+            if ($(this).hasClass("active")){
+              return false;            
             }
+          });
+          $left = $left + (-70)*($i-1);
+          if ($left < $maxleft){
+              $left = $maxleft;
+          }
+          if ($left > 0){
+              $left = 0;
+          }
+          $(".i18n-en .calender-filter").css("margin-left",$left);
+          $(".i18n-he .calender-filter").css("margin-right",$left);
+          $(".calender-filter p").click(function(){
+            $left = 0;
+            $i = 0
+            $('.calender-filter p').each(function () {
+              if (!$(this).hasClass("active")){
+                $i ++;
+              }
+              if ($(this).hasClass("active")){
+                return false;            
+              }
+            });
+            $left = $left + (-70)*($i-1);
+            if ($left < $maxleft){
+              $left = $maxleft;
+            }
+            if ($left > 0){
+              $left = 0;
+            }
+            $(".i18n-en .calender-filter").css("margin-left",$left);
+            $(".i18n-he .calender-filter").css("margin-right",$left);
+          });
+          $(".nextday").click(function(){
+            if ($left > $maxleft){
+              $left = $left - 70;
+              if ($left < $maxleft){
+                $left = $maxleft;
+              }
+              $(".i18n-en .calender-filter").css("margin-left",$left);
+              $(".i18n-he .calender-filter").css("margin-right",$left);   
+            }
+          });
+          $(".prevday").click(function(){
+            if ($left < 0){
+              $left = $left + 70;
+              if ($left > 0){
+                $left = 0;
+              }
+              $(".i18n-en .calender-filter").css("margin-left",$left);
+              $(".i18n-he .calender-filter").css("margin-right",$left);
+              }
+          });
+        }
+
+        $(window).resize(function() {
+        if ($(window).width() > 767){
+          $(".calender-filter").css("margin","50px auto");
+        }
+        if ($(window).width() < 768){
+          $filterwidth = $(".calender-filter p").size()*70+30;
+          $(".calender-filter").css("width",$filterwidth);
+          $maxleft = ($filterwidth - $(window).width())*(-1)-30; 
+          $left = 0;
+          $i = 0;
+          $('.calender-filter p').each(function () {
+            if (!$(this).hasClass("active")){
+              $i ++;
+            }
+            if ($(this).hasClass("active")){
+              return false;            
+            }
+          });
+          $left = $left + (-70)*($i-1);
+          if ($left < $maxleft){
+              $left = $maxleft;
+          }
+          if ($left > 0){
+              $left = 0;
+          }
+          $(".i18n-en .calender-filter").css("margin-left",$left);
+          $(".i18n-he .calender-filter").css("margin-right",$left);
+           /*   $(".calender-filter p").click(function(){
+            $left = 0;
+            $i = 0
+            $('.calender-filter p').each(function () {
+              if (!$(this).hasClass("active")){
+                $i ++;
+              }
+              if ($(this).hasClass("active")){
+                return false;            
+              }
+            });
+            $left = $left + (-70)*($i-1);
+            if ($left < $maxleft){
+              $left = $maxleft;
+            }
+            if ($left > 0){
+              $left = 0;
+            }
+            $(".calender-filter").css("margin-left",$left);
+          });
+          $(".nextday").click(function(){
+            if ($left > $maxleft){
+              $left = $left - 70;
+              $(".calender-filter").css("margin-left",$left);
+            }
+          });
+          $(".prevday").click(function(){
+            if ($left < 0){
+              $left = $left + 70;
+              $(".calender-filter").css("margin-left",$left);
+            }
+          });*/
+        }
         });
 
 
@@ -397,7 +575,6 @@
        //    $('td.views-field-field-toptix-purchase').hide();
 		}
 	}
-
 
 
 })(jQuery);

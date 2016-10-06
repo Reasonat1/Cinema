@@ -95,6 +95,9 @@
 			@include res(menu){
 				float: right;
 			}
+			@include res(l){
+				padding-left: 10px;
+			}
 		}
 		i{
 			color: #fff;
@@ -536,7 +539,7 @@ img.panopoly-image-full{
 	margin-bottom: 0!important;
 }
 
-.sticky-header, .not-front header{
+header{
 	height: 50px!important;
 	.navbar-brand{
 		height: 36px!important;
@@ -546,6 +549,20 @@ img.panopoly-image-full{
 		> img {
 			height: 36px;
 		}
+	}
+}
+
+@media (max-width: 360px){
+	header{
+		.navbar-brand{
+			> img {
+				height: 26px;
+				margin-top: 5px;
+			}
+		}
+	}
+	.col-md-3.header-right > li{
+		padding-right: 5px!important;
 	}
 }
 
@@ -670,7 +687,7 @@ img.panopoly-image-full{
 		}
 		.search{
 			span{
-				background: url("../images/search-icon.png") no-repeat 0 2px;
+				background: url("../images/search-icon.png") no-repeat 0 1px;
 			    display: inline-block;
 			    height: 20px;
 			    width: 20px;
@@ -695,9 +712,20 @@ img.panopoly-image-full{
 			width: 24px;
 			display: block;
 		}
+		.shopping-cart{
+			padding-top: 6px;
+		}
+		.today span{
+			background: url("../images/time.png") no-repeat 0 0;
+			text-indent: -9999px;
+			height: 22px;
+			width: 24px;
+			display: block;
+			cursor: pointer;
+		}
 		.language-switcher-locale-url{
 			a{
-				background: url("../images/hebrew-icon.png") no-repeat 0 2px;
+				background: url("../images/hebrew-icon.png") no-repeat 0 1px;
 				display: inline-block;
 			    height: 20px;
 			    text-indent: -9999px;
@@ -705,7 +733,7 @@ img.panopoly-image-full{
 			}
 			span{
 				opacity: 0.4;
-				background: url("../images/hebrew-icon.png") no-repeat 0 2px;
+				background: url("../images/hebrew-icon.png") no-repeat 0 1px;
 				display: inline-block;
 			    height: 20px;
 			    text-indent: -9999px;
@@ -1160,11 +1188,31 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 	opacity: 1;
 }
 
-.navbar-brand > img {
-	height: 50px;
-	transition: all 0.5s ease 0s;
+.navbar-brand{
+	> img {
+		height: 50px;
+		transition: all 0.5s ease 0s;
+		float: left;
+	}
+	.site-name{
+	    color: #fff;
+	    float: right;
+	    font-size: 16px;
+	    line-height: 18px;
+	    margin-left: 10px;
+	    margin-top: -4px;
+	    width: 210px;
+	    @include res(s-m){
+	    	display: none;
+	    }
+	}
 }
 
+@media (max-width: 1130px){
+	.navbar-brand .site-name{
+		display: none;
+	}	
+}
 .site-custom-menu.menu.nav.navbar-nav {
 	background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
 	margin-top: 5px;

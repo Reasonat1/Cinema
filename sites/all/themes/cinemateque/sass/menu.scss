@@ -36,9 +36,7 @@
 	}
 	.radix-layouts-footer{
 		padding: 24px 110px;
-		.cps-region-inner{
-			text-align: center;
-		}
+		background-color: #242424;
 	}
 	.pane-menu-menu-site-main-menu, .pane-menu-cinematic-festival-12 {
 		width: 100%;
@@ -196,6 +194,8 @@
 				background-color: #fff!important;
 				@include main-color();
 				padding: 0 15px 0 10px;
+				border-radius: none;
+				font-weight: bold;
 				&:hover{
 					background-color: #fff!important;
 					@include main-color();
@@ -215,11 +215,15 @@
     		color: #fff;
 		}
 		.webform-component--approve-recieving-e-mail{
+			position: absolute;
+			bottom: 0;
 			width: 100%;
 			label{
 				position: relative;
 				font-size: 12px;
 				color: #fff!important;
+				padding-right: 0;
+				padding-left: 0;
 			}
 			input{
 				height: auto;
@@ -249,6 +253,8 @@
 	}
 	.pane-bean-social-links-new, .pane-bean-logos-hebrew-block, .pane-bean-logos-english-block{
 		display: inline-block;
+		float: right;
+		margin-top: 28px;
 		.field-name-field-social-icons > .field-items{
 			text-align: center;
 			> .field-item{
