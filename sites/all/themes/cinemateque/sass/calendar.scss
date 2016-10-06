@@ -222,7 +222,7 @@
 		.filter-cantrol{
     		@include main-color;
     		position: absolute;
-    		z-index: 300;
+    		z-index: 200;
     		font-size: 35px;
     		background-color: #fff;
     		padding-bottom: 5px;
@@ -444,7 +444,7 @@
 		background-color: #fff;
 	    position: fixed;
 	    top: 0;
-	    width: 100%;
+	    width: 100%!important;
 	    z-index: 200;
 	}
 }
@@ -452,7 +452,7 @@
 /******  float-calendar  ***********/
 
 .float-calendar-wrapper{
-	z-index: 300;
+	z-index: 100;
 	position: fixed;
 	top:90px;
 	box-sizing: border-box;
@@ -471,6 +471,7 @@
 	&.hide-float{
 		top: -100px;
 		opacity: 0;
+		z-index: -100;
 	}
 	.close-button{
 		background-color: #ececeb;
@@ -491,7 +492,30 @@
 
 }
 
+@media (min-width: 768px){
+	.float-calendar-wrapper .calender-filter{
+		margin: 50px auto!important;
+	}
+}
 
+.ajax-data-calendar .load-inner.loading{
+    background-color: #000;
+    height: 100%;
+    opacity: 0.1;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 500;
+    .image{
+	    background: url("../images/ajax-loader.gif") no-repeat scroll 0 0;
+	    height: 38px;
+	    left: 48%;
+	    position: absolute;
+	    top: 48%;
+	    width: 38px;
+    }
+}
 
 #main-menu .mini-calendar {
 	cursor: pointer;
@@ -547,6 +571,9 @@
 .pane-calendar-full-width-calendar{
 	.lobby-container{
 		margin-bottom: 20px;
+		@include res(s-m){
+			margin-bottom: 80px;
+		}
 	}
 	.filter-cantrol{
 		@include res(s-m){
@@ -574,6 +601,7 @@
 			box-sizing: border-box;
 			@include res(s-m){
 				width: 100%;
+				padding: 0;
 			}
 			table tbody{
 				border: none;
@@ -608,6 +636,9 @@
     			}
 		}
 		.row-custom-lobby{
+			@include res(s-m){
+				margin-top: 20px;
+			}
 			td{
 				padding-top: 0;
 				padding-bottom: 0;
@@ -623,6 +654,15 @@
 				font-weight: bold;
 				font-size: 19px;
 				line-height: 23px;
+				@include res(l){
+					font-size: 13px;
+				}
+				@include res(s-m){
+					font-size: 13px;
+					border:none!important;
+					font-weight: normal;
+					margin: 0;
+				}
 			}
 			.hall{
 				border:none!important;

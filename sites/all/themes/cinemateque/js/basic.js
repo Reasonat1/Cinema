@@ -120,12 +120,12 @@
         $('.video-wrapper').on('click', function(e) {
           if($(e.target).closest('.video-wrapper .content').length == 0) {
             $(".slide-right-ct .video-wrapper").removeClass("play");
-            $(".media-youtube-player")[0].src += "&autoplay=0";
+            $(".media-youtube-player").stopVideo();
             $("video").pause();
             e.preventDefault();
+
           }
       });
-
 
 /********  mini calendar  ********/
 
@@ -144,11 +144,16 @@
         });
 
 
-/*******  calendat fixed  area*********/
+/*******  calendar fixed  area*********/
 
-        if ($(window).width() > 767){
+        
           $(window).scroll(function() {
-              $targetScroll = $('body').position().top+$(window).height();
+              if ($(window).width() > 767){
+                $targetScroll = $('body').position().top+$(window).height();
+              }
+              else{
+                $targetScroll = $('body').position().top+$(".page-node-3487 .wrapper-image").height();
+              }
               $currentScroll = $('html').scrollTop() || $('body').scrollTop();
               if ($currentScroll >= $targetScroll){
                   $('.calender-filter').addClass("fixedPos");
@@ -157,7 +162,6 @@
                   $('.calender-filter').removeClass("fixedPos");
               }
           });
-        }
 
         $(window).resize(function() {
           if ($(window).width() > 767){
@@ -219,19 +223,27 @@
           $(".nextday").click(function(){
             if ($left > $maxleft){
               $left = $left - 70;
+              if ($left < $maxleft){
+                $left = $maxleft;
+              }
               $(".calender-filter").css("margin-left",$left);
             }
           });
           $(".prevday").click(function(){
             if ($left < 0){
               $left = $left + 70;
+              if ($left > 0){
+                $left = 0;
+              }
               $(".calender-filter").css("margin-left",$left);
             }
           });
         }
 
         $(window).resize(function() {
-        $(".calender-filter").css("margin","50px auto");
+        if ($(window).width() > 767){
+          $(".calender-filter").css("margin","50px auto");
+        }
         if ($(window).width() < 768){
           $filterwidth = $(".calender-filter p").size()*70+30;
           $(".calender-filter").css("width",$filterwidth);
@@ -254,7 +266,7 @@
               $left = 0;
           }
           $(".calender-filter").css("margin-left",$left);
-          $(".calender-filter p").click(function(){
+       /*   $(".calender-filter p").click(function(){
             $left = 0;
             $i = 0
             $('.calender-filter p').each(function () {
@@ -285,9 +297,10 @@
               $left = $left + 70;
               $(".calender-filter").css("margin-left",$left);
             }
-          });
+          });*/
         }
         });
+
 
 /******  search overlay  ******/
 
