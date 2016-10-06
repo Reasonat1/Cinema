@@ -109,7 +109,7 @@ function calendar_full_width_block_content(){
               ORDER BY event_start_time ASC")->fetchAll();
     $result_count = count($result); 
      $output.="<div class='calenders'>";
-     $output.= $filter;
+     $output.= "<div class='filter-wrapper'>".$filter.'</div>';
      $output.="<div class='ajax-inner'>";
      $output.="<div class='load-inner'><div class='image'></div></div>";
      $output.="<div class='calendar-full-container'>";

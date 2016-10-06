@@ -1113,16 +1113,18 @@ table{
 	.views-slideshow-controls-text-previous a{
 	    background-image: url("../images/left.png");
 	    left: 15px;
+	    z-index: 200;
 	    @include res(s-m){
-	    	left: 1px;
+	    	left: 5px;
 	    	margin-left: 0;
 	    }
 	}
    	.views_slideshow_controls_text_next a{
    		background-image: url("../images/right.png");
 	    right: 15px;
+	    z-index: 200;
 	    @include res(s-m){
-	    	right: 1px;
+	    	right: 5px;
 	    	margin-right: 0;
 	    }
    	}
@@ -2039,12 +2041,16 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 
 /*******  overlay region  *******/
 
+.ui-widget-overlay, .ui-dialog{
+	z-index: 400;
+}
+
 .region-overlay{
 	position: fixed;
 	height: 100%;
 	width: 100%;
 	background-color: #000;
-	opacity: 0.9;
+	opacity: 0.98;
 	z-index: 400;
 	display: none;
 	top: 0;

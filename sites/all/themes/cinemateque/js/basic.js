@@ -57,7 +57,7 @@
 
         $screenheight = $(window).height()-50;
         $fullscreenheight = $(window).height();
-        $(".full-screen-image, .full-screen-image .wrapper-image .content").css("max-height",$screenheight);
+        $(".full-screen-image, .full-screen-image .wrapper-image .content, .full-screen-image .wrapper-image .content li").css("max-height",$screenheight);
         $(".front .full-screen-image, .front .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
         $imgspace = ($(".full-screen-image img").height() - $screenheight)/(-2);
         if ($imgspace < 0){
@@ -67,7 +67,7 @@
         $(window).resize(function() {
             $screenheight = $(window).height()-50;
             $fullscreenheight = $(window).height();
-            $(".full-screen-image, .wrapper-image .content").css("max-height",$screenheight);
+            $(".full-screen-image, .full-screen-image .wrapper-image .content, .full-screen-image .wrapper-image .content li").css("max-height",$screenheight);
             $(".front .full-screen-image, .front .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
             $imgspace = ($(".full-screen-image img").height() - $screenheight)/(-2);
             if ($imgspace < 0){
@@ -161,31 +161,27 @@
 
         
           $(window).scroll(function() {
-              if ($(window).width() > 767){
-                $targetScroll = $('body').position().top+$(window).height();
-              }
-              $currentScroll = $('html').scrollTop() || $('body').scrollTop();
-              if ($currentScroll >= $targetScroll){
-                  $('.calender-filter').addClass("fixedPos");
-              }
-              else{
-                  $('.calender-filter').removeClass("fixedPos");
-              }
+                $targetScroll = $('body').position().top+$(".pane-bundle-gallery").height();
+                $currentScroll = $('html').scrollTop() || $('body').scrollTop();
+                if ($currentScroll >= $targetScroll){
+                    $('.filter-wrapper').addClass("fixedPos");
+                }
+                else{
+                    $('.filter-wrapper').removeClass("fixedPos");
+                }                
           });
 
         $(window).resize(function() {
-          if ($(window).width() > 767){
-            $(window).scroll(function() {
-                $targetScroll = $('body').position().top+$(window).height();
+          $(window).scroll(function() {
+                $targetScroll = $('body').position().top+$(".pane-bundle-gallery").height();
                 $currentScroll = $('html').scrollTop() || $('body').scrollTop();
                 if ($currentScroll >= $targetScroll){
-                    $('.calender-filter').addClass("fixedPos");
+                    $('.filter-wrapper').addClass("fixedPos");
                 }
                 else{
-                    $('.calender-filter').removeClass("fixedPos");
-                }
-            });
-          }
+                    $('.filter-wrapper').removeClass("fixedPos");
+                }                
+          });
         });
 
         if ($(window).width() < 768){
@@ -253,6 +249,11 @@
               }
           });
         }
+
+        $(".calender-filter p").click(function(){
+            $("html, body").animate({ scrollTop: $(".calenders").offset().top -60 }, 500);
+            $(".filter-wrapper").removeClass("fixedPos");
+        });
 
         $(window).resize(function() {
         if ($(window).width() > 767){

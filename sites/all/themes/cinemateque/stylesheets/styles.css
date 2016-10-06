@@ -1818,33 +1818,35 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
 .views-slideshow-controls-top .views-slideshow-controls-text-previous a {
   background-image: url("../images/left.png");
   left: 15px;
+  z-index: 200;
 }
 @media (max-width: 767px) {
   /* line 1113, ../sass/general.scss */
   .views-slideshow-controls-top .views-slideshow-controls-text-previous a {
-    left: 1px;
+    left: 5px;
     margin-left: 0;
   }
 }
-/* line 1121, ../sass/general.scss */
+/* line 1122, ../sass/general.scss */
 .views-slideshow-controls-top .views_slideshow_controls_text_next a {
   background-image: url("../images/right.png");
   right: 15px;
+  z-index: 200;
 }
 @media (max-width: 767px) {
-  /* line 1121, ../sass/general.scss */
+  /* line 1122, ../sass/general.scss */
   .views-slideshow-controls-top .views_slideshow_controls_text_next a {
-    right: 1px;
+    right: 5px;
     margin-right: 0;
   }
 }
 
 /******   webform  *****/
-/* line 1134, ../sass/general.scss */
+/* line 1136, ../sass/general.scss */
 .node-type-webform .container, .node-type-webform .panels-flexible-region-46-center {
   width: 100%;
 }
-/* line 1137, ../sass/general.scss */
+/* line 1139, ../sass/general.scss */
 .node-type-webform .pane-node-body {
   width: 1355px !important;
   max-width: 100%;
@@ -1852,15 +1854,15 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   padding: 0 5%;
   box-sizing: border-box;
 }
-/* line 1139, ../sass/general.scss */
+/* line 1141, ../sass/general.scss */
 .node-type-webform .pane-node-body .pane-content {
   margin: 0px 23%;
 }
-/* line 1143, ../sass/general.scss */
+/* line 1145, ../sass/general.scss */
 .node-type-webform .pane-webform-ct-panes-panel-pane-1 {
   margin-bottom: 30px;
 }
-/* line 1147, ../sass/general.scss */
+/* line 1149, ../sass/general.scss */
 .node-type-webform .view-webform-ct-panes.view-display-id-panel_pane_1 .views-field-title {
   color: #fff;
   position: absolute;
@@ -1868,7 +1870,7 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   width: 100%;
   text-shadow: 2px 2px 2px #000;
 }
-/* line 1153, ../sass/general.scss */
+/* line 1155, ../sass/general.scss */
 .node-type-webform .view-webform-ct-panes.view-display-id-panel_pane_1 .views-field-title .field-content {
   width: 1355px !important;
   max-width: 100%;
@@ -1877,16 +1879,16 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   box-sizing: border-box;
   display: block;
 }
-/* line 1156, ../sass/general.scss */
+/* line 1158, ../sass/general.scss */
 .node-type-webform .view-webform-ct-panes.view-display-id-panel_pane_1 .views-field-title .field-content .sub-title {
   font-size: 20px;
   margin: 0 23%;
 }
-/* line 1160, ../sass/general.scss */
+/* line 1162, ../sass/general.scss */
 .node-type-webform .view-webform-ct-panes.view-display-id-panel_pane_1 .views-field-title .field-content h2 {
   margin: 0 23%;
 }
-/* line 1166, ../sass/general.scss */
+/* line 1168, ../sass/general.scss */
 .node-type-webform form {
   width: 1355px !important;
   max-width: 100%;
@@ -1894,21 +1896,21 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   padding: 0 5%;
   box-sizing: border-box;
 }
-/* line 1168, ../sass/general.scss */
+/* line 1170, ../sass/general.scss */
 .node-type-webform form > div {
   margin: 0 23%;
 }
-/* line 1171, ../sass/general.scss */
+/* line 1173, ../sass/general.scss */
 .node-type-webform form .webform-component {
   float: none;
   width: 100%;
   margin: 0;
 }
-/* line 1176, ../sass/general.scss */
+/* line 1178, ../sass/general.scss */
 .node-type-webform form .form-actions {
   float: right;
 }
-/* line 1178, ../sass/general.scss */
+/* line 1180, ../sass/general.scss */
 .node-type-webform form .form-actions .webform-submit {
   box-shadow: none;
   color: #fff;
@@ -1922,7 +1924,7 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
 .domain-2 .node-type-webform form .form-actions .webform-submit {
   background-color: #b59d70 !important;
 }
-/* line 1183, ../sass/general.scss */
+/* line 1185, ../sass/general.scss */
 .node-type-webform form .form-actions .webform-submit:hover {
   opacity: 0.9;
 }
@@ -1935,40 +1937,40 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   background-color: #b59d70 !important;
 }
 
-/* line 1192, ../sass/general.scss */
+/* line 1194, ../sass/general.scss */
 .alert {
   position: relative;
   z-index: 200;
 }
 
 /*******  user profile  ********/
-/* line 1200, ../sass/general.scss */
+/* line 1202, ../sass/general.scss */
 .page-user {
   background-color: #f9f4ee !important;
 }
-/* line 1202, ../sass/general.scss */
+/* line 1204, ../sass/general.scss */
 .page-user .container {
   width: 100%;
 }
-/* line 1205, ../sass/general.scss */
+/* line 1207, ../sass/general.scss */
 .page-user .panels-flexible-region-homepage_panel-center {
   width: 100%;
 }
-/* line 1208, ../sass/general.scss */
+/* line 1210, ../sass/general.scss */
 .page-user .header-right .favorite a {
   pointer-events: none;
   cursor: default;
 }
-/* line 1212, ../sass/general.scss */
+/* line 1214, ../sass/general.scss */
 .page-user #page-header .tabs {
   display: none;
 }
 
-/* line 1217, ../sass/general.scss */
+/* line 1219, ../sass/general.scss */
 .pane-user-page-pane-panel-pane-1 {
   background-color: #999b9c;
 }
-/* line 1219, ../sass/general.scss */
+/* line 1221, ../sass/general.scss */
 .pane-user-page-pane-panel-pane-1 .pane-content {
   width: 1355px !important;
   max-width: 100%;
@@ -1977,16 +1979,16 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   box-sizing: border-box;
   padding-top: 60px;
 }
-/* line 1222, ../sass/general.scss */
+/* line 1224, ../sass/general.scss */
 .pane-user-page-pane-panel-pane-1 .pane-content .views-field-name {
   text-align: center;
 }
-/* line 1224, ../sass/general.scss */
+/* line 1226, ../sass/general.scss */
 .pane-user-page-pane-panel-pane-1 .pane-content .views-field-name .field-content {
   font-size: 3em;
 }
 
-/* line 1232, ../sass/general.scss */
+/* line 1234, ../sass/general.scss */
 #views-exposed-form-user-flagged-content-panel-pane-1 .views-widget-filter-gid {
   width: 100%;
   background-color: #999b9c;
@@ -1996,7 +1998,7 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   top: 0;
   padding: 0 0 30px 0;
 }
-/* line 1240, ../sass/general.scss */
+/* line 1242, ../sass/general.scss */
 #views-exposed-form-user-flagged-content-panel-pane-1 .views-widget-filter-gid a {
   color: #000;
   border: 1px solid #fff;
@@ -2006,7 +2008,7 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
 }
-/* line 1248, ../sass/general.scss */
+/* line 1250, ../sass/general.scss */
 #views-exposed-form-user-flagged-content-panel-pane-1 .views-widget-filter-gid a.active, #views-exposed-form-user-flagged-content-panel-pane-1 .views-widget-filter-gid a:hover {
   color: #fff;
 }
@@ -2018,28 +2020,28 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
 .domain-2 #views-exposed-form-user-flagged-content-panel-pane-1 .views-widget-filter-gid a.active, .domain-2 #views-exposed-form-user-flagged-content-panel-pane-1 .views-widget-filter-gid a:hover {
   background-color: #b59d70 !important;
 }
-/* line 1253, ../sass/general.scss */
+/* line 1255, ../sass/general.scss */
 #views-exposed-form-user-flagged-content-panel-pane-1 .views-widget-filter-gid .form-item {
   text-align: center;
 }
-/* line 1255, ../sass/general.scss */
+/* line 1257, ../sass/general.scss */
 #views-exposed-form-user-flagged-content-panel-pane-1 .views-widget-filter-gid .form-item .form-item {
   display: inline-block;
 }
-/* line 1260, ../sass/general.scss */
+/* line 1262, ../sass/general.scss */
 #views-exposed-form-user-flagged-content-panel-pane-1 .form-item-edit-gid-all {
   display: none !important;
 }
 
-/* line 1264, ../sass/general.scss */
+/* line 1266, ../sass/general.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 {
   font-size: 18px;
 }
-/* line 1266, ../sass/general.scss */
+/* line 1268, ../sass/general.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 li {
   list-style-type: none;
 }
-/* line 1269, ../sass/general.scss */
+/* line 1271, ../sass/general.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters {
   background-color: #c0c1c3;
   overflow: hidden;
@@ -2047,7 +2049,7 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   padding-bottom: 13px;
   margin-bottom: 50px;
 }
-/* line 1275, ../sass/general.scss */
+/* line 1277, ../sass/general.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper {
   width: 1355px !important;
   max-width: 100%;
@@ -2055,35 +2057,35 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   padding: 0 5%;
   box-sizing: border-box;
 }
-/* line 1277, ../sass/general.scss */
+/* line 1279, ../sass/general.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper form {
   float: left;
 }
 @media (max-width: 767px) {
-  /* line 1277, ../sass/general.scss */
+  /* line 1279, ../sass/general.scss */
   .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper form {
     width: 100%;
     text-align: center;
   }
-  /* line 1282, ../sass/general.scss */
+  /* line 1284, ../sass/general.scss */
   .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper form .views-exposed-form .views-exposed-widget {
     float: none;
   }
 }
-/* line 1287, ../sass/general.scss */
+/* line 1289, ../sass/general.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper .edit {
   float: right;
   padding-top: 3px;
 }
 @media (max-width: 767px) {
-  /* line 1287, ../sass/general.scss */
+  /* line 1289, ../sass/general.scss */
   .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper .edit {
     width: 100%;
     text-align: center;
     margin-bottom: 30px;
   }
 }
-/* line 1295, ../sass/general.scss */
+/* line 1297, ../sass/general.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper .edit a {
   border: 1px solid;
   padding: 5px 10px;
@@ -2098,23 +2100,23 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
 .domain-2 .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper .edit a {
   color: #b59d70 !important;
 }
-/* line 1301, ../sass/general.scss */
+/* line 1303, ../sass/general.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper .edit a:hover {
   background-color: #fff;
 }
-/* line 1307, ../sass/general.scss */
+/* line 1309, ../sass/general.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .views-widget-filter-type {
   padding: 0;
 }
-/* line 1309, ../sass/general.scss */
+/* line 1311, ../sass/general.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .views-widget-filter-type .form-item-edit-type-all {
   display: none !important;
 }
-/* line 1312, ../sass/general.scss */
+/* line 1314, ../sass/general.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .views-widget-filter-type .form-item {
   display: inline-block;
 }
-/* line 1314, ../sass/general.scss */
+/* line 1316, ../sass/general.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .views-widget-filter-type .form-item a {
   color: #000;
   transition: all 0.5s;
@@ -2128,18 +2130,18 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
 .domain-2 .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .views-widget-filter-type .form-item a.active, .domain-2 .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .views-widget-filter-type .form-item a:hover {
   color: #b59d70 !important;
 }
-/* line 1323, ../sass/general.scss */
+/* line 1325, ../sass/general.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .views-widget-filter-type .form-item-edit-type-1 {
   border-right: 1px solid #000;
   margin-right: 40px;
   padding-right: 40px;
 }
-/* line 1330, ../sass/general.scss */
+/* line 1332, ../sass/general.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .text-center {
   overflow: hidden;
   padding-bottom: 50px;
 }
-/* line 1333, ../sass/general.scss */
+/* line 1335, ../sass/general.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .text-center .item-list {
   width: 1355px !important;
   max-width: 100%;
@@ -2147,34 +2149,34 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   padding: 0 5%;
   box-sizing: border-box;
 }
-/* line 1335, ../sass/general.scss */
+/* line 1337, ../sass/general.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .text-center .item-list ul {
   margin: 0;
 }
-/* line 1339, ../sass/general.scss */
+/* line 1341, ../sass/general.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .text-center .pagination {
   float: right;
 }
-/* line 1343, ../sass/general.scss */
+/* line 1345, ../sass/general.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .text-center .pager-next a, .view-user-flagged-content.view-display-id-panel_pane_1 .text-center .pager-last a, .view-user-flagged-content.view-display-id-panel_pane_1 .text-center .pager-first a, .view-user-flagged-content.view-display-id-panel_pane_1 .text-center .pager-previous a {
   padding-right: 0;
   padding-left: 0;
 }
-/* line 1348, ../sass/general.scss */
+/* line 1350, ../sass/general.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .text-center .pager-item a, .view-user-flagged-content.view-display-id-panel_pane_1 .text-center .pager-current span {
   padding: 5px 10px;
 }
 
-/* line 1354, ../sass/general.scss */
+/* line 1356, ../sass/general.scss */
 .pane-user-flagged-content-panel-pane-1 {
   position: relative;
 }
 
-/* line 1358, ../sass/general.scss */
+/* line 1360, ../sass/general.scss */
 .pane-user-flagged-content-panel-pane-1 .view-content {
   padding-bottom: 20px;
 }
-/* line 1360, ../sass/general.scss */
+/* line 1362, ../sass/general.scss */
 .pane-user-flagged-content-panel-pane-1 .view-content .item-list {
   width: 1355px !important;
   max-width: 100%;
@@ -2182,29 +2184,29 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   padding: 0 5%;
   box-sizing: border-box;
 }
-/* line 1362, ../sass/general.scss */
+/* line 1364, ../sass/general.scss */
 .pane-user-flagged-content-panel-pane-1 .view-content .item-list .view {
   overflow: visible;
 }
-/* line 1365, ../sass/general.scss */
+/* line 1367, ../sass/general.scss */
 .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container {
   margin-bottom: 20px;
   clear: both;
   background-color: #fff;
 }
-/* line 1371, ../sass/general.scss */
+/* line 1373, ../sass/general.scss */
 .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-left {
   float: left;
   width: 30%;
   position: relative;
 }
 @media (max-width: 767px) {
-  /* line 1371, ../sass/general.scss */
+  /* line 1373, ../sass/general.scss */
   .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-left {
     width: 100%;
   }
 }
-/* line 1379, ../sass/general.scss */
+/* line 1381, ../sass/general.scss */
 .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-right {
   float: right;
   width: 70%;
@@ -2212,25 +2214,25 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   box-sizing: border-box;
 }
 @media (max-width: 767px) {
-  /* line 1379, ../sass/general.scss */
+  /* line 1381, ../sass/general.scss */
   .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-right {
     width: 100%;
   }
 }
-/* line 1387, ../sass/general.scss */
+/* line 1389, ../sass/general.scss */
 .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-right table tbody {
   border: none;
 }
-/* line 1390, ../sass/general.scss */
+/* line 1392, ../sass/general.scss */
 .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-right .lobby-title a {
   font-size: 1.3em;
 }
-/* line 1393, ../sass/general.scss */
+/* line 1395, ../sass/general.scss */
 .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-right .lobby-length {
   color: #919191;
 }
 
-/* line 1402, ../sass/general.scss */
+/* line 1404, ../sass/general.scss */
 .flag-new-links {
   position: absolute;
   right: 10px;
@@ -2239,66 +2241,66 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
 }
 
 /********  table with date **********/
-/* line 1411, ../sass/general.scss */
+/* line 1413, ../sass/general.scss */
 .table-responsive .date {
   width: 20%;
 }
-/* line 1414, ../sass/general.scss */
+/* line 1416, ../sass/general.scss */
 .table-responsive .time {
   width: 11%;
 }
-/* line 1417, ../sass/general.scss */
+/* line 1419, ../sass/general.scss */
 .table-responsive .hall {
   width: 18%;
 }
-/* line 1420, ../sass/general.scss */
+/* line 1422, ../sass/general.scss */
 .table-responsive .purchase {
   padding-right: 0;
   padding-left: 0;
   width: 88px;
 }
-/* line 1425, ../sass/general.scss */
+/* line 1427, ../sass/general.scss */
 .table-responsive .title {
   width: 23%;
   font-weight: normal;
 }
-/* line 1429, ../sass/general.scss */
+/* line 1431, ../sass/general.scss */
 .table-responsive .flag, .table-responsive .views-field-ops {
   height: 23px;
   display: block;
   padding-top: 14px;
 }
-/* line 1434, ../sass/general.scss */
+/* line 1436, ../sass/general.scss */
 .table-responsive .code {
   width: 10%;
 }
 @media (max-width: 767px) {
-  /* line 1434, ../sass/general.scss */
+  /* line 1436, ../sass/general.scss */
   .table-responsive .code {
     color: #ccc;
   }
-  /* line 1438, ../sass/general.scss */
+  /* line 1440, ../sass/general.scss */
   .table-responsive .code .only-mobile {
     color: #333;
   }
 }
 
 /*********  person page  **********/
-/* line 1447, ../sass/general.scss */
+/* line 1449, ../sass/general.scss */
 .node-type-cm-person {
   background-color: #fff !important;
 }
-/* line 1449, ../sass/general.scss */
+/* line 1451, ../sass/general.scss */
 .node-type-cm-person #content {
   width: 100%;
 }
-/* line 1452, ../sass/general.scss */
+/* line 1454, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-4 {
   width: 100% !important;
   padding: 0 !important;
   top: 50px;
 }
-/* line 1456, ../sass/general.scss */
+/* line 1458, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-4 .pane-person-ct-view-panel-pane-1 {
   background-color: #f9fafb;
   padding-top: 60px !important;
@@ -2306,7 +2308,7 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   overflow: hidden;
   padding-bottom: 20px;
 }
-/* line 1462, ../sass/general.scss */
+/* line 1464, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-4 .pane-person-ct-view-panel-pane-1 .pane-content {
   width: 1355px !important;
   max-width: 100%;
@@ -2314,48 +2316,48 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   padding: 0 5%;
   box-sizing: border-box;
 }
-/* line 1464, ../sass/general.scss */
+/* line 1466, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-4 .pane-person-ct-view-panel-pane-1 .pane-content .view {
   float: right;
   width: 77%;
 }
 @media (max-width: 767px) {
-  /* line 1464, ../sass/general.scss */
+  /* line 1466, ../sass/general.scss */
   .node-type-cm-person .panels-flexible-row-node_page-4 .pane-person-ct-view-panel-pane-1 .pane-content .view {
     width: 100%;
   }
 }
 @media (max-width: 767px) {
-  /* line 1456, ../sass/general.scss */
+  /* line 1458, ../sass/general.scss */
   .node-type-cm-person .panels-flexible-row-node_page-4 .pane-person-ct-view-panel-pane-1 {
     margin-bottom: 0 !important;
   }
 }
-/* line 1479, ../sass/general.scss */
+/* line 1481, ../sass/general.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .person-picture img {
   margin: 0 auto;
   display: block;
   border-radius: 50%;
 }
-/* line 1485, ../sass/general.scss */
+/* line 1487, ../sass/general.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .person-name {
   font-size: 3em;
   padding-top: 20px;
   text-align: center;
 }
-/* line 1490, ../sass/general.scss */
+/* line 1492, ../sass/general.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .person-job {
   font-weight: bold;
   padding-bottom: 30px;
   text-align: center;
 }
-/* line 1495, ../sass/general.scss */
+/* line 1497, ../sass/general.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 {
   overflow: hidden;
   font-weight: bold;
   font-size: 15px;
 }
-/* line 1499, ../sass/general.scss */
+/* line 1501, ../sass/general.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col {
   width: 31%;
   float: left;
@@ -2366,68 +2368,68 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   box-sizing: border-box;
 }
 @media (max-width: 767px) {
-  /* line 1499, ../sass/general.scss */
+  /* line 1501, ../sass/general.scss */
   .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col {
     width: 100%;
     margin: 0 0 20px 0;
   }
 }
-/* line 1511, ../sass/general.scss */
+/* line 1513, ../sass/general.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col.col-3 {
   margin-right: 0;
 }
-/* line 1514, ../sass/general.scss */
+/* line 1516, ../sass/general.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col a {
   color: #333;
 }
-/* line 1520, ../sass/general.scss */
+/* line 1522, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 {
   width: 100% !important;
   background-color: #f9f4ee;
 }
-/* line 1524, ../sass/general.scss */
+/* line 1526, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .group {
   clear: both;
   overflow: hidden;
   margin-bottom: 10px;
 }
-/* line 1528, ../sass/general.scss */
+/* line 1530, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .group > h3 {
   text-align: center;
   font-size: 2em;
 }
-/* line 1533, ../sass/general.scss */
+/* line 1535, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .views-row {
   width: 49%;
 }
 @media (max-width: 767px) {
-  /* line 1533, ../sass/general.scss */
+  /* line 1535, ../sass/general.scss */
   .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .views-row {
     width: 100%;
   }
 }
-/* line 1538, ../sass/general.scss */
+/* line 1540, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .views-row h3 {
   font-weight: normal;
 }
-/* line 1542, ../sass/general.scss */
+/* line 1544, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .views-row-odd {
   float: left;
 }
-/* line 1545, ../sass/general.scss */
+/* line 1547, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .views-row-even {
   float: right;
 }
-/* line 1549, ../sass/general.scss */
+/* line 1551, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .node-cm-movie-year {
   font-weight: bold;
 }
 
-/* line 1555, ../sass/general.scss */
+/* line 1557, ../sass/general.scss */
 .node-title-teaser-content-type {
   background-color: #fff !important;
 }
-/* line 1557, ../sass/general.scss */
+/* line 1559, ../sass/general.scss */
 .node-title-teaser-content-type:hover {
   background: url("../images/more-white-right.png") no-repeat scroll right 10px center;
 }
@@ -2440,7 +2442,7 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   background-color: #b59d70 !important;
 }
 
-/* line 1564, ../sass/general.scss */
+/* line 1566, ../sass/general.scss */
 .gradient {
   position: absolute;
   bottom: 0;
@@ -2455,71 +2457,71 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   z-index: 1;
 }
 
-/* line 1578, ../sass/general.scss */
+/* line 1580, ../sass/general.scss */
 .gradient.small {
   height: 150px !important;
 }
 
-/* line 1582, ../sass/general.scss */
+/* line 1584, ../sass/general.scss */
 .state-nopic .gradient.small {
   background-image: none;
 }
 
 /******  responsive *********/
-/* line 1587, ../sass/general.scss */
+/* line 1589, ../sass/general.scss */
 .only-mobile {
   display: none !important;
 }
 @media (max-width: 767px) {
-  /* line 1587, ../sass/general.scss */
+  /* line 1589, ../sass/general.scss */
   .only-mobile {
     display: block !important;
   }
 }
 
 @media (max-width: 767px) {
-  /* line 1594, ../sass/general.scss */
+  /* line 1596, ../sass/general.scss */
   .only-desktop {
     display: none !important;
   }
 }
 
-/* line 1600, ../sass/general.scss */
+/* line 1602, ../sass/general.scss */
 .collapse {
   display: block !important;
 }
 @media (max-width: 767px) {
-  /* line 1600, ../sass/general.scss */
+  /* line 1602, ../sass/general.scss */
   .collapse {
     padding: 0;
   }
 }
 
 @media (max-width: 767px) {
-  /* line 1608, ../sass/general.scss */
+  /* line 1610, ../sass/general.scss */
   .table-responsive {
     border: none;
     overflow: hidden;
     margin-bottom: 0;
   }
-  /* line 1612, ../sass/general.scss */
+  /* line 1614, ../sass/general.scss */
   .table-responsive thead {
     display: none;
   }
-  /* line 1615, ../sass/general.scss */
+  /* line 1617, ../sass/general.scss */
   .table-responsive table {
     font-size: 14px;
   }
-  /* line 1619, ../sass/general.scss */
+  /* line 1621, ../sass/general.scss */
   .table-responsive .views-field-field-cm-event-hall .only-mobile {
     color: #ccc;
   }
-  /* line 1623, ../sass/general.scss */
+  /* line 1625, ../sass/general.scss */
   .table-responsive td {
     width: calc(49% - 44px) !important;
     padding-left: 0 !important;
   }
-  /* line 1626, ../sass/general.scss */
+  /* line 1628, ../sass/general.scss */
   .table-responsive td.purchase, .table-responsive td.views-field-field-toptix-purchase {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -2527,18 +2529,18 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   }
 }
 /*******  admin menu  **********/
-/* line 1637, ../sass/general.scss */
+/* line 1639, ../sass/general.scss */
 div#admin-toolbar div.admin-tab {
   height: 25px;
 }
 
-/* line 1641, ../sass/general.scss */
+/* line 1643, ../sass/general.scss */
 input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]), input[type="email"]:focus:not([readonly]), input[type="number"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), input[type="search-md"]:focus:not([readonly]), input[type="tel"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="time"]:focus:not([readonly]), input[type="url"]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
   box-shadow: none !important;
 }
 
 /***** movie, movie group, event & article  ********/
-/* line 1647, ../sass/general.scss */
+/* line 1649, ../sass/general.scss */
 .text-main-image {
   position: absolute;
   bottom: 60px;
@@ -2548,12 +2550,12 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   z-index: 99;
 }
 @media (max-width: 767px) {
-  /* line 1647, ../sass/general.scss */
+  /* line 1649, ../sass/general.scss */
   .text-main-image {
     bottom: 10px;
   }
 }
-/* line 1657, ../sass/general.scss */
+/* line 1659, ../sass/general.scss */
 .text-main-image .wrapper {
   width: 1355px !important;
   max-width: 100%;
@@ -2561,17 +2563,17 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   padding: 0 5%;
   box-sizing: border-box;
 }
-/* line 1659, ../sass/general.scss */
+/* line 1661, ../sass/general.scss */
 .text-main-image .wrapper a, .text-main-image .wrapper a:hover {
   color: #fff;
 }
-/* line 1662, ../sass/general.scss */
+/* line 1664, ../sass/general.scss */
 .text-main-image .wrapper .slide-left-ct {
   width: 54%;
   margin: 0 auto;
 }
 @media (max-width: 767px) {
-  /* line 1662, ../sass/general.scss */
+  /* line 1664, ../sass/general.scss */
   .text-main-image .wrapper .slide-left-ct {
     text-align: center;
     font-size: 13px;
@@ -2579,36 +2581,36 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
     width: 70%;
   }
 }
-/* line 1671, ../sass/general.scss */
+/* line 1673, ../sass/general.scss */
 .text-main-image .wrapper .slide-left-ct .slide-small-text {
   font-size: 22px;
 }
 @media (max-width: 480px) {
-  /* line 1671, ../sass/general.scss */
+  /* line 1673, ../sass/general.scss */
   .text-main-image .wrapper .slide-left-ct .slide-small-text {
     font-size: 15px;
   }
 }
-/* line 1677, ../sass/general.scss */
+/* line 1679, ../sass/general.scss */
 .text-main-image .wrapper .slide-left-ct .slide-big-text {
   font-size: 48px;
   margin: 1% 0 15px;
   line-height: 110%;
 }
 @media (max-width: 767px) {
-  /* line 1677, ../sass/general.scss */
+  /* line 1679, ../sass/general.scss */
   .text-main-image .wrapper .slide-left-ct .slide-big-text {
     margin-bottom: 4px;
   }
 }
 @media (max-width: 480px) {
-  /* line 1677, ../sass/general.scss */
+  /* line 1679, ../sass/general.scss */
   .text-main-image .wrapper .slide-left-ct .slide-big-text {
     font-size: 27px;
     font-weight: bold;
   }
 }
-/* line 1689, ../sass/general.scss */
+/* line 1691, ../sass/general.scss */
 .text-main-image .wrapper .slide-left-ct .button {
   font-size: 14px;
   padding: 5px 12px;
@@ -2624,18 +2626,18 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   background-color: #b59d70 !important;
 }
 @media (max-width: 767px) {
-  /* line 1689, ../sass/general.scss */
+  /* line 1691, ../sass/general.scss */
   .text-main-image .wrapper .slide-left-ct .button {
     float: none;
     display: inline-block;
     margin: 22px auto;
   }
 }
-/* line 1700, ../sass/general.scss */
+/* line 1702, ../sass/general.scss */
 .text-main-image .wrapper .slide-left-ct .button a {
   color: #fff;
 }
-/* line 1705, ../sass/general.scss */
+/* line 1707, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct {
   float: left;
   position: absolute;
@@ -2646,7 +2648,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   margin-top: 38px;
 }
 @media (max-width: 767px) {
-  /* line 1705, ../sass/general.scss */
+  /* line 1707, ../sass/general.scss */
   .text-main-image .wrapper .slide-right-ct {
     margin: 0;
     bottom: 6px;
@@ -2656,13 +2658,13 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
     width: 13%;
   }
 }
-/* line 1721, ../sass/general.scss */
+/* line 1723, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct *:focus {
   outline: 0;
   outline-style: none;
   outline-width: 0;
 }
-/* line 1726, ../sass/general.scss */
+/* line 1728, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct .play-button {
   background: url("../images/play-icon.png") no-repeat scroll 60% center;
   border-radius: 30px;
@@ -2675,14 +2677,14 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   cursor: pointer;
 }
 @media (max-width: 767px) {
-  /* line 1726, ../sass/general.scss */
+  /* line 1728, ../sass/general.scss */
   .text-main-image .wrapper .slide-right-ct .play-button {
     background-size: 16px;
     height: 40px;
     width: 40px;
   }
 }
-/* line 1742, ../sass/general.scss */
+/* line 1744, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct .video-wrapper {
   position: fixed;
   width: 100%;
@@ -2692,11 +2694,11 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   background-color: #000;
   display: none;
 }
-/* line 1750, ../sass/general.scss */
+/* line 1752, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct .video-wrapper.play {
   display: block;
 }
-/* line 1753, ../sass/general.scss */
+/* line 1755, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct .video-wrapper .close-button {
   background: url("../images/close42.png") no-repeat scroll center center;
   position: fixed;
@@ -2706,13 +2708,13 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   left: 10%;
   cursor: pointer;
 }
-/* line 1762, ../sass/general.scss */
+/* line 1764, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct .video-wrapper .file {
   width: 70%;
   height: 70%;
   margin: 0 auto;
 }
-/* line 1767, ../sass/general.scss */
+/* line 1769, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct .video-wrapper .content {
   position: relative;
   padding-bottom: 56.25%;
@@ -2720,76 +2722,76 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   padding-top: 25px;
   height: 0;
 }
-/* line 1772, ../sass/general.scss */
+/* line 1774, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct .video-wrapper .content iframe, .text-main-image .wrapper .slide-right-ct .video-wrapper .content video {
   position: absolute;
   width: 100%;
   height: 100%;
 }
-/* line 1777, ../sass/general.scss */
+/* line 1779, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct .video-wrapper .content video {
   padding-top: 46px;
 }
-/* line 1784, ../sass/general.scss */
+/* line 1786, ../sass/general.scss */
 .text-main-image a {
   color: #fff;
 }
 
-/* line 1789, ../sass/general.scss */
+/* line 1791, ../sass/general.scss */
 .full-screen-image {
   overflow: hidden;
   position: relative;
 }
 
-/* line 1795, ../sass/general.scss */
+/* line 1797, ../sass/general.scss */
 .noheaderimage .text-main-image {
   position: relative;
   color: #333;
   margin: 50px 0 30px;
   bottom: auto;
 }
-/* line 1801, ../sass/general.scss */
+/* line 1803, ../sass/general.scss */
 .noheaderimage .text-main-image .wrapper a, .noheaderimage .text-main-image .wrapper a:hover {
   color: #333;
 }
-/* line 1804, ../sass/general.scss */
+/* line 1806, ../sass/general.scss */
 .noheaderimage .text-main-image .wrapper .slide-right-ct {
   margin-top: 0;
 }
-/* line 1806, ../sass/general.scss */
+/* line 1808, ../sass/general.scss */
 .noheaderimage .text-main-image .wrapper .slide-right-ct .play-button {
   background: url("../images/play-icon-black.png") no-repeat scroll 60% center;
   border: 1px solid #000;
 }
-/* line 1813, ../sass/general.scss */
+/* line 1815, ../sass/general.scss */
 .noheaderimage .gradient {
   display: none;
 }
 
-/* line 1818, ../sass/general.scss */
+/* line 1820, ../sass/general.scss */
 .top-text-blk-wht {
   position: absolute;
   top: 0;
   left: 0;
   font-size: 14px;
 }
-/* line 1823, ../sass/general.scss */
+/* line 1825, ../sass/general.scss */
 .top-text-blk-wht span {
   padding: 6px 12px;
   opacity: 0.9;
   float: left;
 }
-/* line 1828, ../sass/general.scss */
+/* line 1830, ../sass/general.scss */
 .top-text-blk-wht .black {
   color: #fff;
   background-color: #333;
 }
-/* line 1832, ../sass/general.scss */
+/* line 1834, ../sass/general.scss */
 .top-text-blk-wht .white {
   background-color: #fff;
 }
 
-/* line 1837, ../sass/general.scss */
+/* line 1839, ../sass/general.scss */
 .image-alt-title {
   background-color: #312f2f;
   bottom: 0px;
@@ -2801,28 +2803,28 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   z-index: 2;
 }
 @media (max-width: 767px) {
-  /* line 1837, ../sass/general.scss */
+  /* line 1839, ../sass/general.scss */
   .image-alt-title {
     display: none;
   }
 }
-/* line 1849, ../sass/general.scss */
+/* line 1851, ../sass/general.scss */
 .image-alt-title .field {
   float: left;
 }
-/* line 1852, ../sass/general.scss */
+/* line 1854, ../sass/general.scss */
 .image-alt-title .grp-title, .image-alt-title .field-name-field-file-image-title-text {
   margin-left: 10px;
   padding-left: 10px;
   border-left: 1px solid;
 }
 
-/* line 1859, ../sass/general.scss */
+/* line 1861, ../sass/general.scss */
 .view-footer {
   overflow: hidden;
   text-align: center;
 }
-/* line 1862, ../sass/general.scss */
+/* line 1864, ../sass/general.scss */
 .view-footer .more-event {
   float: right;
   cursor: pointer;
@@ -2840,7 +2842,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   color: #b59d70 !important;
 }
 @media (max-width: 767px) {
-  /* line 1862, ../sass/general.scss */
+  /* line 1864, ../sass/general.scss */
   .view-footer .more-event {
     margin: 10px auto;
     float: none;
@@ -2851,44 +2853,44 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   }
 }
 @media (max-width: 767px) {
-  /* line 1878, ../sass/general.scss */
+  /* line 1880, ../sass/general.scss */
   .view-footer .more-event span {
     float: left;
   }
 }
-/* line 1883, ../sass/general.scss */
+/* line 1885, ../sass/general.scss */
 .view-footer .more-event .text {
   margin: 0 5px;
 }
 
-/* line 1891, ../sass/general.scss */
+/* line 1893, ../sass/general.scss */
 .credits-view {
   padding: 30px 0;
   float: right;
   width: 77%;
 }
 @media (max-width: 767px) {
-  /* line 1891, ../sass/general.scss */
+  /* line 1893, ../sass/general.scss */
   .credits-view {
     width: 100%;
   }
 }
-/* line 1898, ../sass/general.scss */
+/* line 1900, ../sass/general.scss */
 .credits-view .profession {
   width: 145px;
   color: #b3b3b3;
 }
 @media (max-width: 767px) {
-  /* line 1898, ../sass/general.scss */
+  /* line 1900, ../sass/general.scss */
   .credits-view .profession {
     width: auto;
   }
 }
-/* line 1905, ../sass/general.scss */
+/* line 1907, ../sass/general.scss */
 .credits-view table tr {
   border: none !important;
 }
-/* line 1908, ../sass/general.scss */
+/* line 1910, ../sass/general.scss */
 .credits-view a {
   color: #000;
 }
@@ -2901,13 +2903,13 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   color: #b59d70 !important;
 }
 
-/* line 1918, ../sass/general.scss */
+/* line 1920, ../sass/general.scss */
 .view-reviews-field-collection-view {
   margin-top: 50px;
   background-color: #f9f4ee;
   overflow: hidden;
 }
-/* line 1922, ../sass/general.scss */
+/* line 1924, ../sass/general.scss */
 .view-reviews-field-collection-view .view-content {
   width: 1355px !important;
   max-width: 100%;
@@ -2915,7 +2917,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   padding: 0 5%;
   box-sizing: border-box;
 }
-/* line 1924, ../sass/general.scss */
+/* line 1926, ../sass/general.scss */
 .view-reviews-field-collection-view .view-content > div {
   width: 77%;
   float: right;
@@ -2932,20 +2934,20 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   color: #b59d70 !important;
 }
 @media (max-width: 767px) {
-  /* line 1924, ../sass/general.scss */
+  /* line 1926, ../sass/general.scss */
   .view-reviews-field-collection-view .view-content > div {
     width: 100%;
     padding-right: 0;
   }
 }
-/* line 1936, ../sass/general.scss */
+/* line 1938, ../sass/general.scss */
 .view-reviews-field-collection-view .view-content .views-field-field-cm-review-source {
   display: block;
   font-size: 0.9em !important;
   padding: 25px 0 0 0;
   width: 100%;
 }
-/* line 1942, ../sass/general.scss */
+/* line 1944, ../sass/general.scss */
 .view-reviews-field-collection-view .view-content .views-field-field-cm-review-qoute {
   font-size: 1.35em !important;
   line-height: 1.35em;
@@ -2958,17 +2960,17 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 .domain-2 .view-reviews-field-collection-view .view-content .views-field-field-cm-review-qoute {
   color: #b59d70 !important;
 }
-/* line 1948, ../sass/general.scss */
+/* line 1950, ../sass/general.scss */
 .view-reviews-field-collection-view .views-slideshow-controls-bottom {
   clear: both;
   text-align: center;
   padding: 25px 0;
 }
-/* line 1952, ../sass/general.scss */
+/* line 1954, ../sass/general.scss */
 .view-reviews-field-collection-view .views-slideshow-controls-bottom .views-slideshow-pager-field-item {
   display: inline-block;
 }
-/* line 1955, ../sass/general.scss */
+/* line 1957, ../sass/general.scss */
 .view-reviews-field-collection-view .views-slideshow-controls-bottom .circle {
   width: 8px;
   height: 8px;
@@ -2983,12 +2985,12 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 .domain-2 .view-reviews-field-collection-view .views-slideshow-controls-bottom .active .circle {
   background-color: #b59d70 !important;
 }
-/* line 1965, ../sass/general.scss */
+/* line 1967, ../sass/general.scss */
 .view-reviews-field-collection-view .views-slideshow-cycle-main-frame-row {
   width: 100% !important;
 }
 
-/* line 1970, ../sass/general.scss */
+/* line 1972, ../sass/general.scss */
 .view-review-mobile {
   background-color: #f9f4ee;
   position: relative;
@@ -3003,7 +3005,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 .domain-2 .view-review-mobile {
   color: #b59d70 !important;
 }
-/* line 1976, ../sass/general.scss */
+/* line 1978, ../sass/general.scss */
 .view-review-mobile .review-owl-carousel {
   width: 1355px !important;
   max-width: 100%;
@@ -3011,16 +3013,16 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   padding: 0 5%;
   box-sizing: border-box;
 }
-/* line 1979, ../sass/general.scss */
+/* line 1981, ../sass/general.scss */
 .view-review-mobile .views-field-field-cm-review-qoute {
   font-size: 0.95em;
 }
-/* line 1982, ../sass/general.scss */
+/* line 1984, ../sass/general.scss */
 .view-review-mobile .views-field-field-cm-review-source {
   font-size: 0.8em;
   padding-top: 10px;
 }
-/* line 1986, ../sass/general.scss */
+/* line 1988, ../sass/general.scss */
 .view-review-mobile .owl-next {
   font-size: 0;
   height: 19px;
@@ -3029,7 +3031,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   top: 44%;
   width: 10px;
 }
-/* line 1994, ../sass/general.scss */
+/* line 1996, ../sass/general.scss */
 .view-review-mobile .owl-prev {
   font-size: 0;
   height: 19px;
@@ -3040,15 +3042,15 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 }
 
 @media (max-width: 767px) {
-  /* line 2005, ../sass/general.scss */
+  /* line 2007, ../sass/general.scss */
   .node-type-cm-person .panels-flexible-row-node_page-5, .node-type-cm-article .panels-flexible-row-node_page-5 {
     padding: 0 !important;
   }
-  /* line 2008, ../sass/general.scss */
+  /* line 2010, ../sass/general.scss */
   .node-type-cm-person .panels-flexible-row-node_page-5 .panels-flexible-region-node_page-content_left, .node-type-cm-article .panels-flexible-row-node_page-5 .panels-flexible-region-node_page-content_left {
     padding: 0 5%;
   }
-  /* line 2011, ../sass/general.scss */
+  /* line 2013, ../sass/general.scss */
   .node-type-cm-person .panels-flexible-row-node_page-5 .panels-flexible-region-node_page-content_right .pane-entity-field, .node-type-cm-article .panels-flexible-row-node_page-5 .panels-flexible-region-node_page-content_right .pane-entity-field {
     padding: 0 5% 25px;
     border-top: 1px solid #cdcdcd;
@@ -3057,7 +3059,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 }
 
 /******  node teaser  ******/
-/* line 2023, ../sass/general.scss */
+/* line 2025, ../sass/general.scss */
 .node-title-teaser-cm-movie .node-cm-movie-year {
   padding: 23px 10px;
   float: left;
@@ -3065,40 +3067,45 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   margin-right: 10px;
 }
 @media (max-width: 767px) {
-  /* line 2023, ../sass/general.scss */
+  /* line 2025, ../sass/general.scss */
   .node-title-teaser-cm-movie .node-cm-movie-year {
     padding: 8px 10px;
   }
 }
 
-/* line 2033, ../sass/general.scss */
+/* line 2035, ../sass/general.scss */
 .node-title-teaser-cm-movie a .node-title-teaser-title {
   padding: 26px 26px 23px 10px;
 }
 @media (max-width: 767px) {
-  /* line 2033, ../sass/general.scss */
+  /* line 2035, ../sass/general.scss */
   .node-title-teaser-cm-movie a .node-title-teaser-title {
     padding: 9px 26px 8px 10px;
   }
 }
 
 /*******  overlay region  *******/
-/* line 2042, ../sass/general.scss */
+/* line 2044, ../sass/general.scss */
+.ui-widget-overlay, .ui-dialog {
+  z-index: 400;
+}
+
+/* line 2048, ../sass/general.scss */
 .region-overlay {
   position: fixed;
   height: 100%;
   width: 100%;
   background-color: #000;
-  opacity: 0.9;
+  opacity: 0.98;
   z-index: 400;
   display: none;
   top: 0;
 }
-/* line 2051, ../sass/general.scss */
+/* line 2057, ../sass/general.scss */
 .region-overlay .block {
   display: none;
 }
-/* line 2054, ../sass/general.scss */
+/* line 2060, ../sass/general.scss */
 .region-overlay .block-search-api-page form {
   width: 1355px !important;
   max-width: 100%;
@@ -3108,22 +3115,22 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   margin: 100px auto 0 !important;
   position: relative;
 }
-/* line 2058, ../sass/general.scss */
+/* line 2064, ../sass/general.scss */
 .region-overlay .block-search-api-page form > div {
   position: relative;
 }
-/* line 2061, ../sass/general.scss */
+/* line 2067, ../sass/general.scss */
 .region-overlay .block-search-api-page form .form-group {
   overflow: hidden;
   -webkit-box-shadow: -1px 1px 10px -3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 1px 10px -3px rgba(0, 0, 0, 0.75);
   box-shadow: -1px 1px 10px -3px rgba(0, 0, 0, 0.75);
 }
-/* line 2066, ../sass/general.scss */
+/* line 2072, ../sass/general.scss */
 .region-overlay .block-search-api-page form .form-group label[for="edit-keys-1"] {
   display: none !important;
 }
-/* line 2069, ../sass/general.scss */
+/* line 2075, ../sass/general.scss */
 .region-overlay .block-search-api-page form .form-group .form-text {
   width: 100%;
   box-sizing: border-box;
@@ -3138,13 +3145,13 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   border-radius: 0;
 }
 @media (max-width: 767px) {
-  /* line 2069, ../sass/general.scss */
+  /* line 2075, ../sass/general.scss */
   .region-overlay .block-search-api-page form .form-group .form-text {
     font-size: 15px;
     padding: 13px;
   }
 }
-/* line 2087, ../sass/general.scss */
+/* line 2093, ../sass/general.scss */
 .region-overlay .block-search-api-page form .form-submit {
   margin: 0;
   border-radius: 0 !important;
@@ -3166,13 +3173,13 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   background-color: #b59d70 !important;
 }
 @media (max-width: 767px) {
-  /* line 2087, ../sass/general.scss */
+  /* line 2093, ../sass/general.scss */
   .region-overlay .block-search-api-page form .form-submit {
     width: 100%;
     position: relative;
   }
 }
-/* line 2105, ../sass/general.scss */
+/* line 2111, ../sass/general.scss */
 .region-overlay .popup-close {
   background: url("../images/close42.png") no-repeat scroll center center !important;
   border-radius: 50%;
@@ -3194,16 +3201,16 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   background-color: #b59d70 !important;
 }
 
-/* line 2121, ../sass/general.scss */
+/* line 2127, ../sass/general.scss */
 .search-overlay .region-overlay {
   display: block;
 }
-/* line 2123, ../sass/general.scss */
+/* line 2129, ../sass/general.scss */
 .search-overlay .region-overlay .block-search-api-page {
   display: block;
 }
 
-/* line 2130, ../sass/general.scss */
+/* line 2136, ../sass/general.scss */
 .hambruger-overlay .region-overlay {
   display: block;
   opacity: 1;
@@ -3211,7 +3218,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   z-index: 500;
   overflow-y: auto;
 }
-/* line 2136, ../sass/general.scss */
+/* line 2142, ../sass/general.scss */
 .hambruger-overlay .region-overlay .block-panels-mini {
   display: block;
 }
@@ -7394,12 +7401,16 @@ div[id^="panels-ipe-paneid-22"] > * select {
   .domain-2 .calenders .filter-cantrol {
     color: #b59d70 !important;
   }
-  /* line 233, ../sass/calendar.scss */
+  /* line 232, ../sass/calendar.scss */
+  .calenders .filter-cantrol.no-active {
+    opacity: 0.2;
+  }
+  /* line 236, ../sass/calendar.scss */
   .calenders .prevday {
     padding-left: 5px;
     padding-right: 12px;
   }
-  /* line 237, ../sass/calendar.scss */
+  /* line 240, ../sass/calendar.scss */
   .calenders .nextday {
     padding-right: 5px;
     padding-left: 12px;
@@ -7407,7 +7418,21 @@ div[id^="panels-ipe-paneid-22"] > * select {
   }
 }
 
-/* line 245, ../sass/calendar.scss */
+/* line 248, ../sass/calendar.scss */
+.filter-wrapper.fixedPos {
+  background-color: #fff;
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  z-index: 200;
+}
+/* line 254, ../sass/calendar.scss */
+.filter-wrapper.fixedPos .calender-filter {
+  margin-top: 2px !important;
+  margin-bottom: 0 !important;
+}
+
+/* line 260, ../sass/calendar.scss */
 .calendar-dayview-hour {
   float: left;
   height: 30px;
@@ -7415,17 +7440,17 @@ div[id^="panels-ipe-paneid-22"] > * select {
   margin: 0;
 }
 
-/* line 253, ../sass/calendar.scss */
+/* line 268, ../sass/calendar.scss */
 .pane-complex-calender-view-pane .ajax-inner {
   float: left;
   overflow: hidden;
   width: 100%;
 }
-/* line 258, ../sass/calendar.scss */
+/* line 273, ../sass/calendar.scss */
 .pane-complex-calender-view-pane .flag-wrapper {
   float: right;
 }
-/* line 260, ../sass/calendar.scss */
+/* line 275, ../sass/calendar.scss */
 .pane-complex-calender-view-pane .flag-wrapper .flag {
   margin: 0;
   background-size: 100% 100%;
@@ -7436,7 +7461,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: 18px;
 }
 
-/* line 272, ../sass/calendar.scss */
+/* line 287, ../sass/calendar.scss */
 #calender-top-popup {
   float: left;
   left: 40%;
@@ -7445,49 +7470,49 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: 500px;
   display: none;
 }
-/* line 279, ../sass/calendar.scss */
+/* line 294, ../sass/calendar.scss */
 #calender-top-popup .close-calender-popup {
   position: absolute;
   right: -10px;
   top: -10px;
   cursor: pointer;
 }
-/* line 285, ../sass/calendar.scss */
+/* line 300, ../sass/calendar.scss */
 #calender-top-popup.visible {
   display: block;
   z-index: 99;
 }
-/* line 289, ../sass/calendar.scss */
+/* line 304, ../sass/calendar.scss */
 #calender-top-popup .tickets {
   float: left;
   padding-top: 10px;
   width: 100%;
 }
-/* line 293, ../sass/calendar.scss */
+/* line 308, ../sass/calendar.scss */
 #calender-top-popup .tickets span {
   box-sizing: border-box;
   display: inline-block;
   padding: 8px 8px 8px 0;
   width: 20%;
 }
-/* line 300, ../sass/calendar.scss */
+/* line 315, ../sass/calendar.scss */
 #calender-top-popup .title {
   font-size: 14px;
   padding-bottom: 20px;
   padding-top: 25px;
 }
-/* line 305, ../sass/calendar.scss */
+/* line 320, ../sass/calendar.scss */
 #calender-top-popup .calender-row.inner {
   width: 500px;
   cursor: default;
   padding: 20px;
 }
-/* line 310, ../sass/calendar.scss */
+/* line 325, ../sass/calendar.scss */
 #calender-top-popup .body > p {
   font-size: 14px;
 }
 
-/* line 315, ../sass/calendar.scss */
+/* line 330, ../sass/calendar.scss */
 .scroll-date {
   position: relative;
   padding: 0;
@@ -7496,7 +7521,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   border-bottom: 2px solid #f4f4f4;
   padding-bottom: 8px;
 }
-/* line 322, ../sass/calendar.scss */
+/* line 337, ../sass/calendar.scss */
 .scroll-date .wrapper {
   width: 1355px !important;
   max-width: 100%;
@@ -7505,7 +7530,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   box-sizing: border-box;
 }
 
-/* line 327, ../sass/calendar.scss */
+/* line 342, ../sass/calendar.scss */
 .calender-filter-date {
   float: left;
   margin-top: 10px;
@@ -7513,7 +7538,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   padding: 0;
 }
 
-/* line 334, ../sass/calendar.scss */
+/* line 349, ../sass/calendar.scss */
 .calender-scroll {
   width: 30%;
   float: right;
@@ -7521,7 +7546,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   text-align: right;
   margin-top: 13px;
 }
-/* line 340, ../sass/calendar.scss */
+/* line 355, ../sass/calendar.scss */
 .calender-scroll p {
   margin: 0;
   display: inline-block;
@@ -7533,24 +7558,24 @@ div[id^="panels-ipe-paneid-22"] > * select {
   position: relative;
   top: -16px;
 }
-/* line 351, ../sass/calendar.scss */
+/* line 366, ../sass/calendar.scss */
 .calender-scroll > span {
   font-size: 18px;
   font-weight: bold;
   margin-right: 5px;
 }
-/* line 356, ../sass/calendar.scss */
+/* line 371, ../sass/calendar.scss */
 .calender-scroll .scrollright {
   background: url("../images/more-gold-right.png") no-repeat center center;
   margin-left: 20px;
 }
-/* line 360, ../sass/calendar.scss */
+/* line 375, ../sass/calendar.scss */
 .calender-scroll .scrollleft {
   background: url("../images/more-gold-left.png") no-repeat center center;
   margin-right: 20px;
 }
 
-/* line 367, ../sass/calendar.scss */
+/* line 382, ../sass/calendar.scss */
 .pane-complex-calender-view-pane .pane-title {
   font-size: 50px;
   font-weight: normal;
@@ -7559,57 +7584,57 @@ div[id^="panels-ipe-paneid-22"] > * select {
   text-align: center;
 }
 
-/* line 377, ../sass/calendar.scss */
+/* line 392, ../sass/calendar.scss */
 .page-node-3261 .panel-panel, .page-node-3284 .panel-panel {
   padding: 0;
 }
-/* line 380, ../sass/calendar.scss */
+/* line 395, ../sass/calendar.scss */
 .page-node-3261 #main-wrapper, .page-node-3284 #main-wrapper {
   background-color: #fff;
 }
-/* line 383, ../sass/calendar.scss */
+/* line 398, ../sass/calendar.scss */
 .page-node-3261 #page-header .page-header, .page-node-3284 #page-header .page-header {
   display: block;
   border: none;
 }
 
-/* line 389, ../sass/calendar.scss */
+/* line 404, ../sass/calendar.scss */
 .fixed-header-calendar .calender-filter {
   position: fixed;
 }
 
-/* line 394, ../sass/calendar.scss */
+/* line 409, ../sass/calendar.scss */
 .scroll-calendar .calender-filter {
   position: fixed;
   top: 50px;
   z-index: 400;
   padding-bottom: 96px;
 }
-/* line 400, ../sass/calendar.scss */
+/* line 415, ../sass/calendar.scss */
 .scroll-calendar .scroll-date {
   position: fixed;
   top: 132px;
   z-index: 500;
 }
-/* line 405, ../sass/calendar.scss */
+/* line 420, ../sass/calendar.scss */
 .scroll-calendar .calender-header {
   position: fixed;
   top: 183px;
   z-index: 400;
 }
-/* line 409, ../sass/calendar.scss */
+/* line 424, ../sass/calendar.scss */
 .scroll-calendar .calender-header .calendar-agenda-items {
   left: 60px;
   position: relative;
 }
 
-/* line 418, ../sass/calendar.scss */
+/* line 433, ../sass/calendar.scss */
 .node-type-cm-article.page-node-3261 .panel-panel-inner .panel-pane, .node-type-cm-article.page-node-3284 .panel-panel-inner .panel-pane {
   width: 100% !important;
 }
 
 /******  calendar this month page  ********/
-/* line 430, ../sass/calendar.scss */
+/* line 445, ../sass/calendar.scss */
 .page-node-3487 .text-main-image {
   bottom: 60px;
   color: #fff !important;
@@ -7619,27 +7644,18 @@ div[id^="panels-ipe-paneid-22"] > * select {
   z-index: 100;
 }
 @media (max-width: 767px) {
-  /* line 430, ../sass/calendar.scss */
+  /* line 445, ../sass/calendar.scss */
   .page-node-3487 .text-main-image {
     bottom: 10px;
   }
 }
-/* line 441, ../sass/calendar.scss */
+/* line 456, ../sass/calendar.scss */
 .page-node-3487 .gradient {
   display: block;
 }
-/* line 444, ../sass/calendar.scss */
-.page-node-3487 .calender-filter.fixedPos {
-  position: fixed;
-  background-color: #fff;
-  position: fixed;
-  top: 0;
-  width: 100% !important;
-  z-index: 200;
-}
 
 /******  float-calendar  ***********/
-/* line 456, ../sass/calendar.scss */
+/* line 463, ../sass/calendar.scss */
 .float-calendar-wrapper {
   z-index: 300;
   position: fixed;
@@ -7652,7 +7668,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   -webkit-transition: all 0.5s;
 }
 @media (max-width: 767px) {
-  /* line 456, ../sass/calendar.scss */
+  /* line 463, ../sass/calendar.scss */
   .float-calendar-wrapper {
     width: 100%;
     padding: 0 !important;
@@ -7661,13 +7677,13 @@ div[id^="panels-ipe-paneid-22"] > * select {
     overflow-y: auto;
   }
 }
-/* line 473, ../sass/calendar.scss */
+/* line 480, ../sass/calendar.scss */
 .float-calendar-wrapper.hide-float {
   top: -100px;
   opacity: 0;
   z-index: -100;
 }
-/* line 478, ../sass/calendar.scss */
+/* line 485, ../sass/calendar.scss */
 .float-calendar-wrapper .close-button {
   background-color: #ececeb;
   padding: 17px 12px;
@@ -7675,7 +7691,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   border: 1px solid #B3B3B3;
   border-top: none;
 }
-/* line 484, ../sass/calendar.scss */
+/* line 491, ../sass/calendar.scss */
 .float-calendar-wrapper .close-button .close {
   opacity: 1;
   background-position: left center !important;
@@ -7693,18 +7709,18 @@ div[id^="panels-ipe-paneid-22"] > * select {
   color: #b59d70 !important;
 }
 
-/* line 497, ../sass/calendar.scss */
+/* line 504, ../sass/calendar.scss */
 .play .float-calendar-wrapper {
   z-index: -1;
 }
 
 @media (min-width: 768px) {
-  /* line 502, ../sass/calendar.scss */
-  .float-calendar-wrapper .calender-filter {
+  /* line 509, ../sass/calendar.scss */
+  .calenders .calender-filter {
     margin: 50px auto !important;
   }
 }
-/* line 507, ../sass/calendar.scss */
+/* line 514, ../sass/calendar.scss */
 .ajax-data-calendar .load-inner.loading {
   background-color: #000;
   height: 100%;
@@ -7715,7 +7731,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: 100%;
   z-index: 500;
 }
-/* line 516, ../sass/calendar.scss */
+/* line 523, ../sass/calendar.scss */
 .ajax-data-calendar .load-inner.loading .image {
   background: url("../images/ajax-loader.gif") no-repeat scroll 0 0;
   height: 38px;
@@ -7725,7 +7741,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: 38px;
 }
 
-/* line 526, ../sass/calendar.scss */
+/* line 533, ../sass/calendar.scss */
 #main-menu .mini-calendar {
   cursor: pointer;
 }
@@ -7738,39 +7754,39 @@ div[id^="panels-ipe-paneid-22"] > * select {
   color: #b59d70 !important;
 }
 
-/* line 534, ../sass/calendar.scss */
+/* line 541, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .calendar-calendar div.calendar {
   font-size: 18px;
 }
-/* line 537, ../sass/calendar.scss */
+/* line 544, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .view-content {
   border: 1px solid #B3B3B3;
   border-top: none;
 }
 @media (max-width: 767px) {
-  /* line 537, ../sass/calendar.scss */
+  /* line 544, ../sass/calendar.scss */
   .view-custom-calendar-floating-pane .view-content {
     max-height: 270px;
     overflow-y: auto;
   }
 }
-/* line 545, ../sass/calendar.scss */
+/* line 552, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .contents {
   display: inline-block;
   font-size: 0.8em;
   color: #333;
   width: 100%;
 }
-/* line 550, ../sass/calendar.scss */
+/* line 557, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .contents a {
   color: #333;
 }
-/* line 554, ../sass/calendar.scss */
+/* line 561, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .toptix-purchase {
   float: right;
   margin-right: 5px;
 }
-/* line 558, ../sass/calendar.scss */
+/* line 565, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .view-custom-calendar-floating-pane {
   position: relative !important;
   left: auto !important;
@@ -7778,56 +7794,56 @@ div[id^="panels-ipe-paneid-22"] > * select {
   float: right;
   z-index: 50;
 }
-/* line 565, ../sass/calendar.scss */
+/* line 572, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .calendar-agenda-items {
   padding: 0 !important;
   width: 300px;
 }
-/* line 569, ../sass/calendar.scss */
+/* line 576, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .date-nav-wrapper {
   margin: 0;
 }
-/* line 572, ../sass/calendar.scss */
+/* line 579, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .holder td {
   padding: 0 !important;
 }
 
-/* line 578, ../sass/calendar.scss */
+/* line 585, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-container {
   margin-bottom: 20px;
 }
 @media (max-width: 767px) {
-  /* line 578, ../sass/calendar.scss */
+  /* line 585, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .lobby-container {
     margin-bottom: 80px;
   }
 }
 @media (max-width: 767px) {
-  /* line 584, ../sass/calendar.scss */
+  /* line 591, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .filter-cantrol {
     display: block;
   }
 }
-/* line 589, ../sass/calendar.scss */
+/* line 596, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-left {
   float: left;
   width: 30%;
   position: relative;
 }
 @media (max-width: 767px) {
-  /* line 589, ../sass/calendar.scss */
+  /* line 596, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .lobby-term-left {
     width: 100%;
   }
 }
-/* line 596, ../sass/calendar.scss */
+/* line 603, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-left .flag {
   position: absolute;
   right: 10px;
   z-index: 100;
   top: 10px;
 }
-/* line 603, ../sass/calendar.scss */
+/* line 610, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right {
   float: right;
   width: 70%;
@@ -7835,40 +7851,40 @@ div[id^="panels-ipe-paneid-22"] > * select {
   box-sizing: border-box;
 }
 @media (max-width: 767px) {
-  /* line 603, ../sass/calendar.scss */
+  /* line 610, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .lobby-term-right {
     width: 100%;
     padding: 0;
   }
 }
-/* line 612, ../sass/calendar.scss */
+/* line 619, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right table tbody {
   border: none;
 }
-/* line 615, ../sass/calendar.scss */
+/* line 622, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .lobby-length {
   color: #919191;
 }
-/* line 618, ../sass/calendar.scss */
+/* line 625, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .table-responsive {
   overflow: visible;
 }
-/* line 620, ../sass/calendar.scss */
+/* line 627, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .table-responsive table {
   margin-bottom: 0;
 }
-/* line 624, ../sass/calendar.scss */
+/* line 631, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .lobby-title {
   margin: 6px 0;
 }
-/* line 627, ../sass/calendar.scss */
+/* line 634, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .calendar-below-title-content {
   color: #919191;
   font-size: 0.9em;
   line-height: 28px;
   margin-bottom: 6px;
 }
-/* line 632, ../sass/calendar.scss */
+/* line 639, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .calendar-below-title-content span {
   border-right: 2px solid;
   padding-right: 8px;
@@ -7876,28 +7892,28 @@ div[id^="panels-ipe-paneid-22"] > * select {
   line-height: 20px;
   display: inline-block;
 }
-/* line 639, ../sass/calendar.scss */
+/* line 646, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .calendar-below-title-content span:last-child {
   border: none;
 }
 @media (max-width: 767px) {
-  /* line 644, ../sass/calendar.scss */
+  /* line 651, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .row-custom-lobby {
     margin-top: 20px;
   }
 }
-/* line 648, ../sass/calendar.scss */
+/* line 655, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby td {
   padding-top: 0;
   padding-bottom: 0;
 }
 @media (max-width: 767px) {
-  /* line 648, ../sass/calendar.scss */
+  /* line 655, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .row-custom-lobby td {
     padding-right: 0 !important;
   }
 }
-/* line 655, ../sass/calendar.scss */
+/* line 662, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby .left {
   float: left;
   width: auto;
@@ -7908,13 +7924,13 @@ div[id^="panels-ipe-paneid-22"] > * select {
   line-height: 23px;
 }
 @media (min-width: 768px) and (max-width: 1095px) {
-  /* line 655, ../sass/calendar.scss */
+  /* line 662, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .row-custom-lobby .left {
     font-size: 13px;
   }
 }
 @media (max-width: 767px) {
-  /* line 655, ../sass/calendar.scss */
+  /* line 662, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .row-custom-lobby .left {
     font-size: 13px;
     border: none !important;
@@ -7924,26 +7940,26 @@ div[id^="panels-ipe-paneid-22"] > * select {
     float: none !important;
   }
 }
-/* line 674, ../sass/calendar.scss */
+/* line 681, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby .left.hall {
   border: none !important;
 }
-/* line 678, ../sass/calendar.scss */
+/* line 685, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby .hall {
   border: none !important;
 }
-/* line 681, ../sass/calendar.scss */
+/* line 688, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby .right {
   float: right;
 }
 @media (max-width: 767px) {
-  /* line 681, ../sass/calendar.scss */
+  /* line 688, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .row-custom-lobby .right {
     float: none !important;
     vertical-align: middle;
   }
 }
-/* line 688, ../sass/calendar.scss */
+/* line 695, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby .purchase {
   padding-right: 0;
   padding-left: 0;
@@ -7951,18 +7967,18 @@ div[id^="panels-ipe-paneid-22"] > * select {
   min-height: 1px;
 }
 
-/* line 705, ../sass/calendar.scss */
+/* line 712, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .pane-title {
   display: none;
 }
 
-/* line 708, ../sass/calendar.scss */
+/* line 715, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .ajax-inner {
   background-color: #f9f4ee;
   margin-top: 3%;
 }
 
-/* line 712, ../sass/calendar.scss */
+/* line 719, ../sass/calendar.scss */
 .loading {
   background: url("loading-small.gif") no-repeat scroll 0 0;
   width: 2%;
@@ -7972,7 +7988,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   padding-top: 2%;
 }
 
-/* line 720, ../sass/calendar.scss */
+/* line 727, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .ajax-inner .calendar-full-container {
   width: 1280px !important;
   max-width: 100%;
@@ -7982,7 +7998,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   background-color: #f9f4ee;
 }
 
-/* line 728, ../sass/calendar.scss */
+/* line 735, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .calenders-filter-date p,
 .pane-calendar-full-width-calendar .calendar-floating-top-content span,
 .pane-calendar-full-width-calendar .lobby-title a {
@@ -7992,45 +8008,45 @@ div[id^="panels-ipe-paneid-22"] > * select {
   margin-bottom: 2%;
 }
 
-/* line 736, ../sass/calendar.scss */
+/* line 743, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-summary {
   font-size: 1.1em;
   line-height: 28px;
 }
 
-/* line 740, ../sass/calendar.scss */
+/* line 747, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-container {
   margin-top: 3%;
 }
 
-/* line 744, ../sass/calendar.scss */
+/* line 751, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .addthisevent-drop {
   padding-top: 20px !important;
 }
 
-/* line 747, ../sass/calendar.scss */
+/* line 754, ../sass/calendar.scss */
 .cal-add-event {
   margin-left: 45%;
 }
 
-/* line 750, ../sass/calendar.scss */
+/* line 757, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .calenders-filter-date p {
   margin: 3% 0 2%;
 }
 
-/* line 755, ../sass/calendar.scss */
+/* line 762, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .view-header {
   background-color: #000;
 }
 
-/* line 758, ../sass/calendar.scss */
+/* line 765, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container {
   overflow-y: hidden !important;
   overflow-x: hidden !important;
   height: 100% !important;
 }
 
-/* line 763, ../sass/calendar.scss */
+/* line 770, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container,
 .view-custom-calendar-floating-pane #multi-day-container tbody,
 .view-custom-calendar-floating-pane #multi-day-container tbody tr,
@@ -8039,7 +8055,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   border: none;
 }
 
-/* line 770, ../sass/calendar.scss */
+/* line 777, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .header-body-divider,
 .view-custom-calendar-floating-pane #single-day-container,
 .view-custom-calendar-floating-pane .single-day-footer,
@@ -8047,13 +8063,13 @@ div[id^="panels-ipe-paneid-22"] > * select {
   display: none;
 }
 
-/* line 776, ../sass/calendar.scss */
+/* line 783, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container tr td .calendar {
   padding: 0;
   margin: 0;
 }
 
-/* line 780, ../sass/calendar.scss */
+/* line 787, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane h3.pull-left {
   color: #fff;
   font-size: 1em;
@@ -8062,12 +8078,12 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: 100%;
 }
 
-/* line 787, ../sass/calendar.scss */
+/* line 794, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .view-header .btn-group {
   position: initial;
 }
 
-/* line 791, ../sass/calendar.scss */
+/* line 798, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .date-nav-wrapper .btn-group a:first-child {
   background: url("../images/more-white-left.png") no-repeat right 0 !important;
   text-indent: -9999px;
@@ -8081,7 +8097,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   outline: 0;
 }
 
-/* line 803, ../sass/calendar.scss */
+/* line 810, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .date-nav-wrapper .btn-group a:last-child {
   background: url("../images/more-white-right.png") no-repeat right 0 !important;
   text-indent: -9999px;
@@ -8095,24 +8111,24 @@ div[id^="panels-ipe-paneid-22"] > * select {
   outline: 0;
 }
 
-/* line 815, ../sass/calendar.scss */
+/* line 822, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .calendar.dayview {
   border-radius: 0 !important;
   background-color: #ECECEB !important;
 }
 
-/* line 819, ../sass/calendar.scss */
+/* line 826, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container tr td .item {
   background-color: #ECECEB !important;
   border-bottom: 1px solid #B3B3B3;
 }
 
-/* line 824, ../sass/calendar.scss */
+/* line 831, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container tr td .item:last-child {
   border: none;
 }
 
-/* line 828, ../sass/calendar.scss */
+/* line 835, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container tr td .item .view-item-custom_calendar_floating_pane {
   padding: 4% 3%;
 }
