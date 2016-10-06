@@ -112,6 +112,7 @@
 
         $(".slide-right-ct .play-button").click(function(ev) {
             $(".slide-right-ct .video-wrapper").addClass("play");
+            $("body").addClass("play");
             $(".media-youtube-player")[0].src += "&enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1";
             ev.preventDefault();
             $("video").play();
@@ -120,6 +121,7 @@
         $('.video-wrapper').on('click', function(e) {
           if($(e.target).closest('.video-wrapper .content').length == 0) {
             $(".slide-right-ct .video-wrapper").removeClass("play");
+            $("body").removeClass("play");
             $(".media-youtube-player").stopVideo();
             $("video").pause();
             e.preventDefault();

@@ -452,7 +452,7 @@
 /******  float-calendar  ***********/
 
 .float-calendar-wrapper{
-	z-index: 100;
+	z-index: 300;
 	position: fixed;
 	top:90px;
 	box-sizing: border-box;
@@ -490,6 +490,10 @@
 		}
 	}
 
+}
+
+.play .float-calendar-wrapper{
+	z-index: -1;
 }
 
 @media (min-width: 768px){
