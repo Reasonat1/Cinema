@@ -46,8 +46,10 @@ function cinematic_festival_taxonomy_term_view($term, $view_mode, $langcode) {
 }
 
 function cinematic_festival_form_taxonomy_form_term_alter(&$form, &$form_state, $form_id) {
-  if($form['#bundle'] != 'festival') { return;}
-  
+  if ($form_state['term']->vocabulary_machine_name != 'festival') {
+    return;
+  }
+
   if (empty($form_state['term']->cinematic_menu)) {
     $form_state['term']->cinematic_menu = NULL;
   }
