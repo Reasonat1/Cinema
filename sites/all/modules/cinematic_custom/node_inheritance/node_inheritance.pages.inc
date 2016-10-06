@@ -36,8 +36,9 @@ function node_inheritance_edit_submit($form, &$form_state) {
     'parent' => $parent->nid,
   );
   drupal_write_record('node_inheritance', $record);
+  $type_url = str_replace('_', '-', $parent->type);
   $form_state['redirect'] = array(
-    'node/add/' . $parent->type,
+    'node/add/' . $type_url,
     array(
       'query' => array('node_inheritance_config' => $record['id']),
     ),
