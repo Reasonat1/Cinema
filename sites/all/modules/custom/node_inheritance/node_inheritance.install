@@ -1,0 +1,33 @@
+<?php
+
+function node_inheritance_schema() {
+  $schema = array();
+  $schema['node_inheritance'] = array(
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'parent' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+      ),
+      'child' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+      ),
+      'field_selection' => array(
+        'type' => 'blob',
+        'not null' => FALSE,
+        'size' => 'big',
+        'serialize' => TRUE,
+      ),
+    ),
+    'primary key' => array('id'),
+    'indexes' => array(
+      'parent' => array('parent'),
+      'child' => array('child'),
+    ),
+  );
+  return $schema;
+}
