@@ -445,6 +445,7 @@ table td{
 
 .share-this-pane-mobile{
 	display: none;
+	@include width;
 	margin: 10px auto 10px;
 	height: 30px;
 	overflow: hidden;
@@ -493,8 +494,10 @@ table td{
 	}
 }
 
-.node-type-cm-movie .share-this-pane-mobile{
-	padding: 0;
+.node-type-cm-movie, .node-type-cm-article{
+	.share-this-pane-mobile{
+		padding: 0;
+	}
 }
 
 .field-name-field-tag {
