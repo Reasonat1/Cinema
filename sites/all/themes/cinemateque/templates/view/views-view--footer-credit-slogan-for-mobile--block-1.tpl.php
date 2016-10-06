@@ -22,7 +22,7 @@
     </div>
   <?php endif; ?>
   <?php if ($rows): ?>
-    <div class="owl-carousel view-content">
+    <div class="block-1-owl-carousel view-content">
       <?php print $rows; ?>
     </div>
   <?php elseif ($empty): ?>
@@ -59,14 +59,10 @@
 
 </div><?php /* class view */ ?>
 
-
-<script type="text/javascript" src="/sites/all/themes/cinemateque/js/owl-carousel/owl.carousel.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/sites/all/themes/cinemateque/js/owl-carousel/assets/owl.carousel.css" />
-
 <script>
 	
 	jQuery(function(){		
-		jQuery('.owl-carousel').owlCarousel({
+		jQuery('.block-1-owl-carousel').owlCarousel({
 			rtl:true,
 			loop:true,
 			margin:10,

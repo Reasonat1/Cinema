@@ -1892,6 +1892,9 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	padding: 30px 0;
 	float: right;
     width: 77%;
+    @include res(s-m){
+    	width: 100%;
+    }
 	.profession{
 		width: 120px;
 		color: $color_nobel_approx;
@@ -1961,6 +1964,39 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	}
 }
 
+.view-review-mobile{
+	background-color: $color_fantasy_approx;
+	position: relative;
+	@include main-color;
+	text-align: center;
+	padding: 30px  0;
+	.review-owl-carousel{
+		@include width;
+	}
+	.views-field-field-cm-review-qoute{
+		font-size: 0.95em;
+	}
+	.views-field-field-cm-review-source{
+		font-size: 0.8em;
+		padding-top: 10px;
+	}
+	.owl-next{
+	    font-size: 0;
+	    height: 19px;
+	    left: 2%;
+	    position: absolute;
+	    top: 44%;
+	    width: 10px;	
+	}
+	.owl-prev{
+	    font-size: 0;
+	    height: 19px;
+	    right: 2%;
+	    position: absolute;
+	    top: 44%;
+	    width: 10px;
+	}
+}
 
 .node-type-cm-person, .node-type-cm-article{
 	.panels-flexible-row-node_page-5{

@@ -9,6 +9,8 @@
  * @see html.tpl.php
  */
 ?>
+<script type="text/javascript" src="/sites/all/themes/cinemateque/js/owl-carousel/owl.carousel.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/sites/all/themes/cinemateque/js/owl-carousel/assets/owl.carousel.css" />
 
 <!--<script src="/misc/jquery.js" type="text/javascript"></script>-->
 <?php print render($page['overlay']); ?>
