@@ -218,3 +218,93 @@
 .calendar-calendar div.calendar {
   text-align: right;
 }
+
+/* line 170, ../sass/calendar-rtl.scss */
+.calender-filter {
+  left: auto !important;
+  right: 0 !important;
+  transition: margin-right 0.5s;
+  -webkit-transition: margin-right 0.5s;
+}
+@media (max-width: 767px) {
+  /* line 170, ../sass/calendar-rtl.scss */
+  .calender-filter {
+    padding-right: 30px;
+    padding-left: 0;
+  }
+}
+/* line 179, ../sass/calendar-rtl.scss */
+.calender-filter span {
+  float: right;
+}
+
+@media (max-width: 767px) {
+  /* line 186, ../sass/calendar-rtl.scss */
+  .calenders .prevday {
+    padding-right: 5px;
+    padding-left: 12px;
+  }
+  /* line 189, ../sass/calendar-rtl.scss */
+  .calenders .prevday i:before {
+    content: "\f105";
+  }
+  /* line 193, ../sass/calendar-rtl.scss */
+  .calenders .nextday {
+    padding-left: 5px;
+    padding-right: 12px;
+    right: auto;
+    left: 0;
+  }
+  /* line 198, ../sass/calendar-rtl.scss */
+  .calenders .nextday i:before {
+    content: "\f104";
+  }
+}
+
+/* line 206, ../sass/calendar-rtl.scss */
+.pane-calendar-full-width-calendar .lobby-term-left {
+  float: right;
+}
+/* line 208, ../sass/calendar-rtl.scss */
+.pane-calendar-full-width-calendar .lobby-term-left .flag {
+  left: 10px;
+  right: auto;
+}
+/* line 213, ../sass/calendar-rtl.scss */
+.pane-calendar-full-width-calendar .lobby-term-right {
+  float: left;
+}
+/* line 216, ../sass/calendar-rtl.scss */
+.pane-calendar-full-width-calendar .lobby-term-right .calendar-below-title-content span {
+  border-left: 2px solid;
+  padding-left: 8px;
+  margin-left: 8px;
+  border-right: none;
+  padding-right: 0;
+  margin-right: 0;
+}
+@media (max-width: 767px) {
+  /* line 227, ../sass/calendar-rtl.scss */
+  .pane-calendar-full-width-calendar .row-custom-lobby td {
+    padding-left: 0 !important;
+  }
+}
+/* line 232, ../sass/calendar-rtl.scss */
+.pane-calendar-full-width-calendar .row-custom-lobby .left {
+  float: right;
+  border-right: none !important;
+  border-left: 2px solid !important;
+  margin-left: 8px;
+  margin-right: 0;
+}
+@media (max-width: 767px) {
+  /* line 232, ../sass/calendar-rtl.scss */
+  .pane-calendar-full-width-calendar .row-custom-lobby .left {
+    border-left: none !important;
+    margin-left: 0;
+  }
+}
+/* line 243, ../sass/calendar-rtl.scss */
+.pane-calendar-full-width-calendar .row-custom-lobby .right {
+  float: left;
+}

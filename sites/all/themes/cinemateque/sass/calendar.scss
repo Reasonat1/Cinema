@@ -181,9 +181,11 @@
 		padding-top: 5px;
 		text-align: center;
 		width: 80px;
+		box-sizing: border-box;
 		@include res(s-m){
 			margin: 0;
 			border-left: 1px solid;
+			border-right: 1px solid;
 			width: 70px;
 			padding-top: 2px;
 			padding-bottom: 5px;
@@ -666,6 +668,11 @@
 					border:none!important;
 					font-weight: normal;
 					margin: 0;
+					vertical-align: middle;
+					float: none!important;
+				}
+				&.hall{
+					border:none!important;
 				}
 			}
 			.hall{
@@ -673,6 +680,10 @@
 			}
 			.right{
 				float: right;
+				@include res(s-m){
+					float: none!important;
+					vertical-align: middle;
+				}
 			}
 			.purchase{
 				padding-right: 0;

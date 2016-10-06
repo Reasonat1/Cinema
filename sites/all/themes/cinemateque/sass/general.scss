@@ -611,6 +611,7 @@ table td{
 	}
 	.panels-flexible-region-node_page-content_left {
 		width: 77%;
+		padding-right: 23%;
 		float: right;
 		@include res(s-m){
 			width: 100%!important;
@@ -884,37 +885,6 @@ table.views-table {
 	font-weight: 600;
 	margin-bottom: 2%;
 }
-
-.pane-views-panes.pane-review-panel-pane-1 {
-	margin-top: 50px;
-	background-color: $color_fantasy_approx;
-	overflow: hidden;
-	.pane-content {
-		@include width();
-		.view-content {
-			@include main-color();
-			padding: 50px 0;
-			overflow: hidden;
-		}
-		.views-field-name {
-			a {
-				@include main-color();
-				font-size: 1em !important;
-			}
-		}
-		.views-field-review .field-content p {
-			@include main-color();
-			font-size: 1.35em !important;
-			line-height: 1.35em;
-			span {
-				@include main-color();
-				font-size: 1.15em !important;
-			}
-		}
-	}
-}
-
-
 
 .view-share-this-pane .flag {
 	&.flag-action {
@@ -1941,6 +1911,58 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	}
 }
 
+//review 
+
+.view-reviews-field-collection-view {
+	margin-top: 50px;
+	background-color: $color_fantasy_approx;
+	overflow: hidden;
+	.view-content{
+		@include width;
+		> div{
+			width: 77%;
+			float: right;
+			box-sizing: border-box;
+			@include main-color;
+			padding: 50px 23% 50px 0;
+			overflow: hidden;
+			@include res(s-m){
+				width: 100%;
+				padding-right: 0;
+			}
+		}
+		.views-field-field-cm-review-source {
+		    display: block;
+		    font-size: 0.9em !important;
+		    padding: 25px 0 0 0;
+		    width: 100%
+		}
+		.views-field-field-cm-review-qoute {
+			@include main-color();
+			font-size: 1.35em !important;
+			line-height: 1.35em;
+		}
+	}
+	.views-slideshow-controls-bottom{
+		clear: both;
+		text-align: center;
+		padding: 25px 0;
+		.views-slideshow-pager-field-item{
+			display: inline-block;
+		}
+		.circle{
+			width: 8px;
+			height: 8px;
+			background-color: #b0b0b0;
+			border-radius: 50%;
+		}
+		.active .circle{
+			@include bg-main-color;
+		}
+	}
+}
+
+
 .node-type-cm-person, .node-type-cm-article{
 	.panels-flexible-row-node_page-5{
 		@include res(s-m){
@@ -1951,7 +1973,6 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 			.panels-flexible-region-node_page-content_right .pane-entity-field{
 				padding: 0 5% 25px;
 				border-top: 1px solid #cdcdcd;
-				border-bottom: 1px solid #cdcdcd;
 				margin-top: 20px;
 			}
 		}

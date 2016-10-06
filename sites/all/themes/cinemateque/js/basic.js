@@ -202,7 +202,8 @@
           if ($left > 0){
               $left = 0;
           }
-          $(".calender-filter").css("margin-left",$left);
+          $(".i18n-en .calender-filter").css("margin-left",$left);
+          $(".i18n-he .calender-filter").css("margin-right",$left);
           $(".calender-filter p").click(function(){
             $left = 0;
             $i = 0
@@ -221,7 +222,8 @@
             if ($left > 0){
               $left = 0;
             }
-            $(".calender-filter").css("margin-left",$left);
+            $(".i18n-en .calender-filter").css("margin-left",$left);
+            $(".i18n-he .calender-filter").css("margin-right",$left);
           });
           $(".nextday").click(function(){
             if ($left > $maxleft){
@@ -229,7 +231,8 @@
               if ($left < $maxleft){
                 $left = $maxleft;
               }
-              $(".calender-filter").css("margin-left",$left);
+              $(".i18n-en .calender-filter").css("margin-left",$left);
+              $(".i18n-he .calender-filter").css("margin-right",$left);   
             }
           });
           $(".prevday").click(function(){
@@ -238,8 +241,9 @@
               if ($left > 0){
                 $left = 0;
               }
-              $(".calender-filter").css("margin-left",$left);
-            }
+              $(".i18n-en .calender-filter").css("margin-left",$left);
+              $(".i18n-he .calender-filter").css("margin-right",$left);
+              }
           });
         }
 
@@ -268,8 +272,9 @@
           if ($left > 0){
               $left = 0;
           }
-          $(".calender-filter").css("margin-left",$left);
-       /*   $(".calender-filter p").click(function(){
+          $(".i18n-en .calender-filter").css("margin-left",$left);
+          $(".i18n-he .calender-filter").css("margin-right",$left);
+           /*   $(".calender-filter p").click(function(){
             $left = 0;
             $i = 0
             $('.calender-filter p').each(function () {
