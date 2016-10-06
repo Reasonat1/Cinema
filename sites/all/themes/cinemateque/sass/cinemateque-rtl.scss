@@ -99,9 +99,12 @@
 	.favorite a{
 		height: 24px!important;
 	}
-	.today span{
-		height: 24px!important;
-		background-position: 0 2px!important;
+	.today{
+		padding-top: 13px!important;
+		span{
+			height: 24px!important;
+			background-position: 0 2px!important;
+		}
 	}
 }
 
@@ -124,7 +127,7 @@
 }
 
 .col-md-3.header-right > li.search{
-	margin-top: 3px;
+	margin-top: 4px;
 }
 
 .col-md-3.header-right{
@@ -133,6 +136,7 @@
 	> li{
 		padding-right: 30px;
 		padding-left: 0;
+		padding-top: 11px;
 		@include res(l){
 			padding-right: 10px;
 		}
