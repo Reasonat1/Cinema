@@ -151,9 +151,6 @@
               if ($(window).width() > 767){
                 $targetScroll = $('body').position().top+$(window).height();
               }
-              else{
-                $targetScroll = $('body').position().top+$(".page-node-3487 .wrapper-image").height();
-              }
               $currentScroll = $('html').scrollTop() || $('body').scrollTop();
               if ($currentScroll >= $targetScroll){
                   $('.calender-filter').addClass("fixedPos");
@@ -560,7 +557,6 @@
        //    $('td.views-field-field-toptix-purchase').hide();
 		}
 	}
-
 
 
 })(jQuery);

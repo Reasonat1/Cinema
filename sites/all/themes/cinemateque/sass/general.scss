@@ -604,7 +604,7 @@ table td{
 		display: none;
 	}
 	.panels-flexible-region-node_page-content_left {
-		width: calc(92% - 180px);
+		width: 77%;
 		float: right;
 		@include res(s-m){
 			width: 100%!important;
@@ -612,7 +612,7 @@ table td{
 	}
 	.panels-flexible-region-node_page-content_right {
 		float: left;
-		width: 180px;
+		width: 15%;
 		margin-right: 8%;
 		padding-top: 7px;
 		margin-bottom: 20px;
@@ -1488,7 +1488,7 @@ table{
     			@include width;
     			.view{
 					float: right;
-    				width: calc(92% - 180px);
+    				width: 77%;
     				@include res(s-m){
     					width: 100%;
     				}
@@ -1675,7 +1675,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	color: #fff;
 	width: 100%;
 	padding: 0;
-	z-index: 100;
+	z-index: 99;
 	@include res(s-m){
 		bottom: 10px;
 	}
@@ -1685,7 +1685,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 			color: #fff;
 		}
 		.slide-left-ct{
-			width: calc(84% - 360px);
+			width: 54%;
 			margin: 0 auto;
 			@include res(s-m){
 				text-align: center;	
@@ -1915,6 +1915,8 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 
 .credits-view{
 	padding: 30px 0;
+	float: right;
+    width: 77%;
 	.profession{
 		width: 120px;
 		color: $color_nobel_approx;
