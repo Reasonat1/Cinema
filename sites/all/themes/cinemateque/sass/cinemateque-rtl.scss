@@ -156,6 +156,13 @@
 	}
 }
 
+@media (max-width: 360px){
+	.col-md-3.header-right > li{
+		padding-left: 5px!important;
+		padding-right: 0;
+	}
+}
+
 .navbar-brand{
 	> img {
 		float: right;

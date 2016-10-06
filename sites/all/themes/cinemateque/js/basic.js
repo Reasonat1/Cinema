@@ -132,8 +132,10 @@
 /********  mini calendar  ********/
 
         if ($(window).width() > 767){
-          $(".not-front .float-calendar-wrapper").removeClass("hide-float");
+          $(".float-calendar-wrapper").removeClass("hide-float");
         }
+
+        $(".front .float-calendar-wrapper").removeClass("hide-float");
 
         $(".float-calendar-wrapper .close-button").click(function() {
             $(".float-calendar-wrapper").addClass("hide-float");

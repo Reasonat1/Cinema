@@ -539,7 +539,7 @@ img.panopoly-image-full{
 	margin-bottom: 0!important;
 }
 
-.sticky-header, .not-front header{
+header{
 	height: 50px!important;
 	.navbar-brand{
 		height: 36px!important;
@@ -549,6 +549,20 @@ img.panopoly-image-full{
 		> img {
 			height: 36px;
 		}
+	}
+}
+
+@media (max-width: 360px){
+	header{
+		.navbar-brand{
+			> img {
+				height: 26px;
+				margin-top: 5px;
+			}
+		}
+	}
+	.col-md-3.header-right > li{
+		padding-right: 5px!important;
 	}
 }
 
