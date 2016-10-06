@@ -59,15 +59,20 @@
         $fullscreenheight = $(window).height();
         $(".full-screen-image, .full-screen-image .wrapper-image .content").css("max-height",$screenheight);
         $(".front .full-screen-image, .front .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
-        $(".page-node-3487 .full-screen-image, .page-node-3487 .full-screen-image .wrapper-image .content, .page-node-3487 .full-screen-image li").css("max-height",$fullscreenheight);
-
+        $imgspace = ($(".full-screen-image img").height() - $screenheight)/(-2);
+        if ($imgspace < 0){
+          $(".full-screen-image img").css("margin-top",$imgspace);
+        }
 
         $(window).resize(function() {
             $screenheight = $(window).height()-50;
             $fullscreenheight = $(window).height();
             $(".full-screen-image, .wrapper-image .content").css("max-height",$screenheight);
             $(".front .full-screen-image, .front .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
-            $(".page-node-3487 .full-screen-image, .page-node-3487 .full-screen-image .wrapper-image .content, .page-node-3487 .full-screen-image li").css("max-height",$fullscreenheight);
+            $imgspace = ($(".full-screen-image img").height() - $screenheight)/(-2);
+            if ($imgspace < 0){
+              $(".full-screen-image img").css("margin-top",$imgspace);
+            }
         });
 
 /*********  claendat pane on slider  
