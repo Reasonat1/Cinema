@@ -101,6 +101,7 @@
 	}
 	.today span{
 		height: 24px!important;
+		background-position: 0 2px!important;
 	}
 }
 
@@ -132,6 +133,9 @@
 	> li{
 		padding-right: 30px;
 		padding-left: 0;
+		@include res(l){
+			padding-right: 10px;
+		}
 	}
 }
 

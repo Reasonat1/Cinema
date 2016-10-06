@@ -84,6 +84,9 @@ table{
 	}
 }
 
+#da11y-plugin{
+	padding-top: 15px;
+}
 /**** lobby page  ****/
 
 .page-term-lobby{
@@ -265,13 +268,13 @@ table{
         background-position: right center!important;
     }
 	.flag-wrapper{
+		float: right;
 		a.flag-action, a.unflag-action{
 			background-position: right center!important;
 		}
-		.title{
-			right: 30px;
-			left: auto;
-		}
+	}
+	.flag-custom .title{
+		float: left;
 	}
 }
 

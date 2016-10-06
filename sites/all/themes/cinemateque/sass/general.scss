@@ -110,7 +110,7 @@ table td{
 }
 
 #da11y-plugin{
-	padding-top: 15px;
+	padding-top: 11px;
 	*:focus {
 	    outline: 0;
 	    outline-style:none;
@@ -421,7 +421,7 @@ table td{
 		position: relative;
 		float: left;
 		width: 30px;
-		margin-top: -7px;
+		margin-top: 4px;
 		a.flag-action, a.unflag-action{
 			width: 100%;
 			display: block;
@@ -431,10 +431,15 @@ table td{
 			position: absolute;
 		}
 	}
-	.flag-custom .title{
-		font-size: 16px;
-		margin-top: 12px;
-		margin-bottom: 12px
+	.flag-custom{
+		overflow: hidden;
+		.title{
+			font-size: 16px;
+			margin-top: 12px;
+			margin-bottom: 12px;
+			width: calc(100% - 30px);
+			float: right;
+		}
 	}
 }
 

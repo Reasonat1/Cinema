@@ -95,6 +95,9 @@
 			@include res(menu){
 				float: right;
 			}
+			@include res(l){
+				padding-left: 10px;
+			}
 		}
 		i{
 			color: #fff;
@@ -670,7 +673,7 @@ img.panopoly-image-full{
 		}
 		.search{
 			span{
-				background: url("../images/search-icon.png") no-repeat 0 2px;
+				background: url("../images/search-icon.png") no-repeat 0 1px;
 			    display: inline-block;
 			    height: 20px;
 			    width: 20px;
@@ -695,8 +698,11 @@ img.panopoly-image-full{
 			width: 24px;
 			display: block;
 		}
+		.shopping-cart{
+			padding-top: 6px;
+		}
 		.today span{
-			background: url("../images/time.png") no-repeat 0 bottom;
+			background: url("../images/time.png") no-repeat 0 0;
 			text-indent: -9999px;
 			height: 22px;
 			width: 24px;
@@ -705,7 +711,7 @@ img.panopoly-image-full{
 		}
 		.language-switcher-locale-url{
 			a{
-				background: url("../images/hebrew-icon.png") no-repeat 0 2px;
+				background: url("../images/hebrew-icon.png") no-repeat 0 1px;
 				display: inline-block;
 			    height: 20px;
 			    text-indent: -9999px;
@@ -713,7 +719,7 @@ img.panopoly-image-full{
 			}
 			span{
 				opacity: 0.4;
-				background: url("../images/hebrew-icon.png") no-repeat 0 2px;
+				background: url("../images/hebrew-icon.png") no-repeat 0 1px;
 				display: inline-block;
 			    height: 20px;
 			    text-indent: -9999px;
@@ -1181,13 +1187,18 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 	    line-height: 18px;
 	    margin-left: 10px;
 	    margin-top: -4px;
-	    width: 140px;
+	    width: 210px;
 	    @include res(s-m){
 	    	display: none;
 	    }
 	}
 }
 
+@media (max-width: 1130px){
+	.navbar-brand .site-name{
+		display: none;
+	}	
+}
 .site-custom-menu.menu.nav.navbar-nav {
 	background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
 	margin-top: 5px;
