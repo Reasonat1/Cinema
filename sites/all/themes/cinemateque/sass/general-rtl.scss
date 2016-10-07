@@ -412,3 +412,20 @@ table{
   	padding: 9px 10px 8px 26px;
   }
 }
+
+/*****  tag  *********/
+
+.field-name-field-tag {
+	.field-item {
+		float: right;
+		&.even {
+			float: right;
+		}
+		&.odd {
+			float: left;
+			@include res(m){
+				float: right;
+			}
+		}
+	}
+}
