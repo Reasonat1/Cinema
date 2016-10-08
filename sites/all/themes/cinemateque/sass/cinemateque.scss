@@ -223,6 +223,9 @@
 		overflow: hidden;
 		position: relative;
 		z-index: -1;
+		@include res(s-m){
+			display: none;
+		}
 		.pane-content{
 			@include width;
 			.field-name-field-background-image{

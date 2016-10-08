@@ -476,6 +476,8 @@
 		left: 0;
 		top: 50px;
 		overflow-y: auto;
+		height: 100%;
+		background-color: #ececec;
 	}
 	&.hide-float{
 		top: -100px;
@@ -502,6 +504,11 @@
 		overflow: hidden;
 		border: 1px solid #B3B3B3;
 		border-top: none;
+		@include res(s-m){
+			position: fixed;
+			width: 100%;
+			bottom: 0;
+		}
 		.close{
 			@include main-color;
 			opacity: 1;
@@ -559,7 +566,6 @@
 		border: 1px solid #B3B3B3;
 		border-top: none;
 		@include res(s-m){
-			max-height: 270px;
 			overflow-y: auto;
 		}
 	}

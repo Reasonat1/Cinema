@@ -142,6 +142,7 @@
         $(".float-calendar-wrapper .close-button").click(function() {
             $(".float-calendar-wrapper").addClass("hide-float");
             $(".float-calendar-wrapper").addClass("hide-mobile");
+            $(".float-calendar-wrapper").removeClass("show-mobile");
         });
 
         $(".header-right .today").click(function() {

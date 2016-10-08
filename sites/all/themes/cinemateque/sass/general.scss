@@ -176,7 +176,6 @@ table td{
 .pane-node-field-tag, .pane-node-field-cm-article-tags, .pane-node-field-cm-movie-tags, .pane-node-field-cm-person-tags {
 	.pane-content {
 		border-top: 5px solid $black;
-		margin-top: 100px;
 		padding-top: 20px;
 		@include res(s-m){
 			border:none;
@@ -392,6 +391,7 @@ table td{
 }
 .share-this-pane {
 	border-top: 5px solid $black;
+	margin-bottom: 100px;
 	@include res(s-m){
 		display: none;
 	}
@@ -1123,7 +1123,7 @@ table{
 	.views-slideshow-controls-text-previous a{
 	    background-image: url("../images/left.png");
 	    left: 15px;
-	    z-index: 200;
+	    z-index: 199;
 	    @include res(s-m){
 	    	left: 5px;
 	    	margin-left: 0;
