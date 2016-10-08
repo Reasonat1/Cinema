@@ -359,6 +359,32 @@
 						float: left;
 						width: 30%;
 						position: relative;
+						.person-left-sec{
+							padding: 18px;
+							overflow: hidden;
+							.person-img{
+								float: left;
+								width: 45%;
+								@include res(s-m){
+									width: 100%;
+									a{
+										display: block;
+										margin: 0 auto;
+									}
+								}
+							}
+							.name{
+								float: left;
+								@include res(s-m){
+									width: 100%;
+									text-align: center;
+								}
+								.job-title{
+									font-weight: normal;
+									padding-top: 10px;
+								}
+							}
+						}
 						@include res(s-m){
 							width: 100%;
 						}

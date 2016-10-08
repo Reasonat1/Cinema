@@ -137,18 +137,17 @@
 
 /********  mini calendar  ********/
 
-        if ($(window).width() > 767){
-          $(".float-calendar-wrapper").removeClass("hide-float");
-        }
-
-        $(".front .float-calendar-wrapper").removeClass("hide-float");
+        $(".front .float-calendar-wrapper").removeClass("hide-mobile");
 
         $(".float-calendar-wrapper .close-button").click(function() {
             $(".float-calendar-wrapper").addClass("hide-float");
+            $(".float-calendar-wrapper").addClass("hide-mobile");
         });
 
         $(".header-right .today").click(function() {
             $(".float-calendar-wrapper").toggleClass("hide-float");
+            $(".float-calendar-wrapper").toggleClass("hide-mobile");
+            $(".float-calendar-wrapper").toggleClass("show-mobile");
             $("body").removeClass("responsive-hamburger-open");
             $("body").removeClass("search-overlay");
         });

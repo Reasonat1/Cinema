@@ -392,7 +392,7 @@
 
       switch ($node->type) {
         case "cm_person":
-          $image = '<div class="person-left-sec"><div class="person-img">'.l($image_person, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)) .'</div><div class="lobby-title">'. l($first_name .' '. $last_name, $path_node).'</div><div class="job-title">'. $job_title.'</div></div>';
+          $image = '<div class="person-left-sec"><div class="person-img">'.l($image_person, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)) .'</div><div class="name"><div class="lobby-title">'. l($first_name .' '. $last_name, $path_node).'</div><div class="job-title">'. $job_title.'</div></div></div>';
           $title = '';
           $sort_summary = t($summary_person);
           $event_info = '';
