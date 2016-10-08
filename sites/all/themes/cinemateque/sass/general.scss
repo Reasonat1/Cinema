@@ -1987,6 +1987,9 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	padding: 30px  0;
 	.review-owl-carousel{
 		@include width;
+		@include res(s){
+			padding: 0 12%;
+		}
 	}
 	.views-field-field-cm-review-qoute{
 		font-size: 0.95em;

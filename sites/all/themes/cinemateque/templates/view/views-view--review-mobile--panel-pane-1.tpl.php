@@ -60,10 +60,8 @@
 </div><?php /* class view */ ?>
 
 <script>
-	var items = $('.review-owl-carousel .owl-item');
-  if(items.length > 1) { 
-    jQuery(function(){    
-      jQuery('.review-owl-carousel').owlCarousel({
+    jQuery(function(){  
+      jQuery('.more-items .review-owl-carousel').owlCarousel({
         rtl: true,
         loop:true,
         margin:10,
@@ -76,7 +74,5 @@
         }
       }); 
     });
-  }
-
 </script>
 

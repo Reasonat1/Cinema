@@ -30,6 +30,7 @@
         }
         else {
           $("body").addClass("responsive-hamburger-open");
+          $("body").removeClass("search-overlay");
         }
     });
 
@@ -148,6 +149,8 @@
 
         $(".header-right .today").click(function() {
             $(".float-calendar-wrapper").toggleClass("hide-float");
+            $("body").removeClass("responsive-hamburger-open");
+            $("body").removeClass("search-overlay");
         });
 
         $(".calendar-agenda-items").css("width",$(".view-custom-calendar-floating-pane").width());
@@ -282,42 +285,17 @@
           }
           $(".i18n-en .calender-filter").css("margin-left",$left);
           $(".i18n-he .calender-filter").css("margin-right",$left);
-           /*   $(".calender-filter p").click(function(){
-            $left = 0;
-            $i = 0
-            $('.calender-filter p').each(function () {
-              if (!$(this).hasClass("active")){
-                $i ++;
-              }
-              if ($(this).hasClass("active")){
-                return false;            
-              }
-            });
-            $left = $left + (-70)*($i-1);
-            if ($left < $maxleft){
-              $left = $maxleft;
-            }
-            if ($left > 0){
-              $left = 0;
-            }
-            $(".calender-filter").css("margin-left",$left);
-          });
-          $(".nextday").click(function(){
-            if ($left > $maxleft){
-              $left = $left - 70;
-              $(".calender-filter").css("margin-left",$left);
-            }
-          });
-          $(".prevday").click(function(){
-            if ($left < 0){
-              $left = $left + 70;
-              $(".calender-filter").css("margin-left",$left);
-            }
-          });*/
         }
         });
 
-
+/********  items of review  *******/
+          
+        if ($(".view-review-mobile .views-row").length == '1') { 
+          $(".view-review-mobile").addClass("one-item");
+        }
+        else{
+          $(".view-review-mobile").addClass("more-items");
+        }
 /******  search overlay  ******/
 
         $(".header-right .search span").click(function() {
@@ -326,6 +304,7 @@
             }
             else{
                 $("body").addClass("search-overlay");
+                $("body").removeClass("responsive-hamburger-open");
             }
         });
 
@@ -335,7 +314,13 @@
           }
       });
 
-/******  search overlay  ******/
+
+      $(document).keyup(function(e) {
+           if (e.keyCode == 27) { // escape key maps to keycode `27`
+                $("body").removeClass("search-overlay");
+          }
+      });
+/******  big hamburger menu  overlay  ******/
 
         $(".hambruger.navbar-toggle").click(function() {
             if ($("body").hasClass("hambruger-overlay")){
