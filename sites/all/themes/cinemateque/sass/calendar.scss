@@ -567,7 +567,8 @@
 		border-top: none;
 		@include res(s-m){
 			overflow-y: auto;
-			height: calc(100% - 200px);
+			height: calc(100% - 140px);
+			position: fixed;
 		}
 	}
 	.contents{
