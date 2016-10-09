@@ -483,28 +483,30 @@ table td, table th {
 /* line 385, ../sass/general-rtl.scss */
 .view-director-bio .right-area {
   float: right;
+  padding-left: 0;
+  padding-right: 23%;
 }
 
-/* line 394, ../sass/general-rtl.scss */
+/* line 396, ../sass/general-rtl.scss */
 .view-reviews-field-collection-view .view-content > div {
   float: left;
   padding-left: 23%;
   padding-right: 0;
 }
 @media (max-width: 767px) {
-  /* line 394, ../sass/general-rtl.scss */
+  /* line 396, ../sass/general-rtl.scss */
   .view-reviews-field-collection-view .view-content > div {
     padding-left: 0;
   }
 }
-/* line 403, ../sass/general-rtl.scss */
+/* line 405, ../sass/general-rtl.scss */
 .view-reviews-field-collection-view .views-slideshow-cycle-main-frame-row {
   right: 0 !important;
   left: auto !important;
 }
 
 /******  node teaser  ******/
-/* line 411, ../sass/general-rtl.scss */
+/* line 413, ../sass/general-rtl.scss */
 .node-title-teaser-cm-movie .node-cm-movie-year {
   float: right;
   border-left: 2px solid #f9f4ee;
@@ -513,32 +515,32 @@ table td, table th {
   margin-right: 0;
 }
 
-/* line 419, ../sass/general-rtl.scss */
+/* line 421, ../sass/general-rtl.scss */
 .node-title-teaser-cm-movie a .node-title-teaser-title {
   padding: 26px 10px 23px 26px;
 }
 @media (max-width: 767px) {
-  /* line 419, ../sass/general-rtl.scss */
+  /* line 421, ../sass/general-rtl.scss */
   .node-title-teaser-cm-movie a .node-title-teaser-title {
     padding: 9px 10px 8px 26px;
   }
 }
 
 /*****  tag  *********/
-/* line 429, ../sass/general-rtl.scss */
+/* line 431, ../sass/general-rtl.scss */
 .field-name-field-tag .field-item {
   float: right;
 }
-/* line 431, ../sass/general-rtl.scss */
+/* line 433, ../sass/general-rtl.scss */
 .field-name-field-tag .field-item.even {
   float: right;
 }
-/* line 434, ../sass/general-rtl.scss */
+/* line 436, ../sass/general-rtl.scss */
 .field-name-field-tag .field-item.odd {
   float: left;
 }
 @media (min-width: 481px) and (max-width: 767px) {
-  /* line 434, ../sass/general-rtl.scss */
+  /* line 436, ../sass/general-rtl.scss */
   .field-name-field-tag .field-item.odd {
     float: right;
   }
