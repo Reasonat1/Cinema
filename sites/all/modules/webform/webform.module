@@ -3252,7 +3252,7 @@ function webform_client_form_submit($form, &$form_state) {
 /**
  * user must be login and not submit more than one form
  */
-  if(!empty($user) && $user->uid != '0'){
+  /*if(!empty($user) && $user->uid != '0'){
     $result = db_query("SELECT `sid` FROM `webform_submissions` WHERE `uid` = '$user->uid'")->fetchField();
     if($result != ''){
           drupal_set_message('you have already subscribe  for CInematheque newsletter.','status');
@@ -3261,7 +3261,7 @@ function webform_client_form_submit($form, &$form_state) {
   }else{
       drupal_set_message('Please login to subscribe the CInematheque newsletter','notice');
       return;
-  }
+  }*/
   
   // To maintain time and user information, load the existing submission.
   // If a draft is deleted while a user is working on completing it, $sid will

@@ -391,25 +391,30 @@ table td, table th {
 }
 
 /* line 385, ../sass/general-rtl.scss */
+.view-director-bio .right-area {
+  float: right;
+}
+
+/* line 394, ../sass/general-rtl.scss */
 .view-reviews-field-collection-view .view-content > div {
   float: left;
   padding-left: 23%;
   padding-right: 0;
 }
 @media (max-width: 767px) {
-  /* line 385, ../sass/general-rtl.scss */
+  /* line 394, ../sass/general-rtl.scss */
   .view-reviews-field-collection-view .view-content > div {
     padding-left: 0;
   }
 }
-/* line 394, ../sass/general-rtl.scss */
+/* line 403, ../sass/general-rtl.scss */
 .view-reviews-field-collection-view .views-slideshow-cycle-main-frame-row {
   right: 0 !important;
   left: auto !important;
 }
 
 /******  node teaser  ******/
-/* line 402, ../sass/general-rtl.scss */
+/* line 411, ../sass/general-rtl.scss */
 .node-title-teaser-cm-movie .node-cm-movie-year {
   float: right;
   border-left: 2px solid #f9f4ee;
@@ -418,32 +423,32 @@ table td, table th {
   margin-right: 0;
 }
 
-/* line 410, ../sass/general-rtl.scss */
+/* line 419, ../sass/general-rtl.scss */
 .node-title-teaser-cm-movie a .node-title-teaser-title {
   padding: 26px 10px 23px 26px;
 }
 @media (max-width: 767px) {
-  /* line 410, ../sass/general-rtl.scss */
+  /* line 419, ../sass/general-rtl.scss */
   .node-title-teaser-cm-movie a .node-title-teaser-title {
     padding: 9px 10px 8px 26px;
   }
 }
 
 /*****  tag  *********/
-/* line 420, ../sass/general-rtl.scss */
+/* line 429, ../sass/general-rtl.scss */
 .field-name-field-tag .field-item {
   float: right;
 }
-/* line 422, ../sass/general-rtl.scss */
+/* line 431, ../sass/general-rtl.scss */
 .field-name-field-tag .field-item.even {
   float: right;
 }
-/* line 425, ../sass/general-rtl.scss */
+/* line 434, ../sass/general-rtl.scss */
 .field-name-field-tag .field-item.odd {
   float: left;
 }
 @media (min-width: 481px) and (max-width: 767px) {
-  /* line 425, ../sass/general-rtl.scss */
+  /* line 434, ../sass/general-rtl.scss */
   .field-name-field-tag .field-item.odd {
     float: right;
   }

@@ -281,9 +281,11 @@
                 else{
                   $output .= '<td class="hall only-desktop"></td>';
                 }
+                $output .= '<td class="title only-desktop">';
                 if(!empty($event_title)){
-                  $output .= '<td class="title only-desktop">'.l($event_title, $path).'</td>';
+                  $output .= l($event_title, $path);
                 }
+                $output .= '</td>';
                 if(!empty($node_event->field_cm_event_internal_id['und'])){
                   $event_code = $node_event->field_cm_event_internal_id['und'][0]['value'];
                   $output .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div>'.$event_code.'</td>';

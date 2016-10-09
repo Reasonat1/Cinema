@@ -93,6 +93,11 @@ table td{
 		padding: 0;
 	}
 }
+
+.pane-node-body{
+	@include width;
+	margin-top: 50px;
+}
 /*******  panels margin  *********/
 
 .panels-flexible-row{
@@ -1143,7 +1148,7 @@ table{
 
 /******   webform  *****/
 
-.node-type-webform{
+.node-type-webform #main-wrapper{
 	.container, .panels-flexible-region-46-center{
 		width: 100%;
 	}
@@ -1946,6 +1951,28 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	}
 	a:hover{
 		@include main-color;
+	}
+}
+
+// director
+
+
+.view-director-bio{
+	@include width;
+	clear: both;
+	.views-field-field-cm-person-photo{
+		width: 23%;
+		img{
+			border-radius: 50%;
+			padding: 20px 30px;
+		}
+	}
+	.right-area{
+		width: 54%;
+		float: left;
+	}
+	.views-field-field-cm-person-first-name, .views-field-field-cm-person-last-name{
+		font-weight: bold;
 	}
 }
 
