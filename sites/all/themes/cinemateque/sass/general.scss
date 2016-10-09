@@ -934,6 +934,7 @@ table.views-table {
 	display: block;
 	text-indent: -9999px;
 	width: 18px;
+	outline: 0;
 }
 
 .panels-flexible-row.content .panels-flexible-region-node_page-content_region {
@@ -1274,17 +1275,37 @@ table{
 		display: none!important;
 	}
 }
-.view-user-flagged-content.view-display-id-panel_pane_1{
+.view-user-flagged-content{
 	font-size: 18px;
+	.header-wrapper{
+		@include width;
+		overflow-y: hidden;
+	}
+	.view-header{
+		float: left;
+		margin-top: 5px;
+		.title{
+			font-size: 1.2em;
+			margin-top: -4px;
+			font-weight: bold;
+			float: left;
+			margin-right: 10px;
+		}
+	}
 	li{
 		list-style-type: none;
+	}
+	h4{
+		font-size: 1.2em;
+		font-weight: bold;
+		margin: 40px 0 30px;
 	}
 	.view-filters{
 		background-color: #f4f2f0;	
 		overflow: hidden;
 		padding-top: 100px;
 		padding-bottom: 13px;
-		margin-bottom: 40px;
+		margin-bottom: 23px;
 		.wrapper{
 			@include width;
 			form{
@@ -1341,10 +1362,8 @@ table{
 		}
 	}
 	.text-center{
-		overflow: hidden;
-		padding-bottom: 50px;
+		float: right;
 		.item-list{
-			@include width;
 			ul{
 				margin: 0;
 			}
