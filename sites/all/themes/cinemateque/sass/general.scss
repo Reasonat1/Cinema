@@ -1961,22 +1961,40 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	@include width;
 	clear: both;
 	.views-field-field-cm-person-photo{
-		width: 23%;
+		width: 23%!important;
+		@include res(s-m){
+			width: 35%!important;
+		}
 		img{
 			border-radius: 50%;
 			padding: 20px 30px;
+			@include res(s-m){
+				padding: 0;
+			}
 		}
 	}
 	.right-area{
 		width: 77%;
 		float: left;
 		padding-left: 23%;
+		@include res(s-m){
+			width: 100%!important;
+		}
+		strong{
+			font-size: 1.4em;
+		}
 	}
 	.views-field-field-cm-person-first-name, .views-field-field-cm-person-last-name{
 		font-weight: bold;
 	}
 	.body{
 		margin-top: 20px;
+		font-size: 18px;
+		@include res(s-m){
+			margin-top: 5px;
+			max-height: 56px;
+    		overflow: hidden;
+		}
 	}
 }
 
