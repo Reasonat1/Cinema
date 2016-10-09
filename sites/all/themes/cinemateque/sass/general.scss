@@ -1971,6 +1971,9 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 			@include res(s-m){
 				padding: 0;
 			}
+			@include res(s){
+				margin-right: 20px;
+			}
 		}
 	}
 	.right-area{

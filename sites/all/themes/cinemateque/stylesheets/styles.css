@@ -2981,33 +2981,39 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
     padding: 0;
   }
 }
-/* line 1976, ../sass/general.scss */
+@media (max-width: 480px) {
+  /* line 1968, ../sass/general.scss */
+  .view-director-bio .views-field-field-cm-person-photo img {
+    margin-right: 20px;
+  }
+}
+/* line 1979, ../sass/general.scss */
 .view-director-bio .right-area {
   width: 77%;
   float: left;
   padding-left: 23%;
 }
 @media (max-width: 767px) {
-  /* line 1976, ../sass/general.scss */
+  /* line 1979, ../sass/general.scss */
   .view-director-bio .right-area {
     width: 100% !important;
   }
 }
-/* line 1983, ../sass/general.scss */
+/* line 1986, ../sass/general.scss */
 .view-director-bio .right-area strong {
   font-size: 1.4em;
 }
-/* line 1987, ../sass/general.scss */
+/* line 1990, ../sass/general.scss */
 .view-director-bio .views-field-field-cm-person-first-name, .view-director-bio .views-field-field-cm-person-last-name {
   font-weight: bold;
 }
-/* line 1990, ../sass/general.scss */
+/* line 1993, ../sass/general.scss */
 .view-director-bio .body {
   margin-top: 20px;
   font-size: 18px;
 }
 @media (max-width: 767px) {
-  /* line 1990, ../sass/general.scss */
+  /* line 1993, ../sass/general.scss */
   .view-director-bio .body {
     margin-top: 5px;
     max-height: 56px;
@@ -3015,13 +3021,13 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   }
 }
 
-/* line 2003, ../sass/general.scss */
+/* line 2006, ../sass/general.scss */
 .view-reviews-field-collection-view {
   margin-top: 50px;
   background-color: #f9f4ee;
   overflow: hidden;
 }
-/* line 2007, ../sass/general.scss */
+/* line 2010, ../sass/general.scss */
 .view-reviews-field-collection-view .view-content {
   width: 1355px !important;
   max-width: 100%;
@@ -3029,7 +3035,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   padding: 0 5%;
   box-sizing: border-box;
 }
-/* line 2009, ../sass/general.scss */
+/* line 2012, ../sass/general.scss */
 .view-reviews-field-collection-view .view-content > div {
   width: 77%;
   float: right;
@@ -3046,20 +3052,20 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   color: #b59d70 !important;
 }
 @media (max-width: 767px) {
-  /* line 2009, ../sass/general.scss */
+  /* line 2012, ../sass/general.scss */
   .view-reviews-field-collection-view .view-content > div {
     width: 100%;
     padding-right: 0;
   }
 }
-/* line 2021, ../sass/general.scss */
+/* line 2024, ../sass/general.scss */
 .view-reviews-field-collection-view .view-content .views-field-field-cm-review-source {
   display: block;
   font-size: 0.9em !important;
   padding: 25px 0 0 0;
   width: 100%;
 }
-/* line 2027, ../sass/general.scss */
+/* line 2030, ../sass/general.scss */
 .view-reviews-field-collection-view .view-content .views-field-field-cm-review-qoute {
   font-size: 1.35em !important;
   line-height: 1.35em;
@@ -3072,17 +3078,17 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 .domain-2 .view-reviews-field-collection-view .view-content .views-field-field-cm-review-qoute {
   color: #b59d70 !important;
 }
-/* line 2033, ../sass/general.scss */
+/* line 2036, ../sass/general.scss */
 .view-reviews-field-collection-view .views-slideshow-controls-bottom {
   clear: both;
   text-align: center;
   padding: 25px 0;
 }
-/* line 2037, ../sass/general.scss */
+/* line 2040, ../sass/general.scss */
 .view-reviews-field-collection-view .views-slideshow-controls-bottom .views-slideshow-pager-field-item {
   display: inline-block;
 }
-/* line 2040, ../sass/general.scss */
+/* line 2043, ../sass/general.scss */
 .view-reviews-field-collection-view .views-slideshow-controls-bottom .circle {
   width: 8px;
   height: 8px;
@@ -3097,12 +3103,12 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 .domain-2 .view-reviews-field-collection-view .views-slideshow-controls-bottom .active .circle {
   background-color: #b59d70 !important;
 }
-/* line 2050, ../sass/general.scss */
+/* line 2053, ../sass/general.scss */
 .view-reviews-field-collection-view .views-slideshow-cycle-main-frame-row {
   width: 100% !important;
 }
 
-/* line 2055, ../sass/general.scss */
+/* line 2058, ../sass/general.scss */
 .view-review-mobile {
   background-color: #f9f4ee;
   position: relative;
@@ -3117,7 +3123,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 .domain-2 .view-review-mobile {
   color: #b59d70 !important;
 }
-/* line 2061, ../sass/general.scss */
+/* line 2064, ../sass/general.scss */
 .view-review-mobile .review-owl-carousel {
   width: 1355px !important;
   max-width: 100%;
@@ -3126,21 +3132,21 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   box-sizing: border-box;
 }
 @media (max-width: 480px) {
-  /* line 2061, ../sass/general.scss */
+  /* line 2064, ../sass/general.scss */
   .view-review-mobile .review-owl-carousel {
     padding: 0 12%;
   }
 }
-/* line 2067, ../sass/general.scss */
+/* line 2070, ../sass/general.scss */
 .view-review-mobile .views-field-field-cm-review-qoute {
   font-size: 0.95em;
 }
-/* line 2070, ../sass/general.scss */
+/* line 2073, ../sass/general.scss */
 .view-review-mobile .views-field-field-cm-review-source {
   font-size: 0.8em;
   padding-top: 10px;
 }
-/* line 2074, ../sass/general.scss */
+/* line 2077, ../sass/general.scss */
 .view-review-mobile .owl-next {
   font-size: 0;
   height: 19px;
@@ -3149,7 +3155,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   top: 44%;
   width: 10px;
 }
-/* line 2082, ../sass/general.scss */
+/* line 2085, ../sass/general.scss */
 .view-review-mobile .owl-prev {
   font-size: 0;
   height: 19px;
@@ -3160,15 +3166,15 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 }
 
 @media (max-width: 767px) {
-  /* line 2093, ../sass/general.scss */
+  /* line 2096, ../sass/general.scss */
   .node-type-cm-person .panels-flexible-row-node_page-5, .node-type-cm-article .panels-flexible-row-node_page-5 {
     padding: 0 !important;
   }
-  /* line 2096, ../sass/general.scss */
+  /* line 2099, ../sass/general.scss */
   .node-type-cm-person .panels-flexible-row-node_page-5 .panels-flexible-region-node_page-content_left, .node-type-cm-article .panels-flexible-row-node_page-5 .panels-flexible-region-node_page-content_left {
     padding: 0 5%;
   }
-  /* line 2099, ../sass/general.scss */
+  /* line 2102, ../sass/general.scss */
   .node-type-cm-person .panels-flexible-row-node_page-5 .panels-flexible-region-node_page-content_right .pane-entity-field, .node-type-cm-article .panels-flexible-row-node_page-5 .panels-flexible-region-node_page-content_right .pane-entity-field {
     padding: 0 5% 25px;
     border-top: 1px solid #cdcdcd;
@@ -3177,7 +3183,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 }
 
 /******  node teaser  ******/
-/* line 2111, ../sass/general.scss */
+/* line 2114, ../sass/general.scss */
 .node-title-teaser-cm-movie .node-cm-movie-year {
   padding: 23px 10px;
   float: left;
@@ -3185,30 +3191,30 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   margin-right: 10px;
 }
 @media (max-width: 767px) {
-  /* line 2111, ../sass/general.scss */
+  /* line 2114, ../sass/general.scss */
   .node-title-teaser-cm-movie .node-cm-movie-year {
     padding: 8px 10px;
   }
 }
 
-/* line 2121, ../sass/general.scss */
+/* line 2124, ../sass/general.scss */
 .node-title-teaser-cm-movie a .node-title-teaser-title {
   padding: 26px 26px 23px 10px;
 }
 @media (max-width: 767px) {
-  /* line 2121, ../sass/general.scss */
+  /* line 2124, ../sass/general.scss */
   .node-title-teaser-cm-movie a .node-title-teaser-title {
     padding: 9px 26px 8px 10px;
   }
 }
 
 /*******  overlay region  *******/
-/* line 2130, ../sass/general.scss */
+/* line 2133, ../sass/general.scss */
 .ui-widget-overlay, .ui-dialog {
   z-index: 400;
 }
 
-/* line 2134, ../sass/general.scss */
+/* line 2137, ../sass/general.scss */
 .region-overlay {
   position: fixed;
   height: 100%;
@@ -3219,11 +3225,11 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   display: none;
   top: 0;
 }
-/* line 2143, ../sass/general.scss */
+/* line 2146, ../sass/general.scss */
 .region-overlay .block {
   display: none;
 }
-/* line 2146, ../sass/general.scss */
+/* line 2149, ../sass/general.scss */
 .region-overlay .block-search-api-page form {
   width: 1355px !important;
   max-width: 100%;
@@ -3233,22 +3239,22 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   margin: 100px auto 0 !important;
   position: relative;
 }
-/* line 2150, ../sass/general.scss */
+/* line 2153, ../sass/general.scss */
 .region-overlay .block-search-api-page form > div {
   position: relative;
 }
-/* line 2153, ../sass/general.scss */
+/* line 2156, ../sass/general.scss */
 .region-overlay .block-search-api-page form .form-group {
   overflow: hidden;
   -webkit-box-shadow: -1px 1px 10px -3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 1px 10px -3px rgba(0, 0, 0, 0.75);
   box-shadow: -1px 1px 10px -3px rgba(0, 0, 0, 0.75);
 }
-/* line 2158, ../sass/general.scss */
+/* line 2161, ../sass/general.scss */
 .region-overlay .block-search-api-page form .form-group label[for="edit-keys-1"] {
   display: none !important;
 }
-/* line 2161, ../sass/general.scss */
+/* line 2164, ../sass/general.scss */
 .region-overlay .block-search-api-page form .form-group .form-text {
   width: 100%;
   box-sizing: border-box;
@@ -3263,13 +3269,13 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   border-radius: 0;
 }
 @media (max-width: 767px) {
-  /* line 2161, ../sass/general.scss */
+  /* line 2164, ../sass/general.scss */
   .region-overlay .block-search-api-page form .form-group .form-text {
     font-size: 15px;
     padding: 13px;
   }
 }
-/* line 2179, ../sass/general.scss */
+/* line 2182, ../sass/general.scss */
 .region-overlay .block-search-api-page form .form-submit {
   margin: 0;
   border-radius: 0 !important;
@@ -3291,13 +3297,13 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   background-color: #b59d70 !important;
 }
 @media (max-width: 767px) {
-  /* line 2179, ../sass/general.scss */
+  /* line 2182, ../sass/general.scss */
   .region-overlay .block-search-api-page form .form-submit {
     width: 100%;
     position: relative;
   }
 }
-/* line 2197, ../sass/general.scss */
+/* line 2200, ../sass/general.scss */
 .region-overlay .popup-close {
   background: url("../images/close42.png") no-repeat scroll center center !important;
   border-radius: 50%;
@@ -3319,16 +3325,16 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   background-color: #b59d70 !important;
 }
 
-/* line 2213, ../sass/general.scss */
+/* line 2216, ../sass/general.scss */
 .search-overlay .region-overlay {
   display: block;
 }
-/* line 2215, ../sass/general.scss */
+/* line 2218, ../sass/general.scss */
 .search-overlay .region-overlay .block-search-api-page {
   display: block;
 }
 
-/* line 2222, ../sass/general.scss */
+/* line 2225, ../sass/general.scss */
 .hambruger-overlay .region-overlay {
   display: block;
   opacity: 1;
@@ -3336,7 +3342,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   z-index: 500;
   overflow-y: auto;
 }
-/* line 2228, ../sass/general.scss */
+/* line 2231, ../sass/general.scss */
 .hambruger-overlay .region-overlay .block-panels-mini {
   display: block;
 }
