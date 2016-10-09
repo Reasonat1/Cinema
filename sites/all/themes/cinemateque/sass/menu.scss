@@ -262,11 +262,16 @@
 			text-align: center;
 			> .field-item{
 				display: inline-block;
-				margin: 0 13px;
+				width: 30%;
+				margin: 0 1.5%;
 			}
 		}
 	}
+	.pane-bean-logos-hebrew-block, .pane-bean-logos-english-block{
+		width: 33%;
+	}
 	.pane-bean-social-links-new{
+		width: 17%;
 		img{
 			border-radius: 50%;
 			@include bg-main-color;
