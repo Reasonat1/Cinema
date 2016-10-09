@@ -296,6 +296,14 @@
         else{
           $(".view-review-mobile").addClass("more-items");
         }
+
+        if ($(".full-screen-image .views-row").length == '1') { 
+          $(".full-screen-image").addClass("one-item");
+        }
+        else{
+          $(".full-screen-image").addClass("more-items");
+        }
+        
 /******  search overlay  ******/
 
         $(".header-right .search span").click(function() {
