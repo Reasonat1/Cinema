@@ -1227,7 +1227,7 @@ table{
 }
 
 .pane-user-page-pane-panel-pane-1{
-	background-color: #999b9c;
+	background-color: #fff;
 	.pane-content{
 		@include width;
 		padding-top: 60px; 
@@ -1243,20 +1243,21 @@ table{
 #views-exposed-form-user-flagged-content-panel-pane-1{
 	.views-widget-filter-gid{
 		width: 100%;
-		background-color: #999b9c;
+		background-color: #fff;
 		overflow: hidden;
 		position: absolute;
 		left: 0;
 		top: 0;
-		padding: 0 0 30px 0;
+		padding: 15px 0 30px 0;
 		a{
 			color: #000;
 			border:1px solid #fff;
 			padding: 5px 10px;
 			display: block;	
-			margin-right: 5px; 
+			margin-right: -5px; 
 			transition: all 0.5s;
             -webkit-transition: all 0.5s;
+            border: 1px solid #e2e2e2;
 			&.active, &:hover{
 				color: #fff;
 				@include bg-main-color;
@@ -1279,11 +1280,11 @@ table{
 		list-style-type: none;
 	}
 	.view-filters{
-		background-color: #c0c1c3;	
+		background-color: #f4f2f0;	
 		overflow: hidden;
-		padding-top: 90px;
+		padding-top: 100px;
 		padding-bottom: 13px;
-		margin-bottom: 50px;
+		margin-bottom: 40px;
 		.wrapper{
 			@include width;
 			form{
@@ -1458,6 +1459,9 @@ table{
 
 .node-type-cm-person{
 	background-color: #fff!important;
+	.content.middle .panels-flexible-region-node_page-content_left{
+		padding: 0!important;
+	}
 	#content{
 		width: 100%;
 	}
