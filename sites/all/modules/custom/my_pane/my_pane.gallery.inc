@@ -547,7 +547,7 @@ function theme_panopoly_gallery_view($variables) {
         $output .= $image_markup;
         $output .= "<div class='pinch text-main-image'><div class='wrapper'><div class='slide-left-ct'>";
         $output.="<div class='slider-title slide-big-text'>$title</div>";
-        $output.="<div class='slider-subtitle slide-small-text'>$subtitle</div>";
+        $output.="<div class='slider-subtitle slide-small-text'>$subtitle</div></div>";
          $output .= "</div></div><div class='gradient'></div>";
       }
        $output .= '</li>';
