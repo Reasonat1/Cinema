@@ -164,7 +164,7 @@
 
         
           $(window).scroll(function() {
-                $targetScroll = $('body').position().top+$(".pane-bundle-gallery").height();
+                $targetScroll = $('body').position().top+$(".view-article-ct-panes").height();
                 $currentScroll = $('html').scrollTop() || $('body').scrollTop();
                 if ($currentScroll >= $targetScroll){
                     $('.filter-wrapper').addClass("fixedPos");
@@ -176,7 +176,7 @@
 
         $(window).resize(function() {
           $(window).scroll(function() {
-                $targetScroll = $('body').position().top+$(".pane-bundle-gallery").height();
+                $targetScroll = $('body').position().top+$(".view-article-ct-panes").height();
                 $currentScroll = $('html').scrollTop() || $('body').scrollTop();
                 if ($currentScroll >= $targetScroll){
                     $('.filter-wrapper').addClass("fixedPos");
