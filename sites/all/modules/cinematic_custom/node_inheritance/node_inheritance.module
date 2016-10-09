@@ -9,12 +9,14 @@ function node_inheritance_entity_load($entities, $type) {
   $query->fields('ni');
   $records = $query->execute()->fetchAll();
   foreach ($records as $config) {
-    $config->field_selection = unserialize($config->field_selection);
+    $selection = unserialize($config->field_selection);
+    $config->field_inheritance = $selection['inheritance'];
+    $config->field_override = $selection['override'];
     $node = $entities[$config->child];
 
     $node->node_inheritance_config = $config;
     $parent = node_load($config->parent);
-    foreach ($config->field_selection as $name => $set) {
+    foreach ($config->field_inheritance as $name => $set) {
       $node->{$name} = $parent->{$name};
     }
   }
@@ -29,11 +31,9 @@ function node_inheritance_field_widget_form_alter(&$element, &$form_state, $cont
     return;
   }
   $name = $context['instance']['field_name'];
-  if (!isset($node->node_inheritance_config->field_selection[$name])) {
-    return;
+  if (isset($node->node_inheritance_config->field_inheritance[$name])) {
+    $element['#disabled'] = TRUE;
   }
-
-  $element['#disabled'] = TRUE;
 }
 
 function node_inheritance_node_prepare($node) {
@@ -43,15 +43,17 @@ function node_inheritance_node_prepare($node) {
     $query->fields('ni');
     $config = $query->execute()->fetchObject();
     if ($config) {
-      $config->field_selection = unserialize($config->field_selection);
+      $selection = unserialize($config->field_selection);
+      $config->field_inheritance = $selection['inheritance'];
+      $config->field_override = $selection['override'];
       $node->node_inheritance_config = $config;
     }
   }
   if (!empty($node->node_inheritance_config)) {
-    $selection = $node->node_inheritance_config->field_selection;
+    $inheritance = $node->node_inheritance_config->field_inheritance;
     $fields = field_info_instances('node', $node->type);
     foreach ($fields as $name => $info) {
-      if (!isset($selection[$name])) {
+      if (isset($inheritance[$name])) {
         $node->{$name} = NULL;
       }
     }

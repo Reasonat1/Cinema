@@ -26,9 +26,16 @@ function node_inheritance_edit($form, &$form_state, $node) {
 }
 
 function node_inheritance_edit_submit($form, &$form_state) {
-  $selection = array_filter($form_state['values']['field_selection']);
-  foreach ($selection as $name => &$set) {
-    $set = 1;
+  $selection = array();
+  $selection['inheritance'] = array();
+  $selection['override'] = array();
+  foreach ($form_state['values']['field_selection'] as $name => $checked) {
+    if ($checked) {
+      $selection['override'][$name] = 1;
+    }
+    else {
+      $selection['inheritance'][$name] = 1;
+    }
   }
   $parent = $form_state['node_inheritance_parent'];
   $record = array(
