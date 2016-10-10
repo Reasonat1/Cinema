@@ -33,12 +33,12 @@
   <h3 class="pull-left"><?php print $nav_title ?></h3>
   <ul class="btn-group pull-right pager">
     <?php if (!empty($prev_url)) : ?>
-      <li>
+      <li class="prev">
       <?php print l('&laquo;' . ($mini ? '' : ' ' . t('Previous', array(), array('context' => 'date_nav'))), $prev_url, $prev_options); ?>
       </li>
     <?php endif; ?>
     <?php if (!empty($next_url)) : ?>
-      <li>
+      <li class="next">
       <?php print l(($mini ? '' : t('Next', array(), array('context' => 'date_nav')) . ' ') . '&raquo;', $next_url, $next_options); ?>
       </li>
     <?php endif; ?>

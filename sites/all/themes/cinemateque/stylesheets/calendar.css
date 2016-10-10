@@ -1013,51 +1013,48 @@
 }
 
 /* line 798, ../sass/calendar.scss */
-.view-custom-calendar-floating-pane .date-nav-wrapper .btn-group a:first-child {
-  background: url("../images/more-white-left.png") no-repeat right 0 !important;
+.view-custom-calendar-floating-pane .date-nav-wrapper .btn-group a {
   text-indent: -9999px;
   position: absolute;
-  left: 0;
-  margin: 15px 0 0;
+  margin: -5px 0 0;
   box-shadow: none;
   padding: 0px 10px;
   border: none;
   border-radius: 0;
   outline: 0;
+  width: 25px;
 }
 
 /* line 810, ../sass/calendar.scss */
-.view-custom-calendar-floating-pane .date-nav-wrapper .btn-group a:last-child {
-  background: url("../images/more-white-right.png") no-repeat right 0 !important;
-  text-indent: -9999px;
-  position: absolute;
-  right: 4%;
-  margin: 15px 0 0;
-  box-shadow: none;
-  padding: 0px 5px;
-  border: none;
-  border-radius: 0;
-  outline: 0;
+.view-custom-calendar-floating-pane .date-nav-wrapper .btn-group .prev a {
+  background: url("../images/more-white-left.png") no-repeat center 0 !important;
+  left: 0;
 }
 
-/* line 822, ../sass/calendar.scss */
+/* line 815, ../sass/calendar.scss */
+.view-custom-calendar-floating-pane .date-nav-wrapper .btn-group .next a {
+  background: url("../images/more-white-right.png") no-repeat center 0 !important;
+  right: 0;
+}
+
+/* line 820, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .calendar.dayview {
   border-radius: 0 !important;
   background-color: #ECECEB !important;
 }
 
-/* line 826, ../sass/calendar.scss */
+/* line 824, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container tr td .item {
   background-color: #ECECEB !important;
   border-bottom: 1px solid #B3B3B3;
 }
 
-/* line 831, ../sass/calendar.scss */
+/* line 829, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container tr td .item:last-child {
   border: none;
 }
 
-/* line 835, ../sass/calendar.scss */
+/* line 833, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container tr td .item .view-item-custom_calendar_floating_pane {
   padding: 8px 12px;
 }

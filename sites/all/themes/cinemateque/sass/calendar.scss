@@ -795,30 +795,28 @@
     position: initial;
 }
 
-.view-custom-calendar-floating-pane .date-nav-wrapper .btn-group a:first-child{
-    background: url("../images/more-white-left.png") no-repeat right 0 !important;
+.view-custom-calendar-floating-pane .date-nav-wrapper .btn-group a{
     text-indent: -9999px;
     position: absolute;
-    left: 0;
-    margin: 15px 0 0;
+    margin: -5px 0 0;
     box-shadow: none;
     padding: 0px 10px;
     border:none;
     border-radius: 0;
     outline: 0;
+    width: 25px;
 }
-.view-custom-calendar-floating-pane .date-nav-wrapper .btn-group a:last-child{
-    background: url("../images/more-white-right.png") no-repeat right 0 !important;
-    text-indent: -9999px;
-    position: absolute;
-    right: 4%;
-    margin: 15px 0 0;
-    box-shadow: none;
-    padding: 0px 5px;
-    border:none;
-    border-radius: 0;
-    outline: 0;
+
+.view-custom-calendar-floating-pane .date-nav-wrapper .btn-group .prev a{
+    background: url("../images/more-white-left.png") no-repeat center 0 !important;
+    left: 0;
 }
+
+.view-custom-calendar-floating-pane .date-nav-wrapper .btn-group .next a{
+    background: url("../images/more-white-right.png") no-repeat center 0 !important;
+    right: 0;
+}
+
 .view-custom-calendar-floating-pane .calendar.dayview{
     border-radius: 0 !important;
     background-color: #ECECEB !important;
