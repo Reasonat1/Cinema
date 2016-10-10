@@ -27,15 +27,20 @@
  *   be used in the l() function, including rel=nofollow.
  */
 ?>
+
 <?php if (!empty($pager_prefix)) print $pager_prefix; ?>
 <div class="date-nav-wrapper clearfix<?php if (!empty($extra_classes)) print $extra_classes; ?>">
   <h3 class="pull-left"><?php print $nav_title ?></h3>
-  <div class="btn-group pull-right">
+  <ul class="btn-group pull-right pager">
     <?php if (!empty($prev_url)) : ?>
+      <li>
       <?php print l('&laquo;' . ($mini ? '' : ' ' . t('Previous', array(), array('context' => 'date_nav'))), $prev_url, $prev_options); ?>
+      </li>
     <?php endif; ?>
     <?php if (!empty($next_url)) : ?>
+      <li>
       <?php print l(($mini ? '' : t('Next', array(), array('context' => 'date_nav')) . ' ') . '&raquo;', $next_url, $next_options); ?>
+      </li>
     <?php endif; ?>
-  </div>
+  </ul>
 </div>
