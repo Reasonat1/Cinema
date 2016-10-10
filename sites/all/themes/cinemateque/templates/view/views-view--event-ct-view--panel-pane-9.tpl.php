@@ -22,7 +22,7 @@
     </div>
   <?php endif; ?>
   <?php if ($rows): ?>
-    <div class="movie-owl-carousel view-content">
+    <div class="event-1-owl-carousel view-content">
       <?php print $rows; ?>
     </div>
   <?php elseif ($empty): ?>
@@ -61,7 +61,7 @@
 
 <script>
     jQuery(function(){  
-      jQuery('.more-items .movie-owl-carousel').owlCarousel({
+      jQuery('.more-items .event-1-owl-carousel').owlCarousel({
         rtl: true,
         autoplay:false,
         autoplayTimeout:5000,
