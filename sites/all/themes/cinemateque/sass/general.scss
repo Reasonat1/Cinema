@@ -1146,6 +1146,35 @@ table{
    	}
 }
 
+.full-screen-image .owl-controls{
+	.owl-prev, .owl-next{
+	    z-index: 199;
+		font-size: 0;
+		top: 50%;
+		z-index: 9;
+		height: 32px;
+	    position: absolute;
+	    width: 32px;
+	    background-color: rgba(0,0,0,0.4);
+	    border-radius: 50%;
+	}
+	.owl-prev{
+	    background-image: url("../images/left.png");
+	    left: 15px;
+	    @include res(s-m){
+	    	left: 5px;
+	    	margin-left: 0;
+	    }
+	}
+	.owl-next{
+   		background-image: url("../images/right.png");
+	    right: 15px;
+	    @include res(s-m){
+	    	right: 5px;
+	    	margin-right: 0;
+	    }
+	}
+}
 /******   webform  *****/
 
 .node-type-webform #main-wrapper{
