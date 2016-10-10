@@ -46,10 +46,10 @@
 	</div>
   </div>
   <div class="under-image">
-    <div class="movie-gorup-item-meta-info">
+    <div class="movie-group-item-meta-info">
       <?php print $fields['nothing_1']->content; ?> 
     </div>
-    <div class="movie-gorup-item-teaser-txt">
+    <div class="movie-group-item-teaser-txt">
       <?php
 	  if(!empty($fields['field_cm_movie_body']->content)){
               print $fields['field_cm_movie_body']->content;
@@ -58,7 +58,7 @@
 	  }
       ?>
     </div>
-	<div class="movie-gorup-item-credit">
+	<div class="movie-group-item-credit">
       <?php
 	  if(!empty($fields['php']->content)){
               print $fields['php']->content;

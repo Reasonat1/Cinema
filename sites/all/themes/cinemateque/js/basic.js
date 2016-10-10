@@ -395,7 +395,7 @@
      $('.view-id-movie_top_pane_view.view-display-id-panel_pane_7 table tbody tr').addClass('up-events-item-movie');
 
      /*****Rename Minitue***/
-        $('.i18n-he .pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.length-movie').each(function () {
+        $('.i18n-he .pane-movie-group-ct-panel-pane-1 .movie-group-item-meta-info span.length-movie').each(function () {
             $(this).html($(this).html().replace('minutes',' דקות '));
             $(this).html($(this).html().replace('דקות',' דקות '));
         });
@@ -471,8 +471,8 @@
                  $('#cm-event-node-form .pane-node-form-title .form-item-title #edit-title').val(mainStr);
             } 
         });
-        $( ".pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.field-content span:last-child" ).addClass('no-space-bar');
-        $('.pane-movie-group-ct-panel-pane-1 .movie-gorup-item-meta-info span.field-content span.no-space-bar').each(function () {
+        $( ".pane-movie-group-ct-panel-pane-1 .movie-group-item-meta-info span.field-content span:last-child" ).addClass('no-space-bar');
+        $('.pane-movie-group-ct-panel-pane-1 .movie-group-item-meta-info span.field-content span.no-space-bar').each(function () {
             var tempStrs = $(this).text().slice(0,-3)
             $(this).text(tempStrs);
         });
