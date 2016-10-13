@@ -137,18 +137,20 @@
 
 /********  mini calendar  ********/
 
-        $(".front .float-calendar-wrapper").removeClass("hide-mobile");
+        $(".front .float-calendar-wrapper").removeClass("hide-float");
+        $(".front").addClass("show-float-calendar");
+        $(".not-front body").addClass("hide-float-calendar");
 
         $(".float-calendar-wrapper .close-button").click(function() {
             $(".float-calendar-wrapper").addClass("hide-float");
-            $(".float-calendar-wrapper").addClass("hide-mobile");
-            $(".float-calendar-wrapper").removeClass("show-mobile");
+            $("body").addClass("hide-float-calendar");
+            $("body").removeClass("show-float-calendar");
         });
 
         $(".header-right .today").click(function() {
             $(".float-calendar-wrapper").toggleClass("hide-float");
-            $(".float-calendar-wrapper").toggleClass("hide-mobile");
-            $(".float-calendar-wrapper").toggleClass("show-mobile");
+            $("body").toggleClass("hide-float-calendar");
+            $("body").toggleClass("show-float-calendar");
             $("body").removeClass("responsive-hamburger-open");
             $("body").removeClass("search-overlay");
         });

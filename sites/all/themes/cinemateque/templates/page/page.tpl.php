@@ -14,7 +14,7 @@
 
 <!--<script src="/misc/jquery.js" type="text/javascript"></script>-->
 <?php print render($page['overlay']); ?>
-<div class="float-calendar-wrapper hide-mobile">
+<div class="float-calendar-wrapper hide-float">
     <?php print render($page['float_calendar']); ?>
     <div class="close-button"><div class="close"><?php print t("Close");?></div></div>
 </div>
