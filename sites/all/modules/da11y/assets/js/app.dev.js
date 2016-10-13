@@ -205,5 +205,32 @@
 		
 		Pojo_Accessibility_App.init();
 	});
-
+	$( document ).ready( function( $ ) {
+	  $('button.hambruger').click(function(){
+		  $('#mini-panel-hamburgermenufooter').find('.close').attr('tabindex',1);
+		  $('.region-overlay').attr('tabindex',-1);
+		  
+		  setTimeout(function() {
+		  $('#mini-panel-hamburgermenufooter').find('.close').focus();
+		  }, 10);
+	  });
+	  
+	  $('#mini-panel-hamburgermenufooter').find('img.close').keydown(function(event){
+		  var keyCode = (event.keyCode ? event.keyCode : event.which);
+		  if (keyCode == 13) {$(this).trigger('click'); }});
+	  
+	  $('#mini-panel-hamburgermenufooter').find('img.close').click(function(){
+		  $(this).removeAttr('tabindex'); 
+		  $('.region-overlay').removeAttr('tabindex'); 
+		  setTimeout(function() {$('button.hambruger').focus();}, 10); 
+		  });
+	  $('.region-overlay').find('*').blur(function(){
+		  
+		  setTimeout(function() {
+		  if($('.region-overlay').find( ':focus' ).length == 0){
+			  $('#mini-panel-hamburgermenufooter').find('.close').focus();
+		 }}, 10);
+		  
+	  });
+    });
 }( jQuery, window, document ) );
