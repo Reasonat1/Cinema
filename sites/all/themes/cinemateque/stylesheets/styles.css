@@ -7142,18 +7142,17 @@ div[id^="panels-ipe-paneid-22"] > * select {
 /* line 263, ../sass/menu.scss */
 #mini-panel-hamburgermenufooter .pane-bean-social-links-new .field-name-field-social-icons > .field-items > .field-item, #mini-panel-hamburgermenufooter .pane-bean-logos-hebrew-block .field-name-field-social-icons > .field-items > .field-item, #mini-panel-hamburgermenufooter .pane-bean-logos-english-block .field-name-field-social-icons > .field-items > .field-item {
   display: inline-block;
-  width: 30%;
-  margin: 0 1.5%;
+  margin: 0 15px;
 }
-/* line 270, ../sass/menu.scss */
+/* line 269, ../sass/menu.scss */
 #mini-panel-hamburgermenufooter .pane-bean-logos-hebrew-block, #mini-panel-hamburgermenufooter .pane-bean-logos-english-block {
-  width: 33%;
+  width: 480px;
 }
-/* line 273, ../sass/menu.scss */
+/* line 272, ../sass/menu.scss */
 #mini-panel-hamburgermenufooter .pane-bean-social-links-new {
-  width: 17%;
+  width: 255px;
 }
-/* line 275, ../sass/menu.scss */
+/* line 274, ../sass/menu.scss */
 #mini-panel-hamburgermenufooter .pane-bean-social-links-new img {
   border-radius: 50%;
 }
@@ -7166,24 +7165,30 @@ div[id^="panels-ipe-paneid-22"] > * select {
   background-color: #b59d70 !important;
 }
 
+@media (max-width: 1710px) {
+  /* line 283, ../sass/menu.scss */
+  #mini-panel-hamburgermenufooter .pane-bean-logos-hebrew-block, #mini-panel-hamburgermenufooter .pane-bean-logos-english-block {
+    width: 100%;
+  }
+}
 /******  hamburger  *********/
-/* line 285, ../sass/menu.scss */
+/* line 291, ../sass/menu.scss */
 .responsive-hamburger {
   display: none;
 }
 
-/* line 289, ../sass/menu.scss */
+/* line 295, ../sass/menu.scss */
 .navbar-toggle {
   display: block;
 }
 @media (max-width: 960px) {
-  /* line 289, ../sass/menu.scss */
+  /* line 295, ../sass/menu.scss */
   .navbar-toggle {
     display: none;
   }
 }
 
-/* line 296, ../sass/menu.scss */
+/* line 302, ../sass/menu.scss */
 .navbar-header .hambruger {
   float: left;
   border: medium none;
@@ -7194,12 +7199,12 @@ div[id^="panels-ipe-paneid-22"] > * select {
   padding: 0;
   border-radius: 0;
 }
-/* line 305, ../sass/menu.scss */
+/* line 311, ../sass/menu.scss */
 .navbar-header .hambruger.navbar-toggle {
   margin-left: 30px;
 }
 
-/* line 310, ../sass/menu.scss */
+/* line 316, ../sass/menu.scss */
 .navbar-header .hambruger .icon-bar {
   width: 34px;
   background-color: #fff !important;
@@ -7207,26 +7212,26 @@ div[id^="panels-ipe-paneid-22"] > * select {
   height: 2px;
 }
 
-/* line 317, ../sass/menu.scss */
+/* line 323, ../sass/menu.scss */
 .navbar-header .hambruger .icon-bar + .icon-bar {
   margin-top: 9px;
 }
 
 /********** responsive menu **********/
 @media (max-width: 960px) {
-  /* line 325, ../sass/menu.scss */
+  /* line 331, ../sass/menu.scss */
   .responsive-hamburger {
     display: block;
     cursor: pointer;
   }
 }
 @media (max-width: 767px) {
-  /* line 332, ../sass/menu.scss */
+  /* line 338, ../sass/menu.scss */
   #main-menu {
     display: none;
   }
 }
-/* line 337, ../sass/menu.scss */
+/* line 343, ../sass/menu.scss */
 .responsive-menu-wrapper {
   display: block;
   margin-right: 0;
@@ -7242,13 +7247,13 @@ div[id^="panels-ipe-paneid-22"] > * select {
   padding: 0;
   z-index: 500;
 }
-/* line 351, ../sass/menu.scss */
+/* line 357, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu {
   padding: 0;
   margin: 0;
   width: 100%;
 }
-/* line 355, ../sass/menu.scss */
+/* line 361, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li {
   text-align: left;
   width: 100%;
@@ -7257,7 +7262,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   margin: 0;
   padding: 0;
 }
-/* line 362, ../sass/menu.scss */
+/* line 368, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li a {
   white-space: unset;
   padding: 15px 3% !important;
@@ -7265,7 +7270,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   color: #fff;
   background-color: transparent !important;
 }
-/* line 368, ../sass/menu.scss */
+/* line 374, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li a:hover, .responsive-menu-wrapper #site-main-menu li a:focus {
   background-color: transparent !important;
 }
@@ -7277,11 +7282,11 @@ div[id^="panels-ipe-paneid-22"] > * select {
 .domain-2 .responsive-menu-wrapper #site-main-menu li ul li {
   background-color: #b59d70 !important;
 }
-/* line 374, ../sass/menu.scss */
+/* line 380, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li ul li a {
   color: #fff;
 }
-/* line 378, ../sass/menu.scss */
+/* line 384, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li .caret {
   display: block;
   float: right;
@@ -7290,7 +7295,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   margin: 0;
   width: 55px;
 }
-/* line 385, ../sass/menu.scss */
+/* line 391, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li .caret:after {
   background: url("../images/plus.png") no-repeat;
   transition: all 0.5s;
@@ -7301,7 +7306,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: 12px;
   margin: 5px 0px;
 }
-/* line 396, ../sass/menu.scss */
+/* line 402, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li .dropdown-menu {
   border: none;
   display: none;
@@ -7309,30 +7314,30 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: 100%;
 }
 
-/* line 408, ../sass/menu.scss */
+/* line 414, ../sass/menu.scss */
 .responsive-menu-wrapper .responsive-open .dropdown-toggle {
   font-weight: bold;
 }
-/* line 411, ../sass/menu.scss */
+/* line 417, ../sass/menu.scss */
 .responsive-menu-wrapper .responsive-open .dropdown-menu {
   display: block !important;
 }
-/* line 414, ../sass/menu.scss */
+/* line 420, ../sass/menu.scss */
 .responsive-menu-wrapper .responsive-open .caret:after {
   transform: rotate(134deg);
 }
 
-/* line 420, ../sass/menu.scss */
+/* line 426, ../sass/menu.scss */
 .responsive-hamburger-open .responsive-menu-wrapper {
   right: 0;
 }
 
-/* line 426, ../sass/menu.scss */
+/* line 432, ../sass/menu.scss */
 .domain-1 .pane-menu-cinematic-festival-12 {
   display: none;
 }
 
-/* line 432, ../sass/menu.scss */
+/* line 438, ../sass/menu.scss */
 .domain-2 .pane-menu-menu-site-main-menu {
   display: none;
 }

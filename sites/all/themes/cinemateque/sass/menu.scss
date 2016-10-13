@@ -262,16 +262,15 @@
 			text-align: center;
 			> .field-item{
 				display: inline-block;
-				width: 30%;
-				margin: 0 1.5%;
+				margin: 0 15px;
 			}
 		}
 	}
 	.pane-bean-logos-hebrew-block, .pane-bean-logos-english-block{
-		width: 33%;
+		width: 480px;
 	}
 	.pane-bean-social-links-new{
-		width: 17%;
+		width: 255px;
 		img{
 			border-radius: 50%;
 			@include bg-main-color;
@@ -279,6 +278,13 @@
 	}
 }
 
+@media (max-width: 1710px){
+	#mini-panel-hamburgermenufooter{
+		.pane-bean-logos-hebrew-block, .pane-bean-logos-english-block{
+			width: 100%;
+		}
+	}
+}
 
 /******  hamburger  *********/
 
