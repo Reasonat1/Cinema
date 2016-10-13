@@ -114,7 +114,8 @@ function _return_addthisevent_markup($node) {
   //    return $output;
   // }
    function my_utilities_views_pre_render(&$view) {
-     //remove current event from the future events view list. this has to be done here because we cant exclude the node argument from view as it is not only excluded but also used for limiting results.
+     //remove current event from the future events view list.
+     // this has to be done here because we cant exclude the node argument from view as it is not only excluded but also used for limiting results.
      if($view->name == 'event_ct_view' && $view->current_display == 'panel_pane_5') {
        foreach($view->result as $key => &$result) {
            if($result->node_field_data_field_event_corresponding_ref_nid == $view->args[0]) {
