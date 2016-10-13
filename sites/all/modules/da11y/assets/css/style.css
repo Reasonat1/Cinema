@@ -1739,6 +1739,10 @@ body.pojo-a11y-high-contrast .col-md-3.header-right .shopping-cart button, body.
 	background: url("/sites/all/themes/cinemateque/images/shop-icon.png") no-repeat !important;
 }
 
+body.pojo-a11y-high-contrast .ui-dialog button.ui-dialog-titlebar-close span.ui-icon, body.pojo-a11y-negative-contrast .ui-dialog button.ui-dialog-titlebar-close span.ui-icon {
+	background: url("/profiles/panopoly/modules/panopoly/panopoly_core/images/close-popup.png") no-repeat !important;
+}
+
 body.pojo-a11y-high-contrast label.in-field-labels-processed, body.pojo-a11y-negative-contrast label.in-field-labels-processed{
 	background: transparent !important;
 }
@@ -1747,4 +1751,35 @@ body.pojo-a11y-negative-contrast .navbar-header .hambruger .icon-bar{
 }
 body.pojo-a11y-negative-contrast .footer .pane-bean-main-info-english, body.pojo-a11y-negative-contrast .footer .pane-bean-main-info-hebrew, body.pojo-a11y-high-contrast .footer .pane-bean-main-info-english, body.pojo-a11y-high-contrast .footer .pane-bean-main-info-hebrew{
 	z-index:10 !important;
+}
+
+body.pojo-a11y-high-contrast button,
+body.pojo-a11y-high-contrast *:not(#pojo-a11y-toolbar) button,
+body.pojo-a11y-high-contrast input,
+body.pojo-a11y-high-contrast *:not(#pojo-a11y-toolbar) input,
+body.pojo-a11y-high-contrast textarea,
+body.pojo-a11y-high-contrast *:not(#pojo-a11y-toolbar) textarea,
+body.pojo-a11y-high-contrast select,
+body.pojo-a11y-high-contrast *:not(#pojo-a11y-toolbar) select,
+body.pojo-a11y-high-contrast table,
+body.pojo-a11y-high-contrast *:not(#pojo-a11y-toolbar) table,
+body.pojo-a11y-high-contrast td,
+body.pojo-a11y-high-contrast *:not(#pojo-a11y-toolbar) td,
+body.pojo-a11y-high-contrast textarea,
+body.pojo-a11y-high-contrast *:not(#pojo-a11y-toolbar) textarea,
+body.pojo-a11y-high-contrast th,
+body.pojo-a11y-high-contrast *:not(#pojo-a11y-toolbar) th,
+body.pojo-a11y-high-contrast tr,
+body.pojo-a11y-high-contrast *:not(#pojo-a11y-toolbar) tr,
+body.pojo-a11y-high-contrast tt,
+body.pojo-a11y-high-contrast *:not(#pojo-a11y-toolbar) tt {
+  border: 1px solid #ffffff !important;
+}
+
+body.pojo-a11y-high-contrast {
+	background: black;
+}
+
+body.pojo-a11y-high-contrast .ui-dialog.ui-widget.ui-widget-content, body.pojo-a11y-negative-contrast .ui-dialog.ui-widget.ui-widget-content{
+	border: 1px solid #ffffff !important;
 }
