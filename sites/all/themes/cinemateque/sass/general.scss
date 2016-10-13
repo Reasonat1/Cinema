@@ -2257,6 +2257,8 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 }
 
 .hambruger-overlay{
+	height: 100%;
+	overflow: hidden;
 	.region-overlay{
 		display: block;
 		opacity: 1;
@@ -2266,5 +2268,5 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 		.block-panels-mini{
 			display: block;
 		}
-	}	
+	}
 }
