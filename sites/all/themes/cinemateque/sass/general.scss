@@ -1994,6 +1994,10 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 		@include res(s-m){
 			width: 35%!important;
 		}
+		a{
+			padding-bottom: 20px;
+			display: block;
+		}
 		img{
 			border-radius: 50%;
 			padding: 20px 30px;
@@ -2023,6 +2027,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	.body{
 		margin-top: 20px;
 		font-size: 18px;
+		padding-bottom: 30px;
 		@include res(s-m){
 			margin-top: 5px;
 			max-height: 56px;
