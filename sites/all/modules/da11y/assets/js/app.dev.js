@@ -53,8 +53,8 @@
 			function resizeFontPlus( event ) {
 				event.preventDefault();
 
-				//var MAX_SIZE = 200 ,-------------- original code
-				var MAX_SIZE = 130,
+				var MAX_SIZE = 200 ,
+				//var MAX_SIZE = 130,-------------- original code
 					MIN_SIZE = 120,
 					oldFontSize = $self.currentFontSize;
 
