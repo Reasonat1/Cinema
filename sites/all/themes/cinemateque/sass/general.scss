@@ -1516,6 +1516,13 @@ table{
 	#content{
 		width: 100%;
 	}
+	.content.middle .panels-flexible-region-node_page-content_left{
+		width: 800px;
+		max-width: 100%;
+		margin: 0 auto;
+		float: none!important;
+		padding: 0!important;
+	}
 	.panels-flexible-row-node_page-4{
 		width: 100%!important;
 		padding: 0!important;
@@ -1529,11 +1536,9 @@ table{
     		.pane-content{
     			@include width;
     			.view{
-					float: right;
-    				width: 77%;
-    				@include res(s-m){
-    					width: 100%;
-    				}
+    				width: 800px;
+    				max-width: 100%;
+    				margin: 0 auto;
     			}
     		}
 			@include res(s-m){
@@ -1588,6 +1593,7 @@ table{
 		width: 100%!important;
 		background-color: #f9f4ee;
 		.view-person-ct-view.view-display-id-panel_pane_2{
+			padding-top: 20px;
 			h3{
 				color: #333;
 			}
@@ -1596,16 +1602,22 @@ table{
 				overflow: hidden;
 				margin-bottom: 10px;
 				> h3{
-					font-size: 2em;
+					font-size: 1.3em;
+					font-weight: bold;
+					margin-top: 10px;
+					margin-bottom: 30px;
 				}
 			}
 			.views-row{
-				width: 49%;
+				width: 49.7%;
 				@include res(s-m){
 					width: 100%;
 				}
 				h3{
 					font-weight: normal;
+				}
+				.node-title-teaser-content-type{
+					margin-bottom: 11px;
 				}
 			}
 			.views-row-odd{

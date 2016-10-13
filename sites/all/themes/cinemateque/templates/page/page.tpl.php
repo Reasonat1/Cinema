@@ -16,7 +16,19 @@
 <?php print render($page['overlay']); ?>
 <div class="float-calendar-wrapper hide-float">
     <?php print render($page['float_calendar']); ?>
-    <div class="close-button"><div class="close"><?php print t("Close");?></div></div>
+    <div class="close-button">
+        <div class="close"><?php print t("Close");?></div>
+        <?php
+        global $language;
+        global $base_url;
+        $current_lang = $language->language;
+        if ($current_lang == "en"): ?>
+            <a href="/en/node/4284" class="link-main-calendar">Main calendar page</a>
+        <?php endif; 
+        if ($current_lang == "he"): ?>
+            <a href="/he/node/4285" class="link-main-calendar"><?php print t('Main calendar page');?></a>
+        <?php endif; ?>
+    </div>
 </div>
 
 <script type='text/javascript'>

@@ -141,7 +141,7 @@
         $(".front").addClass("show-float-calendar");
         $(".not-front body").addClass("hide-float-calendar");
 
-        $(".float-calendar-wrapper .close-button").click(function() {
+        $(".float-calendar-wrapper .close").click(function() {
             $(".float-calendar-wrapper").addClass("hide-float");
             $("body").addClass("hide-float-calendar");
             $("body").removeClass("show-float-calendar");

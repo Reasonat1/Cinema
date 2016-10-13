@@ -2380,12 +2380,20 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   width: 100%;
 }
 /* line 1519, ../sass/general.scss */
+.node-type-cm-person .content.middle .panels-flexible-region-node_page-content_left {
+  width: 800px;
+  max-width: 100%;
+  margin: 0 auto;
+  float: none !important;
+  padding: 0 !important;
+}
+/* line 1526, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-4 {
   width: 100% !important;
   padding: 0 !important;
   top: 50px;
 }
-/* line 1523, ../sass/general.scss */
+/* line 1530, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-4 .pane-person-ct-view-panel-pane-1 {
   background-color: #f9fafb;
   padding-top: 60px !important;
@@ -2393,7 +2401,7 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   overflow: hidden;
   padding-bottom: 20px;
 }
-/* line 1529, ../sass/general.scss */
+/* line 1536, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-4 .pane-person-ct-view-panel-pane-1 .pane-content {
   width: 1355px !important;
   max-width: 100%;
@@ -2401,48 +2409,43 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   padding: 0 5%;
   box-sizing: border-box;
 }
-/* line 1531, ../sass/general.scss */
+/* line 1538, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-4 .pane-person-ct-view-panel-pane-1 .pane-content .view {
-  float: right;
-  width: 77%;
+  width: 800px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 @media (max-width: 767px) {
-  /* line 1531, ../sass/general.scss */
-  .node-type-cm-person .panels-flexible-row-node_page-4 .pane-person-ct-view-panel-pane-1 .pane-content .view {
-    width: 100%;
-  }
-}
-@media (max-width: 767px) {
-  /* line 1523, ../sass/general.scss */
+  /* line 1530, ../sass/general.scss */
   .node-type-cm-person .panels-flexible-row-node_page-4 .pane-person-ct-view-panel-pane-1 {
     margin-bottom: 0 !important;
   }
 }
-/* line 1546, ../sass/general.scss */
+/* line 1551, ../sass/general.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .person-picture img {
   margin: 0 auto;
   display: block;
   border-radius: 50%;
 }
-/* line 1552, ../sass/general.scss */
+/* line 1557, ../sass/general.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .person-name {
   font-size: 3em;
   padding-top: 20px;
   text-align: center;
 }
-/* line 1557, ../sass/general.scss */
+/* line 1562, ../sass/general.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .person-job {
   font-weight: bold;
   padding-bottom: 30px;
   text-align: center;
 }
-/* line 1562, ../sass/general.scss */
+/* line 1567, ../sass/general.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 {
   overflow: hidden;
   font-weight: bold;
   font-size: 15px;
 }
-/* line 1566, ../sass/general.scss */
+/* line 1571, ../sass/general.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col {
   width: 31%;
   float: left;
@@ -2453,71 +2456,82 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   box-sizing: border-box;
 }
 @media (max-width: 767px) {
-  /* line 1566, ../sass/general.scss */
+  /* line 1571, ../sass/general.scss */
   .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col {
     width: 100%;
     margin: 0 0 20px 0;
   }
 }
-/* line 1578, ../sass/general.scss */
+/* line 1583, ../sass/general.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col.col-3 {
   margin-right: 0;
 }
-/* line 1581, ../sass/general.scss */
+/* line 1586, ../sass/general.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col a {
   color: #333;
 }
-/* line 1587, ../sass/general.scss */
+/* line 1592, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 {
   width: 100% !important;
   background-color: #f9f4ee;
 }
-/* line 1591, ../sass/general.scss */
+/* line 1595, ../sass/general.scss */
+.node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 {
+  padding-top: 20px;
+}
+/* line 1597, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 h3 {
   color: #333;
 }
-/* line 1594, ../sass/general.scss */
+/* line 1600, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .group {
   clear: both;
   overflow: hidden;
   margin-bottom: 10px;
 }
-/* line 1598, ../sass/general.scss */
+/* line 1604, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .group > h3 {
-  font-size: 2em;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
-/* line 1602, ../sass/general.scss */
+/* line 1611, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .views-row {
-  width: 49%;
+  width: 49.7%;
 }
 @media (max-width: 767px) {
-  /* line 1602, ../sass/general.scss */
+  /* line 1611, ../sass/general.scss */
   .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .views-row {
     width: 100%;
   }
 }
-/* line 1607, ../sass/general.scss */
+/* line 1616, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .views-row h3 {
   font-weight: normal;
 }
-/* line 1611, ../sass/general.scss */
+/* line 1619, ../sass/general.scss */
+.node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .views-row .node-title-teaser-content-type {
+  margin-bottom: 11px;
+}
+/* line 1623, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .views-row-odd {
   float: left;
 }
-/* line 1614, ../sass/general.scss */
+/* line 1626, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .views-row-even {
   float: right;
 }
-/* line 1618, ../sass/general.scss */
+/* line 1630, ../sass/general.scss */
 .node-type-cm-person .panels-flexible-row-node_page-6 .node-cm-movie-year {
   font-weight: bold;
 }
 
-/* line 1624, ../sass/general.scss */
+/* line 1636, ../sass/general.scss */
 .node-title-teaser-content-type {
   background-color: #fff !important;
 }
-/* line 1626, ../sass/general.scss */
+/* line 1638, ../sass/general.scss */
 .node-title-teaser-content-type:hover {
   background: url("../images/more-white-right.png") no-repeat scroll right 10px center;
 }
@@ -2529,12 +2543,12 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
 .domain-2 .node-title-teaser-content-type:hover {
   background-color: #b59d70 !important;
 }
-/* line 1629, ../sass/general.scss */
+/* line 1641, ../sass/general.scss */
 .node-title-teaser-content-type:hover h3 {
   color: #fff !important;
 }
 
-/* line 1636, ../sass/general.scss */
+/* line 1648, ../sass/general.scss */
 .gradient {
   position: absolute;
   bottom: 0;
@@ -2549,71 +2563,71 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   z-index: 1;
 }
 
-/* line 1650, ../sass/general.scss */
+/* line 1662, ../sass/general.scss */
 .gradient.small {
   height: 150px !important;
 }
 
-/* line 1654, ../sass/general.scss */
+/* line 1666, ../sass/general.scss */
 .state-nopic .gradient.small {
   background-image: none;
 }
 
 /******  responsive *********/
-/* line 1659, ../sass/general.scss */
+/* line 1671, ../sass/general.scss */
 .only-mobile {
   display: none !important;
 }
 @media (max-width: 767px) {
-  /* line 1659, ../sass/general.scss */
+  /* line 1671, ../sass/general.scss */
   .only-mobile {
     display: block !important;
   }
 }
 
 @media (max-width: 767px) {
-  /* line 1666, ../sass/general.scss */
+  /* line 1678, ../sass/general.scss */
   .only-desktop {
     display: none !important;
   }
 }
 
-/* line 1672, ../sass/general.scss */
+/* line 1684, ../sass/general.scss */
 .collapse {
   display: block !important;
 }
 @media (max-width: 767px) {
-  /* line 1672, ../sass/general.scss */
+  /* line 1684, ../sass/general.scss */
   .collapse {
     padding: 0;
   }
 }
 
 @media (max-width: 767px) {
-  /* line 1680, ../sass/general.scss */
+  /* line 1692, ../sass/general.scss */
   .table-responsive {
     border: none;
     overflow: hidden;
     margin-bottom: 0;
   }
-  /* line 1684, ../sass/general.scss */
+  /* line 1696, ../sass/general.scss */
   .table-responsive thead {
     display: none;
   }
-  /* line 1687, ../sass/general.scss */
+  /* line 1699, ../sass/general.scss */
   .table-responsive table {
     font-size: 14px;
   }
-  /* line 1691, ../sass/general.scss */
+  /* line 1703, ../sass/general.scss */
   .table-responsive .views-field-field-cm-event-hall .only-mobile {
     color: #ccc;
   }
-  /* line 1695, ../sass/general.scss */
+  /* line 1707, ../sass/general.scss */
   .table-responsive td {
     width: calc(49% - 44px) !important;
     padding-left: 0 !important;
   }
-  /* line 1698, ../sass/general.scss */
+  /* line 1710, ../sass/general.scss */
   .table-responsive td.purchase, .table-responsive td.views-field-field-toptix-purchase {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -2621,18 +2635,18 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   }
 }
 /*******  admin menu  **********/
-/* line 1709, ../sass/general.scss */
+/* line 1721, ../sass/general.scss */
 div#admin-toolbar div.admin-tab {
   height: 25px;
 }
 
-/* line 1713, ../sass/general.scss */
+/* line 1725, ../sass/general.scss */
 input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]), input[type="email"]:focus:not([readonly]), input[type="number"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), input[type="search-md"]:focus:not([readonly]), input[type="tel"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="time"]:focus:not([readonly]), input[type="url"]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
   box-shadow: none !important;
 }
 
 /***** movie, movie group, event & article  ********/
-/* line 1719, ../sass/general.scss */
+/* line 1731, ../sass/general.scss */
 .text-main-image {
   position: absolute;
   bottom: 60px;
@@ -2642,12 +2656,12 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   z-index: 99;
 }
 @media (max-width: 767px) {
-  /* line 1719, ../sass/general.scss */
+  /* line 1731, ../sass/general.scss */
   .text-main-image {
     bottom: 10px;
   }
 }
-/* line 1729, ../sass/general.scss */
+/* line 1741, ../sass/general.scss */
 .text-main-image .wrapper {
   width: 1355px !important;
   max-width: 100%;
@@ -2655,17 +2669,17 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   padding: 0 5%;
   box-sizing: border-box;
 }
-/* line 1731, ../sass/general.scss */
+/* line 1743, ../sass/general.scss */
 .text-main-image .wrapper a, .text-main-image .wrapper a:hover {
   color: #fff;
 }
-/* line 1734, ../sass/general.scss */
+/* line 1746, ../sass/general.scss */
 .text-main-image .wrapper .slide-left-ct {
   width: 54%;
   margin: 0 auto;
 }
 @media (max-width: 767px) {
-  /* line 1734, ../sass/general.scss */
+  /* line 1746, ../sass/general.scss */
   .text-main-image .wrapper .slide-left-ct {
     text-align: center;
     font-size: 13px;
@@ -2673,36 +2687,36 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
     width: 70%;
   }
 }
-/* line 1743, ../sass/general.scss */
+/* line 1755, ../sass/general.scss */
 .text-main-image .wrapper .slide-left-ct .slide-small-text {
   font-size: 22px;
 }
 @media (max-width: 480px) {
-  /* line 1743, ../sass/general.scss */
+  /* line 1755, ../sass/general.scss */
   .text-main-image .wrapper .slide-left-ct .slide-small-text {
     font-size: 15px;
   }
 }
-/* line 1749, ../sass/general.scss */
+/* line 1761, ../sass/general.scss */
 .text-main-image .wrapper .slide-left-ct .slide-big-text {
   font-size: 48px;
   margin: 1% 0 15px;
   line-height: 110%;
 }
 @media (max-width: 767px) {
-  /* line 1749, ../sass/general.scss */
+  /* line 1761, ../sass/general.scss */
   .text-main-image .wrapper .slide-left-ct .slide-big-text {
     margin-bottom: 4px;
   }
 }
 @media (max-width: 480px) {
-  /* line 1749, ../sass/general.scss */
+  /* line 1761, ../sass/general.scss */
   .text-main-image .wrapper .slide-left-ct .slide-big-text {
     font-size: 27px;
     font-weight: bold;
   }
 }
-/* line 1761, ../sass/general.scss */
+/* line 1773, ../sass/general.scss */
 .text-main-image .wrapper .slide-left-ct .button {
   font-size: 14px;
   padding: 5px 12px;
@@ -2718,18 +2732,18 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   background-color: #b59d70 !important;
 }
 @media (max-width: 767px) {
-  /* line 1761, ../sass/general.scss */
+  /* line 1773, ../sass/general.scss */
   .text-main-image .wrapper .slide-left-ct .button {
     float: none;
     display: inline-block;
     margin: 22px auto;
   }
 }
-/* line 1772, ../sass/general.scss */
+/* line 1784, ../sass/general.scss */
 .text-main-image .wrapper .slide-left-ct .button a {
   color: #fff;
 }
-/* line 1777, ../sass/general.scss */
+/* line 1789, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct {
   float: left;
   position: absolute;
@@ -2740,7 +2754,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   margin-top: 38px;
 }
 @media (max-width: 767px) {
-  /* line 1777, ../sass/general.scss */
+  /* line 1789, ../sass/general.scss */
   .text-main-image .wrapper .slide-right-ct {
     margin: 0;
     bottom: 6px;
@@ -2750,13 +2764,13 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
     width: 13%;
   }
 }
-/* line 1793, ../sass/general.scss */
+/* line 1805, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct *:focus {
   outline: 0;
   outline-style: none;
   outline-width: 0;
 }
-/* line 1798, ../sass/general.scss */
+/* line 1810, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct .play-button {
   background: url("../images/play-icon.png") no-repeat scroll 60% center;
   border-radius: 30px;
@@ -2769,14 +2783,14 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   cursor: pointer;
 }
 @media (max-width: 767px) {
-  /* line 1798, ../sass/general.scss */
+  /* line 1810, ../sass/general.scss */
   .text-main-image .wrapper .slide-right-ct .play-button {
     background-size: 16px;
     height: 40px;
     width: 40px;
   }
 }
-/* line 1814, ../sass/general.scss */
+/* line 1826, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct .video-wrapper {
   position: fixed;
   width: 100%;
@@ -2786,11 +2800,11 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   background-color: #000;
   display: none;
 }
-/* line 1822, ../sass/general.scss */
+/* line 1834, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct .video-wrapper.play {
   display: block;
 }
-/* line 1825, ../sass/general.scss */
+/* line 1837, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct .video-wrapper .close-button {
   background: url("../images/close42.png") no-repeat scroll center center;
   position: fixed;
@@ -2800,13 +2814,13 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   left: 10%;
   cursor: pointer;
 }
-/* line 1834, ../sass/general.scss */
+/* line 1846, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct .video-wrapper .file {
   width: 70%;
   height: 70%;
   margin: 0 auto;
 }
-/* line 1839, ../sass/general.scss */
+/* line 1851, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct .video-wrapper .content {
   position: relative;
   padding-bottom: 56.25%;
@@ -2814,76 +2828,76 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   padding-top: 25px;
   height: 0;
 }
-/* line 1844, ../sass/general.scss */
+/* line 1856, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct .video-wrapper .content iframe, .text-main-image .wrapper .slide-right-ct .video-wrapper .content video {
   position: absolute;
   width: 100%;
   height: 100%;
 }
-/* line 1849, ../sass/general.scss */
+/* line 1861, ../sass/general.scss */
 .text-main-image .wrapper .slide-right-ct .video-wrapper .content video {
   padding-top: 46px;
 }
-/* line 1856, ../sass/general.scss */
+/* line 1868, ../sass/general.scss */
 .text-main-image a {
   color: #fff;
 }
 
-/* line 1861, ../sass/general.scss */
+/* line 1873, ../sass/general.scss */
 .full-screen-image {
   overflow: hidden;
   position: relative;
 }
 
-/* line 1867, ../sass/general.scss */
+/* line 1879, ../sass/general.scss */
 .noheaderimage .text-main-image {
   position: relative;
   color: #333;
   margin: 50px 0 30px;
   bottom: auto;
 }
-/* line 1873, ../sass/general.scss */
+/* line 1885, ../sass/general.scss */
 .noheaderimage .text-main-image .wrapper a, .noheaderimage .text-main-image .wrapper a:hover {
   color: #333;
 }
-/* line 1876, ../sass/general.scss */
+/* line 1888, ../sass/general.scss */
 .noheaderimage .text-main-image .wrapper .slide-right-ct {
   margin-top: 0;
 }
-/* line 1878, ../sass/general.scss */
+/* line 1890, ../sass/general.scss */
 .noheaderimage .text-main-image .wrapper .slide-right-ct .play-button {
   background: url("../images/play-icon-black.png") no-repeat scroll 60% center;
   border: 1px solid #000;
 }
-/* line 1885, ../sass/general.scss */
+/* line 1897, ../sass/general.scss */
 .noheaderimage .gradient {
   display: none;
 }
 
-/* line 1890, ../sass/general.scss */
+/* line 1902, ../sass/general.scss */
 .top-text-blk-wht {
   position: absolute;
   top: 0;
   left: 0;
   font-size: 14px;
 }
-/* line 1895, ../sass/general.scss */
+/* line 1907, ../sass/general.scss */
 .top-text-blk-wht span {
   padding: 6px 12px;
   opacity: 0.9;
   float: left;
 }
-/* line 1900, ../sass/general.scss */
+/* line 1912, ../sass/general.scss */
 .top-text-blk-wht .black {
   color: #fff;
   background-color: #333;
 }
-/* line 1904, ../sass/general.scss */
+/* line 1916, ../sass/general.scss */
 .top-text-blk-wht .white {
   background-color: #fff;
 }
 
-/* line 1909, ../sass/general.scss */
+/* line 1921, ../sass/general.scss */
 .image-alt-title {
   background-color: #312f2f;
   bottom: 0px;
@@ -2895,28 +2909,28 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   z-index: 2;
 }
 @media (max-width: 767px) {
-  /* line 1909, ../sass/general.scss */
+  /* line 1921, ../sass/general.scss */
   .image-alt-title {
     display: none;
   }
 }
-/* line 1921, ../sass/general.scss */
+/* line 1933, ../sass/general.scss */
 .image-alt-title .field {
   float: left;
 }
-/* line 1924, ../sass/general.scss */
+/* line 1936, ../sass/general.scss */
 .image-alt-title .grp-title, .image-alt-title .field-name-field-file-image-title-text {
   margin-left: 10px;
   padding-left: 10px;
   border-left: 1px solid;
 }
 
-/* line 1931, ../sass/general.scss */
+/* line 1943, ../sass/general.scss */
 .view-footer {
   overflow: hidden;
   text-align: center;
 }
-/* line 1934, ../sass/general.scss */
+/* line 1946, ../sass/general.scss */
 .view-footer .more-event {
   float: right;
   cursor: pointer;
@@ -2934,7 +2948,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   color: #b59d70 !important;
 }
 @media (max-width: 767px) {
-  /* line 1934, ../sass/general.scss */
+  /* line 1946, ../sass/general.scss */
   .view-footer .more-event {
     margin: 10px auto;
     float: none;
@@ -2945,44 +2959,44 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   }
 }
 @media (max-width: 767px) {
-  /* line 1950, ../sass/general.scss */
+  /* line 1962, ../sass/general.scss */
   .view-footer .more-event span {
     float: left;
   }
 }
-/* line 1955, ../sass/general.scss */
+/* line 1967, ../sass/general.scss */
 .view-footer .more-event .text {
   margin: 0 5px;
 }
 
-/* line 1963, ../sass/general.scss */
+/* line 1975, ../sass/general.scss */
 .credits-view {
   padding: 30px 0;
   float: right;
   width: 77%;
 }
 @media (max-width: 767px) {
-  /* line 1963, ../sass/general.scss */
+  /* line 1975, ../sass/general.scss */
   .credits-view {
     width: 100%;
   }
 }
-/* line 1970, ../sass/general.scss */
+/* line 1982, ../sass/general.scss */
 .credits-view .profession {
   width: 145px;
   color: #b3b3b3;
 }
 @media (max-width: 767px) {
-  /* line 1970, ../sass/general.scss */
+  /* line 1982, ../sass/general.scss */
   .credits-view .profession {
     width: auto;
   }
 }
-/* line 1977, ../sass/general.scss */
+/* line 1989, ../sass/general.scss */
 .credits-view table tr {
   border: none !important;
 }
-/* line 1980, ../sass/general.scss */
+/* line 1992, ../sass/general.scss */
 .credits-view a {
   color: #000;
 }
@@ -2995,7 +3009,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   color: #b59d70 !important;
 }
 
-/* line 1991, ../sass/general.scss */
+/* line 2003, ../sass/general.scss */
 .view-director-bio {
   width: 1355px !important;
   max-width: 100%;
@@ -3004,39 +3018,39 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   box-sizing: border-box;
   clear: both;
 }
-/* line 1994, ../sass/general.scss */
+/* line 2006, ../sass/general.scss */
 .view-director-bio .views-field-field-cm-person-photo {
   width: 23% !important;
 }
 @media (max-width: 767px) {
-  /* line 1994, ../sass/general.scss */
+  /* line 2006, ../sass/general.scss */
   .view-director-bio .views-field-field-cm-person-photo {
     width: 35% !important;
   }
 }
-/* line 1999, ../sass/general.scss */
+/* line 2011, ../sass/general.scss */
 .view-director-bio .views-field-field-cm-person-photo a {
   padding-bottom: 20px;
   display: block;
 }
-/* line 2003, ../sass/general.scss */
+/* line 2015, ../sass/general.scss */
 .view-director-bio .views-field-field-cm-person-photo img {
   border-radius: 50%;
   padding: 20px 30px;
 }
 @media (max-width: 767px) {
-  /* line 2003, ../sass/general.scss */
+  /* line 2015, ../sass/general.scss */
   .view-director-bio .views-field-field-cm-person-photo img {
     padding: 0;
   }
 }
 @media (max-width: 480px) {
-  /* line 2003, ../sass/general.scss */
+  /* line 2015, ../sass/general.scss */
   .view-director-bio .views-field-field-cm-person-photo img {
     margin-right: 20px;
   }
 }
-/* line 2014, ../sass/general.scss */
+/* line 2026, ../sass/general.scss */
 .view-director-bio .right-area {
   width: 77%;
   float: left;
@@ -3044,27 +3058,27 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   font-size: 18px;
 }
 @media (max-width: 767px) {
-  /* line 2014, ../sass/general.scss */
+  /* line 2026, ../sass/general.scss */
   .view-director-bio .right-area {
     width: 100% !important;
   }
 }
-/* line 2022, ../sass/general.scss */
+/* line 2034, ../sass/general.scss */
 .view-director-bio .right-area strong {
   font-size: 18px;
 }
-/* line 2026, ../sass/general.scss */
+/* line 2038, ../sass/general.scss */
 .view-director-bio .views-field-field-cm-person-first-name, .view-director-bio .views-field-field-cm-person-last-name {
   font-weight: bold;
 }
-/* line 2029, ../sass/general.scss */
+/* line 2041, ../sass/general.scss */
 .view-director-bio .body {
   margin-top: 20px;
   font-size: 18px;
   padding-bottom: 30px;
 }
 @media (max-width: 767px) {
-  /* line 2029, ../sass/general.scss */
+  /* line 2041, ../sass/general.scss */
   .view-director-bio .body {
     margin-top: 5px;
     max-height: 56px;
@@ -3072,13 +3086,13 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   }
 }
 
-/* line 2043, ../sass/general.scss */
+/* line 2055, ../sass/general.scss */
 .view-reviews-field-collection-view {
   margin-top: 50px;
   background-color: #f9f4ee;
   overflow: hidden;
 }
-/* line 2047, ../sass/general.scss */
+/* line 2059, ../sass/general.scss */
 .view-reviews-field-collection-view .view-content {
   width: 1355px !important;
   max-width: 100%;
@@ -3086,7 +3100,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   padding: 0 5%;
   box-sizing: border-box;
 }
-/* line 2049, ../sass/general.scss */
+/* line 2061, ../sass/general.scss */
 .view-reviews-field-collection-view .view-content > div {
   width: 77%;
   float: right;
@@ -3103,20 +3117,20 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   color: #b59d70 !important;
 }
 @media (max-width: 767px) {
-  /* line 2049, ../sass/general.scss */
+  /* line 2061, ../sass/general.scss */
   .view-reviews-field-collection-view .view-content > div {
     width: 100%;
     padding-right: 0;
   }
 }
-/* line 2061, ../sass/general.scss */
+/* line 2073, ../sass/general.scss */
 .view-reviews-field-collection-view .view-content .views-field-field-cm-review-source {
   display: block;
   font-size: 0.9em !important;
   padding: 25px 0 0 0;
   width: 100%;
 }
-/* line 2067, ../sass/general.scss */
+/* line 2079, ../sass/general.scss */
 .view-reviews-field-collection-view .view-content .views-field-field-cm-review-qoute {
   font-size: 1.35em !important;
   line-height: 1.35em;
@@ -3129,17 +3143,17 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 .domain-2 .view-reviews-field-collection-view .view-content .views-field-field-cm-review-qoute {
   color: #b59d70 !important;
 }
-/* line 2073, ../sass/general.scss */
+/* line 2085, ../sass/general.scss */
 .view-reviews-field-collection-view .views-slideshow-controls-bottom {
   clear: both;
   text-align: center;
   padding: 25px 0;
 }
-/* line 2077, ../sass/general.scss */
+/* line 2089, ../sass/general.scss */
 .view-reviews-field-collection-view .views-slideshow-controls-bottom .views-slideshow-pager-field-item {
   display: inline-block;
 }
-/* line 2080, ../sass/general.scss */
+/* line 2092, ../sass/general.scss */
 .view-reviews-field-collection-view .views-slideshow-controls-bottom .circle {
   width: 8px;
   height: 8px;
@@ -3154,12 +3168,12 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 .domain-2 .view-reviews-field-collection-view .views-slideshow-controls-bottom .active .circle {
   background-color: #b59d70 !important;
 }
-/* line 2090, ../sass/general.scss */
+/* line 2102, ../sass/general.scss */
 .view-reviews-field-collection-view .views-slideshow-cycle-main-frame-row {
   width: 100% !important;
 }
 
-/* line 2095, ../sass/general.scss */
+/* line 2107, ../sass/general.scss */
 .view-review-mobile {
   background-color: #f9f4ee;
   position: relative;
@@ -3174,7 +3188,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 .domain-2 .view-review-mobile {
   color: #b59d70 !important;
 }
-/* line 2101, ../sass/general.scss */
+/* line 2113, ../sass/general.scss */
 .view-review-mobile .review-owl-carousel {
   width: 1355px !important;
   max-width: 100%;
@@ -3183,21 +3197,21 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   box-sizing: border-box;
 }
 @media (max-width: 480px) {
-  /* line 2101, ../sass/general.scss */
+  /* line 2113, ../sass/general.scss */
   .view-review-mobile .review-owl-carousel {
     padding: 0 12%;
   }
 }
-/* line 2107, ../sass/general.scss */
+/* line 2119, ../sass/general.scss */
 .view-review-mobile .views-field-field-cm-review-qoute {
   font-size: 0.95em;
 }
-/* line 2110, ../sass/general.scss */
+/* line 2122, ../sass/general.scss */
 .view-review-mobile .views-field-field-cm-review-source {
   font-size: 0.8em;
   padding-top: 10px;
 }
-/* line 2114, ../sass/general.scss */
+/* line 2126, ../sass/general.scss */
 .view-review-mobile .owl-next {
   font-size: 0;
   height: 19px;
@@ -3206,7 +3220,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   top: 44%;
   width: 10px;
 }
-/* line 2122, ../sass/general.scss */
+/* line 2134, ../sass/general.scss */
 .view-review-mobile .owl-prev {
   font-size: 0;
   height: 19px;
@@ -3217,15 +3231,15 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 }
 
 @media (max-width: 767px) {
-  /* line 2133, ../sass/general.scss */
+  /* line 2145, ../sass/general.scss */
   .node-type-cm-person .panels-flexible-row-node_page-5, .node-type-cm-article .panels-flexible-row-node_page-5 {
     padding: 0 !important;
   }
-  /* line 2136, ../sass/general.scss */
+  /* line 2148, ../sass/general.scss */
   .node-type-cm-person .panels-flexible-row-node_page-5 .panels-flexible-region-node_page-content_left, .node-type-cm-article .panels-flexible-row-node_page-5 .panels-flexible-region-node_page-content_left {
     padding: 0 5%;
   }
-  /* line 2139, ../sass/general.scss */
+  /* line 2151, ../sass/general.scss */
   .node-type-cm-person .panels-flexible-row-node_page-5 .panels-flexible-region-node_page-content_right .pane-entity-field, .node-type-cm-article .panels-flexible-row-node_page-5 .panels-flexible-region-node_page-content_right .pane-entity-field {
     padding: 0 5% 25px;
     border-top: 1px solid #cdcdcd;
@@ -3234,7 +3248,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 }
 
 /******  node teaser  ******/
-/* line 2151, ../sass/general.scss */
+/* line 2163, ../sass/general.scss */
 .node-title-teaser-cm-movie .node-cm-movie-year {
   padding: 23px 10px;
   float: left;
@@ -3242,30 +3256,30 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   margin-right: 10px;
 }
 @media (max-width: 767px) {
-  /* line 2151, ../sass/general.scss */
+  /* line 2163, ../sass/general.scss */
   .node-title-teaser-cm-movie .node-cm-movie-year {
     padding: 8px 10px;
   }
 }
 
-/* line 2161, ../sass/general.scss */
+/* line 2173, ../sass/general.scss */
 .node-title-teaser-cm-movie a .node-title-teaser-title {
   padding: 26px 26px 23px 10px;
 }
 @media (max-width: 767px) {
-  /* line 2161, ../sass/general.scss */
+  /* line 2173, ../sass/general.scss */
   .node-title-teaser-cm-movie a .node-title-teaser-title {
     padding: 9px 26px 8px 10px;
   }
 }
 
 /*******  overlay region  *******/
-/* line 2170, ../sass/general.scss */
+/* line 2182, ../sass/general.scss */
 .ui-widget-overlay, .ui-dialog {
   z-index: 400;
 }
 
-/* line 2174, ../sass/general.scss */
+/* line 2186, ../sass/general.scss */
 .region-overlay {
   position: fixed;
   height: 100%;
@@ -3276,11 +3290,11 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   display: none;
   top: 0;
 }
-/* line 2183, ../sass/general.scss */
+/* line 2195, ../sass/general.scss */
 .region-overlay .block {
   display: none;
 }
-/* line 2186, ../sass/general.scss */
+/* line 2198, ../sass/general.scss */
 .region-overlay .block-search-api-page form {
   width: 1355px !important;
   max-width: 100%;
@@ -3290,22 +3304,22 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   margin: 100px auto 0 !important;
   position: relative;
 }
-/* line 2190, ../sass/general.scss */
+/* line 2202, ../sass/general.scss */
 .region-overlay .block-search-api-page form > div {
   position: relative;
 }
-/* line 2193, ../sass/general.scss */
+/* line 2205, ../sass/general.scss */
 .region-overlay .block-search-api-page form .form-group {
   overflow: hidden;
   -webkit-box-shadow: -1px 1px 10px -3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 1px 10px -3px rgba(0, 0, 0, 0.75);
   box-shadow: -1px 1px 10px -3px rgba(0, 0, 0, 0.75);
 }
-/* line 2198, ../sass/general.scss */
+/* line 2210, ../sass/general.scss */
 .region-overlay .block-search-api-page form .form-group label[for="edit-keys-1"] {
   display: none !important;
 }
-/* line 2201, ../sass/general.scss */
+/* line 2213, ../sass/general.scss */
 .region-overlay .block-search-api-page form .form-group .form-text {
   width: 100%;
   box-sizing: border-box;
@@ -3320,13 +3334,13 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   border-radius: 0;
 }
 @media (max-width: 767px) {
-  /* line 2201, ../sass/general.scss */
+  /* line 2213, ../sass/general.scss */
   .region-overlay .block-search-api-page form .form-group .form-text {
     font-size: 15px;
     padding: 13px;
   }
 }
-/* line 2219, ../sass/general.scss */
+/* line 2231, ../sass/general.scss */
 .region-overlay .block-search-api-page form .form-submit {
   margin: 0;
   border-radius: 0 !important;
@@ -3348,13 +3362,13 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   background-color: #b59d70 !important;
 }
 @media (max-width: 767px) {
-  /* line 2219, ../sass/general.scss */
+  /* line 2231, ../sass/general.scss */
   .region-overlay .block-search-api-page form .form-submit {
     width: 100%;
     position: relative;
   }
 }
-/* line 2237, ../sass/general.scss */
+/* line 2249, ../sass/general.scss */
 .region-overlay .popup-close {
   background: url("../images/close42.png") no-repeat scroll center center !important;
   border-radius: 50%;
@@ -3376,21 +3390,21 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   background-color: #b59d70 !important;
 }
 
-/* line 2253, ../sass/general.scss */
+/* line 2265, ../sass/general.scss */
 .search-overlay .region-overlay {
   display: block;
 }
-/* line 2255, ../sass/general.scss */
+/* line 2267, ../sass/general.scss */
 .search-overlay .region-overlay .block-search-api-page {
   display: block;
 }
 
-/* line 2261, ../sass/general.scss */
+/* line 2273, ../sass/general.scss */
 .hambruger-overlay {
   height: 100%;
   overflow: hidden;
 }
-/* line 2264, ../sass/general.scss */
+/* line 2276, ../sass/general.scss */
 .hambruger-overlay .region-overlay {
   display: block;
   opacity: 1;
@@ -3398,7 +3412,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   z-index: 500;
   overflow-y: auto;
 }
-/* line 2270, ../sass/general.scss */
+/* line 2282, ../sass/general.scss */
 .hambruger-overlay .region-overlay .block-panels-mini {
   display: block;
 }
@@ -7143,17 +7157,23 @@ div[id^="panels-ipe-paneid-22"] > * select {
 /* line 265, ../sass/menu.scss */
 #mini-panel-hamburgermenufooter .pane-bean-social-links-new .field-name-field-social-icons > .field-items > .field-item, #mini-panel-hamburgermenufooter .pane-bean-logos-hebrew-block .field-name-field-social-icons > .field-items > .field-item, #mini-panel-hamburgermenufooter .pane-bean-logos-english-block .field-name-field-social-icons > .field-items > .field-item {
   display: inline-block;
-  margin: 0 15px;
+  margin: 0 0 0 25px;
 }
 /* line 271, ../sass/menu.scss */
 #mini-panel-hamburgermenufooter .pane-bean-logos-hebrew-block, #mini-panel-hamburgermenufooter .pane-bean-logos-english-block {
-  width: 480px;
+  width: 400px;
+  margin-top: 35px;
 }
 /* line 274, ../sass/menu.scss */
-#mini-panel-hamburgermenufooter .pane-bean-social-links-new {
-  width: 255px;
+#mini-panel-hamburgermenufooter .pane-bean-logos-hebrew-block img, #mini-panel-hamburgermenufooter .pane-bean-logos-english-block img {
+  height: 40px;
+  width: auto;
 }
-/* line 276, ../sass/menu.scss */
+/* line 279, ../sass/menu.scss */
+#mini-panel-hamburgermenufooter .pane-bean-social-links-new {
+  width: 230px;
+}
+/* line 281, ../sass/menu.scss */
 #mini-panel-hamburgermenufooter .pane-bean-social-links-new img {
   border-radius: 50%;
 }
@@ -7166,30 +7186,30 @@ div[id^="panels-ipe-paneid-22"] > * select {
   background-color: #b59d70 !important;
 }
 
-@media (max-width: 1710px) {
-  /* line 285, ../sass/menu.scss */
+@media (max-width: 1446px) {
+  /* line 290, ../sass/menu.scss */
   #mini-panel-hamburgermenufooter .pane-bean-logos-hebrew-block, #mini-panel-hamburgermenufooter .pane-bean-logos-english-block {
     width: 100%;
   }
 }
 /******  hamburger  *********/
-/* line 293, ../sass/menu.scss */
+/* line 298, ../sass/menu.scss */
 .responsive-hamburger {
   display: none;
 }
 
-/* line 297, ../sass/menu.scss */
+/* line 302, ../sass/menu.scss */
 .navbar-toggle {
   display: block;
 }
 @media (max-width: 960px) {
-  /* line 297, ../sass/menu.scss */
+  /* line 302, ../sass/menu.scss */
   .navbar-toggle {
     display: none;
   }
 }
 
-/* line 304, ../sass/menu.scss */
+/* line 309, ../sass/menu.scss */
 .navbar-header .hambruger {
   float: left;
   border: medium none;
@@ -7200,12 +7220,12 @@ div[id^="panels-ipe-paneid-22"] > * select {
   padding: 0;
   border-radius: 0;
 }
-/* line 313, ../sass/menu.scss */
+/* line 318, ../sass/menu.scss */
 .navbar-header .hambruger.navbar-toggle {
   margin-left: 30px;
 }
 
-/* line 318, ../sass/menu.scss */
+/* line 323, ../sass/menu.scss */
 .navbar-header .hambruger .icon-bar {
   width: 34px;
   background-color: #fff !important;
@@ -7213,26 +7233,26 @@ div[id^="panels-ipe-paneid-22"] > * select {
   height: 2px;
 }
 
-/* line 325, ../sass/menu.scss */
+/* line 330, ../sass/menu.scss */
 .navbar-header .hambruger .icon-bar + .icon-bar {
   margin-top: 9px;
 }
 
 /********** responsive menu **********/
 @media (max-width: 960px) {
-  /* line 333, ../sass/menu.scss */
+  /* line 338, ../sass/menu.scss */
   .responsive-hamburger {
     display: block;
     cursor: pointer;
   }
 }
 @media (max-width: 767px) {
-  /* line 340, ../sass/menu.scss */
+  /* line 345, ../sass/menu.scss */
   #main-menu {
     display: none;
   }
 }
-/* line 345, ../sass/menu.scss */
+/* line 350, ../sass/menu.scss */
 .responsive-menu-wrapper {
   display: block;
   margin-right: 0;
@@ -7248,13 +7268,13 @@ div[id^="panels-ipe-paneid-22"] > * select {
   padding: 0;
   z-index: 500;
 }
-/* line 359, ../sass/menu.scss */
+/* line 364, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu {
   padding: 0;
   margin: 0;
   width: 100%;
 }
-/* line 363, ../sass/menu.scss */
+/* line 368, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li {
   text-align: left;
   width: 100%;
@@ -7263,7 +7283,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   margin: 0;
   padding: 0;
 }
-/* line 370, ../sass/menu.scss */
+/* line 375, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li a {
   white-space: unset;
   padding: 15px 3% !important;
@@ -7271,7 +7291,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   color: #fff;
   background-color: transparent !important;
 }
-/* line 376, ../sass/menu.scss */
+/* line 381, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li a:hover, .responsive-menu-wrapper #site-main-menu li a:focus {
   background-color: transparent !important;
 }
@@ -7283,11 +7303,11 @@ div[id^="panels-ipe-paneid-22"] > * select {
 .domain-2 .responsive-menu-wrapper #site-main-menu li ul li {
   background-color: #b59d70 !important;
 }
-/* line 382, ../sass/menu.scss */
+/* line 387, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li ul li a {
   color: #fff;
 }
-/* line 386, ../sass/menu.scss */
+/* line 391, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li .caret {
   display: block;
   float: right;
@@ -7296,7 +7316,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   margin: 0;
   width: 55px;
 }
-/* line 393, ../sass/menu.scss */
+/* line 398, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li .caret:after {
   background: url("../images/plus.png") no-repeat;
   transition: all 0.5s;
@@ -7307,7 +7327,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: 12px;
   margin: 5px 0px;
 }
-/* line 404, ../sass/menu.scss */
+/* line 409, ../sass/menu.scss */
 .responsive-menu-wrapper #site-main-menu li .dropdown-menu {
   border: none;
   display: none;
@@ -7315,30 +7335,30 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: 100%;
 }
 
-/* line 416, ../sass/menu.scss */
+/* line 421, ../sass/menu.scss */
 .responsive-menu-wrapper .responsive-open .dropdown-toggle {
   font-weight: bold;
 }
-/* line 419, ../sass/menu.scss */
+/* line 424, ../sass/menu.scss */
 .responsive-menu-wrapper .responsive-open .dropdown-menu {
   display: block !important;
 }
-/* line 422, ../sass/menu.scss */
+/* line 427, ../sass/menu.scss */
 .responsive-menu-wrapper .responsive-open .caret:after {
   transform: rotate(134deg);
 }
 
-/* line 428, ../sass/menu.scss */
+/* line 433, ../sass/menu.scss */
 .responsive-hamburger-open .responsive-menu-wrapper {
   right: 0;
 }
 
-/* line 434, ../sass/menu.scss */
+/* line 439, ../sass/menu.scss */
 .domain-1 .pane-menu-cinematic-festival-12 {
   display: none;
 }
 
-/* line 440, ../sass/menu.scss */
+/* line 445, ../sass/menu.scss */
 .domain-2 .pane-menu-menu-site-main-menu {
   display: none;
 }
@@ -7949,19 +7969,26 @@ div[id^="panels-ipe-paneid-22"] > * select {
 .domain-2 .float-calendar-wrapper .close-button .close {
   color: #b59d70 !important;
 }
+/* line 485, ../sass/calendar.scss */
+.float-calendar-wrapper .close-button .link-main-calendar {
+  float: right;
+  font-size: 16px;
+  line-height: 1px;
+  padding: 7px 0;
+}
 
-/* line 489, ../sass/calendar.scss */
+/* line 495, ../sass/calendar.scss */
 .play .float-calendar-wrapper {
   z-index: -1;
 }
 
 @media (min-width: 768px) {
-  /* line 494, ../sass/calendar.scss */
+  /* line 500, ../sass/calendar.scss */
   .calenders .calender-filter {
     margin: 50px auto !important;
   }
 }
-/* line 499, ../sass/calendar.scss */
+/* line 505, ../sass/calendar.scss */
 .ajax-data-calendar .load-inner.loading {
   background-color: #000;
   height: 100%;
@@ -7972,7 +7999,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: 100%;
   z-index: 500;
 }
-/* line 508, ../sass/calendar.scss */
+/* line 514, ../sass/calendar.scss */
 .ajax-data-calendar .load-inner.loading .image {
   background: url("../images/ajax-loader.gif") no-repeat scroll 0 0;
   height: 38px;
@@ -7982,7 +8009,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: 38px;
 }
 
-/* line 518, ../sass/calendar.scss */
+/* line 524, ../sass/calendar.scss */
 #main-menu .mini-calendar {
   cursor: pointer;
 }
@@ -7995,40 +8022,40 @@ div[id^="panels-ipe-paneid-22"] > * select {
   color: #b59d70 !important;
 }
 
-/* line 526, ../sass/calendar.scss */
+/* line 532, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .calendar-calendar div.calendar {
   font-size: 18px;
 }
-/* line 529, ../sass/calendar.scss */
+/* line 535, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .view-content {
   border: 1px solid #B3B3B3;
   border-top: none;
 }
 @media (max-width: 767px) {
-  /* line 529, ../sass/calendar.scss */
+  /* line 535, ../sass/calendar.scss */
   .view-custom-calendar-floating-pane .view-content {
     overflow-y: auto;
     height: calc(100% - 140px);
     position: fixed;
   }
 }
-/* line 538, ../sass/calendar.scss */
+/* line 544, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .contents {
   display: inline-block;
   font-size: 0.8em;
   color: #333;
   width: 100%;
 }
-/* line 543, ../sass/calendar.scss */
+/* line 549, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .contents a {
   color: #333;
 }
-/* line 547, ../sass/calendar.scss */
+/* line 553, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .toptix-purchase {
   float: right;
   margin-right: 5px;
 }
-/* line 551, ../sass/calendar.scss */
+/* line 557, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .view-custom-calendar-floating-pane {
   position: relative !important;
   left: auto !important;
@@ -8036,56 +8063,56 @@ div[id^="panels-ipe-paneid-22"] > * select {
   float: right;
   z-index: 50;
 }
-/* line 558, ../sass/calendar.scss */
+/* line 564, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .calendar-agenda-items {
   padding: 0 !important;
   width: 300px;
 }
-/* line 562, ../sass/calendar.scss */
+/* line 568, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .date-nav-wrapper {
   margin: 0;
 }
-/* line 565, ../sass/calendar.scss */
+/* line 571, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .holder td {
   padding: 0 !important;
 }
 
-/* line 571, ../sass/calendar.scss */
+/* line 577, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-container {
   margin-bottom: 20px;
 }
 @media (max-width: 767px) {
-  /* line 571, ../sass/calendar.scss */
+  /* line 577, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .lobby-container {
     margin-bottom: 80px;
   }
 }
 @media (max-width: 767px) {
-  /* line 577, ../sass/calendar.scss */
+  /* line 583, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .filter-cantrol {
     display: block;
   }
 }
-/* line 582, ../sass/calendar.scss */
+/* line 588, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-left {
   float: left;
   width: 30%;
   position: relative;
 }
 @media (max-width: 767px) {
-  /* line 582, ../sass/calendar.scss */
+  /* line 588, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .lobby-term-left {
     width: 100%;
   }
 }
-/* line 589, ../sass/calendar.scss */
+/* line 595, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-left .flag {
   position: absolute;
   right: 10px;
   z-index: 100;
   top: 10px;
 }
-/* line 596, ../sass/calendar.scss */
+/* line 602, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right {
   float: right;
   width: 70%;
@@ -8093,40 +8120,40 @@ div[id^="panels-ipe-paneid-22"] > * select {
   box-sizing: border-box;
 }
 @media (max-width: 767px) {
-  /* line 596, ../sass/calendar.scss */
+  /* line 602, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .lobby-term-right {
     width: 100%;
     padding: 0;
   }
 }
-/* line 605, ../sass/calendar.scss */
+/* line 611, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right table tbody {
   border: none;
 }
-/* line 608, ../sass/calendar.scss */
+/* line 614, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .lobby-length {
   color: #919191;
 }
-/* line 611, ../sass/calendar.scss */
+/* line 617, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .table-responsive {
   overflow: visible;
 }
-/* line 613, ../sass/calendar.scss */
+/* line 619, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .table-responsive table {
   margin-bottom: 0;
 }
-/* line 617, ../sass/calendar.scss */
+/* line 623, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .lobby-title {
   margin: 6px 0;
 }
-/* line 620, ../sass/calendar.scss */
+/* line 626, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .calendar-below-title-content {
   color: #919191;
   font-size: 0.9em;
   line-height: 28px;
   margin-bottom: 6px;
 }
-/* line 625, ../sass/calendar.scss */
+/* line 631, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .calendar-below-title-content span {
   border-right: 2px solid;
   padding-right: 8px;
@@ -8134,28 +8161,28 @@ div[id^="panels-ipe-paneid-22"] > * select {
   line-height: 20px;
   display: inline-block;
 }
-/* line 632, ../sass/calendar.scss */
+/* line 638, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .calendar-below-title-content span:last-child {
   border: none;
 }
 @media (max-width: 767px) {
-  /* line 637, ../sass/calendar.scss */
+  /* line 643, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .row-custom-lobby {
     margin-top: 20px;
   }
 }
-/* line 641, ../sass/calendar.scss */
+/* line 647, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby td {
   padding-top: 0;
   padding-bottom: 0;
 }
 @media (max-width: 767px) {
-  /* line 641, ../sass/calendar.scss */
+  /* line 647, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .row-custom-lobby td {
     padding-right: 0 !important;
   }
 }
-/* line 648, ../sass/calendar.scss */
+/* line 654, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby .left {
   float: left;
   width: auto;
@@ -8166,13 +8193,13 @@ div[id^="panels-ipe-paneid-22"] > * select {
   line-height: 23px;
 }
 @media (min-width: 768px) and (max-width: 1095px) {
-  /* line 648, ../sass/calendar.scss */
+  /* line 654, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .row-custom-lobby .left {
     font-size: 13px;
   }
 }
 @media (max-width: 767px) {
-  /* line 648, ../sass/calendar.scss */
+  /* line 654, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .row-custom-lobby .left {
     font-size: 13px;
     border: none !important;
@@ -8182,26 +8209,26 @@ div[id^="panels-ipe-paneid-22"] > * select {
     float: none !important;
   }
 }
-/* line 667, ../sass/calendar.scss */
+/* line 673, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby .left.hall {
   border: none !important;
 }
-/* line 671, ../sass/calendar.scss */
+/* line 677, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby .hall {
   border: none !important;
 }
-/* line 674, ../sass/calendar.scss */
+/* line 680, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby .right {
   float: right;
 }
 @media (max-width: 767px) {
-  /* line 674, ../sass/calendar.scss */
+  /* line 680, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .row-custom-lobby .right {
     float: none !important;
     vertical-align: middle;
   }
 }
-/* line 681, ../sass/calendar.scss */
+/* line 687, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby .purchase {
   padding-right: 0;
   padding-left: 0;
@@ -8209,18 +8236,18 @@ div[id^="panels-ipe-paneid-22"] > * select {
   min-height: 1px;
 }
 
-/* line 698, ../sass/calendar.scss */
+/* line 704, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .pane-title {
   display: none;
 }
 
-/* line 701, ../sass/calendar.scss */
+/* line 707, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .ajax-inner {
   background-color: #f9f4ee;
   margin-top: 3%;
 }
 
-/* line 705, ../sass/calendar.scss */
+/* line 711, ../sass/calendar.scss */
 .loading {
   background: url("loading-small.gif") no-repeat scroll 0 0;
   width: 2%;
@@ -8230,7 +8257,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   padding-top: 2%;
 }
 
-/* line 713, ../sass/calendar.scss */
+/* line 719, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .ajax-inner .calendar-full-container {
   width: 1280px !important;
   max-width: 100%;
@@ -8240,7 +8267,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   background-color: #f9f4ee;
 }
 
-/* line 721, ../sass/calendar.scss */
+/* line 727, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .calenders-filter-date p,
 .pane-calendar-full-width-calendar .calendar-floating-top-content span,
 .pane-calendar-full-width-calendar .lobby-title a {
@@ -8250,45 +8277,45 @@ div[id^="panels-ipe-paneid-22"] > * select {
   margin-bottom: 2%;
 }
 
-/* line 729, ../sass/calendar.scss */
+/* line 735, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-summary {
   font-size: 1.1em;
   line-height: 28px;
 }
 
-/* line 733, ../sass/calendar.scss */
+/* line 739, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-container {
   margin-top: 3%;
 }
 
-/* line 737, ../sass/calendar.scss */
+/* line 743, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .addthisevent-drop {
   padding-top: 20px !important;
 }
 
-/* line 740, ../sass/calendar.scss */
+/* line 746, ../sass/calendar.scss */
 .cal-add-event {
   margin-left: 45%;
 }
 
-/* line 743, ../sass/calendar.scss */
+/* line 749, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .calenders-filter-date p {
   margin: 3% 0 2%;
 }
 
-/* line 748, ../sass/calendar.scss */
+/* line 754, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .view-header {
   background-color: #000;
 }
 
-/* line 751, ../sass/calendar.scss */
+/* line 757, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container {
   overflow-y: hidden !important;
   overflow-x: hidden !important;
   height: 100% !important;
 }
 
-/* line 756, ../sass/calendar.scss */
+/* line 762, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container,
 .view-custom-calendar-floating-pane #multi-day-container tbody,
 .view-custom-calendar-floating-pane #multi-day-container tbody tr,
@@ -8297,7 +8324,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   border: none;
 }
 
-/* line 763, ../sass/calendar.scss */
+/* line 769, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .header-body-divider,
 .view-custom-calendar-floating-pane #single-day-container,
 .view-custom-calendar-floating-pane .single-day-footer,
@@ -8305,13 +8332,13 @@ div[id^="panels-ipe-paneid-22"] > * select {
   display: none;
 }
 
-/* line 769, ../sass/calendar.scss */
+/* line 775, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container tr td .calendar {
   padding: 0;
   margin: 0;
 }
 
-/* line 773, ../sass/calendar.scss */
+/* line 779, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane h3.pull-left {
   color: #fff;
   font-size: 1em;
@@ -8320,12 +8347,12 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: 100%;
 }
 
-/* line 780, ../sass/calendar.scss */
+/* line 786, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .view-header .btn-group {
   position: initial;
 }
 
-/* line 784, ../sass/calendar.scss */
+/* line 790, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .date-nav-wrapper .btn-group a {
   text-indent: -9999px;
   position: absolute;
@@ -8338,31 +8365,31 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: 25px;
 }
 
-/* line 796, ../sass/calendar.scss */
+/* line 802, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .date-nav-wrapper .btn-group .prev a {
   background: url("../images/more-white-left.png") no-repeat center 0 !important;
   left: 0;
 }
 
-/* line 801, ../sass/calendar.scss */
+/* line 807, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .date-nav-wrapper .btn-group .next a {
   background: url("../images/more-white-right.png") no-repeat center 0 !important;
   right: 1px;
 }
 
-/* line 806, ../sass/calendar.scss */
+/* line 812, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .calendar.dayview {
   border-radius: 0 !important;
   background-color: #ECECEB !important;
 }
 
-/* line 811, ../sass/calendar.scss */
+/* line 817, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .calendar.dayview button.toptix-purchase {
   width: 60px;
   padding: 4px;
 }
 
-/* line 817, ../sass/calendar.scss */
+/* line 823, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .calendar.dayview span.date-display-single {
   display: inline-block;
   padding-top: 2px;
@@ -8370,18 +8397,18 @@ div[id^="panels-ipe-paneid-22"] > * select {
   font-weight: bold;
 }
 
-/* line 824, ../sass/calendar.scss */
+/* line 830, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container tr td .item {
   background-color: #ECECEB !important;
   border-bottom: 1px solid #B3B3B3;
 }
 
-/* line 829, ../sass/calendar.scss */
+/* line 835, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container tr td .item:last-child {
   border: none;
 }
 
-/* line 833, ../sass/calendar.scss */
+/* line 839, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container tr td .item .view-item-custom_calendar_floating_pane {
   padding: 3px 12px 7px;
 }
