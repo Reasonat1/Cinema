@@ -194,6 +194,7 @@ body.pojo-a11y-high-contrast {
 body.pojo-a11y-high-contrast .placebo {
   line-height: normal;
 }
+
 body.pojo-a11y-high-contrast * {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
@@ -978,7 +979,7 @@ body.pojo-a11y-high-contrast a > span.iconHelp:empty:after {
   content: "Help" !important;
 }
 body.pojo-a11y-negative-contrast,
-body.pojo-a11y-negative-contrast *:not(#pojo-a11y-toolbar) {
+body.pojo-a11y-negative-contrast *:not(#pojo-a11y-toolbar):not(.language-link):not(.icon-bar):not(.in-field-labels-processed) {
   background: #000 !important;
   color: #ffffff !important;
 }
@@ -1147,6 +1148,7 @@ body.pojo-a11y-light-background *:not(#pojo-a11y-toolbar):not(a) {
   background: #fff !important;
   color: #000 !important;
 }
+/*font size*/
 body.pojo-a11y-resize-font-200,
 body.pojo-a11y-resize-font-200 p:not(.pojo-a11y-toolbar-title),
 body.pojo-a11y-resize-font-200 li:not(.pojo-a11y-toolbar-item),
@@ -1161,7 +1163,12 @@ body.pojo-a11y-resize-font-200 dd,
 body.pojo-a11y-resize-font-200 dt,
 body.pojo-a11y-resize-font-200 span,
 body.pojo-a11y-resize-font-200 blockquote {
-  font-size: 200% !important;
+  font-size: 150% !important;
+  line-height: 150% !important;
+}
+body.pojo-a11y-resize-font-200 p:first-child span{
+	font-size: 100% !important;
+	line-height: 100% !important;
 }
 body.pojo-a11y-resize-font-200 h1,
 body.pojo-a11y-resize-font-200 h2,
@@ -1175,7 +1182,7 @@ body.pojo-a11y-resize-font-200 h3 span,
 body.pojo-a11y-resize-font-200 h4 span,
 body.pojo-a11y-resize-font-200 h5 span,
 body.pojo-a11y-resize-font-200 h6 span {
-  font-size: 266% !important;
+  font-size: 170% !important;
 }
 body.pojo-a11y-resize-font-190,
 body.pojo-a11y-resize-font-190 p:not(.pojo-a11y-toolbar-title),
@@ -1191,7 +1198,12 @@ body.pojo-a11y-resize-font-190 dd,
 body.pojo-a11y-resize-font-190 dt,
 body.pojo-a11y-resize-font-190 span,
 body.pojo-a11y-resize-font-190 blockquote {
-  font-size: 190% !important;
+  font-size: 145% !important;
+  line-height: 145% !important;
+}
+body.pojo-a11y-resize-font-190 p:first-child span{
+	font-size: 100% !important;
+	line-height: 100% !important;
 }
 body.pojo-a11y-resize-font-190 h1,
 body.pojo-a11y-resize-font-190 h2,
@@ -1205,7 +1217,7 @@ body.pojo-a11y-resize-font-190 h3 span,
 body.pojo-a11y-resize-font-190 h4 span,
 body.pojo-a11y-resize-font-190 h5 span,
 body.pojo-a11y-resize-font-190 h6 span {
-  font-size: 252.70000000000002% !important;
+  font-size: 165% !important;
 }
 body.pojo-a11y-resize-font-180,
 body.pojo-a11y-resize-font-180 p:not(.pojo-a11y-toolbar-title),
@@ -1219,9 +1231,14 @@ body.pojo-a11y-resize-font-180 code,
 body.pojo-a11y-resize-font-180 pre,
 body.pojo-a11y-resize-font-180 dd,
 body.pojo-a11y-resize-font-180 dt,
-body.pojo-a11y-resize-font-180 span,
+body.pojo-a11y-resize-font-180 span:first-child,
 body.pojo-a11y-resize-font-180 blockquote {
-  font-size: 180% !important;
+  font-size: 140% !important;
+  line-height: 140% !important;
+}
+body.pojo-a11y-resize-font-180 p:first-child span{
+	font-size: 100% !important;
+	line-height: 100% !important;
 }
 body.pojo-a11y-resize-font-180 h1,
 body.pojo-a11y-resize-font-180 h2,
@@ -1235,7 +1252,7 @@ body.pojo-a11y-resize-font-180 h3 span,
 body.pojo-a11y-resize-font-180 h4 span,
 body.pojo-a11y-resize-font-180 h5 span,
 body.pojo-a11y-resize-font-180 h6 span {
-  font-size: 239.4% !important;
+  font-size: 160% !important;
 }
 body.pojo-a11y-resize-font-170,
 body.pojo-a11y-resize-font-170 p:not(.pojo-a11y-toolbar-title),
@@ -1249,9 +1266,14 @@ body.pojo-a11y-resize-font-170 code,
 body.pojo-a11y-resize-font-170 pre,
 body.pojo-a11y-resize-font-170 dd,
 body.pojo-a11y-resize-font-170 dt,
-body.pojo-a11y-resize-font-170 span,
+body.pojo-a11y-resize-font-170 span:first-child,
 body.pojo-a11y-resize-font-170 blockquote {
-  font-size: 170% !important;
+  font-size: 135% !important;
+  line-height: 135% !important;
+}
+body.pojo-a11y-resize-font-170 p:first-child span{
+	font-size: 100% !important;
+	line-height: 100% !important;
 }
 body.pojo-a11y-resize-font-170 h1,
 body.pojo-a11y-resize-font-170 h2,
@@ -1265,7 +1287,7 @@ body.pojo-a11y-resize-font-170 h3 span,
 body.pojo-a11y-resize-font-170 h4 span,
 body.pojo-a11y-resize-font-170 h5 span,
 body.pojo-a11y-resize-font-170 h6 span {
-  font-size: 226.10000000000002% !important;
+  font-size: 155% !important;
 }
 body.pojo-a11y-resize-font-160,
 body.pojo-a11y-resize-font-160 p:not(.pojo-a11y-toolbar-title),
@@ -1279,9 +1301,14 @@ body.pojo-a11y-resize-font-160 code,
 body.pojo-a11y-resize-font-160 pre,
 body.pojo-a11y-resize-font-160 dd,
 body.pojo-a11y-resize-font-160 dt,
-body.pojo-a11y-resize-font-160 span,
+body.pojo-a11y-resize-font-160 span:first-child,
 body.pojo-a11y-resize-font-160 blockquote {
-  font-size: 160% !important;
+  font-size: 130% !important;
+  line-height: 130% !important;
+}
+body.pojo-a11y-resize-font-160 p:first-child span{
+	font-size: 100% !important;
+	line-height: 100% !important;
 }
 body.pojo-a11y-resize-font-160 h1,
 body.pojo-a11y-resize-font-160 h2,
@@ -1295,10 +1322,10 @@ body.pojo-a11y-resize-font-160 h3 span,
 body.pojo-a11y-resize-font-160 h4 span,
 body.pojo-a11y-resize-font-160 h5 span,
 body.pojo-a11y-resize-font-160 h6 span {
-  font-size: 212.8% !important;
+  font-size: 150% !important;
 }
 body.pojo-a11y-resize-font-150,
-body.pojo-a11y-resize-font-150 p:not(.pojo-a11y-toolbar-title),
+body.pojo-a11y-resize-font-150 p:first-child:not(.pojo-a11y-toolbar-title),
 body.pojo-a11y-resize-font-150 li:not(.pojo-a11y-toolbar-item),
 body.pojo-a11y-resize-font-150 label,
 body.pojo-a11y-resize-font-150 input,
@@ -1309,9 +1336,14 @@ body.pojo-a11y-resize-font-150 code,
 body.pojo-a11y-resize-font-150 pre,
 body.pojo-a11y-resize-font-150 dd,
 body.pojo-a11y-resize-font-150 dt,
-body.pojo-a11y-resize-font-150 span,
+body.pojo-a11y-resize-font-150 span:first-child,
 body.pojo-a11y-resize-font-150 blockquote {
-  font-size: 150% !important;
+  font-size: 125% !important;
+  line-height: 125% !important;
+}
+body.pojo-a11y-resize-font-150 p span, body.pojo-a11y-resize-font-150 .col-md-3.header-right *{
+	font-size: 100% !important;
+	line-height: 100% !important;
 }
 body.pojo-a11y-resize-font-150 h1,
 body.pojo-a11y-resize-font-150 h2,
@@ -1325,10 +1357,10 @@ body.pojo-a11y-resize-font-150 h3 span,
 body.pojo-a11y-resize-font-150 h4 span,
 body.pojo-a11y-resize-font-150 h5 span,
 body.pojo-a11y-resize-font-150 h6 span {
-  font-size: 199.5% !important;
+  font-size: 145% !important;
 }
 body.pojo-a11y-resize-font-140,
-body.pojo-a11y-resize-font-140 p:not(.pojo-a11y-toolbar-title),
+body.pojo-a11y-resize-font-140 p:first-child:not(.pojo-a11y-toolbar-title),
 body.pojo-a11y-resize-font-140 li:not(.pojo-a11y-toolbar-item),
 body.pojo-a11y-resize-font-140 label,
 body.pojo-a11y-resize-font-140 input,
@@ -1339,9 +1371,14 @@ body.pojo-a11y-resize-font-140 code,
 body.pojo-a11y-resize-font-140 pre,
 body.pojo-a11y-resize-font-140 dd,
 body.pojo-a11y-resize-font-140 dt,
-body.pojo-a11y-resize-font-140 span,
+body.pojo-a11y-resize-font-140 span:first-child,
 body.pojo-a11y-resize-font-140 blockquote {
-  font-size: 140% !important;
+  font-size: 120% !important;
+  line-height: 120% !important;
+}
+body.pojo-a11y-resize-font-140 p span, body.pojo-a11y-resize-font-140 .col-md-3.header-right *{
+	font-size: 100% !important;
+	line-height: 100% !important;
 }
 body.pojo-a11y-resize-font-140 h1,
 body.pojo-a11y-resize-font-140 h2,
@@ -1355,10 +1392,10 @@ body.pojo-a11y-resize-font-140 h3 span,
 body.pojo-a11y-resize-font-140 h4 span,
 body.pojo-a11y-resize-font-140 h5 span,
 body.pojo-a11y-resize-font-140 h6 span {
-  font-size: 186.20000000000002% !important;
+  font-size: 140% !important;
 }
 body.pojo-a11y-resize-font-130,
-body.pojo-a11y-resize-font-130 p:not(.pojo-a11y-toolbar-title),
+body.pojo-a11y-resize-font-130 p:first-child:not(.pojo-a11y-toolbar-title),
 body.pojo-a11y-resize-font-130 li:not(.pojo-a11y-toolbar-item),
 body.pojo-a11y-resize-font-130 label,
 body.pojo-a11y-resize-font-130 input,
@@ -1369,9 +1406,14 @@ body.pojo-a11y-resize-font-130 code,
 body.pojo-a11y-resize-font-130 pre,
 body.pojo-a11y-resize-font-130 dd,
 body.pojo-a11y-resize-font-130 dt,
-body.pojo-a11y-resize-font-130 span,
+body.pojo-a11y-resize-font-130 span:first-child,
 body.pojo-a11y-resize-font-130 blockquote {
-  font-size: 130% !important;
+  font-size: 115% !important;
+  line-height: 115% !important;
+}
+body.pojo-a11y-resize-font-130 p span {
+	font-size: 100% !important;
+	line-height: 100% !important;
 }
 body.pojo-a11y-resize-font-130 h1,
 body.pojo-a11y-resize-font-130 h2,
@@ -1385,10 +1427,10 @@ body.pojo-a11y-resize-font-130 h3 span,
 body.pojo-a11y-resize-font-130 h4 span,
 body.pojo-a11y-resize-font-130 h5 span,
 body.pojo-a11y-resize-font-130 h6 span {
-  font-size: 172.9% !important;
+  font-size: 135% !important;
 }
 body.pojo-a11y-resize-font-120,
-body.pojo-a11y-resize-font-120 p:not(.pojo-a11y-toolbar-title),
+body.pojo-a11y-resize-font-120 p:first-child:not(.pojo-a11y-toolbar-title),
 body.pojo-a11y-resize-font-120 li:not(.pojo-a11y-toolbar-item),
 body.pojo-a11y-resize-font-120 label,
 body.pojo-a11y-resize-font-120 input,
@@ -1399,9 +1441,14 @@ body.pojo-a11y-resize-font-120 code,
 body.pojo-a11y-resize-font-120 pre,
 body.pojo-a11y-resize-font-120 dd,
 body.pojo-a11y-resize-font-120 dt,
-body.pojo-a11y-resize-font-120 span,
+body.pojo-a11y-resize-font-120 span:first-child,
 body.pojo-a11y-resize-font-120 blockquote {
-  font-size: 120% !important;
+  font-size: 105% !important;
+  line-height: 105% !important;
+}
+body.pojo-a11y-resize-font-120 p:first-child span{
+	font-size: 100% !important;
+	line-height: 100% !important;
 }
 body.pojo-a11y-resize-font-120 h1,
 body.pojo-a11y-resize-font-120 h2,
@@ -1415,8 +1462,9 @@ body.pojo-a11y-resize-font-120 h3 span,
 body.pojo-a11y-resize-font-120 h4 span,
 body.pojo-a11y-resize-font-120 h5 span,
 body.pojo-a11y-resize-font-120 h6 span {
-  font-size: 159.60000000000002% !important;
+  font-size: 130% !important;
 }
+/*EOF font size*/
 body.pojo-a11y-links-underline a[onclick],
 body.pojo-a11y-links-underline a[onclick] abbr,
 body.pojo-a11y-links-underline a[onclick] acronym,
@@ -1604,4 +1652,134 @@ body.rtl .pojo-skip-link:focus {
 .col-md-3.header-right li, #da11y-toggle {
     font-size: 18px !important;
     font-weight: 600 !important;
+}
+
+/*extra*/
+body.pojo-a11y-resize-font-200 .col-md-3.header-right *{
+	font-size: 100% !important;
+	line-height: 100% !important;
+}
+body.pojo-a11y-resize-font-200 .col-md-3.header-right .shopping-cart button {
+	font-size: 0 !important;
+}
+body.pojo-a11y-resize-font-190 .col-md-3.header-right *{
+	font-size: 100% !important;
+	line-height: 100% !important;
+}
+body.pojo-a11y-resize-font-190 .col-md-3.header-right .shopping-cart button {
+	font-size: 0 !important;
+}
+body.pojo-a11y-resize-font-180 .col-md-3.header-right *{
+	font-size: 100% !important;
+	line-height: 100% !important;
+}
+body.pojo-a11y-resize-font-180 .col-md-3.header-right .shopping-cart button {
+	font-size: 0 !important;
+}
+body.pojo-a11y-resize-font-170 .col-md-3.header-right *{
+	font-size: 100% !important;
+	line-height: 100% !important;
+}
+body.pojo-a11y-resize-font-170 .col-md-3.header-right .shopping-cart button {
+	font-size: 0 !important;
+}
+body.pojo-a11y-resize-font-160 .col-md-3.header-right *{
+	font-size: 100% !important;
+	line-height: 100% !important;
+}
+body.pojo-a11y-resize-font-160 .col-md-3.header-right .shopping-cart button {
+	font-size: 0 !important;
+}
+body.pojo-a11y-resize-font-150 .col-md-3.header-right *{
+	font-size: 100% !important;
+	line-height: 100% !important;
+}
+body.pojo-a11y-resize-font-150 .col-md-3.header-right .shopping-cart button {
+	font-size: 0 !important;
+}
+body.pojo-a11y-resize-font-140 .col-md-3.header-right *{
+	font-size: 100% !important;
+	line-height: 100% !important;
+}
+body.pojo-a11y-resize-font-140 .col-md-3.header-right .shopping-cart button {
+	font-size: 0 !important;
+}
+body.pojo-a11y-resize-font-130 .col-md-3.header-right *{
+	font-size: 100% !important;
+	line-height: 100% !important;
+}
+body.pojo-a11y-resize-font-130 .col-md-3.header-right .shopping-cart button {
+	font-size: 0 !important;
+}
+body.pojo-a11y-resize-font-120 .col-md-3.header-right *{
+	font-size: 100% !important;
+	line-height: 100% !important;
+}
+body.pojo-a11y-resize-font-120 .col-md-3.header-right .shopping-cart button {
+	font-size: 0 !important;
+}
+
+body.pojo-a11y-high-contrast #footer * div{
+   background: black !important;
+   background-color: black !important;
+}
+body.pojo-a11y-high-contrast .col-md-3.header-right .today span, body.pojo-a11y-negative-contrast #navbar-collapse .col-md-3.header-right .today span{
+	background: url("/sites/all/themes/cinemateque/images/time.png") no-repeat !important;
+}
+
+body.pojo-a11y-high-contrast .col-md-3.header-right .search span, body.pojo-a11y-negative-contrast #navbar-collapse .col-md-3.header-right .search span{
+	background: url("/sites/all/themes/cinemateque/images/search-icon.png") no-repeat !important;
+}
+
+body.pojo-a11y-high-contrast .col-md-3.header-right #da11y-toggle, body.pojo-a11y-negative-contrast #navbar-collapse .col-md-3.header-right #da11y-toggle{
+	background: url("/sites/all/themes/cinemateque/images/access-icon.png") no-repeat !important;
+}
+
+body.pojo-a11y-high-contrast .col-md-3.header-right .shopping-cart button, body.pojo-a11y-negative-contrast #navbar-collapse .col-md-3.header-right .shopping-cart button{
+	background: url("/sites/all/themes/cinemateque/images/shop-icon.png") no-repeat !important;
+}
+
+body.pojo-a11y-high-contrast .ui-dialog button.ui-dialog-titlebar-close span.ui-icon, body.pojo-a11y-negative-contrast .ui-dialog button.ui-dialog-titlebar-close span.ui-icon {
+	background: url("/profiles/panopoly/modules/panopoly/panopoly_core/images/close-popup.png") no-repeat !important;
+}
+
+body.pojo-a11y-high-contrast label.in-field-labels-processed, body.pojo-a11y-negative-contrast label.in-field-labels-processed{
+	background: transparent !important;
+}
+body.pojo-a11y-negative-contrast .navbar-header .hambruger .icon-bar{
+	background-color: #fff !important;
+}
+body.pojo-a11y-negative-contrast .footer .pane-bean-main-info-english, body.pojo-a11y-negative-contrast .footer .pane-bean-main-info-hebrew, body.pojo-a11y-high-contrast .footer .pane-bean-main-info-english, body.pojo-a11y-high-contrast .footer .pane-bean-main-info-hebrew{
+	z-index:10 !important;
+}
+
+body.pojo-a11y-high-contrast button,
+body.pojo-a11y-high-contrast *:not(#pojo-a11y-toolbar) button,
+body.pojo-a11y-high-contrast input,
+body.pojo-a11y-high-contrast *:not(#pojo-a11y-toolbar) input,
+body.pojo-a11y-high-contrast textarea,
+body.pojo-a11y-high-contrast *:not(#pojo-a11y-toolbar) textarea,
+body.pojo-a11y-high-contrast select,
+body.pojo-a11y-high-contrast *:not(#pojo-a11y-toolbar) select,
+body.pojo-a11y-high-contrast table,
+body.pojo-a11y-high-contrast *:not(#pojo-a11y-toolbar) table,
+body.pojo-a11y-high-contrast td,
+body.pojo-a11y-high-contrast *:not(#pojo-a11y-toolbar) td,
+body.pojo-a11y-high-contrast textarea,
+body.pojo-a11y-high-contrast *:not(#pojo-a11y-toolbar) textarea,
+body.pojo-a11y-high-contrast th,
+body.pojo-a11y-high-contrast *:not(#pojo-a11y-toolbar) th,
+body.pojo-a11y-high-contrast tr,
+body.pojo-a11y-high-contrast *:not(#pojo-a11y-toolbar) tr,
+body.pojo-a11y-high-contrast tt,
+body.pojo-a11y-high-contrast *:not(#pojo-a11y-toolbar) tt {
+  border: 1px solid #ffffff !important;
+}
+
+body.pojo-a11y-high-contrast {
+	background: black;
+}
+
+body.pojo-a11y-high-contrast .ui-dialog.ui-widget.ui-widget-content, body.pojo-a11y-negative-contrast .ui-dialog.ui-widget.ui-widget-content{
+	border: 1px solid #ffffff !important;
 }

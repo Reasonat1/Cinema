@@ -66,6 +66,7 @@
 				if ( 120 !== $self.currentFontSize ) {
 					$self.cache.$toolbar.find( 'a.da11y_resize_font_plus' ).addClass( 'active' );
 					$self.cache.$body.addClass( 'pojo-a11y-resize-font-' + $self.currentFontSize );
+					$('html').css('font-size', '18px');
 				} else {
 					$self.cache.$toolbar.find( 'a.da11y_resize_font_plus' ).removeClass( 'active' );
 				}
@@ -89,6 +90,7 @@
 					$self.cache.$body.addClass( 'pojo-a11y-resize-font-' + $self.currentFontSize );
 				} else {
 					$self.cache.$toolbar.find( 'a.da11y_resize_font_plus' ).removeClass( 'active' );
+					$('html').css('font-size', '');
 				}
 			}
 			
@@ -140,6 +142,7 @@
 				var MIN_SIZE = 120;
 				$self.cache.$body.removeClass( 'pojo-a11y-resize-font-' + $self.currentFontSize );
 				$self.currentFontSize = MIN_SIZE;
+				$('html').css('font-size', '');
 			}
 
 			$self.currentFontSize = 120;
