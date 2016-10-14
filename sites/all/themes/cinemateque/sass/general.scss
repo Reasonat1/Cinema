@@ -1558,6 +1558,8 @@ table{
 			font-size: 3em;
 			padding-top: 20px;
 			text-align: center;
+			line-height: 54px;
+			padding-bottom: 12px;
 		}
 		.person-job{
 			font-weight: bold;	
@@ -1732,14 +1734,16 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	position: absolute;
 	bottom: 60px;
 	color: #fff;
-	width: 100%;
+	width: calc(100% - 74px);
 	padding: 0;
 	z-index: 99;
+	left: 37px;
 	@include res(s-m){
 		bottom: 10px;
 	}
 	.wrapper{
 		@include width;
+		padding: 0;
 		a, a:hover{
 			color: #fff;
 		}
