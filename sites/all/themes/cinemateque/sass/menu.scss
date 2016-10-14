@@ -166,6 +166,9 @@
 		padding-bottom: 50px;
 		width: 50%;
 		float: left;
+		.form-control::-moz-placeholder {
+		    color: #fff;
+		}
 		.pane-title{
 			color: #fff;
 		}
