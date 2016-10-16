@@ -1513,11 +1513,15 @@ table{
 
 .node-type-cm-person{
 	background-color: #fff!important;
-	.content.middle .panels-flexible-region-node_page-content_left{
-		padding: 0!important;
-	}
 	#content{
 		width: 100%;
+	}
+	.content.middle .panels-flexible-region-node_page-content_left{
+		width: 800px;
+		max-width: 100%;
+		margin: 0 auto;
+		float: none!important;
+		padding: 0 5%!important;
 	}
 	.panels-flexible-row-node_page-4{
 		width: 100%!important;
@@ -1532,11 +1536,9 @@ table{
     		.pane-content{
     			@include width;
     			.view{
-					float: right;
-    				width: 77%;
-    				@include res(s-m){
-    					width: 100%;
-    				}
+    				width: 800px;
+    				max-width: 100%;
+    				margin: 0 auto;
     			}
     		}
 			@include res(s-m){
@@ -1556,6 +1558,8 @@ table{
 			font-size: 3em;
 			padding-top: 20px;
 			text-align: center;
+			line-height: 54px;
+			padding-bottom: 12px;
 		}
 		.person-job{
 			font-weight: bold;	
@@ -1591,22 +1595,31 @@ table{
 		width: 100%!important;
 		background-color: #f9f4ee;
 		.view-person-ct-view.view-display-id-panel_pane_2{
+			padding-top: 20px;
+			h3{
+				color: #333;
+			}
 			.group{
 				clear: both;
 				overflow: hidden;
 				margin-bottom: 10px;
 				> h3{
-					text-align: center;
-					font-size: 2em;
+					font-size: 1.3em;
+					font-weight: bold;
+					margin-top: 10px;
+					margin-bottom: 30px;
 				}
 			}
 			.views-row{
-				width: 49%;
+				width: 49.7%;
 				@include res(s-m){
 					width: 100%;
 				}
 				h3{
 					font-weight: normal;
+				}
+				.node-title-teaser-content-type{
+					margin-bottom: 11px;
 				}
 			}
 			.views-row-odd{
@@ -1626,7 +1639,10 @@ table{
 	background-color: #fff!important;
 	&:hover{
 		background: url("../images/more-white-right.png") no-repeat scroll right 10px center;
-		@include bg-main-color;		
+		@include bg-main-color;	
+		h3{
+			color: #fff!important;	
+		}
 	}
 }
 
@@ -1718,14 +1734,16 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	position: absolute;
 	bottom: 60px;
 	color: #fff;
-	width: 100%;
+	width: calc(100% - 74px);
 	padding: 0;
 	z-index: 99;
+	left: 37px;
 	@include res(s-m){
 		bottom: 10px;
 	}
 	.wrapper{
 		@include width;
+		padding: 0;
 		a, a:hover{
 			color: #fff;
 		}
@@ -1994,6 +2012,10 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 		@include res(s-m){
 			width: 35%!important;
 		}
+		a{
+			padding-bottom: 20px;
+			display: block;
+		}
 		img{
 			border-radius: 50%;
 			padding: 20px 30px;
@@ -2023,6 +2045,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	.body{
 		margin-top: 20px;
 		font-size: 18px;
+		padding-bottom: 30px;
 		@include res(s-m){
 			margin-top: 5px;
 			max-height: 56px;
@@ -2252,6 +2275,8 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 }
 
 .hambruger-overlay{
+	height: 100%;
+	overflow: hidden;
 	.region-overlay{
 		display: block;
 		opacity: 1;
@@ -2261,5 +2286,5 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 		.block-panels-mini{
 			display: block;
 		}
-	}	
+	}
 }

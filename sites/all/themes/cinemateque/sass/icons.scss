@@ -4,7 +4,7 @@
 .domain-1{ 
     .header .header-right .search span:hover, 
     &.search .header .header-right .search span,
-    &.page-search .header .header-right .search span{
+    &.search-overlay .header .header-right .search span{
         background: rgba(0, 0, 0, 0) url("../images/search-icon-red.png") no-repeat scroll 0 1px;
     }
     .col-md-3.header-right .shopping-cart button:hover{
@@ -16,6 +16,10 @@
     .header .header-right .favorite a:hover,
     &.page-user .header .header-right .favorite a{
         background: url("../images/favorite-red.png") no-repeat 0 bottom;
+    }
+    .header .header-right .today span:hover,
+    &.show-float-calendar .header .header-right .today span{
+        background: url("../images/time-red.png") no-repeat 0 0;
     }
     .header .header-right .language-switcher-locale-url a:hover{
 		background: url("../images/hebrew-icon-red.png") no-repeat 0 1px!important;

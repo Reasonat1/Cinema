@@ -166,6 +166,9 @@
 		padding-bottom: 50px;
 		width: 50%;
 		float: left;
+		.form-control::-moz-placeholder {
+		    color: #fff!important;
+		}
 		.pane-title{
 			color: #fff;
 		}
@@ -178,12 +181,14 @@
 			padding: 0 10px;
 			box-sizing: border-box;
 			height: 30px;
+			color: #fff
 		}
 		label{
-			color: #999;
+			color: #fff;
 		    font-size: 17px;
 		    font-weight: normal;
 		    padding: 3px 7px;
+		    cursor: text;
 		}
 		.panel-panel{
 			width: 50%;
@@ -197,7 +202,7 @@
 				background-color: #fff!important;
 				@include main-color();
 				padding: 0 15px 0 10px;
-				border-radius: none;
+				border-radius: 0;
 				font-weight: bold;
 				&:hover{
 					background-color: #fff!important;
@@ -262,16 +267,20 @@
 			text-align: center;
 			> .field-item{
 				display: inline-block;
-				width: 30%;
-				margin: 0 1.5%;
+				margin: 0 0 0 25px;
 			}
 		}
 	}
 	.pane-bean-logos-hebrew-block, .pane-bean-logos-english-block{
-		width: 33%;
+		width: 400px;
+		margin-top: 35px;
+		img{
+			height: 40px;
+			width: auto;
+		}
 	}
 	.pane-bean-social-links-new{
-		width: 17%;
+		width: 230px;
 		img{
 			border-radius: 50%;
 			@include bg-main-color;
@@ -279,6 +288,13 @@
 	}
 }
 
+@media (max-width: 1446px){
+	#mini-panel-hamburgermenufooter{
+		.pane-bean-logos-hebrew-block, .pane-bean-logos-english-block{
+			width: 100%;
+		}
+	}
+}
 
 /******  hamburger  *********/
 

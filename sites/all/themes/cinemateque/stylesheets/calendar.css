@@ -587,39 +587,23 @@
   opacity: 0;
   z-index: -100;
 }
-@media (max-width: 767px) {
-  /* line 465, ../sass/calendar.scss */
-  .float-calendar-wrapper.hide-mobile {
-    top: -100px;
-    opacity: 0;
-    z-index: -100;
-  }
-}
-@media (max-width: 767px) {
-  /* line 472, ../sass/calendar.scss */
-  .float-calendar-wrapper.show-mobile {
-    top: 50px !important;
-    opacity: 1 !important;
-    z-index: 200 !important;
-  }
-}
-/* line 479, ../sass/calendar.scss */
+/* line 465, ../sass/calendar.scss */
 .float-calendar-wrapper .close-button {
   background-color: #ececeb;
-  padding: 17px 12px;
+  padding: 10px 12px;
   overflow: hidden;
   border: 1px solid #B3B3B3;
   border-top: none;
 }
 @media (max-width: 767px) {
-  /* line 479, ../sass/calendar.scss */
+  /* line 465, ../sass/calendar.scss */
   .float-calendar-wrapper .close-button {
     position: fixed;
     width: 100%;
     bottom: 0;
   }
 }
-/* line 490, ../sass/calendar.scss */
+/* line 476, ../sass/calendar.scss */
 .float-calendar-wrapper .close-button .close {
   opacity: 1;
   background-position: left center !important;
@@ -636,19 +620,26 @@
 .domain-2 .float-calendar-wrapper .close-button .close {
   color: #b59d70 !important;
 }
+/* line 485, ../sass/calendar.scss */
+.float-calendar-wrapper .close-button .link-main-calendar {
+  float: right;
+  font-size: 16px;
+  line-height: 1px;
+  padding: 7px 0;
+}
 
-/* line 503, ../sass/calendar.scss */
+/* line 495, ../sass/calendar.scss */
 .play .float-calendar-wrapper {
   z-index: -1;
 }
 
 @media (min-width: 768px) {
-  /* line 508, ../sass/calendar.scss */
+  /* line 500, ../sass/calendar.scss */
   .calenders .calender-filter {
     margin: 50px auto !important;
   }
 }
-/* line 513, ../sass/calendar.scss */
+/* line 505, ../sass/calendar.scss */
 .ajax-data-calendar .load-inner.loading {
   background-color: #000;
   height: 100%;
@@ -659,7 +650,7 @@
   width: 100%;
   z-index: 500;
 }
-/* line 522, ../sass/calendar.scss */
+/* line 514, ../sass/calendar.scss */
 .ajax-data-calendar .load-inner.loading .image {
   background: url("../images/ajax-loader.gif") no-repeat scroll 0 0;
   height: 38px;
@@ -669,7 +660,7 @@
   width: 38px;
 }
 
-/* line 532, ../sass/calendar.scss */
+/* line 524, ../sass/calendar.scss */
 #main-menu .mini-calendar {
   cursor: pointer;
 }
@@ -682,40 +673,40 @@
   color: #b59d70 !important;
 }
 
-/* line 540, ../sass/calendar.scss */
+/* line 532, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .calendar-calendar div.calendar {
   font-size: 18px;
 }
-/* line 543, ../sass/calendar.scss */
+/* line 535, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .view-content {
   border: 1px solid #B3B3B3;
   border-top: none;
 }
 @media (max-width: 767px) {
-  /* line 543, ../sass/calendar.scss */
+  /* line 535, ../sass/calendar.scss */
   .view-custom-calendar-floating-pane .view-content {
     overflow-y: auto;
     height: calc(100% - 140px);
     position: fixed;
   }
 }
-/* line 552, ../sass/calendar.scss */
+/* line 544, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .contents {
   display: inline-block;
   font-size: 0.8em;
   color: #333;
   width: 100%;
 }
-/* line 557, ../sass/calendar.scss */
+/* line 549, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .contents a {
   color: #333;
 }
-/* line 561, ../sass/calendar.scss */
+/* line 553, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .toptix-purchase {
   float: right;
   margin-right: 5px;
 }
-/* line 565, ../sass/calendar.scss */
+/* line 557, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .view-custom-calendar-floating-pane {
   position: relative !important;
   left: auto !important;
@@ -723,56 +714,56 @@
   float: right;
   z-index: 50;
 }
-/* line 572, ../sass/calendar.scss */
+/* line 564, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .calendar-agenda-items {
   padding: 0 !important;
   width: 300px;
 }
-/* line 576, ../sass/calendar.scss */
+/* line 568, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .date-nav-wrapper {
   margin: 0;
 }
-/* line 579, ../sass/calendar.scss */
+/* line 571, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .holder td {
   padding: 0 !important;
 }
 
-/* line 585, ../sass/calendar.scss */
+/* line 577, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-container {
   margin-bottom: 20px;
 }
 @media (max-width: 767px) {
-  /* line 585, ../sass/calendar.scss */
+  /* line 577, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .lobby-container {
     margin-bottom: 80px;
   }
 }
 @media (max-width: 767px) {
-  /* line 591, ../sass/calendar.scss */
+  /* line 583, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .filter-cantrol {
     display: block;
   }
 }
-/* line 596, ../sass/calendar.scss */
+/* line 588, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-left {
   float: left;
   width: 30%;
   position: relative;
 }
 @media (max-width: 767px) {
-  /* line 596, ../sass/calendar.scss */
+  /* line 588, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .lobby-term-left {
     width: 100%;
   }
 }
-/* line 603, ../sass/calendar.scss */
+/* line 595, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-left .flag {
   position: absolute;
   right: 10px;
   z-index: 100;
   top: 10px;
 }
-/* line 610, ../sass/calendar.scss */
+/* line 602, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right {
   float: right;
   width: 70%;
@@ -780,40 +771,40 @@
   box-sizing: border-box;
 }
 @media (max-width: 767px) {
-  /* line 610, ../sass/calendar.scss */
+  /* line 602, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .lobby-term-right {
     width: 100%;
     padding: 0;
   }
 }
-/* line 619, ../sass/calendar.scss */
+/* line 611, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right table tbody {
   border: none;
 }
-/* line 622, ../sass/calendar.scss */
+/* line 614, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .lobby-length {
   color: #919191;
 }
-/* line 625, ../sass/calendar.scss */
+/* line 617, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .table-responsive {
   overflow: visible;
 }
-/* line 627, ../sass/calendar.scss */
+/* line 619, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .table-responsive table {
   margin-bottom: 0;
 }
-/* line 631, ../sass/calendar.scss */
+/* line 623, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .lobby-title {
   margin: 6px 0;
 }
-/* line 634, ../sass/calendar.scss */
+/* line 626, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .calendar-below-title-content {
   color: #919191;
   font-size: 0.9em;
   line-height: 28px;
   margin-bottom: 6px;
 }
-/* line 639, ../sass/calendar.scss */
+/* line 631, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .calendar-below-title-content span {
   border-right: 2px solid;
   padding-right: 8px;
@@ -821,28 +812,28 @@
   line-height: 20px;
   display: inline-block;
 }
-/* line 646, ../sass/calendar.scss */
+/* line 638, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .calendar-below-title-content span:last-child {
   border: none;
 }
 @media (max-width: 767px) {
-  /* line 651, ../sass/calendar.scss */
+  /* line 643, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .row-custom-lobby {
     margin-top: 20px;
   }
 }
-/* line 655, ../sass/calendar.scss */
+/* line 647, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby td {
   padding-top: 0;
   padding-bottom: 0;
 }
 @media (max-width: 767px) {
-  /* line 655, ../sass/calendar.scss */
+  /* line 647, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .row-custom-lobby td {
     padding-right: 0 !important;
   }
 }
-/* line 662, ../sass/calendar.scss */
+/* line 654, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby .left {
   float: left;
   width: auto;
@@ -853,13 +844,13 @@
   line-height: 23px;
 }
 @media (min-width: 768px) and (max-width: 1095px) {
-  /* line 662, ../sass/calendar.scss */
+  /* line 654, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .row-custom-lobby .left {
     font-size: 13px;
   }
 }
 @media (max-width: 767px) {
-  /* line 662, ../sass/calendar.scss */
+  /* line 654, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .row-custom-lobby .left {
     font-size: 13px;
     border: none !important;
@@ -869,26 +860,26 @@
     float: none !important;
   }
 }
-/* line 681, ../sass/calendar.scss */
+/* line 673, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby .left.hall {
   border: none !important;
 }
-/* line 685, ../sass/calendar.scss */
+/* line 677, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby .hall {
   border: none !important;
 }
-/* line 688, ../sass/calendar.scss */
+/* line 680, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby .right {
   float: right;
 }
 @media (max-width: 767px) {
-  /* line 688, ../sass/calendar.scss */
+  /* line 680, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .row-custom-lobby .right {
     float: none !important;
     vertical-align: middle;
   }
 }
-/* line 695, ../sass/calendar.scss */
+/* line 687, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby .purchase {
   padding-right: 0;
   padding-left: 0;
@@ -896,18 +887,18 @@
   min-height: 1px;
 }
 
-/* line 712, ../sass/calendar.scss */
+/* line 704, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .pane-title {
   display: none;
 }
 
-/* line 715, ../sass/calendar.scss */
+/* line 707, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .ajax-inner {
   background-color: #f9f4ee;
   margin-top: 3%;
 }
 
-/* line 719, ../sass/calendar.scss */
+/* line 711, ../sass/calendar.scss */
 .loading {
   background: url("loading-small.gif") no-repeat scroll 0 0;
   width: 2%;
@@ -917,7 +908,7 @@
   padding-top: 2%;
 }
 
-/* line 727, ../sass/calendar.scss */
+/* line 719, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .ajax-inner .calendar-full-container {
   width: 1280px !important;
   max-width: 100%;
@@ -927,7 +918,7 @@
   background-color: #f9f4ee;
 }
 
-/* line 735, ../sass/calendar.scss */
+/* line 727, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .calenders-filter-date p,
 .pane-calendar-full-width-calendar .calendar-floating-top-content span,
 .pane-calendar-full-width-calendar .lobby-title a {
@@ -937,45 +928,45 @@
   margin-bottom: 2%;
 }
 
-/* line 743, ../sass/calendar.scss */
+/* line 735, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-summary {
   font-size: 1.1em;
   line-height: 28px;
 }
 
-/* line 747, ../sass/calendar.scss */
+/* line 739, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .lobby-container {
   margin-top: 3%;
 }
 
-/* line 751, ../sass/calendar.scss */
+/* line 743, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .addthisevent-drop {
   padding-top: 20px !important;
 }
 
-/* line 754, ../sass/calendar.scss */
+/* line 746, ../sass/calendar.scss */
 .cal-add-event {
   margin-left: 45%;
 }
 
-/* line 757, ../sass/calendar.scss */
+/* line 749, ../sass/calendar.scss */
 .pane-calendar-full-width-calendar .calenders-filter-date p {
   margin: 3% 0 2%;
 }
 
-/* line 762, ../sass/calendar.scss */
+/* line 754, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .view-header {
   background-color: #000;
 }
 
-/* line 765, ../sass/calendar.scss */
+/* line 757, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container {
   overflow-y: hidden !important;
   overflow-x: hidden !important;
   height: 100% !important;
 }
 
-/* line 770, ../sass/calendar.scss */
+/* line 762, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container,
 .view-custom-calendar-floating-pane #multi-day-container tbody,
 .view-custom-calendar-floating-pane #multi-day-container tbody tr,
@@ -984,7 +975,7 @@
   border: none;
 }
 
-/* line 777, ../sass/calendar.scss */
+/* line 769, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .header-body-divider,
 .view-custom-calendar-floating-pane #single-day-container,
 .view-custom-calendar-floating-pane .single-day-footer,
@@ -992,13 +983,13 @@
   display: none;
 }
 
-/* line 783, ../sass/calendar.scss */
+/* line 775, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container tr td .calendar {
   padding: 0;
   margin: 0;
 }
 
-/* line 787, ../sass/calendar.scss */
+/* line 779, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane h3.pull-left {
   color: #fff;
   font-size: 1em;
@@ -1007,12 +998,12 @@
   width: 100%;
 }
 
-/* line 794, ../sass/calendar.scss */
+/* line 786, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .view-header .btn-group {
   position: initial;
 }
 
-/* line 798, ../sass/calendar.scss */
+/* line 790, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .date-nav-wrapper .btn-group a {
   text-indent: -9999px;
   position: absolute;
@@ -1025,36 +1016,50 @@
   width: 25px;
 }
 
-/* line 810, ../sass/calendar.scss */
+/* line 802, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .date-nav-wrapper .btn-group .prev a {
   background: url("../images/more-white-left.png") no-repeat center 0 !important;
   left: 0;
 }
 
-/* line 815, ../sass/calendar.scss */
+/* line 807, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .date-nav-wrapper .btn-group .next a {
   background: url("../images/more-white-right.png") no-repeat center 0 !important;
-  right: 0;
+  right: 1px;
 }
 
-/* line 820, ../sass/calendar.scss */
+/* line 812, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane .calendar.dayview {
   border-radius: 0 !important;
   background-color: #ECECEB !important;
 }
 
-/* line 824, ../sass/calendar.scss */
+/* line 817, ../sass/calendar.scss */
+.view-custom-calendar-floating-pane .calendar.dayview button.toptix-purchase {
+  width: 60px;
+  padding: 4px;
+}
+
+/* line 823, ../sass/calendar.scss */
+.view-custom-calendar-floating-pane .calendar.dayview span.date-display-single {
+  display: inline-block;
+  padding-top: 2px;
+  width: 38px !important;
+  font-weight: bold;
+}
+
+/* line 830, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container tr td .item {
   background-color: #ECECEB !important;
   border-bottom: 1px solid #B3B3B3;
 }
 
-/* line 829, ../sass/calendar.scss */
+/* line 835, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container tr td .item:last-child {
   border: none;
 }
 
-/* line 833, ../sass/calendar.scss */
+/* line 839, ../sass/calendar.scss */
 .view-custom-calendar-floating-pane #multi-day-container tr td .item .view-item-custom_calendar_floating_pane {
-  padding: 8px 12px;
+  padding: 3px 12px 7px;
 }
