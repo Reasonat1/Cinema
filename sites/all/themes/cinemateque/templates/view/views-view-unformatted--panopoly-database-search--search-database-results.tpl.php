@@ -34,6 +34,7 @@
     $flag = flag_create_link('favorite_', $node->nid);
     $titles = t($node->title);
     $title = l($titles, $path_node);
+    $event_ext_nodes = node_load($node->field_cm_event_lineup['und'][0]['target_id']);
     if(!empty($node->field_mc_teaser_toptxt_white['und'])){
      $white_text_movie = '<span class="white">'. $node->field_mc_teaser_toptxt_white['und'][0]['value'] . '</span>'; 
     }else{
@@ -103,7 +104,6 @@
         $summary_event = truncate_utf8($node->field_cm_event_short_description['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
     }else{
       if(!empty($node->field_cm_event_lineup['und'])){
-        $event_ext_nodes = node_load($node->field_cm_event_lineup['und'][0]['target_id']);
         if($event_ext_nodes->type == 'cm_movie'){
           if(!empty($event_ext_nodes->field_cm_movie_short_summary)){
             $summary_event = truncate_utf8($event_ext_nodes->field_cm_movie_short_summary['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
@@ -117,7 +117,58 @@
         }
       } 
     }
-    
+   /****New Enhancement for Event node type display movie & movie group content****/
+     //drupal_set_message('<pre>'.print_r($event_ext_nodes, 1).'</pre>');
+      if(!empty($event_ext_nodes->field_cm_movie_meta_credit['und'])){
+        $movie_credit_enhancement = $event_ext_nodes->field_cm_movie_meta_credit['und'][0]['value'] . " | " ;
+      }else{
+        $movie_credit_enhancement = '';
+      }
+      if(!empty($event_ext_nodes->field_cm_movie_year['und'])){
+        $year_name_enhancement = taxonomy_term_load($event_ext_nodes->field_cm_movie_year['und'][0]['target_id']);
+        $year_enhancement = $year_name->name;
+      }else{
+        $year_enhancement = '';
+      }
+      if(!empty($event_ext_nodes->field_cm_movie_country['und'])){
+        $country_name_enhancement = taxonomy_term_load($event_ext_nodes->field_cm_movie_country['und'][0]['target_id']);
+        $country_enhancement = $country_name->name;
+      }else{
+        $country_enhancement = '';
+      }
+      if(!empty($event_ext_nodes->field_cm_movie_duration)){
+        $length_interval_enhancement = $event_ext_nodes->field_cm_movie_duration['und'][0]['interval'];
+        $length_period_enhancement = $event_ext_nodes->field_cm_movie_duration['und'][0]['period'];
+        $length_enhancement =  $length_interval_enhancement.' '.t($length_period_enhancement);
+      }
+      elseif(!empty($event_ext_nodes->field_cm_moviegroup_duration)){
+        $length_interval_enhancement = $event_ext_nodes->field_cm_moviegroup_duration['und'][0]['interval'];
+        $length_period_enhancement = $event_ext_nodes->field_cm_moviegroup_duration['und'][0]['period'];
+        $length_enhancement = $length_interval_enhancement.' '.t($length_period_enhancement);
+      }
+      if(!empty($event_ext_nodes->field_cm_moviegroup_short_summar)){
+        $summary_movie_group_enhancement =  truncate_utf8($event_ext_nodes->field_cm_moviegroup_short_summar['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+      }else{
+        $summary_movie_group_enhancement = '';
+      }
+      if(!empty($event_ext_nodes->field_cm_movie_short_summary)){
+        $summary_movie_enhancement = truncate_utf8($event_ext_nodes->field_cm_movie_short_summary['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+      }else{
+        $summary_movie_enhancement = '';
+      }
+      $enhanment_titles = $event_ext_nodes->title;
+      $enhanment_path = drupal_get_path_alias('node/'.$event_ext_nodes->nid);
+      $enhanment_title = l($enhanment_titles, $enhanment_path);
+    if($event_ext_nodes->type == 'cm_movie'){
+      $duration_info_enhancement = '<div class="enhan-credit-container">'.$movie_credit_enhancement . $length_enhancement.'</div>';
+      $summary_enhancement = '<div class="enhan-summary">'.$summary_movie_enhancement.'</div>';
+      $enhancement_add = '<div class="enhanment-container"><div class="lobby-title">'.$enhanment_title.'</div>'.$duration_info_enhancement .$summary_enhancement.'</div>';
+    }
+    if($event_ext_nodes->type == 'cm_movie_group'){
+      $duration_info_enhancement = '<div class="enhan-credit-container">'.$country_enhancement . " " . $year_enhancement . $length_enhancement.'</div>';
+      $enhancement_add = '<div class="enhanment-container"><div class="lobby-title">'.$enhanment_title.'</div>'.$duration_info_enhancement . $summary_movie_group_enhancement.'</div>';
+    }
+   /****End New Enhancement for Event node type display movie & movie group content****/
     
     if(!empty($node->field_cm_person_body['und'][0]['value'])){
       $summary_person = truncate_utf8($node->field_cm_person_body['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
@@ -200,12 +251,11 @@
       $image_event = '<img src="' . image_style_url('lobby', $picture_path_event) . '" alt="" />';
     }else{
       if(!empty($node->field_cm_event_lineup['und'])){
-        $event_ext_node = node_load($node->field_cm_event_lineup['und'][0]['target_id']);
-        if($event_ext_node->type == 'cm_movie_group'){
-          $picture_path_ext_moviegroup = $event_ext_node->field_cm_moviegroup_pictures['und'][0]['uri'];
+        if($event_ext_nodes->type == 'cm_movie_group'){
+          $picture_path_ext_moviegroup = $event_ext_nodes->field_cm_moviegroup_pictures['und'][0]['uri'];
           $image_event = '<img src="' . image_style_url('lobby', $picture_path_ext_moviegroup) . '" alt="" />';
-        }else if($event_ext_node->type == 'cm_movie'){
-          $picture_path_ext_movie = $event_ext_node->field_cm_movie_pictures['und'][0]['fid'];
+        }else if($event_ext_nodes->type == 'cm_movie'){
+          $picture_path_ext_movie = $event_ext_nodes->field_cm_movie_pictures['und'][0]['fid'];
           $file_ext_movie = file_load($picture_path_ext_movie);
           $picture_path_ext_movie = $file_ext_movie->uri;
           $image_event= '<img src="' . image_style_url('lobby', $picture_path_ext_movie) . '" alt="" />';
@@ -216,7 +266,7 @@
     }
     if($node->type == 'cm_event'){
     $output_event ='';
-     $output_event .='<div class="table-responsive">';
+     $output_event .='<div class="table-responsive event-table-data">';
         $output_event .= '<table class="table">';
          $output_event .= ' <tbody>';
          if(!empty($node_event->field_cm_event_short_title['und'])){
@@ -233,7 +283,6 @@
             $output_event .= '<td class="date only-desktop">'.t($event_date).'</td>';
             $output_event .= '<td class="time"><div class="only-mobile">'.$event_date_mobile.'</div>'.$event_time.'</td>';
             if(!empty($node->field_cm_event_hall['und'])){
-             // drupal_set_message('<pre>'.print_r($node->field_cm_event_hall, 1).'</pre>');
                 $hall_id = taxonomy_term_load($node->field_cm_event_hall['und'][0]['target_id']);
                 $hall_name = $hall_id->name;
                 $output_event .= '<td class="hall only-desktop">'.t($hall_name).'</td>';
@@ -265,7 +314,12 @@
               $output_event .= '<td class="purchase"></td>';
             }
            $output_event .= '</tr>';
-         $output_event .= '</table>';
+          $output_event .= '</table>';
+          $output_event .='<div class="view-footer">';
+          if($row_count > 3){
+            $output_event .='<div class="more-event">'. t('Show More').'</div>';
+          }
+          $output_event .='</div>';
        $output_event .= '</div>';
     }
     if($node->type == 'cm_movie_group'){
@@ -325,6 +379,11 @@
         }
         $output .= ' </tbody>';
       $output .= '</table>';
+      $output .='<div class="view-footer">';
+      if($row_count > 3){
+        $output .='<div class="more-event">'. t('Show More').'</div>';
+      }
+      $output .='</div>';
     $output .= '</div>';  
     }
     if($node->type == 'cm_movie'){
@@ -387,6 +446,11 @@
         }
         $output_movie_event .= ' </tbody>';
       $output_movie_event .= '</table>';
+      $output_movie_event .='<div class="view-footer">';
+      if($row_count > 2){
+        $output_movie_event .='<div class="more-event">'. t('Show More').'</div>';
+      }
+      $output_movie_event .='</div>';
     $output_movie_event .= '</div>';  
     }
 
@@ -396,24 +460,34 @@
           $title = '';
           $sort_summary = t($summary_person);
           $event_info = '';
+          $event_info_movie = '';
+          $event_info_movie_group = '';
           $duration_info = '';
           $top_text = '';
+          $new_enhancement = '';
+          $event_info_movie = '';
         break;
         case "cm_movie_group":
           $image =  '<div class="image-container-gorup"><div class="flag-new-links">'.$flag.'</div><div class="image-container">'.l($image_movie_group, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)).'</div></div>';
           $title = $title;
           $sort_summary = t($summary_movie_group);
-          $event_info = $output;
+          $event_info_movie_group = $output;
+          $event_info_movie = '';
+          $event_info = '';
           $duration_info = $country . " " . $year . $length;
           $top_text = $black_text_movie_group . $white_text_movie_group;
+          $new_enhancement = '';
         break;
         case "cm_movie":
           $image = '<div class="image-container-gorup"><div class="flag-new-links">'.$flag.'</div><div class="image-container">'.l($image_movie, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)).'</div></div>';
           $title = $title;
           $sort_summary = t($summary_movie);
-          $event_info = $output_movie_event;
+          $event_info_movie = $output_movie_event;
+          $event_info_movie_group = '';
+          $event_info = '';
           $duration_info = $movie_credit . $length;
           $top_text = $black_text_movie . $white_text_movie;
+          $new_enhancement = '';
         break;
         case "cm_article":
           $image = '<div class="image-container-gorup"><div class="flag-new-links">'.$flag.'</div><div class="image-container">'.l($image_article, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)).'</div></div>';
@@ -423,7 +497,10 @@
           }
           $top_text = $black_text_article . $white_text_article;
           $event_info = '';
+          $event_info_movie = $output_movie_event;
+          $event_info_movie_group = '';
           $duration_info = '';
+          $new_enhancement = '';
         break;
           case "cm_event":
           $image = '<div class="image-container-gorup"><div class="flag-new-links">'.$flag.'</div><div class="image-container">'.l($image_event, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)).'</div></div>';
@@ -431,15 +508,21 @@
           $sort_summary = $summary_event;
           $top_text = $black_text_event . $white_text_event;
           $event_info = $output_event;
+          $event_info_movie = '';
+          $event_info_movie_group = '';
           $duration_info = $event_credit . $lengths;
+          $new_enhancement = $enhancement_add;
         break;
         default:
           $image = '';
           $title = '';
           $sort_summary = '';
           $event_info = '';
+          $event_info_movie = '';
+          $event_info_movie_group = '';
           $duration_info = '';
           $top_text = '';
+          $new_enhancement = '';
       }
       print '<div class="lobby-container">';
         print'<div class="lobby-term-left">';
@@ -458,9 +541,12 @@
               print $duration_info;
             print '</div>';
             print $event_info;
+            print $event_info_movie_group;
             print '<div class="lobby-summary">';
               print t(strip_tags($sort_summary));
             print '</div>';
+            print $event_info_movie;
+            print $new_enhancement;
         print '</div>';
         print '<div class="clr"></div>';
     print '</div>';
