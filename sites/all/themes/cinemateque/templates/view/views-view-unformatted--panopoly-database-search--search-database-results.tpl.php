@@ -159,7 +159,7 @@
       $sub_lang_name = '';
         foreach($event_ext_nodes->field_cm_movie_subtitle['und'] as $val){
           $sub_id = taxonomy_term_load($val['target_id']);
-          $sub_lang_title[] = $sub_id->name;
+          $sub_lang_title[] = t($sub_id->name);
         }
       $sub_lang_title = array_unique($sub_lang_title);
       if(!empty($sub_lang_title)){
@@ -168,8 +168,8 @@
       $lang_title =array();
       $lang_name = '';
         foreach($event_ext_nodes->field_cm_movie_language['und'] as $value){
-          $sub_id = taxonomy_term_load($value['target_id']);
-          $lang_title[] = $sub_id->name;
+          $subs_id = taxonomy_term_load($value['target_id']);
+          $lang_title[] = t($subs_id->name);
           
         }
       $lang_title = array_unique($lang_title);
