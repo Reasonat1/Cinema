@@ -118,7 +118,6 @@
       } 
     }
    /****New Enhancement for Event node type display movie & movie group content****/
-     //drupal_set_message('<pre>'.print_r($event_ext_nodes, 1).'</pre>');
       if(!empty($event_ext_nodes->field_cm_movie_meta_credit['und'])){
         $movie_credit_enhancement = $event_ext_nodes->field_cm_movie_meta_credit['und'][0]['value'] . " | " ;
       }else{
@@ -139,7 +138,7 @@
       if(!empty($event_ext_nodes->field_cm_movie_duration)){
         $length_interval_enhancement = $event_ext_nodes->field_cm_movie_duration['und'][0]['interval'];
         $length_period_enhancement = $event_ext_nodes->field_cm_movie_duration['und'][0]['period'];
-        $length_enhancement =  $length_interval_enhancement.' '.t($length_period_enhancement);
+        $length_enhancement =  $length_interval_enhancement.' '.t($length_period_enhancement) . '<span class="bar-search"> | </span>' ;
       }
       elseif(!empty($event_ext_nodes->field_cm_moviegroup_duration)){
         $length_interval_enhancement = $event_ext_nodes->field_cm_moviegroup_duration['und'][0]['interval'];
@@ -156,11 +155,30 @@
       }else{
         $summary_movie_enhancement = '';
       }
+      $sub_lang_title =array();
+      $sub_lang_name = '';
+        foreach($event_ext_nodes->field_cm_movie_subtitle['und'] as $val){
+          $sub_id = taxonomy_term_load($val['target_id']);
+          $sub_lang_title[] = $sub_id->name;
+        }
+      $sub_lang_title = array_unique($sub_lang_title);
+      if(!empty($sub_lang_title)){
+        $sub_lang_name = implode(', ', $sub_lang_title).' ' . t('subtitles');
+      }
+      $lang_title =array();
+      $lang_name = '';
+        foreach($event_ext_nodes->field_cm_movie_language['und'] as $value){
+          $sub_id = taxonomy_term_load($value['target_id']);
+          $lang_title[] = $sub_id->name;
+          
+        }
+      $lang_title = array_unique($lang_title);
+      $lang_name = implode(', ', $lang_title) . " | " ;
       $enhanment_titles = $event_ext_nodes->title;
       $enhanment_path = drupal_get_path_alias('node/'.$event_ext_nodes->nid);
       $enhanment_title = l($enhanment_titles, $enhanment_path);
     if($event_ext_nodes->type == 'cm_movie'){
-      $duration_info_enhancement = '<div class="enhan-credit-container">'.$movie_credit_enhancement . $length_enhancement.'</div>';
+      $duration_info_enhancement = '<div class="enhan-credit-container">'.$movie_credit_enhancement . $length_enhancement . $lang_name . $sub_lang_name .'</div>';
       $summary_enhancement = '<div class="enhan-summary">'.$summary_movie_enhancement.'</div>';
       $enhancement_add = '<div class="enhanment-container"><div class="lobby-title">'.$enhanment_title.'</div>'.$duration_info_enhancement .$summary_enhancement.'</div>';
     }
@@ -456,7 +474,7 @@
 
       switch ($node->type) {
         case "cm_person":
-          $image = '<div class="person-left-sec"><div class="person-img">'.l($image_person, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)) .'</div><div class="name"><div class="lobby-title">'. l($first_name .' '. $last_name, $path_node).'</div><div class="job-title">'. $job_title.'</div></div></div>';
+          $image = '<div class="person-left-sec"><div class="person-img">'.l($image_person, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)) .'</div><div class="lobby-title">'. l($first_name .' '. $last_name, $path_node).'</div><div class="job-title">'. $job_title.'</div></div>';
           $title = '';
           $sort_summary = t($summary_person);
           $event_info = '';
@@ -489,6 +507,17 @@
           $top_text = $black_text_movie . $white_text_movie;
           $new_enhancement = '';
         break;
+          case "cm_event":
+          $image = '<div class="image-container-gorup"><div class="flag-new-links">'.$flag.'</div><div class="image-container">'.l($image_event, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)).'</div></div>';
+          $title = $title;
+          $sort_summary = $summary_event;
+          $top_text = $black_text_event . $white_text_event;
+          $event_info = $output_event;
+          $event_info_movie = '';
+          $event_info_movie_group = '';
+          $duration_info = $event_credit . $lengths;
+          $new_enhancement = $enhancement_add;
+        break;
         case "cm_article":
           $image = '<div class="image-container-gorup"><div class="flag-new-links">'.$flag.'</div><div class="image-container">'.l($image_article, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)).'</div></div>';
           $title = $title;
@@ -502,19 +531,8 @@
           $duration_info = '';
           $new_enhancement = '';
         break;
-          case "cm_event":
-          $image = '<div class="image-container-gorup"><div class="flag-new-links">'.$flag.'</div><div class="image-container">'.l($image_event, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)).'</div></div>';
-          $title = $title;
-          $sort_summary = $summary_event;
-          $top_text = $black_text_event . $white_text_event;
-          $event_info = $output_event;
-          $event_info_movie = '';
-          $event_info_movie_group = '';
-          $duration_info = $event_credit . $lengths;
-          $new_enhancement = $enhancement_add;
-        break;
         default:
-          $image = $default_user_image;
+          $image = '';
           $title = '';
           $sort_summary = '';
           $event_info = '';
@@ -524,7 +542,7 @@
           $top_text = '';
           $new_enhancement = '';
       }
-      print '<div class="lobby-container">';
+      print '<div id="search-main-page" class="lobby-container '.'container-'.$node->type.'">';
         print'<div class="lobby-term-left">';
           print '<div class="image-lobby">';
             print $image;
