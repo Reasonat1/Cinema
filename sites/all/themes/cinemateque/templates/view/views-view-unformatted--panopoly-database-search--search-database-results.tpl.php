@@ -163,7 +163,8 @@
         }
       $sub_lang_title = array_unique($sub_lang_title);
       if(!empty($sub_lang_title)){
-        $sub_lang_name = implode(', ', $sub_lang_title).' ' . t('subtitles');
+        $sub_languages = implode(', ', $sub_lang_title);
+        $sub_lang_name = t('@languages subtitles', array('@languages' => $sub_languages));
       }
       $lang_title =array();
       $lang_name = '';
