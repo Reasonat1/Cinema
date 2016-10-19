@@ -473,9 +473,9 @@
                  $('#cm-event-node-form .pane-node-form-title .form-item-title #edit-title').val(mainStr);
             } 
         });
-        $( ".pane-movie-group-ct-panel-pane-1 .movie-group-item-meta-info span.field-content span:last-child" ).addClass('no-space-bar');
+        $( ".pane-movie-group-ct-panel-pane-1 .movie-group-item-meta-info span.field-content span.space-bar:last-child" ).addClass('no-space-bar');
         $('.pane-movie-group-ct-panel-pane-1 .movie-group-item-meta-info span.field-content span.no-space-bar').each(function () {
-            var tempStrs = $(this).text().slice(0,-3)
+            var tempStrs = $(this).text().slice(0,-2)
             $(this).text(tempStrs);
         });
 		upcoming_events_header_visibility();
