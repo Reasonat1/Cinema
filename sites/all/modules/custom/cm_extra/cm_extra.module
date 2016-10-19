@@ -260,12 +260,47 @@ function cm_extra_node_translate_after_submit($form, &$form_state) {
 	
 }
 
-function cm_extra_node_presave($node) {
-  if ($node->nid && $node->type == 'event') { //on event update
+function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
 
-  }elseif($node->nid &&  $node->is_new == TRUE) {
-	  
-	  
+  if ($context['entity_type'] != 'node') {
+    return;
+  }
+  $info_instances = field_info_instances('node', $context['source_entity']->type);
+  $references = array();
+  $nids = array();
+  foreach ($info_instances as $prop_name => $instance) {
+    if ($instance['widget']['type'] != 'entityreference_autocomplete') {
+      continue;
+    }
+    if (empty($entity->{$prop_name})) {
+      continue;
+    }
+    foreach ($entity->{$prop_name}['und'] as $config) {
+      $nids[$config['target_id']] = 1;
+    }
+    $references[] = $prop_name;
+  }
+  if (!$nids) {
+    return;
+  }
+
+  $query = db_select('node', 'n');
+  $query->condition('n.nid', array_keys($nids));
+  $query->join('node', 'tn', 'n.tnid = tn.tnid');
+  $query->condition('tn.language', $context['langcode']);
+  $query->addField('n','nid');
+  $query->addField('tn','nid');
+  $translations = $query->execute()->fetchAllKeyed();
+  if (!$translations) {
+    return;
+  }
+  foreach ($references as $prop_name) {
+    foreach ($entity->{$prop_name}['und'] as &$config) {
+      $nid = $config['target_id'];
+      if (isset($translations[$nid])) {
+        $config['target_id'] = $translations[$nid];
+      }
+    }
   }
 }
-////no empty line
+
