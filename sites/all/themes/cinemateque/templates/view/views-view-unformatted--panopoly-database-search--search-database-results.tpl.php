@@ -23,9 +23,9 @@
   $results=$view->result;
   foreach ($results as $val) {
     global $language ;
-    $lang_name = isset($language->language) ? $language->language : '';
-    if($lang_name == ''){
-      $lang_name = 'en';
+    $language_name = isset($language->language) ? $language->language : '';
+    if($language_name == ''){
+      $language_name = 'en';
     }
     $node = node_load($val->entity);
     $default_image = '<img src="/sites/all/themes/cinemateque/images/default-image-pane-2.png">';
@@ -284,25 +284,33 @@
         } 
     }
     if($node->type == 'cm_event'){
-    $output_event ='';
-     $output_event .='<div class="table-responsive event-table-data">';
-        $output_event .= '<table class="table">';
-         $output_event .= ' <tbody>';
-         if(!empty($node_event->field_cm_event_short_title['und'])){
+       $output_event = '';
+    $result_event = db_query("SELECT DISTINCT node.nid AS nid, field_data_field_cm_event_time.field_cm_event_time_value AS field_data_field_cm_event_time_field_cm_event_time_value FROM {node} node LEFT JOIN {field_data_field_cm_event_lineup} field_data_field_cm_event_lineup ON node.nid = field_data_field_cm_event_lineup.entity_id AND (field_data_field_cm_event_lineup.entity_type = 'node' AND field_data_field_cm_event_lineup.deleted = '0') LEFT JOIN {node} node_field_data_field_cm_event_lineup ON field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = node_field_data_field_cm_event_lineup.nid LEFT JOIN {field_data_field_cm_event_time} field_data_field_cm_event_time ON node.nid = field_data_field_cm_event_time.entity_id AND (field_data_field_cm_event_time.entity_type = 'node' AND field_data_field_cm_event_time.deleted = '0')
+    WHERE (( (field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = '$event_ext_nodes->nid' ) )AND(( (node.status = '1') AND (node_field_data_field_cm_event_lineup.type IN  ('$event_ext_nodes->type')) AND (node.language IN  ('$language_name')) )))
+    ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAll();
+      $output_event .= '<div class="table-responsive event-table-data">';
+       $output_event .= '<table class="table">';
+         $output_event .= '<tbody>';
+         $a= 0;
+         $row_count_event = count($result_event);
+         foreach($result_event as $val){
+           $a++;
+           $node_event = node_load($val->nid);
+        if(!empty($node_event->field_cm_event_short_title['und'])){
             $event_title = t($node_event->field_cm_event_short_title['und'][0]['value']);
          }
-          $path = drupal_get_path_alias('node/'.$node->nid);
-          $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node).'</div>';
-          if(!empty($node->field_cm_event_time['und'])){
-              $event_date = date('l d.m.y', $node->field_cm_event_time['und'][0]['value']);
-              $event_date_mobile = date('d.m.y', $node->field_cm_event_time['und'][0]['value']);
-              $event_time = date('G:i', $node->field_cm_event_time['und'][0]['value']);
+          $path = drupal_get_path_alias('node/'.$node_event->nid);
+          $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node_event).'</div>';
+          if(!empty($node_event->field_cm_event_time['und'])){
+              $event_date = date('l d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
+              $event_date_mobile = date('d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
+              $event_time = date('G:i', $node_event->field_cm_event_time['und'][0]['value']);
           }
            $output_event .= '<tr class="row-custom-lobby">';
             $output_event .= '<td class="date only-desktop">'.t($event_date).'</td>';
             $output_event .= '<td class="time"><div class="only-mobile">'.$event_date_mobile.'</div>'.$event_time.'</td>';
-            if(!empty($node->field_cm_event_hall['und'])){
-                $hall_id = taxonomy_term_load($node->field_cm_event_hall['und'][0]['target_id']);
+            if(!empty($node_event->field_cm_event_hall['und'])){
+                $hall_id = taxonomy_term_load($node_event->field_cm_event_hall['und'][0]['target_id']);
                 $hall_name = $hall_id->name;
                 $output_event .= '<td class="hall only-desktop">'.t($hall_name).'</td>';
             }
@@ -315,8 +323,8 @@
               $output_event .= l($event_title, $path);
             }
             $output_event .= '</td>';
-            if(!empty($node->field_cm_event_internal_id['und'])){
-              $event_code = $node->field_cm_event_internal_id['und'][0]['value'];
+            if(!empty($node_event->field_cm_event_internal_id['und'])){
+              $event_code = $node_event->field_cm_event_internal_id['und'][0]['value'];
               $output_event .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div>'.t($event_code).'</td>';
             }
             else{
@@ -324,8 +332,8 @@
             }
             $output_event .='<td class="flag only-desktop">'. $flag . '</td>';
             $output_event .='<td class="add-event only-desktop">'. $addevent . '</td>';
-            if(!empty($node->field_toptix_purchase['und'])){
-            $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
+            if(!empty($node_event->field_toptix_purchase['und'])){
+            $toptix_code = $node_event->field_toptix_purchase['und'][0]['value'];
             $top_link = 'http://199.203.164.53/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
             $output_event .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t("TICKETS").'</button>'.'</td>';
             } 
@@ -333,17 +341,19 @@
               $output_event .= '<td class="purchase"></td>';
             }
            $output_event .= '</tr>';
-          $output_event .= '</table>';
-          $output_event .='<div class="view-footer">';
-          if($row_count > 3){
-            $output_event .='<div class="more-event">'. t('Show More').'</div>';
-          }
-          $output_event .='</div>';
-       $output_event .= '</div>';
+         }
+         $output_event .= '</tbody>';
+       $output_event .= '</table>';
+         $output_event .='<div class="view-footer">';
+         if($row_count_event > 3){
+          $output_event .='<div class="more-event">'. t('Show More').'</div>';
+         }
+         $output_event .='</div>';
+      $output_event .= '</div>';
     }
     if($node->type == 'cm_movie_group'){
     $result = db_query("SELECT DISTINCT node.nid AS nid, field_data_field_cm_event_time.field_cm_event_time_value AS field_data_field_cm_event_time_field_cm_event_time_value FROM {node} node LEFT JOIN {field_data_field_cm_event_lineup} field_data_field_cm_event_lineup ON node.nid = field_data_field_cm_event_lineup.entity_id AND (field_data_field_cm_event_lineup.entity_type = 'node' AND field_data_field_cm_event_lineup.deleted = '0') LEFT JOIN {node} node_field_data_field_cm_event_lineup ON field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = node_field_data_field_cm_event_lineup.nid LEFT JOIN {field_data_field_cm_event_time} field_data_field_cm_event_time ON node.nid = field_data_field_cm_event_time.entity_id AND (field_data_field_cm_event_time.entity_type = 'node' AND field_data_field_cm_event_time.deleted = '0') WHERE (( (field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = '$node->nid') )AND(( (node.status = '1') AND (node_field_data_field_cm_event_lineup.type IN  ('cm_movie_group'))))) ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAll();
-    $row_count = count($result);
+    $row_count_movie_group_event = count($result);
     $output ='';
     $output .='<div class="table-responsive">';
       $output .= '<table class="table">';
@@ -399,7 +409,7 @@
         $output .= ' </tbody>';
       $output .= '</table>';
       $output .='<div class="view-footer">';
-      if($row_count > 3){
+      if($row_count_movie_group_event > 3){
         $output .='<div class="more-event">'. t('Show More').'</div>';
       }
       $output .='</div>';
@@ -408,7 +418,7 @@
     if($node->type == 'cm_movie'){
     $results = db_query("SELECT DISTINCT node.nid AS nid, field_data_field_cm_event_time.field_cm_event_time_value AS field_data_field_cm_event_time_field_cm_event_time_value
     FROM {node} node LEFT JOIN {field_data_field_cm_event_lineup} field_data_field_cm_event_lineup ON node.nid = field_data_field_cm_event_lineup.entity_id AND (field_data_field_cm_event_lineup.entity_type = 'node' AND field_data_field_cm_event_lineup.deleted = '0') LEFT JOIN {node} node_field_data_field_cm_event_lineup ON field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = node_field_data_field_cm_event_lineup.nid LEFT JOIN {field_data_field_cm_event_time} field_data_field_cm_event_time ON node.nid = field_data_field_cm_event_time.entity_id AND (field_data_field_cm_event_time.entity_type = 'node' AND field_data_field_cm_event_time.deleted = '0')
-    WHERE (( (field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = '$node->nid' ) )AND(( (node.status = '1') AND (node_field_data_field_cm_event_lineup.type IN  ('cm_movie')) AND (node.language IN  ('$lang_name')))))
+    WHERE (( (field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = '$node->nid' ) )AND(( (node.status = '1') AND (node_field_data_field_cm_event_lineup.type IN  ('cm_movie')) AND (node.language IN  ('$language_name')))))
     ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAll();
     $row_count = count($results);
     $output_movie_event ='';
@@ -466,7 +476,7 @@
         $output_movie_event .= ' </tbody>';
       $output_movie_event .= '</table>';
       $output_movie_event .='<div class="view-footer">';
-      if($row_count > 2){
+      if($row_count > 3){
         $output_movie_event .='<div class="more-event">'. t('Show More').'</div>';
       }
       $output_movie_event .='</div>';
@@ -527,7 +537,7 @@
           }
           $top_text = $black_text_article . $white_text_article;
           $event_info = '';
-          $event_info_movie = $output_movie_event;
+          $event_info_movie = '';
           $event_info_movie_group = '';
           $duration_info = '';
           $new_enhancement = '';
