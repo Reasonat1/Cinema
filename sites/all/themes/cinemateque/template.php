@@ -62,6 +62,13 @@ function cinemateque_preprocess_page(&$variables) {
   /*  if(('3261' == arg(1)) || ('3284' == arg(1))){
     drupal_add_js('sites/all/themes/cinemateque/js/jquery-scrolltofixed-min.js');
   }*/
+    $header = drupal_get_http_header("status");
+    if($header == "404 Not Found") {
+        $vars['theme_hook_suggestions'][] = 'page__404';
+    }
+    if($header == "403 Forbidden") {
+        $vars['theme_hook_suggestions'][] = 'node__403';
+    }
 }
 
 function cinemateque_preprocess_views_view(&$vars) {
