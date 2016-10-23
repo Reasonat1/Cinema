@@ -114,14 +114,10 @@ class flag_comment extends flag_entity {
           )
         );
 
-      // The result set can have multiple rows for a single comment, and rows
-      // which have no flagging ID, so there's nothing useful to index it by.
-      $result = $query->execute()->fetchAll();
+      $result = $query->execute()->fetchAllAssoc('cid');
 
       $flag_names = _flag_get_flag_names();
-      foreach ($result as $flagging_data) {
-        $cid = $flagging_data->cid;
-
+      foreach ($result as $cid => $flagging_data) {
         // At the very least, we need an empty array for the entity ID key in
         // the cache array, so it counts as present.
         if (!isset($flag_get_user_flags_cache[$uid][$sid]['comment'][$cid])) {

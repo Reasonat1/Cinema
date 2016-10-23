@@ -19,16 +19,34 @@ function radix_preprocess_html(&$variables) {
 //  // Add Bootstrap JS from CDN if bootstrap library is not installed.
   if (!module_exists('bootstrap_library')) {
     $base = parse_url($base_url);
-    $url = $base['scheme'] . '://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js';
+    //$url = $base['scheme'] . '://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js';
     $jquery_ui_library = drupal_get_library('system', 'ui');
     $jquery_ui_js = reset($jquery_ui_library['js']);
-    drupal_add_js($url, array(
+    drupal_add_js('/sites/all/themes/cinemateque/js/bootstrap.min.js', array(
       'type' => 'external',
       // We have to put Bootstrap after jQuery, but before jQuery UI.
       'group' => JS_LIBRARY,
       'weight' => $jquery_ui_js['weight'] - 1,
     ));
   }
+  if (module_exists('path')) {
+    $alias = drupal_get_path_alias(str_replace('/edit','',$_GET['q']));
+    if ($alias != $_GET['q']) {
+      $template_filename = 'html';              
+      foreach (explode('/', $alias) as $path_part) {
+       $template_filename = $template_filename . '__' . $path_part;
+        $variables['theme_hook_suggestions'][] = $template_filename;
+      }
+    }
+//    print_r($variables);
+//    die;
+  }
+//
+//  // Add support for the Modenizr module.
+//  // Load modernizr.js only if modernizr module is not present.
+//  if (!module_exists('modernizr')) {
+//    drupal_add_js(drupal_get_path('theme', 'radix') . '/assets/js/modernizr.js');
+//  }
 
   // Add meta for Bootstrap Responsive.
   // <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,8 +80,6 @@ function radix_preprocess_html(&$variables) {
  * Implements hook_css_alter().
  */
 function radix_css_alter(&$css) {
-  $active_theme = variable_get('theme_default', '');
-
   // Unset some panopoly css.
   if (module_exists('panopoly_admin')) {
     $panopoly_admin_path = drupal_get_path('module', 'panopoly_admin');
@@ -83,18 +99,9 @@ function radix_css_alter(&$css) {
   unset($css['modules/system/system.menus.css']);
 
   // Remove radix stylesheets if it is not the default theme.
-  if ($active_theme != 'radix') {
+  if (variable_get('theme_default', '') != 'radix') {
     unset($css[drupal_get_path('theme', 'radix') . '/assets/css/radix.style.css']);
   }
-
-  // Allow themes to set preprocess to FALSE.
-  // Enable the ability to toggle <link> as opposed to <style> @import.
-  // Useful for injecting CSS.
-  $preprocess_css = variable_get('preprocess_css', 0);
-  foreach ($css as $key => $value) {
-    $css[$key]['preprocess'] = $preprocess_css;
-  }
-
 }
 
 /**
@@ -128,6 +135,7 @@ function radix_js_alter(&$javascript) {
     $javascript[$radix_progress] = array_merge(
       drupal_js_defaults(), array('group' => JS_THEME, 'data' => $radix_progress));
   }
+  
 }
 
 /**
@@ -171,18 +179,161 @@ function radix_preprocess_page(&$variables) {
   }
 
   // Format and add main menu to theme.
-  $main_menu_parameters = array('min_depth' => 1);
-  $main_menu_max_depth = (int)theme_get_setting('main_menu_max_depth');
-  if ($main_menu_max_depth > 0) {
-    $main_menu_parameters['max_depth'] = $main_menu_max_depth;
-  }
-  elseif ($main_menu_max_depth == 0) {
-    // If the user upgraded from an old version, the value will be zero and so
-    // we set it to the default.
-    $main_menu_parameters['max_depth'] = 2;
-  }
-  $variables['main_menu'] = _radix_dropdown_menu_tree(variable_get('menu_main_links_source', 'main-menu'), $main_menu_parameters);
+  $variables['main_menu'] = _radix_dropdown_menu_tree(variable_get('menu_main_links_source', 'main-menu'), array(
+    'min_depth' => 1,
+    'max_depth' => 2,
+  ));
+   // Format and add site main menu to theme.
+  $variables['site_main_menu'] = _radix_dropdown_menu_tree(variable_get('menu-site-main-menu_links_source', 'menu-site-main-menu'), array(
+    'min_depth' => 1,
+    'max_depth' => 2,
+  ));
+// if ternonmy page is views
+    global $base_url;
+    global $_domain;
+	$term_tid = db_query("SELECT `entity_id` FROM `field_data_field_cm_domain` WHERE `field_cm_domain_value` = :did",array(':did' => $_domain['domain_id']))->fetchField();
+	
+    $output = "";
+    $variables['festival_site_info']  = "";
+	
+	if($term = taxonomy_term_load($term_tid)) {
+		$menu = $term->cinematic_menu;
+		$name = $term->name;
+		$domain = isset($term->field_cm_domain['und'][0]['value']) ? $term->field_cm_domain['und'][0]['value'] : 1;
+		$logo_image = $term->field_cm_festival_logo;
+		
+		$date = isset($term->field_cm_festival_date['und'][0]['value']) ? strtotime($term->field_cm_festival_date['und'][0]['value']) : '';
+		$date2 = isset($term->field_cm_festival_date['und'][0]['value2']) ? strtotime($term->field_cm_festival_date['und'][0]['value2']) : '';
+		if(date('m',$date) == date('m',$date2)) {
+		  $festivaldates = date('d',$date) . date('-d',$date2) . date('.m.Y',$date2);
+		}else{
+		  $festivaldates = date('d.m',$date) . date('-d.m',$date2) . date('.Y',$date2);
+		}
+		//if(!empty($date)){
+			//$date = date('d-m.Y',$date);
+		//}
+		if(!empty($logo_image)){
+			$logo_image =$base_url.'/sites/default/files/'.$logo_image['und'][0]['filename'];	
+			$variables['festival_site_logo'] = $logo_image;
+		}
 
+		$output = "<div class='festival-site'>";
+		$output.="   <span class='festive-site-name'>$name</span>";
+		$output.="   <span class='festive-time'>$festivaldates</span>";
+		$output.= "</div>";
+		$variables['festival_site_info'] = $output;
+
+		// render festival accssociated menu
+		if($menu != ''){
+		   $menu_source =$menu.'_links_source';
+		   $variables['festival_site_menu'] = _radix_dropdown_menu_tree(variable_get($menu_source, $menu), array(
+			   'min_depth' => 1,
+			   'max_depth' => 2,
+			 ));
+		}
+		
+	}
+
+	/*
+    $term_page =  arg(0);
+    if($term_page == 'taxonomy'){
+         $tid =arg(2);
+        $texonomy = taxonomy_term_load($tid);
+        $menu = $texonomy->cinematic_menu;
+        $festival_date = isset($texonomy->field_cm_festival_date['und'][0]['value']) ? $texonomy->field_cm_festival_date['und'][0]['value'] : '';
+        $name = $texonomy->name;
+        $domain = isset($texonomy->field_cm_domain['und'][0]['value']) ? $texonomy->field_cm_domain['und'][0]['value'] : 1;
+        $logo_image = $texonomy->field_cm_festival_logo;
+        // this is static for now( $domain = 1 means primary domain)
+        $date = '';
+        if($festival_date != ''){
+            $date = date('d-m.Y',strtotime($festival_date));
+        }
+       
+        if($_domain['is_default'] != '1'  && $domain == $_domain['domain_id']){
+                if(!empty($logo_image)){
+                    $logo_image =$base_url.'/sites/default/files/'.$logo_image['und'][0]['filename'];	
+                    $variables['festival_site_logo'] = $logo_image;
+                }
+        
+                $output = "<div class='festival-site'>";
+                $output.="   <span class='festive-site-name'>$name</span>";
+                $output.="   <span class='festive-time'>$date</span>";
+                $output.= "</div>";
+                $variables['festival_site_info'] =$output;
+                    
+                // texonomy accssociated menu
+                if($menu != ''){
+                   $menu_source =$menu.'_links_source';
+                   $variables['festival_site_menu'] = _radix_dropdown_menu_tree(variable_get($menu_source, $menu), array(
+                       'min_depth' => 1,
+                       'max_depth' => 2,
+                     ));
+                }
+        }
+
+    }
+    
+        if(!empty($variables['node'])){
+
+            global $_domain;
+            $domains = $variables['node']->domains;
+            foreach($domains as $domain){
+                if($_domain['domain_id'] == $domain){
+                    $term_tid = db_query("SELECT `entity_id` FROM `field_data_field_cm_domain` WHERE `field_cm_domain_value` =$domain ")->fetchField();
+                    break;
+                }
+            }
+            if($_domain['is_default'] != '1' && $term_tid != ''){
+                $texonomy = taxonomy_term_load($term_tid);
+                $menu = $texonomy->cinematic_menu;
+                $name = $texonomy->name;
+                $domain = isset($texonomy->field_cm_domain['und'][0]['value']) ? $texonomy->field_cm_domain['und'][0]['value'] : 1;
+                $logo_image = $texonomy->field_cm_festival_logo;
+                $date = isset($texonomy->field_cm_festival_date['und'][0]['value']) ? $texonomy->field_cm_festival_date['und'][0]['value'] : '';
+                if(!empty($date)){
+                    $date = date('d-m.Y',$date);
+                }
+                if(!empty($logo_image)){
+                    $logo_image =$base_url.'/sites/default/files/'.$logo_image['und'][0]['filename'];	
+                    $variables['festival_site_logo'] = $logo_image;
+                }
+
+                $output = "<div class='festival-site'>";
+                $output.="   <span class='festive-site-name'>$name</span>";
+                $output.="   <span class='festive-time'>$date</span>";
+                $output.= "</div>";
+                $variables['festival_site_info'] =$output;
+
+                // texonomy accssociated menu
+                if($menu != ''){
+                   $menu_source =$menu.'_links_source';
+                   $variables['festival_site_menu'] = _radix_dropdown_menu_tree(variable_get($menu_source, $menu), array(
+                       'min_depth' => 1,
+                       'max_depth' => 2,
+                     ));
+                }
+            }
+    }*/
   // Add a copyright message.
-  $variables['copyright'] = t('Drupal is a registered trademark of Dries Buytaert.');
+  //$variables['copyright'] = t('Drupal is a registered trademark of Dries Buytaert.');
+  $theme_path = drupal_get_path('theme', $GLOBALS['theme']);
+  $stylesheet_path = '/'.$theme_path . '/css/domain-'.$_domain['domain_id'].'.css';
+  if (!file_exists('/'.$stylesheet_path)) {
+	//dpm($stylesheet_path . ' is missing but we try to load it for this domain. please create scss file and use compass watch to generate css file');
+  }else{
+    drupal_add_css('/'.$stylesheet_path);
+  }
+  // Display a message if Sass has not been compiled.
+//  $theme_path = drupal_get_path('theme', $GLOBALS['theme']);
+//  $stylesheet_path = $theme_path . '/assets/stylesheets/screen.css';
+//  if (_radix_current_theme() == 'radix') {
+//    $stylesheet_path = $theme_path . '/assets/stylesheets/radix-style.css';
+//  }
+//  if (!file_exists($stylesheet_path)) {
+//    drupal_set_message(t('It looks like %path has not been created yet. Run <code>@command</code> in your theme directory to create it.', array(
+//      '%path' => $stylesheet_path,
+//      '@command' => 'compass watch',
+//    )), 'error');
+//  }
 }

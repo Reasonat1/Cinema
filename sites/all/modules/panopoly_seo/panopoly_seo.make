@@ -7,7 +7,7 @@ projects[globalredirect][subdir] = contrib
 projects[globalredirect][version] = 1.5
 
 projects[metatag][subdir] = contrib
-projects[metatag][version] = 1.17
+projects[metatag][version] = 1.14
 
 projects[redirect][version] = 1.0-rc3
 projects[redirect][subdir] = contrib
