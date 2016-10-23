@@ -10,10 +10,6 @@
  * @see html.tpl.php
  */
 ?>
-<script src="/misc/jquery.js" type="text/javascript"></script>
-	<script type='text/javascript'> 
-     jQuery.noConflict(); 
-    </script> 
 <header id="header" class="header" role="header">
   <div class="container">
     <nav class="navbar navbar-default" role="navigation">
@@ -25,46 +21,27 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-           <!-- Trigger the modal with a button -->
-          <button  class="hambruger -menu navbar-toggle" data-target="#myModal" data-toggle="modal"  type="button">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-           <?php if (!empty($festival_site_logo)) { 
-              $logo = $festival_site_logo;
-              } 
-              ?>
         <?php if ($site_name || $logo): ?>
           <a href="<?php print $front_page; ?>" class="navbar-brand" rel="home" title="<?php print t('Home'); ?>">
             <?php if ($logo): ?>
               <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" id="logo" />
             <?php endif; ?>
             <?php if ($site_name): ?>
-              <span class="site-name"></span>
+              <span class="site-name"><?php print $site_name; ?></span>
             <?php endif; ?>
           </a>
         <?php endif; ?>
-           <?php if ($festival_site_info): 
-               print $festival_site_info;
-           endif; ?>
       </div> <!-- /.navbar-header -->
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="navbar-collapse">
-          <?php if (!empty($festival_site_info)) { 
-              $site_main_menu = $festival_site_menu;
-              } 
-              ?>
-        <?php if ($site_main_menu): ?>
-           <ul id="site-main-menu" class="site-custom-menu menu nav navbar-nav col-md-5">
-            <?php print render($site_main_menu); ?>
+        <?php if ($main_menu): ?>
+          <ul id="main-menu" class="menu nav navbar-nav">
+            <?php print render($main_menu); ?>
           </ul>
         <?php endif; ?>
         <?php if ($search_form): ?>
-          <?php $block = module_invoke('block', 'block_view', '5');
-                         print render($block['content']); //print $search_form; ?>
+          <?php print $search_form; ?>
         <?php endif; ?>
       </div><!-- /.navbar-collapse -->
     </nav><!-- /.navbar -->
@@ -84,8 +61,8 @@
           <?php print $messages; ?>
         </div>
       <?php endif; ?>
-      <div id="page-header">        <?php if ($title): ?>
-
+      <div id="page-header">
+        <?php if ($title): ?>
           <div class="page-header">
             <h1 class="title"><?php print $title; ?></h1>
           </div>
