@@ -6,16 +6,16 @@ core = 7.x
 ; Radix Theme
 
 projects[radix][type] = theme
-projects[radix][version] = 3.0-rc4
+projects[radix][version] = 3.4
+projects[radix][subdir] = contrib
 
 ; Radix Modules
 
 projects[radix_layouts][type] = module
-projects[radix_layouts][download][type] = git
-projects[radix_layouts][download][branch] = 7.x-3.x
+projects[radix_layouts][version] = 3.4
 projects[radix_layouts][subdir] = contrib
 
-projects[radix_views][type] = module
-projects[radix_views][download][type] = git
-projects[radix_views][download][branch] = 7.x-1.x
-projects[radix_views][subdir] = contrib
+projects[radix_admin][type] = module
+projects[radix_admin][download][type] = git
+projects[radix_admin][download][branch] = 7.x-3.x
+projects[radix_admin][subdir] = contrib
