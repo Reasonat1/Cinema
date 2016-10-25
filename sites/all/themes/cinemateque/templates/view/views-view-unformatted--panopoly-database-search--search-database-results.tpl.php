@@ -227,8 +227,9 @@
     }else{
       $last_name = '';
     }
-    if(!empty($node->field_cm_person_job_title)){
-      $job_title =  $node->field_cm_person_job_title['und'][0]['value'];
+    if(!empty($node->field_cm_person_type)){
+      $job_id = taxonomy_term_load($node->field_cm_person_type['und'][0]['target_id']);
+      $job_title =  $job_id->name;
     }else{
       $job_title = '';
     }
