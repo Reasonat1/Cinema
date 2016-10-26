@@ -260,18 +260,20 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
       $collection_instances = field_info_instances('field_collection_item', $prop_name);
       $collections[$prop_name] = array();
 
-      foreach ($source_entity->{$prop_name}['und'] as &$c_config) {
-        $c_config['entity'] = field_collection_item_load($c_config['value']);
+      unset($config);
+      foreach ($source_entity->{$prop_name}['und'] as &$config) {
+        $config['entity'] = field_collection_item_load($config['value']);
       }
       foreach ($collection_instances as $c_prop_name => $instance) {
         if ($instance['widget']['type'] == 'entityreference_autocomplete') {
           $collections[$prop_name][]= $c_prop_name;
-          foreach ($source_entity->{$prop_name}['und'] as &$c_config) {
-            if (empty($c_config['entity']->{$c_prop_name})) {
+          unset($config);
+          foreach ($source_entity->{$prop_name}['und'] as &$config) {
+            if (empty($config['entity']->{$c_prop_name})) {
               continue;
             }
-            foreach ($c_config['entity']->{$c_prop_name}['und'] as $cr_config) {
-              $nids[$cr_config['target_id']] = 1;
+            foreach ($config['entity']->{$c_prop_name}['und'] as $c_config) {
+              $nids[$c_config['target_id']] = 1;
             }
           }
         }
@@ -296,6 +298,7 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
 
   foreach ($references as $prop_name) {
     $entity->{$prop_name} = array('und' => array());
+    unset($config);
     foreach ($source_entity->{$prop_name}['und'] as $delta => $config) {
       $nid = $config['target_id'];
       if (isset($translations[$nid])) {
@@ -309,19 +312,21 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
       if (empty($source_entity->{$prop_name})) {
         continue;
       }
-      foreach ($source_entity->{$prop_name}['und'] as $delta => $c_config) {
+      unset($config);
+      foreach ($source_entity->{$prop_name}['und'] as $delta => $config) {
         if (!isset($entity->{$prop_name}['und'][$delta])) {
           break;
         }
-        $target_c_config = &$entity->{$prop_name}['und'][$delta];
-        if (!isset($target_c_config['entity'])) {
-          $target_c_config['entity'] = clone field_collection_item_load($target_c_config['value']);
+        $target_config = &$entity->{$prop_name}['und'][$delta];
+        if (!isset($target_config['entity'])) {
+          $target_config['entity'] = clone field_collection_item_load($target_config['value']);
         }
-        $target_c_config['entity']->{$c_prop_name} = array('und' => array());
-        foreach ($c_config['entity']->{$c_prop_name}['und'] as $delta => &$c_r_config) {
-          $nid = $c_r_config['target_id'];
+        $target_config['entity']->{$c_prop_name} = array('und' => array());
+        unset($c_config);
+        foreach ($config['entity']->{$c_prop_name}['und'] as $delta => &$c_config) {
+          $nid = $c_config['target_id'];
           if (isset($translations[$nid])) {
-            $target_c_config['entity']->{$c_prop_name}['und'][$delta] = array('target_id' => $translations[$nid]);
+            $target_config['entity']->{$c_prop_name}['und'][$delta] = array('target_id' => $translations[$nid]);
           }
         }
       }
