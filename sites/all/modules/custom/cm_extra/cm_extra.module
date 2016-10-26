@@ -158,36 +158,7 @@ function cm_extra_form_alter(&$form, &$form_state, $form_id) {
 		
 	}
 }
-
-function cm_extra_i18n_sync_translation($entity_type, $translation, $translation_language, $source, $source_language, $field_names) {
-	//TODO: now this does not work at all, code does not run on http://jff.jer-cin.tikkewebsites.com/he/node/add/cm-movie-group?translation=3367&target=he even though it should. try writing die(); and see. I dont know why.... need to debug this... it might have to do with another module enabled or some update to i18n sync modules (or the term sync module). in any case, there is a bug while this is not taking place - the lobby term of a translated node needs to get its translated lobby term when translating, this code needs to run in order to do that. i also noticed that now lobby term options are limited to the language of the interface, so if you access edit of node in hebrew and its lobby is an english term it appears as though it has no lobby because that term option is ommited. 
-	if($entity_type != 'node') return;
-	
-	if(isset($source->field_lobby['und'][0]['target_id']) && !empty($source->field_lobby['und'][0]['target_id'])) {
-		//dpm($source->field_lobby);
-		$lobby_tid_org = $source->field_lobby['und'][0]['target_id'];
-		
-		if($lobby_tid_trans = i18n_taxonomy_translation_term_tid($lobby_tid_org,$translation_language)){
-			$translation->field_lobby['und'][0]['target_id'] = $lobby_tid_trans;
-			//dpm(get_defined_vars());
-		}	
-	}
-	/*
-  foreach ($field_names as $field_name) {
-    $info = field_info_field($field_name);
-    if ($info['type'] == 'entityreference') {
-      $items = field_get_items($entity_type, $source, $field_name);
-      foreach ($items as $delta => $item) {
-        $translations = translation_node_get_translations($item['target_id']);
-        if (isset($translations[$translation_language])) {
-          list($id, $vid, $bundle) = entity_extract_ids($entity_type, (object) $translations[$translation_language]);
-          $translation->{$field_name}['und'][$delta]['target_id'] = $id;
-        }
-      }
-    }
-  }*/
-}
-  
+ 
 /**
  * Submit handler that prepares a view object to send to the draggable views submit handler.
  *
@@ -261,6 +232,7 @@ function cm_extra_node_translate_after_submit($form, &$form_state) {
 }
 
 function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
+
   $source_entity = $context['source_entity'];
   $langcode = $context['langcode'];
 
@@ -343,7 +315,7 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
         }
         $target_c_config = &$entity->{$prop_name}['und'][$delta];
         if (!isset($target_c_config['entity'])) {
-          $target_c_config['entity'] = field_collection_item_load($target_c_config['value']);
+          $target_c_config['entity'] = clone field_collection_item_load($target_c_config['value']);
         }
         $target_c_config['entity']->{$c_prop_name} = array('und' => array());
         foreach ($c_config['entity']->{$c_prop_name}['und'] as $delta => &$c_r_config) {
