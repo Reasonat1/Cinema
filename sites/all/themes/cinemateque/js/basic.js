@@ -14,14 +14,21 @@
             return false;
         });
 
-
     //  person page
       $(".view-person-ct-view.view-display-id-panel_pane_1 .col").each(function(){
           if ( $(this).children(".col-container").children().length == 0 ) {
               $(this).hide();
           }
       });
-
+/****Search page Read more***/
+    $('#search-main-page .lobby-term-right .table-responsive tbody tr').css('display','none');  
+    $('#search-main-page .lobby-term-right .table-responsive tbody').each(function () {
+        $(this).children('tr:lt(3)').show();
+            $(this).parent().parent().children('.view-footer').children().click(function(){
+                $(this).parent().parent().children('.table').children('tbody').children('tr:lt(13)').show();
+                $(this).hide();
+            })
+    });
  /*******  responsive menu   **********/
 
     $(".responsive-hamburger").click(function(){

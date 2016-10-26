@@ -410,7 +410,7 @@ function my_pane_update_7016() {
  *
  * Add an "Link Title" field for gallery items.
  */
-function my_pane_update_8000(){
+function _my_pane_update_ignore8000(){
   $spec = array(
     'type' => 'varchar',
     'length' => 255,
@@ -432,7 +432,7 @@ function my_pane_update_8000(){
  *
  * Add an  "new tab check"  for target blank check in carousel items.
  */
-function my_pane_update_8001(){
+function _my_pane_update_ignore8001(){
     $spec = array(
       'type' => 'varchar',
       'length' => 128,
