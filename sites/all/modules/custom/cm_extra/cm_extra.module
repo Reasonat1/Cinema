@@ -232,7 +232,6 @@ function cm_extra_node_translate_after_submit($form, &$form_state) {
 }
 
 function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
-
   $source_entity = $context['source_entity'];
   $langcode = $context['langcode'];
 
@@ -261,24 +260,25 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
       $collection_instances = field_info_instances('field_collection_item', $prop_name);
       $collections[$prop_name] = array();
 
-      foreach ($source_entity->{$prop_name}['und'] as &$config) {
-        $config['entity'] = field_collection_item_load($config['value']);
+      foreach ($source_entity->{$prop_name}['und'] as &$c_config) {
+        $c_config['entity'] = field_collection_item_load($c_config['value']);
       }
       foreach ($collection_instances as $c_prop_name => $instance) {
         if ($instance['widget']['type'] == 'entityreference_autocomplete') {
           $collections[$prop_name][]= $c_prop_name;
-          foreach ($source_entity->{$prop_name}['und'] as &$config) {
-            if (empty($config['entity']->{$c_prop_name})) {
+          foreach ($source_entity->{$prop_name}['und'] as &$c_config) {
+            if (empty($c_config['entity']->{$c_prop_name})) {
               continue;
             }
-            foreach ($config['entity']->{$c_prop_name}['und'] as $c_config) {
-              $nids[$c_config['target_id']] = 1;
+            foreach ($c_config['entity']->{$c_prop_name}['und'] as $cr_config) {
+              $nids[$cr_config['target_id']] = 1;
             }
           }
         }
       }
     }
   }
+
   if (!$nids) {
     return;
   }
@@ -303,7 +303,7 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
       }
     }
   }
-  
+
   foreach ($collections as $prop_name => $references) {
     foreach ($references as $c_prop_name) {
       if (empty($source_entity->{$prop_name})) {
