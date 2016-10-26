@@ -82,7 +82,14 @@ function cinemateque_preprocess_views_view(&$vars) {
 }
 function cinemateque_preprocess_date_views_pager(&$vars) {
   if($vars['plugin']->view->name=='custom_calendar_floating_pane'){
-	$vars['nav_title'] = date('l | d.m.y', strtotime($vars['nav_title']));
+      if ($vars['plugin']->view->result[0]->node_language == 'en') {
+          $vars['nav_title'] = date('l | d.m.y', strtotime($vars['nav_title']));
+      }
+      if ($vars['plugin']->view->result[0]->node_language == 'he') {
+          $heb_date =  cal_from_jd(unixtojd($vars['plugin']->view->result[0]->field_field_cm_event_time[0]['raw']['value'] ), CAL_JEWISH  );
+          $heb_day = t($heb_date['dayname']);
+          $vars['nav_title'] = $heb_day .' | '.date('d.m.y', strtotime($vars['plugin']->view->args[0]));
+      }
   } 
 }
 
