@@ -240,12 +240,12 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
   $collections = array();
   $nids = array();
   foreach ($info_instances as $prop_name => $instance) {
-
     if ($instance['widget']['type'] == 'entityreference_autocomplete') {
       if (empty($source_entity->{$prop_name})) {
         $entity->{$prop_name} = NULL;
         continue;
       }
+      unset($config);
       foreach ($source_entity->{$prop_name}['und'] as $config) {
         $nids[$config['target_id']] = 1;
       }
@@ -287,7 +287,7 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
 
   $query = db_select('node', 'n');
   $query->condition('n.nid', array_keys($nids));
-  $query->join('node', 'tn', 'n.tnid = tn.tnid');
+  $query->join('node', 'tn', 'n.tnid = tn.tnid and n.tnid != 0');
   $query->condition('tn.language', $langcode);
   $query->addField('n','nid');
   $query->addField('tn','nid');
@@ -328,6 +328,9 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
           if (isset($translations[$nid])) {
             $target_config['entity']->{$c_prop_name}['und'][$delta] = array('target_id' => $translations[$nid]);
           }
+        }
+        if (!$target_config['entity']->{$c_prop_name}['und']) {
+          $target_config['entity']->{$c_prop_name} = NULL;
         }
       }
     }
