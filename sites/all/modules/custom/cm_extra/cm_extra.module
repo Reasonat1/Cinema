@@ -234,7 +234,6 @@ function cm_extra_node_translate_after_submit($form, &$form_state) {
 function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
   $source_entity = $context['source_entity'];
   $langcode = $context['langcode'];
-
   list(,,$bundle) = entity_extract_ids($context['entity_type'], $source_entity);
   $info_instances = field_info_instances($context['entity_type'], $bundle);
   $references = array();
@@ -243,7 +242,7 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
     if ($instance['widget']['type'] == 'entityreference_autocomplete') {
       $field_info = field_info_field($instance['field_name']);
       if ($field_info['settings']['target_type'] != 'node') {
-        return;
+        continue;
       }
       if (empty($source_entity->{$prop_name})) {
         $entity->{$prop_name} = NULL;
@@ -268,10 +267,8 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
         $t_config = $entity->{$prop_name}['und'][$delta];
         $target_collection = field_collection_item_load($t_config['value']);
         $target_collection->language = $context['langcode'];
-
         field_attach_prepare_translation('field_collection_item', $target_collection, $context['langcode'],
           $source_collection, $context['source_langcode']);
-
         $entity->{$prop_name}['und'][$delta]['entity'] = $target_collection;
       }
     }
