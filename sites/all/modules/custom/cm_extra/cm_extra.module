@@ -235,12 +235,16 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
   $source_entity = $context['source_entity'];
   $langcode = $context['langcode'];
 
-  $info_instances = field_info_instances('node', $source_entity->type);
+  list(,,$bundle) = entity_extract_ids($context['entity_type'], $source_entity);
+  $info_instances = field_info_instances($context['entity_type'], $bundle);
   $references = array();
-  $collections = array();
   $nids = array();
   foreach ($info_instances as $prop_name => $instance) {
     if ($instance['widget']['type'] == 'entityreference_autocomplete') {
+      $field_info = field_info_field($instance['field_name']);
+      if ($field_info['settings']['target_type'] != 'node') {
+        return;
+      }
       if (empty($source_entity->{$prop_name})) {
         $entity->{$prop_name} = NULL;
         continue;
@@ -257,26 +261,18 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
         $entity->{$prop_name} = NULL;
         continue;
       }
-      $collection_instances = field_info_instances('field_collection_item', $prop_name);
-      $collections[$prop_name] = array();
-
       unset($config);
-      foreach ($source_entity->{$prop_name}['und'] as &$config) {
-        $config['entity'] = field_collection_item_load($config['value']);
-      }
-      foreach ($collection_instances as $c_prop_name => $instance) {
-        if ($instance['widget']['type'] == 'entityreference_autocomplete') {
-          $collections[$prop_name][]= $c_prop_name;
-          unset($config);
-          foreach ($source_entity->{$prop_name}['und'] as &$config) {
-            if (empty($config['entity']->{$c_prop_name})) {
-              continue;
-            }
-            foreach ($config['entity']->{$c_prop_name}['und'] as $c_config) {
-              $nids[$c_config['target_id']] = 1;
-            }
-          }
-        }
+      foreach ($source_entity->{$prop_name}['und'] as $delta => $config) {
+        $source_collection = clone field_collection_item_load($config['value']);
+        $source_collection->language = $context['source_langcode']; // i18n taxonomy hack
+        $t_config = $entity->{$prop_name}['und'][$delta];
+        $target_collection = field_collection_item_load($t_config['value']);
+        $target_collection->language = $context['langcode'];
+
+        field_attach_prepare_translation('field_collection_item', $target_collection, $context['langcode'],
+          $source_collection, $context['source_langcode']);
+
+        $entity->{$prop_name}['und'][$delta]['entity'] = $target_collection;
       }
     }
   }
@@ -305,34 +301,9 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
         $entity->{$prop_name}['und'][$delta] = array('target_id' => $translations[$nid]);
       }
     }
-  }
-
-  foreach ($collections as $prop_name => $references) {
-    foreach ($references as $c_prop_name) {
-      if (empty($source_entity->{$prop_name})) {
-        continue;
-      }
-      unset($config);
-      foreach ($source_entity->{$prop_name}['und'] as $delta => $config) {
-        if (!isset($entity->{$prop_name}['und'][$delta])) {
-          break;
-        }
-        $target_config = &$entity->{$prop_name}['und'][$delta];
-        if (!isset($target_config['entity'])) {
-          $target_config['entity'] = clone field_collection_item_load($target_config['value']);
-        }
-        $target_config['entity']->{$c_prop_name} = array('und' => array());
-        unset($c_config);
-        foreach ($config['entity']->{$c_prop_name}['und'] as $delta => &$c_config) {
-          $nid = $c_config['target_id'];
-          if (isset($translations[$nid])) {
-            $target_config['entity']->{$c_prop_name}['und'][$delta] = array('target_id' => $translations[$nid]);
-          }
-        }
-        if (!$target_config['entity']->{$c_prop_name}['und']) {
-          $target_config['entity']->{$c_prop_name} = NULL;
-        }
-      }
+    if (!($entity->{$prop_name}['und'])) {
+      unset($entity->{$prop_name});
+      $entity->{$prop_name} = NULL;
     }
   }
 }
@@ -347,10 +318,6 @@ function cm_extra_i18n_sync_options($entity_type, $bundle) {
 }
 
 function cm_extra_i18n_sync_translation($entity_type, $translation, $translation_language, $source, $source_language, $field_names) {
-  if ($entity_type != 'node') {
-    return;
-  }
-
   if (!empty($source->is_new)) {
     return;
   }
@@ -359,6 +326,11 @@ function cm_extra_i18n_sync_translation($entity_type, $translation, $translation
   }
   $entity = $translation;
   $langcode = $translation_language;
-  $context = array('source_entity' => $source, 'langcode' => $langcode);
+  $context = array(
+    'entity_type' => $entity_type,
+    'langcode' => $langcode,
+    'source_entity' => $source, 
+    'source_langcode' => $source_language,
+  );
   cm_extra_field_attach_prepare_translation_alter($entity, $context);
 }
