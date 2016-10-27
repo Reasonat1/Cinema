@@ -256,7 +256,7 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
     }
 
     if ($instance['widget']['type'] == 'field_collection_embed') {
-      if (empty($source_entity->{$prop_name})) {
+      if (empty($source_entity->{$prop_name}['und'])) {
         if (!empty($entity->{$prop_name})) {
           foreach ($entity->{$prop_name}['und'] as $delta => $config) {
             field_collection_item_delete($config['value']);
