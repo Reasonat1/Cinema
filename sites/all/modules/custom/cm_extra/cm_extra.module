@@ -258,8 +258,16 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
 
     if ($instance['widget']['type'] == 'field_collection_embed') {
       if (empty($source_entity->{$prop_name})) {
+        if ($entity->{$prop_name}) {
+          foreach ($entity->{$prop_name}['und'] as $delta => $config) {
+            field_collection_item_delete($config['value']);
+          }
+        }
         $entity->{$prop_name} = NULL;
         continue;
+      }
+      if (isset($source_entity->original)) {
+        cm_extra_collection_sync($entity, $source_entity, $prop_name, $context['entity_type']);
       }
       unset($config);
       foreach ($source_entity->{$prop_name}['und'] as $delta => $config) {
@@ -305,6 +313,47 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
       unset($entity->{$prop_name});
       $entity->{$prop_name} = NULL;
     }
+  }
+}
+
+function cm_extra_collection_sync($entity, $source_entity, $prop_name, $entity_type) {
+  $map = array();
+  $original = $source_entity->original;
+  if (count($entity->{$prop_name}['und']) != count($original->{$prop_name}['und'])) {
+    return;
+  }
+  foreach ($original->{$prop_name}['und'] as $delta => $config) {
+    $source_id = $config['value'];
+    $map[$source_id] = $entity->{$prop_name}['und'][$delta];
+  }
+  
+  $candidates = array();
+  foreach ($entity->{$prop_name}['und'] as $config) {
+    $candidates[$config['value']] = 1;
+  }
+
+  foreach ($source_entity->{$prop_name}['und'] as $delta => $config) {
+    $source_id = $config['value'];
+    if (isset($map[$source_id])) {
+      $target_config = $map[$source_id];
+      unset($candidates[$target_config['value']]);
+      $entity->{$prop_name}['und'][$delta] = $target_config;
+    }
+    else {
+      $new_collection = clone field_collection_item_load($source_id);
+      $new_collection->item_id = NULL;
+      $new_collection->revision_id = NULL;
+      $new_collection->is_new = TRUE;
+      $new_collection->setHostEntity($entity_type, $entity, LANGUAGE_NONE, FALSE);
+      $new_collection->save(TRUE);
+      $entity->{$prop_name}['und'][$delta] = array(
+        'value' => $new_collection->item_id,
+        'revision_id' => $new_collection->revision_id,
+      );
+    }
+  }
+  foreach (array_keys($candidates) as $id) {
+    field_collection_item_delete($id);
   }
 }
 
