@@ -278,7 +278,7 @@
           $left = 0;
           $i = 0;
           $('.calender-filter p').each(function () {
-            if (!$(this).hasClass("active")){n/node/4062/edit
+            if (!$(this).hasClass("active")){
               $i ++;
             }
             if ($(this).hasClass("active")){
