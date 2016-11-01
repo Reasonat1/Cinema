@@ -278,7 +278,7 @@
           $left = 0;
           $i = 0;
           $('.calender-filter p').each(function () {
-            if (!$(this).hasClass("active")){
+            if (!$(this).hasClass("active")){n/node/4062/edit
               $i ++;
             }
             if ($(this).hasClass("active")){
@@ -385,6 +385,18 @@
                $(this).addClass('active-slide');
          }
     });*/
+
+    /********  Show Title to image in movie slideshow  *******/
+    if($('.group-alttab .field-name-field-file-image-title-text').length){
+        $('.group-alttab .field-name-field-file-image-alt-text').hide();
+        $('.group-alttab .field-name-field-file-image-title-text').css('border','none');
+    }
+    else{
+        $('.group-alttab').hide();
+    }
+
+
+
      /*** Removed  | bar***/
     var tempBar = $('.view-id-movie_top_pane_view.view-display-id-panel_pane_2 .slide-movie-year .crdt').text().slice(0,-2)
     var barHtml = $('.view-id-movie_top_pane_view.view-display-id-panel_pane_2 .slide-movie-year .mnts').html();
