@@ -135,9 +135,9 @@
           if($(e.target).closest('.video-wrapper .content').length == 0) {
             $(".slide-right-ct .video-wrapper").removeClass("play");
             $("body").removeClass("play");
-            $(".media-youtube-player").stopVideo();
-            $("video").pause();
+            $(".media-youtube-player")[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');  
             e.preventDefault();
+            
 
           }
       });
