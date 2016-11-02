@@ -26,6 +26,9 @@ function node_inheritance_field_widget_form_alter(&$element, &$form_state, $cont
   if ($context['instance']['entity_type'] != 'node') {
     return;
   }
+  if (!isset($form_state['node'])) {
+    return;
+  }
   $node = $form_state['node'];
   if (empty($node->node_inheritance_config)) {
     return;
