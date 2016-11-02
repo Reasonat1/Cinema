@@ -398,7 +398,7 @@
     /********  Show Title to image in movie group slideshow  *******/
 
     $(".image-alt-title").each(function(){
-      if($(this).children('.grp-title').length == 0){
+      if($(this).children('.grp-title').length != 0){
           $(this).children('.grp-alt').hide();
           $(this).children('.grp-title').css('border','none');
       }
