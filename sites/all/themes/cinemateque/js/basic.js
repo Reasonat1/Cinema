@@ -135,9 +135,9 @@
           if($(e.target).closest('.video-wrapper .content').length == 0) {
             $(".slide-right-ct .video-wrapper").removeClass("play");
             $("body").removeClass("play");
-            $(".media-youtube-player").stopVideo();
-            $("video").pause();
+            $(".media-youtube-player")[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');  
             e.preventDefault();
+            
 
           }
       });
@@ -385,6 +385,32 @@
                $(this).addClass('active-slide');
          }
     });*/
+
+    /********  Show Title to image in movie slideshow  *******/
+    if($('.group-alttab .field-name-field-file-image-title-text').length){
+        $('.group-alttab .field-name-field-file-image-alt-text').hide();
+        $('.group-alttab .field-name-field-file-image-title-text').css('border','none');
+    }
+    else{
+        $('.group-alttab').hide();
+    }
+
+    /********  Show Title to image in movie group slideshow  *******/
+
+    $(".image-alt-title").each(function(){
+        if($(this).children('.grp-title').length != 0){
+           $(this).children('.grp-alt').hide();
+           $(this).children('.grp-title').css('border','none');
+        }
+        else {
+            $(this).children('.grp-alt').hide();
+            if ($(this).children('.grp-title').length == 0) {
+                $(this).hide();
+            }
+        }
+    });
+
+
      /*** Removed  | bar***/
     var tempBar = $('.view-id-movie_top_pane_view.view-display-id-panel_pane_2 .slide-movie-year .crdt').text().slice(0,-2)
     var barHtml = $('.view-id-movie_top_pane_view.view-display-id-panel_pane_2 .slide-movie-year .mnts').html();
