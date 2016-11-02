@@ -396,13 +396,16 @@
     }
 
     /********  Show Title to image in movie group slideshow  *******/
-    if($('.image-alt-title .grp-title').length == 0){
-        $('.image-alt-title .grp-alt').hide();
-        $('.image-alt-title .grp-title').css('border','none');
-    }
-        else{
-        $('.image-alt-title').hide();
-    }
+
+    $(".image-alt-title").each(function(){
+      if($(this).children('.grp-title').length == 0){
+          $(this).children('.grp-alt').hide();
+          $(this).children('.grp-title').css('border','none');
+      }
+          else{
+          $(this).hide();
+      }
+    });
 
 
      /*** Removed  | bar***/
