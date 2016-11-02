@@ -398,10 +398,16 @@
     /********  Show Title to image in movie group slideshow  *******/
 
     $(".image-alt-title").each(function(){
-      $(this).children('.grp-alt').hide();
-      if($(this).children('.grp-title').length == 0){
-          $(this).parent().hide();
-      }
+        if($(this).children('.grp-title').length != 0){
+           $(this).children('.grp-alt').hide();
+           $(this).children('.grp-title').css('border','none');
+        }
+        else {
+            $(this).children('.grp-alt').hide();
+            if ($(this).children('.grp-title').length == 0) {
+                $(this).hide();
+            }
+        }
     });
 
 
