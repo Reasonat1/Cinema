@@ -399,7 +399,7 @@
 
     $(".image-alt-title").each(function(){
       $(this).children('.grp-alt').hide();
-      if($(this).children('.grp-title').length){
+      if($(this).children('.grp-title').length == 0){
           $(this).parent().hide();
       }
     });
