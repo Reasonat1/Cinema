@@ -380,3 +380,29 @@ function cm_extra_i18n_sync_translation($entity_type, $translation, $translation
   );
   cm_extra_field_attach_prepare_translation_alter($entity, $context);
 }
+
+function cm_extra_field_widget_options_select_form_alter(&$element, &$form_state, $context) {
+  if ($context['field']['type'] != 'entityreference') {
+    return;
+  }
+  if ($context['field']['settings']['target_type'] != 'taxonomy_term') {
+    return;
+  }
+  $target_bundles = $context['field']['settings']['handler_settings']['target_bundles'];
+  if (count($target_bundles) > 1) {
+    return;
+  }
+  if (empty($element['#options'])) {
+    return;
+  }
+  $tids = array_keys($element['#options']);
+  if ($tids[0] == '_none') {
+    unset($tids[0]);
+  }
+  $terms = taxonomy_term_load_multiple($tids);
+  foreach ($element['#options'] as $tid => &$name) {
+    if (isset($terms[$tid])) {
+      $name = i18n_taxonomy_term_name($terms[$tid]);
+    }
+  }
+}
