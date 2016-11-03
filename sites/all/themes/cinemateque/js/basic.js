@@ -388,9 +388,8 @@
     });*/
 
     /********  Show Title to image in movie slideshow  *******/
-    if($('.group-alttab .field-name-field-file-image-title-text').length){
+    if($('.group-alttab .field-name-field-file-image-title-text').text().length > 0){
         $('.group-alttab .field-name-field-file-image-alt-text').hide();
-        $('.group-alttab .field-name-field-file-image-title-text').css('border','none');
     }
     else{
         $('.group-alttab').hide();
@@ -398,16 +397,10 @@
 
     /********  Show Title to image in movie group slideshow  *******/
 
-    $(".image-alt-title").each(function(){
-        if($(this).children('.grp-title').length != 0){
-           $(this).children('.grp-alt').hide();
-           $(this).children('.grp-title').css('border','none');
-        }
-        else {
-            $(this).children('.grp-alt').hide();
-            if ($(this).children('.grp-title').length == 0) {
-                $(this).hide();
-            }
+    $(".views-field-field-cm-moviegroup-pictures .image-alt-title").each(function(){
+        $(this).children('.grp-alt').hide();
+        if($(this).children('.grp-title').text().length == 0){
+             $(this).hide();
         }
     });
 
