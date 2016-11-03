@@ -71,13 +71,14 @@
       $black_text_event = '';
     }
     if(!empty($node->field_cm_movie_duration)){
-      $length_interval = $node->field_cm_movie_duration['und'][0]['interval'];
-      $length_period = $node->field_cm_movie_duration['und'][0]['period'];
+      $length_interval = t($node->field_cm_movie_duration['und'][0]['interval']);
+      $length_period = t($node->field_cm_movie_duration['und'][0]['period'].'s');
       $length = $length_interval.' '.$length_period;
+
     }
     elseif(!empty($node->field_cm_moviegroup_duration)){
-      $length_interval = $node->field_cm_moviegroup_duration['und'][0]['interval'];
-      $length_period = $node->field_cm_moviegroup_duration['und'][0]['period'];
+      $length_interval = t($node->field_cm_moviegroup_duration['und'][0]['interval']);
+      $length_period = t($node->field_cm_moviegroup_duration['und'][0]['period'].'s');
       $length = $length_interval.' '.$length_period;
     }
     if(!empty($node->field_cm_moviegroup_short_summar)){
