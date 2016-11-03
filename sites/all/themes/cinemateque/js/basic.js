@@ -14,12 +14,13 @@
             return false;
         });
 
-    //  person page
+        /****  person page  ***/
       $(".view-person-ct-view.view-display-id-panel_pane_1 .col").each(function(){
           if ( $(this).children(".col-container").children().length == 0 ) {
               $(this).hide();
           }
       });
+
 /****Search page Read more***/
     $('#search-main-page .lobby-term-right .table-responsive tbody tr').css('display','none');  
     $('#search-main-page .lobby-term-right .table-responsive tbody').each(function () {
