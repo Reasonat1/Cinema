@@ -23,10 +23,10 @@
         global $base_url;
         $current_lang = $language->language;
         if ($current_lang == "en"): ?>
-            <a href="/en/node/4284" class="link-main-calendar">Main calendar page</a>
+            <a href="/en/node/4284" class="link-main-calendar">Monthly Screenings</a>
         <?php endif; 
         if ($current_lang == "he"): ?>
-            <a href="/he/node/4285" class="link-main-calendar"><?php print t('Main calendar page');?></a>
+            <a href="/he/node/4285" class="link-main-calendar"><?php print t('Monthly Screenings');?></a>
         <?php endif; ?>
     </div>
 </div>
