@@ -315,18 +315,22 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
 
 function cm_extra_collection_sync($entity, $source_entity, $prop_name, $entity_type) {
   $map = array();
-  $original = $source_entity->original;
-  if (count($entity->{$prop_name}['und']) != count($original->{$prop_name}['und'])) {
-    return;
-  }
-  foreach ($original->{$prop_name}['und'] as $delta => $config) {
-    $source_id = $config['value'];
-    $map[$source_id] = $entity->{$prop_name}['und'][$delta];
-  }
-  
   $candidates = array();
-  foreach ($entity->{$prop_name}['und'] as $config) {
-    $candidates[$config['value']] = 1;
+  $original = $source_entity->original;
+
+  if ($entity->{$prop_name}) {
+    if (count($entity->{$prop_name}['und']) != count($original->{$prop_name}['und'])) {
+      return;
+    }
+
+    foreach ($original->{$prop_name}['und'] as $delta => $config) {
+      $source_id = $config['value'];
+      $map[$source_id] = $entity->{$prop_name}['und'][$delta];
+    }
+    
+    foreach ($entity->{$prop_name}['und'] as $config) {
+      $candidates[$config['value']] = 1;
+    }
   }
 
   foreach ($source_entity->{$prop_name}['und'] as $delta => $config) {
