@@ -410,3 +410,22 @@ function cm_extra_field_widget_options_select_form_alter(&$element, &$form_state
     }
   }
 }
+
+function cm_extra_form_cm_event_node_form_alter(&$form, &$form_state) {
+  $form['#process'][] = 'cm_extra_event_title';
+}
+
+function cm_extra_event_title($node_form, &$form_state) {
+  $input = &$form_state['input'];
+  if (empty($input['title'])) {
+    if (!empty($input['field_cm_event_lineup']['und'][0])) {
+      $target = $input['field_cm_event_lineup']['und'][0]['target_id'];
+      preg_match("/(.+) \((\d+)\)/", $target, $matches);
+      if (isset($matches[1])) {
+        //$nid = $matches[2];
+        $input['title'] = $matches[1];
+      }
+    }
+  }
+  return $node_form;
+}
