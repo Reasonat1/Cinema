@@ -63,7 +63,7 @@ function calendar_full_width_block_content(){
     global $base_url;
     $output = $filter = $selected_filter = $day = "";
         $current_date = date("Y-m-d");
-        $prev_date =  strtotime('-5 day', strtotime($current_date));
+        $prev_date =  strtotime('-0 day', strtotime($current_date));
         $prev = date("Y-m-d",$prev_date);
         $Date = date( 'j.n', $prev_date ); 
         $Day = date( 'l', $prev_date );
