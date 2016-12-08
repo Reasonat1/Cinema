@@ -145,6 +145,17 @@ function calendar_full_width_block_content(){
         }else{
             $hall_name = '';
         }
+		
+		if(!empty($node->field_cm_event_lineup['und'])){
+            $lineup_id = node_load($node->field_cm_event_lineup['und'][0]['target_id']);
+            $lineup_name = $lineup_id->title;
+            $lineup_summary = $lineup_id->field_cm_movie_short_summary['und'][0]['value'];
+            $lineup_duration = $lineup_id->field_cm_movie_duration['und'][0]['interval'].' '.$lineup_id->field_cm_movie_duration['und'][0]['period'];
+            $lineup_leading = $lineup_id->field_cm_movie_meta_credit['und'][0]['value'];
+        }else{
+            $lineup_name = $lineup_summary = $lineup_duration = $lineup_leading ='';
+        }
+		
         if(!empty($node->field_toptix_purchase['und'])){
             $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
             $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
@@ -197,8 +208,10 @@ function calendar_full_width_block_content(){
                                </table>
                             </div>';
                 $output .= '<div class="lobby-title">'.l($node->title, $path).'</div>';
-                $output .= '<div class="calendar-below-title-content"><span class="cal-hall">'.$hall_name.'</span><span class="cal-length">'.$length.'</span><span class="cal-sort-title">'.$sort_title.'</span></div>';
-                $output .= '<div class="lobby-summary">'.strip_tags($summary_event).'</div>';
+				$output .= '<div class="lobby-summary">'.strip_tags($summary_event).'</div>';
+				$output .= ($summary_event)?'<div class="lobby-title">'.$lineup_name.'</div>':'';
+				$output .= '<div class="lobby-summary">'.strip_tags($lineup_summary).'</div>';
+                $output .= '<div class="calendar-below-title-content"><span class="cal-hall">'.$lineup_leading.'</span><span class="cal-length">'.$lineup_duration.'</span></div>';
             $output .= '</div>';
             $output .='<div class="clr"></div>';
         $output .="</div>";
@@ -267,6 +280,16 @@ function ajax_calender_full_width_filter(){
         }else{
             $hall_name = '';
         }
+		
+		if(!empty($node->field_cm_event_lineup['und'])){
+            $lineup_id = node_load($node->field_cm_event_lineup['und'][0]['target_id']);
+            $lineup_name = $lineup_id->title;
+            $lineup_summary = $lineup_id->field_cm_movie_short_summary['und'][0]['value'];
+            $lineup_duration = $lineup_id->field_cm_movie_duration['und'][0]['interval'].' '.$lineup_id->field_cm_movie_duration['und'][0]['period'];
+            $lineup_leading = $lineup_id->field_cm_movie_meta_credit['und'][0]['value'];
+        }else{
+            $lineup_name = $lineup_summary = $lineup_duration = $lineup_leading ='';
+        }
         if(!empty($node->field_toptix_purchase['und'])){
             $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
             $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
@@ -319,9 +342,10 @@ function ajax_calender_full_width_filter(){
                                </table>
                             </div>';
                 $output .= '<div class="lobby-title">'.l($node->title, $path).'</div>';
-                $output .= '<div class="calendar-below-title-content"><span class="cal-hall">'.$hall_name.'</span><span class="cal-length">'.$length.'</span><span class="cal-sort-title">'.$sort_title.'</span>
-                </tr></tbody></table></div>';
-                $output .= '<div class="lobby-summary">'.strip_tags($summary_event).'</div>';
+				$output .= '<div class="lobby-summary">'.strip_tags($summary_event).'</div>';
+				$output .= ($summary_event)?'<div class="lobby-title">'.$lineup_name.'</div>':'';
+				$output .= '<div class="lobby-summary">'.strip_tags($lineup_summary).'</div>';
+                $output .= '<div class="calendar-below-title-content"><span class="cal-hall">'.$lineup_leading.'</span><span class="cal-length">'.$lineup_duration.'</span></div>';
             $output .= '</div>';
             $output .='<div class="clr"></div>';
         $output .="</div>";
