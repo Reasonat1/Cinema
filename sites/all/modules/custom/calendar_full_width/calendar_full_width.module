@@ -212,6 +212,7 @@ function calendar_full_width_block_content(){
  * Ajax filteration of complex calender
  */
 function ajax_calender_full_width_filter(){
+	
     $default_image = '<img src="/sites/all/themes/cinemateque/images/default-image-pane-2.png">';
     $default_user_image = '<img src="/sites/all/themes/cinemateque/images/user-default.jpg">';
     global $language ;
@@ -309,8 +310,7 @@ function ajax_calender_full_width_filter(){
                                <table class="table">
                                   <tbody>
                                     <tr class="row-custom-lobby">
-                                      <td class="day only-desktop left">'.$Day.'</div>
-                                      <td class="date left">'.$event_date.'<div class="only-mobile">'.$event_time.'</td>
+                                      <td class="time only-mobile left">'.$event_time.'</td>
                                       <td class="time only-desktop left">'.$event_time.'</td>
                                       <td class="hall left">'.$hall_name.'</td>
                                       <td class="purchase right">'.$purchase.'</td>
@@ -328,5 +328,8 @@ function ajax_calender_full_width_filter(){
         $output .="</div>";
       }
     $output.= "</div></div>";
+	
+	drupal_add_http_header('Cache-Control', 'public, max-age=3600');
     drupal_json_output(array('output' => $output));
+	drupal_exit();
 }
