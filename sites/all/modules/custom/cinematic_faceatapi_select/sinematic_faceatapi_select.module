@@ -1,0 +1,6 @@
+<?php 
+
+function sinematic_faceatapi_select_js_alter(&$js) {
+unset($js[drupal_get_path('module', 'facetapi_select').'/js/facetapi_select.js']);
+drupal_add_js(drupal_get_path('module', 'sinematic_faceatapi_select') . '/js/cinematic_facetapi_select.js');
+}

@@ -1,0 +1,114 @@
+<?php
+function sinematic_inwise_form_alter(&$form, &$form_state, $form_id) {
+if ($form_id=='webform_client_form_19' || $form_id=='webform_client_form_3322') {
+	$form['#submit'][]='sinematic_inwise_form_submit';
+	}
+}
+
+function sinematic_inwise_form_submit($form, &$form_state) {
+	global $language ;
+  $groups=($language->language=='en')?array(605020):array(22278);
+  $xside=($language->language=='en')?0:1;
+	
+  $submissions=array('name'=>$form_state['values']['submitted'][1+$xside],
+					 'email'=>$form_state['values']['submitted'][2+$xside],				 
+					 'phone'=>$form_state['values']['submitted'][3+$xside],				 
+					);
+ 
+  
+  if ($submissions['email']) {
+	 
+		addUpdateRecipient($submissions['email'],
+	        $submissions['name'],
+	        '',
+			$submissions['phone'],
+	        $groups);
+	}
+
+  }
+
+
+function addUpdateRecipient($email,$firstName,$lastName,$phone,$groups)
+{
+	// build the request
+	$data = prepareXml($email,$firstName,$lastName,$phone,$groups);
+	
+	// set the web service url
+	$url="https://www.em-sender.com/ws/InwiseWebServices.asmx";
+	
+	// initialize curl handle
+	$ch = curl_init($url); 
+	
+	// set headers needed for the web service
+	$headers=array(
+		"SOAPAction:http://www.inwise.com/schemas/Recipients_AddOrUpdate",
+		"Content-type: text/xml; charset=utf-8",
+		"Content-length: ".strlen($data));
+	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers); 
+	
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); // return into a variable
+	curl_setopt($ch, CURLOPT_TIMEOUT, 120); // time out
+
+	// add POST fields - the request xml
+	curl_setopt($ch, CURLOPT_POSTFIELDS,  $data); 
+
+	// call the remote service
+	$result = curl_exec($ch);
+
+	$err = curl_error($ch);
+
+	curl_close($ch);
+}
+
+
+
+function prepareXml($email,$firstName,$lastName,$phone,$groups) 
+{
+$userName="sinematek";
+$password="E123456e";
+$xml='<?xml version="1.0" encoding="utf-8"?>
+  <soap:Envelope 
+    xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<soap:Header>
+		<SecHeader xmlns="http://www.inwise.com/schemas">
+			<username>'.$userName.'</username>
+			<pass>'.$password.'</pass>
+		</SecHeader>
+	</soap:Header>
+	<soap:Body>
+	  <Recipients_AddOrUpdate 
+	    xmlns="http://www.inwise.com/schemas">
+		<email>'.htmlspecialchars($email, ENT_QUOTES).'</email>
+		<groups>';
+$count=count($groups);
+for($i=0;$i<$count;$i++)
+{
+$xml.=	'<anyType xsi:type="xsd:int">'.$groups[$i].'</anyType>';
+}
+
+$xml.='</groups>
+		<fields>
+		  <CustomFieldValue>
+			<LocalName>field1</LocalName>
+			<FieldValue xsi:type="xsd:string">'.htmlspecialchars($firstName, ENT_QUOTES).'</FieldValue>
+		  </CustomFieldValue>
+		  <CustomFieldValue>
+			<LocalName>field2</LocalName>
+			<FieldValue xsi:type="xsd:string">'.htmlspecialchars($lastName, ENT_QUOTES).'</FieldValue>
+		  </CustomFieldValue>
+		  <CustomFieldValue>
+			<LocalName>field8</LocalName>
+			<FieldValue xsi:type="xsd:string">'.htmlspecialchars($phone, ENT_QUOTES).'</FieldValue>
+		  </CustomFieldValue>
+		</fields>
+	  </Recipients_AddOrUpdate>
+	</soap:Body>
+  </soap:Envelope>';
+return $xml;
+}
+
+?>

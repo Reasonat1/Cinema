@@ -63,7 +63,7 @@ function calendar_full_width_block_content(){
     global $base_url;
     $output = $filter = $selected_filter = $day = "";
         $current_date = date("Y-m-d");
-        $prev_date =  strtotime('-5 day', strtotime($current_date));
+        $prev_date =  strtotime('-0 day', strtotime($current_date));
         $prev = date("Y-m-d",$prev_date);
         $Date = date( 'j.n', $prev_date ); 
         $Day = date( 'l', $prev_date );
@@ -105,7 +105,7 @@ function calendar_full_width_block_content(){
               FROM node AS n 
               LEFT JOIN field_data_field_cm_event_short_title AS short_title ON n.nid = short_title.entity_id
               LEFT JOIN field_data_field_cm_event_time  AS event_time ON n.nid = event_time.entity_id
-              WHERE ((n.type = 'cm_event')) and ((n.language = '$lang_name')) and  ((n.status = '1'))  and ( (DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value2), SEC_TO_TIME(10800)), '%Y-%m-%d') >= '$day' AND DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value), SEC_TO_TIME(10800)), '%Y-%m-%d') <= '$day') )
+              WHERE ((n.type = 'cm_event')) and ((n.language = '$lang_name')) and  ((n.status = '1'))  and ( (DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value2), SEC_TO_TIME(10800)), '%Y-%m-%d') = '$day' AND DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value), SEC_TO_TIME(10800)), '%Y-%m-%d') <= '$day') )
               ORDER BY event_start_time ASC")->fetchAll();
     $result_count = count($result); 
      $output.="<div class='calenders'>";
@@ -145,6 +145,17 @@ function calendar_full_width_block_content(){
         }else{
             $hall_name = '';
         }
+		
+		if(!empty($node->field_cm_event_lineup['und'])){
+            $lineup_id = node_load($node->field_cm_event_lineup['und'][0]['target_id']);
+            $lineup_name = $lineup_id->title;
+            $lineup_summary = $lineup_id->field_cm_movie_short_summary['und'][0]['value'];
+            $lineup_duration = $lineup_id->field_cm_movie_duration['und'][0]['interval'].' '.$lineup_id->field_cm_movie_duration['und'][0]['period'];
+            $lineup_leading = $lineup_id->field_cm_movie_meta_credit['und'][0]['value'];
+        }else{
+            $lineup_name = $lineup_summary = $lineup_duration = $lineup_leading ='';
+        }
+		
         if(!empty($node->field_toptix_purchase['und'])){
             $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
             $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
@@ -187,8 +198,7 @@ function calendar_full_width_block_content(){
                                <table class="table">
                                   <tbody>
                                     <tr class="row-custom-lobby">
-                                      <td class="day only-desktop left">'.$Day.'</div>
-                                      <td class="date left">'.$event_date.'<div class="only-mobile">'.$event_time.'</td>
+                                      <td class="time only-mobile left">'.$event_time.'</td>
                                       <td class="time only-desktop left">'.$event_time.'</td>
                                       <td class="hall left">'.$hall_name.'</td>
                                       <td class="purchase right">'.$purchase.'</td>
@@ -198,8 +208,10 @@ function calendar_full_width_block_content(){
                                </table>
                             </div>';
                 $output .= '<div class="lobby-title">'.l($node->title, $path).'</div>';
-                $output .= '<div class="calendar-below-title-content"><span class="cal-hall">'.$hall_name.'</span><span class="cal-length">'.$length.'</span><span class="cal-sort-title">'.$sort_title.'</span></div>';
-                $output .= '<div class="lobby-summary">'.strip_tags($summary_event).'</div>';
+				$output .= '<div class="lobby-summary">'.strip_tags($summary_event).'</div>';
+				$output .= ($summary_event)?'<div class="lobby-title">'.$lineup_name.'</div>':'';
+				$output .= '<div class="lobby-summary">'.strip_tags($lineup_summary).'</div>';
+                $output .= '<div class="calendar-below-title-content"><span class="cal-hall">'.$lineup_leading.'</span><span class="cal-length">'.$lineup_duration.'</span></div>';
             $output .= '</div>';
             $output .='<div class="clr"></div>';
         $output .="</div>";
@@ -212,6 +224,7 @@ function calendar_full_width_block_content(){
  * Ajax filteration of complex calender
  */
 function ajax_calender_full_width_filter(){
+	
     $default_image = '<img src="/sites/all/themes/cinemateque/images/default-image-pane-2.png">';
     $default_user_image = '<img src="/sites/all/themes/cinemateque/images/user-default.jpg">';
     global $language ;
@@ -232,7 +245,7 @@ function ajax_calender_full_width_filter(){
               FROM node AS n 
               LEFT JOIN field_data_field_cm_event_short_title AS short_title ON n.nid = short_title.entity_id
               LEFT JOIN field_data_field_cm_event_time  AS event_time ON n.nid = event_time.entity_id
-              WHERE ((n.type = 'cm_event')) and ((n.language = '$lang_name')) and  ((n.status = '1'))  and ( (DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value2), SEC_TO_TIME(10800)), '%Y-%m-%d') >= '$day' AND DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value), SEC_TO_TIME(10800)), '%Y-%m-%d') <= '$day') )
+              WHERE ((n.type = 'cm_event')) and ((n.language = '$lang_name')) and  ((n.status = '1'))  and ( (DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value2), SEC_TO_TIME(10800)), '%Y-%m-%d') = '$day' AND DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value), SEC_TO_TIME(10800)), '%Y-%m-%d') <= '$day') )
               ORDER BY event_start_time ASC")->fetchAll();
     $result_count = count($result);
      $output.="<div class='ajax-inner ajax-data-calendar'>";
@@ -266,6 +279,16 @@ function ajax_calender_full_width_filter(){
             $hall_name = $hall_id->name;
         }else{
             $hall_name = '';
+        }
+		
+		if(!empty($node->field_cm_event_lineup['und'])){
+            $lineup_id = node_load($node->field_cm_event_lineup['und'][0]['target_id']);
+            $lineup_name = $lineup_id->title;
+            $lineup_summary = $lineup_id->field_cm_movie_short_summary['und'][0]['value'];
+            $lineup_duration = $lineup_id->field_cm_movie_duration['und'][0]['interval'].' '.$lineup_id->field_cm_movie_duration['und'][0]['period'];
+            $lineup_leading = $lineup_id->field_cm_movie_meta_credit['und'][0]['value'];
+        }else{
+            $lineup_name = $lineup_summary = $lineup_duration = $lineup_leading ='';
         }
         if(!empty($node->field_toptix_purchase['und'])){
             $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
@@ -309,8 +332,7 @@ function ajax_calender_full_width_filter(){
                                <table class="table">
                                   <tbody>
                                     <tr class="row-custom-lobby">
-                                      <td class="day only-desktop left">'.$Day.'</div>
-                                      <td class="date left">'.$event_date.'<div class="only-mobile">'.$event_time.'</td>
+                                      <td class="time only-mobile left">'.$event_time.'</td>
                                       <td class="time only-desktop left">'.$event_time.'</td>
                                       <td class="hall left">'.$hall_name.'</td>
                                       <td class="purchase right">'.$purchase.'</td>
@@ -320,13 +342,17 @@ function ajax_calender_full_width_filter(){
                                </table>
                             </div>';
                 $output .= '<div class="lobby-title">'.l($node->title, $path).'</div>';
-                $output .= '<div class="calendar-below-title-content"><span class="cal-hall">'.$hall_name.'</span><span class="cal-length">'.$length.'</span><span class="cal-sort-title">'.$sort_title.'</span>
-                </tr></tbody></table></div>';
-                $output .= '<div class="lobby-summary">'.strip_tags($summary_event).'</div>';
+				$output .= '<div class="lobby-summary">'.strip_tags($summary_event).'</div>';
+				$output .= ($summary_event)?'<div class="lobby-title">'.$lineup_name.'</div>':'';
+				$output .= '<div class="lobby-summary">'.strip_tags($lineup_summary).'</div>';
+                $output .= '<div class="calendar-below-title-content"><span class="cal-hall">'.$lineup_leading.'</span><span class="cal-length">'.$lineup_duration.'</span></div>';
             $output .= '</div>';
             $output .='<div class="clr"></div>';
         $output .="</div>";
       }
     $output.= "</div></div>";
+	
+	drupal_add_http_header('Cache-Control', 'public, max-age=3600');
     drupal_json_output(array('output' => $output));
+	drupal_exit();
 }
