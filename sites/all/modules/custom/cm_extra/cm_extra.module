@@ -266,7 +266,10 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
         continue;
       }
       if (isset($source_entity->original)) {
-        cm_extra_collection_sync($entity, $source_entity, $prop_name, $context['entity_type']);
+        $synced = cm_extra_collection_sync($entity, $source_entity, $prop_name, $context['entity_type']);
+        if (!$synced) {
+          continue;
+        }
       }
       unset($config);
       foreach ($source_entity->{$prop_name}['und'] as $delta => $config) {
@@ -315,29 +318,28 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
 
 function cm_extra_collection_sync($entity, $source_entity, $prop_name, $entity_type) {
   $map = array();
-  $candidates = array();
+  $delete_candidates = array();
   $original = $source_entity->original;
 
   if ($entity->{$prop_name}) {
     if (count($entity->{$prop_name}['und']) != count($original->{$prop_name}['und'])) {
-      return;
+      return FALSE;
     }
 
     foreach ($original->{$prop_name}['und'] as $delta => $config) {
       $source_id = $config['value'];
-      $map[$source_id] = $entity->{$prop_name}['und'][$delta];
-    }
-    
-    foreach ($entity->{$prop_name}['und'] as $config) {
-      $candidates[$config['value']] = 1;
+      $target_config = $entity->{$prop_name}['und'][$delta];
+      $map[$source_id] = $target_config;
+      $delete_candidates[$target_config['value']] = 1;
     }
   }
 
+  // reorder target or create new items
   foreach ($source_entity->{$prop_name}['und'] as $delta => $config) {
     $source_id = $config['value'];
     if (isset($map[$source_id])) {
       $target_config = $map[$source_id];
-      unset($candidates[$target_config['value']]);
+      unset($delete_candidates[$target_config['value']]);
       $entity->{$prop_name}['und'][$delta] = $target_config;
     }
     else {
@@ -356,6 +358,8 @@ function cm_extra_collection_sync($entity, $source_entity, $prop_name, $entity_t
   foreach (array_keys($candidates) as $id) {
     field_collection_item_delete($id);
   }
+
+  return TRUE;
 }
 
 function cm_extra_i18n_sync_options($entity_type, $bundle) {
