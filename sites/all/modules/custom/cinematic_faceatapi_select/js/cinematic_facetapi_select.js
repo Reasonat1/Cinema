@@ -5,11 +5,14 @@
 (function ($) {
   Drupal.behaviors.facetapiSelect = {
     attach: function(context) {
+		if ($('body').hasClass('page-search-results') {
       $(".facetapi-select-submit").hide();
 var defoultForm=getUrlVars();
 var uri=document.location.pathname;
 var mybutton='<form id="filter_button" action="'+uri+'"><button class="form-submit btn btn-default btn-primary" type="submit">Submit</button></form>';
 var url=[];
+
+if ($('#filter_button').length==0)
 $('.panels-flexible-row-node_page-3').append(mybutton);
 
 $.each(defoultForm, function(index, value) {
@@ -35,11 +38,12 @@ function getUrlVars()
     for(var i = 0; i < hashes.length; i++)
     {
         hash = hashes[i].split('=');
+		if (hash[0]!=window.location.href){
         vars.push(decodeURIComponent(hash[0]));
-        vars[decodeURIComponent(hash[0])] = decodeURIComponent(hash[1]);
+        vars[decodeURIComponent(hash[0])] = decodeURIComponent(hash[1]);}
     }
     return vars;
-}
+		}}
     }
   };
 })(jQuery);
