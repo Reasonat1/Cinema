@@ -329,8 +329,10 @@ function cm_extra_collection_sync($entity, $source_entity, $prop_name, $entity_t
     foreach ($original->{$prop_name}['und'] as $delta => $config) {
       $source_id = $config['value'];
       $target_config = $entity->{$prop_name}['und'][$delta];
-      $map[$source_id] = $target_config;
-      $delete_candidates[$target_config['value']] = 1;
+      if ($target_config['value'] != $source_id) { // don't allow refering to same collection instance 
+        $map[$source_id] = $target_config;
+        $delete_candidates[$target_config['value']] = 1;
+      }
     }
   }
 
