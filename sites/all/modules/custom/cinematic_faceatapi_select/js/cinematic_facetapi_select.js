@@ -5,7 +5,7 @@
 (function ($) {
   Drupal.behaviors.facetapiSelect = {
     attach: function(context) {
-		if ($('body').hasClass('page-search-results') {
+		if ($('body').hasClass('page-search-results')) {
       $(".facetapi-select-submit").hide();
 var defoultForm=getUrlVars();
 var uri=document.location.pathname;
