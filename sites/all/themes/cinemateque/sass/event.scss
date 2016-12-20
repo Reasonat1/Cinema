@@ -163,3 +163,33 @@
 .panels-flexible-region-node_page-bottom_content{
 	width: 100%;
 }
+.movie-group-list {
+	.flag-movie {
+		position:absolute;
+		margin:3em 2em;
+	}
+	.image-lobby {
+		padding-top:2em;
+	}
+	.lobby-title {
+		margin-top:-5em;
+		padding:2em;
+		a {color:#fff;}
+	}
+.movie-details {
+	padding:0.5em 0;
+	div {
+		display:inline-block;
+		color:#b3b3b3;
+		&:after {
+			content:'|';
+			padding:0 5px;
+		}
+		&:last-child:after {
+			content:'';
+			padding:0;
+		}
+	}
+	
+}
+}
