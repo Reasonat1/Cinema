@@ -11,6 +11,9 @@
 		width: 100%!important;
 		padding: 0!important;
 	}
+	.panels-flexible-row-node_page-4 .pane-event-ct-view-panel-pane-7{
+		background-color: $color_alabaster_approx;
+	}
 	.panels-flexible-row-node_page-3{
 		overflow: visible!important;
 	}
@@ -91,6 +94,7 @@
 	}
 	.pane-event-ct-view-panel-pane-5{
 		@include width;
+		margin-top: 40px;
 		.view-event-ct-view{
 			overflow: visible;
 			.table-responsive{
@@ -143,7 +147,7 @@
 		.views-field-field-cm-event-body {
 			line-height: 28px;
 			@include width();
-			padding: 35px 5%;
+			padding: 10px 5% 0;
 			p {
    				margin: 0 auto;
     			width: 54%;
