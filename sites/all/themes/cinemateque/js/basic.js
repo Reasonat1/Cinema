@@ -163,11 +163,17 @@
             $("body").removeClass("search-overlay");
         });
 
-        $(".calendar-agenda-items").css("width",$(".view-custom-calendar-floating-pane").width());
+        /*$(".calendar-agenda-items").css("width",$(".view-custom-calendar-floating-pane").width());*/
+        var halfscreen = ($(window).height())/2; 
+        $(".view-custom-calendar-floating-pane.view-display-id-block_1 .view-content").css("max-height",halfscreen);
 
         $(window).resize(function() {
-          $(".calendar-agenda-items").css("width",$(".view-custom-calendar-floating-pane").width());
+          /*$(".calendar-agenda-items").css("width",$(".view-custom-calendar-floating-pane").width());*/
+          var halfscreen = ($(window).height())/2 
+          $(".view-custom-calendar-floating-pane.view-display-id-block_1 .view-content").css("max-height",halfscreen);
         });
+
+
 
 
 /*******  calendar fixed  area*********/
@@ -264,7 +270,7 @@
         }
 
         $(".calender-filter p").click(function(){
-            $("html, body").animate({ scrollTop: $(".calenders").offset().top -60 }, 500);
+            //$("html, body").animate({ scrollTop: $(".calenders").offset().top -60 }, 500);
             $(".filter-wrapper").removeClass("fixedPos");
         });
 
@@ -394,6 +400,18 @@
     else{
         $('.group-alttab').hide();
     }
+
+    /********  english name of the movie  *******/
+
+    var proffesionwidth = $(".credits-view .profession").width()+8;
+    $(".i18n-he .view-test-view-for-movie-credit .translated-movie-title a").css("margin-right", proffesionwidth);
+    $(".i18n-en .view-test-view-for-movie-credit .translated-movie-title a").css("margin-left", proffesionwidth);
+
+    $(window).resize(function() {
+      var proffesionwidth = $(".credits-view .profession").width()+8;
+      $(".i18n-he .view-test-view-for-movie-credit .translated-movie-title a").css("margin-right", proffesionwidth);
+      $(".i18n-en .view-test-view-for-movie-credit .translated-movie-title a").css("margin-left", proffesionwidth);
+    });
 
     /********  Show Title to image in movie group slideshow  *******/
 
