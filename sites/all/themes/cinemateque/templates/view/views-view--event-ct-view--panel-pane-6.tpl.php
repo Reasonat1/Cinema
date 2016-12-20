@@ -9,10 +9,7 @@ if ($node->type=='cm_movie_group') {
 foreach ($node->field_movie_referenced['und'] as $movie_array) {
 	$movie_node=node_load($movie_array['target_id']);
 	$alias = drupal_get_path_alias('node/'.$movie_node->nid);
-	dpm($movie_node);
-	
 	$flag = '<span class="flag-event">'.flag_create_link('favorite_', $movie_node->nid).'</span>';
-	
 	if(!empty($movie_node->field_cm_movie_pictures)){
          
 		  $picture_path_movie=file_load($movie_node->field_cm_movie_pictures['und'][0]['fid']);
