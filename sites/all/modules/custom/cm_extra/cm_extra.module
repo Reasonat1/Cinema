@@ -435,3 +435,63 @@ function cm_extra_event_title($node_form, &$form_state) {
   }
   return $node_form;
 }
+
+function cm_extra_menu() {
+  $items = array();
+  $items['yakoub_sync'] = array(
+    'title' => 'yakoub sync',
+    'page callback' => 'cm_extra_yakoub_save',
+    'access arguments' => array('access content'),
+  );
+  return $items;
+}
+
+define('CM_CHANGED', '1482306944');
+
+function cm_extra_yakoub_delete() {
+  $query = db_select('node', 'n');
+  $query->condition('n.type', 'cm_movie');
+  $query->condition('n.language', 'he');
+  $query->condition('n.changed', CM_CHANGED, '<=');
+  $query->range(0, 100);
+  $query->addField('n', 'nid');
+  $nids = $query->execute()->fetchCol();
+  dpm($nids);
+  if ($nids) {
+    $nodes = node_load_multiple($nids);
+    foreach ($nodes as $node) {
+      $node->field_cm_movie_credicts = NULL;
+      // doesn't work
+      node_save($node);
+    }
+  }
+  return 'abcd';
+}
+
+function cm_extra_yakoub_save() {
+return;
+  $query = db_select('node', 'n');
+  $query->condition('n.type', 'cm_movie');
+  $query->condition('n.language', 'en');
+  $query->condition('n.changed', CM_CHANGED, '<=');
+  $query->range(0, 100);
+  $query->addField('n', 'nid');
+  $nids = $query->execute()->fetchCol();
+  if ($nids) {
+    dpm('done:' . count($nids));
+    $nodes = node_load_multiple($nids);
+    foreach ($nodes as $node) {
+      try {
+        i18n_sync(TRUE);
+        node_save($node);
+      }
+      catch(Exception $e) {
+        watchdog('yakoub', 'not saved: ' . $node->nid);
+      }
+    }
+  }
+  else {
+    dpm('finished');
+  }
+  return 'abcd';
+}
