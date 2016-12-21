@@ -286,8 +286,9 @@
     }
     if($node->type == 'cm_event'){
        $output_event = '';
+	   $now=time();
     $result_event = db_query("SELECT DISTINCT node.nid AS nid, field_data_field_cm_event_time.field_cm_event_time_value AS field_data_field_cm_event_time_field_cm_event_time_value FROM {node} node LEFT JOIN {field_data_field_cm_event_lineup} field_data_field_cm_event_lineup ON node.nid = field_data_field_cm_event_lineup.entity_id AND (field_data_field_cm_event_lineup.entity_type = 'node' AND field_data_field_cm_event_lineup.deleted = '0') LEFT JOIN {node} node_field_data_field_cm_event_lineup ON field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = node_field_data_field_cm_event_lineup.nid LEFT JOIN {field_data_field_cm_event_time} field_data_field_cm_event_time ON node.nid = field_data_field_cm_event_time.entity_id AND (field_data_field_cm_event_time.entity_type = 'node' AND field_data_field_cm_event_time.deleted = '0')
-    WHERE (( (field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = '$event_ext_nodes->nid' ) )AND(( (node.status = '1') AND (node_field_data_field_cm_event_lineup.type IN  ('$event_ext_nodes->type')) AND (node.language IN  ('$language_name')) )))
+    WHERE (( (field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = '$event_ext_nodes->nid' ) )AND(( (node.status = '1') AND (node_field_data_field_cm_event_lineup.type IN  ('$event_ext_nodes->type')) AND (node.language IN  ('$language_name')) )) AND field_data_field_cm_event_time.field_cm_event_time_value > '$now')
     ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAll();
       $output_event .= '<div class="table-responsive event-table-data">';
        $output_event .= '<table class="table">';
