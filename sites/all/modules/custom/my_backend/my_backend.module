@@ -103,12 +103,14 @@ function my_backend_search_api_query_alter(SearchApiQueryInterface $query) {
   $query->setOption('search id', $mySearchid.':custom_search');
   $results=$query->execute();
   $query->setOption('search id', $mySearchid);
-  
+  $movieArray=$eventArray=array();
   foreach ($results['results'] as $n_id=>$value) {
 	  
 	  $myNode=node_load($n_id);
 	 if ($myNode->type=='cm_movie') $movieArray[$n_id]=$myNode->title;
-	 if ($myNode->type=='cm_event') $eventArray[$n_id]=$myNode->title;  
+	 if ($myNode->type=='cm_event') {$eventArray[$n_id]=$myNode->title;
+		if($myNode->field_cm_event_time['und'][0]['value'] && $myNode->field_cm_event_time['und'][0]['value']<time()){$query->condition('nid', $n_id, '<>');}
+	 } 
 	}
   foreach ($eventArray as $del_id=>$del_title) {
 	  if (in_array($del_title, $movieArray)) $query->condition('nid', $del_id, '<>');
