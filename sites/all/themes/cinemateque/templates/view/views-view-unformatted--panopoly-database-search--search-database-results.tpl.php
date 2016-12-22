@@ -21,6 +21,19 @@
 ?>
 <?php
   $results=$view->result;
+  $now=time();
+  $output_scriens .= '<thead>';
+           $output_scriens .= '<tr>';
+           $output_scriens .= '<th class="views-field">'. t('Date') .'</th>';
+           $output_scriens .= '<th class="views-field">'. t('Time') .'</th>';
+           $output_scriens .= '<th class="views-field">'. t('Hall') .'</th>';
+           $output_scriens .= '<th class="views-field">'. t('Event') .'</th>';
+           $output_scriens .= '<th class="views-field">'. t('Code') .'</th>';
+           $output_scriens .= '<th class="views-field"></th>';
+           $output_scriens .= '<th class="views-field"></th>';
+           $output_scriens .= '<th class="views-field">'. t('TICKETS') .'</th>';
+           $output_scriens .= '</tr>';
+           $output_scriens .= '</thead>';
   foreach ($results as $val) {
     global $language ;
     $language_name = isset($language->language) ? $language->language : '';
@@ -286,15 +299,19 @@
     }
     if($node->type == 'cm_event'){
        $output_event = '';
-	   $now=time();
+	   
     $result_event = db_query("SELECT DISTINCT node.nid AS nid, field_data_field_cm_event_time.field_cm_event_time_value AS field_data_field_cm_event_time_field_cm_event_time_value FROM {node} node LEFT JOIN {field_data_field_cm_event_lineup} field_data_field_cm_event_lineup ON node.nid = field_data_field_cm_event_lineup.entity_id AND (field_data_field_cm_event_lineup.entity_type = 'node' AND field_data_field_cm_event_lineup.deleted = '0') LEFT JOIN {node} node_field_data_field_cm_event_lineup ON field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = node_field_data_field_cm_event_lineup.nid LEFT JOIN {field_data_field_cm_event_time} field_data_field_cm_event_time ON node.nid = field_data_field_cm_event_time.entity_id AND (field_data_field_cm_event_time.entity_type = 'node' AND field_data_field_cm_event_time.deleted = '0')
     WHERE (( (field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = '$event_ext_nodes->nid' ) )AND(( (node.status = '1') AND (node_field_data_field_cm_event_lineup.type IN  ('$event_ext_nodes->type')) AND (node.language IN  ('$language_name')) )) AND field_data_field_cm_event_time.field_cm_event_time_value > '$now')
     ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAll();
+	
+	$row_count_event = count($result_event);
       $output_event .= '<div class="table-responsive event-table-data">';
        $output_event .= '<table class="table">';
-         $output_event .= '<tbody>';
+         if ($row_count_event >0){
+		   $output_event .= $output_scriens;
+		 }
+		 $output_event .= '<tbody>';
          $a= 0;
-         $row_count_event = count($result_event);
          foreach($result_event as $val){
            $a++;
            $node_event = node_load($val->nid);
@@ -354,11 +371,14 @@
       $output_event .= '</div>';
     }
     if($node->type == 'cm_movie_group'){
-    $result = db_query("SELECT DISTINCT node.nid AS nid, field_data_field_cm_event_time.field_cm_event_time_value AS field_data_field_cm_event_time_field_cm_event_time_value FROM {node} node LEFT JOIN {field_data_field_cm_event_lineup} field_data_field_cm_event_lineup ON node.nid = field_data_field_cm_event_lineup.entity_id AND (field_data_field_cm_event_lineup.entity_type = 'node' AND field_data_field_cm_event_lineup.deleted = '0') LEFT JOIN {node} node_field_data_field_cm_event_lineup ON field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = node_field_data_field_cm_event_lineup.nid LEFT JOIN {field_data_field_cm_event_time} field_data_field_cm_event_time ON node.nid = field_data_field_cm_event_time.entity_id AND (field_data_field_cm_event_time.entity_type = 'node' AND field_data_field_cm_event_time.deleted = '0') WHERE (( (field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = '$node->nid') )AND(( (node.status = '1') AND (node_field_data_field_cm_event_lineup.type IN  ('cm_movie_group'))))) ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAll();
+    $result = db_query("SELECT DISTINCT node.nid AS nid, field_data_field_cm_event_time.field_cm_event_time_value AS field_data_field_cm_event_time_field_cm_event_time_value FROM {node} node LEFT JOIN {field_data_field_cm_event_lineup} field_data_field_cm_event_lineup ON node.nid = field_data_field_cm_event_lineup.entity_id AND (field_data_field_cm_event_lineup.entity_type = 'node' AND field_data_field_cm_event_lineup.deleted = '0') LEFT JOIN {node} node_field_data_field_cm_event_lineup ON field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = node_field_data_field_cm_event_lineup.nid LEFT JOIN {field_data_field_cm_event_time} field_data_field_cm_event_time ON node.nid = field_data_field_cm_event_time.entity_id AND (field_data_field_cm_event_time.entity_type = 'node' AND field_data_field_cm_event_time.deleted = '0') WHERE (( (field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = '$node->nid') )AND(( (node.status = '1') AND (node_field_data_field_cm_event_lineup.type IN  ('cm_movie_group')))) AND field_data_field_cm_event_time.field_cm_event_time_value > '$now') ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAll();
     $row_count_movie_group_event = count($result);
     $output ='';
     $output .='<div class="table-responsive">';
       $output .= '<table class="table">';
+	  if ($row_count_movie_group_event >0){
+		   $output .= $output_scriens;
+		 }
         $output .= ' <tbody>';
         foreach($result as $val){
           $movie_group_event_nid = $val->nid;
@@ -420,12 +440,16 @@
     if($node->type == 'cm_movie'){
     $results = db_query("SELECT DISTINCT node.nid AS nid, field_data_field_cm_event_time.field_cm_event_time_value AS field_data_field_cm_event_time_field_cm_event_time_value
     FROM {node} node LEFT JOIN {field_data_field_cm_event_lineup} field_data_field_cm_event_lineup ON node.nid = field_data_field_cm_event_lineup.entity_id AND (field_data_field_cm_event_lineup.entity_type = 'node' AND field_data_field_cm_event_lineup.deleted = '0') LEFT JOIN {node} node_field_data_field_cm_event_lineup ON field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = node_field_data_field_cm_event_lineup.nid LEFT JOIN {field_data_field_cm_event_time} field_data_field_cm_event_time ON node.nid = field_data_field_cm_event_time.entity_id AND (field_data_field_cm_event_time.entity_type = 'node' AND field_data_field_cm_event_time.deleted = '0')
-    WHERE (( (field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = '$node->nid' ) )AND(( (node.status = '1') AND (node_field_data_field_cm_event_lineup.type IN  ('cm_movie')) AND (node.language IN  ('$language_name')))))
+    WHERE (( (field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = '$node->nid' ) )AND(( (node.status = '1') AND (node_field_data_field_cm_event_lineup.type IN  ('cm_movie')) AND (node.language IN  ('$language_name')))) AND field_data_field_cm_event_time.field_cm_event_time_value > '$now')
     ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAll();
     $row_count = count($results);
     $output_movie_event ='';
     $output_movie_event .='<div class="table-responsive">';
       $output_movie_event .= '<table class="table">';
+	  
+	  if ($row_count >0){
+		   $output_movie_event .= $output_scriens;
+		 }
         $output_movie_event .= ' <tbody>';
         foreach($results as $val){
           $movie_event_nid = $val->nid;
@@ -565,18 +589,21 @@
           print '</div>';
         print '</div>';
         print'<div class="lobby-term-right">';
+			print $event_info;
+			print $event_info_movie_group;
+			print $event_info_movie;
             print '<div class="lobby-title">';
               print t($title);
             print '</div>';
             print '<div class="lobby-length">';
               print $duration_info;
             print '</div>';
-            print $event_info;
-            print $event_info_movie_group;
+            
+            
             print '<div class="lobby-summary">';
               print t(strip_tags($sort_summary));
             print '</div>';
-            print $event_info_movie;
+            
             print $new_enhancement;
         print '</div>';
         print '<div class="clr"></div>';
