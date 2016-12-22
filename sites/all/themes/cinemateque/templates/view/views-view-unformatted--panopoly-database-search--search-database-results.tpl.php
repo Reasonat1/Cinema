@@ -22,18 +22,18 @@
 <?php
   $results=$view->result;
   $now=time();
-  $output_scriens .= '<thead>';
-           $output_scriens .= '<tr>';
-           $output_scriens .= '<th class="views-field">'. t('Date') .'</th>';
-           $output_scriens .= '<th class="views-field">'. t('Time') .'</th>';
-           $output_scriens .= '<th class="views-field">'. t('Hall') .'</th>';
-           $output_scriens .= '<th class="views-field">'. t('Event') .'</th>';
-           $output_scriens .= '<th class="views-field">'. t('Code') .'</th>';
-           $output_scriens .= '<th class="views-field"></th>';
-           $output_scriens .= '<th class="views-field"></th>';
-           $output_scriens .= '<th class="views-field">'. t('TICKETS') .'</th>';
-           $output_scriens .= '</tr>';
-           $output_scriens .= '</thead>';
+  $output_scriens = (false)?'<thead>
+           <tr>
+           <th class="views-field">'. t('Date') .'</th>
+           <th class="views-field">'. t('Time') .'</th>
+           <th class="views-field">'. t('Hall') .'</th>
+           <th class="views-field">'. t('Event') .'</th>
+           <th class="views-field">'. t('Code') .'</th>
+           <th class="views-field"></th>
+           <th class="views-field"></th>
+           <th class="views-field">'. t('TICKETS') .'</th>
+           </tr>
+           </thead>':'';
   foreach ($results as $val) {
     global $language ;
     $language_name = isset($language->language) ? $language->language : '';
@@ -328,7 +328,8 @@
            $output_event .= '<tr class="row-custom-lobby">';
             $output_event .= '<td class="date only-desktop">'.t($event_date).'</td>';
             $output_event .= '<td class="time"><div class="only-mobile">'.$event_date_mobile.'</div>'.$event_time.'</td>';
-            if(!empty($node_event->field_cm_event_hall['und'])){
+			
+			if(!empty($node_event->field_cm_event_hall['und'])){
                 $hall_id = taxonomy_term_load($node_event->field_cm_event_hall['und'][0]['target_id']);
                 $hall_name = $hall_id->name;
                 $output_event .= '<td class="hall only-desktop">'.t($hall_name).'</td>';
@@ -342,6 +343,17 @@
               $output_event .= l($event_title, $path);
             }
             $output_event .= '</td>';
+			
+			if(!empty($node_event->field_cm_event_comment['und'])){
+                $table_remark = $node_event->field_cm_event_comment['und'][0]['value'];
+                
+                $output_event .= '<td class="table_remark">'.t($table_remark).'</td>';
+            }
+            else{
+                $table_remark = "";
+                $output_event .= '<td class="table_remark"></td>';
+            }
+			
             if(!empty($node_event->field_cm_event_internal_id['und'])){
               $event_code = $node_event->field_cm_event_internal_id['und'][0]['value'];
               $output_event .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div>'.t($event_code).'</td>';
@@ -349,6 +361,9 @@
             else{
               $output_event .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div></td>';
             }
+			
+			
+			
             $output_event .='<td class="flag only-desktop">'. $flag . '</td>';
             $output_event .='<td class="add-event only-desktop">'. $addevent . '</td>';
             if(!empty($node_event->field_toptix_purchase['und'])){
@@ -409,6 +424,17 @@
              $output .= l($event_title, $path);
            }
            $output .= '</td>';
+		   
+		   if(!empty($movie_group_event_info->field_cm_event_comment['und'])){
+                $table_remark = $movie_group_event_info->field_cm_event_comment['und'][0]['value'];
+                
+                $output .= '<td class="table_remark">'.t($table_remark).'</td>';
+            }
+            else{
+                $table_remark = "";
+                $output .= '<td class="table_remark"></td>';
+            }
+		   
            if(!empty($movie_group_event_info->field_cm_event_internal_id['und'])){
              $event_code = $movie_group_event_info->field_cm_event_internal_id['und'][0]['value'];
              $output .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div>'.t($event_code).'</td>';
@@ -480,6 +506,15 @@
              $output_movie_event .= l($event_title, $path);
            }
            $output_movie_event .= '</td>';
+		   if(!empty($movie_event_info->field_cm_event_comment['und'])){
+                $table_remark = $movie_event_info->field_cm_event_comment['und'][0]['value'];
+                
+                $output_movie_event .= '<td class="table_remark">'.t($table_remark).'</td>';
+            }
+            else{
+                $table_remark = "";
+                $output_movie_event .= '<td class="table_remark"></td>';
+            }
            if(!empty($movie_event_info->field_cm_event_internal_id['und'])){
              $event_code = $movie_event_info->field_cm_event_internal_id['und'][0]['value'];
              $output_movie_event .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div>'.t($event_code).'</td>';
