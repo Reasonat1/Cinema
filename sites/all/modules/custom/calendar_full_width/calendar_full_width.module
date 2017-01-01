@@ -151,9 +151,11 @@ function calendar_full_width_block_content(){
             $lineup_name = $lineup_id->title;
             $lineup_summary = $lineup_id->field_cm_movie_short_summary['und'][0]['value'];
             $lineup_duration = $lineup_id->field_cm_movie_duration['und'][0]['interval'].' '.$lineup_id->field_cm_movie_duration['und'][0]['period'];
-            $lineup_leading = $lineup_id->field_cm_movie_meta_credit['und'][0]['value'];
+            $lineup_leading = (!empty($lineup_id->field_cm_movie_meta_credit['und']))?$lineup_id->field_cm_movie_meta_credit['und'][0]['value']:'';
+			$lineup_lang = taxonomy_term_load($lineup_id->field_cm_movie_language['und'][0]['target_id'])->name;
+			$lineup_subtitle = (!empty($lineup_id->field_cm_movie_subtitle['und']))?t('@languages subtitles', array('@languages' => taxonomy_term_load($lineup_id->field_cm_movie_subtitle['und'][0]['target_id'])->name)):'';
         }else{
-            $lineup_name = $lineup_summary = $lineup_duration = $lineup_leading ='';
+            $lineup_name = $lineup_summary = $lineup_duration = $lineup_leading = $lineup_lang = $lineup_subtitle = '';
         }
 		
         if(!empty($node->field_toptix_purchase['und'])){
@@ -210,8 +212,9 @@ function calendar_full_width_block_content(){
                 $output .= '<div class="lobby-title">'.l($node->title, $path).'</div>';
 				$output .= '<div class="lobby-summary">'.strip_tags($summary_event).'</div>';
 				$output .= ($summary_event)?'<div class="lobby-title">'.$lineup_name.'</div>':'';
+				$output .= '<div class="calendar-below-title-content"><span class="cal-hall">'.$lineup_leading.'</span><span class="cal-length">'.$lineup_duration.'</span><span class="cal-lang">'.$lineup_lang.', '.$lineup_subtitle.'</span></div>';
 				$output .= '<div class="lobby-summary">'.strip_tags($lineup_summary).'</div>';
-                $output .= '<div class="calendar-below-title-content"><span class="cal-hall">'.$lineup_leading.'</span><span class="cal-length">'.$lineup_duration.'</span></div>';
+                
             $output .= '</div>';
             $output .='<div class="clr"></div>';
         $output .="</div>";
@@ -286,9 +289,11 @@ function ajax_calender_full_width_filter(){
             $lineup_name = $lineup_id->title;
             $lineup_summary = $lineup_id->field_cm_movie_short_summary['und'][0]['value'];
             $lineup_duration = $lineup_id->field_cm_movie_duration['und'][0]['interval'].' '.$lineup_id->field_cm_movie_duration['und'][0]['period'];
-            $lineup_leading = $lineup_id->field_cm_movie_meta_credit['und'][0]['value'];
+            $lineup_leading = (!empty($lineup_id->field_cm_movie_meta_credit['und']))?$lineup_id->field_cm_movie_meta_credit['und'][0]['value']:'';
+			$lineup_lang = taxonomy_term_load($lineup_id->field_cm_movie_language['und'][0]['target_id'])->name;
+			$lineup_subtitle = (!empty($lineup_id->field_cm_movie_subtitle['und']))?t('@languages subtitles', array('@languages' => taxonomy_term_load($lineup_id->field_cm_movie_subtitle['und'][0]['target_id'])->name)):'';
         }else{
-            $lineup_name = $lineup_summary = $lineup_duration = $lineup_leading ='';
+            $lineup_name = $lineup_summary = $lineup_duration = $lineup_leading = $lineup_lang = $lineup_subtitle = '';
         }
         if(!empty($node->field_toptix_purchase['und'])){
             $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
@@ -344,8 +349,8 @@ function ajax_calender_full_width_filter(){
                 $output .= '<div class="lobby-title">'.l($node->title, $path).'</div>';
 				$output .= '<div class="lobby-summary">'.strip_tags($summary_event).'</div>';
 				$output .= ($summary_event)?'<div class="lobby-title">'.$lineup_name.'</div>':'';
+				$output .= '<div class="calendar-below-title-content"><span class="cal-hall">'.$lineup_leading.'</span><span class="cal-length">'.$lineup_duration.'</span><span class="cal-lang">'.$lineup_lang.', '.$lineup_subtitle.'</span></div>';
 				$output .= '<div class="lobby-summary">'.strip_tags($lineup_summary).'</div>';
-                $output .= '<div class="calendar-below-title-content"><span class="cal-hall">'.$lineup_leading.'</span><span class="cal-length">'.$lineup_duration.'</span></div>';
             $output .= '</div>';
             $output .='<div class="clr"></div>';
         $output .="</div>";
