@@ -241,6 +241,8 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
   $nids = array();
 
   foreach ($info_instances as $prop_name => $instance) {
+    $field_info = field_info_field($instance['field_name']);
+
     if ($context['entity_type'] == 'field_collection_item' and $instance['widget']['module'] == 'text') {
       $widget_type = $instance['widget']['type'];
       if ($widget_type == 'text_textfield' or $widget_type == 'text_textarea') {
@@ -248,20 +250,24 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
         $entity->{$prop_name} = $original_collection->{$prop_name};
       }
     }
-    if ($instance['widget']['type'] == 'entityreference_autocomplete') {
-      $field_info = field_info_field($instance['field_name']);
-      if ($field_info['settings']['target_type'] != 'node') {
-        continue;
+
+    if ($field_info['type'] == 'entityreference') {
+      //$instance['widget']['type'] == 'entityreference_autocomplete' 'options_buttons' 'options_select'
+      if ($field_info['settings']['target_type'] == 'taxonomy_term') {
+        //$term = taxonomy_term_load(; todo
+        // i18n_taxonomy_term_get_translation
       }
-      if (empty($source_entity->{$prop_name})) {
-        $entity->{$prop_name} = NULL;
-        continue;
+      if ($field_info['settings']['target_type'] == 'node') {
+        if (empty($source_entity->{$prop_name})) {
+          $entity->{$prop_name} = NULL;
+          continue;
+        }
+        unset($config);
+        foreach ($source_entity->{$prop_name}['und'] as $config) {
+          $nids[$config['target_id']] = 1;
+        }
+        $references[] = $prop_name;
       }
-      unset($config);
-      foreach ($source_entity->{$prop_name}['und'] as $config) {
-        $nids[$config['target_id']] = 1;
-      }
-      $references[] = $prop_name;
     }
 
     if ($instance['widget']['type'] == 'field_collection_embed') {
@@ -479,7 +485,7 @@ function cm_extra_yakoub_delete() {
 }
 
 function cm_extra_yakoub_save() {
-return;
+  $prop_name = 'field_cm_movie_credits';
   $query = db_select('node', 'n');
   $query->condition('n.type', 'cm_movie');
   $query->condition('n.language', 'en');
@@ -496,7 +502,10 @@ return;
         node_save($node);
       }
       catch(Exception $e) {
-        watchdog('yakoub', 'not saved: ' . $node->nid);
+        $count = !empty($node->{$prop_name}) ? count($node->{$prop_name}['und']) : 0;
+        $message = 'not saved: ' . $node->nid . ', collection:' . $count;
+        dpm($message);
+        watchdog('yakoub', $message);
       }
     }
   }
