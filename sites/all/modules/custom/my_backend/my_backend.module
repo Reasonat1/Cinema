@@ -117,3 +117,21 @@ function my_backend_search_api_query_alter(SearchApiQueryInterface $query) {
   }
 }
 
+/**
+ * Implements hook_preprocess_entity().
+ */
+function my_backend_preprocess_entity(&$variables) {
+if (drupal_is_front_page())
+  if ($variables['entity_type']=='paragraphs_item') {
+	 try { 
+	  $x_time = time() >= strtotime ($variables['field_date_expiration'][0]['value1'])&& time() <= strtotime ($variables['field_date_expiration'][0]['value2']);
+	 }
+	catch (Exception $e) {
+		$x_time=false;
+	}
+	  
+	 if (!$x_time) 
+	  $variables['content']=array();
+	  
+  }
+}
