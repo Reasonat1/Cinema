@@ -252,16 +252,22 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
     }
 
     if ($field_info['type'] == 'entityreference') {
+      if (empty($source_entity->{$prop_name})) {
+        $entity->{$prop_name} = NULL;
+        continue;
+      }
       //$instance['widget']['type'] == 'entityreference_autocomplete' 'options_buttons' 'options_select'
       if ($field_info['settings']['target_type'] == 'taxonomy_term') {
-        //$term = taxonomy_term_load(; todo
-        // i18n_taxonomy_term_get_translation
+        $entity->{$prop_name} = array('und' => array());
+        unset($config);
+        foreach ($source_entity->{$prop_name}['und'] as $delta => $config) {
+          $term = taxonomy_term_load($config['target_id']);
+          $t_term = i18n_taxonomy_term_get_translation($term, $langcode);
+          $target_id = $t_term ? $t_term->tid : $term->tid;
+          $entity->{$prop_name}['und'][$delta] = array('target_id' => $target_id);
+        }
       }
       if ($field_info['settings']['target_type'] == 'node') {
-        if (empty($source_entity->{$prop_name})) {
-          $entity->{$prop_name} = NULL;
-          continue;
-        }
         unset($config);
         foreach ($source_entity->{$prop_name}['und'] as $config) {
           $nids[$config['target_id']] = 1;
