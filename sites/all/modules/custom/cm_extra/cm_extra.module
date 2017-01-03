@@ -469,6 +469,7 @@ function cm_extra_menu() {
 }
 
 define('CM_CHANGED', '1482306944');
+define('CM_PROP_NAME', 'field_cm_movie_credits');
 
 function cm_extra_yakoub_delete() {
   $query = db_select('node', 'n');
@@ -491,7 +492,6 @@ function cm_extra_yakoub_delete() {
 }
 
 function cm_extra_yakoub_save() {
-  $prop_name = 'field_cm_movie_credits';
   $query = db_select('node', 'n');
   $query->condition('n.type', 'cm_movie');
   $query->condition('n.language', 'en');
@@ -508,7 +508,7 @@ function cm_extra_yakoub_save() {
         node_save($node);
       }
       catch(Exception $e) {
-        $count = !empty($node->{$prop_name}) ? count($node->{$prop_name}['und']) : 0;
+        $count = !empty($node->{$prop_name}) ? count($node->{CM_PROP_NAME}['und']) : 0;
         $message = 'not saved: ' . $node->nid . ', collection:' . $count;
         dpm($message);
         watchdog('yakoub', $message);
