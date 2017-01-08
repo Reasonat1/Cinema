@@ -97,7 +97,7 @@ function toptix_callback_create(result) {
   var form = toptix_form_data;
   var Customer = result.Result;
   toptix_alter_customer(Customer, form);
-  Password: Math.random().toString(36).slice(-8), 
+  Customer.Password = Math.random().toString(36).slice(-8);
   $esro.createCustomer(Customer, 'toptix_callback_save');
 };
 
