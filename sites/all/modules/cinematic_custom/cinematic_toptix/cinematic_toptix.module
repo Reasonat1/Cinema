@@ -168,7 +168,7 @@ function cinematic_toptix_field_formatter_view(
   $field_toptix = field_get_items('user', $account, 'field_toptix');
   $field_toptix = $field_toptix[0]['value'];
   global $language;
-  if($language->language == 'en') { $langadd = '%26culture=en-US'; }else { $langadd = ''; }
+  $langadd = ($language->language == 'en') ? '%26culture=en-US' : '';
   
   foreach ($items as $delta => $item) {
     $event_id = $item['value'];
