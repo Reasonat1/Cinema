@@ -185,25 +185,68 @@ table td, table th {
 
 /*******  user profile  ********/
 /* line 171, ../sass/general-rtl.scss */
+.page-user-edit .group-name-group {
+  float: left;
+}
+/* line 174, ../sass/general-rtl.scss */
+.page-user-edit .group-user-profile {
+  float: right;
+}
+/* line 177, ../sass/general-rtl.scss */
+.page-user-edit .group-user-profile .image-widget-data input.form-file {
+  float: right;
+  padding-right: 0;
+}
+/* line 181, ../sass/general-rtl.scss */
+.page-user-edit .group-user-profile .image-widget-data input.form-submit {
+  float: right;
+  clear: right;
+}
+/* line 185, ../sass/general-rtl.scss */
+.page-user-edit .group-user-profile .image-widget-data .manualcrop-style-button-holder {
+  float: right;
+}
+/* line 188, ../sass/general-rtl.scss */
+.page-user-edit .group-user-profile .image-widget-data input[value="Remove"] {
+  float: left;
+}
+/* line 194, ../sass/general-rtl.scss */
+.page-user-edit input.form-submit {
+  float: left;
+}
+
+/* line 201, ../sass/general-rtl.scss */
 #views-exposed-form-user-flagged-content-panel-pane-1 .views-widget-filter-gid {
   right: 0;
   left: auto;
 }
-/* line 174, ../sass/general-rtl.scss */
+/* line 204, ../sass/general-rtl.scss */
 #views-exposed-form-user-flagged-content-panel-pane-1 .views-widget-filter-gid a {
   margin-right: 0px;
   margin-left: 5px;
 }
 
-/* line 184, ../sass/general-rtl.scss */
+/* line 212, ../sass/general-rtl.scss */
+.view-user-flagged-content.view-display-id-panel_pane_1 .view-header {
+  float: right;
+}
+/* line 214, ../sass/general-rtl.scss */
+.view-user-flagged-content.view-display-id-panel_pane_1 .view-header .title {
+  float: right;
+  margin-right: 0;
+  margin-left: 10px;
+}
+/* line 222, ../sass/general-rtl.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper form {
   float: right;
 }
-/* line 187, ../sass/general-rtl.scss */
-.view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper .edit {
+/* line 225, ../sass/general-rtl.scss */
+.view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper .edit, .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper .logout {
   float: left;
+  padding-right: 10px;
+  padding-left: 0;
 }
-/* line 192, ../sass/general-rtl.scss */
+/* line 232, ../sass/general-rtl.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .views-widget-filter-type .form-item-edit-type-1 {
   border-left: 1px solid #000;
   margin-left: 40px;
@@ -212,34 +255,26 @@ table td, table th {
   margin-right: 0;
   padding-right: 0;
 }
-/* line 203, ../sass/general-rtl.scss */
+/* line 243, ../sass/general-rtl.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .text-center .pagination {
   float: left;
 }
 
-/* line 209, ../sass/general-rtl.scss */
+/* line 249, ../sass/general-rtl.scss */
 .pane-user-flagged-content-panel-pane-1 .view-content {
   padding-bottom: 20px;
 }
-/* line 213, ../sass/general-rtl.scss */
+/* line 253, ../sass/general-rtl.scss */
 .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-left {
   float: right;
 }
-/* line 216, ../sass/general-rtl.scss */
+/* line 256, ../sass/general-rtl.scss */
 .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-right {
   float: left;
 }
 
 /*********  person page  **********/
-/* line 228, ../sass/general-rtl.scss */
-.node-type-cm-person .panels-flexible-row-node_page-4 .pane-person-ct-view-panel-pane-1 .pane-content {
-  width: 1355px !important;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 5%;
-  box-sizing: border-box;
-}
-/* line 235, ../sass/general-rtl.scss */
+/* line 268, ../sass/general-rtl.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col {
   float: right;
   padding-right: 44px;
@@ -248,24 +283,12 @@ table td, table th {
   margin-left: 3.5%;
   background-position: right 4px !important;
 }
-/* line 242, ../sass/general-rtl.scss */
+/* line 275, ../sass/general-rtl.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col.col-3 {
   margin-left: 0;
 }
-/* line 250, ../sass/general-rtl.scss */
-.node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .views-row-odd {
-  float: right;
-}
-/* line 253, ../sass/general-rtl.scss */
-.node-type-cm-person .panels-flexible-row-node_page-6 .view-person-ct-view.view-display-id-panel_pane_2 .views-row-even {
-  float: left;
-}
-/* line 258, ../sass/general-rtl.scss */
-.node-type-cm-person .panels-flexible-region-node_page-content_left {
-  float: left !important;
-}
 
-/* line 263, ../sass/general-rtl.scss */
+/* line 283, ../sass/general-rtl.scss */
 .view-person-ct-view.view-display-id-panel_pane_2 .node-title-teaser-content-type:hover {
   background: url("../images/more-white-left.png") no-repeat scroll left 10px center;
 }
@@ -279,28 +302,28 @@ table td, table th {
 }
 
 /****  share blcok  *****/
-/* line 271, ../sass/general-rtl.scss */
+/* line 291, ../sass/general-rtl.scss */
 .share-this-pane .facebook a {
   background-position: right 3px center !important;
 }
-/* line 274, ../sass/general-rtl.scss */
+/* line 294, ../sass/general-rtl.scss */
 .share-this-pane .whatsapp a {
   background-position: right center !important;
 }
-/* line 277, ../sass/general-rtl.scss */
+/* line 297, ../sass/general-rtl.scss */
 .share-this-pane .flag-wrapper {
   float: right;
 }
-/* line 279, ../sass/general-rtl.scss */
+/* line 299, ../sass/general-rtl.scss */
 .share-this-pane .flag-wrapper a.flag-action, .share-this-pane .flag-wrapper a.unflag-action {
   background-position: right center !important;
 }
-/* line 283, ../sass/general-rtl.scss */
+/* line 303, ../sass/general-rtl.scss */
 .share-this-pane .flag-custom .title {
   float: left;
 }
 
-/* line 289, ../sass/general-rtl.scss */
+/* line 309, ../sass/general-rtl.scss */
 .share-this-pane-mobile .link {
   float: right;
   padding-left: 20px;
@@ -308,115 +331,179 @@ table td, table th {
 }
 
 /******  tags  *******/
-/* line 300, ../sass/general-rtl.scss */
+/* line 320, ../sass/general-rtl.scss */
 .pane-node-field-tag .pane-content .field-item, .pane-node-field-cm-article-tags .pane-content .field-item, .pane-node-field-cm-movie-tags .pane-content .field-item, .pane-node-field-cm-person-tags .pane-content .field-item {
   float: right;
   margin-right: 0;
   margin-left: 2%;
 }
-/* line 305, ../sass/general-rtl.scss */
+/* line 325, ../sass/general-rtl.scss */
 .pane-node-field-tag .pane-content a, .pane-node-field-cm-article-tags .pane-content a, .pane-node-field-cm-movie-tags .pane-content a, .pane-node-field-cm-person-tags .pane-content a {
   float: right;
 }
 
 /******  responsive *********/
 @media (max-width: 767px) {
-  /* line 315, ../sass/general-rtl.scss */
+  /* line 335, ../sass/general-rtl.scss */
   .table-responsive td {
     padding-left: 8px !important;
     padding-right: 0 !important;
   }
 }
 /***** movie, movie group, event & article  ********/
-/* line 326, ../sass/general-rtl.scss */
+/* line 344, ../sass/general-rtl.scss */
+.text-main-image {
+  direction: rtl;
+}
+/* line 347, ../sass/general-rtl.scss */
 .text-main-image .wrapper .slide-right-ct {
   float: right;
   padding-right: 6%;
   padding-left: 10%;
 }
 @media (max-width: 767px) {
-  /* line 326, ../sass/general-rtl.scss */
+  /* line 347, ../sass/general-rtl.scss */
   .text-main-image .wrapper .slide-right-ct {
     padding-left: 3%;
     padding-right: 0;
   }
 }
+/* line 356, ../sass/general-rtl.scss */
+.text-main-image .wrapper .slide-left-ct {
+  text-align: right;
+}
 
-/* line 338, ../sass/general-rtl.scss */
+/* line 362, ../sass/general-rtl.scss */
 .top-text-blk-wht {
   right: 0;
   left: auto;
 }
-/* line 341, ../sass/general-rtl.scss */
+/* line 365, ../sass/general-rtl.scss */
 .top-text-blk-wht span {
   float: right;
 }
 
-/* line 346, ../sass/general-rtl.scss */
+/* line 370, ../sass/general-rtl.scss */
 .image-alt-title {
   left: auto;
   right: 0;
-}
-/* line 349, ../sass/general-rtl.scss */
-.image-alt-title .field {
-  float: right;
-}
-/* line 352, ../sass/general-rtl.scss */
-.image-alt-title .grp-title, .image-alt-title .field-name-field-file-image-title-text {
-  margin-left: 0px;
-  padding-left: 0px;
-  border-left: none;
-  margin-right: 10px;
-  padding-right: 10px;
-}
-/* line 359, ../sass/general-rtl.scss */
-.image-alt-title .grp-alt {
-  float: right;
+  direction: rtl;
 }
 
-/* line 364, ../sass/general-rtl.scss */
+/* line 376, ../sass/general-rtl.scss */
 .flag-new-links {
   left: 10px;
   right: auto;
 }
 
-/* line 370, ../sass/general-rtl.scss */
+/* line 382, ../sass/general-rtl.scss */
 .view-footer .more-event {
   float: left;
 }
+@media (max-width: 767px) {
+  /* line 382, ../sass/general-rtl.scss */
+  .view-footer .more-event {
+    float: none;
+  }
+}
 
-/* line 377, ../sass/general-rtl.scss */
+/* line 392, ../sass/general-rtl.scss */
 .credits-view {
+  float: right;
+  padding: 30px 23% 50px 0;
+}
+@media (max-width: 767px) {
+  /* line 392, ../sass/general-rtl.scss */
+  .credits-view {
+    padding-right: 0;
+  }
+}
+/* line 398, ../sass/general-rtl.scss */
+.credits-view .translated-movie-title {
+  text-align: right;
+}
+/* line 400, ../sass/general-rtl.scss */
+.credits-view .translated-movie-title a {
+  right: 0;
+}
+/* line 404, ../sass/general-rtl.scss */
+.credits-view .profession, .credits-view .views-field-field-cm-movie-credits-person-ro {
+  float: right;
+}
+/* line 407, ../sass/general-rtl.scss */
+.credits-view .views-field-views-conditional {
   float: left;
 }
 
-/* line 385, ../sass/general-rtl.scss */
-.view-director-bio .right-area {
+/* line 416, ../sass/general-rtl.scss */
+.view-director-bio .left-area, .view-movie-person-bio .left-area {
   float: right;
+}
+/* line 418, ../sass/general-rtl.scss */
+.view-director-bio .left-area img, .view-movie-person-bio .left-area img {
+  border-radius: 50%;
+  padding: 20px 30px;
+}
+@media (max-width: 767px) {
+  /* line 418, ../sass/general-rtl.scss */
+  .view-director-bio .left-area img, .view-movie-person-bio .left-area img {
+    padding: 0;
+  }
+}
+@media (max-width: 480px) {
+  /* line 418, ../sass/general-rtl.scss */
+  .view-director-bio .left-area img, .view-movie-person-bio .left-area img {
+    margin-left: 20px;
+    margin-right: 0;
+  }
+}
+/* line 430, ../sass/general-rtl.scss */
+.view-director-bio .right-area, .view-movie-person-bio .right-area {
+  float: left;
+  padding-right: 0;
+  padding-left: 23%;
+}
+@media (max-width: 767px) {
+  /* line 430, ../sass/general-rtl.scss */
+  .view-director-bio .right-area, .view-movie-person-bio .right-area {
+    padding-left: 0;
+  }
+}
+/* line 439, ../sass/general-rtl.scss */
+.view-director-bio .name-role .name, .view-movie-person-bio .name-role .name {
+  float: right;
+}
+/* line 442, ../sass/general-rtl.scss */
+.view-director-bio .name-role .role, .view-movie-person-bio .name-role .role {
+  border-right: 1px solid;
+  border-left: none;
+  float: right;
+  margin-right: 10px;
+  margin-left: 0;
+  padding-right: 10px;
   padding-left: 0;
-  padding-right: 23%;
 }
 
-/* line 396, ../sass/general-rtl.scss */
+/* line 458, ../sass/general-rtl.scss */
 .view-reviews-field-collection-view .view-content > div {
   float: left;
   padding-left: 23%;
   padding-right: 0;
 }
 @media (max-width: 767px) {
-  /* line 396, ../sass/general-rtl.scss */
+  /* line 458, ../sass/general-rtl.scss */
   .view-reviews-field-collection-view .view-content > div {
     padding-left: 0;
   }
 }
-/* line 405, ../sass/general-rtl.scss */
+/* line 467, ../sass/general-rtl.scss */
 .view-reviews-field-collection-view .views-slideshow-cycle-main-frame-row {
   right: 0 !important;
   left: auto !important;
 }
 
 /******  node teaser  ******/
-/* line 413, ../sass/general-rtl.scss */
+/* line 475, ../sass/general-rtl.scss */
 .node-title-teaser-cm-movie .node-cm-movie-year {
   float: right;
   border-left: 2px solid #f9f4ee;
@@ -425,33 +512,45 @@ table td, table th {
   margin-right: 0;
 }
 
-/* line 421, ../sass/general-rtl.scss */
+/* line 483, ../sass/general-rtl.scss */
 .node-title-teaser-cm-movie a .node-title-teaser-title {
   padding: 26px 10px 23px 26px;
 }
 @media (max-width: 767px) {
-  /* line 421, ../sass/general-rtl.scss */
+  /* line 483, ../sass/general-rtl.scss */
   .node-title-teaser-cm-movie a .node-title-teaser-title {
     padding: 9px 10px 8px 26px;
   }
 }
 
 /*****  tag  *********/
-/* line 431, ../sass/general-rtl.scss */
+/* line 493, ../sass/general-rtl.scss */
 .field-name-field-tag .field-item {
   float: right;
 }
-/* line 433, ../sass/general-rtl.scss */
+/* line 495, ../sass/general-rtl.scss */
 .field-name-field-tag .field-item.even {
   float: right;
 }
-/* line 436, ../sass/general-rtl.scss */
+/* line 498, ../sass/general-rtl.scss */
 .field-name-field-tag .field-item.odd {
   float: left;
 }
 @media (min-width: 481px) and (max-width: 767px) {
-  /* line 436, ../sass/general-rtl.scss */
+  /* line 498, ../sass/general-rtl.scss */
   .field-name-field-tag .field-item.odd {
     float: right;
   }
+}
+
+/* line 507, ../sass/general-rtl.scss */
+.add-event {
+  padding-left: 25px !important;
+  padding-right: 4px !important;
+}
+
+/********  table with date **********/
+/* line 515, ../sass/general-rtl.scss */
+.table-responsive .views-field-ops {
+  float: left;
 }

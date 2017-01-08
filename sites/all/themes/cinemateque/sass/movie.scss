@@ -141,7 +141,6 @@
 		.views-field-ops{
 		    height: 23px!important;
 		    display: block;
-		    padding-top: 13px;
 		}
 		thead{
 			@include res(s-m){
@@ -206,12 +205,10 @@
 	.panels-flexible-row-node_page-4{
 		width: 100%!important;
 		padding: 0!important;
-		@include res(s-m){
-			background-color: $color_alabaster_approx;
-		}
 		.panels-flexible-row-node_page-4-inside{
 			@include width();
 			@include res(s-m){
+				padding: 0;
 				tr{
 					@include res(s-m){
 						padding: 0 5%;
@@ -240,6 +237,8 @@
 				padding-top: 20px;
 				@include res(s-m){
 				   padding-top: 0;
+				   background-color: $color_alabaster_approx;
+				   padding: 0 5%;
 				}
 			}
 			.views-slideshow-pager-field-item{
@@ -258,3 +257,4 @@
 		}
 	}
 }
+

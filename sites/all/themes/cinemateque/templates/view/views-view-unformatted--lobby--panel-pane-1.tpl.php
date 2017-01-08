@@ -182,7 +182,7 @@
            $output_event .= '<td class="title only-desktop">'.l($event_title, 'node/'.$node->nid).'</td>';
            $output_event .= '<td class="hall">'.$hall_name.'<div class="only-mobile">'.$event_code.'</div></td>';
            $output_event .= '<td class="code">'.$event_code.'</td>';
-           $output_event .='<td class="flag only-desktop">'. $flag . '</td>';
+           $output_event .='<td class="views-field-ops only-desktop">'. $flag . '</td>';
            $output_event .='<td class="add-event only-desktop">'. $addevent . '</td>';
            $output_event .='<td class="purchase">';
            if(!empty($top_link)) $output_event .= '<button data-url="'.$top_link.'" class="toptix-purchase">'.t("TICKETS").'</button>';
@@ -245,7 +245,7 @@
            $output .= '<td class="title only-desktop">'.l($event_title, 'node/'.$node_event->nid).'</td>';
            if($hall_name) $output .= '<td class="hall">'.$hall_name.'<div class="only-mobile">'.$event_code.'</div></td>';
            if($event_code) $output .= '<td class="code only-desktop">'.$event_code.'</td>';
-           $output .='<td class="flag only-desktop">'. $flag . '</td>';
+           $output .='<td class="views-field-ops only-desktop">'. $flag . '</td>';
            $output .='<td class="add-event only-desktop">'. $addevent . '</td>';      
            $output .='<td class="purchase">';        
            if($toptix_code) $output .= '<button data-url="'.$top_link.'" class="toptix-purchase">'.t('TICKETS').'</button>';

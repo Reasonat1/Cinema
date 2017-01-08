@@ -96,10 +96,32 @@
                         </li>
                         <?php 
                             global $user;
-                            if ($user->uid > 0){ ?>
-                            <li class="favorite">
-                                <a href="/user/<?php print $user->uid ?>">favorite</a>
-                            </li>
+                            global $language;
+                            global $base_url;
+                            $current_lang = $language->language;
+                            if ($user->uid > 0){ 
+                                if ($current_lang == "en"): ?>
+                                    <li class="favorite">
+                                        <a href="/en/user/<?php print $user->uid ?>">favorite</a>
+                                    </li>                                
+                                <?php endif; 
+                                if ($current_lang == "he"): ?>
+                                    <li class="favorite">
+                                        <a href="/he/user/<?php print $user->uid ?>">favorite</a>
+                                    </li>
+                            <?php endif; 
+                            } 
+                            else{ 
+                                if ($current_lang == "en"): ?>
+                                    <li class="favorite">
+                                        <a href="/en/user">Login</a>
+                                    </li>                                
+                                <?php endif; 
+                                if ($current_lang == "he"): ?>
+                                    <li class="favorite">
+                                        <a href="/he/user">Login</a>
+                                    </li>
+                            <?php endif; ?>
                         <?php  } ?>
                     <?php endif; ?>
                     <?php if ($search_form): ?>

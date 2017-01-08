@@ -51,6 +51,10 @@ h2{
 	margin: 0;
 }
 
+#messages{
+	@include width;	
+}
+
 #messages div{
 	margin-top: 21px;
 }
@@ -819,7 +823,7 @@ table.views-table {
 	}
 }
 
-.view-lobby.view-display-id-panel_pane_2{
+.view-lobby.view-display-id-panel_pane_2, .view-lobby.view-display-id-panel_pane_4{
 		padding-top: 30px;
 		.lobby-container{
 			position: relative;
@@ -1156,7 +1160,7 @@ table{
 	.owl-prev, .owl-next{
 	    z-index: 199;
 		font-size: 0;
-		top: 50%;
+		top: 70%;
 		z-index: 9;
 		height: 32px;
 	    position: absolute;
@@ -1252,11 +1256,32 @@ table{
 
 #user-login{
 	@include width;
+	width: 700px!important;
 	input{
 		width: auto;
 		@include res(s-m){
 			width: 100%;
 		}
+	}
+	input{
+		height: 40px;
+		border-radius: 0;
+		width: 100%;
+	}
+	.help-block{
+		font-size: 12px;
+		line-height: 20px;
+	}
+	label{
+		font-weight: normal;
+	}
+}
+
+#user-login-panel{
+	padding-top: 40px;
+	.radix-layouts-content{
+		margin: 0 auto;
+		float: none;
 	}
 }
 
@@ -1277,12 +1302,124 @@ table{
    	}
 }
 
+.page-user-edit{
+	@include width;
+	.group-name-group{
+		float: right;
+		width: 46%;
+		@include res(s-m){
+			width: 100%;
+		}
+		h3{
+			text-decoration: underline;
+		}
+		.password-parent{
+			position: relative;
+			margin-bottom: 75px;
+		}
+		.password-strength{
+			float: none;
+			position: absolute;
+			bottom: -40px;
+		}
+		div.password-confirm{
+			margin-top: 0;
+			font-size: 15px;
+			width: auto;
+		}
+		.form-type-password{
+			width: 100%;
+		}
+		div.form-item div.password-suggestions{
+			width: 100%;
+		}
+	}
+	.group-user-profile{
+		float: left;
+		width: 46%;
+		@include res(s-m){
+			width: 100%;
+		}
+		h3{
+			text-decoration: underline;
+		}
+		.image-widget-data{
+			width: 100%;
+			input.form-file{
+				float: left;
+			    height: auto;
+			    padding-left: 0;
+			    width: 100%;
+			}
+			input.form-submit{
+			    background-color: #eee !important;
+			    border: 1px solid;
+			    clear: none;
+			    color: #000 !important;
+			    float: left;
+			    clear: left;
+			    cursor: pointer;
+			    padding: 10px 30px;
+			    @include res(s-m){
+			    	width: auto;
+			    }
+			}
+			.manualcrop-style-button-holder{
+				float: left;
+				padding-top: 0;
+			}
+			.file-size{
+				display: none;
+			}
+			.file{
+				display: block;
+				width: 100%;
+				padding-bottom: 20px;
+			}
+			input[value="Remove"]{
+				float: right;
+			}
+			.ajax-progress{
+				display: none;
+			}
+		}
+	}
+	input{
+		width: 100%;
+		height: 40px;
+		padding: 10px;
+		&.form-submit{
+			width: auto;
+			clear: both;
+			float: right;
+			padding: 10px 80px;
+			cursor: pointer;
+			@include res(s-m){
+				width: 100%;
+			}
+		}
+	}
+	label{
+		font-weight: normal;
+		font-size: 15px;
+		padding-bottom: 5px;
+	}
+	.help-block{
+		font-size: 12px;
+		display: block;	
+		line-height: 20px;
+		padding-top: 5px;
+	}
+}
+
+
+
 .pane-user-page-pane-panel-pane-1{
 	background-color: #fff;
 	.pane-content{
 		@include width;
 		padding-top: 60px; 
-		.views-field-name{
+		.views-field-field-first-name{
 			text-align: center;
 			.field-content{
 				font-size: 2.5em;
@@ -1372,9 +1509,10 @@ table{
 					}
 				}
 			}
-			.edit{
+			.edit, .logout{
 				float: right;
 				padding-top: 3px;
+				padding-left: 10px;
 				@include res(s-m){
 					width: 100%;
 					text-align: center;
@@ -1519,7 +1657,7 @@ table{
 		width: 23%;
 		font-weight: normal;
 	}
-	.views-field-ops{
+	.views-field-ops, .like-flag{
 		height: 23px;
 		display: block;
 		padding: 11px 17px 0;
@@ -1547,8 +1685,9 @@ table{
 	.content.middle .panels-flexible-region-node_page-content_left{
 		width: 800px;
 		max-width: 100%;
-		float: left;
 		padding-right: 0;
+		margin: 0 auto;
+		float: none;
 	}
 	.panels-flexible-row-node_page-4{
 		width: 100%!important;
@@ -1564,7 +1703,7 @@ table{
     			.view{
     				width: 800px;
     				max-width: 100%;
-    				float: left;
+    				margin: 0 auto;
     			}
     		}
 			@include res(s-m){
@@ -1630,6 +1769,9 @@ table{
 		}
 		.view-person-ct-view.view-display-id-panel_pane_2{
 			padding-top: 20px;
+			width: 800px;
+			max-width: 100%;
+			margin: 0 auto;
 			h3{
 				color: #333;
 			}
@@ -1645,22 +1787,12 @@ table{
 				}
 			}
 			.views-row{
-				width: 49.7%;
-				@include res(s-m){
-					width: 100%;
-				}
 				h3{
 					font-weight: normal;
 				}
 				.node-title-teaser-content-type{
 					margin-bottom: 11px;
 				}
-			}
-			.views-row-odd{
-				float: left;
-			}
-			.views-row-even{
-				float: right;
 			}
 		}
 		.node-cm-movie-year{
@@ -1782,7 +1914,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	.wrapper{
 		@include width;
 		a, a:hover{
-			color: #fff;
+			color: #fff!important;
 		}
 		.slide-left-ct{
 			text-align: left;
@@ -1949,6 +2081,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	top: 0;
 	left: 0;
 	font-size: 14px;
+	z-index: 100;
 	span{
 		padding: 6px 12px;
 		opacity: 0.9;
@@ -2393,7 +2526,6 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 		}
 	}
 }
-
 .front #content .field-name-field-date-expiration {
 	display:none;
 }
