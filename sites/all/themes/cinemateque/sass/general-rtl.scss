@@ -167,6 +167,36 @@ table{
 
 /*******  user profile  ********/
 
+.page-user-edit{
+	.group-name-group{
+		float: left;
+	}
+	.group-user-profile{
+		float: right;
+		.image-widget-data{
+			input.form-file{
+				float: right;
+			    padding-right: 0;
+			}
+			input.form-submit{
+			    float: right;
+			    clear: right;
+			}
+			.manualcrop-style-button-holder{
+				float: right;
+			}
+			input[value="Remove"]{
+				float: left;
+			}
+		}
+	}
+	input{
+		&.form-submit{
+			float: left;
+		}
+	}
+}
+
 #views-exposed-form-user-flagged-content-panel-pane-1{
 	.views-widget-filter-gid{
 		right: 0;
@@ -179,13 +209,23 @@ table{
 }
 
 .view-user-flagged-content.view-display-id-panel_pane_1{
+	.view-header{
+		float: right;
+		.title{
+			float: right;
+			margin-right: 0;
+			margin-left: 10px;
+		}
+	}
 	.view-filters{
 		.wrapper{
 			form{
 				float: right;
 			}
-			.edit{
+			.edit, .logout{
 				float: left;
+				padding-right: 10px;
+				padding-left: 0;
 			}
 		}
 		.views-widget-filter-type{	
@@ -223,13 +263,6 @@ table{
 /*********  person page  **********/
 
 .node-type-cm-person{
-	.panels-flexible-row-node_page-4{
-		.pane-person-ct-view-panel-pane-1{
-    		.pane-content{
-    			@include width;
-    		}
-		}
-	}
 	.view-person-ct-view.view-display-id-panel_pane_1{
 		.views-field-nothing-1{
 			.col{
@@ -244,19 +277,6 @@ table{
 				}
 			}
 		}
-	}
-	.panels-flexible-row-node_page-6{
-		.view-person-ct-view.view-display-id-panel_pane_2{
-			.views-row-odd{
-				float: right;
-			}
-			.views-row-even{
-				float: left;
-			}
-		}
-	}
-	.panels-flexible-region-node_page-content_left {
-	    float: left!important;
 	}
 }
 
@@ -322,6 +342,7 @@ table{
 /***** movie, movie group, event & article  ********/
 
 .text-main-image{
+	direction: rtl;
 	.wrapper{
 		.slide-right-ct {
 			float: right;
@@ -331,6 +352,9 @@ table{
 				padding-left: 3%;
 				padding-right: 0;
 			}
+		}
+		.slide-left-ct{
+			text-align: right;
 		}
 	}
 }
@@ -346,19 +370,7 @@ table{
 .image-alt-title {
 	left: auto;
 	right: 0;
-	.field{
-		float: right;
-	}
-	.grp-title, .field-name-field-file-image-title-text{
-		margin-left: 0px;
-		padding-left: 0px;
-		border-left: none;
-		margin-right: 10px;
-		padding-right: 10px;
-	}
-	.grp-alt{
-		float: right;
-	}
+	direction: rtl;
 }
 
 .flag-new-links{
@@ -369,23 +381,73 @@ table{
 .view-footer{
 	.more-event{
 		float: left;
+		@include res(s-m){
+			float: none;
+		}
 	}
 }
 
 // credits
 
 .credits-view{
-	float: left;
+	float: right;
+	padding: 30px 23% 50px 0;
+	@include res(s-m){
+		padding-right: 0;
+	}
+	.translated-movie-title{
+		text-align: right;
+		a{	
+			right: 0;
+		}
+	}
+	.profession, .views-field-field-cm-movie-credits-person-ro{
+		float: right;
+	}
+	.views-field-views-conditional{
+		float: left;
+	}
 }
 
 // director
 
 
-.view-director-bio{
-	.right-area{
+.view-director-bio, .view-movie-person-bio{
+	.left-area{
 		float: right;
-		padding-left: 0;
-		padding-right: 23%;
+		img{
+			border-radius: 50%;
+			padding: 20px 30px;
+			@include res(s-m){
+				padding: 0;
+			}
+			@include res(s){
+				margin-left: 20px;
+				margin-right: 0;
+			}
+		}
+	}
+	.right-area{
+		float: left;
+		padding-right: 0;
+		padding-left: 23%;
+		@include res(s-m){
+			padding-left: 0;
+		}
+	}
+	.name-role{
+		.name{
+			float: right;
+		}
+		.role{
+			border-right: 1px solid;
+			border-left: none;
+			float: right;
+			margin-right: 10px;
+			margin-left: 0;
+			padding-right: 10px;
+			padding-left: 0;
+		}
 	}
 }
 
@@ -439,5 +501,18 @@ table{
 				float: right;
 			}
 		}
+	}
+}
+
+.add-event{ 
+	padding-left: 25px!important;
+	padding-right: 4px!important;
+}
+
+/********  table with date **********/
+
+.table-responsive{
+	.views-field-ops{
+		float: left;
 	}
 }

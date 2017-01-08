@@ -88,20 +88,14 @@ function cinemateque_preprocess_date_views_pager(&$vars) {
           $vars['nav_title'] = date('l | d.m.y', strtotime($vars['nav_title']));
       }
       if ($lang == 'he') {
-          if (isset($_GET['date'])) { // to show correctly when navigating forward and backward
-              $heb_date = cal_from_jd(unixtojd(strtotime($_GET['date'])), CAL_JEWISH);
-              $heb_day = t($heb_date['dayname']);
-              $date = cal_from_jd(unixtojd(strtotime($_GET['date'])), CAL_GREGORIAN);
-          }
-          else{
-              $heb_date = cal_from_jd(unixtojd(strtotime($vars['nav_title'])), CAL_JEWISH);
-              $heb_day = t($heb_date['dayname']);
-              $date = cal_from_jd(unixtojd(strtotime($vars['nav_title'])), CAL_GREGORIAN);
-          }
-          $vars['nav_title'] = $heb_day . ' | ' . $date['day'] . '.' . $date['month'] . '.' . $date['year'];
+          
+          $vars['nav_title'] =(isset($_GET['date']))? format_date(strtotime($_GET['date']), 'custom', 'l | d.m.y'):format_date(time(), 'custom', 'l | d.m.y');
       }
   } 
 }
+
+
+
 
 function cinemateque_facetapi_select_select_option($variables) {
   if ($variables['show_count']) {
@@ -125,4 +119,8 @@ function cinemateque_form_facetapi_select_facet_form_alter(&$form, &$form_state,
     }
   }
   $form['facets']['#empty_option'] = $form['facets']['#empty_option']['facet_text'];
+}
+
+function cinemateque_form_user_profile_form_alter(&$form, $form_state) {
+   unset($form['locale']);
 }

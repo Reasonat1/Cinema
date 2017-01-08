@@ -1,7 +1,9 @@
 <?php $results=$view->result; 
 
-$tagetId = $results[0]->node_field_data_field_cm_event_lineup_nid;
-$node = node_load($tagetId);
+if(!empty($results[0]->node_field_data_field_cm_event_lineup_nid)){
+  $tagetId = $results[0]->node_field_data_field_cm_event_lineup_nid;
+  $node = node_load($tagetId);
+
 
 
 if ($node->type=='cm_movie_group') {
@@ -17,10 +19,8 @@ foreach ($node->field_movie_referenced['und'] as $movie_array) {
         }else{
             $image_movie = '<img src="/sites/all/themes/cinemateque/images/default-image-pane-2.png">';
         }
- $output .= '<div class="flag-movie">'.$flag.'</div>';
- $output .= '<div class="image-lobby">';
+ $output .= '<div class="row"><div class="image-lobby"><div class="flag-movie">'.$flag.'</div>';
  $output .= l($image_movie, $alias, array('attributes' => array('class' =>'link-image'),'html' => true));
- $output .= '</div>';
 	if(!empty($movie_node->field_cm_movie_meta_credit['und'])){
 	$credits=$movie_node->field_cm_movie_meta_credit['und'][0]['value'];
 	} else $credits='';
@@ -58,13 +58,14 @@ foreach ($node->field_movie_referenced['und'] as $movie_array) {
     } else {
 		 $length ='';
 	}
- $output .= '<div class="lobby-title">'.l($movie_node->title, $alias).'</div>';
+ $output .= '<div class="lobby-title">'.l($movie_node->title, $alias).'</div></div>';
+ $output .= '<div class="under-image">';
  $output .= '<div class="movie-details">';
-                                    $output .= ($credits)?'<div class="credits td-border-right">'.$credits.'</div>':'';
-                                    $output .= ($country || $year)?'<div class="year td-border-right">'.$country.' '.$year.'</div>':'';
-                                    $output .= ($length)?'<div class="length td-border-right">'.$length.'</div>':'';
-                                    $output .= ($lang)?'<div class="language td-border-right">'.$lang.'</div>':'';
-                                    $output .= ($subtitle)?'<div class="subtitle">'.$subtitle.'</div>':'';
+                                    $output .= ($credits)?'<span class="credits td-border-right">'.$credits.'</span>':'';
+                                    $output .= ($country || $year)?'<span class="year td-border-right">'.$country.' '.$year.'</span>':'';
+                                    $output .= ($length)?'<span class="length td-border-right">'.$length.'</span>':'';
+                                    $output .= ($lang)?'<span class="language td-border-right">'.$lang.'</span>':'';
+                                    $output .= ($subtitle)?'<span class="subtitle">'.$subtitle.'</span>':'';
    $output .= '</div>';
  
 	if(!empty($movie_node->field_cm_movie_body['und'][0]['value'])){
@@ -72,14 +73,14 @@ foreach ($node->field_movie_referenced['und'] as $movie_array) {
         }else{
             $summary_movie = '';
         }
- $output .= '<div class="lobby-summary">'.strip_tags($summary_movie).'</div>';
+ $output .= '<div class="lobby-summary">'.strip_tags($summary_movie).'</div></div></div>';
 }
  $output .= '</div>';
  $rows.=$output;
  
 
  }
-
+}
 ?>
 
 

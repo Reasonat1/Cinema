@@ -1,6 +1,10 @@
 @import "init";
 
 .page-search{
+	#search-form{
+		@include width;
+		padding: 0 5%;
+	}
     &.page-search .header .header-right .search a{
    		pointer-events: none;
    		cursor: default;
@@ -31,7 +35,7 @@
 	}
 	.panels-flexible-row-node_page-3{
 		@include width;
-		padding: 0 3%!important;
+		padding: 0 5%!important;
 	}
 	.search-results{
 		clear: both;
@@ -109,10 +113,11 @@
 			line-height: 1.4;
 		}
 	}
-	#search-api-page-search-form-search-results {
+	#search-api-page-search-form-search-results, #search-form #edit-basic{
 		margin-bottom: 30px;
 		position: relative;
 		overflow: visible;
+		height: 50px;
 		.form-group {
 			overflow: hidden;
 			-webkit-box-shadow: -1px 1px 10px -3px rgba(0,0,0,0.75);
@@ -132,6 +137,8 @@
 				padding: 7px 22% 8px 2%;
 				font-size: 25px;
 				border:none;
+				border-radius: 0;
+				height: 50px;
 				@include res(s-m){
 					font-size: 15px;
 					padding: 13px;
@@ -147,7 +154,7 @@
 			width: 20%;
 			position: absolute;
 			right: 0px;
-			box-shadow: none;
+			box-shadow: none!important;
 			top: 0px;
 			height: 51px;
 			@include res(s-m){
@@ -375,12 +382,15 @@
 									}
 								}
 							}
-							.name{
-								float: left;
+							.name-job{
+								width: 55%;
+								float: right;
 								@include res(s-m){
 									width: 100%;
 									text-align: center;
 								}
+							}
+							.name{
 								.job-title{
 									font-weight: normal;
 									padding-top: 10px;

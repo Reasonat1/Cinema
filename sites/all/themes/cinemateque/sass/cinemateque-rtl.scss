@@ -1,7 +1,7 @@
 @import "init";
 
 .footer {
-	.pane-bean-main-info-english, .pane-bean-main-info-hebrew{
+	.pane-bean-main-info-english, .pane-bean-main-info-hebrew, .pane-bean-main-info-english-mobile, .pane-bean-main-info-hebrew-mobile{
 		.pane-content{
 			.field-name-field-content-info > .field-items > .field-item{
 			    float: right;
@@ -88,23 +88,12 @@
 	float: left!important;
 	.language-switcher-locale-url{
 		a{
-			height: 24px!important;
-			background: url("../images/english-icon.png") no-repeat 0 4px!important;
+			background: url("../images/english-icon.png") no-repeat 0 0px!important;
+			width: 13px;
 		}
 		span{
-			background: url("../images/english-icon.png") no-repeat 0 4px!important;
-			height: 24px!important;
+			background: url("../images/english-icon.png") no-repeat 0 0px!important;
 			}
-	}
-	.favorite a{
-		height: 24px!important;
-	}
-	.today{
-		padding-top: 13px!important;
-		span{
-			height: 24px!important;
-			background-position: 0 2px!important;
-		}
 	}
 }
 
@@ -122,21 +111,12 @@
 	}
 }
 
-.col-md-3.header-right .shopping-cart button{
-	margin-top: 5px;
-}
-
-.col-md-3.header-right > li.search{
-	margin-top: 4px;
-}
-
 .col-md-3.header-right{
-	margin-left: 15px;
+	margin-left: 10px;
 	margin-right: 0;
 	> li{
 		padding-right: 30px;
 		padding-left: 0;
-		padding-top: 11px;
 		@include res(l){
 			padding-right: 10px;
 		}
@@ -271,3 +251,94 @@
 		float: right;
 	}
 }
+
+/*******  home page  *********/
+
+.node-type-front-page{
+	.one-item-static{
+		.on-image{
+			.field-name-field-cm-event-time{
+				float: right;
+			}
+			.field-name-field-toptix-purchase{
+				float: right;
+			}
+		}
+		.views-field-ops{
+			left: 20px;
+			right: auto;
+		}
+	}
+	.list_wide_image, .list_normal_image_width{
+		.left-area{
+			float: right;
+			.views-field-ops{
+				left: 20px;
+				right: auto;
+			}
+		}
+		.right-area{
+			float: left;
+			table{
+				.add-event{
+					padding-left: 10px!important;
+					padding-right: 0!important;
+				}
+			}
+			.movie-details{
+    			.field-name-field-cm-movie-duration, .duration{
+    				border-right: 1px solid;
+    				border-left: none;
+    				margin-right: 10px;
+    				margin-left: 0;
+    				padding-right: 10px;
+    				padding-left: 0;
+    			}
+			}
+			.credit-duration{
+				.duration{
+    				border-right: 1px solid;
+    				border-left: none;
+    				margin-right: 10px;
+    				margin-left: 0;
+    				padding-right: 10px;
+    				padding-left: 0;				
+				}
+			}
+		}
+	}
+	.list_wide_image{
+		.right-area{
+			float: left;
+		}
+
+	}
+	.field-name-field-item-grid-3 > .field-items > .field-item{
+		margin-left: 5%;
+		margin-right: 0;
+		float: right;
+		@include res(l){
+			margin-right: 0!important;
+			margin-left: 4%!important;
+			&:nth-child(2n){
+				margin-left: 0!important;
+			}	
+		}
+		&:nth-child(3n){
+			margin-left: 0;
+		}
+		.views-field-ops{
+			left: 20px;
+			right: auto;
+		}
+	}
+	.field-name-field-node-top-gallery{
+		.purchase{
+			float: right;
+		}
+		.node-cm-event .views-field-ops{
+				float: right;
+				margin: 4px 10px 0 0px;
+		}
+	}
+}					

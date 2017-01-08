@@ -38,7 +38,7 @@
       </div>		
 	<?php } ?>
 	
-	<div class="flag"><?php if(isset($fields['ops']->content)) { print $fields['ops']->content; } ?></div>
+	<div class="views-field-ops"><?php if(isset($fields['ops']->content)) { print $fields['ops']->content; } ?></div>
 	
     <div class="movie-group-item-header-img">
 	  <?php if(isset($fields['field_cm_movie_pictures']->content)) print l($fields['field_cm_movie_pictures']->content,'node/' . $row->nid,array('html' => TRUE)); ?>

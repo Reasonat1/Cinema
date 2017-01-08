@@ -364,7 +364,7 @@
 			
 			
 			
-            $output_event .='<td class="flag only-desktop">'. $flag . '</td>';
+            $output_event .='<td class="views-field-ops only-desktop">'. $flag . '</td>';
             $output_event .='<td class="add-event only-desktop">'. $addevent . '</td>';
             if(!empty($node_event->field_toptix_purchase['und'])){
             $toptix_code = $node_event->field_toptix_purchase['und'][0]['value'];
@@ -442,7 +442,7 @@
            else{
              $output .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div></td>';
            }
-           $output .='<td class="flag only-desktop">'. $flag_moviegroup_event . '</td>';
+           $output .='<td class="views-field-ops only-desktop">'. $flag_moviegroup_event . '</td>';
            $output .='<td class="add-event only-desktop">'. $addevent . '</td>';
            if(!empty($movie_group_event_info->field_toptix_purchase['und'])){
            $toptix_code = $movie_group_event_info->field_toptix_purchase['und'][0]['value'];
@@ -522,7 +522,7 @@
            else{
              $output_movie_event .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div></td>';
            }
-           $output_movie_event .='<td class="flag only-desktop">'. $flag_moviegroup_event . '</td>';
+           $output_movie_event .='<td class="views-field-ops only-desktop">'. $flag_moviegroup_event . '</td>';
            $output_movie_event .='<td class="add-event only-desktop">'. $addevent . '</td>';
            if(!empty($movie_event_info->field_toptix_purchase['und'])){
            $toptix_code = $movie_event_info->field_toptix_purchase['und'][0]['value'];
@@ -546,7 +546,7 @@
 
       switch ($node->type) {
         case "cm_person":
-          $image = '<div class="person-left-sec"><div class="person-img">'.l($image_person, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)) .'</div><div class="lobby-title">'. l($first_name .' '. $last_name, $path_node).'</div><div class="job-title">'. $job_title.'</div></div>';
+          $image = '<div class="person-left-sec"><div class="person-img">'.l($image_person, "$path_node", array('attributes' => array('class' =>'link-image'),'html' => true)) .'</div><div class="name-job"><div class="lobby-title">'. l($first_name .' '. $last_name, $path_node).'</div><div class="job-title">'. $job_title.'</div></div></div>';
           $title = '';
           $sort_summary = t($summary_person);
           $event_info = '';

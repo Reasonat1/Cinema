@@ -40,14 +40,14 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
      $output .= '<table class="views-table cols-8 table table-striped table-bordered">';
        $output .= '<thead>';
          $output .= '<tr>';
-           $output .= '<th class="views-field views-field-field-cm-event-time-1">'. t('Date') .'</th>';
-           $output .= '<th class="views-field views-field-field-cm-event-time first-mobile">'. t('Time') .'</th>';
-           $output .= '<th class="views-field views-field-field-cm-event-hall">'. t('Hall') .'</th>';
-           $output .= '<th class="views-field views-field-field-cm-event-short-title views-field-title">'. t('Event') .'</th>';
-           $output .= '<th class="views-field views-field-field-cm-event-internal-id">'. t('Code') .'</th>';
-           $output .= '<th class="views-field views-field-ops"></th>';
-           $output .= '<th class="views-field views-field-php"></th>';
-           $output .= '<th class="views-field views-field-field-toptix-purchase last-mobile">'. t('TICKETS') .'</th>';
+           $output .= '<th class="views-field views-field-field-cm-event-time-1 date">'. t('Date') .'</th>';
+           $output .= '<th class="views-field views-field-field-cm-event-time first-mobile time">'. t('Time') .'</th>';
+           $output .= '<th class="views-field views-field-field-cm-event-hall hall">'. t('Hall') .'</th>';
+           $output .= '<th class="views-field views-field-field-cm-event-short-title views-field-title title">'. t('Event') .'</th>';
+           $output .= '<th class="views-field views-field-field-cm-event-internal-id code">'. t('Code') .'</th>';
+           $output .= '<th class="views-field views-field-ops like-flag"></th>';
+           $output .= '<th class="views-field views-field-php add-event"></th>';
+           $output .= '<th class="views-field views-field-field-toptix-purchase last-mobile purchase">'. t('TICKETS') .'</th>';
          $output .= '</tr>';
        $output .= '</thead>';
        $output .= '<tbody>';
@@ -59,8 +59,8 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
          
          if($val->nid !=$current_nid){
            if(!empty($node->nid)){
-             $event_title = (!empty($node->field_cm_event_short_title)) ? $node->field_cm_event_short_title['und'][0]['value'] : $node->title;
-             $title_new = t($event_title);
+             //$event_title = (!empty($node->field_cm_event_short_title)) ? $node->field_cm_event_short_title['und'][0]['value'] : $node->title;
+             $title_new = (!empty($node->field_cm_event_comment)) ? $node->field_cm_event_comment['und'][0]['value'] : '';
            }else{
              $title_new = '<div class="hide-div"></div>';
            }
@@ -70,10 +70,10 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
             if(!empty($node->field_cm_event_internal_id['und'])){
                 $event_code = t($node->field_cm_event_internal_id['und'][0]['value']);
             }else{
-              $event_code = '<div class="hide-div"></div>';
+              $event_code = '';
             }
              if(!empty($node->field_cm_event_time['und'])){
-               $event_date = date('l d.m.y', $node->field_cm_event_time['und'][0]['value']);
+               $event_date = format_date(($node->field_cm_event_time['und'][0]['value']), 'custom', 'l d.m.y');
                $event_date_mobile = date('d.m.y', $node->field_cm_event_time['und'][0]['value']);
              }else{
                 $event_date = '<div class="hide-div"></div>';
@@ -97,14 +97,14 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
              $puchase = '<div class="hide-div"></div>';
             }
           $output .= '<tr class="odd views-row-first up-events-item-movie views-row-last item-show-'.$a.'">';
-           $output .= '<td class="views-field views-field-field-cm-event-time-1 only-desktop">'. t($event_date). '</td>';
-           $output .= '<td class="views-field views-field-field-cm-event-time first-mobile"><div class="only-mobile">'.$event_date_mobile. '</div>' . $event_time .'</td>';
-           $output .= '<td class="views-field views-field-field-cm-event-hall">'. $hall_name .'<div class="only-mobile">'.$event_code.'</td>';
-           $output .= '<td class="views-field views-field-title views-field-field-cm-event-short-title only-desktop">'. l($title_new, $path) .'</td>';
-           $output .= '<td class="views-field views-field-field-cm-event-internal-id only-desktop">' .$event_code .'</td>';
-           $output .= '<td class="views-field views-field-ops only-desktop">' .$flag .'</td>';
+           $output .= '<td class="views-field views-field-field-cm-event-time-1 only-desktop date">'. t($event_date). '</td>';
+           $output .= '<td class="views-field views-field-field-cm-event-time first-mobile time"><div class="only-mobile">'.$event_date_mobile. '</div>' . $event_time .'</td>';
+           $output .= '<td class="views-field views-field-field-cm-event-hall hall">'. $hall_name .'<div class="only-mobile">'.$event_code.'</td>';
+           $output .= '<td class="views-field views-field-title views-field-field-cm-event-short-title only-desktop title">'. l($title_new, $path) .'</td>';
+           $output .= '<td class="views-field views-field-field-cm-event-internal-id only-desktop code">'.$event_code.'</td>';
+           $output .= '<td class="views-field views-field-ops only-desktop like-flag">' .$flag .'</td>';
            $output .= '<td class="views-field views-field-php add-event only-desktop">' ._return_addthisevent_markup($node) .'</td>';
-           $output .= '<td class="views-field views-field-field-toptix-purchase last-mobile">'.$puchase.'</td>';
+           $output .= '<td class="views-field views-field-field-toptix-purchase last-mobile purchase">'.$puchase.'</td>';
           $output .= '</tr>';
          }
        }
@@ -112,7 +112,7 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
      $output .= '</table>';
        $output .='<div class="view-footer">';
        if($row_count > 4){
-        $output .='<div class="more-event">'. t('More Screening').'</div>';
+        $output .='<div class="more-event"><span class="only-mobile"> - </span><span class="text">'. t('More screenings').'</span><span class="only-mobile"> - </span></div>';
        }
        $output .='</div>';
     $output .= '</div>';

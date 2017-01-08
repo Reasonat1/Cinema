@@ -78,6 +78,8 @@
 }
 
 .calender-filter {
+	padding-right: 30px;
+	padding-left: 0;
 	span {
 		float: right;
 	}
@@ -158,6 +160,18 @@
 	}
 }
 
+.view-custom-calendar-floating-pane{
+	.views-field-field-cm-event-time{
+		float: right;
+	}
+	.views-field-field-toptix-purchase{
+		float: left;
+	}
+	.views-field-views-conditional{
+		float: right;
+	}
+}
+
 .view-custom-calendar-floating-pane .date-nav-wrapper .btn-group .prev a{
     background: url("../images/more-white-right.png") no-repeat center 0 !important;
     right: 0;
@@ -197,7 +211,6 @@
 }
 
 .calenders{
-	@include res(s-m){
     	.prevday{
     		padding-right: 5px;
     		padding-left: 12px;
@@ -214,14 +227,27 @@
     			content: "\f104";	
     		}
     	}
-	}
 }
 
 .pane-calendar-full-width-calendar{
+		.ticket-details{
+			float: right;
+			.row-custom-lobby > div{
+				@include res(s-m){
+					float: right;	
+				}
+				> span{
+					float: right;
+					a{
+						float: right;
+					}
+				}
+			}
+		}
 		.lobby-term-left{
 			float: right;
 			.flag {
-			    left: 10px;
+				left: 10px;
 			    right: auto;
 			}
 		}
@@ -230,11 +256,11 @@
 			.calendar-below-title-content{
     				span{
     					border-left: 2px solid;
-    					padding-left: 8px;
-    					margin-left: 8px;
     					border-right: none;
-    					padding-right: 0;
+    					margin-left: 8px;
     					margin-right: 0;
+    					padding-left: 8px;
+    					padding-right: 0;
     				}
     			}
 		}
@@ -246,14 +272,10 @@
 			}
 			.left{
 				float: right;
-				border-right: none!important;
 				border-left: 2px solid!important;
+				border-right: none;
 				margin-left: 8px;
 				margin-right: 0;
-				@include res(s-m){
-					border-left: none!important;
-					margin-left: 0;
-				}
 			}
 			.right{
 				float: left;

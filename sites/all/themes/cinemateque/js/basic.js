@@ -30,6 +30,22 @@
                 $(this).hide();
             })
     });
+
+
+  /*****  min page height  *******/
+
+  $("#main-wrapper").css("min-height",$(window).height()-$("footer").height()-$("header").height()-50);
+
+        $(window).resize(function() {
+            $("#main-wrapper").css("min-height",$(window).height()-$("footer").height()-$("header").height()-50);
+        });
+
+/******  event page with movie group list  **********/
+
+if ($("div").hasClass("movie-group-list")){
+  $(".panels-flexible-row-node_page-5").addClass("with-movie-group-list");
+}
+
  /*******  responsive menu   **********/
 
     $(".responsive-hamburger").click(function(){
@@ -65,24 +81,14 @@
 
 
         $screenheight = $(window).height()-50;
-        $fullscreenheight = $(window).height();
         $(".full-screen-image, .full-screen-image .wrapper-image .content, .full-screen-image .wrapper-image .content li").css("max-height",$screenheight);
-        $(".front .full-screen-image, .front .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
-       /* $imgspace = ($(".full-screen-image img").height() - $screenheight)/(-2);
-        if ($imgspace < 0){
-          $(".full-screen-image img").css("margin-top",$imgspace);
-        }
-*/
+        $(".full-screen-image-front, .full-screen-image-front .field-item").css("max-height",$screenheight);
         $(window).resize(function() {
             $screenheight = $(window).height()-50;
-            $fullscreenheight = $(window).height();
             $(".full-screen-image, .full-screen-image .wrapper-image .content, .full-screen-image .wrapper-image .content li").css("max-height",$screenheight);
-            $(".front .full-screen-image, .front .full-screen-image .wrapper-image .content").css("max-height",$fullscreenheight);
-  /*          $imgspace = ($(".full-screen-image img").height() - $screenheight)/(-2);
-            if ($imgspace < 0){
-              $(".full-screen-image img").css("margin-top",$imgspace);
-            }*/
+            $(".full-screen-image-front, .full-screen-image-front .field-item").css("max-height",$screenheight);
         });
+
 
 /*********  claendat pane on slider  
 
@@ -136,7 +142,6 @@
           if($(e.target).closest('.video-wrapper .content').length == 0) {
             $(".slide-right-ct .video-wrapper").removeClass("play");
             $("body").removeClass("play");
-			$('video').trigger('pause');
             $(".media-youtube-player")[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');  
             e.preventDefault();
             
@@ -179,35 +184,24 @@
 
 /*******  calendar fixed  area*********/
 
-        
-          $(window).scroll(function() {
-                $targetScroll = $('body').position().top+$(".view-article-ct-panes").height();
-                $currentScroll = $('html').scrollTop() || $('body').scrollTop();
-                if ($currentScroll >= $targetScroll){
-                    $('.filter-wrapper').addClass("fixedPos");
-                }
-                else{
-                    $('.filter-wrapper').removeClass("fixedPos");
-                }                
-          });
-
+        if ($(window).width() < 768){
+          $squarewidth = 70;
+        }
+        if ($(window).width() > 767){
+          $squarewidth = 90;
+        }
         $(window).resize(function() {
-          $(window).scroll(function() {
-                $targetScroll = $('body').position().top+$(".view-article-ct-panes").height();
-                $currentScroll = $('html').scrollTop() || $('body').scrollTop();
-                if ($currentScroll >= $targetScroll){
-                    $('.filter-wrapper').addClass("fixedPos");
-                }
-                else{
-                    $('.filter-wrapper').removeClass("fixedPos");
-                }                
-          });
+          if ($(window).width() < 768){
+            $squarewidth = 70;
+          }
+          if ($(window).width() > 767){
+            $squarewidth = 90;
+          }
         });
 
-        if ($(window).width() < 768){
-          $filterwidth = $(".calender-filter p").size()*70+30;
+          $filterwidth = $(".calender-filter p").size()*$squarewidth+30;
           $(".calender-filter").css("width",$filterwidth);
-          $maxleft = ($filterwidth - $(window).width())*(-1)-30; 
+          $maxleft = ($filterwidth - $(".filter-wrapper .inner").width())*(-1)-30; 
           $left = 0;
           $i = 0;
           $('.calender-filter p').each(function () {
@@ -218,12 +212,13 @@
               return false;            
             }
           });
-          $left = $left + (-70)*($i-1);
+          $left = $left + (-$squarewidth)*($i-1);
           if ($left < $maxleft){
               $left = $maxleft;
           }
           if ($left > 0){
               $left = 0;
+              $(".filter-wrapper .inner").addClass("noleft");
           }
           $(".i18n-en .calender-filter").css("margin-left",$left);
           $(".i18n-he .calender-filter").css("margin-right",$left);
@@ -238,21 +233,33 @@
                 return false;            
               }
             });
-            $left = $left + (-70)*($i-1);
-            if ($left < $maxleft){
+            $left = $left + (-$squarewidth)*($i-1);
+            if ($left <= $maxleft){
               $left = $maxleft;
+              $(".filter-wrapper .inner").addClass("noright");
             }
-            if ($left > 0){
+            if ($left > $maxleft){
+              $(".filter-wrapper .inner").removeClass("noright");
+            }
+            if ($left >= 0){
               $left = 0;
+              $(".filter-wrapper .inner").addClass("noleft");
+            }
+            if ($left < 0){
+              $(".filter-wrapper .inner").removeClass("noleft");
             }
             $(".i18n-en .calender-filter").css("margin-left",$left);
             $(".i18n-he .calender-filter").css("margin-right",$left);
           });
           $(".nextday").click(function(){
             if ($left > $maxleft){
-              $left = $left - 70;
-              if ($left < $maxleft){
+              $left = $left - $squarewidth;
+              if ($left <= $maxleft){
                 $left = $maxleft;
+                $(".filter-wrapper .inner").addClass("noright");
+              }
+              if ($left < 0){
+                  $(".filter-wrapper .inner").removeClass("noleft");
               }
               $(".i18n-en .calender-filter").css("margin-left",$left);
               $(".i18n-he .calender-filter").css("margin-right",$left);   
@@ -260,29 +267,23 @@
           });
           $(".prevday").click(function(){
             if ($left < 0){
-              $left = $left + 70;
-              if ($left > 0){
+              $left = $left + $squarewidth;
+              if ($left >= 0){
                 $left = 0;
+                $(".filter-wrapper .inner").addClass("noleft");
+              }
+              if ($left > $maxleft){
+                  $(".filter-wrapper .inner").removeClass("noright");
               }
               $(".i18n-en .calender-filter").css("margin-left",$left);
               $(".i18n-he .calender-filter").css("margin-right",$left);
               }
           });
-        }
-
-        $(".calender-filter p").click(function(){
-            //$("html, body").animate({ scrollTop: $(".calenders").offset().top -60 }, 500);
-            $(".filter-wrapper").removeClass("fixedPos");
-        });
 
         $(window).resize(function() {
-        if ($(window).width() > 767){
-          $(".calender-filter").css("margin","50px auto");
-        }
-        if ($(window).width() < 768){
-          $filterwidth = $(".calender-filter p").size()*70+30;
+          $filterwidth = $(".calender-filter p").size()*$squarewidth+30;
           $(".calender-filter").css("width",$filterwidth);
-          $maxleft = ($filterwidth - $(window).width())*(-1)-30; 
+          $maxleft = ($filterwidth - $(".filter-wrapper .inner").width())*(-1)-30; 
           $left = 0;
           $i = 0;
           $('.calender-filter p').each(function () {
@@ -293,7 +294,7 @@
               return false;            
             }
           });
-          $left = $left + (-70)*($i-1);
+          $left = $left + (-$squarewidth)*($i-1);
           if ($left < $maxleft){
               $left = $maxleft;
           }
@@ -302,7 +303,6 @@
           }
           $(".i18n-en .calender-filter").css("margin-left",$left);
           $(".i18n-he .calender-filter").css("margin-right",$left);
-        }
         });
 
 /********  items of review  *******/
@@ -320,7 +320,27 @@
         else{
           $(".full-screen-image").addClass("more-items");
         }
-        
+     
+       $(".node-type-front-page .full-screen-image-front").each(function() {
+          if ($(this).children(".gallery").children(".field").children(".field-items").children(".field-item").length == '1') { 
+            $(this).addClass("one-item");
+          }
+          else{
+            $(this).addClass("more-items");
+          } 
+       });
+       /* $(window).load(function() {
+          $(".node-type-front-page .full-screen-image-front").each(function() {
+            $(this).after($(this).children(".gallery").children(".field").children(".field-items").children(".owl-controls"));
+          });
+      });*/
+
+ /********  front *********/
+
+       $(".estimated").each(function() {
+          $(this).parent().remove();
+       });
+
 /******  search overlay  ******/
 
         $(".header-right .search span").click(function() {
@@ -330,7 +350,10 @@
             else{
                 $("body").addClass("search-overlay");
                 $("body").removeClass("responsive-hamburger-open");
-            }
+                $(".float-calendar-wrapper").addClass("hide-float");
+                $("body").addClass("hide-float-calendar");
+                $("body").removeClass("show-float-calendar");
+              }
         });
 
         $('.region-overlay').on('click', function(e) {
@@ -404,22 +427,42 @@
 
     /********  english name of the movie  *******/
 
-    var proffesionwidth = $(".credits-view .profession").width()+8;
-    $(".i18n-he .view-test-view-for-movie-credit .translated-movie-title a").css("margin-right", proffesionwidth);
-    $(".i18n-en .view-test-view-for-movie-credit .translated-movie-title a").css("margin-left", proffesionwidth);
+    var proffesionwidth = 0;
+    $(".credits-view .profession").each(function(){
+      if ($(this).width() > proffesionwidth){
+        proffesionwidth = $(this).width();
+      }
+    });
+    proffesionwidth = proffesionwidth + 10;
+    $(".credits-view .profession").css("width",proffesionwidth);
+    $(".credits-view .views-field-views-conditional").css("width",$(".credits-view").width()-proffesionwidth-10);
+    $(".credits-view .views-field-views-conditional").css("display","block");
+    $(".i18n-he .view-test-view-for-movie-credit .translated-movie-title a").css("margin-right", proffesionwidth+10);
+    $(".i18n-en .view-test-view-for-movie-credit .translated-movie-title a").css("margin-left", proffesionwidth+10);
 
     $(window).resize(function() {
-      var proffesionwidth = $(".credits-view .profession").width()+8;
-      $(".i18n-he .view-test-view-for-movie-credit .translated-movie-title a").css("margin-right", proffesionwidth);
-      $(".i18n-en .view-test-view-for-movie-credit .translated-movie-title a").css("margin-left", proffesionwidth);
+      var proffesionwidth = 0;
+      $(".credits-view .profession").each(function(){
+        if ($(this).width() > proffesionwidth){
+          proffesionwidth = $(this).width();
+        }
+      });
+      proffesionwidth = proffesionwidth + 10;
+      $(".credits-view .profession").css("width",proffesionwidth);
+      $(".credits-view .views-field-views-conditional").css("width",$(".credits-view").width()-proffesionwidth-10);
+      $(".credits-view .views-field-views-conditional").css("display","block");
+      $(".i18n-he .view-test-view-for-movie-credit .translated-movie-title a").css("margin-right", proffesionwidth+10);
+      $(".i18n-en .view-test-view-for-movie-credit .translated-movie-title a").css("margin-left", proffesionwidth+10);
     });
 
     /********  Show Title to image in movie group slideshow  *******/
 
-    $(".views-field-field-cm-moviegroup-pictures .image-alt-title").each(function(){
+    $(".image-alt-title").each(function(){
         $(this).children('.grp-alt').hide();
-        if($(this).children('.grp-title').text().length == 0){
-             $(this).hide();
+        if (($("span").hasClass('grp-title')) || ($("div").hasClass('grp-title'))){
+          if(($(this).children('.grp-title').text().length == 1) || ($(this).children('.grp-title').text().length == 0)){
+               $(this).hide();
+          }
         }
     });
 
@@ -499,6 +542,8 @@
             }
         });
     }
+    
+
 
        /******Hide Other screening ****/
     if($('.pane-event-ct-view-panel-pane-5 .view-content .hide-table').length){
@@ -617,6 +662,8 @@
        //    $('td.views-field-field-toptix-purchase').hide();
 		}
 	}
+
+
 
 
 })(jQuery);

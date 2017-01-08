@@ -69,19 +69,19 @@
       $black_text_event = '';
     }
     if(!empty($node->field_cm_moviegroup_short_summar)){
-      //$summary_movie_group =  truncate_utf8($node->field_cm_moviegroup_short_summar['und'][0]['value'], 50, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
-      $summary_movie_group =  $node->field_cm_moviegroup_short_summar['und'][0]['value'];
+      $summary_movie_group =  truncate_utf8($node->field_cm_moviegroup_short_summar['und'][0]['value'], 100, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+      //$summary_movie_group =  $node->field_cm_moviegroup_short_summar['und'][0]['value'];
     }else{
       $summary_movie_group = '';
     }
     if(!empty($node->field_cm_movie_short_summary)){
-      //$summary_movie = truncate_utf8($node->field_cm_movie_short_summary['und'][0]['value'], 50, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
-      $summary_movie = $node->field_cm_movie_short_summary['und'][0]['value'];
+      $summary_movie = truncate_utf8($node->field_cm_movie_short_summary['und'][0]['value'], 100, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+      //$summary_movie = $node->field_cm_movie_short_summary['und'][0]['value'];
     }else{
       $summary_movie = '';
     }
     if(!empty($node->field_cm_event_body['und'][0]['value'])){
-      $summary_event = truncate_utf8($node->field_cm_event_body['und'][0]['value'], 50, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+      $summary_event = truncate_utf8($node->field_cm_event_body['und'][0]['value'], 100, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
     }else{
       $summary_event = '';
     }

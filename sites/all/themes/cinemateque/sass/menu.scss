@@ -60,7 +60,7 @@
 			}
 			a {
 				color: $white;
-				padding: 15px 0 17px;
+				padding: 8px 0 10px;
 				@include res(l){
 					padding: 7px 0 9px;
 				}
@@ -79,6 +79,7 @@
 				background-repeat: no-repeat;
 				background-size: 20px auto;
 				width: 100%;
+				margin-right: 0;
 				&.last {
 					border-bottom: none;
 				}
@@ -305,7 +306,7 @@
 .navbar-toggle{
 	display: block;
 	@include res(menu){
-		display: none;
+		display: none!important;
 	}
 }
 
@@ -318,8 +319,13 @@
     margin-top: 13px;
 	padding: 0;
 	border-radius: 0;
+	background-color: transparent;
+	width: 34px;
 	&.navbar-toggle{
 		margin-left: 30px;
+	}
+	.sr-only{
+		display: none;
 	}
 }
 
