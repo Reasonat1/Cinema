@@ -8,7 +8,7 @@
             else{
               print '<img src="/sites/all/themes/cinemateque/images/default-image-pane-2.png">';
             } ?>
-            <div class="gradient small"></div>
+            <div class="gradient very-small"></div>
             <div class="top-text-blk-wht">
               <?php  if(!empty($node->field_movie_group_top_text_black)){ ?>
                 <span class="black"><?php print render($content['field_movie_group_top_text_black']);?></span>

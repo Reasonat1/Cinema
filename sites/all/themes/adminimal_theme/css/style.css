@@ -3055,3 +3055,102 @@ body.adminimal-skin-alternative.adminimal-theme.page-admin-structure-features #e
 .fpa-container .dummy-checkbox {
   display: none !important;
 }
+
+
+.page-node-edit.node-type-front-page .field-widget-date-popup, .page-node-add-front-page .field-widget-date-popup{
+    width: 70%;
+    float: left;
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.page-node-edit.node-type-front-page .field-widget-date-popup .start-date-wrapper, .page-node-add-front-page .field-widget-date-popup .start-date-wrapper{
+      position: absolute;
+      width: 40%;
+}
+
+.page-node-edit.node-type-front-page .field-widget-date-popup .end-date-wrapper, .page-node-add-front-page .field-widget-date-popup .end-date-wrapper{
+      position: absolute;
+      width: 40%;
+      left: 33%;
+      top: 17px;
+}
+
+.page-node-edit.node-type-front-page .field-widget-date-popup .end-date-wrapper label, .page-node-add-front-page .field-widget-date-popup .end-date-wrapper label{
+  padding-top: 6px;
+  float: left;
+}
+
+.page-node-edit.node-type-front-page .field-widget-date-popup .form-type-checkbox, .page-node-add-front-page .field-widget-date-popup .form-type-checkbox{
+    margin-top: -21px;
+    margin-left: 26px;
+}
+
+
+.page-node-edit.node-type-front-page .field-type-entityreference, .page-node-add-front-page .field-type-entityreference{
+  width: calc(30% - 100px);
+  float: left;
+  padding-right: 30px;
+  box-sizing: border-box;
+}
+
+.page-node-edit.node-type-front-page .field-type-entityreference input, .page-node-add-front-page .field-type-entityreference input{
+  width: 100%;
+}
+
+.page-node-edit.node-type-front-page .draggable .form-actions, .page-node-add-front-page .draggable .form-actions{
+  float: right;
+  width: 100px;
+}
+
+.page-node-edit.node-type-front-page .draggable .form-actions input, .page-node-add-front-page .draggable .form-actions input{
+  float: right;
+}
+
+.page-node-edit.node-type-front-page fieldset, .page-node-add-front-page fieldset{
+    border: none;
+    box-shadow: none;
+    padding: ;
+    margin: 0;
+}
+
+.page-node-edit.node-type-front-page legend , .page-node-add-front-page legend {
+  float: left;
+  margin-top: -9px;
+}
+
+fieldset.date-combo .container-inline-date .date-padding{
+  padding: 7px;
+}
+
+.page-node-edit.node-type-front-page .form-wrapper, .page-node-add-front-page .form-wrapper{
+  margin-bottom: 0;
+}
+
+.page-node-edit.node-type-front-page .placeholder, .page-node-add-front-page .placeholder{
+  color: #990000;
+  font-size: 20px;
+}
+
+.field-type-paragraphs{
+  clear: both;
+}
+
+.page-node-edit.node-type-front-page .field-widget-date-popup .date-no-float input, .page-node-add-front-page .field-widget-date-popup .date-no-float input{
+  width: 100px;
+}
+
+#autocomplete{
+  width: 500px!important;
+}
+
+.page-node-edit.node-type-front-page .field-name-field-section > div > div > div > table > tbody > tr, .page-node-add-front-page .field-name-field-section > div > div > div > table > tbody > tr{
+  border-top: 2px solid #990000;
+  border-bottom: 2px solid #990000;
+  margin-bottom: 10px;
+
+}
+
+.page-node-edit.node-type-front-page .field-name-field-section > div > div > div > table > tbody > tr > td, .page-node-add-front-page .field-name-field-section > div > div > div > table > tbody > tr > td{
+  padding-bottom: 10px;
+}

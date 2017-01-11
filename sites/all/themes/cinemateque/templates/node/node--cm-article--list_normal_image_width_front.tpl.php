@@ -1,3 +1,4 @@
+<a href="<?php print $node_url; ?>">
 <article class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <div class="list_normal_image_width">
@@ -26,3 +27,4 @@
 
 
 </article>
+</a>

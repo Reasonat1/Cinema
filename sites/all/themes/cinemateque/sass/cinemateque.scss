@@ -925,7 +925,13 @@ header{
 		font-size: 12px;
 		a{
 			background-color: transparent!important;
+			float: left!important;
 		}
+	}
+	.pager-ellipsis{
+		margin-right: 9px !important;
+    	position: relative;
+    	top: -7px;
 	}
 }
 #edit-basic {
@@ -1478,6 +1484,10 @@ div[id^="panels-ipe-paneid-22"] > * select {
 	.panels-flexible-region-new-center{
 		width: 100%;
 	}
+	.field-name-field-title{
+		font-size: 24px;
+		font-weight: bold;
+	}
 	.field-name-field-section > .field-items > .field-item{
 		clear: both;
 		position: relative;
@@ -1662,12 +1672,15 @@ div[id^="panels-ipe-paneid-22"] > * select {
 		}
 
 	}
+	.paragraphs-items-field-item-grid-3, .field-name-field-node-one-item-static{
+		margin: 20px 0;
+	}
 	.field-name-field-item-grid-3 > .field-items > .field-item{
-		width: 30%;
-		margin-right: 5%;
+		width: 32%;
+		margin-right: 2%;
 		float: left;
 		position: relative;
-		margin-bottom: 30px;
+		margin-bottom: 21px;
 		@include res(s-m){
 			width: 100%;
 		}
@@ -1699,6 +1712,12 @@ div[id^="panels-ipe-paneid-22"] > * select {
 		    h2{
 		    	line-height: 20px;
 		    	margin-bottom: 8px;
+		    	color: #fff;
+		    	font-weight: bold;
+		    	font-size: 20px;
+		    	div{
+		    		display: inline-block;
+		    	}
 		    }
 		    a{
 		    	color: #fff;

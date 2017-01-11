@@ -163,7 +163,7 @@
               $event_code = $node->field_cm_event_internal_id['und'][0]['value'];
           }
           if(!empty($node->field_cm_event_time['und'])){
-              $event_date = date('l d.m.y', $node->field_cm_event_time['und'][0]['value']);
+              $event_date = date('l | d.m.y', $node->field_cm_event_time['und'][0]['value']);
               $event_date_mobile = date('d.m.y', $node->field_cm_event_time['und'][0]['value']);
               $event_time = date('G:i', $node->field_cm_event_time['und'][0]['value']);
           }
@@ -225,7 +225,7 @@
               $event_code = $node_event->field_cm_event_internal_id['und'][0]['value'];
           }
           if(!empty($node_event->field_cm_event_time['und'])){
-              $event_date = date('l d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
+              $event_date = date('l | d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
               $event_date_mobile = date('d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
               $event_time = date('G:i', $node_event->field_cm_event_time['und'][0]['value']);
           }

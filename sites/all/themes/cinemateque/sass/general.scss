@@ -1651,7 +1651,8 @@ table{
 	}
 	.purchase, .views-field-field-toptix-purchase{
 		width: 88px;
-		padding: 6px 8px!important
+		padding: 6px 8px!important;
+		display: block;
 	}
 	.title{
 		width: 23%;
@@ -1829,6 +1830,10 @@ table{
 
 .gradient.small{
 	height: 150px!important;
+}
+
+.gradient.very-small{
+	height: 100px!important;
 }
 
 .state-nopic .gradient.small{
@@ -2073,6 +2078,9 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	}
 	.gradient{
 		display: none;
+		&.small{
+			display: block;
+		}
 	}	
 }
 

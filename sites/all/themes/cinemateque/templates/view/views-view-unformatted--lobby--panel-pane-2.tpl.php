@@ -150,7 +150,7 @@
             $sort_summary = $node->body['und'][0]['summary'];
           }
           elseif(!empty($node->body['und'][0]['value'])){
-            $sort_summary = truncate_utf8($node->body['und'][0]['value'], 50, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+            $sort_summary = truncate_utf8($node->body['und'][0]['value'], 100, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
           }else{
             $sort_summary = '';
           }

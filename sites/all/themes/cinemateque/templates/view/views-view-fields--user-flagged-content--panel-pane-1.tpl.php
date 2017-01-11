@@ -198,7 +198,7 @@
           $path = drupal_get_path_alias('node/'.$node->nid);
           $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node).'</div>';
           if(!empty($node->field_cm_event_time['und'])){
-              $event_date = format_date(($node->field_cm_event_time['und'][0]['value']), 'custom', 'l d.m.y');
+              $event_date = format_date(($node->field_cm_event_time['und'][0]['value']), 'custom', 'l | d.m.y');
               $event_date_mobile = date('d.m.y', $node->field_cm_event_time['und'][0]['value']);
               $event_time = date('G:i', $node->field_cm_event_time['und'][0]['value']);
           }
@@ -285,7 +285,7 @@
               }
               $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node_event).'</div>';
               if(!empty($node_event->field_cm_event_time['und'])){
-                  $event_date = format_date($node_event->field_cm_event_time['und'][0]['value'], 'custom', 'l d.m.y');
+                  $event_date = format_date($node_event->field_cm_event_time['und'][0]['value'], 'custom', 'l | d.m.y');
                   $event_date_mobile = date('d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
                   $event_time = date('G:i', $node_event->field_cm_event_time['und'][0]['value']);
               }

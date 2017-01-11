@@ -18,9 +18,14 @@
 			@include width;
 			margin-top: 30px;
 			.pane-title, .pane-content{
+				padding-left: 23%;
+				width: 100%;
+				padding-right: 23%;
 				margin: 0 auto;
-				width: 647px;
-				max-width: 100%;
+				@include res(s-m-l){
+					padding: 0;
+					max-width: 647px;
+				}
 			}
 			p{
 				line-height: 25px;
@@ -84,9 +89,14 @@
 			@include width();
 			padding-top: 30px;
 			.view-content{
+				padding-left: 23%;
+				padding-right: 23%;
+				width: 100%;
 				margin: 0 auto;
-				width: 647px;
-				max-width: 100%;
+				@include res(s-m-l){
+					padding: 0;
+					max-width: 647px;
+				}
 			}
 			.content {
 				position: inherit;

@@ -73,7 +73,7 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
               $event_code = '';
             }
              if(!empty($node->field_cm_event_time['und'])){
-               $event_date = format_date(($node->field_cm_event_time['und'][0]['value']), 'custom', 'l d.m.y');
+               $event_date = format_date(($node->field_cm_event_time['und'][0]['value']), 'custom', 'l | d.m.y');
                $event_date_mobile = date('d.m.y', $node->field_cm_event_time['und'][0]['value']);
              }else{
                 $event_date = '<div class="hide-div"></div>';

@@ -361,39 +361,51 @@
 .page-search .panels-flexible-row-node_page-3 .pane-facet .select2-container {
   width: 100% !important;
 }
-@media (min-width: 481px) and (max-width: 767px) {
+@media (max-width: 767px) {
   /* line 275, ../sass/search.scss */
+  .page-search .panels-flexible-row-node_page-3 .pane-facet:nth-child(2) {
+    padding-top: 70px;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  /* line 280, ../sass/search.scss */
+  .page-search .panels-flexible-row-node_page-3 .pane-facet:nth-child(3) {
+    padding-top: 70px;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  /* line 285, ../sass/search.scss */
   .page-search .panels-flexible-row-node_page-3 .panel-pane:nth-child(odd) {
     float: right;
   }
 }
-/* line 280, ../sass/search.scss */
+/* line 290, ../sass/search.scss */
 .page-search .panels-flexible-row-node_page-3 .panel-pane:nth-child(6n+2) {
   margin-left: 0;
 }
 @media (min-width: 768px) and (max-width: 1095px) {
-  /* line 280, ../sass/search.scss */
+  /* line 290, ../sass/search.scss */
   .page-search .panels-flexible-row-node_page-3 .panel-pane:nth-child(6n+2) {
     margin-left: 1.5%;
   }
 }
 @media (max-width: 767px) {
-  /* line 280, ../sass/search.scss */
+  /* line 290, ../sass/search.scss */
   .page-search .panels-flexible-row-node_page-3 .panel-pane:nth-child(6n+2) {
     margin: 0 !important;
   }
 }
 @media (min-width: 768px) and (max-width: 1095px) {
-  /* line 289, ../sass/search.scss */
+  /* line 299, ../sass/search.scss */
   .page-search .panels-flexible-row-node_page-3 .panel-pane:nth-child(3n+2) {
     margin-left: 0% !important;
   }
 }
-/* line 294, ../sass/search.scss */
+/* line 304, ../sass/search.scss */
 .page-search .panels-flexible-row-node_page-3 .form-type-select {
   margin-top: 0;
 }
-/* line 298, ../sass/search.scss */
+/* line 308, ../sass/search.scss */
 .page-search .pane-search-current {
   clear: both;
   padding-top: 60px;
@@ -401,7 +413,7 @@
   background-color: #f9f4ee;
   padding-bottom: 20px;
 }
-/* line 304, ../sass/search.scss */
+/* line 314, ../sass/search.scss */
 .page-search .pane-search-current .pane-content {
   width: 1355px !important;
   max-width: 100%;
@@ -409,17 +421,17 @@
   padding: 0 5%;
   box-sizing: border-box;
 }
-/* line 306, ../sass/search.scss */
+/* line 316, ../sass/search.scss */
 .page-search .pane-search-current .pane-content h2 {
   font-size: 18px;
   font-weight: bold;
   margin: 0;
 }
-/* line 314, ../sass/search.scss */
+/* line 324, ../sass/search.scss */
 .page-search .pane-current-search-search-results-facets-block a {
   font-size: 0;
 }
-/* line 316, ../sass/search.scss */
+/* line 326, ../sass/search.scss */
 .page-search .pane-current-search-search-results-facets-block a:before {
   content: "x";
   display: block;
@@ -436,12 +448,12 @@
 .domain-2 .page-search .pane-current-search-search-results-facets-block li:hover:before {
   color: #b59d70 !important;
 }
-/* line 331, ../sass/search.scss */
+/* line 341, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results {
   background-color: #f9f4ee;
   padding-bottom: 50px;
 }
-/* line 334, ../sass/search.scss */
+/* line 344, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content {
   width: 1355px !important;
   max-width: 100%;
@@ -449,95 +461,99 @@
   padding: 0 5%;
   box-sizing: border-box;
 }
-/* line 336, ../sass/search.scss */
+/* line 346, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view {
   overflow: visible;
 }
-/* line 339, ../sass/search.scss */
+/* line 349, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search {
   position: relative;
 }
-/* line 341, ../sass/search.scss */
+/* line 351, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .lobby-container {
   background-color: #fff;
   margin-bottom: 20px;
   clear: both;
 }
-/* line 347, ../sass/search.scss */
+/* line 357, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .pager-next a, .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .pager-last a, .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .pager-first a, .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .pager-previous a {
   padding-right: 0;
   padding-left: 0;
 }
-/* line 352, ../sass/search.scss */
+/* line 362, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .pager-item a, .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .pager-current span {
   padding: 5px 10px;
 }
-/* line 355, ../sass/search.scss */
+/* line 365, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-header {
   top: -46px;
   right: 0;
   position: absolute;
 }
 @media (max-width: 767px) {
-  /* line 355, ../sass/search.scss */
+  /* line 365, ../sass/search.scss */
   .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-header {
     position: relative;
     top: auto;
   }
 }
-/* line 365, ../sass/search.scss */
+/* line 375, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-left {
   float: left;
   width: 30%;
   position: relative;
 }
-/* line 369, ../sass/search.scss */
+/* line 379, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-left .person-left-sec {
   padding: 18px;
   overflow: hidden;
 }
-/* line 372, ../sass/search.scss */
+/* line 382, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-left .person-left-sec .person-img {
   float: left;
   width: 45%;
   padding-right: 7%;
 }
 @media (max-width: 767px) {
-  /* line 372, ../sass/search.scss */
+  /* line 382, ../sass/search.scss */
   .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-left .person-left-sec .person-img {
     width: 100%;
     padding: 0 !important;
   }
-  /* line 379, ../sass/search.scss */
+  /* line 389, ../sass/search.scss */
   .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-left .person-left-sec .person-img a {
     display: block;
     text-align: center;
   }
 }
-/* line 385, ../sass/search.scss */
+/* line 395, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-left .person-left-sec .name-job {
   width: 55%;
   float: right;
 }
 @media (max-width: 767px) {
-  /* line 385, ../sass/search.scss */
+  /* line 395, ../sass/search.scss */
   .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-left .person-left-sec .name-job {
     width: 100%;
     text-align: center;
   }
 }
-/* line 394, ../sass/search.scss */
+/* line 402, ../sass/search.scss */
+.page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-left .person-left-sec .name-job a {
+  color: #000;
+}
+/* line 407, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-left .person-left-sec .name .job-title {
   font-weight: normal;
   padding-top: 10px;
 }
 @media (max-width: 767px) {
-  /* line 365, ../sass/search.scss */
+  /* line 375, ../sass/search.scss */
   .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-left {
     width: 100%;
   }
 }
-/* line 404, ../sass/search.scss */
+/* line 417, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-right {
   float: right;
   width: 70%;
@@ -545,83 +561,83 @@
   box-sizing: border-box;
 }
 @media (max-width: 767px) {
-  /* line 404, ../sass/search.scss */
+  /* line 417, ../sass/search.scss */
   .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-right {
     width: 100%;
   }
 }
-/* line 412, ../sass/search.scss */
+/* line 425, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-right table tbody {
   border: none;
 }
-/* line 415, ../sass/search.scss */
+/* line 428, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-right .lobby-title a {
   font-size: 1.3em;
   color: #000;
 }
-/* line 419, ../sass/search.scss */
+/* line 432, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-right .lobby-summary, .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-right .enhan-summary {
   padding: 20px 0;
 }
-/* line 422, ../sass/search.scss */
+/* line 435, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-right .lobby-length, .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-right .enhan-credit-container {
   color: #919191;
   font-size: 0.9em;
   line-height: 28px;
 }
-/* line 427, ../sass/search.scss */
+/* line 440, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-right .table-responsive {
   overflow: visible;
 }
-/* line 429, ../sass/search.scss */
+/* line 442, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-right .table-responsive table {
   margin-bottom: 0;
 }
 @media (max-width: 767px) {
-  /* line 435, ../sass/search.scss */
+  /* line 448, ../sass/search.scss */
   .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .row-custom-lobby td {
     padding-right: 0 !important;
   }
 }
-/* line 440, ../sass/search.scss */
+/* line 453, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .row-custom-lobby .date {
   width: 20%;
 }
-/* line 443, ../sass/search.scss */
+/* line 456, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .row-custom-lobby .time {
   width: 11%;
 }
-/* line 446, ../sass/search.scss */
+/* line 459, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .row-custom-lobby .hall {
   width: 18%;
 }
-/* line 449, ../sass/search.scss */
+/* line 462, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .row-custom-lobby .purchase {
   padding-right: 0;
   padding-left: 0;
   width: 80px !important;
 }
-/* line 454, ../sass/search.scss */
+/* line 467, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .row-custom-lobby .title {
   width: 23%;
 }
-/* line 457, ../sass/search.scss */
+/* line 470, ../sass/search.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .row-custom-lobby .code {
   width: 10%;
 }
 
-/* line 467, ../sass/search.scss */
+/* line 480, ../sass/search.scss */
 .current-search-item {
   clear: both;
 }
-/* line 469, ../sass/search.scss */
+/* line 482, ../sass/search.scss */
 .current-search-item li {
   float: left;
   margin-right: 30px !important;
   border-bottom: 1px solid;
   color: #c9c9c9;
 }
-/* line 474, ../sass/search.scss */
+/* line 487, ../sass/search.scss */
 .current-search-item li a {
   color: #c9c9c9;
 }
@@ -642,17 +658,17 @@
   color: #b59d70 !important;
 }
 
-/* line 487, ../sass/search.scss */
+/* line 500, ../sass/search.scss */
 .select2-results__options li:first-child {
   display: none !important;
 }
-/* line 490, ../sass/search.scss */
+/* line 503, ../sass/search.scss */
 .select2-results__options li {
   background: url("../images/select-empty.png") no-repeat left 7px top 14px;
   padding-left: 22px;
 }
 
-/* line 496, ../sass/search.scss */
+/* line 509, ../sass/search.scss */
 .select2-container--default .select2-selection--single .select2-selection__arrow b:before {
   content: "\f107";
   font: normal normal normal 14px/1 FontAwesome;
@@ -669,28 +685,28 @@
   color: #b59d70 !important;
 }
 
-/* line 505, ../sass/search.scss */
+/* line 518, ../sass/search.scss */
 .select2-container--default .select2-selection--single {
   border: 1px solid #c9c9c9;
 }
 
-/* line 510, ../sass/search.scss */
+/* line 523, ../sass/search.scss */
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
   background-color: #f7f7f7;
   color: #000;
 }
 
-/* line 515, ../sass/search.scss */
+/* line 528, ../sass/search.scss */
 .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b:before {
   content: "\f106";
 }
 
-/* line 519, ../sass/search.scss */
+/* line 532, ../sass/search.scss */
 .select2-container--default .select2-selection--single .select2-selection__arrow b {
   border: none;
 }
 
-/* line 523, ../sass/search.scss */
+/* line 536, ../sass/search.scss */
 input:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]), input[type="email"]:focus:not([readonly]), input[type="number"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), input[type="search-md"]:focus:not([readonly]), input[type="tel"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="time"]:focus:not([readonly]), input[type="url"]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
   border-bottom: 1px solid;
 }
@@ -703,7 +719,7 @@ input:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]),
   border-color: #b59d70 !important;
 }
 
-/* line 528, ../sass/search.scss */
+/* line 541, ../sass/search.scss */
 .page-search-search-results #main #content .search_new, .page-search-search-results #main #content .region-content .views-field-php a {
   background: url("../images/add-event.png") no-repeat center center;
   vertical-align: top;
@@ -711,12 +727,12 @@ input:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]),
   height: 27px;
 }
 
-/* line 535, ../sass/search.scss */
+/* line 548, ../sass/search.scss */
 .select2-container--default .select2-selection--single {
   border-radius: 0;
 }
 
-/* line 539, ../sass/search.scss */
+/* line 552, ../sass/search.scss */
 .select2-dropdown {
   border-radius: 0;
 }

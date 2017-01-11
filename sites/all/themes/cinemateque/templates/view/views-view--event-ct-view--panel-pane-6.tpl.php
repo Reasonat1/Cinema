@@ -15,12 +15,13 @@ foreach ($node->field_movie_referenced['und'] as $movie_array) {
 	if(!empty($movie_node->field_cm_movie_pictures)){
          
 		  $picture_path_movie=file_load($movie_node->field_cm_movie_pictures['und'][0]['fid']);
-          $image_movie = '<img src="' . image_style_url('lobby', $picture_path_movie->uri) . '" alt="" />';
+          $image_movie = '<img src="' . image_style_url('movie-group_613x380_', $picture_path_movie->uri) . '" alt="" />';
         }else{
             $image_movie = '<img src="/sites/all/themes/cinemateque/images/default-image-pane-2.png">';
         }
  $output .= '<div class="row"><div class="image-lobby"><div class="flag-movie">'.$flag.'</div>';
  $output .= l($image_movie, $alias, array('attributes' => array('class' =>'link-image'),'html' => true));
+ $output .= '<div class="gradient small"></div>';
 	if(!empty($movie_node->field_cm_movie_meta_credit['und'])){
 	$credits=$movie_node->field_cm_movie_meta_credit['und'][0]['value'];
 	} else $credits='';

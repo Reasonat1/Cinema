@@ -272,6 +272,16 @@
 				width: 100%!important;
 			}
 		}
+		.pane-facet:nth-child(2){
+			@include res(s-m){
+				padding-top: 70px;
+			}
+		}
+		.pane-facet:nth-child(3){
+			@include res(m){
+				padding-top: 70px;
+			}
+		}
 		.panel-pane:nth-child(odd){
 			@include res(m){
 				float: right;
@@ -388,6 +398,9 @@
 								@include res(s-m){
 									width: 100%;
 									text-align: center;
+								}
+								a{
+									color: #000;
 								}
 							}
 							.name{

@@ -516,3 +516,25 @@ table{
 		float: left;
 	}
 }
+
+/*******  overlay region  *******/
+
+.region-overlay{
+
+	.block-search-api-page	form{
+			.form-group {
+				.form-text {
+					float: right;
+					padding: 7px 2% 8px 22%;
+				}
+			}
+			.form-submit {
+				left: 0;
+				right: auto;
+			}
+		}
+		.popup-close{
+			right: auto;
+			left: 10px!important;
+		}
+}

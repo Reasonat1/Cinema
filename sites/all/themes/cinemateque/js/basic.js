@@ -31,6 +31,13 @@
             })
     });
 
+    if ($("body").hasClass("page-search")){
+      $(".text-center a").click(function(){
+        $( document ).ajaxComplete(function() {
+          $("html, body").animate({ scrollTop: $(".panels-flexible-row-node_page-4").offset().top},500);
+        });
+      });
+    }
 
   /*****  min page height  *******/
 
@@ -357,7 +364,7 @@ if ($("div").hasClass("movie-group-list")){
         });
 
         $('.region-overlay').on('click', function(e) {
-          if($(e.target).closest('#search-api-page-search-form-search-results').length == 0) {
+          if($(e.target).closest('.region-overlay form').length == 0) {
               $("body").removeClass("search-overlay");
           }
       });
@@ -416,6 +423,8 @@ if ($("div").hasClass("movie-group-list")){
                $(this).addClass('active-slide');
          }
     });*/
+
+
 
     /********  Show Title to image in movie slideshow  *******/
     if($('.group-alttab .field-name-field-file-image-title-text').text().length > 0){
@@ -527,6 +536,7 @@ if ($("div").hasClass("movie-group-list")){
             });
 
         }
+        
 
 
     if (($("body").hasClass("page-node-3261")) || ($("body").hasClass("page-node-3284"))){

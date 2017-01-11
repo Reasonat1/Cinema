@@ -648,6 +648,23 @@ table td, table th {
   float: left;
 }
 
+/*******  overlay region  *******/
+/* line 526, ../sass/general-rtl.scss */
+.region-overlay .block-search-api-page form .form-group .form-text {
+  float: right;
+  padding: 7px 2% 8px 22%;
+}
+/* line 531, ../sass/general-rtl.scss */
+.region-overlay .block-search-api-page form .form-submit {
+  left: 0;
+  right: auto;
+}
+/* line 536, ../sass/general-rtl.scss */
+.region-overlay .popup-close {
+  right: auto;
+  left: 10px !important;
+}
+
 /* line 6, ../sass/search-rtl.scss */
 .page-search .search_result .text-center {
   float: left;
@@ -1611,4 +1628,15 @@ table td, table th {
 .node-type-front-page .field-name-field-node-top-gallery .node-cm-event .views-field-ops {
   float: right;
   margin: 4px 10px 0 0px;
+}
+
+/******  pager  *******/
+/* line 350, ../sass/cinemateque-rtl.scss */
+.item-list .pager li a {
+  float: right !important;
+}
+/* line 354, ../sass/cinemateque-rtl.scss */
+.item-list .pager-ellipsis {
+  margin-left: 9px !important;
+  margin-right: 0 !important;
 }

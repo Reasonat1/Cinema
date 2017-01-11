@@ -321,12 +321,12 @@
           $path = drupal_get_path_alias('node/'.$node_event->nid);
           $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node_event).'</div>';
           if(!empty($node_event->field_cm_event_time['und'])){
-              $event_date = date('l d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
+              $event_date = format_date($node_event->field_cm_event_time['und'][0]['value'], 'custom', 'l | d.m.y');
               $event_date_mobile = date('d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
               $event_time = date('G:i', $node_event->field_cm_event_time['und'][0]['value']);
           }
            $output_event .= '<tr class="row-custom-lobby">';
-            $output_event .= '<td class="date only-desktop">'.t($event_date).'</td>';
+            $output_event .= '<td class="date only-desktop">'.$event_date.'</td>';
             $output_event .= '<td class="time"><div class="only-mobile">'.$event_date_mobile.'</div>'.$event_time.'</td>';
 			
 			if(!empty($node_event->field_cm_event_hall['und'])){
@@ -403,12 +403,12 @@
           $path = drupal_get_path_alias('node/'.$movie_group_event_info->nid);
           $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($movie_group_event_info).'</div>';
           if(!empty($movie_group_event_info->field_cm_event_time['und'])){
-           $event_date = date('l d.m.y', $movie_group_event_info->field_cm_event_time['und'][0]['value']);
+           $event_date = format_date($movie_group_event_info->field_cm_event_time['und'][0]['value'], 'custom', 'l | d.m.y');
            $event_date_mobile = date('d.m.y', $movie_group_event_info->field_cm_event_time['und'][0]['value']);
            $event_time = date('G:i', $movie_group_event_info->field_cm_event_time['und'][0]['value']);
           }
           $output .= '<tr class="row-custom-lobby">';
-           $output .= '<td class="date only-desktop">'.t($event_date).'</td>';
+           $output .= '<td class="date only-desktop">'.$event_date.'</td>';
            $output .= '<td class="time"><div class="only-mobile">'.$event_date_mobile.'</div>'.$event_time.'</td>';
            if(!empty($movie_group_event_info->field_cm_event_hall['und'])){
                $hall_id = taxonomy_term_load($movie_group_event_info->field_cm_event_hall['und'][0]['target_id']);
@@ -485,12 +485,12 @@
          $path = drupal_get_path_alias('node/'.$movie_event_info->nid);
          $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($movie_event_info).'</div>';
          if(!empty($movie_event_info->field_cm_event_time['und'])){
-          $event_date = date('l d.m.y', $movie_event_info->field_cm_event_time['und'][0]['value']);
+          $event_date = format_date($movie_event_info->field_cm_event_time['und'][0]['value'], 'custom', 'l | d.m.y');
           $event_date_mobile = date('d.m.y', $movie_event_info->field_cm_event_time['und'][0]['value']);
           $event_time = date('G:i', $movie_event_info->field_cm_event_time['und'][0]['value']);
          }
           $output_movie_event .= '<tr class="row-custom-lobby">';
-           $output_movie_event .= '<td class="date only-desktop">'.t($event_date).'</td>';
+           $output_movie_event .= '<td class="date only-desktop">'.$event_date.'</td>';
            $output_movie_event .= '<td class="time"><div class="only-mobile">'.$event_date_mobile.'</div>'.$event_time.'</td>';
            if(!empty($movie_event_info->field_cm_event_hall['und'])){
                $hall_id = taxonomy_term_load($movie_event_info->field_cm_event_hall['und'][0]['target_id']);
