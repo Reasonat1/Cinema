@@ -1,9 +1,12 @@
 var toptix_form_processed = false;
-
+var toptix_form_clicked = null;
 (function($) {
   Drupal.behaviors.toptix = {
     attach: function(context, settings) {
-      // closure variable
+      $('#' + settings.toptix_form + ' input[name="op"]').click(function(event) {
+        toptix_form_clicked = this;
+      });
+
       $('#' + settings.toptix_form).submit(function(event) {
         if (toptix_form_processed) {
           return;
@@ -34,8 +37,7 @@ var toptix_form_data = null;
 var toptix_form_item = null;
 function toptix_user_submit() {
   toptix_form_item.removeClass('throbbing');
-  var form = jQuery('#' + Drupal.settings.toptix_form);
-  form.submit();
+  jQuery(toptix_form_clicked).click();
 }
 
 function toptix_callback_save(result) {

@@ -72,17 +72,25 @@ function cinematic_toptix_block_view($delta) {
       'data' => array('toptix_user' => $field_toptix), 
       'type' => 'setting'
     ),
-    //'http://' . TOPTIX_HOST . '/iframe/esrojsapi.js' => array('group' => JS_LIBRARY, 'type' => 'external'),
-    $path . '/esrojsapi.js' => array('group' => JS_LIBRARY),
+    'http://' . TOPTIX_HOST . '/iframe/esrojsapi.js' => array('group' => JS_LIBRARY, 'type' => 'external'),
+    //$path . '/esrojsapi.js' => array('group' => JS_LIBRARY),
     $path . '/basket.js',
   );
 
   return $block;
 }
 
+function cinematic_toptix_user_submit($form, &$form_state) {
+  $form_state['redirect'] = 'user/' . $form_state['user']->uid;
+}
+
 function cinematic_toptix_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id != 'user_register_form' and $form_id != 'user_profile_form') {
     return;
+  }
+
+  if ($form_id == 'user_profile_form') {
+    $form['#submit'][] = 'cinematic_toptix_user_submit';
   }
 
   if (!isset($form['#attached']['js'])) {
@@ -93,9 +101,9 @@ function cinematic_toptix_form_alter(&$form, &$form_state, $form_id) {
     'type' => 'setting'
   );
   $form['#attached']['js'][] = drupal_get_path('module', 'cinematic_toptix') . '/create_user.js';
-  //$esro_path = 'http://' . TOPTIX_HOST . '/iframe/esrojsapi.js';
-  $esro_path = drupal_get_path('module', 'cinematic_toptix') . '/esrojsapi.js';
-  $form['#attached']['js'][$esro_path] = array('group' => JS_LIBRARY);
+  $esro_path = 'http://' . TOPTIX_HOST . '/iframe/esrojsapi.js';
+  //$esro_path = drupal_get_path('module', 'cinematic_toptix') . '/esrojsapi.js';
+  $form['#attached']['js'][$esro_path] = array('group' => JS_LIBRARY, 'type' => 'external');
 }
 
 function cinematic_toptix_field_widget_form_alter(&$element, &$form_state, $context) {
@@ -183,8 +191,8 @@ function cinematic_toptix_field_formatter_view(
             'data' => array('toptix_user' => $field_toptix), 
             'type' => 'setting'
           ),
-          //'http://' . TOPTIX_HOST . '/iframe/esrojsapi.js' => array('group' => JS_LIBRARY, 'type' => 'external'),
-          drupal_get_path('module', 'cinematic_toptix') . '/esrojsapi.js' => array('group' => JS_LIBRARY),
+          'http://' . TOPTIX_HOST . '/iframe/esrojsapi.js' => array('group' => JS_LIBRARY, 'type' => 'external'),
+          //drupal_get_path('module', 'cinematic_toptix') . '/esrojsapi.js' => array('group' => JS_LIBRARY),
           drupal_get_path('module', 'cinematic_toptix') . '/frame.js',
         ),
         'library' => array(

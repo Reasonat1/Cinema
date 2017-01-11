@@ -4,7 +4,7 @@ var eSRO_private = function() {
     var sessionState = { status: "n/a", clientDetails: null, basket: null, contextId: null, OboName: null };
     var eventHandlers = { sessionStatusChanged: [], clientDetailsChanged: [], basketChanged: [], error: [], navigationRequired: [], oboChanged: []};
     var esroWindow = null;
-    var baseURL = 'http://199.203.164.53/';
+    var baseURL = 'http://tickets.jer-cin.org.il/';
     var integrationURL = "Iframe/IframeIntegration.ashx";
     var me = this;
     //var couponMethodId = "20000000-0000-0000-0000-000000000010";
@@ -32,7 +32,7 @@ var eSRO_private = function() {
                 }
             }
         }
-        generateStateEntity();
+        generateStateEntity(false);
     };
     function rndString(len) {
         var str = '';
@@ -146,11 +146,11 @@ var eSRO_private = function() {
     }
 
     //-------------------------------------------------------------------------------------------------------------
-    function generateStateEntity() {
+    function generateStateEntity(noNav) {
         if (baseURL == null)
             baseURL = findUrl();
 
-        jQuery.getScript(baseURL + integrationURL + "?jsonp=a123"); //?d=' + Date().valueOf().toString());
+        jQuery.getScript(baseURL + integrationURL + "?jsonp=a123" + (noNav == true ? "&noNav=true" : "")); //?d=' + Date().valueOf().toString());
     }
 
     //-------------------------------------------------------------------------------------------------------------
@@ -706,7 +706,7 @@ var eSRO_private = function() {
         generateJson2Script();
         if (sessionState.status == 'n/a' && esroWindow == null)
             return;
-        generateStateEntity();
+        generateStateEntity(true);
     };
 
     //-------------------------------------------------------------------------------------------------------------
