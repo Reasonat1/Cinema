@@ -12,13 +12,6 @@ function cinematic_toptix_import($form, &$form_state) {
     '#suffix' => '<p> last run at : ' . $last . '</p>',
   );
 
-  $form['custom_date'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Custom date'),
-    '#description' => 'Example: 2016-10-21',
-    '#size' => 16,
-  );
-
   $form['import'] = array(
     '#type' => 'submit',
     '#value' =>  t('Import'),
@@ -27,35 +20,23 @@ function cinematic_toptix_import($form, &$form_state) {
   return $form;
 }
 
-function cinematic_toptix_import_validate($form, &$form_state) {
-  $custom_date = $form_state['values']['custom_date'];
-  if ($custom_date) {
-    try {
-      $custom_date = new DateTime($custom_date);
-      $form_state['values']['custom_run'] = $custom_date;
-    }
-    catch (Exception $e) {
-      form_set_error('custom_date', $e->getMessage());
-    }
-  }
+function cinematic_toptix_import_submit($form, &$form_state) {
+  $message = TopTixImport::import();
+  drupal_set_message($message);
 }
 
-function cinematic_toptix_import_submit($form, &$form_state) {
-  $last_run = $form_state['values']['last_run'];
-  variable_set('toptix_import', date('Y-m-d H:i:s'));
-  if (isset($form_state['values']['custom_run'])) {
-    $last_run = $form_state['values']['custom_run'];
+class TopTixImport {
+  public static function import() {
+    variable_set('toptix_import', date('Y-m-d H:i:s'));
+    $url = 'http://' . TOPTIX_HOST . '/feed/events/?groupby=show';
+    $context = stream_context_create(array('http' => array('timeout' => 1200)));
+    $in = file_get_contents($url, false, $context);
+    $xml = new TopTixReader();
+    $xml->xml($in);
+    list($total_shows, $total_events) = $xml->read_shows();
+    $holders = array('@count1' => $total_shows, '@count2' => $total_events);
+    return t('imported @count1 shows and @count2 events', $holders);
   }
-  $lastupdate = $last_run->format('Y-m-d');
-  //$url = 'http://' . TOPTIX_HOST . '/feed/events/?groupby=show&lastupdate=' . $lastupdate;
-  $url = 'http://' . TOPTIX_HOST . '/feed/events/?groupby=show';
-  $context = stream_context_create(array('http' => array('timeout' => 1200)));
-  $in = file_get_contents($url, false, $context);
-  $xml = new TopTixReader();
-  $xml->xml($in);
-  list($total_shows, $total_events) = $xml->read_shows();
-  $holders = array('@count1' => $total_shows, '@count2' => $total_events);
-  drupal_set_message(t('imported @count1 shows and @count2 events', $holders));
 }
 
 class TopTixContext {
@@ -75,6 +56,7 @@ class TopTixReader extends XMLReader {
   public function read_shows() {
     $this->toptix = new TopTixContext();
     $this->toptix->shows = array();
+    $this->reset_shows();
     while ($this->read()) {
       if ($this->nodeType == XMLReader::ELEMENT) {
         $this->process_element();
@@ -137,12 +119,15 @@ class TopTixReader extends XMLReader {
     }
   }
 
-  private function write_shows() {
-    $ids = array();
-    $transaction = db_transaction();
+  private function reset_shows() {
     db_delete('toptix_events')->execute();
     db_delete('toptix_events_data')->execute();
     db_delete('toptix_shows')->execute();
+  }
+
+  private function write_shows() {
+    $ids = array();
+    $transaction = db_transaction();
 
     $shows_insert = db_insert('toptix_shows');
     $shows_insert->fields(array('external_id', 'title'));

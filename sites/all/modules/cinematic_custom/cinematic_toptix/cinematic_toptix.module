@@ -22,6 +22,12 @@ function cinematic_toptix_menu() {
   return $items;
 }
 
+function cinematic_toptix_cron() {
+  return;
+  $message = TopTixImport::import();
+  watchdog('toptix import', $message); 
+}
+
 function cinematic_toptix_theme() {
   $themes = array();
   $themes['cinematic_browser'] = array(
