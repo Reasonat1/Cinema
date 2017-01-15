@@ -1,10 +1,11 @@
 (function($) {
   Drupal.behaviors.toptix_select = {
     attach: function(context, settings) {
-      $('.field-name-field-toptix-purchase input.browser')
+      $('.field-name-field-toptix-purchase input.browser + .description')
         .click(function(){
-          $(this).addClass('throbbing').css('background-repeat', 'no-repeat');
-          toptix_dialog.setup(this);
+          var anchor = $(this).prev();
+          $(anchor).addClass('throbbing').css('background-repeat', 'no-repeat');
+          toptix_dialog.setup(anchor);
         });
       toptix_dialog.hidden = $('.field-name-field-toptix-purchase input[type="hidden"]')
     },
@@ -29,9 +30,19 @@ toptix_dialog.show_results = function(respone) {
   if (this.win) {
     this.win.dialog('destroy');
   }
+  
+  var pos = {of: this.anchor};
+  if (document.dir == 'rtl') {
+    pos.my = 'right+10 center';
+    pos.at = 'left bottom';
+  }
+  else {
+    pos.my = 'left+10 center';
+    pos.at = 'right bottom';
+  }
   this.win = results.dialog({
     title: Drupal.t('Events'),
-    position: {my:'left+10 center', at:'right bottom', of: this.anchor},
+    position: pos,
     height: 600,
     width: 600,
   });
