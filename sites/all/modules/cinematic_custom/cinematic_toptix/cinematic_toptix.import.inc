@@ -47,7 +47,7 @@ function cinematic_toptix_import_submit($form, &$form_state) {
     $last_run = $form_state['values']['custom_run'];
   }
   $lastupdate = $last_run->format('Y-m-d');
-  $url = 'http://' . TOPTIX_HOST . '/feed/events/?groupby=show&lastupdate=' . $lastupdate;
+  //$url = 'http://' . TOPTIX_HOST . '/feed/events/?groupby=show&lastupdate=' . $lastupdate;
   $url = 'http://' . TOPTIX_HOST . '/feed/events/?groupby=show';
   $context = stream_context_create(array('http' => array('timeout' => 1200)));
   $in = file_get_contents($url, false, $context);
@@ -140,44 +140,48 @@ class TopTixReader extends XMLReader {
   private function write_shows() {
     $ids = array();
     $transaction = db_transaction();
+    db_delete('toptix_events')->execute();
+    db_delete('toptix_events_data')->execute();
+    db_delete('toptix_shows')->execute();
+
+    $shows_insert = db_insert('toptix_shows');
+    $shows_insert->fields(array('external_id', 'title'));
     foreach ($this->toptix->shows as $show) {
-      $ids[] = $show['ID'];
-      db_merge('toptix_shows')
-        ->key(array('external_id' => $show['ID']))
-        ->fields(array('title' => $show['Name']))
-        ->execute();
+      $shows_insert->values(array($show['ID'], $show['Name']));
     }
+    $shows_insert->execute();
     $query = db_select('toptix_shows', 'ts');
     $query->fields('ts', array('external_id', 'id'));
-    $query->condition('external_id', $ids, 'IN');
     $show_ids = $query->execute()->fetchAllKeyed();
 
     $this->write_events($show_ids);
   }
 
   private function write_events($show_ids) {
+    $events_insert = db_insert('toptix_events');
+    $events_insert->fields(array('local_id', 'external_id', 'show_id', 'event_date'));
+
+    $data_insert = db_insert('toptix_events_data');
+    $data_insert->fields(array('local_id', 'data'));
+
     foreach ($this->toptix->shows as $show) {
       $show_id = $show_ids[ $show['ID'] ];
       foreach ($show['events'] as $event) {
         $this->toptix->total_events++;
-        db_merge('toptix_events')
-          ->key(array('local_id' => $event['EventLocalId']))
-          ->fields(array(
-            'local_id' => $event['EventLocalId'],
-            'external_id' => $event['EventId'],
-            'show_id' => $show_id,
-            'event_date' => $event['ActualEventDate'],
-          ))
-          ->execute();
-        db_merge('toptix_events_data')
-          ->key(array('local_id' => $event['EventLocalId']))
-          ->fields(array(
-            'local_id' => $event['EventLocalId'],
-            'data' => serialize($event),
-          ))
-          ->execute();
+        $events_insert->values(array(
+          $event['EventLocalId'],
+          $event['EventId'],
+          $show_id,
+          $event['ActualEventDate'],
+        ));
+        $data_insert->values(array(
+          $event['EventLocalId'],
+          serialize($event),
+        ));
       }
     }
+    $events_insert->execute();
+    $data_insert->execute();
   }
 }
 
