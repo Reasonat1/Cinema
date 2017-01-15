@@ -3,7 +3,7 @@
     attach: function(context, settings) {
       $('.field-name-field-toptix-purchase input.browser + .description')
         .click(function(){
-          var anchor = $(this).prev();
+          var anchor = $(this).prev().get(0);
           $(anchor).addClass('throbbing').css('background-repeat', 'no-repeat');
           toptix_dialog.setup(anchor);
         });
@@ -96,7 +96,7 @@ function formatAMPM(date) {
 function toptix_temp_update_date(id) {
   var data = toptix_dialog.data[id];
 
-  jQuery('input[name="title"]').val(data.title);
+  //jQuery('input[name="title"]').val(data.title);
   if (typeof data.DetailedText != 'undefined') {
     jQuery('textarea[name="field_cm_event_body[und][0][value]"').val(data.DetailedText);
     //console.log(data.DetailedText);
