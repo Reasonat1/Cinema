@@ -49,17 +49,13 @@ function cinematic_toptix_block_view($delta) {
   if ($delta != 'cart') {
     return;
   }
-  global $user;
-  $account = user_load($user->uid);
-  $field_toptix = field_get_items('user', $account, 'field_toptix');
-  $field_toptix = $field_toptix[0]['value'];
 
   $block = array('title' => '');
-  $path = drupal_get_path('module', 'cinematic_toptix');
+
   global $language;
-  if($language->language == 'en') { $langadd = '%26culture=en-US'; }else { $langadd = ''; }
+  $langadd =  ($language->language == 'en') ? '%26culture=en-US' : '';
   
-  $output = '<button class="toptix-basket" data-url="http://' . TOPTIX_HOST . '/Order.aspx'.$langadd.'"> ' . t('My cart') . '</button>';
+  $output = '<button class="toptix-basket" data-url="http://' . TOPTIX_HOST . '/Order.aspx' . $langadd . '"> ' . t('My cart') . '</button>';
   $esro_frame = '<esro:frame href="http://' . TOPTIX_HOST . '/integrationsample/info.htm" ';
   $esro_frame .= 'width="1024" height="768"/>';
   $output .= '<div id="toptix-frame-wrapper" style="display:none;">' . $esro_frame . '</div>';
@@ -73,11 +69,8 @@ function cinematic_toptix_block_view($delta) {
     array('system', 'jquery.cookie'),
   );
 
+  $path = drupal_get_path('module', 'cinematic_toptix');
   $block['content']['#attached']['js'] = array(
-    array(
-      'data' => array('toptix_user' => $field_toptix), 
-      'type' => 'setting'
-    ),
     'http://' . TOPTIX_HOST . '/iframe/esrojsapi.js' => array('group' => JS_LIBRARY, 'type' => 'external'),
     //$path . '/esrojsapi.js' => array('group' => JS_LIBRARY),
     $path . '/basket.js',
@@ -86,30 +79,14 @@ function cinematic_toptix_block_view($delta) {
   return $block;
 }
 
-function cinematic_toptix_user_submit($form, &$form_state) {
-  $form_state['redirect'] = 'user/' . $form_state['user']->uid;
-}
-
 function cinematic_toptix_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id != 'user_register_form' and $form_id != 'user_profile_form') {
-    return;
-  }
-
   if ($form_id == 'user_profile_form') {
     $form['#submit'][] = 'cinematic_toptix_user_submit';
   }
+}
 
-  if (!isset($form['#attached']['js'])) {
-    $form['#attached']['js'] = array();
-  }
-  $form['#attached']['js'][] = array(
-    'data' => array('toptix_form' => $form['#id']), 
-    'type' => 'setting'
-  );
-  $form['#attached']['js'][] = drupal_get_path('module', 'cinematic_toptix') . '/create_user.js';
-  $esro_path = 'http://' . TOPTIX_HOST . '/iframe/esrojsapi.js';
-  //$esro_path = drupal_get_path('module', 'cinematic_toptix') . '/esrojsapi.js';
-  $form['#attached']['js'][$esro_path] = array('group' => JS_LIBRARY, 'type' => 'external');
+function cinematic_toptix_user_submit($form, &$form_state) {
+  $form_state['redirect'] = 'user/' . $form_state['user']->uid;
 }
 
 function cinematic_toptix_field_widget_form_alter(&$element, &$form_state, $context) {
@@ -177,10 +154,6 @@ function cinematic_toptix_field_formatter_view(
     return $element;
   }
 
-  global $user;
-  $account = user_load($user->uid);
-  $field_toptix = field_get_items('user', $account, 'field_toptix');
-  $field_toptix = $field_toptix[0]['value'];
   global $language;
   $langadd = ($language->language == 'en') ? '%26culture=en-US' : '';
   
@@ -193,10 +166,6 @@ function cinematic_toptix_field_formatter_view(
       '#markup' => $output,
       '#attached' => array(
         'js' => array(
-          array(
-            'data' => array('toptix_user' => $field_toptix), 
-            'type' => 'setting'
-          ),
           'http://' . TOPTIX_HOST . '/iframe/esrojsapi.js' => array('group' => JS_LIBRARY, 'type' => 'external'),
           //drupal_get_path('module', 'cinematic_toptix') . '/esrojsapi.js' => array('group' => JS_LIBRARY),
           drupal_get_path('module', 'cinematic_toptix') . '/frame.js',

@@ -44,24 +44,9 @@ function toptix_navigationHandler(pageName) {
 //$esro.attachEventHandler('navigationRequired', toptix_navigationHandler);
 
 function toptix_callback_basket_get_customer(result) {
-  var toptix_user = Drupal.settings.toptix_user;
   if (result.HasError) {
-    $esro.customerLoginById(toptix_user, 'toptix_callback_basket_login');
-    return;
+    // ?
   }
-
-  if (result.Result.Id == toptix_user) {
-    toptix_open_basket_frame();
-    return;
-  }
-  else {
-    $esro.customerLoginById(toptix_user, 'toptix_callback_basket_login');
-  }
-}
-
-function toptix_callback_basket_login(result) {
-  console.log('after login');
-  console.log(result);
   toptix_open_basket_frame();
 }
 
