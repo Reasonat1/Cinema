@@ -1,11 +1,10 @@
 (function($) {
   Drupal.behaviors.toptix_select = {
     attach: function(context, settings) {
-      $('.field-name-field-toptix-purchase input.browser + .description')
+      $('.field-name-field-toptix-purchase input.browser')
         .click(function(){
-          var anchor = $(this).prev().get(0);
-          $(anchor).addClass('throbbing').css('background-repeat', 'no-repeat');
-          toptix_dialog.setup(anchor);
+          $(this).addClass('throbbing').css('background-repeat', 'no-repeat');
+          toptix_dialog.setup(this);
         });
       toptix_dialog.hidden = $('.field-name-field-toptix-purchase input[type="hidden"]')
     },
@@ -30,19 +29,9 @@ toptix_dialog.show_results = function(respone) {
   if (this.win) {
     this.win.dialog('destroy');
   }
-  
-  var pos = {of: this.anchor};
-  if (document.dir == 'rtl') {
-    pos.my = 'right+10 center';
-    pos.at = 'left bottom';
-  }
-  else {
-    pos.my = 'left+10 center';
-    pos.at = 'right bottom';
-  }
   this.win = results.dialog({
     title: Drupal.t('Events'),
-    position: pos,
+    position: {my:'left+10 center', at:'right bottom', of: this.anchor},
     height: 600,
     width: 600,
   });
@@ -82,61 +71,28 @@ toptix_dialog.update_results = function() {
   });
 }
 
-function formatAMPM(date) {
-  var hours = date.getHours();
-  var minutes = date.getMinutes();
-  var ampm = hours >= 12 ? 'pm' : 'am';
-  hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
-  minutes = minutes < 10 ? '0'+minutes : minutes;
-  var strTime = hours + ':' + minutes + ' ' + ampm;
-  return strTime;
-}
-
 function toptix_temp_update_date(id) {
   var data = toptix_dialog.data[id];
 
-  //jQuery('input[name="title"]').val(data.title);
-  if (typeof data.DetailedText != 'undefined') {
-    jQuery('textarea[name="field_cm_event_body[und][0][value]"').val(data.DetailedText);
-    //console.log(data.DetailedText);
-  }
+  jQuery('input[name="title"]').val(data.title);
 
-  var actual_date = new Date(data.ActualEventDate.substring(0,10));
-  //var time = actual_date.getHours() + ':' + actual_date.getMinutes();
+  var actual_date = new Date(data.ActualEventDate);
+  var time = actual_date.getHours() + ':' + actual_date.getMinutes();
 
-  var time = new Date();
-
-  time.setHours(data.ActualEventDate.substring(11,13));
-  time.setMinutes(data.ActualEventDate.substring(14,16));
-  var actual_time = formatAMPM(time);
-  var timeto = time;
-  timeto.setHours(time.getHours()+2);
-  var actual_time2 = formatAMPM(timeto);
-  
-  var date_name = 'field_cm_event_time[und][0][value]';
-  var date_name2 = 'field_cm_event_time[und][0][value2]';
   var datefield = jQuery('input[name="' + date_name + '[date]"]');
-  var datefield2 = jQuery('input[name="' + date_name2 + '[date]"]');
-  
+  var date_name = 'field_cm_event_time[und][0][value]';
   //datefield.datepicker('setDate', actual_date);
   var format = datefield.datepicker('option', 'dateFormat');
-  //alert(datefield.datepicker({ dateFormat: 'M d yy' }).val());
-  
   if (format == null) {
     format = 'M d yy';
   }
-  //var actual_date = jQuery.datepicker.formatDate(format, actual_date);
-  var insert_date = jQuery.datepicker.formatDate('M d yy', actual_date);
-  datefield.val(insert_date);
-  datefield2.val(insert_date);
+  var actual_date = jQuery.datepicker.formatDate(format, actual_date);
+  datefield.val(actual_date);
 
   //jQuery('input[name="' + date_name + '[time]"]').timeEntry('setTime', time);
   var timefield = jQuery('input[name="' + date_name + '[time]"]');
-  var timefield2 = jQuery('input[name="' + date_name2 + '[time]"]');
   // timefield.timeEntry('setTime', time);
-  timefield.val(actual_time);
-  timefield2.val(actual_time2);
+  timefield.val(time);
   setTimeout(function() {
     timefield
       .blur()
