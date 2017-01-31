@@ -1,5 +1,9 @@
 @import "init";
 
+body{
+	font-family: Open-Sans-hebrew;
+}
+
 .pull-left{
 	float: right!important;
 }
@@ -34,7 +38,11 @@ table{
 			padding: 8px!important;
 		}
 	}
+	.purchase, .views-field-field-toptix-purchase, .views-field-field-toptix-purchase{
+		float: left;
+	}
 }
+
 
 #page-header{
 	.tabs{
@@ -167,7 +175,7 @@ table{
 
 /*******  user profile  ********/
 
-.page-user-edit{
+.page-user-edit, .page-user-register, .page-user-password{
 	.group-name-group{
 		float: left;
 	}
@@ -222,8 +230,13 @@ table{
 			form{
 				float: right;
 			}
-			.edit, .logout{
+			.list{
 				float: left;
+				@include res(s-m){
+					float: none;
+				}
+			}
+			.edit, .logout{
 				padding-right: 10px;
 				padding-left: 0;
 			}
@@ -276,6 +289,14 @@ table{
 					margin-left: 0;
 				}
 			}
+		}
+	}
+	.content.middle .panels-flexible-region-node_page-content_left{
+		padding-left: 23%;
+		padding-right: 0;
+		float: left;
+		@include res(s-m){
+			padding: 0 5%;
 		}
 	}
 }
@@ -335,6 +356,10 @@ table{
 		td{
 			padding-left: 8px!important;
 			padding-right: 0!important;
+			float: right;
+			&.purchase, &.views-field-field-toptix-purchase{
+				float: left;
+			}
 		}
 	}
 }
@@ -351,6 +376,10 @@ table{
 			@include res(s-m){
 				padding-left: 3%;
 				padding-right: 0;
+			}
+			.play-button {
+				margin-right: 0px;
+				margin-left: 15px;
 			}
 		}
 		.slide-left-ct{
@@ -381,8 +410,27 @@ table{
 .view-footer{
 	.more-event{
 		float: left;
-		@include res(s-m){
-			float: none;
+		margin: 0px 0px 15px 11px;
+		span{
+			@include res(s-m){
+				float: right;
+			}
+		}
+		.text{
+			float: left;
+		}
+		&.event-page{
+			text-align: right;
+			float: right;
+			.text-open-event{
+				float: right;
+			}
+			.text-close-event{
+				float: left;
+			}
+			&.open{
+				float: left;
+			}
 		}
 	}
 }
@@ -393,19 +441,27 @@ table{
 	float: right;
 	padding: 30px 23% 50px 0;
 	@include res(s-m){
-		padding-right: 0;
+		padding: 0 0 10px;
 	}
 	.translated-movie-title{
 		text-align: right;
+		padding-bottom: 10px;
 		a{	
 			right: 0;
 		}
 	}
 	.profession, .views-field-field-cm-movie-credits-person-ro{
 		float: right;
+		min-width: 100px;
 	}
 	.views-field-views-conditional{
-		float: left;
+		float: right;
+		max-width: -webkit-calc(100% - 100px);
+    	max-width: -moz-calc(100% - 100px);
+    	max-width: calc(100% - 100px);
+		@include res(s){
+			float: right;
+		}
 	}
 }
 
@@ -512,15 +568,21 @@ table{
 /********  table with date **********/
 
 .table-responsive{
-	.views-field-ops{
+	.views-field-ops, .like-flag{
 		float: left;
+	}
+	.day-same-width{
+		width: 38px;
 	}
 }
 
 /*******  overlay region  *******/
 
+.ui-dialog .ui-dialog-title{
+	float: right;
+	padding-right: 55px;
+}
 .region-overlay{
-
 	.block-search-api-page	form{
 			.form-group {
 				.form-text {

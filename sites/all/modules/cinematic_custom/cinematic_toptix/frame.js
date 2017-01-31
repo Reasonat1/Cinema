@@ -2,12 +2,10 @@ var toptix_event_url = null;
 var toptix_active_button = {original_text:'', item: null};
 (function($) {
   Drupal.behaviors.toptix_frame = {
-    
     attach: function(context, settings) {
       var self = this;
       $('.toptix-purchase').click(function(event) {
         toptix_event_url = this.dataset.url;
-
         toptix_active_button.item = this;
         toptix_active_button.original_text = $(this).text();
         $(this).text(Drupal.t('Loading...'));
@@ -34,14 +32,14 @@ function toptix_callback_get_customer(result) {
 }
 
 function toptix_callback_login(result) {
-  console.log('after login');
-  console.log(result);
+  //console.log('after login');
+  //console.log(result);
   toptix_open_frame();
 }
 
 function toptix_open_frame() {
   var frame = jQuery('#toptix-frame-wrapper');
-  console.log('opening frame at : ' + toptix_event_url);
+  //console.log('opening frame at : ' + toptix_event_url);
   $esro.gotoUrl(toptix_event_url);
   frame.dialog({
     'title': Drupal.t('Purchase tickets'),

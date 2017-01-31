@@ -14,6 +14,10 @@
   font-family: Open-Sans;
   src: url("../fonts/Open-Sans.eot?") format("eot"), url("../fonts/Open-Sans.woff") format("woff"), url("../fonts/Open-Sans.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans.ttf") format("truetype");
 }
+@font-face {
+  font-family: Open-Sans-hebrew;
+  src: url("../fonts/Open-Sans-hebrew.eot?") format("eot"), url("../fonts/Open-Sans-hebrew.woff") format("woff"), url("../fonts/Open-Sans-hebrew.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans-hebrew.ttf") format("truetype");
+}
 /* line 8, ../sass/movie-group-rtl.scss */
 .node-type-cm-movie-group .view-id-movie_group_ct.view-display-id-panel_pane_1 .movie-group-item-header-img .title-movie {
   left: auto;
@@ -37,16 +41,8 @@
   left: 0;
 }
 
-/*
-.view-movie-group-ct{
-	.movie-group-item-credit{
-		.views-field-field-cm-movie-credits-person-ro{
-			float: right;
-			margin-left: 5px;
-			margin-right: 0;
-		}
-		.views-field-views-conditional{
-			float: right;
-		}
-	}
-}*/
+/* line 32, ../sass/movie-group-rtl.scss */
+.view-id-movie_group_ct.view-display-id-panel_pane_1 .movie-group-item-header-img .title-movie, .view-id-movie_group_ct.view-display-id-panel_pane_1 .movie-group-item-header-img .lobby-title, .view-id-movie_group_ct.view-display-id-panel_pane_1 .image-lobby .title-movie, .view-id-movie_group_ct.view-display-id-panel_pane_1 .image-lobby .lobby-title, .movie-group-list .movie-group-item-header-img .title-movie, .movie-group-list .movie-group-item-header-img .lobby-title, .movie-group-list .image-lobby .title-movie, .movie-group-list .image-lobby .lobby-title {
+  right: 30px;
+  left: auto;
+}

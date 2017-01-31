@@ -9,7 +9,7 @@
       $(".facetapi-select-submit").hide();
 var defoultForm=getUrlVars();
 var uri=document.location.pathname;
-var mybutton='<form id="filter_button" action="'+uri+'"><button class="form-submit btn btn-default btn-primary" type="submit">Submit</button></form>';
+var mybutton='<form id="filter_button" action="'+uri+'"><button class="form-submit btn btn-default btn-primary" type="submit">'+Drupal.t("Submit")+'</button></form>';
 var url=[];
 
 if ($('#filter_button').length==0)
@@ -46,4 +46,4 @@ function getUrlVars()
 		}}
     }
   };
-})(jQuery);
+})(jQuery, Drupal);

@@ -182,8 +182,6 @@
 		@include res(s-m){
 			margin: 0;
 			border-left: 1px solid;
-			border-right: 1px solid;
-			width: 70px;
 			padding-top: 2px;
 			padding-bottom: 5px;
 		}
@@ -270,15 +268,15 @@
 	padding: 0;
 	.filter-wrapper{
 	   background-color: #fff;
-	    padding-top: 70px;
+	    padding-top: 69px;
 	    position: fixed;
 	    top: 0;
 	    width: 100%;
 	    z-index: 300;
-	    height: 150px;
+	    height: 160px;
 	    overflow: hidden;
 	    @include res(s-m){
-	    	height: 130px;
+	    	height: 135px;
 	    }
 	    .inner{
 	    	@include width;
@@ -489,8 +487,8 @@
 	width: 300px;
 	right: 30px;
 	opacity: 1;
-	transition: all 0.5s;
-    -webkit-transition: all 0.5s;
+	transition: opacity 0.5s;
+    -webkit-transition: opacity 0.5s;
 	@include res(s-m){
 		width: 100%;
 		padding: 0!important;
@@ -500,6 +498,9 @@
 		max-height: 100%;
 		background-color: #ececec;
 	}
+	button{
+		margin: 0!important;
+	}
 	&.hide-float{
 		top: -100px;
 		opacity: 0;
@@ -507,7 +508,7 @@
 	}
 	.close-button{
 		background-color: #ececeb;
-		padding: 10px 12px;
+		padding: 6px 12px 5px;
 		overflow: hidden;
 		border: 1px solid #B3B3B3;
 		.close{
@@ -515,17 +516,32 @@
 			opacity: 1;
 			background-position: left center!important;
 			padding-left: 30px;
-			font-size: 16px;
+			font-size: 13px;
 			font-weight: normal;
 			float: left;
+			background-size: 14px!important;
+			@include res(s-m){
+				font-size: 16px;
+				background-size: 17px!important;
+				padding-top: 5px;
+				padding-bottom: 5px;
+			}
 		}
 		.link-main-calendar{
 		    float: right;
-		    font-size: 16px;
+		    font-size: 13px;
 		    line-height: 1px;
-		    padding: 7px 0;
+		    padding: 6px 0;
+		    @include res(s-m){
+		    	font-size: 16px;
+		    	padding: 12px 0;
+		    }
 		}
 	}
+	
+	.ajax-progress{
+				display: none;
+			}
 
 }
 
@@ -556,14 +572,18 @@
 	}
 	.views-field-field-toptix-purchase{
 		float: right;
-		width: 71px!important;
+		width: 52px!important;
 		margin: 0!important;
+		font-size: 13px;
 		button{
 			margin: 0;
+			width: 52px!important;
 		}
 	}
 	.views-field-views-conditional{
-		width: calc(100% - 140px);
+		width: -webkit-calc(100% - 105px)!important;
+    	width: -moz-calc(100% - 105px)!important;
+    	width: calc(100% - 105px)!important;
 		float: left;
 	}
 	colgroup{
@@ -585,7 +605,9 @@
 		overflow-x: hidden; 
 		@include res(s-m){
 			overflow-y: auto;
-			max-height: calc(100% - 140px);
+			max-height: -webkit-calc(100% - 140px)!important;
+    		max-height: -moz-calc(100% - 140px)!important;
+    		max-heigh: calc(100% - 140px)!important;
 		}
 	}
 	.contents{
@@ -617,6 +639,9 @@
 	}
 	.date-nav-wrapper{
 		margin: 0;
+		.pager{
+			margin:0;
+		}
 	}
 	.holder td{
 		padding: 0!important;
@@ -636,14 +661,11 @@
 	.lobby-container{
 		margin-bottom: 20px;
 		background-color: #fff;
-		@include res(s-m){
-			margin-bottom: 80px;
-		}
 	}
 		.ticket-details{
 			width: 17%;
 			float: left;
-			padding: 14px 20px;
+			padding: 14px 10px;
 			@include res(s-m){
 				width: 100%;
 				 font-size: 14px;
@@ -656,17 +678,23 @@
 				}
 			}
 			.hall{
+				font-size: 16px;
+				@include res(l){
+					font-size: 12px;
+				}
 				@include res(s-m){
-					width: calc(100% - 124px)!important;
+					width: -webkit-calc(100% - 124px)!important;
+    				width: -moz-calc(100% - 124px)!important;
+    				width: calc(100% - 124px)!important;
 					text-align: center!important;
 					float: none!important;
 					display: inline-block;
 					padding: 11px 0!important;
 				}
 			}
-			.row-custom-lobby .purchase{
+			.row-custom-lobby .calendar-flag{
 				@include res(s-m){
-					width: 70px!important;
+					width: 58px!important;
 					float: right!important;
 					padding: 8px 0!important;
 					font-size: 14px;
@@ -686,7 +714,7 @@
 					padding-bottom: 0;
 				}
 				> span{
-					width: 50px!important;
+					width: 36px!important;
 					float: left;
 					padding: 0!important;
 					a{
@@ -706,23 +734,42 @@
 			}
 			.time{
 				font-weight: bold;
+				font-size: 42px;
 				@include res(s-m){
 					width: 70px;
-					font-size: 0.9em;
+					font-size: 17px;
+				}
+				@include res(l){
+					font-size: 36px;
 				}
 			}
 			.hall{
 				@include res(s-m){
-					width: calc(100% - 150px);
+					width: -webkit-calc(100% - 150px);
+    				width: -moz-calc(100% - 150px);
+    				width: calc(100% - 150px);
 					text-align: center;
 					font-size: 0.9em;
 				}
 			}
 			.purchase{
 				padding-bottom: 0;
-				padding-top: 8px;
+				width: 59px;
+				float: left;
+				margin-right: 15px;
+				button{
+					font-size: 12px;
+					padding: 5px 7px;
+					float: left;
+				}
+				@include res(l){
+					width: 100%;
+					margin-bottom: 10px;
+					margin-right: 0;
+				}
 				@include res(s-m){
 					padding-top: 0;
+					margin: 0;
 				}
 			}
 		}
@@ -748,6 +795,9 @@
 			@include res(s-m){
 				width: 100%;
 			}
+			.lobby-summary{
+				font-size: 16px;
+			}
 			table tbody{
 				border: none;
 			}
@@ -761,7 +811,7 @@
 				}
 			}
 			.lobby-title{
-				margin: 0px 0 6px;
+				margin: 0px;
 			}
 			.calendar-below-title-content{
 				   color: #919191;
@@ -826,7 +876,6 @@
 			.purchase{
 				padding-right: 0;
 				padding-left: 0;
-				width: 80px!important;
 				min-height: 1px;
 			}
 		}
@@ -852,7 +901,7 @@
    background-color: #f9f4ee;
    padding-bottom: 90px;
    overflow: hidden;
-   margin-top: 115px;
+   margin-top: 100px;
    @include res(s-m){
    	margin-top: 94px;
    }
@@ -888,17 +937,20 @@
 .pane-calendar-full-width-calendar .lobby-title a,
 .pane-calendar-full-width-calendar .lobby-title{
     color: #000000;
-    font-size: 1.1em;
+    font-size: 18px;
     font-weight: 600;
     margin-bottom: 2%;
 }
 
-.pane-calendar-full-width-calendar .lobby-summary{
-	padding-bottom: 10px;
+.pane-calendar-full-width-calendar .lobby-title.second{
+	padding-top: 10px;
 }
 
 .pane-calendar-full-width-calendar .lobby-container{
-  margin-top: 3%;  
+  margin-top: 3%; 
+  .table{
+  	margin-bottom: 5px;
+  } 
 }
 
 .pane-calendar-full-width-calendar .addthisevent-drop{
@@ -959,6 +1011,7 @@
     border-radius: 0;
     outline: 0;
     width: 25px;
+	cursor: pointer!important;
 }
 
 .view-custom-calendar-floating-pane .date-nav-wrapper .btn-group .prev a{

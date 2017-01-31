@@ -1,0 +1,373 @@
+<?php
+function calendar_full_width_init() {
+    //drupal_add_js(drupal_get_path('module', 'calendar_full_width') . '/include/calendar_full_width.js');
+    //drupal_add_css(drupal_get_path('module', 'calendar_full_width') . '/include/calendar_full_width.css');
+   // drupal_add_js(drupal_get_path('module', 'flag') . '/theme/flag.js');
+}
+/**
+ * The default list of allowed file extensions in file widgets.
+ */
+/**
+ * Implementation of hook_ctools_plugin_directory()
+ */
+function calendar_full_width_block_info() {
+    $blocks['calendar'] = array(
+      'info' => t('Calendar Full Width'), //The name that will appear in the block list.
+      'cache' => DRUPAL_CACHE_PER_ROLE, //Default
+    );
+    return $blocks;
+  }
+  function calendar_full_width_block_view($delta = '') {
+    $block = array();
+    switch($delta){
+      case 'calendar':
+        $block['subject'] = t('Calendar Full Width Block');
+    $block['content'] = array();
+        $block['content']['#markup'] =calendar_full_width_block_content();
+    $block['content']['#attached'] = array(
+      'js' => array(
+        drupal_get_path('module', 'calendar_full_width') . '/include/calendar_full_width.js',
+      ),
+      'css' => array(
+        drupal_get_path('module', 'calendar_full_width') . '/include/calendar_full_width.css',
+      ),
+    
+    );
+        break;
+     }
+    return $block;
+  }
+
+/*
+ * Implementing hook_menu()
+ */
+function calendar_full_width_menu() {
+
+  $items['ajax_complex_calender_full_width'] = array(
+    'title' => '',
+    'access arguments' => array('access content'),
+    'page callback' => 'ajax_calender_full_width_filter',
+    );
+    return $items;
+}
+/*
+ * custom block " Complex Calender View Block " callback
+ */
+function calendar_full_width_block_content(){
+    global $language ;
+    $lang_name = isset($language->language) ? $language->language : '';
+    if($lang_name == ''){
+        $lang_name = 'en';
+    }
+    
+    global $base_url;
+    $output = $filter = $selected_filter = $day = "";
+        $current_date = date("Y-m-d");
+        $prev_date =  strtotime('-0 day', strtotime($current_date));
+        $prev = date("Y-m-d",$prev_date);
+        $Date = date( 'j.n', $prev_date ); 
+        $Day = date( 'l', $prev_date );
+        if(!empty($current_date)){
+            $day = date( 'Y-m-d');
+        }
+        $filter.= " <span class ='prevday filter-cantrol' ><i class='fa fa-angle-left '></i></span>" ;
+         $filter.= " <span class ='nextday filter-cantrol'><i class='fa fa-angle-right'></i></span>" ;
+
+        $filter.= " <div class ='calender-filter'>" ;
+             $a = 1; $filter_class = '';
+             if($a == '6'){ $filter_class = 'active';}
+            for ( $i = 0; $i < 11; $i++ ) {
+                $Date = $prev;
+                  $Date = date( 'j.n', strtotime($prev)); 
+                  $Day = date( 'l', strtotime($prev));
+                  $time = strtotime($prev);
+              if($current_date == $prev){
+                   $filter.="<p class='active'>$Date<br /><span>$Day</span><span class='filter-date element-invisible'>$time</span></p>";
+                   $a++;
+                   $filter_class  = '';
+              }else{
+                   $filter.="<p>$Date<br /><span>$Day</span><span class='filter-date element-invisible'>$time</span></p>";
+                   $a++;
+                   $filter_class  = '';
+              }
+              $prev =  strtotime('+1 day', strtotime($prev));
+              $prev = date("Y-m-d",$prev);
+            }
+        
+        $filter.= " </div>" ;
+        
+        if(!empty($current_date)){
+            $selected_filter = date( ' l | d.m.y');
+        }
+      $result =  db_query("SELECT  n.nid AS nid, n.title, 
+              event_time.field_cm_event_time_value AS event_start_time, event_time.field_cm_event_time_value2 AS event_end_time,
+              short_title.field_cm_event_short_title_value As short_title
+              FROM node AS n 
+              LEFT JOIN field_data_field_cm_event_short_title AS short_title ON n.nid = short_title.entity_id
+              LEFT JOIN field_data_field_cm_event_time  AS event_time ON n.nid = event_time.entity_id
+              WHERE ((n.type = 'cm_event')) and ((n.language = '$lang_name')) and  ((n.status = '1'))  and ( (DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value2), SEC_TO_TIME(10800)), '%Y-%m-%d') = '$day' AND DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value), SEC_TO_TIME(10800)), '%Y-%m-%d') <= '$day') )
+              ORDER BY event_start_time ASC")->fetchAll();
+    $result_count = count($result); 
+     $output.="<div class='calenders'>";
+     $output.= "<div class='filter-wrapper'>".$filter.'</div>';
+     $output.="<div class='ajax-inner'>";
+     $output.="<div class='load-inner'><div class='image'></div></div>";
+     $output.="<div class='calendar-full-container'>";
+      $output.="<div class='calenders-filter-date'><p class='pull-left'>$selected_filter</p></div>";
+      foreach($result as $val){
+        $node = node_load($val->nid);
+        //echo'<pre>'.print_r($node, 1).'</pre>';
+        if(!empty($node->field_cm_event_short_title)){
+          $event_title = $node->field_cm_event_short_title['und'][0]['value'];
+        }
+        $path = drupal_get_path_alias('node/'.$node->nid);
+        $flag = '<span class="flag-event">'.flag_create_link('favorite_', $node->nid).'</span>';
+        if(!empty($node->field_cm_event_duration['und'])){
+            $interval = $node->field_cm_event_duration['und'][0]['interval'];
+            $period = $node->field_cm_event_duration['und'][0]['period'];
+            $length = $interval. ' '.$period;
+        }else{
+            $length = '';
+        }
+        if(!empty($node->field_cm_event_short_title['und'])){
+            $sort_title = $node->field_cm_event_short_title['und'][0]['value'];
+        }else{
+            $sort_title = '';
+        }
+        if(!empty($node->field_cm_event_time['und'])){
+            $event_date = date('d.m.y', $node->field_cm_event_time['und'][0]['value']);
+            $event_time = date('G:i', $node->field_cm_event_time['und'][0]['value']);
+            $Day = date( 'l', $node->field_cm_event_time['und'][0]['value']);
+        }
+        if(!empty($node->field_cm_event_hall['und'])){
+            $hall_id = taxonomy_term_load($node->field_cm_event_hall['und'][0]['target_id']);
+            $hall_name = $hall_id->name;
+        }else{
+            $hall_name = '';
+        }
+		
+		if(!empty($node->field_cm_event_lineup['und'])){
+            $lineup_id = node_load($node->field_cm_event_lineup['und'][0]['target_id']);
+            $lineup_name = $lineup_id->title;
+            if(!empty($node->field_cm_movie_short_summary['und'])){
+              $lineup_summary = $lineup_id->field_cm_movie_short_summary['und'][0]['value'];
+            }
+            else{
+              $lineup_summary = '';
+            }
+            if(!empty($node->field_cm_movie_duration['und'])){
+            $lineup_duration = $lineup_id->field_cm_movie_duration['und'][0]['interval'].' '.$lineup_id->field_cm_movie_duration['und'][0]['period'];
+            }
+            else{
+              $lineup_duration = '';
+            }
+            if(!empty($node->field_cm_movie_meta_credit['und'])){
+              $lineup_leading = $lineup_id->field_cm_movie_meta_credit['und'][0]['value'];
+            }
+            else{
+              $lineup_leading = '';
+            }
+        }else{
+            $lineup_name = $lineup_summary = $lineup_duration = $lineup_leading ='';
+        }
+		
+        if(!empty($node->field_toptix_purchase['und'])){
+            $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
+            $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
+            $purchase = '<button data-url="'.$top_link.'" class="toptix-purchase">'.t('Tickets').'</button>';
+        }else{
+            $purchase = '';
+        }
+        if(!empty($node->field_cm_event_body['und'][0]['value'])){
+          $summary_event = truncate_utf8($node->field_cm_event_body['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+        }else{
+            $summary_event = '';
+        }
+        if(!empty($node->field_cm_event_images)){
+          $picture_path_event = $node->field_cm_event_images['und'][0]['uri'];
+          $image_event = '<img src="' . image_style_url('lobby', $picture_path_event) . '" alt="" />';
+        }else{
+            $image_event = '<img src="/sites/all/themes/cinemateque/images/default-image-pane-2.png">';
+        }
+        if(!empty($node->field_event_top_text_white['und'])){
+            $white_text_event = '<span class="white">'. $node->field_event_top_text_white['und'][0]['value'] . '</span>'; 
+        }else{
+            $white_text_event = '';
+        }
+        if(!empty($node->field_event_top_text_black['und'])){
+            $black_text_event = '<span class="black">' . $node->field_event_top_text_black['und'][0]['value'] .'</span>'; 
+        }else{
+            $black_text_event = '';
+        }
+        $output.='<div class="lobby-container" style="clear:both;">';
+            $output .='<div class="lobby-term-left">';
+                $output .= '<div class="image-lobby">';
+                $output .= l($image_event, "$path", array('attributes' => array('class' =>'link-image'),'html' => true));
+                $output .= '</div>';
+                $output .= '<div class="top-text-blk-wht">';
+                $output .= $black_text_event . $white_text_event;
+                $output .= '</div><div class="flag">'.$flag.'</div>';
+            $output .="</div>";
+            $output .= '<div class="lobby-term-right">';
+            $output .= '<div class="table-responsive">
+                               <table class="table">
+                                  <tbody>
+                                    <tr class="row-custom-lobby">
+                                      <td class="time only-mobile left">'.$event_time.'</td>
+                                      <td class="time only-desktop left">'.$event_time.'</td>
+                                      <td class="hall left">'.$hall_name.'</td>
+                                      <td class="purchase right">'.$purchase.'</td>
+                                      <td class="add-event only-desktop right">'._return_addthisevent_markup($node).'</td>
+                                    </tr>
+                                  </tbody>
+                               </table>
+                            </div>';
+                $output .= '<div class="lobby-title">'.l($node->title, $path).'</div>';
+				$output .= '<div class="lobby-summary">'.strip_tags($summary_event).'</div>';
+				$output .= ($summary_event)?'<div class="lobby-title">'.$lineup_name.'</div>':'';
+				$output .= '<div class="lobby-summary">'.strip_tags($lineup_summary).'</div>';
+                $output .= '<div class="calendar-below-title-content"><span class="cal-hall">'.$lineup_leading.'</span><span class="cal-length">'.$lineup_duration.'</span></div>';
+            $output .= '</div>';
+            $output .='<div class="clr"></div>';
+        $output .="</div>";
+      }
+     $output.= "</div></div></div>";
+     return $output;
+}
+
+/**
+ * Ajax filteration of complex calender
+ */
+function ajax_calender_full_width_filter(){
+	
+    $default_image = '<img src="/sites/all/themes/cinemateque/images/default-image-pane-2.png">';
+    $default_user_image = '<img src="/sites/all/themes/cinemateque/images/user-default.jpg">';
+    global $language ;
+    $lang_name = isset($language->language) ? $language->language : '';
+    if($lang_name == ''){
+        $lang_name = 'en';
+    }
+    $filterdate = $_POST['filterdate'];
+    $day = date( 'Y-m-d', $filterdate );
+     global $base_url;
+    $output = $selected_filter = "";
+    if(!empty($filterdate)){
+            $selected_filter = date( 'l | d.m.y', $filterdate );
+    }
+      $result =  db_query("SELECT  n.nid AS nid, n.title, 
+              event_time.field_cm_event_time_value AS event_start_time, event_time.field_cm_event_time_value2 AS event_end_time,
+              short_title.field_cm_event_short_title_value As short_title
+              FROM node AS n 
+              LEFT JOIN field_data_field_cm_event_short_title AS short_title ON n.nid = short_title.entity_id
+              LEFT JOIN field_data_field_cm_event_time  AS event_time ON n.nid = event_time.entity_id
+              WHERE ((n.type = 'cm_event')) and ((n.language = '$lang_name')) and  ((n.status = '1'))  and ( (DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value2), SEC_TO_TIME(10800)), '%Y-%m-%d') = '$day' AND DATE_FORMAT(ADDTIME(FROM_UNIXTIME(event_time.field_cm_event_time_value), SEC_TO_TIME(10800)), '%Y-%m-%d') <= '$day') )
+              ORDER BY event_start_time ASC")->fetchAll();
+    $result_count = count($result);
+     $output.="<div class='ajax-inner ajax-data-calendar'>";
+     $output.="<div class='load-inner'><div class='image'></div></div>";
+      $output.="<div class='calendar-full-container'>";
+      $output.="<div class='calenders-filter-date'><p class='pull-left'>$selected_filter</p></div>";
+      foreach($result as $val){
+        $node = node_load($val->nid);
+        $flag = '<span class="flag-event">'.flag_create_link('favorite_', $node->nid).'</span>';
+        $event_title = $node->field_cm_event_short_title['und'][0]['value'];
+        $path = drupal_get_path_alias('node/'.$node->nid);
+        if(!empty($node->field_cm_event_duration['und'])){
+            $interval = $node->field_cm_event_duration['und'][0]['interval'];
+            $period = $node->field_cm_event_duration['und'][0]['period'];
+            $length = $interval. ' '.$period;
+        }else{
+            $length = '';
+        }
+        if(!empty($node->field_cm_event_short_title['und'])){
+            $sort_title = $node->field_cm_event_short_title['und'][0]['value'];
+        }else{
+            $sort_title = '';
+        }
+        if(!empty($node->field_cm_event_time['und'])){
+            $event_date = date('d.m.y', $node->field_cm_event_time['und'][0]['value']);
+            $event_time = date('G:i', $node->field_cm_event_time['und'][0]['value']);
+            $Day = date( 'l', $node->field_cm_event_time['und'][0]['value']);
+        }
+        if(!empty($node->field_cm_event_hall['und'])){
+            $hall_id = taxonomy_term_load($node->field_cm_event_hall['und'][0]['target_id']);
+            $hall_name = $hall_id->name;
+        }else{
+            $hall_name = '';
+        }
+		
+		if(!empty($node->field_cm_event_lineup['und'])){
+            $lineup_id = node_load($node->field_cm_event_lineup['und'][0]['target_id']);
+            $lineup_name = $lineup_id->title;
+            $lineup_summary = $lineup_id->field_cm_movie_short_summary['und'][0]['value'];
+            $lineup_duration = $lineup_id->field_cm_movie_duration['und'][0]['interval'].' '.$lineup_id->field_cm_movie_duration['und'][0]['period'];
+            $lineup_leading = $lineup_id->field_cm_movie_meta_credit['und'][0]['value'];
+        }else{
+            $lineup_name = $lineup_summary = $lineup_duration = $lineup_leading ='';
+        }
+        if(!empty($node->field_toptix_purchase['und'])){
+            $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
+            $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
+            $purchase = '<button data-url="'.$top_link.'" class="toptix-purchase">'.t('Tickets').'</button>';
+        }else{
+            $purchase = '';
+        }
+        if(!empty($node->field_cm_event_body['und'][0]['value'])){
+          $summary_event = truncate_utf8($node->field_cm_event_body['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+        }else{
+            $summary_event = '';
+        }
+        if(!empty($node->field_cm_event_images)){
+          $picture_path_event = $node->field_cm_event_images['und'][0]['uri'];
+          $image_event = '<img src="' . image_style_url('lobby', $picture_path_event) . '" alt="" />';
+        }else{
+            $image_event = $default_image;
+        }
+        if(!empty($node->field_event_top_text_white['und'])){
+            $white_text_event = '<span class="white">'. $node->field_event_top_text_white['und'][0]['value'] . '</span>'; 
+        }else{
+            $white_text_event = '';
+        }
+        if(!empty($node->field_event_top_text_black['und'])){
+            $black_text_event = '<span class="black">' . $node->field_event_top_text_black['und'][0]['value'] .'</span>'; 
+        }else{
+            $black_text_event = '';
+        }
+        $output.='<div class="lobby-container" style="clear:both;">';
+            $output .='<div class="lobby-term-left">';
+                $output .= '<div class="image-lobby">';
+                $output .= l($image_event, "$path", array('attributes' => array('class' =>'link-image'),'html' => true));
+                $output .= '</div>';
+                $output .= '<div class="top-text-blk-wht">';
+                $output .= $black_text_event . $white_text_event;
+                $output .= '</div><div class="flag">'.$flag.'</div>';
+            $output .="</div>";
+            $output .= '<div class="lobby-term-right">';
+            $output .= '<div class="table-responsive">
+                               <table class="table">
+                                  <tbody>
+                                    <tr class="row-custom-lobby">
+                                      <td class="time only-mobile left">'.$event_time.'</td>
+                                      <td class="time only-desktop left">'.$event_time.'</td>
+                                      <td class="hall left">'.$hall_name.'</td>
+                                      <td class="purchase right">'.$purchase.'</td>
+                                      <td class="add-event only-desktop right">'._return_addthisevent_markup($node).'</td>
+                                    </tr>
+                                  </tbody>
+                               </table>
+                            </div>';
+                $output .= '<div class="lobby-title">'.l($node->title, $path).'</div>';
+				$output .= '<div class="lobby-summary">'.strip_tags($summary_event).'</div>';
+				$output .= ($summary_event)?'<div class="lobby-title">'.$lineup_name.'</div>':'';
+				$output .= '<div class="lobby-summary">'.strip_tags($lineup_summary).'</div>';
+                $output .= '<div class="calendar-below-title-content"><span class="cal-hall">'.$lineup_leading.'</span><span class="cal-length">'.$lineup_duration.'</span></div>';
+            $output .= '</div>';
+            $output .='<div class="clr"></div>';
+        $output .="</div>";
+      }
+    $output.= "</div></div>";
+	
+	drupal_add_http_header('Cache-Control', 'public, max-age=3600');
+    drupal_json_output(array('output' => $output));
+	drupal_exit();
+}

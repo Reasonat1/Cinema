@@ -8,9 +8,6 @@
 	.pane-movie-group-ct-panel-pane-2{
 		overflow: hidden;	
 	}
-	.views-field-field-toptix-purchase{
-		padding: 4px 8px 8px!important;
-	}
 	.panels-flexible-row-node_page-3, .panels-flexible-row-node_page-4{
 		width: 100%!important;
 		padding: 0!important;
@@ -45,9 +42,6 @@
 		background-color: #fff;
 		@include res(s-m){
 			padding: 0 0 1px 0!important;
-		}
-		.table-responsive{
-			overflow: visible;
 		}
 		.views-field-field-cm-event-time-1{
 			width: 23%;
@@ -111,47 +105,18 @@
 				position: relative;
 			}
 		}
-		&.view-display-id-panel_pane_3 {
-			.table-bordered {
-				border: none;
-				> thead > tr > th {
-					border: none;
-				}
-			}
-			tbody {
-				border: none;
-				font-size: 1em;
-			}
-			tr {
-				&.even {
-					border: none;
-					font-size: 1em;
-					background-color: #fff;
-				}
-				&.odd {
-					border: none;
-					font-size: 1em;
-					background-color: #fff;
-				}
-			}
-			th {
-				border-bottom: none;
-				color: $color_pink_swan_approx;
-			}
-			.addthisevent-drop {
-				z-index: 0;
-			}
-			.table > tbody > tr > td {
-				border: none;
-			}
-			.table-striped > tbody > tr:nth-of-type(odd) {
-				background-color: #fff;
-			}
-		}
+	}
+	.credits-view, .movie-group-item-credit{
+		width: 100%;
+		padding: 0px;
 	}
 }
 
-.view-movie-group-ct{
+.movie-group-item-credit{
+		padding-bottom: 0px!important;
+	}
+/*
+.view-movie-group-ct, .view-event-ct-view{
 	.movie-group-item-credit{
 		padding: 0;
 		width: 100%;
@@ -160,18 +125,34 @@
 		}
 	}
 }
-
+*/
 
 
 .view-id-movie_group_ct.view-display-id-panel_pane_1, .movie-group-list {
 	.movie-group-item-header-img, .image-lobby{
 		position: relative;
+		@include res(s-m){
+			.gradient{
+				display: none!important;
+			}
+		}
 		.title-movie, .lobby-title{
 			font-size: 25px;
 			position: absolute;
 			bottom: 20px;
 			left: 30px;
 			z-index: 2;
+			@include res(s-m){
+				position: relative;
+				left: 0;
+				bottom: 0;
+				background-color: #fff;
+				padding: 10px 30px 0;
+			}
+			a{
+				font-size: 1em;
+				font-weight: normal;
+			}
 			&.nopic{
 				position: relative;
 				padding: 30px 30px 0;
@@ -185,6 +166,9 @@
 			}
 			a{
 				color: #fff;
+				@include res(s-m){
+					color: #000;
+				}
 			}
 		}
 		img{
@@ -196,6 +180,9 @@
 		padding: 30px 30px 40px;
 		margin-bottom: 30px;
 		overflow: hidden;
+		@include res(s-m){
+			padding-top: 10px;
+		}
 		.movie-group-item-meta-info, .movie-details{
 			padding-bottom: 10px;
 			span{

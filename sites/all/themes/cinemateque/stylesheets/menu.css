@@ -14,6 +14,10 @@
   font-family: Open-Sans;
   src: url("../fonts/Open-Sans.eot?") format("eot"), url("../fonts/Open-Sans.woff") format("woff"), url("../fonts/Open-Sans.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans.ttf") format("truetype");
 }
+@font-face {
+  font-family: Open-Sans-hebrew;
+  src: url("../fonts/Open-Sans-hebrew.eot?") format("eot"), url("../fonts/Open-Sans-hebrew.woff") format("woff"), url("../fonts/Open-Sans-hebrew.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans-hebrew.ttf") format("truetype");
+}
 /* line 3, ../sass/menu.scss */
 #mini-panel-hamburgermenufooter {
   color: #fff;
@@ -34,8 +38,8 @@
 /* line 16, ../sass/menu.scss */
 #mini-panel-hamburgermenufooter .close {
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: 3px;
+  left: 23px;
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -68,7 +72,7 @@
 /* line 41, ../sass/menu.scss */
 #mini-panel-hamburgermenufooter .pane-menu-menu-site-main-menu, #mini-panel-hamburgermenufooter .pane-menu-cinematic-festival-12 {
   width: 100%;
-  padding: 60px 110px 30px;
+  padding: 30px 110px 30px;
   background-color: #323232;
 }
 /* line 45, ../sass/menu.scss */

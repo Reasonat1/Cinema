@@ -166,6 +166,7 @@
 	}
 	.views-field-field-toptix-purchase{
 		float: left;
+		font-size: 15px;
 	}
 	.views-field-views-conditional{
 		float: right;
@@ -241,6 +242,30 @@
 					a{
 						float: right;
 					}
+				}
+			}
+			.row-custom-lobby .calendar-flag{
+				@include res(s-m){
+					float: left!important;
+				}
+			}
+			.purchase{
+				float: right;
+				margin-left: 15px;
+				margin-right: 0;
+				width: 53px;
+				button{
+					float: right;
+				}
+			}
+			.time{
+				@include res(s-m){
+					float: right!important;
+				}
+			}
+			.row-custom-lobby .calendar-flag{
+				@include res(s-m){
+					width: 53px!important;
 				}
 			}
 		}

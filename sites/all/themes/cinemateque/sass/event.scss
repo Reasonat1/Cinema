@@ -31,12 +31,12 @@
 			padding: 0!important;
 			.panels-flexible-region-node_page-content_left{
 				padding: 0 5%!important;
+				@include res(s-m){
+					padding: 0 !important;
+				}
 			}
 			.panels-flexible-region-node_page-content_right{
 				padding: 0 5% 25px !important;
-				border-top: 1px solid #cdcdcd;
-				border-bottom: 1px solid #cdcdcd;
-				margin-top: 5px!important;
 			}
 		}
 		.panels-flexible-row-node_page-5-inside{
@@ -73,6 +73,9 @@
 		}
 		.pane-content {
 			@include width();
+			/*@include res(s-m){
+				padding-left: calc(5% - 10px);
+			}*/
 		}
 	}
 	.pane-event-ct-view-panel-pane-3{
@@ -82,9 +85,13 @@
 			}
 		}
 	}
-	.pane-event-ct-view-panel-pane-5{
+	.more-screening-pane{
+		clear: both;
+		overflow: hidden;
 		@include width;
-		margin-top: 40px;
+		.pane-title{
+			padding-top: 20px;
+		}
 		.view-event-ct-view{
 			overflow: visible;
 			.table-responsive{
@@ -126,7 +133,7 @@
 		.views-field-field-cm-event-body {
 			line-height: 28px;
 			@include width();
-			padding: 10px 5% 0;
+			padding: 10px 5% 10px;
 			p {
    				margin: 0 auto;
     			width: 54%;
@@ -139,6 +146,7 @@
 	}
 	.pane-test-view-for-movie-credit-panel-pane-2 .pane-content{
 		padding: 0;
+		width: 100%!important;
 	}
 	.credits-view{
 		width: 100%;
@@ -158,4 +166,9 @@
 
 	}
 
+}
+
+.reviews-mobile{
+	clear: both;
+	margin-top: 30px;
 }

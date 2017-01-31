@@ -134,7 +134,7 @@
 
 .navbar-brand {
 	float: right;
-	margin: 11px 30px 0 5px!important;
+	margin: 7px 30px 0 5px!important;
 	@include res(menu){
 		float:left;
 	}
@@ -254,7 +254,20 @@
 
 /*******  home page  *********/
 
-.node-type-front-page{
+.node-type-front-page #main-wrapper{
+	.views-field-ops{
+		right: auto;
+		left: 20px;
+	}
+	.paragraphs-item-one-item-static{
+		.on-image{
+			@include res(s-m){
+				.field-name-field-toptix-purchase{
+					float: left!important;
+				}
+			}
+		}
+	}
 	.one-item-static{
 		.on-image{
 			.field-name-field-cm-event-time{
@@ -265,26 +278,30 @@
 			}
 		}
 		.views-field-ops{
-			left: 20px;
 			right: auto;
+			left: 20px;
+		}
+		.video-link{
+			right: auto;
+			left: 40px;
+		}
+	}
+	.field-name-field-item-list-normal-image, .paragraphs-item-list-wide-image .field-type-paragraphs{
+		.video-link{
+			right: auto;
+			left: 20px;
 		}
 	}
 	.list_wide_image, .list_normal_image_width{
 		.left-area{
 			float: right;
 			.views-field-ops{
-				left: 20px;
 				right: auto;
+				left: 20px;
 			}
 		}
 		.right-area{
 			float: left;
-			table{
-				.add-event{
-					padding-left: 10px!important;
-					padding-right: 0!important;
-				}
-			}
 			.movie-details{
     			.field-name-field-cm-movie-duration, .duration{
     				border-right: 1px solid;
@@ -295,6 +312,9 @@
     				padding-left: 0;
     			}
 			}
+			.credit-list, .duration{
+				float: right;
+			}
 			.credit-duration{
 				.duration{
     				border-right: 1px solid;
@@ -302,7 +322,7 @@
     				margin-right: 10px;
     				margin-left: 0;
     				padding-right: 10px;
-    				padding-left: 0;				
+    				padding-left: 0;					
 				}
 			}
 		}
@@ -314,12 +334,12 @@
 
 	}
 	.field-name-field-item-grid-3 > .field-items > .field-item{
-		margin-left: 5%;
+		margin-left: 2%;
 		margin-right: 0;
 		float: right;
 		@include res(l){
-			margin-right: 0!important;
 			margin-left: 4%!important;
+			margin-right: 0!important;	
 			&:nth-child(2n){
 				margin-left: 0!important;
 			}	
@@ -327,9 +347,11 @@
 		&:nth-child(3n){
 			margin-left: 0;
 		}
-		.views-field-ops{
-			left: 20px;
-			right: auto;
+		.title{
+			float: right!important;
+		}
+		.title-area .video-link{
+			float: left;
 		}
 	}
 	.field-name-field-node-top-gallery{
@@ -340,8 +362,92 @@
 				float: right;
 				margin: 4px 10px 0 0px;
 		}
+		> .field-items > .field-item{
+			@include res(s-m){
+				.slide-right-ct{
+					margin-right: 0px;
+					margin-left: 20px;
+				}
+			}
+			.slide-right-ct{
+				padding-right: 6%;
+				padding-left: 0;
+			}
+		}
+	}
+	.paragraphs-item-special-grid{
+		.special-group{
+			float: right;
+		}
+		.group-item1, .group-item2{
+			margin-left: 2%;
+			margin-right: 0;
+			@include res(s-m){
+				margin-left: 0;
+			}
+			@include res(l){
+				margin-left: 0;
+			}
+		}
+		.group-item1{
+			@include res(l){
+				margin-left: 4%;
+				margin-right: 0;
+			}
+		}
+		.group-item3{
+			float: left;			
+		}
+		.group-item2{
+			.field-name-field-item-special-grid-2{
+				@include res(l){
+					float: right;
+				}
+			}
+		}
+		.field-name-field-item-special-grid-3, .field-name-field-item-special-grid-4{
+			.video-link{
+				right: auto;
+				left: 20px;
+			}
+		}
+		.field-name-field-item-special-grid, .field-name-field-item-special-grid-2{
+			.video-link{
+				float: left;
+				right: auto;
+				left: 20px;
+			}
+		}
+		.on-image{
+			.title{
+				float: right;					
+			}
+		}
+	}
+	.field-name-field-item-special-dynamic{
+		> .field-items > .field-item{
+			float: right;
+			margin-right: 0%;
+			margin-left: 2%;
+			&:nth-child(3n) {
+    			margin-left: 0;
+    		}
+		}
+		.content{
+			.withoutimage{
+				.video-link{
+					right: auto;
+					left: 48px;
+				}
+			}
+		}
+		.video-link{
+				right: auto;
+				left: 20px;
+		}
 	}
 }					
+				
 
 /******  pager  *******/
 

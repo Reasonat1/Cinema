@@ -11,11 +11,7 @@
     }
 	.page-header{
 		display: block!important;
-		h1.title{
-			font-weight: normal;
-			margin: 60px 0 40px;
-			font-size: 50px;
-		}
+		margin: 0;
 	}
 	.container, #content{
 		width: 100%;
@@ -36,6 +32,10 @@
 	.panels-flexible-row-node_page-3{
 		@include width;
 		padding: 0 5%!important;
+		.form-submit{
+			float: right;
+			border-radius: 0;
+		}
 	}
 	.search-results{
 		clear: both;
@@ -251,6 +251,9 @@
 			float: left;
 			width: 15.4%;
 			margin-left: 1.5%;
+			.form-submit{
+				display: none;
+			}
 			@include res(l){
 				width: 32.3%;
 			}
@@ -341,6 +344,7 @@
 	.pane-panopoly-database-search-search-database-results{
 		background-color: $color_fantasy_approx;
 		padding-bottom: 50px;
+		overflow: hidden;
 		.pane-content{
 			@include width;
 			.view{
@@ -352,6 +356,8 @@
 					background-color: #fff;
 					margin-bottom: 20px;
 					clear: both;
+					display: inline-block;
+					width: 100%;
 				}
 				.pager-next, .pager-last, .pager-first, .pager-previous{
 					a{
@@ -376,6 +382,11 @@
 						float: left;
 						width: 30%;
 						position: relative;
+						@include res(s-m){
+							> .only-mobile{
+								padding: 10px 14px;
+							}
+						}
 						.person-left-sec{
 							padding: 18px;
 							overflow: hidden;
@@ -430,7 +441,14 @@
 							color: #000;
 						}
 						.lobby-summary, .enhan-summary{
-							padding: 20px 0;
+							padding: 10px 0 20px;
+						}
+						.lobby-summary{
+						  font-size: 16px;
+						  word-break: break-all;
+						  p{
+						  	font-size: 16px;
+						  }
 						}
 						.lobby-length, .enhan-credit-container{
 							color: #919191;
@@ -450,9 +468,6 @@
 								padding-right: 0!important;
 							}
 						}
-						.date{
-							width: 20%;
-						}
 						.time{
 							width: 11%;
 						}
@@ -463,6 +478,9 @@
 							padding-right: 0;
 							padding-left: 0;
 							width: 80px!important;
+							@include res(s-m){
+								width: 66px!important;
+							}
 						}
 						.title{
 							width: 23%;
@@ -479,7 +497,7 @@
 
 .current-search-item {
 	clear: both;
-	li{
+	.item-list li{
 		float: left;
 		margin-right: 30px!important;
 		border-bottom: 1px solid;
@@ -488,7 +506,7 @@
 			color: #c9c9c9;
 		}
 	}
-	li:hover{
+	.item-list li:hover{
 		@include main-color;
 		a{
 			@include main-color;
@@ -551,4 +569,10 @@ input:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]),
 
 .select2-dropdown{
 	border-radius: 0;
+}
+
+.domain-1{
+	.facetapi-facet-domain-sitename{
+		display: none;
+	}
 }

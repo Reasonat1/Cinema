@@ -10,6 +10,7 @@
       <div class="wrapper">
         <div class="slide-left-ct">
           <h2 class="title slide-big-text"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+        <div class="extra-text"><?php print render($content['field_homepage_extra_text']); ?></div>
 		  <div class="screaning"><?php print screaning_output($node->nid, 'movie_group'); ?></div>
         </div>
       </div>
@@ -17,23 +18,3 @@
   </div>
 
 </article>
-
-
-<script>
-    jQuery(function(){  
-      jQuery('.more-items .gallery .field-name-field-cm-moviegroup-pictures .field-items').owlCarousel({
-        rtl: true,
-        autoplay:false,
-        autoplayTimeout:5000,
-        autoplayHoverPause:true,
-        loop:true,
-        margin:0,
-        nav: true,
-        responsive:{
-          0:{
-            items:1
-          }
-        }
-      }); 
-    });
-</script>

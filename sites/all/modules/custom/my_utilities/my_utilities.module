@@ -113,7 +113,7 @@ function _return_addthisevent_markup($node) {
   //    $output .= '</div>';
   //    return $output;
   // }
-   function my_utilities_views_pre_render(&$view) {
+   /*function my_utilities_views_pre_render(&$view) {
      //remove current event from the future events view list.
      // this has to be done here because we cant exclude the node argument from view as it is not only excluded but also used for limiting results.
      if($view->name == 'event_ct_view' && $view->current_display == 'panel_pane_5') {
@@ -123,15 +123,19 @@ function _return_addthisevent_markup($node) {
            }		
        }
      }
-   }
+   }*/
    function my_utilities_ctools_plugin_directory($module, $plugin) {
       if (($module == 'ctools' || $module == 'panels') && !empty($plugin)) {
          return 'plugins/' . $plugin;
       }
    }
 function share_this_view_block_content(){
+   $current_url = url(current_path(), array('absolute' => TRUE));
    $output ='';
+   $movie = '';
    $node = node_load(arg(1));
+   if (isset($node->field_cm_event_lineup['und'])) $movie = node_load($node->field_cm_event_lineup['und']['0']['target_id']);
+   if($movie)if ($node->type=='cm_event' && $movie->type=='cm_movie') $node = $movie;
     global $base_url;
     global $user;
     $path = drupal_get_path_alias('/node/'.$node->nid);
@@ -144,18 +148,16 @@ function share_this_view_block_content(){
      case 'cm_movie':
        $favorite_type = t('Add to my movies');
        break;
-    case 'cm_article':
-       $favorite_type = t('Add to my articles');
-       break;
     case 'cm_event':
        $favorite_type = t('Add to my events');
        break;
     }
     $output .='<div class="share-pane-container">';
-    if ( $user->uid ) {
+    if (( $user->uid ) && ($type != 'cm_article')) {
       $output .= '<div class="flag-custom share-pane link">' . flag_create_link('favorite_', $node->nid) . '<div class="title">'.$favorite_type.'</div></div>';
     }
-    $output .= '<div class="facebook link"><a class="fb-share" href="https://www.facebook.com/sharer/sharer.php?u='.$base_url.'/node/'.$node->nid.'" target="_blank">'.t("Share").'</a>
+	$node = node_load(arg(1));
+    $output .= '<div class="facebook link"><a class="fb-share" href="https://www.facebook.com/sharer/sharer.php?u='.$current_url.'" target="_blank">'.t("Share").'</a>
   </div>';
     $output .= '<div  class="whatsapp link" id="whatsApp-share"><a href="whatsapp://send?text='.$base_url.'/node/'.$node->nid.'">'.t("Send to a friend").'</a></div>';
     $output .='</div>';
@@ -169,4 +171,169 @@ function share_this_view_block_content(){
 function my_utilities_admin_paths() {
   $paths['admin/config/mini-panels-ipe/*'] = FALSE;
   return $paths;
+}
+
+
+function screaning_output ($element_id, $content_type='movie') {
+	global $language ;
+    $language_name = isset($language->language) ? $language->language : 'en';
+	$now=time();
+	
+	switch ($content_type) {
+     case 'movie':
+    $results = db_query("SELECT DISTINCT node.nid AS nid, field_data_field_cm_event_time.field_cm_event_time_value AS field_data_field_cm_event_time_field_cm_event_time_value
+    FROM {node} node LEFT JOIN {field_data_field_cm_event_lineup} field_data_field_cm_event_lineup ON node.nid = field_data_field_cm_event_lineup.entity_id AND (field_data_field_cm_event_lineup.entity_type = 'node' AND field_data_field_cm_event_lineup.deleted = '0') LEFT JOIN {node} node_field_data_field_cm_event_lineup ON field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = node_field_data_field_cm_event_lineup.nid LEFT JOIN {field_data_field_cm_event_time} field_data_field_cm_event_time ON node.nid = field_data_field_cm_event_time.entity_id AND (field_data_field_cm_event_time.entity_type = 'node' AND field_data_field_cm_event_time.deleted = '0')
+    WHERE (( (field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = '$element_id' ) )AND(( (node.status = '1') AND (node_field_data_field_cm_event_lineup.type IN  ('cm_movie')) AND (node.language IN  ('$language_name')))) AND field_data_field_cm_event_time.field_cm_event_time_value > '$now')
+    ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAll();
+	break;
+	case 'movie_group':
+	$results = db_query("SELECT DISTINCT node.nid AS nid, field_data_field_cm_event_time.field_cm_event_time_value AS field_data_field_cm_event_time_field_cm_event_time_value 
+	FROM {node} node LEFT JOIN {field_data_field_cm_event_lineup} field_data_field_cm_event_lineup ON node.nid = field_data_field_cm_event_lineup.entity_id AND (field_data_field_cm_event_lineup.entity_type = 'node' AND field_data_field_cm_event_lineup.deleted = '0') LEFT JOIN {node} node_field_data_field_cm_event_lineup ON field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = node_field_data_field_cm_event_lineup.nid LEFT JOIN {field_data_field_cm_event_time} field_data_field_cm_event_time ON node.nid = field_data_field_cm_event_time.entity_id AND (field_data_field_cm_event_time.entity_type = 'node' AND field_data_field_cm_event_time.deleted = '0') 
+	WHERE (( (field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = '$element_id') )AND(( (node.status = '1') AND (node_field_data_field_cm_event_lineup.type IN  ('cm_movie_group')))) AND field_data_field_cm_event_time.field_cm_event_time_value > '$now') 
+	ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAll();
+	break;}
+    $row_count = count($results);
+    $output_movie_event ='';
+	if ($row_count) {
+    $output_movie_event .='<div class="table-responsive">';
+      $output_movie_event .= '<table class="table">';
+        $output_movie_event .= ' <tbody>';
+        foreach($results as $val){
+          $movie_event_nid = $val->nid;
+          $movie_event_info = node_load($movie_event_nid);
+          $flag_moviegroup_event = flag_create_link('favorite_', $movie_event_info->nid);
+          //$event_title = t($movie_event_info->title);
+          $event_title = '';
+         $path = drupal_get_path_alias('node/'.$movie_event_info->nid);
+         $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($movie_event_info).'</div>';
+         if(!empty($movie_event_info->field_cm_event_time['und'])){
+          $event_date = '<span class="day-same-width">';
+          $event_date .= format_date($movie_event_info->field_cm_event_time['und'][0]['value'], 'custom', 'l');
+          $event_date .= '</span>';
+          $event_date .= format_date($movie_event_info->field_cm_event_time['und'][0]['value'], 'custom', ' | d.m.y');
+          $event_date_mobile = date('d.m.y', $movie_event_info->field_cm_event_time['und'][0]['value']);
+          $event_time = date('G:i', $movie_event_info->field_cm_event_time['und'][0]['value']);
+         }
+          $output_movie_event .= '<tr class="row-custom-lobby">';
+           $output_movie_event .= '<td class="date only-desktop">'.$event_date.'</td>';
+           $output_movie_event .= '<td class="time"><div class="only-mobile">'.$event_date_mobile.'</div>'.$event_time.'</td>';
+           if(!empty($movie_event_info->field_cm_event_hall['und'])){
+               $hall_id = taxonomy_term_load($movie_event_info->field_cm_event_hall['und'][0]['target_id']);
+               $hall_name = $hall_id->name;
+               $output_movie_event .= '<td class="hall only-desktop">'.t($hall_name).'</td>';
+           }
+           else{
+               $hall_name = "";
+               $output_movie_event .= '<td class="hall only-desktop"></td>';
+           }
+           $output_movie_event .= '<td class="title only-desktop">';
+		   if(!empty($movie_event_info->field_cm_event_comment['und']) && false){
+                $event_title = $movie_event_info->field_cm_event_comment['und'][0]['value']; 
+            }
+		   
+		   
+           if(!empty($event_title)){
+             $output_movie_event .= l($event_title, $path);
+           }
+           $output_movie_event .= '</td>';
+		   if(!empty($movie_event_info->field_cm_event_comment['und']) && false){
+                $table_remark = $movie_event_info->field_cm_event_comment['und'][0]['value'];
+                
+                $output_movie_event .= '<td class="table_remark">'.t($table_remark).'</td>';
+            }
+            else{
+                $table_remark = "";
+                $output_movie_event .= '<td class="table_remark"></td>';
+            }
+           if(!empty($movie_event_info->field_cm_event_internal_id['und'])){
+             $event_code = $movie_event_info->field_cm_event_internal_id['und'][0]['value'];
+             $output_movie_event .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div>'.t($event_code).'</td>';
+           }
+           else{
+             $output_movie_event .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div></td>';
+           }
+           $output_movie_event .='<td class="like-flag only-desktop">'. $flag_moviegroup_event . '</td>';
+           $output_movie_event .='<td class="add-event only-desktop">'. $addevent . '</td>';
+           if(!empty($movie_event_info->field_toptix_purchase['und'])){
+           $toptix_code = $movie_event_info->field_toptix_purchase['und'][0]['value'];
+           $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
+           $output_movie_event .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t("TICKETS").'</button>'.'</td>';
+           } 
+           else{
+             $output_movie_event .= '<td class="purchase"></td>';
+           }
+          $output_movie_event .= '</tr>';
+        }
+        $output_movie_event .= ' </tbody>';
+      $output_movie_event .= '</table>';
+      $output_movie_event .='<div class="view-footer">';
+      if($row_count > 3){
+        $output_movie_event .= '<div class="more-event"><span class="only-mobile"> - </span><span class="text text-open">'.t('Show More').'</span><span class="text text-close">'.t('Show Less').'</span><span class="only-mobile"> - </span></div>';
+      }
+
+     $output_movie_event .='</div>';
+    $output_movie_event .= '</div>'; 
+	}
+	return $output_movie_event;
+	
+    }
+function movie_image_output ($node_id, $style='lobby') {
+	$node=node_load($node_id);
+	$noimage='<img src="/sites/all/themes/cinemateque/images/default-image-pane-2.png">';
+	
+	switch ($node->type) {
+     case 'cm_movie':
+	 if (isset($node->field_cm_movie_pictures['und'][0]['fid'])) {
+	 $image_field=$node->field_cm_movie_pictures['und'][0]['fid'];}
+	 else {$image_field=false;}
+	 break;
+	 case 'cm_movie_group':
+	 if (isset($node->field_cm_moviegroup_pictures['und'][0]['fid'])) {
+	 $image_field=$node->field_cm_moviegroup_pictures['und'][0]['fid'];}
+	 else {$image_field=false;}
+	 break;
+	}
+	if (!isset($image_field) || !$image_field) return $noimage;
+	$picture_path_event=file_load($image_field);
+	return('<img src="' . image_style_url($style, $picture_path_event->uri) . '" alt="" />');
+	
+}
+function movie_video_output ($node_id) {
+$node = node_load($node_id);
+$output='';
+/*if(!empty($node->field_cm_movie_videos['und'])){
+	$field_video = field_get_items('node', $node, 'field_cm_movie_videos');
+	$display = array('label' => 'hidden','type' => 'file_rendered');
+	$video=field_view_value('node', $node, 'field_cm_movie_videos', $field_video[0], $display);
+	$video_output = render($video);
+	$output.='<div class="play-button"></div>
+	<div class="video-wrapper">
+	<div class="close-button"></div>
+	'.$video_output.'
+	</div>';
+}*/
+	 if(!empty($node->field_cm_movie_videos['und'])){
+		$filetype = $node->field_cm_movie_videos['und'][0]['filemime'];
+		if($filetype == 'video/mp4'){
+			$path_mp4 = file_create_url($node->field_cm_movie_videos['und'][0]['uri']);
+			$output .= '<a class="lightboxed" href="'.$path_mp4.'">'.'Play Video'.'</a>';   
+		}
+		if($filetype == 'video/youtube'){
+			$path_tube = file_create_url($node->field_cm_movie_videos['und'][0]['uri']);
+			$sort = 'http://www.youtube.com/embed/'.substr($path_tube, 31);
+			$new_path = $sort.'?fs=1&amp;width=540&amp;height=550;autoplay=1&amp;hl=en_US1&amp;iframe=true&amp;rel=0';
+			$output .= '<a class="colorbox-load" href="'.$new_path.'">'.'Play Video'.'</a>';
+		}
+		if($filetype == 'video/vimeo'){
+			$path_vimeo = file_create_url($node->field_cm_movie_videos['und'][0]['uri']);
+			$sort_vimeo = 'http://player.vimeo.com/video/'.substr($path_vimeo, 17);
+			$new_path_vimeo = $sort_vimeo.'?fs=1&amp;width=540&amp;height=550;autoplay=1&amp;hl=en_US1&amp;iframe=true&amp;rel=0"';
+			$output .= '<a class="colorbox-load" href="'.$new_path_vimeo.'">'.'Play Video'.'</a>';
+		}
+	$output .= '<script>
+			jQuery("a.lightboxed").colorbox({iframe:true, width:"540px", height:"550px"});
+		</script>';
+	} 
+return $output;
+
 }

@@ -10,7 +10,7 @@
 }
 
 body{
-	font-family: Open-Sans;
+	font-family: Open-Sans, arial;
 	display: block!important;
 	font-size:18px;
 	color: #000;
@@ -163,6 +163,13 @@ table td{
 }
 
 .table-responsive{
+	table{
+		width: 100%;
+	}
+	.day-same-width{
+		display: inline-block;
+		width: 90px;
+	}
 	thead{
 		color: $color_pink_swan_approx;
 		font-size: 12px;
@@ -184,7 +191,7 @@ table td{
 	}
 }
 
-.pane-node-field-tag, .pane-node-field-cm-article-tags, .pane-node-field-cm-movie-tags, .pane-node-field-cm-person-tags {
+.pane-node-field-tag, .pane-node-field-cm-article-tags, .pane-node-field-cm-movie-tags, .pane-node-field-cm-person-tags, .pane-node-field-cm-movie-tags {
 	.pane-content {
 		@include res(s-m){
 			border:none;
@@ -223,6 +230,9 @@ table td{
 		
 .pane-node-field-cm-movie-tags{
 	clear: both;
+	@include res(s-m){
+		@include width;
+	}
 	.pane-content{
 		@include res(s-m){
 			padding-top: 0;
@@ -315,34 +325,7 @@ table td{
 	font-size: 1.25em;
 	font-weight: 600;
 }
-.pane-movie-group-ct-panel-pane-3 {
-	@include width;
-	td {
-		border: none !important;
-		a {
-			color: $black;
-		}
-	}
-	table {
-		border: none !important;
-		font-size: 1.1em;
-	}
-	tbody {
-		border: none !important;
-		font-size: 1.1em;
-	}
-	th {
-		border: none !important;
-		font-size: 1.1em;
-		color: $color_pink_swan_approx;
-		font-size: 14px;
-		font-weight: 300;
-	}
-	tr {
-		border: none !important;
-		font-size: 1.1em;
-	}
-}
+
 .bottom-content {
 	table, tbody, tr, th, td {
 		border: none !important;
@@ -409,9 +392,7 @@ table td{
 }
 .share-this-pane {
 	border-top: 5px solid $black;
-	border-bottom: 5px solid $black;
-	padding-bottom: 100px!important;
-	margin-bottom: 20px!important;
+	padding-bottom: 50px!important;
 	@include res(s-m){
 		display: none;
 	}
@@ -457,7 +438,9 @@ table td{
 			font-size: 16px;
 			margin-top: 12px;
 			margin-bottom: 12px;
-			width: calc(100% - 30px);
+			width: -webkit-calc(100% - 30px);
+    		width: -moz-calc(100% - 30px);
+    		width: calc(100% - 30px);
 			float: right;
 		}
 	}
@@ -646,6 +629,13 @@ table td{
 		}
 		.panels-flexible-region-node_page-content_right-inside{
 			padding: 0;
+			.panel-pane:nth-child(2){
+				border-top: 5px solid;
+				padding-top: 20px;
+				@include res(s-m){
+					border-top: none;
+				}
+			}
 		}
 	}
 }
@@ -691,8 +681,8 @@ table.views-table {
 
 .add-event{ 
 	width: 53px!important;
-	padding-top: 5px!important;
 	padding-right: 25px!important;
+	padding-top: 6px!important;
 	a {
 		float: right;
 		border: medium none;
@@ -876,6 +866,7 @@ table.views-table {
 			bottom: 20px;
 			padding: 0 20px;
 			width: 100%;
+			z-index: 100;
 			a{
 				color: #fff;
 			}
@@ -903,7 +894,6 @@ table.views-table {
 }
 .lobby-title a {
 	color: $black;
-	font-size: 1.1em;
 	font-weight: 600;
 	margin-bottom: 2%;
 }
@@ -1034,6 +1024,9 @@ table{
 	}
 	.purchase, .views-field-field-toptix-purchase, .views-field-field-toptix-purchase{
 		width: 88px!important;
+		display: block;
+		float: right;
+		height: 38px;
 		box-sizing:border-box;
 		@include res(s-m){
 			vertical-align: middle !important;
@@ -1156,17 +1149,20 @@ table{
    	}
 }
 
-.full-screen-image .owl-controls, .full-screen-image-front .owl-controls, .top_gallery_front .owl-controls{
+.full-screen-image .owl-controls, .full-screen-image-front .owl-controls, .field-name-field-item-top-gallery .owl-controls{
 	.owl-prev, .owl-next{
 	    z-index: 199;
 		font-size: 0;
-		top: 70%;
+		top: 68%;
 		z-index: 9;
 		height: 32px;
 	    position: absolute;
 	    width: 32px;
 	    background-color: rgba(0,0,0,0.4);
 	    border-radius: 50%;
+	    @include res(s-m){
+	    	top: 30%;
+	    }
 	}
 	.owl-prev{
 	    background-image: url("../images/left.png");
@@ -1302,8 +1298,22 @@ table{
    	}
 }
 
-.page-user-edit{
-	@include width;
+.page-user-edit, .page-user-register, .page-user-password{
+	form{
+		@include width;
+		&#user-pass{
+			width: 800px!important;
+			padding: 50px 5%;
+		}
+	}
+	.panel-panel{
+		width: 100%;
+	}
+	.pane-title{
+		font-size: 28px;
+		@include width;
+		padding-top: 40px;
+	}
 	.group-name-group{
 		float: right;
 		width: 46%;
@@ -1412,7 +1422,13 @@ table{
 	}
 }
 
-
+.page-user-reset{
+	form{
+		@include width;
+		width: 800px!important;
+		padding: 50px 5%;
+	}
+}
 
 .pane-user-page-pane-panel-pane-1{
 	background-color: #fff;
@@ -1483,6 +1499,8 @@ table{
 			float: left;
 			margin-right: 10px;
 		}
+	}ul{
+		margin-bottom: 0;
 	}
 	li{
 		list-style-type: none;
@@ -1490,7 +1508,7 @@ table{
 	h4{
 		font-size: 1.2em;
 		font-weight: bold;
-		margin: 40px 0 30px;
+		margin: 0px 0 10px;
 	}
 	.view-filters{
 		overflow: hidden;
@@ -1509,14 +1527,22 @@ table{
 					}
 				}
 			}
-			.edit, .logout{
+			.list{
 				float: right;
+				@include res(s-m){
+					float: none;
+					text-align: center;
+				}
+			}
+			.edit, .logout{
 				padding-top: 3px;
 				padding-left: 10px;
+				display: inline-block;
 				@include res(s-m){
-					width: 100%;
+					float: none!important;
 					text-align: center;
 					margin-bottom: 30px;
+					display: inline-block;
 				}
 				a{
 					@include main-color();
@@ -1590,6 +1616,16 @@ table{
 				margin-bottom: 20px;
 				clear: both;
 				background-color: #fff;
+				display: inline-block;
+				width: 100%;
+			}
+			.lobby-summary{
+				padding: 10px 0 20px;
+				font-size: 16px;
+				word-break: break-all;
+				p{
+					font-size: 16px;
+				}
 			}
 			.lobby-container{
 				.lobby-term-left{
@@ -1599,11 +1635,17 @@ table{
 					@include res(s-m){
 						width: 100%;
 					}
+					> .only-mobile{
+						padding: 10px 14px;
+					}
+					.image-lobby{
+						position: relative;
+					}
 				}
 				.lobby-term-right{
 					float: right;
 					width: 70%;
-					padding: 20px 20px 0;
+					padding: 20px;
 					box-sizing: border-box;
 					@include res(s-m){
 						width: 100%;
@@ -1611,11 +1653,13 @@ table{
 					.table-responsive{
 						overflow: visible;
 					}
+					.table{
+						margin-bottom: 5px;
+					}
 					table tbody{
 						border: none;
 					}
 					.lobby-title a{
-						font-size: 1.3em;
 						color: #000;
 					}
 					.lobby-length{
@@ -1641,7 +1685,7 @@ table{
 		border:none!important;
 	}
 	.date{
-		width: 20%;
+		width: 25%;
 	}
 	.time{
 		width: 11%;
@@ -1652,18 +1696,23 @@ table{
 	.purchase, .views-field-field-toptix-purchase{
 		width: 88px;
 		padding: 6px 8px!important;
-		display: block;
+		@include res(s-m){
+			padding-top: 11px!important;
+		}
 	}
 	.title{
 		width: 23%;
 		font-weight: normal;
 	}
 	.views-field-ops, .like-flag{
-		height: 23px;
 		display: block;
-		padding: 11px 17px 0;
+		padding: 0px 17px 0;
 		width: 30px;
+		height: 25px;
 		float: right;
+		.flag-throbber{
+			position: absolute;
+		}
 	}
 	.code, .views-field-field-cm-event-internal-id{
 		width: 10%;
@@ -1684,11 +1733,14 @@ table{
 		width: 100%;
 	}
 	.content.middle .panels-flexible-region-node_page-content_left{
-		width: 800px;
-		max-width: 100%;
-		padding-right: 0;
-		margin: 0 auto;
-		float: none;
+		width: 77%;
+		padding-right: 23%;
+		float: right;
+		line-height: 1.8em;
+		@include res(s-m){
+			max-width: 100%;
+			padding: 0 5%;
+		}
 	}
 	.panels-flexible-row-node_page-4{
 		width: 100%!important;
@@ -1759,6 +1811,9 @@ table{
 	}
 	.pane-node-field-cm-person-body{
 		padding: 40px 0;
+		@include res(s-m){
+			padding: 0;
+		}
 	}
 
 	.panels-flexible-row-node_page-6{
@@ -1826,14 +1881,29 @@ table{
     background-image: -ms-repeating-linear-gradient(bottom,rgb(0, 0, 0) 0%,rgba(0, 0, 0, 0) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000",endColorstr="#ff000000",GradientType=0);
     z-index: 1;
+    @include res(s-m){
+    	display: none;
+    }
+}
+
+.paragraphs-item-top-gallery{
+	.gradient{
+    	display: block;
+	}
 }
 
 .gradient.small{
 	height: 150px!important;
+	@include res(s-m){
+		display: block;
+	}
 }
 
 .gradient.very-small{
 	height: 100px!important;
+	@include res(s-m){
+		display: block;
+	}
 }
 
 .state-nopic .gradient.small{
@@ -1867,7 +1937,7 @@ table{
 		overflow: hidden;
 		margin-bottom: 0;
 		thead{
-			display: none;
+			display: none!important;
 		}
 		table{
 			font-size: 14px;
@@ -1877,16 +1947,41 @@ table{
 				color: #ccc;
 			}
 		}
-		.hall{
-			vertical-align: middle;
+		.table_remark{
+			display: none;
 		}
 		td{
-			width: calc(50% - 40px)!important;
+			width: -webkit-calc(100% - 145px)!important;
+    		width: -moz-calc(100% - 145px)!important;
+    		width: calc(100% - 145px)!important;
 			padding-left: 0!important;
+			float: left;
+			display: block;
+			&.time, &.views-field-field-cm-event-time-3, &.views-field-field-cm-event-time{
+				width: 70px!important;
+			}
 			&.purchase, &.views-field-field-toptix-purchase{
 				padding-left: 0!important;
 				padding-right: 0!important;
-				width: 80px!important;
+				width: 66px!important;
+				float: right;
+			}
+			&.views-field-field-cm-event-time-3{
+				position: relative;
+			}
+			&.mobile-points{
+				width: 30px!important;
+				margin-top: 10px;
+				cursor: pointer;
+				span.circle{
+					@include bg-main-color;
+					border-radius: 50%;
+					width: 4px;
+					height: 4px;
+					margin-bottom: 4px;
+					display: block;
+					margin-left: 10px;
+				}
 			}
 		}
 	}
@@ -1908,16 +2003,19 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	position: absolute;
 	bottom: 60px;
 	color: #fff;
-	width: 100%;
 	padding: 0;
 	z-index: 99;
-	left: 0px;
 	direction: ltr;
+	width: 100%;
 	@include res(s-m){
 		bottom: 10px;
 	}
 	.wrapper{
 		@include width;
+		@include res(s-m){
+			@include center;
+			padding: 0 5%;
+		}
 		a, a:hover{
 			color: #fff!important;
 		}
@@ -1926,10 +2024,13 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 			width: 54%;
 			margin: 0 auto;
 			@include res(s-m){
-				text-align: center;	
 				font-size: 13px;
 				margin: 0 15%;
-				width: 70%;
+				width: -webkit-calc(100% - 70px);
+    			width: -moz-calc(100% - 70px);
+    			width: calc(100% - 70px);
+				float: left;
+				margin: 0;
 			}
 			.slide-small-text{
 				font-size: 22px;
@@ -1953,6 +2054,9 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 				@include res(s){
 					font-size: 27px;
 					font-weight: bold;
+				}
+				@include res(m){
+					font-size: 36px;
 				}
 			}
 			.button{
@@ -1980,12 +2084,10 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 			width: 23%;
 			margin-bottom: 6px;
 			@include res(s-m){
-				margin: 0;
-				bottom: 6px;
-				top: auto;
-				padding-right: 3%;
-				padding-left: 0;
-				width: 13%;
+				position: relative;
+				width: auto;
+				padding: 0!important;
+				margin-bottom: 0;
 			}
 			*:focus {
 			    outline: 0;
@@ -2001,18 +2103,20 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 				height: 55px;
 				padding: 2%;
 				width: 55px;
+				margin-right: 15px;
 				cursor: pointer;
 				@include res(s-m){
-					background-size: 16px;
-					height: 40px;
-					width: 40px;
+					background: url("../images/play-icon-black.png") no-repeat scroll 60% center;
+					border: 1px solid #000;
 				}
 			}
 			.video-wrapper{
 				position: fixed;
 				width: 100%;
-				height: calc(100% - 50px);
-				top: 50px;
+				height: -webkit-calc(100% - 50px);
+    			height: -moz-calc(100% - 50px);
+    			height: calc(100% - 50px);
+   				top: 50px;
 				left: 0;
 				background-color: #000;
 				display: none;
@@ -2049,6 +2153,25 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	}
 	a {
 		color: #fff;
+	}
+}
+
+
+.not-front{
+	.text-main-image{
+		@include res(s-m){
+			bottom: auto;
+			position: relative;
+			color: #000;
+			padding: 20px 0;
+			width: 100%;
+			left: 0;
+			.wrapper{
+				a, a:hover{
+					color: #000!important;
+				}
+			}
+		}
 	}
 }
 
@@ -2120,20 +2243,18 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 }
 
 .view-footer{
-	overflow: hidden;
-	text-align: center;
+	@include res(s-m){
+		text-align: center;
+	}
 	.more-event{
 		float: right;
 		cursor: pointer;
 		@include main-color;
 		font-size: 0.8em;
-		border-bottom: 1px solid;
-		padding-bottom: 5px;
-		overflow: hidden;
-		margin: 15px 8px;
+		margin: 0px 11px 15px 0;
 		@include res(s-m){
 			margin: 10px auto;
-			float: none;
+			float: none!important;
 			text-align: center;
 			border:none;
 			font-size: 15px;
@@ -2145,8 +2266,53 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 			}
 		}
 		.text{
+			border-bottom: 1px solid;
+			padding-bottom: 5px;
+			margin-top: 10px;
+			float: right;
 			@include res(s-m){
 				margin: 0 5px;
+				float: none!important;
+			}
+		}
+		.text-close, .text-close-event{
+			display: none;
+		}
+		.only-mobile{
+			@include res(s-m){
+				float: none!important;
+				display: inline-block!important;
+			}
+		}
+		&.event-page{
+			float: none;
+			width: 100%;
+			text-align: left;
+			float: left;
+			.text-open-event{
+				padding-bottom: 0;
+				margin-top: 0;
+				float: left;
+			}
+			.text-close-event{
+				float: right;
+				@include res(s-m){
+					margin: 0 11px!important;
+				}
+			}
+			.only-mobile{
+				@include res(s-m){
+					display: none!important;
+				}
+			}
+			&.open{
+				text-align: center;
+				float: right;
+				.only-mobile{
+					@include res(s-m){
+						display: inline-block!important;
+					}
+				}
 			}
 		}
 	}
@@ -2160,7 +2326,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
     width: 77%;
     @include res(s-m){
     	width: 100%;
-    	padding-left: 0;
+    	padding: 0 0 10px;
     	font-size: 15px;
     }
 	.profession, .views-field-field-cm-movie-credits-person-ro{
@@ -2168,22 +2334,18 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 		float: left;
 		clear: both;
 		padding-bottom: 5px;
+		min-width: 115px;
 		@include res(m){
 			width: auto;
 		}
-		@include res(s){
-			width: 100%!important;
-			padding-bottom: 0;
-		}
 	}
 	.views-field-views-conditional{
-		float: right;
+		float: left;
 		padding-bottom: 5px;
 		display: none;
-		@include res(s){
-			width: 100%!important;
-			padding-bottom: 15px!important;
-		}
+		max-width: -webkit-calc(100% - 115px);
+    	max-width: -moz-calc(100% - 115px);
+    	max-width: calc(100% - 115px);
 		a{
 			color: #000;
 		}
@@ -2197,27 +2359,52 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	a:hover{
 		@include main-color;
 	}
+	.view-movie-person-bio a:hover{
+		color: #000!important;
+	}
 	table{
 		width: 100%;
-		td{
-			@include res(s){
-				width: 100%!important;
-				display: block;
-				padding: 0!important;
-			}
-		}
 	}
 	.translated-movie-title{
 		text-align: left;
 		color: $color_nobel_approx;
 		position: relative;
-		a{	
-			color: #333;
+		padding-bottom: 10px;
+		a, span{	
+			color: #000;
 			position: absolute;;
 			left: 0;
 			&:hover{
 				@include main-color;
 			}
+		}
+	}
+}
+
+.view-event-ct-view .movie-group-item-credit {
+	padding: 30px 0 50px;
+	span {
+		color:#000;
+	}
+}
+
+.pane-test-view-for-movie-credit-panel-pane-2 {
+	.credit-area{
+		@include width;
+		padding-top: 40px;
+		overflow: hidden;
+		@include res(s-m){
+			padding-top: 0;
+		}
+		.credits-view{
+			padding: 0 23%;
+			@include res(s-m){
+				padding: 0;
+			}
+		}
+		.translated-movie-title {
+			padding-bottom: 15px;
+			margin-top: 40px;
 		}
 	}
 }
@@ -2228,8 +2415,12 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 .view-director-bio, .view-movie-person-bio{
 	@include width;
 	clear: both;
+	padding-top: 40px!important;
 	a{
 		color: #000!important;
+		&:hover{
+			color: #000!important;
+		}
 	}
 	.views-row{
 		overflow: hidden;
@@ -2354,13 +2545,13 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	}
 }
 
-.view-review-mobile{
+.view-review-mobile, .reviews-mobile{
 	background-color: $color_fantasy_approx;
 	position: relative;
 	@include main-color;
 	text-align: center;
 	padding: 30px  0;
-	.review-owl-carousel{
+	.review-owl-carousel, .owl-carousel{
 		@include width;
 		@include res(s-m){
 			padding: 0 12%;
@@ -2407,6 +2598,13 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	}
 }
 
+.node-type-cm-article{
+	.panels-flexible-row-node_page-6{
+		.inside, .view-movie-person-bio{
+			padding: 0!important;
+		}
+	}
+}
 
 /******  node teaser  ******/
 
@@ -2433,6 +2631,14 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	z-index: 400;
 }
 
+.ui-dialog-title{
+	padding: 0 20px;	
+}
+
+.ui-dialog-content{
+	width: 100%!important;
+	height: 100%!important;
+}
 .region-overlay{
 	position: fixed;
 	height: 100%;

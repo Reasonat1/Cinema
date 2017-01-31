@@ -51,7 +51,10 @@ function cinematic_toptix_browse_control($page, $total) {
 }
 
 function cinematic_toptix_browse_query($page) {
+  $now = new DateTime();
+  $today = $now->format('Y-m-d');
   $query = db_select('toptix_events', 'te');
+  $query->condition('te.event_date', $today, '>');
   $query->join('toptix_shows', 'ts', 'ts.id = te.show_id');
   $query->groupBy('te.show_id');
   $query->addExpression('max(te.event_date)', 'max_date');
@@ -93,6 +96,7 @@ function cinematic_toptix_browse_query($page) {
   }
 
   $events_query = db_select('toptix_events', 'te');
+  $events_query->condition('te.event_date', $today, '>');
   $events_query->join('toptix_shows', 'ts', 'ts.id = te.show_id');
   $events_query->condition('te.show_id', $show_ids, 'IN');
   $events_query->fields('ts', array('title'));

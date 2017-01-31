@@ -2,6 +2,7 @@
 
   <div class="list_wide_image">
       <div class="left-area">
+            <a class="all-image" href="<?php print $node_url; ?>"></a>
             <?php if (render($content['field_cm_movie_pictures'])){
               print render($content['field_cm_movie_pictures']); 
             }
@@ -17,17 +18,27 @@
               <?php } ?>
           </div> 
           <div class="views-field-ops"><?php print flag_create_link('favorite_', $node->nid); ?> </div>
+          <?php  if(!empty($node->field_cm_movie_videos)){ ?>
+      		  <div class="video-link">
+      			 <?php print movie_video_output($node->nid); ?>
+      		  </div>
+            <div class="gradient small"></div>
+          <?php } ?>
       </div>
       <div class="right-area">
-		<div class="screaning"><?php print screaning_output($node->nid); ?></div>
         <h2 class="title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+        <div class="extra-text"><?php print render($content['field_homepage_extra_text']); ?></div>
         <div class="credit-duration">
             <div class="credit-list"><?php print render($content['field_cm_movie_meta_credit']); ?></div>
             <div class="duration"><?php print render($content['field_cm_movie_duration']); ?>  </div>
         </div>
         <div class="short-summary"><?php print render($content['field_cm_movie_short_summary']); ?>  </div>
+        <div class="screaning"><?php print screaning_output($node->nid); ?></div>
       </div>
   </div>
 
 
 </article>
+
+
+ 

@@ -204,7 +204,9 @@ a, a:hover, a:focus{
 	    width: 10px;	
 	}
 	.owl-carousel{
-		width: calc(100% - 100px)!important;
+		width: -webkit-calc(100% - 100px)!important;
+    	width: -moz-calc(100% - 100px)!important;
+    	width: calc(100% - 100px)!important;
 		margin: 0 auto;
 	}
 	.owl-prev{
@@ -576,6 +578,7 @@ header{
 			height: 40px;
 		}
 		> img {
+			margin-top: 4px;
 			height: 36px;
 		}
 	}
@@ -1243,7 +1246,6 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 	    font-size: 16px;
 	    line-height: 18px;
 	    margin-left: 10px;
-	    margin-top: -4px;
 	    width: 210px;
 	    @include res(s-m){
 	    	display: none;
@@ -1265,7 +1267,7 @@ section.footer .view-bean-infomation-block-view table tbody tr {
 	width: 100%;
 }
 .navbar .navbar-brand {
-	margin:11px 5px 0 30px;
+	margin:7px 5px 0 30px;
 	float: left;
 	overflow: hidden;
 	padding: 0;
@@ -1481,12 +1483,61 @@ div[id^="panels-ipe-paneid-22"] > * select {
 /*******  home page  *********/
 
 .node-type-front-page{
+	header{
+		background-color: transparent!important;
+		@include res(s-m){
+			background-color: #000!important;
+		}
+		&.sticky-header{
+			background-color: #000!important;
+		}
+	}
+}
+
+.node-type-front-page #main-wrapper{
+	background-color: $color_fantasy_approx;
+	margin-top: 0!important;
+	@include res(s-m){
+		margin-top: 50px!important;
+	}
+	 .field-items > .field-item{
+		clear: both;
+		position: relative;
+	}
+	.taxonomy-term.vocabulary-lobby{
+		.content{
+			overflow: hidden;
+		}
+	}
+	.screaning .table{
+		margin-bottom: 10px;
+	}
 	.panels-flexible-region-new-center{
 		width: 100%;
 	}
 	.field-name-field-title{
 		font-size: 24px;
 		font-weight: bold;
+		padding: 30px 0 10px;
+		@include res(s-m){
+			padding: 30px 5% 10px;
+		}
+	}
+	.field-name-field-extra-text{
+		@include res(s-m){
+			padding: 0 5%;
+		}	
+	}
+	.all-image{
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 200;
+		left: 0;
+	}
+	h2.title .field-item{
+		overflow: visible!important;
 	}
 	.field-name-field-section > .field-items > .field-item{
 		clear: both;
@@ -1496,12 +1547,66 @@ div[id^="panels-ipe-paneid-22"] > * select {
 			padding: 0px 8%!important;
 			margin-top: 30px;
 			margin-bottom: 30px;
-			&.paragraphs-item-top-gallery{
+			@include res(s-m){
+				padding: 0px!important;
+			}
+			&.paragraphs-item-top-gallery-main{
 				padding: 0!important;
 				margin-top: 0;
 				margin-bottom: 30px;
 				width: 100%!important;
 			}
+		}
+	}
+	.on-image{
+    	bottom: 10px;
+	    color: #fff;
+		font-size: 16px;
+		padding: 20px;
+		position: absolute;
+		width: 100%;
+		z-index: 10;
+		h2{
+		 	line-height: 20px;
+		   	margin-bottom: 8px;
+		   	color: #fff;
+		   	font-weight: bold;
+		   	font-size: 20px;
+		   	div{
+		   		display: inline-block;
+		   	}
+		}
+		a{
+		   	color: #fff;
+		   	font-weight: bold;
+		   	font-size: 20px;
+		   	div{
+		   		display: inline-block;
+		   	}
+		}
+	}
+	.views-field-ops{
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		z-index: 201;
+	}
+	.paragraphs-item-one-item-static{
+		.on-image{
+			@include res(s-m){
+				background-color: #fff;
+				padding: 20px 5%!important;
+				overflow: hidden;
+				.field-name-field-toptix-purchase{
+					float: right!important;
+				}
+			}
+		}
+		.video-link{
+			position: absolute;
+			bottom: 40px;
+			right: 40px;
+			z-index: 250;
 		}
 	}
 	.one-item-static{
@@ -1554,8 +1659,25 @@ div[id^="panels-ipe-paneid-22"] > * select {
 			right: 20px;
 		}
 	}
+	.field-name-field-item-list-normal-image, .paragraphs-item-list-wide-image .field-type-paragraphs{
+		> div > .field-item{
+			background-color: #fff;
+			margin: 0px 0 20px;
+		}
+		.video-link{
+			position: absolute;
+			bottom: 30px;
+			right: 20px;
+			z-index: 250;
+		}
+	}
 	.list_wide_image, .list_normal_image_width{
-		margin: 20px 0;
+		a{
+			color: #000;
+		}
+		.field-name-field-cm-movie-duration, .field-name-field-cm-moviegroup-duration{
+			text-transform: lowercase;
+		}
 		.left-area{
 			float: left;
 			width: 30%;
@@ -1572,11 +1694,11 @@ div[id^="panels-ipe-paneid-22"] > * select {
 		.right-area{
 			float: right;
 			width: 70%;
-			padding: 0 20px;
+			padding: 20px;
 			box-sizing: border-box;
 			@include res(s-m){
 				width: 100%;
-				padding: 20px 0 30px;
+				padding: 20px 20px 30px;
 			}
 			.table-responsive{
 				overflow: visible;
@@ -1590,16 +1712,24 @@ div[id^="panels-ipe-paneid-22"] > * select {
 					width: 18px;
 				}
 				.date{
-					width: 30%;
+					width: 200px;
+					font-weight: bold;
+				}
+				.time{
+					font-weight: bold;
+					width: 65px;
 				}
 				.hall{
-					width: calc(40% - 79px);
+					width: 17%;
 				}
 				.code{
-					width: calc(30% - 79px);
+					width: 11%;
 				}
 				.add-event{
 					padding-right: 10px!important;
+				}
+				.table_remark, .title{
+					display: none;
 				}
 			}
 			.movie-details{
@@ -1610,7 +1740,6 @@ div[id^="panels-ipe-paneid-22"] > * select {
     				line-height: 28px;
     				display: inline-block;
     				line-height: 17px;
-    				margin: 10px 0 20px;
     			}
     			.field-name-field-cm-movie-duration, .duration{
     				border-left: 1px solid;
@@ -1618,8 +1747,18 @@ div[id^="panels-ipe-paneid-22"] > * select {
     				padding-left: 10px;
     			}
 			}
-			.title, .name{
+			h2{
+				font-size: 24px!important;
 				margin-bottom: 10px;
+			}
+			.name{
+				margin-bottom: 10px;
+			}
+			.credit-list, .duration{
+				float: left;
+			}
+			.short-summary{
+				clear: both;
 			}
 			.credit-duration{
 				.credit-list, .duration{
@@ -1633,7 +1772,8 @@ div[id^="panels-ipe-paneid-22"] > * select {
 				.duration{
     				border-left: 1px solid;
     				margin-left: 10px;
-    				padding-left: 10px;					
+    				padding-left: 10px;	
+
 				}
 			}
 			.only-duration{
@@ -1642,7 +1782,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
     				line-height: 28px;
     				display: inline-block;
     				line-height: 17px;
-    				margin: 0px 0 20px;				
+    				margin-bottom: 20px;
 			}
 			.name a > div{
 				display: inline-block;
@@ -1656,24 +1796,32 @@ div[id^="panels-ipe-paneid-22"] > * select {
 			}
 		}
 	}
+	.list_normal_image_width{
+		.right-area table .hall{
+			width: 28%;
+		}
+	}
 	.list_wide_image{
 		.left-area{
-			width: 45%;
+			width: 42%;
 			@include res(s-m){
 				width: 100%;
 			}
 		}
 		.right-area{
 			float: right;
-			width: 55%;
+			width: 58%;
 			@include res(s-m){
 				width: 100%;
 			}
 		}
 
 	}
-	.paragraphs-items-field-item-grid-3, .field-name-field-node-one-item-static{
-		margin: 20px 0;
+	.paragraphs-items-field-item-grid-3{
+		padding: 0px 0 20px;
+		.day-same-width{
+			width: auto;
+		}
 	}
 	.field-name-field-item-grid-3 > .field-items > .field-item{
 		width: 32%;
@@ -1681,6 +1829,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
 		float: left;
 		position: relative;
 		margin-bottom: 21px;
+		clear: none!important;
 		@include res(s-m){
 			width: 100%;
 		}
@@ -1701,46 +1850,66 @@ div[id^="panels-ipe-paneid-22"] > * select {
 		&:nth-child(3n+1){
 			clear: both;
 		}
-		.on-image{
-		    bottom: 10px;
-		    color: #fff;
-		    font-size: 16px;
-		    padding: 15px;
-		    position: absolute;
-		    width: 100%;
-		    z-index: 10;
-		    h2{
-		    	line-height: 20px;
-		    	margin-bottom: 8px;
-		    	color: #fff;
-		    	font-weight: bold;
-		    	font-size: 20px;
-		    	div{
-		    		display: inline-block;
-		    	}
-		    }
-		    a{
-		    	color: #fff;
-		    	font-weight: bold;
-		    	font-size: 20px;
-		    	div{
-		    		display: inline-block;
-		    	}
-		    }
+		.screaning{
+			.table{
+				margin-bottom: 0;
+			}
+			.hall, .title, .code, .like-flag, .add-event{
+				display: none;
+			}
+			.date, .time{
+				width: auto;
+			}
 		}
-		.views-field-ops{
-			position: absolute;
-			top: 20px;
-			right: 20px
+		.on-image{
+			z-index: 210;
+		}
+		.title-area{
+			.video-link{
+				float: right;
+				z-index: 250;
+				a.colorbox-load{
+					background-size: 15px;
+					width: 40px;	
+					height: 40px;
+				}
+			}
+			.title{
+				float: left;
+				width: -webkit-calc(100% - 45px)!important;
+		    	width: -moz-calc(100% - 45px)!important;
+		    	width: calc(100% - 45px)!important;
+			}
+		}
+	}
+	.field-name-field-item-top-gallery .owl-controls{
+		.owl-prev, .owl-next{
+			top: 70%;
+			@include res(s-m){
+				top: 30%;
+			}
 		}
 	}
 	.field-name-field-node-top-gallery{
+		> .field-items > .field-item{
+			@include res(s-m){
+				margin-bottom: 10px;
+				a.colorbox-load{
+					background-size: 15px;
+					width: 40px;	
+					height: 40px;
+				}
+				.slide-right-ct{
+					margin-right: 20px;
+				}
+			}
+			.slide-right-ct{
+				padding-right: 0;
+				width: auto;
+			}
+		}
 		.owl-item, .field-item{
 			position: relative;
-		}
-		.text-main-image{
-			width: calc(100% - 94px);
-			left: 47px;
 		}
 		.time{
 			padding-bottom: 20px;
@@ -1756,4 +1925,312 @@ div[id^="panels-ipe-paneid-22"] > * select {
 				margin: 4px 0 0 10px;
 		}
 	}
-}					
+	.paragraphs-item-special-grid{
+		.special-group{
+			width: 32%;
+			float: left;
+			margin-bottom: 20px;
+			@include res(s-m){
+				width: 100%;
+				height: auto!important;
+			}
+			@include res(l){
+				width: 48%;
+			}
+			.image-wrapper{
+				position: relative;
+			}
+			> .field-type-entityreference{
+				position: relative;
+				background-color: #fff;
+			}
+		}
+		.screaning{
+			td{
+				display: none;
+				&.date, &.time, &.purchase{
+					display: inline-block;
+					width: auto;
+				}
+			}
+		}
+		.group-item1, .group-item2{
+			margin-right: 2%;
+			@include res(s-m){
+				margin-right: 0;
+			}
+			@include res(l){
+				margin-right: 0;
+			}
+		}
+		.group-item1{
+			@include res(l){
+				margin-right: 4%;
+			}
+			> .field-type-entityreference{
+				height: 100%;
+			}
+			.on-image{
+				position: relative;
+				color: #000;
+				a, h2{
+					color: #000;
+				}
+			}
+		}
+		.group-item3{
+			float: right;			
+			> .field-type-entityreference{
+				height: 100%;
+			}
+		}
+		.group-item1{
+			.image{
+				display: none;
+			}
+			.top-text-blk-wht{
+				position: relative;
+				.white{
+					color: #000;
+					background-color: #eee;
+				}
+			}
+			.all-image{
+				position: relative;
+				padding: 20px;
+				display: block;
+				.on-image{
+					position: relative;
+					padding: 0 22px 0 0;
+					bottom: auto;
+					top: auto;
+					color: #000;
+					h2{
+						color: #000;
+					}
+				}
+			}
+		}
+		.group-item2{
+			@include res(l){
+				clear: both;
+				width: 100%;
+				height: auto!important;
+			}
+			.field-name-field-item-special-grid-2{
+				margin-bottom: 20px;
+				@include res(l){
+					float: left;
+					width: 48%;
+				}
+				.image{
+					display: none;
+				}
+				.top-text-blk-wht{
+					position: relative;
+					.white{
+						color: #000;
+						background-color: #eee;
+					}
+				}
+			}
+			.field-name-field-item-special-grid-3{
+				@include res(l){
+					width: 48%;
+					float: right;
+				}
+				.short-text{
+					display: none;
+				}
+			}
+		}
+		.group-item3{
+			.short-text{
+				padding-top: 20px;
+			}
+		}
+		.all-image{
+			clear: both;
+		}
+		.short-text{
+			padding: 0 20px 20px;
+			overflow: hidden;
+			line-height: 24px;
+			clear: both;
+			p{
+				margin-bottom: 0;
+			}
+			@include res(s-m){
+				height: auto!important;
+			}
+			.field, .short-summary{
+				height: 100%;
+				overflow: hidden;
+			}
+		}
+		.field-name-field-item-special-grid-3, .field-name-field-item-special-grid-4{
+			.video-link{
+				position: absolute;
+				bottom: 30px;
+				right: 20px;
+				z-index: 250;
+			}
+		}
+		.video-link{
+			a.colorbox-load{
+				background-size: 15px;
+				width: 40px;	
+				height: 40px;
+			}
+		}
+		.field-name-field-item-special-grid, .field-name-field-item-special-grid-2{
+			.video-link{
+				float: right;
+				right: 20px;
+				position: relative;
+				a{
+					background: rgba(0, 0, 0, 0) url("../images/play-icon-black.png") no-repeat scroll 60% center;
+					border:1px solid #000;
+				}
+			}
+			.all-image{
+				padding: 0;
+			}
+			.on-image{
+				position: relative;
+				padding: 30px 20px 20px;
+				overflow: hidden;
+				bottom: auto;
+				top: auto;
+				color: #000;
+				h2, a{
+					color: #000;
+				}
+			}
+		}
+		.on-image{
+			.title{
+				float: left;
+				width: -webkit-calc(100% - 45px)!important;
+		    	width: -moz-calc(100% - 45px)!important;
+		    	width: calc(100% - 45px)!important;						
+			}
+		}
+	}
+	.paragraphs-item-special-grid-dynamic{
+		display: none;
+	}
+	.field-name-field-item-special-dynamic{
+		> .field-items > .field-item{
+			width: 32%;
+			float: left;
+			margin-bottom: 20px;
+			margin-right: 2%;
+			background-color: #fff;
+			clear: none!important;
+			@include res(s-m){
+				width: 100%;
+				&.withoutimage{
+					height: auto!important;
+					.grid_special_3_item, .short-text{
+						height: auto!important;
+					}
+				}
+			}
+			@include res(l){
+				width: 48%;
+			}
+			&:nth-child(3n){
+				margin-right: 0;
+			}
+			&:nth-child(3n+1){
+				clear: both;
+			}
+			.image-wrapper{
+				position: relative;
+			}
+			.short-text{
+				padding: 20px;
+				overflow: hidden;
+				line-height: 24px;
+				clear: both;
+				p{
+					margin-bottom: 0;
+				}
+				.field, .short-summary{
+					height: 100%;
+					overflow: hidden;
+				}
+			}
+		}
+		.content{
+			.bottom{
+				.image-wrapper{
+					position: absolute;
+					bottom: 0;
+				}
+			}
+			.withoutimage{
+				.image{
+					display: none;
+				}
+				.image-wrapper, .all-image{
+					position: relative!important;
+				}
+				.on-image{
+					position: relative;
+					bottom: 0;
+					color: #000;
+					padding-bottom: 0;
+					margin-top: 15px;
+		    		.title{
+						width: -webkit-calc(100% - 77px)!important;
+			    		width: -moz-calc(100% - 77px)!important;
+			    		width: calc(100% - 77px)!important;
+		    		}
+					a, h2{
+						color: #000; 
+					}
+				}
+				.views-field-ops{
+					top: 5px;
+				}
+				.video-link{
+					right: 48px;
+					background-size: 15px;
+					top: 10px;
+				}
+			}
+		}
+		.on-image .title{
+			z-index: 250;
+			width: -webkit-calc(100% - 45px)!important;
+		    width: -moz-calc(100% - 45px)!important;
+		    width: calc(100% - 45px)!important;
+		}
+		.video-link{
+				position: absolute;
+				bottom: 30px;
+				right: 20px;
+				z-index: 250;
+				a.colorbox-load{
+					background-size: 15px;
+					width: 40px;	
+					height: 40px;
+				}
+		}
+	}
+	.video-link a.colorbox-load{
+		background: rgba(0, 0, 0, 0) url("../images/play-icon.png") no-repeat scroll 60% center;
+		border: 1px solid #fff;
+		border-radius: 30px;
+		text-indent: -9999px;
+		height: 55px;
+		width: 55px;
+		display: block;
+	}
+	.withoutimage .video-link a.colorbox-load{
+		background: rgba(0, 0, 0, 0) url("../images/play-icon-black.png") no-repeat scroll 60% center;
+		border:1px solid #000;
+	}
+}	

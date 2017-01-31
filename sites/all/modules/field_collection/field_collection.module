@@ -414,7 +414,8 @@ class FieldCollectionItemEntity extends Entity {
         // For saved field collections, query the field data to determine the
         // right host entity.
         $query = new EntityFieldQuery();
-        $query->fieldCondition($this->fieldInfo(), 'revision_id', $this->revision_id);
+        //$query->fieldCondition($this->fieldInfo(), 'revision_id', $this->revision_id);
+        $query->fieldCondition($this->fieldInfo());
         if (!$this->isInUse()) {
           $query->age(FIELD_LOAD_REVISION);
         }

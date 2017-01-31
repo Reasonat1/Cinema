@@ -14,6 +14,10 @@
   font-family: Open-Sans;
   src: url("../fonts/Open-Sans.eot?") format("eot"), url("../fonts/Open-Sans.woff") format("woff"), url("../fonts/Open-Sans.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans.ttf") format("truetype");
 }
+@font-face {
+  font-family: Open-Sans-hebrew;
+  src: url("../fonts/Open-Sans-hebrew.eot?") format("eot"), url("../fonts/Open-Sans-hebrew.woff") format("woff"), url("../fonts/Open-Sans-hebrew.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans-hebrew.ttf") format("truetype");
+}
 /* line 4, ../sass/calendar-rtl.scss */
 .calender-header {
   float: right;
@@ -223,39 +227,40 @@
 /* line 167, ../sass/calendar-rtl.scss */
 .view-custom-calendar-floating-pane .views-field-field-toptix-purchase {
   float: left;
+  font-size: 15px;
 }
-/* line 170, ../sass/calendar-rtl.scss */
+/* line 171, ../sass/calendar-rtl.scss */
 .view-custom-calendar-floating-pane .views-field-views-conditional {
   float: right;
 }
 
-/* line 175, ../sass/calendar-rtl.scss */
+/* line 176, ../sass/calendar-rtl.scss */
 .view-custom-calendar-floating-pane .date-nav-wrapper .btn-group .prev a {
   background: url("../images/more-white-right.png") no-repeat center 0 !important;
   right: 0;
   left: auto;
 }
 
-/* line 181, ../sass/calendar-rtl.scss */
+/* line 182, ../sass/calendar-rtl.scss */
 .view-custom-calendar-floating-pane .date-nav-wrapper .btn-group .next a {
   background: url("../images/more-white-left.png") no-repeat center 0 !important;
   left: 0;
   right: auto;
 }
 
-/* line 188, ../sass/calendar-rtl.scss */
+/* line 189, ../sass/calendar-rtl.scss */
 .view-custom-calendar-floating-pane .toptix-purchase {
   float: left;
   margin-left: 5px;
   margin-right: 0;
 }
 
-/* line 195, ../sass/calendar-rtl.scss */
+/* line 196, ../sass/calendar-rtl.scss */
 .calendar-calendar div.calendar {
   text-align: right;
 }
 
-/* line 199, ../sass/calendar-rtl.scss */
+/* line 200, ../sass/calendar-rtl.scss */
 .calender-filter {
   left: auto !important;
   right: 0 !important;
@@ -263,70 +268,99 @@
   -webkit-transition: margin-right 0.5s;
 }
 @media (max-width: 767px) {
-  /* line 199, ../sass/calendar-rtl.scss */
+  /* line 200, ../sass/calendar-rtl.scss */
   .calender-filter {
     padding-right: 30px;
     padding-left: 0;
   }
 }
-/* line 208, ../sass/calendar-rtl.scss */
+/* line 209, ../sass/calendar-rtl.scss */
 .calender-filter span {
   float: right;
 }
 
-/* line 214, ../sass/calendar-rtl.scss */
+/* line 215, ../sass/calendar-rtl.scss */
 .calenders .prevday {
   padding-right: 5px;
   padding-left: 12px;
 }
-/* line 217, ../sass/calendar-rtl.scss */
+/* line 218, ../sass/calendar-rtl.scss */
 .calenders .prevday i:before {
   content: "\f105";
 }
-/* line 221, ../sass/calendar-rtl.scss */
+/* line 222, ../sass/calendar-rtl.scss */
 .calenders .nextday {
   padding-left: 5px;
   padding-right: 12px;
   right: auto;
   left: 0;
 }
-/* line 226, ../sass/calendar-rtl.scss */
+/* line 227, ../sass/calendar-rtl.scss */
 .calenders .nextday i:before {
   content: "\f104";
 }
 
-/* line 233, ../sass/calendar-rtl.scss */
+/* line 234, ../sass/calendar-rtl.scss */
 .pane-calendar-full-width-calendar .ticket-details {
   float: right;
 }
 @media (max-width: 767px) {
-  /* line 235, ../sass/calendar-rtl.scss */
+  /* line 236, ../sass/calendar-rtl.scss */
   .pane-calendar-full-width-calendar .ticket-details .row-custom-lobby > div {
     float: right;
   }
 }
-/* line 239, ../sass/calendar-rtl.scss */
+/* line 240, ../sass/calendar-rtl.scss */
 .pane-calendar-full-width-calendar .ticket-details .row-custom-lobby > div > span {
   float: right;
 }
-/* line 241, ../sass/calendar-rtl.scss */
+/* line 242, ../sass/calendar-rtl.scss */
 .pane-calendar-full-width-calendar .ticket-details .row-custom-lobby > div > span a {
   float: right;
 }
-/* line 247, ../sass/calendar-rtl.scss */
+@media (max-width: 767px) {
+  /* line 247, ../sass/calendar-rtl.scss */
+  .pane-calendar-full-width-calendar .ticket-details .row-custom-lobby .calendar-flag {
+    float: left !important;
+  }
+}
+/* line 252, ../sass/calendar-rtl.scss */
+.pane-calendar-full-width-calendar .ticket-details .purchase {
+  float: right;
+  margin-left: 15px;
+  margin-right: 0;
+  width: 53px;
+}
+/* line 257, ../sass/calendar-rtl.scss */
+.pane-calendar-full-width-calendar .ticket-details .purchase button {
+  float: right;
+}
+@media (max-width: 767px) {
+  /* line 261, ../sass/calendar-rtl.scss */
+  .pane-calendar-full-width-calendar .ticket-details .time {
+    float: right !important;
+  }
+}
+@media (max-width: 767px) {
+  /* line 266, ../sass/calendar-rtl.scss */
+  .pane-calendar-full-width-calendar .ticket-details .row-custom-lobby .calendar-flag {
+    width: 53px !important;
+  }
+}
+/* line 272, ../sass/calendar-rtl.scss */
 .pane-calendar-full-width-calendar .lobby-term-left {
   float: right;
 }
-/* line 249, ../sass/calendar-rtl.scss */
+/* line 274, ../sass/calendar-rtl.scss */
 .pane-calendar-full-width-calendar .lobby-term-left .flag {
   left: 10px;
   right: auto;
 }
-/* line 254, ../sass/calendar-rtl.scss */
+/* line 279, ../sass/calendar-rtl.scss */
 .pane-calendar-full-width-calendar .lobby-term-right {
   float: left;
 }
-/* line 257, ../sass/calendar-rtl.scss */
+/* line 282, ../sass/calendar-rtl.scss */
 .pane-calendar-full-width-calendar .lobby-term-right .calendar-below-title-content span {
   border-left: 2px solid;
   border-right: none;
@@ -336,12 +370,12 @@
   padding-right: 0;
 }
 @media (max-width: 767px) {
-  /* line 268, ../sass/calendar-rtl.scss */
+  /* line 293, ../sass/calendar-rtl.scss */
   .pane-calendar-full-width-calendar .row-custom-lobby td {
     padding-left: 0 !important;
   }
 }
-/* line 273, ../sass/calendar-rtl.scss */
+/* line 298, ../sass/calendar-rtl.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby .left {
   float: right;
   border-left: 2px solid !important;
@@ -349,7 +383,7 @@
   margin-left: 8px;
   margin-right: 0;
 }
-/* line 280, ../sass/calendar-rtl.scss */
+/* line 305, ../sass/calendar-rtl.scss */
 .pane-calendar-full-width-calendar .row-custom-lobby .right {
   float: left;
 }

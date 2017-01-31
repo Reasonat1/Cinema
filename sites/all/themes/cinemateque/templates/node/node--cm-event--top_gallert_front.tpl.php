@@ -12,6 +12,7 @@
       <div class="wrapper">
         <div class="slide-left-ct">
           <div class="slide-big-text film-title"><?php print render($content['field_cm_event_lineup']); ?></div>
+          <div class="slide-small-text extra-text"><?php print render($content['field_homepage_extra_text']); ?></div>
           <div class="slide-small-text short-title"><?php print render($content['field_cm_event_short_title']); ?></div>
           <div class="slide-small-text time"><?php print render($content['field_cm_event_time']); ?></div>
           <div class="purchase"><?php print render($content['field_toptix_purchase']); ?></div>

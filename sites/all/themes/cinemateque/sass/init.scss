@@ -118,6 +118,21 @@ $color_mine_shaft_approx: #312f2f;
   box-sizing: border-box;
 };
 
+@mixin center(){
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
 /****  fonts  ********/
 
 @font-face {
@@ -126,6 +141,14 @@ $color_mine_shaft_approx: #312f2f;
   url('../fonts/Open-Sans.woff') format('woff'),
   url('../fonts/Open-Sans.eot?#iefix') format('embedded-opentype'), 
   url('../fonts/Open-Sans.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Open-Sans-hebrew;
+  src: url('../fonts/Open-Sans-hebrew.eot?') format('eot'), 
+  url('../fonts/Open-Sans-hebrew.woff') format('woff'),
+  url('../fonts/Open-Sans-hebrew.eot?#iefix') format('embedded-opentype'), 
+  url('../fonts/Open-Sans-hebrew.ttf') format('truetype');
 }
 
  @mixin res($media) {

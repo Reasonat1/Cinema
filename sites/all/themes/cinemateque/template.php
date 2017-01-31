@@ -21,7 +21,7 @@ function cinemateque_preprocess_html(&$variables) {
 			if(empty($node->field_cm_event_images)) {
 			  if(!empty($node->field_cm_event_lineup)) {
 				if($movienode = node_load($node->field_cm_event_lineup['und'][0]['target_id'])) {
-					if(empty($movienode->field_cm_movie_pictures)) $variables['classes_array'][] = 'noheaderimage';	
+					if(empty($movienode->field_cm_movie_pictures) && empty($movienode->field_cm_moviegroup_pictures)) $variables['classes_array'][] = 'noheaderimage';	
 				}
 			  
 			  }else{
@@ -123,4 +123,19 @@ function cinemateque_form_facetapi_select_facet_form_alter(&$form, &$form_state,
 
 function cinemateque_form_user_profile_form_alter(&$form, $form_state) {
    unset($form['locale']);
+}
+
+function cinemateque_metatag_pattern_alter(&$pattern, &$types, $tag_name) {
+	if (!empty($types['node']->type) && $types['node']->type=='cm_event') {
+	$replacement_array=array(
+	'field_cm_event_short_description'=>array('cm_movie'=>'field_cm_movie_short_summary', 'cm_movie_group'=>'field_cm_moviegroup_short_summar'), 
+	'field_cm_event_images'=>array('cm_movie'=>'field_cm_movie_pictures', 'cm_movie_group'=>'field_cm_moviegroup_pictures'),
+	);
+	foreach ($replacement_array as $key=>$value){
+		if (empty($types['node']->$key) && !empty($types['node']->field_cm_event_lineup['und'])){
+			$myNode=node_load($types['node']->field_cm_event_lineup['und'][0]['target_id']);
+			$types['node']->$key = $myNode->$value[$myNode->type];
+		}
+	  }
+	}
 }

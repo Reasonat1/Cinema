@@ -89,6 +89,9 @@ function my_backend_form_alter(&$form, &$form_state, $form_id) {
         '#id' => 'edit-submit--' . $form['#node']->nid,
       );
       break;
+	case 'cm_movie_node_form':
+	$form['#validate'][]='my_backend_cm_movie_node_form_validate';
+	break;
   }
 }
 
@@ -97,15 +100,22 @@ function custom_webform_news_letter_form_js_submit($form, &$form_state){
    return $form;
 }
 
+function my_backend_cm_movie_node_form_validate($form, &$form_state){
+	if (!$form_state['values']['field_cm_movie_title_4_indexing']['und'][0]['value']) $form_state['values']['field_cm_movie_title_4_indexing']['und'][0]['value']=$form_state['values']['title'];
+}
+
 function my_backend_search_api_query_alter(SearchApiQueryInterface $query) {
   global $user;
-  $mySearchid=$query->getOption('search id');
+  $mySearchid=$query->getOption('search id'); $offset=$query->getOption('offset'); $limit=$query->getOption('limit');
   $query->setOption('search id', $mySearchid.':custom_search');
+  $query->setOption('limit', 20000);
+  $query->setOption('offset', 0);
   $results=$query->execute();
   $query->setOption('search id', $mySearchid);
+  $query->setOption('limit', $limit);
+  $query->setOption('offset', $offset);
   $movieArray=$eventArray=array();
   foreach ($results['results'] as $n_id=>$value) {
-	  
 	  $myNode=node_load($n_id);
 	 if ($myNode->type=='cm_movie') $movieArray[$n_id]=$myNode->title;
 	 if ($myNode->type=='cm_event') {$eventArray[$n_id]=$myNode->title;
@@ -123,15 +133,15 @@ function my_backend_search_api_query_alter(SearchApiQueryInterface $query) {
 function my_backend_preprocess_entity(&$variables) {
 if (drupal_is_front_page())
   if ($variables['entity_type']=='paragraphs_item') {
-	 try { 
-	  $x_time = time() >= strtotime ($variables['field_date_expiration'][0]['value1'])&& time() <= strtotime ($variables['field_date_expiration'][0]['value2']);
+	 if (isset($variables['field_date_expiration'])) { 
+	  $x_time = time() >= strtotime ($variables['field_date_expiration'][0]['value'])&& time() <= strtotime ($variables['field_date_expiration'][0]['value2']);
 	 }
-	catch (Exception $e) {
+	else {
 		$x_time=false;
-	}
-	  
-	 if (!$x_time) 
+	} 
+	 if (!$x_time) {
 	  $variables['content']=array();
-	  
+	  $variables['classes_array'][]='estimated';
+	 }
   }
 }

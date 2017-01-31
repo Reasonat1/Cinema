@@ -173,6 +173,7 @@
         print '</div>';
         print '<div class="views-field views-field-field-cm-event-images">';
             print $image;
+            print '<div class="gradient small"></div>';
         print '</div>';
         print '<div class="views-field views-field-field-cm-moviegroup-short-summar">';
             print '<span class="field-content">';

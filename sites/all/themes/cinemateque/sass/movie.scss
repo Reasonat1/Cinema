@@ -2,6 +2,11 @@
 
 
  .node-type-cm-movie{
+ 	h3.movie-title-heder{
+ 		margin-top: 3px;
+ 		font-size: 18px;
+ 		font-weight: bold;
+ 	}
  	.pane-test-view-for-movie-credit-panel-pane-1{
  		@include width;
  	}
@@ -68,8 +73,6 @@
 			}
 			.panels-flexible-region-node_page-content_right{
 				padding: 0 5% 25px!important;
-				border-top: 1px solid #cdcdcd;
-				margin-top: 5px;
 			}
 		}
 	}
@@ -137,10 +140,6 @@
 			.table-responsive{
 				overflow: visible;
 			}
-		}
-		.views-field-ops{
-		    height: 23px!important;
-		    display: block;
 		}
 		thead{
 			@include res(s-m){
@@ -255,6 +254,9 @@
 				}
 			}
 		}
+	}
+	.pane-review-mobile-panel-pane-1.only-mobile{
+			clear: both;
 	}
 }
 

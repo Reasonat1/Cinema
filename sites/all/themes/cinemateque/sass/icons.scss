@@ -4,18 +4,20 @@
 .domain-1{ 
     .header .header-right .search span:hover, 
     &.search .header .header-right .search span,
-    &.search-overlay .header .header-right .search span{
+    &.search-overlay .header .header-right .search span,
+    &.page-search-results .header .header-right .search span{
         background-position: -32px 0;
     }
-    .col-md-3.header-right .shopping-cart button:hover{
+    .col-md-3.header-right .shopping-cart button:hover, .col-md-3.header-right .shopping-cart.active button{
         background-position: -31px 0;
     }
-    .header .header-right #da11y-toggle:hover{
+    .header .header-right #da11y-toggle:hover, .header .header-right #da11y-toggle.active{
         background-position: -32px 0;
     }
     .header .header-right .favorite a:hover,
-    &.page-user .header .header-right .favorite a{
-        background-position: -30px 0;
+    &.page-user .header .header-right .favorite a,
+    &.logged-in .header .header-right .favorite a{
+         background-position: -30px 0;
     }
     .header .header-right .today span:hover,
     &.show-float-calendar .header .header-right .today span{
@@ -86,17 +88,19 @@
 .domain-2{ 
     .header .header-right .search span:hover, 
     &.search .header .header-right .search span,
-    &.page-search .header .header-right .search span{    
+    &.page-search .header .header-right .search span,
+    &.page-search-results .header .header-right .search span{
         background-position: -62px 0;
     }
-    .col-md-3.header-right .shopping-cart button:hover{
+    .col-md-3.header-right .shopping-cart button:hover, .col-md-3.header-right .shopping-cart.active button{
         background-position: -60px 0;
     }
-    .header .header-right #da11y-toggle:hover{
+    .header .header-right #da11y-toggle:hover, .header .header-right #da11y-toggle.active{
         background-position: -62px 0;
     }
     .header .header-right .favorite a:hover,
-    &.page-user .header .header-right .favorite a{
+    &.page-user .header .header-right .favorite a,
+    &.logged-in .header .header-right .favorite a{
         background-position: -60px 0;
     }
     .header .header-right .language-switcher-locale-url a:hover{

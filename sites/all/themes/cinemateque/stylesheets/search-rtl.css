@@ -14,6 +14,10 @@
   font-family: Open-Sans;
   src: url("../fonts/Open-Sans.eot?") format("eot"), url("../fonts/Open-Sans.woff") format("woff"), url("../fonts/Open-Sans.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans.ttf") format("truetype");
 }
+@font-face {
+  font-family: Open-Sans-hebrew;
+  src: url("../fonts/Open-Sans-hebrew.eot?") format("eot"), url("../fonts/Open-Sans-hebrew.woff") format("woff"), url("../fonts/Open-Sans-hebrew.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans-hebrew.ttf") format("truetype");
+}
 /* line 6, ../sass/search-rtl.scss */
 .page-search .search_result .text-center {
   float: left;
@@ -65,96 +69,100 @@
   text-align: right;
 }
 /* line 63, ../sass/search-rtl.scss */
+.page-search .panels-flexible-row-node_page-3 .form-submit {
+  float: left;
+}
+/* line 66, ../sass/search-rtl.scss */
 .page-search .panels-flexible-row-node_page-3 .pane-facet {
   float: right;
   margin-right: 1.5%;
   margin-left: 0;
 }
 @media (max-width: 767px) {
-  /* line 63, ../sass/search-rtl.scss */
+  /* line 66, ../sass/search-rtl.scss */
   .page-search .panels-flexible-row-node_page-3 .pane-facet {
     margin-right: 0 !important;
   }
 }
 @media (min-width: 481px) and (max-width: 767px) {
-  /* line 71, ../sass/search-rtl.scss */
+  /* line 74, ../sass/search-rtl.scss */
   .page-search .panels-flexible-row-node_page-3 .panel-pane:nth-child(odd) {
     float: left;
   }
 }
-/* line 76, ../sass/search-rtl.scss */
+/* line 79, ../sass/search-rtl.scss */
 .page-search .panels-flexible-row-node_page-3 .panel-pane:nth-child(6n+2) {
   margin-right: 0;
 }
 @media (min-width: 768px) and (max-width: 1095px) {
-  /* line 76, ../sass/search-rtl.scss */
+  /* line 79, ../sass/search-rtl.scss */
   .page-search .panels-flexible-row-node_page-3 .panel-pane:nth-child(6n+2) {
     margin-right: 1.5%;
   }
 }
 @media (min-width: 768px) and (max-width: 1095px) {
-  /* line 82, ../sass/search-rtl.scss */
+  /* line 85, ../sass/search-rtl.scss */
   .page-search .panels-flexible-row-node_page-3 .panel-pane:nth-child(3n+2) {
     margin-right: 0% !important;
   }
 }
-/* line 89, ../sass/search-rtl.scss */
+/* line 92, ../sass/search-rtl.scss */
 .page-search .current-search-item li {
   float: right;
   margin-left: 30px !important;
   margin-right: 0 !important;
 }
-/* line 97, ../sass/search-rtl.scss */
+/* line 100, ../sass/search-rtl.scss */
 .page-search .pane-current-search-search-results-facets-block a:before {
   float: right;
   margin-left: 5px;
   margin-right: 0;
 }
-/* line 107, ../sass/search-rtl.scss */
+/* line 110, ../sass/search-rtl.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-header {
   left: 0;
   right: auto;
 }
-/* line 112, ../sass/search-rtl.scss */
+/* line 115, ../sass/search-rtl.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-left {
   float: right;
 }
-/* line 115, ../sass/search-rtl.scss */
+/* line 118, ../sass/search-rtl.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-left .person-left-sec .person-img {
   float: right;
   padding-left: 7%;
   padding-right: 0;
 }
-/* line 120, ../sass/search-rtl.scss */
+/* line 123, ../sass/search-rtl.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-left .person-left-sec .name {
   float: right;
 }
-/* line 124, ../sass/search-rtl.scss */
+/* line 127, ../sass/search-rtl.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-left .top-text-blk-wht {
   right: 0;
   left: auto;
 }
-/* line 129, ../sass/search-rtl.scss */
+/* line 132, ../sass/search-rtl.scss */
 .page-search .pane-panopoly-database-search-search-database-results .pane-content .view-panopoly-database-search .view-content .lobby-term-right {
   float: left;
 }
 
-/* line 139, ../sass/search-rtl.scss */
+/* line 142, ../sass/search-rtl.scss */
 .select2-results__options li {
   background: url("../images/select-empty.png") no-repeat right 7px top 14px;
   padding-right: 22px;
   padding-left: 0;
 }
-/* line 143, ../sass/search-rtl.scss */
+/* line 146, ../sass/search-rtl.scss */
 .select2-results__options li.select2-results__option-selected {
   background-position: right 7px top 14px !important;
 }
-/* line 147, ../sass/search-rtl.scss */
+/* line 150, ../sass/search-rtl.scss */
 .select2-results__options li[aria-selected="true"] {
   background-position: right 7px top 14px !important;
 }
 
-/* line 152, ../sass/search-rtl.scss */
+/* line 155, ../sass/search-rtl.scss */
 .select2-container--default .select2-selection--single .select2-selection__arrow b:before {
   left: 0px;
   right: auto;

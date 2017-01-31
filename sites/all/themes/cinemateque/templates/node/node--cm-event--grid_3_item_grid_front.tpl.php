@@ -6,11 +6,10 @@
             <?php if (render($content['field_cm_event_images'])){
               print render($content['field_cm_event_images']); 
             }else if(!empty($node->field_cm_event_lineup)){
-              $lineup_id = node_load($node->field_cm_event_lineup['und'][0]['target_id']);
-              $picture_path_event=file_load($lineup_id->field_cm_movie_pictures['und'][0]['fid']);
-              print '<img src="' . image_style_url('lobby', $picture_path_event->uri) . '" alt="" />';
+			$event_movie = movie_image_output($node->field_cm_event_lineup['und'][0]['target_id']);
+            print $event_movie;
             }
-            else{
+			else {
               print '<img src="/sites/all/themes/cinemateque/images/default-image-pane-2.png">';
             } ?>
             <div class="gradient very-small"></div>
@@ -25,11 +24,15 @@
             </a>
           <div class="views-field-ops"><?php print flag_create_link('favorite_', $node->nid); ?> </div>
       </div>
-      <a href="<?php print $node_url; ?>">
+      <a class="all-image" href="<?php print $node_url; ?>">
         <div class="on-image">
           <h2 class="title"><?php print render($content['field_cm_event_lineup']); ?></h2>
+          <div class="extra-text"><?php print render($content['field_homepage_extra_text']); ?></div>
           <div class="short-title"><?php print render($content['field_cm_event_short_title']); ?></div>
+		  <?php $event_start_date=(!empty($node->field_cm_event_time['und']))?$node->field_cm_event_time['und'][0]['value']:'';
+		  if ($event_start_date>time()):?>
           <div class="date"><?php print render($content['field_cm_event_time']); ?>  </div>
+		  <?php endif;?>
         </div>
       </a>
   </div>
