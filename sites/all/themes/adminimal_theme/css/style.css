@@ -3061,7 +3061,11 @@ body.adminimal-skin-alternative.adminimal-theme.page-admin-structure-features #e
     width: 70%;
     float: left;
     position: relative;
-    padding-bottom: 40px;
+    padding-bottom: 80px;
+}
+
+.ui-datepicker select{
+  color: #000;
 }
 
 .page-node-edit.node-type-front-page .field-widget-date-popup .start-date-wrapper, .page-node-add-front-page .field-widget-date-popup .start-date-wrapper{
@@ -3071,13 +3075,12 @@ body.adminimal-skin-alternative.adminimal-theme.page-admin-structure-features #e
 
 .page-node-edit.node-type-front-page .field-widget-date-popup .end-date-wrapper, .page-node-add-front-page .field-widget-date-popup .end-date-wrapper{
       position: absolute;
-      width: 40%;
-      left: 33%;
-      top: 17px;
+      width: 250px;
+      left: 250px;
 }
 
-.page-node-edit.node-type-front-page .field-widget-date-popup .end-date-wrapper label, .page-node-add-front-page .field-widget-date-popup .end-date-wrapper label{
-  padding-top: 6px;
+.page-node-edit.node-type-front-page .field-widget-date-popup .end-date-wrapper .form-type-date-popup > label, .page-node-add-front-page .field-widget-date-popup .end-date-wrapper .form-type-date-popup > label{
+  padding-top: 38px;
   float: left;
 }
 
@@ -3092,11 +3095,18 @@ body.adminimal-skin-alternative.adminimal-theme.page-admin-structure-features #e
   float: left;
   padding-right: 30px;
   box-sizing: border-box;
+  clear: both;
 }
 
 .page-node-edit.node-type-front-page .field-type-entityreference input, .page-node-add-front-page .field-type-entityreference input{
   width: 100%;
 }
+
+.page-node-edit.node-type-front-page .field-name-field-title, .page-node-add-front-page .field-name-field-title{
+  padding-bottom: 20px;
+}
+
+
 
 .page-node-edit.node-type-front-page .draggable .form-actions, .page-node-add-front-page .draggable .form-actions{
   float: right;
@@ -3120,7 +3130,7 @@ body.adminimal-skin-alternative.adminimal-theme.page-admin-structure-features #e
 }
 
 fieldset.date-combo .container-inline-date .date-padding{
-  padding: 7px;
+  padding: 4px;
 }
 
 .page-node-edit.node-type-front-page .form-wrapper, .page-node-add-front-page .form-wrapper{
@@ -3153,4 +3163,44 @@ fieldset.date-combo .container-inline-date .date-padding{
 
 .page-node-edit.node-type-front-page .field-name-field-section > div > div > div > table > tbody > tr > td, .page-node-add-front-page .field-name-field-section > div > div > div > table > tbody > tr > td{
   padding-bottom: 10px;
+}
+
+
+.page-node-edit.node-type-front-page tr.draggable > td > div,
+.page-node-add-front-page tr.draggable > td > div{
+  display: none;
+}
+
+.page-node-edit.node-type-front-page tr.draggable.visible > td > div,
+.page-node-add-front-page tr.draggable.visible > td > div{
+  display: block;
+}
+
+.page-node-edit.node-type-front-page tr.draggable.delete,
+.page-node-add-front-page tr.draggable.delete{
+  display: none;
+}
+
+.page-node-edit.node-type-front-page tr.draggable > td > div:nth-child(1),
+.page-node-add-front-page tr.draggable > td > div:nth-child(1){
+  display: block;
+  cursor: pointer;
+}
+
+.page-node-edit.node-type-front-page tr.draggable > td > div:nth-child(2),
+.page-node-add-front-page tr.draggable > td > div:nth-child(2){
+  padding-top: 20px;
+}
+
+
+.popup-layout article{
+  width: 100%;
+}
+
+.popup-layout article .title{
+  float: left;
+}
+
+.popup-layout article .edit{
+  float: right;
 }

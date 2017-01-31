@@ -97,5 +97,38 @@ Drupal.behaviors.adminimal_move_active_primary_tab = {
     });
   }
 };
+    $(document).ready(function () {
+      $('tr.draggable > td > div:nth-child(1)').click(function(e) {
+        if ($(this).parent().parent().hasClass("visible")){
+          $(this).parent().parent().removeClass("visible");
+        }
+        else{
+          $(this).parent().parent().addClass("visible");
+        }
+      });
+      
+       $('input[name="field_section_und_0_restore_button"]').each(function() {
+        $(this).parent().parent().parent().addClass("delete");
+       });
+
+    });
+
+    $(document).ajaxComplete(function() {
+      $("tr.draggable > td > div:nth-child(1)").unbind('click').bind('click', function (e) {
+        if ($(this).parent().parent().hasClass("visible")){
+          $(this).parent().parent().removeClass("visible");
+        }
+        else{
+          $(this).parent().parent().addClass("visible");
+        }
+      });
+
+       $('input[name="field_section_und_0_restore_button"]').each(function() {
+        $(this).parent().parent().parent().addClass("delete");
+       });
+
+
+    });
+
 
 })(jQuery);

@@ -247,9 +247,8 @@ div.add-or-remove-shortcuts {
 }
 
 .page-node-edit.node-type-front-page .field-widget-date-popup .end-date-wrapper, .page-node-add-front-page .field-widget-date-popup .end-date-wrapper{
-      right: 33%;
+      right: 250px;
       left: auto;
-      margin-top: 22px;
 }
 
 .page-node-edit.node-type-front-page .field-widget-date-popup .end-date-wrapper label, .page-node-add-front-page .field-widget-date-popup .end-date-wrapper label{
@@ -284,3 +283,42 @@ div.add-or-remove-shortcuts {
   float: right;
 }
 
+.page-node-edit.node-type-front-page .field-widget-date-popup .end-date-wrapper label, .page-node-add-front-page .field-widget-date-popup .end-date-wrapper label{
+  float: right!important;
+}
+
+
+
+/********  popup  **********/
+
+.popup-layout article .title{
+  float: right;
+}
+
+.popup-layout article .edit{
+  float: left;
+}
+
+.popup-style-white .popup-element-body .bottom .right {
+    background: url(/sites/all/modules/popup/styles/white/images/bottom-left.png) no-repeat;
+  }
+
+.popup-style-white .popup-element-body .bottom .left {
+    background: url(/sites/all/modules/popup/styles/white/images/bottom-right.png) no-repeat;
+}
+
+.popup-style-white .popup-element-body .center .left {
+    background: url(/sites/all/modules/popup/styles/white/images/right.png) repeat-y left;
+}
+
+.popup-style-white .popup-element-body .center .right {
+    background: url(/sites/all/modules/popup/styles/white/images/left.png) repeat-y right;
+}
+
+.popup-style-white .popup-element-body .top .left {
+    background: url(/sites/all/modules/popup/styles/white/images/top-right.png) no-repeat!important;
+  }
+
+.popup-style-white .popup-element-body .top .right {
+    background: url(/sites/all/modules/popup/styles/white/images/top-left.png) no-repeat;
+  }
