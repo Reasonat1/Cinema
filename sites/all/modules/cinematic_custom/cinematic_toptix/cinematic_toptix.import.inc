@@ -28,7 +28,7 @@ function cinematic_toptix_import_submit($form, &$form_state) {
 class TopTixImport {
   public static function import() {
     variable_set('toptix_import', date('Y-m-d H:i:s'));
-    $url = 'http://' . TOPTIX_HOST . '/feed/events/?groupby=show';
+    $url = 'http://' . TOPTIX_HOST . '/feed/events/?groupby=show&withfutureevents=true';
     $context = stream_context_create(array('http' => array('timeout' => 1200)));
     $in = file_get_contents($url, false, $context);
     $xml = new TopTixReader();
