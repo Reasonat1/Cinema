@@ -147,3 +147,5 @@ DirectoryIndex index.php index.html index.htm
   # Disable content sniffing, since it's an attack vector.
   Header always set X-Content-Type-Options nosniff
 </IfModule>
+
+php_value max_input_vars 6000
