@@ -88,8 +88,8 @@ function toptix_temp_update_date(id) {
   var actual_date = new Date(data.ActualEventDate);
   var time = actual_date.getHours() + ':' + actual_date.getMinutes();
 
-  var datefield = jQuery('input[name="' + date_name + '[date]"]');
   var date_name = 'field_cm_event_time[und][0][value]';
+  var datefield = jQuery('input[name="' + date_name + '[date]"]');
   //datefield.datepicker('setDate', actual_date);
   var format = datefield.datepicker('option', 'dateFormat');
   if (format == null) {
