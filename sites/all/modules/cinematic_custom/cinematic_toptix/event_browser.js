@@ -108,7 +108,7 @@ function toptix_temp_update_date(id) {
     //datefield.datepicker('setDate', actual_date);
     var format = datefield.datepicker('option', 'dateFormat');
     if (format == null) {
-      format = 'mm/d/yy';
+      format = 'M d yy';
     }
     var actual_date = jQuery.datepicker.formatDate(format, actual_date);
     datefield.val(actual_date);
