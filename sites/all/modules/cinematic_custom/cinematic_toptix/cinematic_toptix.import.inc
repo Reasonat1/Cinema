@@ -56,7 +56,6 @@ class TopTixReader extends XMLReader {
   public function read_shows() {
     $this->toptix = new TopTixContext();
     $this->toptix->shows = array();
-    $this->reset_shows();
     while ($this->read()) {
       if ($this->nodeType == XMLReader::ELEMENT) {
         $this->process_element();
@@ -89,6 +88,7 @@ class TopTixReader extends XMLReader {
       case 'EventId':
       case 'EventLocalId':
       case 'ActualEventDate':
+      case 'LongMinutes':
       default:
         $this->toptix->key = $this->name;
         break;
@@ -119,14 +119,6 @@ class TopTixReader extends XMLReader {
     }
   }
 
-  private function reset_shows() {
-  // disable
-  return;
-    db_update('toptix_events')
-      ->fields(array('active' => 0))
-      ->execute();
-  }
-
   private function write_shows() {
     $ids = array();
     $transaction = db_transaction();
@@ -148,8 +140,13 @@ class TopTixReader extends XMLReader {
   private function write_events($show_ids) {
     foreach ($this->toptix->shows as $show) {
       $show_id = $show_ids[ $show['ID'] ];
+      $interval = new DateInterval('PT' . $show['LongMinutes']. 'M');
       foreach ($show['events'] as $event) {
         $this->toptix->total_events++;
+        $date = new DateTime($event['ActualEventDate']);
+        $end_date = $date->add($interval);
+        $event['EndDate'] = $end_date->format('c');
+        $event['LongMinutes'] = $show['LongMinutes'];
         db_merge('toptix_events')
           ->key(array('local_id' => $event['EventLocalId']))
           ->fields(array(

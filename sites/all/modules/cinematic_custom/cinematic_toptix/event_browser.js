@@ -85,29 +85,36 @@ toptix_dialog.update_results = function() {
 function toptix_temp_update_date(id) {
   var data = toptix_dialog.data[id];
 
-  var actual_date = new Date(data.ActualEventDate);
-  var time = actual_date.getHours() + ':' + actual_date.getMinutes();
+  var dates = [];
+  dates.push({
+    raw_date: data.ActualEventDate,
+    name: 'field_cm_event_time[und][0][value]'
+  });
+  dates.push({
+    raw_date: data.EndDate,
+    name: 'field_cm_event_time[und][0][value2]'
+  });
 
-  var date_name = 'field_cm_event_time[und][0][value]';
-  var datefield = jQuery('input[name="' + date_name + '[date]"]');
-  //datefield.datepicker('setDate', actual_date);
-  var format = datefield.datepicker('option', 'dateFormat');
-  if (format == null) {
-    format = 'M d yy';
+  for (var iter = 0; iter < dates.length; iter++) {
+    var actual_date = new Date(dates[iter].raw_date);
+    var minutes = actual_date.getMinutes();
+    if (minutes < 10) {
+      minutes = '0' + minutes;
+    }
+    var time = actual_date.getHours() + ':' + minutes;
+
+    var datefield = jQuery('input[name="' + dates[iter].name + '[date]"]');
+
+    //datefield.datepicker('setDate', actual_date);
+    var format = datefield.datepicker('option', 'dateFormat');
+    if (format == null) {
+      format = 'mm/d/yy';
+    }
+    var actual_date = jQuery.datepicker.formatDate(format, actual_date);
+    datefield.val(actual_date);
+
+    var timefield = jQuery('input[name="' + dates[iter].name + '[time]"]');
+    timefield.val(time);
   }
-  var actual_date = jQuery.datepicker.formatDate(format, actual_date);
-  datefield.val(actual_date);
-
-  //jQuery('input[name="' + date_name + '[time]"]').timeEntry('setTime', time);
-  var timefield = jQuery('input[name="' + date_name + '[time]"]');
-  // timefield.timeEntry('setTime', time);
-  timefield.val(time);
-  setTimeout(function() {
-    timefield
-      .blur()
-      .click()
-      .keydown()
-      .keypress();
-  }, 5);
 }
 
