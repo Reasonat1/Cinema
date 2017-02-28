@@ -1,7 +1,7 @@
 name = Panopoly Custom Widgets
 description = Creates generic widget functionality to customize wide and far.
 core = 7.x
-
+package = Other
 project = my_pane
 dependencies[] = ctools
 dependencies[] = defaultconfig
@@ -16,47 +16,41 @@ dependencies[] = media
 dependencies[] = media_vimeo
 dependencies[] = media_youtube
 dependencies[] = menu_block
+dependencies[] = my_pane
 dependencies[] = number
 dependencies[] = options
 dependencies[] = page_manager
 dependencies[] = simple_gmap
 dependencies[] = tablefield
-dependencies[] = text
 dependencies[] = views
 dependencies[] = views_autocomplete_filters
 dependencies[] = views_content
 stylesheets[all][] = my-pane.css
 stylesheets[all][] = my-pane-gallery.css
+explanation = Field type(s) in use - see <a href="/en/admin/reports/fields">Field list</a>
 features[ctools][] = file_entity:file_default_displays:1
 features[ctools][] = views:views_default:3.0
 features[defaultconfig][] = strongarm:media_wysiwyg_default_render
 features[defaultconfig][] = user_default_permissions:access media browser
 features[defaultconfig][] = user_default_permissions:add media from remote sources
-features[defaultconfig][] = user_default_permissions:create fieldable gallery
-features[defaultconfig][] = user_default_permissions:delete fieldable gallery
-features[defaultconfig][] = user_default_permissions:edit fieldable gallery
-features[defaultconfig][] = user_default_permissions:create fieldable sponser
-features[defaultconfig][] = user_default_permissions:delete fieldable sponser
-features[defaultconfig][] = user_default_permissions:edit fieldable sponser
 features[defaultconfig][] = user_default_permissions:create fieldable caruosel
+features[defaultconfig][] = user_default_permissions:create fieldable gallery
+features[defaultconfig][] = user_default_permissions:create fieldable sponser
 features[defaultconfig][] = user_default_permissions:delete fieldable caruosel
+features[defaultconfig][] = user_default_permissions:delete fieldable gallery
+features[defaultconfig][] = user_default_permissions:delete fieldable sponser
 features[defaultconfig][] = user_default_permissions:edit fieldable caruosel
+features[defaultconfig][] = user_default_permissions:edit fieldable gallery
+features[defaultconfig][] = user_default_permissions:edit fieldable sponser
 features[features_api][] = api:2
-
+features[field_base][] = field_custom_caruosel_slider
+features[field_base][] = field_custom_caruosel_sponser
 features[field_base][] = field_custom_gallery_duration
 features[field_base][] = field_custom_gallery_items
 features[field_base][] = field_custom_gallery_pager
 features[field_base][] = field_custom_sponser_image
-features[field_base][] = field_custom_caruosel_sponser
-features[field_base][] = field_custom_caruosel_slider
-
 features[field_instance][] = fieldable_panels_pane-gallery-field_custom_gallery_duration
 features[field_instance][] = fieldable_panels_pane-gallery-field_custom_gallery_items
 features[field_instance][] = fieldable_panels_pane-gallery-field_custom_gallery_pager
-features[field_instance][] = fieldable_panels_pane-image-field_custom_sponser_image
-features[field_instance][] = fieldable_panels_pane-caruosel-field_custom_caruosel_sponser
-features[field_instance][] = fieldable_panels_pane-caruosel-field_custom_caruosel_slider
-
-
 features[views_view][] = my_pane_general_content
-
+required = 1

@@ -198,6 +198,19 @@ function my_pane_entity_info_alter(&$entity_info) {
        'access arguments' => array('administer fieldable panels panes'),
      ),
    );
+     // Customm sub term Lobby pane
+   $entity_info['fieldable_panels_pane']['bundles']['sub_term_lobby'] = array(
+     'label' => t('Add Sub Term Lobby'),
+     'description' => t('Add Sub Term Lobby to Display'),
+     'pane category' => t('Custom'),
+     'pane top level' => TRUE,
+     'admin' => array(
+       'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
+       'bundle argument' => 4,
+       'real path' => 'admin/structure/fieldable-panels-panes/manage/sub_term_lobby',
+       'access arguments' => array('administer fieldable panels panes'),
+     ),
+   );
 }
 
 /**
@@ -718,7 +731,7 @@ function complex_calender_view_block_content(){
                     $start = $val->event_start_time;
                     $short_date = $short_day = "";
                     if(!empty($start)){
-                        $start_time = date('G:i',$start);
+                        $start_time = date('H:i',$start);
                          $short_date= date('d.m.y',$start);
                          $short_day= date('l',$start);
                     }if($start_time == '0:00'){
@@ -859,7 +872,7 @@ function complex_calender_view_block_content(){
             $start = $val->event_start_time;
             $short_date = $short_day = "";
             if(!empty($start)){
-                $start_time = date('G:i',$start);
+                $start_time = date('H:i',$start);
                  $short_date= date('d.m.y',$start);
                  $short_day= date('l',$start);
             }if($start_time == '0:00'){
@@ -986,7 +999,7 @@ function ajax_complex_calender_filter(){
                     $start = $val->event_start_time;
                     $short_date = $short_day = "";
                     if(!empty($start)){
-                        $start_time = date('G:i',$start);
+                        $start_time = date('H:i',$start);
                          $short_date= date('d.m.y',$start);
                          $short_day= date('l',$start);
                     }if($start_time == '0:00'){
@@ -1139,7 +1152,7 @@ function ajax_complex_calender_mobile_filter(){
      foreach($result as $val){
          $term_array[] = $val->hall_tid;
          $start_time = $val->event_start_time;
-         $event_time = date('G:i',$start_time);
+         $event_time = date('H:i',$start_time);
          $hall[$event_time][] = $val;
      }
      $all_term = array_unique($term_array); 
@@ -1163,7 +1176,7 @@ function ajax_complex_calender_mobile_filter(){
             $start = $val->event_start_time;
             $short_date = $short_day = "";
             if(!empty($start)){
-                $start_time = date('G:i',$start);
+                $start_time = date('H:i',$start);
                  $short_date= date('d.m.y',$start);
                  $short_day= date('l',$start);
             }if($start_time == '0:00'){

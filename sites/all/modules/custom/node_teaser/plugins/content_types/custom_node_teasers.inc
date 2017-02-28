@@ -306,7 +306,7 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
                           $event_date = '<div class="hide-div"></div>';
                        }
                       if(!empty($node_val_event->field_cm_event_time['und'])){
-                          $event_time = date('G:i', $node_val_event->field_cm_event_time['und'][0]['value']);
+                          $event_time = date('H:i', $node_val_event->field_cm_event_time['und'][0]['value']);
                       }else{
                           $event_time = '<div class="hide-div"></div>';
                       }
@@ -496,7 +496,7 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
                  if(!empty($movie_event_info->field_cm_event_time['und'])){
                   $event_date = date('l d.m.y', $movie_event_info->field_cm_event_time['und'][0]['value']);
                   $event_date_mobile = date('d.m.y', $movie_event_info->field_cm_event_time['und'][0]['value']);
-                  $event_time = date('G:i', $movie_event_info->field_cm_event_time['und'][0]['value']);
+                  $event_time = date('H:i', $movie_event_info->field_cm_event_time['und'][0]['value']);
                  }
                   $output_movie_event .= '<tr class="row-custom-lobby">';
                    $output_movie_event .= '<td class="date only-desktop">'.t($event_date).'</td>';
@@ -687,7 +687,7 @@ function node_teaser_node_content_form_render($subtype, $conf, $args, $context) 
                         if(!empty($movie_group_event_info->field_cm_event_time['und'])){
                         $event_date = date('l d.m.y', $movie_group_event_info->field_cm_event_time['und'][0]['value']);
                         $event_date_mobile = date('d.m.y', $movie_group_event_info->field_cm_event_time['und'][0]['value']);
-                        $event_time = date('G:i', $movie_group_event_info->field_cm_event_time['und'][0]['value']);
+                        $event_time = date('H:i', $movie_group_event_info->field_cm_event_time['und'][0]['value']);
                         }
                             $output_movie_group_event .= '<tr class="row-custom-lobby">';
                                 $output_movie_group_event .= '<td class="date only-desktop">'.t($event_date).'</td>';

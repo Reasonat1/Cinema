@@ -174,19 +174,20 @@ function my_utilities_admin_paths() {
 }
 
 
-function screaning_output ($element_id, $content_type='movie') {
+function screaning_output ($element_id, $qnt=100) {
 	global $language ;
     $language_name = isset($language->language) ? $language->language : 'en';
 	$now=time();
+	$my_node=node_load($element_id);
 	
-	switch ($content_type) {
-     case 'movie':
+	switch ($my_node->type) {
+     case 'cm_movie':
     $results = db_query("SELECT DISTINCT node.nid AS nid, field_data_field_cm_event_time.field_cm_event_time_value AS field_data_field_cm_event_time_field_cm_event_time_value
     FROM {node} node LEFT JOIN {field_data_field_cm_event_lineup} field_data_field_cm_event_lineup ON node.nid = field_data_field_cm_event_lineup.entity_id AND (field_data_field_cm_event_lineup.entity_type = 'node' AND field_data_field_cm_event_lineup.deleted = '0') LEFT JOIN {node} node_field_data_field_cm_event_lineup ON field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = node_field_data_field_cm_event_lineup.nid LEFT JOIN {field_data_field_cm_event_time} field_data_field_cm_event_time ON node.nid = field_data_field_cm_event_time.entity_id AND (field_data_field_cm_event_time.entity_type = 'node' AND field_data_field_cm_event_time.deleted = '0')
     WHERE (( (field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = '$element_id' ) )AND(( (node.status = '1') AND (node_field_data_field_cm_event_lineup.type IN  ('cm_movie')) AND (node.language IN  ('$language_name')))) AND field_data_field_cm_event_time.field_cm_event_time_value > '$now')
     ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAll();
 	break;
-	case 'movie_group':
+	case 'cm_movie_group':
 	$results = db_query("SELECT DISTINCT node.nid AS nid, field_data_field_cm_event_time.field_cm_event_time_value AS field_data_field_cm_event_time_field_cm_event_time_value 
 	FROM {node} node LEFT JOIN {field_data_field_cm_event_lineup} field_data_field_cm_event_lineup ON node.nid = field_data_field_cm_event_lineup.entity_id AND (field_data_field_cm_event_lineup.entity_type = 'node' AND field_data_field_cm_event_lineup.deleted = '0') LEFT JOIN {node} node_field_data_field_cm_event_lineup ON field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = node_field_data_field_cm_event_lineup.nid LEFT JOIN {field_data_field_cm_event_time} field_data_field_cm_event_time ON node.nid = field_data_field_cm_event_time.entity_id AND (field_data_field_cm_event_time.entity_type = 'node' AND field_data_field_cm_event_time.deleted = '0') 
 	WHERE (( (field_data_field_cm_event_lineup.field_cm_event_lineup_target_id = '$element_id') )AND(( (node.status = '1') AND (node_field_data_field_cm_event_lineup.type IN  ('cm_movie_group')))) AND field_data_field_cm_event_time.field_cm_event_time_value > '$now') 
@@ -198,7 +199,9 @@ function screaning_output ($element_id, $content_type='movie') {
     $output_movie_event .='<div class="table-responsive">';
       $output_movie_event .= '<table class="table">';
         $output_movie_event .= ' <tbody>';
+		$current_qnt=0;
         foreach($results as $val){
+			if ($current_qnt>=$qnt) break;
           $movie_event_nid = $val->nid;
           $movie_event_info = node_load($movie_event_nid);
           $flag_moviegroup_event = flag_create_link('favorite_', $movie_event_info->nid);
@@ -210,9 +213,9 @@ function screaning_output ($element_id, $content_type='movie') {
           $event_date = '<span class="day-same-width">';
           $event_date .= format_date($movie_event_info->field_cm_event_time['und'][0]['value'], 'custom', 'l');
           $event_date .= '</span>';
-          $event_date .= format_date($movie_event_info->field_cm_event_time['und'][0]['value'], 'custom', ' | d.m.y');
+          $event_date .= format_date($movie_event_info->field_cm_event_time['und'][0]['value'], 'custom', ' d.m.y');
           $event_date_mobile = date('d.m.y', $movie_event_info->field_cm_event_time['und'][0]['value']);
-          $event_time = date('G:i', $movie_event_info->field_cm_event_time['und'][0]['value']);
+          $event_time = date('H:i', $movie_event_info->field_cm_event_time['und'][0]['value']);
          }
           $output_movie_event .= '<tr class="row-custom-lobby">';
            $output_movie_event .= '<td class="date only-desktop">'.$event_date.'</td>';
@@ -239,11 +242,11 @@ function screaning_output ($element_id, $content_type='movie') {
 		   if(!empty($movie_event_info->field_cm_event_comment['und']) && false){
                 $table_remark = $movie_event_info->field_cm_event_comment['und'][0]['value'];
                 
-                $output_movie_event .= '<td class="table_remark">'.t($table_remark).'</td>';
+                $output_movie_event .= '<td class="table_remark only-desktop">'.t($table_remark).'</td>';
             }
             else{
                 $table_remark = "";
-                $output_movie_event .= '<td class="table_remark"></td>';
+                $output_movie_event .= '<td class="table_remark only-desktop"></td>';
             }
            if(!empty($movie_event_info->field_cm_event_internal_id['und'])){
              $event_code = $movie_event_info->field_cm_event_internal_id['und'][0]['value'];
@@ -255,15 +258,19 @@ function screaning_output ($element_id, $content_type='movie') {
            $output_movie_event .='<td class="like-flag only-desktop">'. $flag_moviegroup_event . '</td>';
            $output_movie_event .='<td class="add-event only-desktop">'. $addevent . '</td>';
            if(!empty($movie_event_info->field_toptix_purchase['und'])){
-           $toptix_code = $movie_event_info->field_toptix_purchase['und'][0]['value'];
-           $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
-           $output_movie_event .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t("TICKETS").'</button>'.'</td>';
-           } 
-           else{
+              $toptix_code = $movie_event_info->field_toptix_purchase['und'][0]['value'];
+              $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
+              if(empty($movie_event_info->field_tickets_sold_out['und'][0]['value'])){
+                $output_movie_event .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t("TICKETS").'</button>'.'</td>';
+              } else{
+                $output_movie_event .= '<td class="purchase">'.'<button class="sold-out">'.t("sold out").'</button>'.'</td>';
+              }
+           } else{
              $output_movie_event .= '<td class="purchase"></td>';
            }
-          $output_movie_event .= '</tr>';
-        }
+           $output_movie_event .= '</tr>';
+		       $current_qnt++;
+          }
         $output_movie_event .= ' </tbody>';
       $output_movie_event .= '</table>';
       $output_movie_event .='<div class="view-footer">';
@@ -336,4 +343,14 @@ $output='';
 	} 
 return $output;
 
+}
+
+
+function _get_taxonomy_url($tid) {
+$language=language_list();
+$i18n_object = i18n_get_object('taxonomy_term', $tid);
+$lang_code=(!$i18n_object->get_langcode())?'en':$i18n_object->get_langcode();
+$taxonomy_name=$i18n_object->get_title();
+$link=l($taxonomy_name, drupal_get_path_alias('taxonomy/term/'.$data->tid, $lang_code), array('language'=>$language[$lang_code]));
+return $link;
 }

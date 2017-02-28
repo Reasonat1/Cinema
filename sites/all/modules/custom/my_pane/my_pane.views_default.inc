@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * panopoly_widgets.views_default.inc
+ * my_pane.views_default.inc
  */
 
 /**
@@ -129,6 +129,13 @@ function my_pane_views_default_views() {
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Content Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
   /* Display: List of Content */
   $handler = $view->new_display('panel_pane', 'List of Content', 'list_of_content');
@@ -222,6 +229,14 @@ function my_pane_views_default_views() {
     1 => 0,
     3 => 0,
     4 => 0,
+  );
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    'und' => 'und',
   );
   $handler->display->display_options['pane_title'] = 'Piece of Content';
   $handler->display->display_options['pane_category']['name'] = 'General';

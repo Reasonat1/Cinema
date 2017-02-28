@@ -1,0 +1,16 @@
+name = Cinematheque Feature Custom Calendar View
+description = Custom Calendar Floating Pane
+core = 7.x
+package = Views
+version = 7.x-1.0
+dependencies[] = calendar
+dependencies[] = date_views
+dependencies[] = panels_mini
+dependencies[] = strongarm
+dependencies[] = views
+dependencies[] = views_content
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = custom_calendar_floating_pane
+features_exclude[dependencies][ctools] = ctools
+project path = sites/all/modules/cinematic_custom/

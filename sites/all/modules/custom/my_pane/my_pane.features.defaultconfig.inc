@@ -44,6 +44,7 @@ function my_pane_defaultconfig_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
     ),
     'module' => 'media',
   );
@@ -58,9 +59,39 @@ function my_pane_defaultconfig_user_default_permissions() {
     'module' => 'media_internet',
   );
 
+  // Exported permission: 'create fieldable caruosel'.
+  $permissions['create fieldable caruosel'] = array(
+    'name' => 'create fieldable caruosel',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'fieldable_panels_panes',
+  );
+
   // Exported permission: 'create fieldable gallery'.
   $permissions['create fieldable gallery'] = array(
     'name' => 'create fieldable gallery',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'fieldable_panels_panes',
+  );
+
+  // Exported permission: 'create fieldable sponser'.
+  $permissions['create fieldable sponser'] = array(
+    'name' => 'create fieldable sponser',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'fieldable_panels_panes',
+  );
+
+  // Exported permission: 'delete fieldable caruosel'.
+  $permissions['delete fieldable caruosel'] = array(
+    'name' => 'delete fieldable caruosel',
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
@@ -78,9 +109,39 @@ function my_pane_defaultconfig_user_default_permissions() {
     'module' => 'fieldable_panels_panes',
   );
 
+  // Exported permission: 'delete fieldable sponser'.
+  $permissions['delete fieldable sponser'] = array(
+    'name' => 'delete fieldable sponser',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'fieldable_panels_panes',
+  );
+
+  // Exported permission: 'edit fieldable caruosel'.
+  $permissions['edit fieldable caruosel'] = array(
+    'name' => 'edit fieldable caruosel',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'fieldable_panels_panes',
+  );
+
   // Exported permission: 'edit fieldable gallery'.
   $permissions['edit fieldable gallery'] = array(
     'name' => 'edit fieldable gallery',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'fieldable_panels_panes',
+  );
+
+  // Exported permission: 'edit fieldable sponser'.
+  $permissions['edit fieldable sponser'] = array(
+    'name' => 'edit fieldable sponser',
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',

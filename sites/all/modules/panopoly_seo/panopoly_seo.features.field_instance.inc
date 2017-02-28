@@ -10,7 +10,7 @@
 function panopoly_seo_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'user-user-field_google_url'
+  // Exported field_instance: 'user-user-field_google_url'.
   $field_instances['user-user-field_google_url'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -36,8 +36,9 @@ function panopoly_seo_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'linkit' => array(
+        'button_text' => 'Search',
         'enable' => 0,
-        'insert_plugin' => '',
+        'profile' => '',
       ),
       'text_processing' => 0,
       'user_register_form' => 0,
@@ -49,7 +50,7 @@ function panopoly_seo_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 41,
+      'weight' => 11,
     ),
   );
 

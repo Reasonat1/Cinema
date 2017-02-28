@@ -396,7 +396,7 @@ function cm_extra_i18n_sync_options($entity_type, $bundle) {
 }
 
 function cm_extra_i18n_sync_translation($entity_type, $translation, $translation_language, $source, $source_language, $field_names) {
-  if (!empty($source->is_new)) {
+  if (!empty($source->is_new) && false) {
     return;
   }
   if (!in_array('cinematic_fields', $field_names)) {
