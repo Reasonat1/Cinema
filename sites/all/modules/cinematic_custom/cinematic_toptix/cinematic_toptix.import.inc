@@ -144,6 +144,7 @@ class TopTixReader extends XMLReader {
       foreach ($show['events'] as $event) {
         $this->toptix->total_events++;
         $date = new DateTime($event['ActualEventDate']);
+        $mysql_ActualEventDate = $event['ActualEventDate'];
         $event['ActualEventDate'] = $date->format('c'); // add +02:00
         $end_date = $date->add($interval);
         $event['EndDate'] = $end_date->format('c');
@@ -154,7 +155,7 @@ class TopTixReader extends XMLReader {
             'local_id' => $event['EventLocalId'],
             'external_id' => $event['EventId'],
             'show_id' => $show_id,
-            'event_date' => $event['ActualEventDate'],
+            'event_date' => $mysql_ActualEventDate,
           ))
           ->execute();
         db_merge('toptix_events_data')
