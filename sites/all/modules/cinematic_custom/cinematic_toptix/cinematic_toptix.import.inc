@@ -138,12 +138,13 @@ class TopTixReader extends XMLReader {
   }
 
   private function write_events($show_ids) {
+    $time_zone = new DateTimeZone('Asia/Jerusalem');
     foreach ($this->toptix->shows as $show) {
       $show_id = $show_ids[ $show['ID'] ];
       $interval = new DateInterval('PT' . $show['LongMinutes']. 'M');
       foreach ($show['events'] as $event) {
         $this->toptix->total_events++;
-        $date = new DateTime($event['ActualEventDate']);
+        $date = new DateTime($event['ActualEventDate'], $time_zone);
         $mysql_ActualEventDate = $event['ActualEventDate'];
         $event['ActualEventDate'] = $date->format('c'); // add +02:00
         $end_date = $date->add($interval);
