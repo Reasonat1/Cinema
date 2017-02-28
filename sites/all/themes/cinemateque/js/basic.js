@@ -21,6 +21,14 @@
           }
       });
 
+
+/*****  reister block  ********/
+
+if (($("body").hasClass("page-node-4879")) || ($("body").hasClass("page-node-4878"))){
+    $('.register-block .group-name-group input').each(function () {
+      $(this).val("");
+    });
+}
 /****click shopping card***/
 
 $(".shopping-cart button").click(function(){
@@ -203,13 +211,32 @@ if ($("div").hasClass("movie-group-list")){
         });
 
         /*$(".calendar-agenda-items").css("width",$(".view-custom-calendar-floating-pane").width());*/
-        var halfscreen = ($(window).height())/2; 
+        if ($(window).width() > 767){
+          var halfscreen = $(window).height()-240; 
+        }
+        else{
+          var halfscreen = $(window).height()-139; 
+        }
         $(".view-custom-calendar-floating-pane.view-display-id-block_1 .view-content").css("max-height",halfscreen);
 
+        $( document ).ajaxComplete(function() {
+          if ($(window).width() > 767){
+            var halfscreen = $(window).height()-240; 
+          }
+          else{
+            var halfscreen = $(window).height()-139; 
+          }
+          $(".view-custom-calendar-floating-pane.view-display-id-block_1 .view-content").css("max-height",halfscreen);        
+        });
+
         $(window).resize(function() {
-          /*$(".calendar-agenda-items").css("width",$(".view-custom-calendar-floating-pane").width());*/
-          var halfscreen = ($(window).height())/2 
-          $(".view-custom-calendar-floating-pane.view-display-id-block_1 .view-content").css("max-height",halfscreen);
+          if ($(window).width() > 767){
+            var halfscreen = $(window).height()-240; 
+          }
+          else{
+            var halfscreen = $(window).height()-139; 
+          }
+           $(".view-custom-calendar-floating-pane.view-display-id-block_1 .view-content").css("max-height",halfscreen);
         });
 
 
@@ -285,7 +312,7 @@ if ($("body").hasClass("page-node-4284") || $("body").hasClass("page-node-4285")
             $(".i18n-en .calender-filter").css("margin-left",$left);
             $(".i18n-he .calender-filter").css("margin-right",$left);
             $( document ).ajaxComplete(function() {
-              $("html, body").animate({ scrollTop: $(".pane-calendar-full-width-calendar .ajax-inner").offset().top - 200},500);
+              /*$("html, body").animate({ scrollTop: $(".pane-calendar-full-width-calendar .ajax-inner").offset().top - 200},500);*/
             });
           });
           $(".nextday").click(function(){
@@ -341,6 +368,13 @@ if ($("body").hasClass("page-node-4284") || $("body").hasClass("page-node-4285")
           $(".i18n-en .calender-filter").css("margin-left",$left);
           $(".i18n-he .calender-filter").css("margin-right",$left);
         });
+
+        $(".calender-filter p").click(function(){
+          $( document ).ajaxComplete(function() {
+            $("html, body").animate({ scrollTop: 0},0);
+          });
+        });
+
 
 document.getElementById("calender-filter").addEventListener('touchstart', handleTouchStart, false);        
 document.getElementById("calender-filter").addEventListener('touchmove', handleTouchMove, false);
@@ -423,6 +457,19 @@ function handleTouchMove(evt) {
           $(".reviews-mobile").addClass("more-items");
         }
 
+        if ($(".view-footer-credit-slogan-for-mobile.view-display-id-block .views-row").length == '1') { 
+          $(".view-footer-credit-slogan-for-mobile.view-display-id-block").addClass("one-item");
+        }
+        else{
+          $(".view-footer-credit-slogan-for-mobile.view-display-id-block").addClass("more-items");
+        }
+
+        if ($(".view-footer-credit-slogan-for-mobile.view-display-id-block_2 .views-row").length == '1') { 
+          $(".view-footer-credit-slogan-for-mobile.view-display-id-block_2").addClass("one-item");
+        }
+        else{
+          $(".view-footer-credit-slogan-for-mobile.view-display-id-block_2").addClass("more-items");
+        }
 
        $(".node-type-front-page .full-screen-image-front").each(function() {
           if ($(this).children(".gallery").children(".field").children(".field-items").children(".field-item").length == '1') { 
@@ -481,25 +528,105 @@ function handleTouchMove(evt) {
           });  
         });
 
+/******  dinamic special grid  *******/
         $(window).load(function() {
           $(".paragraphs-item-special-grid-dynamic").css("display","block");
-          $groupimage = $(".paragraphs-items-field-item-special-dynamic img").height();
-          $(".field-name-field-item-special-dynamic > .field-items > .field-item, .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$groupimage*2); 
-          $(".field-name-field-item-special-dynamic .withimage .short-text").css("height",$groupimage-(($groupimage-40)%24)); 
-          $(".field-name-field-item-special-dynamic .withoutimage").each(function() {
+    
+
+          $division1 = $(".division-1 .field-name-field-item-special-dynamic > .field-items > .field-item .image").height();
+          $(".division-1 .withoutimage .image").hide();
+          $(".division-1 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-1 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division1*2); 
+          $(".division-1 .field-name-field-item-special-dynamic .withimage .short-text").css("height",$division1-(($division1-40)%24)); 
+          $(".division-1 .field-name-field-item-special-dynamic .withoutimage").each(function() {
             $(this).parent().parent().parent().addClass("withoutimage");
             $topheight = $(this).find(".image-wrapper").height();
-            $(this).find(".short-text").css("height",$groupimage*2-$topheight-((($grouppimage*2-$topheight))-40)%24);
+            $(this).find(".short-text").css("height",$division1*2-$topheight-((($division1*2-$topheight))-40)%24);
           });
+
+          $division2 = $(".division-2 .field-name-field-item-special-dynamic > .field-items > .field-item:nth-child(1) .image").height();
+          $(".division-2 .withoutimage .image").hide();
+          $(".division-2 .image").css("max-height",0.7*2*$division2);
+          $(".division-2 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-2 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division2*2); 
+          $(".division-2 .field-name-field-item-special-dynamic > .field-items > .field-item").each(function() {
+            $div2imageheight = $(this).find(".image").height();
+            $(this).find(".short-text").css("height",$division2*2-$div2imageheight-(($division2*2-$div2imageheight-40)%24)); 
+          });
+          $(".division-2 .field-name-field-item-special-dynamic .withoutimage").each(function() {
+            $(this).parent().parent().parent().addClass("withoutimage");
+            $topheight2 = $(this).find(".image-wrapper").height();
+            $(this).find(".short-text").css("height",$division2*2-$topheight2-((($division2*2-$topheight2))-40)%24);
+          });
+
+          $division3 = $(".division-3 .field-name-field-item-special-dynamic > .field-items > .field-item:nth-child(2) .image").height();
+          $(".division-3 .withoutimage .image").hide();
+          $(".division-3 .image").css("max-height",0.7*2*$division3);
+          $(".division-3 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-3 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division3*2); 
+          $(".division-3 .field-name-field-item-special-dynamic > .field-items > .field-item").each(function() {
+            $div3imageheight = $(this).find(".image").height();
+            $(this).find(".short-text").css("height",$division3*2-$div3imageheight-(($division3*2-$div3imageheight-40)%24)); 
+          });
+          $(".division-3 .field-name-field-item-special-dynamic .withoutimage").each(function() {
+            $(this).parent().parent().parent().addClass("withoutimage");
+            $topheight3 = $(this).find(".image-wrapper").height();
+            $(this).find(".short-text").css("height",$division3*2-$topheight3-((($division3*2-$topheight3))-40)%24);
+          });
+
+          $division4 = $(".division-4 .field-name-field-item-special-dynamic > .field-items > .field-item .image").height();
+          $(".division-4 .withoutimage .image").hide();
+          $(".division-4 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-4 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division4*2); 
+          $(".division-4 .field-name-field-item-special-dynamic .withimage .short-text").css("height",$division4-(($division4-40)%24)); 
+          $(".division-4 .field-name-field-item-special-dynamic .withoutimage").each(function() {
+            $(this).parent().parent().parent().addClass("withoutimage");
+            $topheight4 = $(this).find(".image-wrapper").height();
+            $(this).find(".short-text").css("height",$division4*2-$topheight4-((($division4*2-$topheight4))-40)%24);
+          });
+
+
         });
 
         $(window).resize(function() {
-          $groupimage = $(".paragraphs-items-field-item-special-dynamic img").height();
-          $(".field-name-field-item-special-dynamic > .field-items > .field-item, .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$groupimage*2); 
-          $(".field-name-field-item-special-dynamic .withimage .short-text").css("height",$groupimage-(($groupimage-40)%24)); 
-          $(".field-name-field-item-special-dynamic .withoutimage").each(function() {
+          $division1 = $(".division-1 .field-name-field-item-special-dynamic > .field-items > .field-item .image").height();
+          $(".division-1 .withoutimage .image").hide();
+          $(".division-1 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-1 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division1*2); 
+          $(".division-1 .field-name-field-item-special-dynamic .withimage .short-text").css("height",$division1-(($division1-40)%24)); 
+          $(".division-1 .field-name-field-item-special-dynamic .withoutimage").each(function() {
             $topheight = $(this).find(".image-wrapper").height();
-            $(this).find(".short-text").css("height",$groupimage*2-$topheight-((($grouppimage*2-$topheight))-40)%24);
+            $(this).find(".short-text").css("height",$division1*2-$topheight-((($division1*2-$topheight))-40)%24);
+          });
+
+          $division2 = $(".division-2 .field-name-field-item-special-dynamic > .field-items > .field-item:nth-child(1) .image").height();
+          $(".division-2 .withoutimage .image").hide();
+          $(".division-2 .image").css("max-height",0.7*2*$division2);
+          $(".division-2 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-2 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division2*2); 
+          $(".division-2 .field-name-field-item-special-dynamic > .field-items > .field-item").each(function() {
+            $div2imageheight = $(this).find(".image").height();
+            $(this).find(".short-text").css("height",$division2*2-$div2imageheight-(($division2*2-$div2imageheight-40)%24)); 
+          });
+          $(".division-2 .field-name-field-item-special-dynamic .withoutimage").each(function() {
+            $topheight2 = $(this).find(".image-wrapper").height();
+            $(this).find(".short-text").css("height",$division2*2-$topheight2-((($division2*2-$topheight2))-40)%24);
+          });
+
+          $division3 = $(".division-3 .field-name-field-item-special-dynamic > .field-items > .field-item:nth-child(2) .image").height();
+          $(".division-3 .withoutimage .image").hide();
+          $(".division-3 .image").css("max-height",0.7*2*$division3);
+          $(".division-3 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-3 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division3*2); 
+          $(".division-3 .field-name-field-item-special-dynamic > .field-items > .field-item").each(function() {
+            $div3imageheight = $(this).find(".image").height();
+            $(this).find(".short-text").css("height",$division3*2-$div3imageheight-(($division3*2-$div3imageheight-40)%24)); 
+          });
+          $(".division-3 .field-name-field-item-special-dynamic .withoutimage").each(function() {
+            $topheight3 = $(this).find(".image-wrapper").height();
+            $(this).find(".short-text").css("height",$division3*2-$topheight3-((($division3*2-$topheight3))-40)%24);
+          });
+
+          $division4 = $(".division-4 .field-name-field-item-special-dynamic > .field-items > .field-item .image").height();
+          $(".division-4 .withoutimage .image").hide();
+          $(".division-4 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-4 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division4*2); 
+          $(".division-4 .field-name-field-item-special-dynamic .withimage .short-text").css("height",$division4-(($division4-40)%24)); 
+          $(".division-4 .field-name-field-item-special-dynamic .withoutimage").each(function() {
+            $topheight4 = $(this).find(".image-wrapper").height();
+            $(this).find(".short-text").css("height",$division4*2-$topheight4-((($division4*2-$topheight4))-40)%24);
           });
         });
 
@@ -513,6 +640,17 @@ function handleTouchMove(evt) {
             $(this).children("tr").hide();
             $(this).children("tr:lt(3)").show();
         });
+
+        $(".page-taxonomy-term .screaning tbody").each(function(){
+            $(this).children("tr").hide();
+            $(this).children("tr:lt(3)").show();
+        });
+
+        $(".page-search .table-responsive tbody").each(function(){
+            $(this).children("tr").children("td").hide();
+            $(this).children("tr:lt(3)").children("td").show();
+        });
+
 
         $('.view-footer .more-event .text-open').click(function () {
             $(this).parent().parent().parent().children("table").children("tbody").children("tr").show();
@@ -528,6 +666,20 @@ function handleTouchMove(evt) {
             $(this).parent().children(".text-open").css("display","inline-block");
             $(this).parent().children(".text-close").hide();
         });
+
+        $(this).parent().parent().parent().children("table").children("tbody").children("tr").children("tr").hide();
+        $(this).parent().parent().parent().children("table").children("tbody").children("tr:lt(3)").children("tr").show();
+
+        $('.page-search .view-footer .more-event .text-open').click(function () {
+            $(this).parent().parent().parent().children("table").children("tbody").children("tr").children("td").show();
+        });
+
+        $('.page-search .view-footer .more-event .text-close').click(function () {
+            $(this).parent().parent().parent().children("table").children("tbody").children("tr").children("td").hide();
+            $(this).parent().parent().parent().children("table").children("tbody").children("tr:lt(3)").children("td").show();
+
+        });
+
         /******  search overlay  ******/
 
         $(".header-right .search span").click(function() {
@@ -628,8 +780,6 @@ function handleTouchMove(evt) {
     $(".credits-view .profession").css("width",proffesionwidth);
     $(".credits-view .views-field-views-conditional").css("width",$(".credits-view").width()-proffesionwidth-10);
     $(".credits-view .views-field-views-conditional").css("display","block");
-    $(".i18n-he .view-test-view-for-movie-credit .translated-movie-title a").css("margin-right", proffesionwidth);
-    $(".i18n-en .view-test-view-for-movie-credit .translated-movie-title span").css("margin-left", proffesionwidth);
 
     $(window).resize(function() {
       var proffesionwidth = 0;
@@ -643,8 +793,6 @@ function handleTouchMove(evt) {
       $(".credits-view .profession").css("width",proffesionwidth);
       $(".credits-view .views-field-views-conditional").css("width",$(".credits-view").width()-proffesionwidth-10);
       $(".credits-view .views-field-views-conditional").css("display","block");
-      $(".i18n-he .view-test-view-for-movie-credit .translated-movie-title a").css("margin-right", proffesionwidth);
-      $(".i18n-en .view-test-view-for-movie-credit .translated-movie-title a").css("margin-left", proffesionwidth);
     });
 
     /********  Show Title to image in movie group slideshow  *******/
@@ -760,7 +908,8 @@ function handleTouchMove(evt) {
 
        /******Hide Other screening ****/
     if($('.pane-event-ct-view-panel-pane-5 .view-content .hide-table').length){
-        $('.pane-event-ct-view-panel-pane-5').hide();
+        $('.pane-event-ct-view-panel-pane-5 > .pane-content').hide();
+        $('.pane-event-ct-view-panel-pane-5').css("padding-bottom","20px");
     }
     if($('.view-display-id-panel_pane_1 .view-content .views_slideshow_cycle_slide .views-field-field-cm-event-images img').length){
         $('.pane-event-ct-view-panel-pane-9').hide();
@@ -900,3 +1049,4 @@ if (jQuery(window).width() > 767){
       }); 
     })
 }
+

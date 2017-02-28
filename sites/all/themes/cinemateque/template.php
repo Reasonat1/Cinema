@@ -49,6 +49,7 @@ function cinemateque_preprocess_html(&$variables) {
 	
 	if(arg(0) == 'taxonomy' && arg(1) == 'term' && $term = taxonomy_term_load(arg(2))) {
 		if($term->vocabulary_machine_name == 'lobby' && empty($term->field_cm_lobby_media)) $variables['classes_array'][] = 'noheaderimage';	
+    if($term->vocabulary_machine_name == 'tags' && empty($term->field_image_term)) $variables['classes_array'][] = 'noheaderimage';  
 	}
 }
 /**
@@ -138,4 +139,18 @@ function cinemateque_metatag_pattern_alter(&$pattern, &$types, $tag_name) {
 		}
 	  }
 	}
+}
+
+function cinemateque_node_view_alter(&$build) {
+	if (!empty($build['field_cm_event_lineup']) && !empty($build['field_cm_event_lineup'][0]['node']) && drupal_is_front_page()){
+		$target_id=$build['field_cm_event_lineup']['#items'][0]['target_id'];
+		$build['field_cm_event_lineup'][0]['node'][$target_id]['#parentTitle']=$build['field_cm_event_lineup']['#object']->title; 
+	}
+}
+
+function cinemateque_form_user_login_block_alter(&$form) {
+  $newlinks = l(t('Forgotten password?'), 'user/password');
+  $form['links']['#markup'] = $newlinks;
+
+  return $form;
 }

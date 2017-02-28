@@ -9,8 +9,8 @@ if(!empty($trans)){
       if($node->language == 'he')  {
         $titles = $trans['en']->title;  
        $path = drupal_get_path_alias('/en/node/'.$node->tnid);  
-        $title_eng = '<div class="translated-movie-title">'. t('Movie title'). ':  ';
-        $title_eng .= '<a href="'.$path.'">'.  $titles .'</a>';
+        $title_eng = '<div class="translated-movie-title"><div class="field-content profession">'. t('Movie title'). ':</div>  ';
+        $title_eng .= '<div class="views-field-views-conditional"><a href="'.$path.'">'.  $titles .'</a></div>';
         $title_eng .=  '</div>';
     }	
 $rows = '<div class="credit-area"><div class="credits-view"><div class="inside">'.$title_eng.$rows.'</div></div></div>';	

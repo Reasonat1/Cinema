@@ -35,17 +35,10 @@ $withimage = field_get_items('paragraphs_item', $variables['paragraphs_item'], '
 
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <div class="content"<?php print $content_attributes; ?>>
-  	<div class="<?php print $imageplace[0]['value']; print ' '; print $withimage[0]['value'];?>">
+  	<div class="<?php print $imageplace[0]['value']; print ' '; print $withimage[0]['value']; ?>">
   	    <?php hide($content['field_image_place']);
   	    hide($content['field_with_image']);
     	print render($content); ?>
     </div>
   </div>
 </div>
-
-<?php
-
- 
-
-
- ?>

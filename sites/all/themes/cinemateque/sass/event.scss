@@ -85,26 +85,6 @@
 			}
 		}
 	}
-	.more-screening-pane{
-		clear: both;
-		overflow: hidden;
-		@include width;
-		.pane-title{
-			padding-top: 20px;
-		}
-		.view-event-ct-view{
-			overflow: visible;
-			.table-responsive{
-				overflow: visible;
-				.views-field-field-cm-event-time-1{
-					width: 23%;
-				}
-			}
-		}
-		.pane-title{
-			margin-bottom: 15px;
-		}
-	}
 	.pane-event-ct-view-panel-pane-6 {
 		.views-field-field-cm-movie-body {
 			color: $color_mine_shaft_approx;
@@ -133,7 +113,7 @@
 		.views-field-field-cm-event-body {
 			line-height: 28px;
 			@include width();
-			padding: 10px 5% 10px;
+			padding: 0px 5% 10px;
 			p {
    				margin: 0 auto;
     			width: 54%;
@@ -172,3 +152,31 @@
 	clear: both;
 	margin-top: 30px;
 }
+
+	.more-screening-pane{
+		clear: both;
+		overflow: hidden;
+		@include width;
+		.view-event-ct-view{
+			overflow: visible;
+			.table-responsive{
+				overflow: visible;
+				.views-field-field-cm-event-time-1{
+					width: 23%;
+				}
+			}
+		}
+		.pane-title{
+			margin-bottom: 15px;
+			@include main-color;
+			cursor: pointer;
+			font-size: 0.8em;
+			font-weight: normal;
+			border-bottom: 1px solid;
+			padding-bottom: 5px;
+			float: left;
+			@include res(s-m){
+				margin-top: 10px;
+			}	
+		}
+	}

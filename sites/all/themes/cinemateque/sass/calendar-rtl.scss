@@ -164,12 +164,13 @@
 	.views-field-field-cm-event-time{
 		float: right;
 	}
-	.views-field-field-toptix-purchase{
+	.views-field-field-toptix-purchase, .views-field-field-tickets-sold-out{
 		float: left;
 		font-size: 15px;
 	}
 	.views-field-views-conditional{
 		float: right;
+		clear: right;
 	}
 }
 
@@ -186,7 +187,7 @@
 }
 
 .view-custom-calendar-floating-pane{
-	.toptix-purchase{
+	.toptix-purchase, .sold-out{
 		float: left;
 		margin-left: 5px;
 		margin-right: 0;
@@ -253,7 +254,7 @@
 				float: right;
 				margin-left: 15px;
 				margin-right: 0;
-				width: 53px;
+				width: 69px;
 				button{
 					float: right;
 				}
@@ -265,7 +266,7 @@
 			}
 			.row-custom-lobby .calendar-flag{
 				@include res(s-m){
-					width: 53px!important;
+					width: 73px!important;
 				}
 			}
 		}

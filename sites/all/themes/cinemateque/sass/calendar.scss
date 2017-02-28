@@ -147,7 +147,7 @@
 				@include border-4-main-color;
 			}
 		}
-		.toptix-purchase{
+		.toptix-purchase, .sold-out{
 			width: 20%;
 			padding: 6px 0;
 		}
@@ -271,6 +271,7 @@
 	    padding-top: 69px;
 	    position: fixed;
 	    top: 0;
+	    left: 0;
 	    width: 100%;
 	    z-index: 300;
 	    height: 160px;
@@ -482,7 +483,7 @@
 .float-calendar-wrapper{
 	z-index: 400;
 	position: fixed;
-	top:90px;
+	top:60px;
 	box-sizing: border-box;
 	width: 300px;
 	right: 30px;
@@ -570,7 +571,7 @@
 		width: 43px;
 		float: left;
 	}
-	.views-field-field-toptix-purchase{
+	.views-field-field-toptix-purchase, .views-field-field-tickets-sold-out{
 		float: right;
 		width: 52px!important;
 		margin: 0!important;
@@ -581,9 +582,8 @@
 		}
 	}
 	.views-field-views-conditional{
-		width: -webkit-calc(100% - 105px)!important;
-    	width: -moz-calc(100% - 105px)!important;
-    	width: calc(100% - 105px)!important;
+		width: 100%!important;
+		clear: left;
 		float: left;
 	}
 	colgroup{
@@ -605,9 +605,6 @@
 		overflow-x: hidden; 
 		@include res(s-m){
 			overflow-y: auto;
-			max-height: -webkit-calc(100% - 140px)!important;
-    		max-height: -moz-calc(100% - 140px)!important;
-    		max-heigh: calc(100% - 140px)!important;
 		}
 	}
 	.contents{
@@ -622,7 +619,7 @@
 			}
 		}
 	}
-	.toptix-purchase{
+	.toptix-purchase, .sold-out{
 		float: right;
 		margin-right: 5px;
 	}
@@ -649,10 +646,14 @@
 }
 
 .page-node-4284, .page-node-4285{
+	background-color: #f9f4ee;
 	.col-md-12{
 		position: unset;
 	}
 	.pane-article-ct-panes-panel-pane-1{
+		display: none;
+	}
+	.share-this-pane-mobile{
 		display: none;
 	}
 }
@@ -683,9 +684,9 @@
 					font-size: 12px;
 				}
 				@include res(s-m){
-					width: -webkit-calc(100% - 124px)!important;
-    				width: -moz-calc(100% - 124px)!important;
-    				width: calc(100% - 124px)!important;
+					width: -webkit-calc(100% - 132px)!important;
+    				width: -moz-calc(100% - 132px)!important;
+    				width: calc(100% - 132px)!important;
 					text-align: center!important;
 					float: none!important;
 					display: inline-block;
@@ -694,7 +695,7 @@
 			}
 			.row-custom-lobby .calendar-flag{
 				@include res(s-m){
-					width: 58px!important;
+					width: 78px!important;
 					float: right!important;
 					padding: 8px 0!important;
 					font-size: 14px;
@@ -738,6 +739,7 @@
 				@include res(s-m){
 					width: 70px;
 					font-size: 17px;
+					padding-top: 8px!important;
 				}
 				@include res(l){
 					font-size: 36px;
@@ -754,7 +756,7 @@
 			}
 			.purchase{
 				padding-bottom: 0;
-				width: 59px;
+				width: 73px;
 				float: left;
 				margin-right: 15px;
 				button{
@@ -913,6 +915,7 @@
     overflow: hidden;
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: 500;
     .image{
@@ -1031,16 +1034,15 @@
     background-color: #ECECEB !important;
 }
 
-.view-custom-calendar-floating-pane .calendar.dayview button.toptix-purchase{
-	width: 60px;
-	padding: 4px;
+.view-custom-calendar-floating-pane .calendar.dayview .toptix-purchase{
+	font-size: 11px;
+	padding: 2px 4px 2px;
 }
 
 
 .view-custom-calendar-floating-pane .calendar.dayview span.date-display-single {
     display: inline-block;
     width: 38px !important;
-    font-weight: bold;
 }
 
 .view-custom-calendar-floating-pane #multi-day-container tr td .item{

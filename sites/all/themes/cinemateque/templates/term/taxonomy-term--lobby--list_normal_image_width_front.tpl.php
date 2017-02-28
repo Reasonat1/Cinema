@@ -57,9 +57,8 @@
 	      </div>
 	      <div class="right-area">
 	        <h2 class="title"><a href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>
-        <div class="extra-text"><?php print render($content['field_homepage_extra_text']); ?></div>
 	       	<div class="sub-title"><?php print render($content['field_sub_title']); ?>  </div>
-	        <div class="short-summary"><?php print render($content['description']); ?>  </div>
+	        <div class="short-summary"><?php print render($content['field_lobby_teaser']); ?>  </div>
 	      </div>
 	  </div>
 

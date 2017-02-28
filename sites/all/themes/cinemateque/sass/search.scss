@@ -37,6 +37,9 @@
 			border-radius: 0;
 		}
 	}
+	.select2-container{
+		z-index: 100;
+	}
 	.search-results{
 		clear: both;
 	}
@@ -192,7 +195,7 @@
 	#emoveFilters{
 		text-align: left;
 	}
-	.views-row {
+	#main-wrapper .views-row {
 		margin: 10px auto;
 		padding: 0;
 		border: 1px solid transparent;
@@ -378,6 +381,14 @@
 					}
 				}
 				.view-content{
+					.event-table-data{
+						table{
+							font-weight: bold;
+							.title{
+								font-weight: bold;
+							}
+						}
+					}
 					.lobby-term-left{
 						float: left;
 						width: 30%;
@@ -435,24 +446,26 @@
 						}
 						table tbody{
 							border: none;
+							tr{
+								display: table-row!important;
+							}
 						}
-						.lobby-title a{
-							font-size: 1.3em;
+						.lobby-title a,	.lobby-title{
+							font-weight: bold;
 							color: #000;
 						}
 						.lobby-summary, .enhan-summary{
-							padding: 10px 0 20px;
+							padding: 0px 0 20px;
 						}
 						.lobby-summary{
 						  font-size: 16px;
-						  word-break: break-all;
 						  p{
 						  	font-size: 16px;
 						  }
 						}
 						.lobby-length, .enhan-credit-container{
 							color: #919191;
-							font-size: 0.9em;
+							font-size: 16px;
     						line-height: 28px;
 						}
 						.table-responsive{
@@ -472,14 +485,14 @@
 							width: 11%;
 						}
 						.hall{
-							width: 18%;
+							width: 19%;
 						}
 						.purchase{
 							padding-right: 0;
 							padding-left: 0;
 							width: 80px!important;
 							@include res(s-m){
-								width: 66px!important;
+								width: 72px!important;
 							}
 						}
 						.title{
@@ -491,6 +504,11 @@
 					}
 				}
 			}
+		}
+	}
+	.view-footer .more-event{
+		.text{
+			float: right;
 		}
 	}
 }
@@ -515,7 +533,7 @@
 }
 
 .select2-results__options{
-	li:first-child{
+	li:first-child:not([id]){
 		display: none !important;
 	}
 	li{
@@ -574,5 +592,11 @@ input:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]),
 .domain-1{
 	.facetapi-facet-domain-sitename{
 		display: none;
+	}
+}
+
+@media screen and(-webkit-min-device-pixel-ratio:0) {
+	.region-overlay .block-search-api-page form .form-submit{
+		height: 50px;
 	}
 }
