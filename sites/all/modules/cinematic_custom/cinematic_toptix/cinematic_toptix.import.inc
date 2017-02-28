@@ -144,6 +144,7 @@ class TopTixReader extends XMLReader {
       foreach ($show['events'] as $event) {
         $this->toptix->total_events++;
         $date = new DateTime($event['ActualEventDate']);
+        $event['ActualEventDate'] = $date->format('c'); // add +02:00
         $end_date = $date->add($interval);
         $event['EndDate'] = $end_date->format('c');
         $event['LongMinutes'] = $show['LongMinutes'];
