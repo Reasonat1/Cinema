@@ -114,12 +114,12 @@
                             else{ 
                                 if ($current_lang == "en"): ?>
                                     <li class="favorite">
-                                        <a href="/en/user">Login</a>
+                                        <a href="/en/node/4878">Login</a>
                                     </li>                                
                                 <?php endif; 
                                 if ($current_lang == "he"): ?>
                                     <li class="favorite">
-                                        <a href="/he/user">Login</a>
+                                        <a href="/he/node/4879">Login</a>
                                     </li>
                             <?php endif; ?>
                         <?php  } ?>

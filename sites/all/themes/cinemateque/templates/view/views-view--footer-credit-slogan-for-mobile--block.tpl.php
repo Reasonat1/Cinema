@@ -65,19 +65,18 @@
 <script>
 	
 	jQuery(function(){		
-		jQuery('.block-owl-carousel').owlCarousel({
+		jQuery('.more-items .block-owl-carousel').owlCarousel({
 			rtl:true,
 			loop:true,
-			margin:10,
+			margin:0,
+      autoplay: true,
+      autoPlaySpeed: 5000,
       navigation:false,
       nav: true,
 			responsive:{
 				0:{
-					items:2
-				},
-        481:{
-          items: 4
-        }
+					items:1
+				}
 			}
 		});	
 });

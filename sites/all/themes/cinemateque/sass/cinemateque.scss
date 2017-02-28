@@ -194,7 +194,6 @@ a, a:hover, a:focus{
 /*****  footer credit for mobile *******/
 
 .view-footer-credit-slogan-for-mobile{
-	margin-bottom: 30px;
 	.owl-next{
 	    font-size: 0;
 	    height: 19px;
@@ -203,7 +202,7 @@ a, a:hover, a:focus{
 	    top: 33%;
 	    width: 10px;	
 	}
-	.owl-carousel{
+	&.view-display-id-block_1 .owl-carousel, &.view-display-id-block_3 .owl-carousel{
 		width: -webkit-calc(100% - 100px)!important;
     	width: -moz-calc(100% - 100px)!important;
     	width: calc(100% - 100px)!important;
@@ -217,17 +216,32 @@ a, a:hover, a:focus{
 	    top: 33%;
 	    width: 10px;
 	}
+	&.view-display-id-block{
+		.owl-prev{
+	    	right: 10px;
+	    	top: 48%;
+		}
+		.owl-next{
+			left: 10px;
+			top: 48%;
+		}
+	}
 	.view-footer-credit-slogan-for-mobile{
 		margin-bottom: 30px;
 	}
-
-	.owl-carousel .owl-item img{
+	&.view-display-id-block_1 .owl-carousel .owl-item img, &.view-display-id-block_3 .owl-carousel .owl-item img{
 		max-height: 50px;
 		width: auto;
 		margin: 0 auto !important;
 	}
+	.owl-stage{
+		@include center;
+	}
 }
 
+.view-footer-credit-slogan-for-mobile.view-display-id-block_1, .view-footer-credit-slogan-for-mobile.view-display-id-block_3{
+	padding: 10px 0;
+}
 
 
 .footer {
@@ -313,7 +327,7 @@ a, a:hover, a:focus{
 			}
 		}
 	}
-	.pane-bean-logos-block, .pane-bean-sponsor-block{
+	.pane-bean-logos-block, .pane-bean-sponsor-block, .pane-bean-logos-block-festival{
 		max-width: 1500px;
 		margin: 0 auto;
 		.field-name-field-sponsor-logos-links > .field-items{
@@ -323,7 +337,7 @@ a, a:hover, a:focus{
 				img{
 					height: 40px;
 					width: auto;
-					margin: 10px;
+					margin: 10px 20px;
 				}
 			}
 		}
@@ -488,6 +502,9 @@ a, a:hover, a:focus{
 		p{
 			margin-bottom: 0;
 		}
+		a{
+			color: #000;
+		}
 		.copyright{
 			float: left;
 			@include res(s-m){
@@ -513,6 +530,7 @@ a, a:hover, a:focus{
 	.col-md-12.news-letter {
 		@include bg-main-color();
 		color: $white;
+		overflow: hidden;
 		padding: 0 0 25px 0;
 		.pane-content{
 			@include width;
@@ -788,6 +806,13 @@ header{
 	}
 }
 
+.domain-2 .header .header-right .today{
+	display: none;
+}
+
+.domain-2 .float-calendar-wrapper{
+	display: none;
+}
 
 .dropdown-menu {
 	background-color: transparent;
@@ -1138,10 +1163,6 @@ li.expanded {
 
 /********   Footer  *********/
 
-#footer{
-	margin-top: 50px;
-}
-
 section.footer .view-bean-infomation-block-view table tbody tr {
 	background-color: $boulder !important;
 	border: medium none;
@@ -1480,7 +1501,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
 }
 
 
-/*******  home page  *********/
+/*******  home page & taxonomy *********/
 
 .node-type-front-page{
 	header{
@@ -1495,14 +1516,18 @@ div[id^="panels-ipe-paneid-22"] > * select {
 }
 
 .node-type-front-page #main-wrapper{
-	background-color: $color_fantasy_approx;
 	margin-top: 0!important;
 	@include res(s-m){
 		margin-top: 50px!important;
 	}
+}
+
+.node-type-front-page #main-wrapper, .page-taxonomy #main{
+	background-color: $color_fantasy_approx;
 	 .field-items > .field-item{
 		clear: both;
 		position: relative;
+		display: block;
 	}
 	.taxonomy-term.vocabulary-lobby{
 		.content{
@@ -1544,7 +1569,6 @@ div[id^="panels-ipe-paneid-22"] > * select {
 		position: relative;
 		> .entity-paragraphs-item{
 			@include width;
-			padding: 0px 8%!important;
 			margin-top: 30px;
 			margin-bottom: 30px;
 			@include res(s-m){
@@ -1567,7 +1591,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
 		width: 100%;
 		z-index: 10;
 		h2{
-		 	line-height: 20px;
+		 	line-height: 23px;
 		   	margin-bottom: 8px;
 		   	color: #fff;
 		   	font-weight: bold;
@@ -1591,14 +1615,34 @@ div[id^="panels-ipe-paneid-22"] > * select {
 		right: 20px;
 		z-index: 201;
 	}
-	.paragraphs-item-one-item-static{
-		.on-image{
+	.view-lobby.view-display-id-panel_pane_13{
+		margin-bottom: 30px;
+		>.view-content > .views-row{
+			margin-bottom: 5px;
+		}
+	}
+	.paragraphs-item-one-item-static, .view-lobby.view-display-id-panel_pane_5, .view-lobby.view-display-id-panel_pane_11{
+		.one-item-static{
 			@include res(s-m){
 				background-color: #fff;
+			}
+		}
+		.on-image{
+			@include res(s-m){
 				padding: 20px 5%!important;
 				overflow: hidden;
-				.field-name-field-toptix-purchase{
+				width: -webkit-calc(100% - 70px)!important;
+    			width: -moz-calc(100% - 70px)!important;
+    			width: calc(100% - 70px)!important;
+				.field-name-field-toptix-purchase, .views-field-field-tickets-sold-out{
 					float: right!important;
+				}
+			}
+			.small-title{
+				padding-bottom: 5px; 
+				a{
+					font-size: 18px;
+					font-weight: normal;
 				}
 			}
 		}
@@ -1607,6 +1651,17 @@ div[id^="panels-ipe-paneid-22"] > * select {
 			bottom: 40px;
 			right: 40px;
 			z-index: 250;
+			@include res(s-m){
+				right: 5%;
+				bottom:10px;
+				a.colorbox-load, a.lightboxed{
+					background: rgba(0, 0, 0, 0) url("../images/play-icon-black.png") no-repeat scroll 60% center;
+					background-size: 10px;
+					height: 30px;
+					width: 30px;
+					border:1px solid #000;
+				}
+			}
 		}
 	}
 	.one-item-static{
@@ -1615,7 +1670,9 @@ div[id^="panels-ipe-paneid-22"] > * select {
 			position: absolute;
 			bottom: 40px;
 			padding: 0 40px;
-			width: 100%;
+			width: -webkit-calc(100% - 65px);
+    		width: -moz-calc(100% - 65px);
+    		width: calc(100% - 65px);
 			z-index: 200;
 			color: #fff;
 			@include res(s-m){
@@ -1623,23 +1680,29 @@ div[id^="panels-ipe-paneid-22"] > * select {
 				bottom: auto;
 				color: #000;
 				padding: 20px 0;
+				width: 100%!important;
 			}
 			.field-name-field-cm-event-time{
-				padding-top: 20px;
 				float: left;
 			}
-			.field-name-field-toptix-purchase{
+			.purchase{
 				float: left;
 			    margin: 0 30px;
-			    padding-top: 20px;
 			    @include res(s-m){
 			    	margin: 0;
+			    	padding-top: 10px;
 			    }
+
+			}
+			.field-name-field-homepage-extra-text{
+				padding-bottom: 10px;
 			}
 			.title{
+				line-height: 30px;
 				a{
 					color: #fff;
 					font-weight: bold;
+					font-size: 24px!important;
 					@include res(s-m){
 						color: #000;
 					}
@@ -1658,11 +1721,31 @@ div[id^="panels-ipe-paneid-22"] > * select {
 			top: 20px;
 			right: 20px;
 		}
+		.date{
+			@include res(s-m){
+				font-size: 14px;
+				float: left;
+			}
+		}
+		.video-link{
+			@include res(s-m){
+				a.colorbox-load, a.lightboxed{
+					background: rgba(0, 0, 0, 0) url("../images/play-icon-black.png") no-repeat scroll 60% center;
+					background-size: 10px;
+				}
+			}
+		}
 	}
-	.field-name-field-item-list-normal-image, .paragraphs-item-list-wide-image .field-type-paragraphs{
-		> div > .field-item{
+	.field-name-field-item-list-normal-image, .paragraphs-item-list-wide-image .field-type-paragraphs,
+	.view-id-lobby.view-display-id-panel_pane_12{
+		> div > .field-item, .views-row{
 			background-color: #fff;
 			margin: 0px 0 20px;
+		}
+	}
+	.list_wide_image, .list_normal_image_width{
+		.details{
+			padding-bottom: 20px;
 		}
 		.video-link{
 			position: absolute;
@@ -1670,8 +1753,6 @@ div[id^="panels-ipe-paneid-22"] > * select {
 			right: 20px;
 			z-index: 250;
 		}
-	}
-	.list_wide_image, .list_normal_image_width{
 		a{
 			color: #000;
 		}
@@ -1691,6 +1772,19 @@ div[id^="panels-ipe-paneid-22"] > * select {
 				right: 20px;
 			}
 		}
+		&.event{
+			.right-area{
+				table{
+					margin-top: -10px;
+					font-weight: bold;
+				}
+			}
+		}
+		.day-same-width{
+			@include res(s-m){
+				width: auto!important;
+			}
+		}
 		.right-area{
 			float: right;
 			width: 70%;
@@ -1705,6 +1799,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
 			}
 			table{
 				width: 100%;
+				margin-bottom: 5px;
 				tbody, td{
 					border:none;
 				}
@@ -1713,14 +1808,14 @@ div[id^="panels-ipe-paneid-22"] > * select {
 				}
 				.date{
 					width: 200px;
-					font-weight: bold;
+					display: block;
+					float: left;
 				}
 				.time{
-					font-weight: bold;
 					width: 65px;
 				}
 				.hall{
-					width: 17%;
+					width: 29%;
 				}
 				.code{
 					width: 11%;
@@ -1733,56 +1828,41 @@ div[id^="panels-ipe-paneid-22"] > * select {
 				}
 			}
 			.movie-details{
-				margin-top: 15px;
-				.field-name-field-cm-movie-meta-credit, .field-name-field-cm-movie-duration{
+				.credit-movie, .duration{
 					color: #919191;
     				font-size: 0.9em;
     				line-height: 28px;
     				display: inline-block;
     				line-height: 17px;
     			}
-    			.field-name-field-cm-movie-duration, .duration{
-    				border-left: 1px solid;
-    				margin-left: 10px;
-    				padding-left: 10px;
-    			}
 			}
 			h2{
 				font-size: 24px!important;
-				margin-bottom: 10px;
+				margin-bottom: 5px;
 			}
 			.name{
 				margin-bottom: 10px;
-			}
-			.credit-list, .duration{
-				float: left;
 			}
 			.short-summary{
 				clear: both;
 			}
 			.credit-duration{
+				overflow: hidden;
+				padding-bottom: 7px;
 				.credit-list, .duration{
 					color: #919191;
     				font-size: 0.9em;
     				line-height: 28px;
     				display: inline-block;
     				line-height: 17px;
-    				margin: 0px 0 20px;
-				}
-				.duration{
-    				border-left: 1px solid;
-    				margin-left: 10px;
-    				padding-left: 10px;	
-
 				}
 			}
 			.only-duration{
 					color: #919191;
     				font-size: 0.9em;
-    				line-height: 28px;
     				display: inline-block;
     				line-height: 17px;
-    				margin-bottom: 20px;
+    				padding-bottom: 7px;
 			}
 			.name a > div{
 				display: inline-block;
@@ -1792,7 +1872,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
     				font-size: 0.9em;
     				line-height: 28px;
     				line-height: 17px;
-    				margin: 0px 0 20px;				
+    				padding-bottom: 7px;
 			}
 		}
 	}
@@ -1819,11 +1899,12 @@ div[id^="panels-ipe-paneid-22"] > * select {
 	}
 	.paragraphs-items-field-item-grid-3{
 		padding: 0px 0 20px;
-		.day-same-width{
-			width: auto;
-		}
 	}
-	.field-name-field-item-grid-3 > .field-items > .field-item{
+	.view-lobby.view-display-id-panel_pane_2, .view-lobby.view-display-id-panel_pane_10{
+		clear: both;
+	}
+	.field-name-field-item-grid-3 > .field-items > .field-item, .view-lobby.view-display-id-panel_pane_4 .views-row, .view-lobby.view-display-id-panel_pane_2 .views-row, .view-lobby.view-display-id-panel_pane_10 .views-row{
+		position: relative;
 		width: 32%;
 		margin-right: 2%;
 		float: left;
@@ -1850,28 +1931,59 @@ div[id^="panels-ipe-paneid-22"] > * select {
 		&:nth-child(3n+1){
 			clear: both;
 		}
+		.slide-small-text a{
+			font-size: 16px;
+			font-weight: normal;
+		}
+		.day-same-width{
+			width: auto;
+			border-right: 1px solid;
+			padding-right: 5px;
+		}
 		.screaning{
 			.table{
 				margin-bottom: 0;
+				td{
+					font-size: 15px;
+					float: left;
+				}
 			}
 			.hall, .title, .code, .like-flag, .add-event{
-				display: none;
+				display: none!important;
 			}
 			.date, .time{
 				width: auto;
 			}
+			.purchase{
+				padding-right: 0!important;
+				padding-left: 0!important;
+				width: 70px!important;
+				float: right!important;
+				button{
+					float: right;
+				}
+			}
+			.view-footer{
+				display: none;
+			}
 		}
 		.on-image{
 			z-index: 210;
+			bottom: 0;
 		}
 		.title-area{
+			position: relative;
+			overflow: hidden;
+			padding-top: 10px;
 			.video-link{
-				float: right;
+				position: absolute;
+				right: 0;
+				bottom: 6px;
 				z-index: 250;
-				a.colorbox-load{
-					background-size: 15px;
-					width: 40px;	
-					height: 40px;
+				a.colorbox-load, a.lightboxed{
+					background-size: 10px;
+					width: 30px;	
+					height: 30px;
 				}
 			}
 			.title{
@@ -1890,17 +2002,18 @@ div[id^="panels-ipe-paneid-22"] > * select {
 			}
 		}
 	}
-	.field-name-field-node-top-gallery{
+	.field-name-field-item-top-gallery{
 		> .field-items > .field-item{
 			@include res(s-m){
 				margin-bottom: 10px;
-				a.colorbox-load{
-					background-size: 15px;
-					width: 40px;	
-					height: 40px;
+				a.colorbox-load, a.lightboxed{
+					background-size: 10px;
+					width: 30px;	
+					height: 30px;
 				}
 				.slide-right-ct{
 					margin-right: 20px;
+					width: 25px!important;
 				}
 			}
 			.slide-right-ct{
@@ -1913,9 +2026,15 @@ div[id^="panels-ipe-paneid-22"] > * select {
 		}
 		.time{
 			padding-bottom: 20px;
+			@include res(s-m){
+				padding-bottom: 8px;
+			}
 		}
 		.purchase{
 			float: left;
+			.toptix-purchase, .sold-out{
+				width: 83px;
+			}
 			@include res(s-m){
 				float: none!important;
 			}
@@ -1986,10 +2105,13 @@ div[id^="panels-ipe-paneid-22"] > * select {
 		}
 		.group-item1{
 			.image{
-				display: none;
+				img, .gradient{
+					display: none;
+				}
 			}
 			.top-text-blk-wht{
 				position: relative;
+				overflow: hidden;
 				.white{
 					color: #000;
 					background-color: #eee;
@@ -2077,10 +2199,10 @@ div[id^="panels-ipe-paneid-22"] > * select {
 			}
 		}
 		.video-link{
-			a.colorbox-load{
-				background-size: 15px;
-				width: 40px;	
-				height: 40px;
+			a.colorbox-load, a.lightboxed{
+				background-size: 10px!important;
+				width: 30px;	
+				height: 30px;
 			}
 		}
 		.field-name-field-item-special-grid, .field-name-field-item-special-grid-2{
@@ -2098,13 +2220,16 @@ div[id^="panels-ipe-paneid-22"] > * select {
 			}
 			.on-image{
 				position: relative;
-				padding: 30px 20px 20px;
-				overflow: hidden;
-				bottom: auto;
-				top: auto;
+				bottom: 0;
 				color: #000;
-				h2, a{
-					color: #000;
+				padding-bottom: 0;
+		    	.title{
+					width: -webkit-calc(100% - 77px)!important;
+			   		width: -moz-calc(100% - 77px)!important;
+			   		width: calc(100% - 77px)!important;
+		    	}
+				a, h2{
+					color: #000; 
 				}
 			}
 		}
@@ -2120,16 +2245,100 @@ div[id^="panels-ipe-paneid-22"] > * select {
 	.paragraphs-item-special-grid-dynamic{
 		display: none;
 	}
+	.paragraphs-item-special-grid-dynamic.division-1{
+		.field-name-field-item-special-dynamic{
+			> .field-items > .field-item{	
+				width: 32%;	
+				margin-right: 2%;
+				&:nth-child(3n){
+					margin-right: 0;
+				}
+				&:nth-child(3n+1){
+					clear: both;
+				}
+			}
+		}
+	}
+	.paragraphs-item-special-grid-dynamic.division-2{
+		.field-name-field-item-special-dynamic{
+			> .field-items > .field-item{	
+				&:nth-child(odd){
+					width: 32%;	
+					margin-right: 2%;
+				}
+				&:nth-child(even){
+					width: 65%;	
+				}
+			}
+		}
+	}
+	.paragraphs-item-special-grid-dynamic.division-3{
+		.field-name-field-item-special-dynamic{
+			> .field-items > .field-item{	
+				&:nth-child(odd){
+					width: 65%;	
+					margin-right: 2%;
+				}
+				&:nth-child(even){
+					width: 32%;	
+				}
+			}
+		}
+	}
+	.paragraphs-item-special-grid-dynamic.division-4{
+		.field-name-field-item-special-dynamic{
+			> .field-items > .field-item{	
+				&:nth-child(odd){
+					width: 49%;	
+					margin-right: 2%;
+				}
+				&:nth-child(even){
+					width: 49%;	
+				}
+			}
+		}
+	}
 	.field-name-field-item-special-dynamic{
+		.screaning{
+			.table{
+				margin-bottom: 0;
+				td{
+					font-size: 15px;
+					float: left;
+				}
+			}
+			.hall, .title, .code, .like-flag, .add-event{
+				display: none!important;
+			}
+			.date, .time{
+				width: auto;
+				.day-same-width{
+					width: auto;
+					border-right: 1px solid;
+					padding-right: 5px;
+				}
+			}
+			.purchase{
+				padding-right: 0!important;
+				padding-left: 0!important;
+				width: 70px!important;
+				float: right!important;
+				button{
+					float: right;
+				}
+			}
+			.view-footer{
+				display: none;
+			}
+		}
 		> .field-items > .field-item{
-			width: 32%;
 			float: left;
 			margin-bottom: 20px;
-			margin-right: 2%;
 			background-color: #fff;
 			clear: none!important;
 			@include res(s-m){
-				width: 100%;
+				width: 100%!important;
+				height: auto!important;
 				&.withoutimage{
 					height: auto!important;
 					.grid_special_3_item, .short-text{
@@ -2140,14 +2349,17 @@ div[id^="panels-ipe-paneid-22"] > * select {
 			@include res(l){
 				width: 48%;
 			}
-			&:nth-child(3n){
-				margin-right: 0;
-			}
-			&:nth-child(3n+1){
-				clear: both;
-			}
 			.image-wrapper{
 				position: relative;
+				.image{
+					overflow: hidden;
+					position: relative;
+				}
+			}					
+			.grid_special_3_item, .short-text{
+				@include res(s-m){
+					height: auto!important;
+				}
 			}
 			.short-text{
 				padding: 20px;
@@ -2162,18 +2374,37 @@ div[id^="panels-ipe-paneid-22"] > * select {
 					overflow: hidden;
 				}
 			}
+			.on-image{
+				z-index: 250;
+				.title{
+					width: -webkit-calc(100% - 45px)!important;
+		    		width: -moz-calc(100% - 45px)!important;
+		    		width: calc(100% - 45px)!important;	
+		    		float: left;
+				}
+				.video-link{
+					top: 11px;
+				}
+			}
+			.date{
+				float: left;
+			}
+			.purchase{
+				float: right;
+			}
 		}
 		.content{
 			.bottom{
 				.image-wrapper{
 					position: absolute;
 					bottom: 0;
+					@include res(s-m){
+						position: relative;
+						bottom: auto;
+					}
 				}
 			}
 			.withoutimage{
-				.image{
-					display: none;
-				}
 				.image-wrapper, .all-image{
 					position: relative!important;
 				}
@@ -2182,7 +2413,6 @@ div[id^="panels-ipe-paneid-22"] > * select {
 					bottom: 0;
 					color: #000;
 					padding-bottom: 0;
-					margin-top: 15px;
 		    		.title{
 						width: -webkit-calc(100% - 77px)!important;
 			    		width: -moz-calc(100% - 77px)!important;
@@ -2193,12 +2423,14 @@ div[id^="panels-ipe-paneid-22"] > * select {
 					}
 				}
 				.views-field-ops{
-					top: 5px;
+					top: 20px;
 				}
 				.video-link{
 					right: 48px;
-					background-size: 15px;
-					top: 10px;
+					top: 16px;
+					a{
+						background-size: 10px;
+					}
 				}
 			}
 		}
@@ -2213,14 +2445,14 @@ div[id^="panels-ipe-paneid-22"] > * select {
 				bottom: 30px;
 				right: 20px;
 				z-index: 250;
-				a.colorbox-load{
-					background-size: 15px;
-					width: 40px;	
-					height: 40px;
+				a.colorbox-load, a.lightboxed{
+					background-size: 10px!important;
+					width: 30px;	
+					height: 30px;
 				}
 		}
 	}
-	.video-link a.colorbox-load{
+	.video-link a.colorbox-load, .video-link a.lightboxed{
 		background: rgba(0, 0, 0, 0) url("../images/play-icon.png") no-repeat scroll 60% center;
 		border: 1px solid #fff;
 		border-radius: 30px;
@@ -2229,8 +2461,115 @@ div[id^="panels-ipe-paneid-22"] > * select {
 		width: 55px;
 		display: block;
 	}
-	.withoutimage .video-link a.colorbox-load{
+	.withoutimage .video-link a.colorbox-load, .withoutimage .video-link a.lightboxed{
 		background: rgba(0, 0, 0, 0) url("../images/play-icon-black.png") no-repeat scroll 60% center;
 		border:1px solid #000;
 	}
 }	
+
+
+/****  taxonomy page  *******/
+
+.page-taxonomy #main-wrapper{
+	#main{
+		background-color: #fff;
+	}
+	.summary, .summary p, .short-summary p, .short-summary, .field-name-field-cm-event-short-description{
+		font-size: 16px;
+	}
+	.panels-flexible-region-node_page-header{
+		width: 100%;
+	}
+	.panels-flexible-region.content{
+		width: 90%!important;
+		position: relative;
+		left: 5%;
+		.inside{
+			@include width;
+			width: -webkit-calc(1355px - 10%) !important;
+			width: -moz-calc(1355px - 10%) !important;
+			width: calc(1355px - 10%) !important;
+			.description{
+				background-color: #fff;
+				line-height: 1.8;
+				margin: 15px 0;
+			}
+			.pane-content{
+				width: 54%!important;
+				margin: 0 auto;
+				padding: 0;
+				@include res(s-m){
+					width: 100%!important;
+				}
+			}
+		}
+	}
+	.panels-flexible-region.bottom-content{
+		padding-top: 30px;
+		background-color: #f9f4ee;
+	}
+	.view-lobby{
+		clear: both;
+	}
+	.pane-bundle-lobby{
+		clear: both;
+		.pane-title{
+			@include width;
+			padding-bottom: 10px;
+		}
+	}
+	.view-lobby.view-display-id-panel_pane_1, .view-lobby.view-display-id-panel_pane_8, .view-lobby.view-display-id-panel_pane_6, .view-lobby.view-display-id-panel_pane_7, .view-lobby.view-display-id-panel_pane_9{
+		.views-row{
+			background-color: #fff;
+			margin-bottom: 30px;
+		}
+	}
+	.view-lobby.view-display-id-panel_pane_5, .view-lobby.view-display-id-panel_pane_11{
+		.views-row{
+			margin-bottom: 30px;
+		}
+	}
+	.panels-flexible-row{
+		width: 100%!important;
+		padding: 0!important;
+	}
+	.panels-flexible-region{
+		width: 100%;
+		padding: 0;
+		.panel-pane{
+			background-color: #f9f4ee;
+			.pane-content{
+				@include width;
+				overflow: hidden;
+			}
+			&.full-width{
+				width: 100%!important;
+				padding: 0;
+				position: relative;
+				background-color: #fff;
+				.pane-content{
+					width: 100%!important;
+					padding: 0!important;
+				}
+			}
+		}
+	}
+}
+
+.page-taxonomy{
+	&.noheaderimage{
+		.panels-flexible-row-node_page-1.Header{
+			background-color: #fff;
+			margin-bottom: 30px!important;
+		}
+	}
+}
+
+.page-term-lobby {
+	.pane-term-description {
+		.pane-content p {
+			font-size:16px;
+		}
+	}
+}
+	

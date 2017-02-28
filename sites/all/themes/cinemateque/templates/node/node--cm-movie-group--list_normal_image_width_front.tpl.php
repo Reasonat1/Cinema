@@ -18,9 +18,8 @@
           </div> 
       </div>
       <div class="right-area">
-		<div class="screaning"><?php print screaning_output($node->nid, 'movie_group'); ?></div>
+		<div class="screaning"><?php print screaning_output($node->nid); ?></div>
         <h2 class="title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-        <div class="extra-text"><?php print render($content['field_homepage_extra_text']); ?></div>
         <div class="only-duration"><?php print render($content['field_cm_moviegroup_duration']); ?>  </div>
         <div class="short-summary"><?php print render($content['field_cm_moviegroup_short_summar']); ?>  </div>
       </div>

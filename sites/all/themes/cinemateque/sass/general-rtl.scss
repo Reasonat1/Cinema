@@ -9,7 +9,7 @@ body{
 }
 
 .pane-movie-group-ct-panel-pane-3 {
-	.views-field-field-toptix-purchase{
+	.views-field-field-toptix-purchase, .views-field-field-tickets-sold-out, .views-field-field-tickets-sold-out{
 		button{
 			float: right;
 		}
@@ -38,11 +38,10 @@ table{
 			padding: 8px!important;
 		}
 	}
-	.purchase, .views-field-field-toptix-purchase, .views-field-field-toptix-purchase{
+	.purchase, .views-field-field-toptix-purchase, .views-field-field-tickets-sold-out{
 		float: left;
 	}
 }
-
 
 #page-header{
 	.tabs{
@@ -107,7 +106,7 @@ table{
 }
 /**** lobby page  ****/
 
-.page-term-lobby{
+.page-taxonomy{
 	.view-lobby.view-display-id-panel_pane_1{
 		.toptix-purchase{
 			float: left;
@@ -197,6 +196,20 @@ table{
 				float: left;
 			}
 		}
+	}
+	input{
+		&.form-submit{
+			float: left;
+		}
+	}
+}
+
+.page-node-4879{
+	.register-block{
+		float: left;
+	}
+	.login-block{
+		float: right;
 	}
 	input{
 		&.form-submit{
@@ -357,7 +370,7 @@ table{
 			padding-left: 8px!important;
 			padding-right: 0!important;
 			float: right;
-			&.purchase, &.views-field-field-toptix-purchase{
+			&.purchase, &.views-field-field-toptix-purchase, .views-field-field-tickets-sold-out{
 				float: left;
 			}
 		}
@@ -368,6 +381,8 @@ table{
 
 .text-main-image{
 	direction: rtl;
+	right: 5%;
+	left: auto;
 	.wrapper{
 		.slide-right-ct {
 			float: right;
@@ -423,7 +438,7 @@ table{
 			text-align: right;
 			float: right;
 			.text-open-event{
-				float: right;
+				float: right!important;
 			}
 			.text-close-event{
 				float: left;
@@ -561,8 +576,11 @@ table{
 }
 
 .add-event{ 
-	padding-left: 25px!important;
+	padding-left: 7px!important;
 	padding-right: 4px!important;
+	a{
+		float: left;
+	}
 }
 
 /********  table with date **********/
@@ -582,6 +600,19 @@ table{
 	float: right;
 	padding-right: 55px;
 }
+
+.ui-dialog button.ui-dialog-titlebar-close{
+	left: 15px;
+	right: auto;
+	float: left;
+}
+
+.ui-button-icon-primary{
+	top: 7px!important;
+	right: auto!important;
+	left: 0!important;
+}
+
 .region-overlay{
 	.block-search-api-page	form{
 			.form-group {

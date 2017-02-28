@@ -53,6 +53,7 @@
 	    </div>
 	    <div class="text-main-image">
 	      <div class="wrapper">
+	      	<div class="slide-right-ct"></div>
 	        <div class="slide-left-ct">
 	          <h2 class="title slide-big-text"><a href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>
 	           <div class="extra-text"><?php print render($content['field_homepage_extra_text']); ?></div>

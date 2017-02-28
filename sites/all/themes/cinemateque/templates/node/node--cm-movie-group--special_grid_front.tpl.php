@@ -22,7 +22,6 @@
             </div> 
         <div class="on-image">
           <h2 class="title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-        <div class="extra-text"><?php print render($content['field_homepage_extra_text']); ?></div>
         </div>
       </div>
       <div class="short-text">

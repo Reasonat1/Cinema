@@ -140,53 +140,23 @@
 .node-type-cm-event .pane-event-ct-view-panel-pane-3 .movie-group-slide img {
   margin-bottom: 0;
 }
-/* line 88, ../sass/event.scss */
-.node-type-cm-event .more-screening-pane {
-  clear: both;
-  overflow: hidden;
-  width: 1355px !important;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 5%;
-  box-sizing: border-box;
-}
-/* line 92, ../sass/event.scss */
-.node-type-cm-event .more-screening-pane .pane-title {
-  padding-top: 20px;
-}
-/* line 95, ../sass/event.scss */
-.node-type-cm-event .more-screening-pane .view-event-ct-view {
-  overflow: visible;
-}
-/* line 97, ../sass/event.scss */
-.node-type-cm-event .more-screening-pane .view-event-ct-view .table-responsive {
-  overflow: visible;
-}
-/* line 99, ../sass/event.scss */
-.node-type-cm-event .more-screening-pane .view-event-ct-view .table-responsive .views-field-field-cm-event-time-1 {
-  width: 23%;
-}
-/* line 104, ../sass/event.scss */
-.node-type-cm-event .more-screening-pane .pane-title {
-  margin-bottom: 15px;
-}
-/* line 109, ../sass/event.scss */
+/* line 89, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-6 .views-field-field-cm-movie-body {
   color: #312f2f;
   line-height: 28px;
 }
-/* line 113, ../sass/event.scss */
+/* line 93, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-6 .views-field-title a {
   font-weight: bold;
   color: #000000;
 }
-/* line 117, ../sass/event.scss */
+/* line 97, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-6 .views-field-nothing {
   font-weight: bold;
   padding: 10px 0;
   color: #000000;
 }
-/* line 123, ../sass/event.scss */
+/* line 103, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-4 .pane-content {
   border-top: 5px solid #000000;
   padding-top: 13px;
@@ -195,11 +165,11 @@
   height: 57px;
   margin-top: 12%;
 }
-/* line 131, ../sass/event.scss */
+/* line 111, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-8 {
   clear: both;
 }
-/* line 133, ../sass/event.scss */
+/* line 113, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-8 .views-field-field-cm-event-body {
   line-height: 28px;
   width: 1355px !important;
@@ -207,43 +177,90 @@
   margin: 0 auto;
   padding: 0 5%;
   box-sizing: border-box;
-  padding: 10px 5% 10px;
+  padding: 0px 5% 10px;
 }
-/* line 137, ../sass/event.scss */
+/* line 117, ../sass/event.scss */
 .node-type-cm-event .pane-event-ct-view-panel-pane-8 .views-field-field-cm-event-body p {
   margin: 0 auto;
   width: 54%;
 }
 @media (max-width: 767px) {
-  /* line 137, ../sass/event.scss */
+  /* line 117, ../sass/event.scss */
   .node-type-cm-event .pane-event-ct-view-panel-pane-8 .views-field-field-cm-event-body p {
     margin: 0;
     width: 100%;
   }
 }
-/* line 147, ../sass/event.scss */
+/* line 127, ../sass/event.scss */
 .node-type-cm-event .pane-test-view-for-movie-credit-panel-pane-2 .pane-content {
   padding: 0;
   width: 100% !important;
 }
-/* line 151, ../sass/event.scss */
+/* line 131, ../sass/event.scss */
 .node-type-cm-event .credits-view {
   width: 100%;
   padding: 30px 0 50px 0;
 }
 
-/* line 157, ../sass/event.scss */
+/* line 137, ../sass/event.scss */
 .panels-flexible-region-node_page-bottom_content {
   width: 100%;
 }
 
-/* line 161, ../sass/event.scss */
+/* line 141, ../sass/event.scss */
 .with-movie-group-list {
   background-color: #f9f4ee;
 }
 
-/* line 171, ../sass/event.scss */
+/* line 151, ../sass/event.scss */
 .reviews-mobile {
   clear: both;
   margin-top: 30px;
+}
+
+/* line 156, ../sass/event.scss */
+.more-screening-pane {
+  clear: both;
+  overflow: hidden;
+  width: 1355px !important;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+/* line 160, ../sass/event.scss */
+.more-screening-pane .view-event-ct-view {
+  overflow: visible;
+}
+/* line 162, ../sass/event.scss */
+.more-screening-pane .view-event-ct-view .table-responsive {
+  overflow: visible;
+}
+/* line 164, ../sass/event.scss */
+.more-screening-pane .view-event-ct-view .table-responsive .views-field-field-cm-event-time-1 {
+  width: 23%;
+}
+/* line 169, ../sass/event.scss */
+.more-screening-pane .pane-title {
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 0.8em;
+  font-weight: normal;
+  border-bottom: 1px solid;
+  padding-bottom: 5px;
+  float: left;
+}
+/* line 52, ../sass/init.scss */
+.domain-1 .more-screening-pane .pane-title {
+  color: #e41145 !important;
+}
+/* line 55, ../sass/init.scss */
+.domain-2 .more-screening-pane .pane-title {
+  color: #b59d70 !important;
+}
+@media (max-width: 767px) {
+  /* line 169, ../sass/event.scss */
+  .more-screening-pane .pane-title {
+    margin-top: 10px;
+  }
 }

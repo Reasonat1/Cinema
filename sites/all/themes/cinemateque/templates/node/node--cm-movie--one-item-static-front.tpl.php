@@ -1,6 +1,5 @@
 <article class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-    <?php if(!empty($node->field_cm_movie_pictures)){ ?>
       <div class="one-item-static">
         <div class="image">
           <?php 
@@ -9,7 +8,11 @@
           } 
           else if(!empty($node->field_cm_movie_pictures)){ 
             print render($content['field_cm_movie_pictures']);
-          } ?>
+          }
+          else{
+              print '<img src="/sites/all/themes/cinemateque/images/default-one-item.png">';
+          } 
+          ?>
           <div class="gradient small"></div>
         </div>
         <a class="all-image" href="<?php print $node_url; ?>">
@@ -31,7 +34,6 @@
 			<?php print movie_video_output($node->nid); ?>
 		  </div>
       </div>
-    <?php } ?>
 
 
 </article>

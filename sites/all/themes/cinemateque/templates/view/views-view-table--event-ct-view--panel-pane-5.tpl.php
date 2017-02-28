@@ -49,7 +49,7 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
            $output .= '<th class="views-field views-field-field-cm-event-internal-id code">'. t('Code') .'</th>';
            $output .= '<th class="views-field views-field-ops like-flag"></th>';
            $output .= '<th class="views-field views-field-php add-event"></th>';
-           $output .= '<th class="views-field views-field-field-toptix-purchase last-mobile purchase">'. t('TICKETS') .'</th>';
+          $output .= '<th class="views-field views-field-field-toptix-purchase last-mobile purchase">'. t('TICKETS') .'</th>';
          $output .= '</tr>';
        $output .= '</thead>';
        $output .= '<tbody>';
@@ -76,13 +76,13 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
             }
              if(!empty($node->field_cm_event_time['und'])){
                $event_date = '<span class="day-same-width">'.format_date(($node->field_cm_event_time['und'][0]['value']), 'custom', 'l').'</span>';
-               $event_date .= format_date(($node->field_cm_event_time['und'][0]['value']), 'custom', ' | d.m.y');
+               $event_date .= format_date(($node->field_cm_event_time['und'][0]['value']), 'custom', ' d.m.y');
                $event_date_mobile = date('d.m.y', $node->field_cm_event_time['und'][0]['value']);
              }else{
                 $event_date = '<div class="hide-div"></div>';
              }
             if(!empty($node->field_cm_event_time['und'])){
-                $event_time = date('G:i', $node->field_cm_event_time['und'][0]['value']);
+                $event_time = date('H:i', $node->field_cm_event_time['und'][0]['value']);
             }else{
                 $event_time = '<div class="hide-div"></div>';
             }
@@ -93,12 +93,18 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
               $hall_name = '<div class="hide-div"></div>';
             }
             if(!empty($node->field_toptix_purchase['und'])){
-               $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
-               $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
-               $puchase = '<button data-url="'.$top_link.'" class="toptix-purchase">'.t('TICKETS').'</button>';
+                 $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
+                 $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
+                 if(empty($node->field_tickets_sold_out['und'][0]['value'])){
+                    $puchase = '<button data-url="'.$top_link.'" class="toptix-purchase">'.t('TICKETS').'</button>';
+                  }
+                  else{
+                    $puchase = '<button class="sold-out">'.t('sold out').'</button>';
+                  }
             }else{
-             $puchase = '<div class="hide-div"></div>';
+               $puchase = '<div class="hide-div"></div>';
             }
+            
           $output .= '<tr class="odd views-row-first up-events-item-movie views-row-last item-show-'.$a.'">';
            $output .= '<td class="views-field views-field-field-cm-event-time-1 only-desktop date">'. $event_date. '</td>';
            $output .= '<td class="views-field views-field-field-cm-event-time first-mobile time"><div class="only-mobile">'.$event_date_mobile. '</div>' . $event_time .'</td>';

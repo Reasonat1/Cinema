@@ -1,0 +1,16 @@
+name = Cinematheque Feature User View
+description = Views - User Page Pane, user flagged content
+core = 7.x
+package = Views
+version = 7.x-1.0
+dependencies[] = better_exposed_filters
+dependencies[] = panels_mini
+dependencies[] = strongarm
+dependencies[] = views
+dependencies[] = views_content
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = user_flagged_content
+features[views_view][] = user_page_pane
+features_exclude[dependencies][ctools] = ctools
+project path = sites/all/modules/cinematic_custom

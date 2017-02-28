@@ -73,12 +73,12 @@
     if(!empty($node->field_cm_movie_duration)){
       $length_interval = t($node->field_cm_movie_duration['und'][0]['interval']);
       $length_period = t($node->field_cm_movie_duration['und'][0]['period'].'s');
-      $length = '| '.$length_interval.' '.$length_period;
+      $length = ' | '.$length_interval.' '.$length_period;
     }
     elseif(!empty($node->field_cm_moviegroup_duration)){
       $length_interval = t($node->field_cm_moviegroup_duration['und'][0]['interval']);
       $length_period = t($node->field_cm_moviegroup_duration['und'][0]['period'].'s');
-      $length = '| '.$length_interval.' '.$length_period;
+      $length = ' | '.$length_interval.' '.$length_period;
     }
     else{
       $length = '';
@@ -101,7 +101,12 @@
       if(!empty($node->field_cm_event_lineup['und'])){
         $event_ext_nodes = node_load($node->field_cm_event_lineup['und'][0]['target_id']);
 		$path_event_ext_nodes=drupal_get_path_alias('node/'.$event_ext_nodes->nid);
-		$summary_event_movie = (strtolower($event_ext_nodes->title) != strtolower($node->title))?'<div class="lobby-title">'.l($event_ext_nodes->title, $path_event_ext_nodes).'</div>':'';
+		$summary_event_movie = '<div class="lobby-title">'.$event_ext_nodes->title.'</div>';
+    if((strtolower($node->title))==(strtolower($event_ext_nodes->title))){
+      $summary_event_movie = '<div class="lobby-title">'.l($event_ext_nodes->title, $path_node).'</div>';
+      $title = '';
+    }
+
         if($event_ext_nodes->type == 'cm_movie'){
 			
 			
@@ -120,11 +125,16 @@
 			if(!empty($event_ext_nodes->field_cm_movie_duration)){
 			$movie_length_interval = t($event_ext_nodes->field_cm_movie_duration['und'][0]['interval']);
 			$movie_length_period = t($event_ext_nodes->field_cm_movie_duration['und'][0]['period'].'s');
-			$movie_length = '|'.$movie_length_interval.' '.$movie_length_period;
+			$movie_length = ' | '.$movie_length_interval.' '.$movie_length_period;
 			}else{
 			$movie_length = '';
 			}
-			$movie_duration_info = $movie_country . " " . $movie_year . $movie_length;
+      if(!empty($event_ext_nodes->field_cm_movie_meta_credit['und'])){
+        $movie_credit = $event_ext_nodes->field_cm_movie_meta_credit['und'][0]['value'];
+      }else{
+        $movie_credit = '';
+      } 
+			$movie_duration_info = $movie_credit . $movie_length;
 			$summary_event_movie .='<div class="lobby-length">'.$movie_duration_info.'</div>';
 			
           if(!empty($event_ext_nodes->field_cm_movie_short_summary)){
@@ -232,9 +242,9 @@
           $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node).'</div>';
           if(!empty($node->field_cm_event_time['und'])){
               $event_date = '<span class="day-same-width">'.format_date(($node->field_cm_event_time['und'][0]['value']), 'custom', 'l').'</span>';
-              $event_date .= format_date(($node->field_cm_event_time['und'][0]['value']), 'custom', ' | d.m.y');
+              $event_date .= format_date(($node->field_cm_event_time['und'][0]['value']), 'custom', 'd.m.y');
               $event_date_mobile = date('d.m.y', $node->field_cm_event_time['und'][0]['value']);
-              $event_time = date('G:i', $node->field_cm_event_time['und'][0]['value']);
+              $event_time = date('H:i', $node->field_cm_event_time['und'][0]['value']);
           }
           else{
               $event_date = '';
@@ -274,9 +284,13 @@
             $output_event .='<td class="views-field-ops only-desktop">'. $flag . '</td>';
             $output_event .='<td class="add-event only-desktop">'. $addevent . '</td>';
             if(!empty($node->field_toptix_purchase['und'])){
-            $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
-            $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
-            $output_event .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t("TICKETS").'</button>'.'</td>';
+              $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
+              $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
+              if(empty($node->field_tickets_sold_out['und'][0]['value'])){
+                $output_event .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t("TICKETS").'</button>'.'</td>';
+              } else{
+                $output_event .= '<td class="purchase">'.'<button class="sold-out">'.t("sold out").'</button>'.'</td>';
+              }
             } 
             else{
               $output_event .= '<td class="purchase"></td>';
@@ -422,7 +436,7 @@
 
       switch ($node->type) {
       case "cm_event":
-        print '<div class="lobby-container">';
+        print '<div class="lobby-container event">';
           print'<div class="lobby-term-left">';
             print'<div class="only-mobile">';
               print $event_info;
@@ -465,7 +479,6 @@
             print '</div>';
           print '</div>';
           print'<div class="lobby-term-right">';
-              print $event_info;
               print '<div class="lobby-title">';
                 print $title;
               print '</div>';
@@ -478,6 +491,7 @@
                 print '</div>';
                 print ($summary_event_movie);
               print '</div>';
+              print $event_info;
           print '</div>';
           print '<div class="clr"></div>';
       print '</div>';

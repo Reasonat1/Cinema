@@ -2,6 +2,8 @@ name = Panopoly SEO
 description = Enhance your site for search engines.
 core = 7.x
 package = Panopoly Apps
+version = 7.x-1.0-beta8
+project = panopoly_seo
 dependencies[] = ctools
 dependencies[] = defaultconfig
 dependencies[] = features
@@ -20,6 +22,7 @@ dependencies[] = xmlsitemap_engines
 dependencies[] = xmlsitemap_menu
 dependencies[] = xmlsitemap_node
 dependencies[] = xmlsitemap_taxonomy
+datestamp = 1468420816
 features[ctools][] = strongarm:strongarm:1
 features[defaultconfig][] = user_default_permissions:administer meta tags
 features[defaultconfig][] = user_default_permissions:administer pathauto
@@ -36,10 +39,3 @@ features[variable][] = xmlsitemap_engines_engines
 features[variable][] = xmlsitemap_engines_minimum_lifetime
 features[variable][] = xmlsitemap_settings_menu_link_main-menu
 features[variable][] = xmlsitemap_settings_node_panopoly_page
-
-; Information added by Drupal.org packaging script on 2016-07-13
-version = "7.x-1.0-beta8"
-core = "7.x"
-project = "panopoly_seo"
-datestamp = "1468420816"
-

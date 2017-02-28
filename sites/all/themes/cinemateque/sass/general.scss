@@ -82,7 +82,7 @@ a:hover{
 }
 
 table td{
-	font-size: 0.9em;
+	font-size: 16px;
 }
 
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
@@ -104,6 +104,9 @@ table td{
 	}
 }
 
+.flag-throbber{
+	display: none;
+}
 /*******  panels margin  *********/
 
 .panels-flexible-row{
@@ -139,6 +142,23 @@ table td{
 .btn-default{
 	@include bg-main-color;
 	color: #fff !important;
+	&.pane{
+		background-color: #fff!important;
+	}
+}
+
+#modalContent{
+	.btn-default{
+		background-color: #fff;
+		color: #000 !important;
+	}	
+}
+
+.form-item-field-select-lobby-view-und .form-type-radio{
+  width: 100%;
+  label{
+  	width: 100%!important;
+  }
 }
 
 .pane-node-field-toptix-purchase {
@@ -185,7 +205,7 @@ table td{
 				}
 			}
 			a{
-				color: #333!important;
+				color: #000!important;
 			}
 		}
 	}
@@ -325,7 +345,7 @@ table td{
 	font-size: 1.25em;
 	font-weight: 600;
 }
-
+/*
 .bottom-content {
 	table, tbody, tr, th, td {
 		border: none !important;
@@ -341,7 +361,7 @@ table td{
 			width: 65%;
 		}
 	}
-}
+}*/
 .new-parent-left {
 	padding-left: 10%;
 	width: 24%;
@@ -428,9 +448,6 @@ table td{
 			display: block;
 			background-position: left center!important;
 		}
-		.flag-throbber{
-			position: absolute;
-		}
 	}
 	.flag-custom{
 		overflow: hidden;
@@ -453,7 +470,7 @@ table td{
 	padding: 10px 5%;
 	margin: 0px auto;
 	height: 50px;
-	overflow: hidden;
+	overflow: visible;
 	@include res(s-m){
 		display: block;
 	}
@@ -485,13 +502,14 @@ table td{
 		}
 	}
 	.facebook a{
-		background: url("../images/facebook-white.png") no-repeat center center;
+		background: url("../images/facebook-white.svg") no-repeat center center;
 		background-color: #4a65a0;
+		background-size: 18px;
 		height: 30px;
 		width: 30px;
 	}
 	.whatsapp a{
-		background: url("../images/whatapp-white.png") no-repeat center center;
+		background: url("../images/whatapp-white.svg") no-repeat center center;
 		background-color: #09d261;
 	}
 	iframe{
@@ -545,6 +563,9 @@ table td{
 	#cboxMiddleLeft, #cboxTopLeft, #cboxMiddleRight, #cboxTopCenter, #cboxTopRight, #cboxBottomLeft, #cboxBottomLeft, #cboxBottomRight, #cboxBottomCenter{
 		display: none;
 	}
+	#cboxPrevious, #cboxNext, #cboxCurrent{
+		display: none!important;
+	}
 	#cboxWrapper{
 		border-radius: 0;
 		> div{
@@ -580,7 +601,7 @@ table td{
 
 
 .lobby-length {
-	font-size: 0.9em;
+	font-size: 16px;
 	line-height: 28px;
 }
 .view-id-movie_group_ct {
@@ -650,10 +671,11 @@ table td{
 	padding: 3%;
 	width: 24%;
 }
+/*
 .page-taxonomy-term #content {
 	width: 100% !important;
 }
-
+*/
 table.views-table {
 	margin: 0;
 }
@@ -681,7 +703,7 @@ table.views-table {
 
 .add-event{ 
 	width: 53px!important;
-	padding-right: 25px!important;
+	padding-right: 7px!important;
 	padding-top: 6px!important;
 	a {
 		float: right;
@@ -691,7 +713,7 @@ table.views-table {
 		height: 23px;
 		padding: 0;
 		width: 27px;
-		z-index: 50!important;
+		z-index: auto!important;
 		margin-top: 2px;
 		&:hover {
 			background-color: $white;
@@ -709,11 +731,12 @@ table.views-table {
 
 .addthisevent_dropdown{
 	top: 32px!important;
+	z-index: 100!important;
 }
 
 /**** lobby page  ****/
-
-.page-term-lobby{
+/*
+.page-taxonomy{
 	background-color: $color_fantasy_approx;
 	.panels-flexible-row-node_page-1{
 		padding: 0!important;
@@ -728,15 +751,6 @@ table.views-table {
 		overflow: visible;
 		.lobby-container{
 			margin-bottom: 30px;
-		}
-		.table-responsive{
-			overflow: visible;
-			.flag{
-				margin-top: 5px;
-			}
-		}
-		#atedrop7-drop{
-			top: 35px!important
 		}
 	}
 	.panels-flexible-region-node_page-header{
@@ -775,7 +789,7 @@ table.views-table {
 	}
 	.lobby-term-left {
 		float: right;
-		width: 80%;
+		width: 70%;
 		padding: 30px 30px 0;
 		@include res(s-m){
 			width: 100%;
@@ -784,7 +798,7 @@ table.views-table {
 	}
 	.lobby-term-right {
 		float: left;
-		width: 20%;
+		width: 30%;
 		position: relative;
 		@include res(s-m){
 			width: 100%;
@@ -793,13 +807,9 @@ table.views-table {
 			width: 100%;
 		}
 	}
-	.pane-lobby-panel-pane-1 {
-		.pane-content {
-			.lobby-container {
-				background-color: $white;
-				margin-top: 1%;
-			}
-		}
+	.lobby-container {
+		background-color: $white;
+		margin-top: 1%;
 	}
 	.pane-term-description{
 		@include width;
@@ -810,6 +820,9 @@ table.views-table {
 	}
 	.pane-lobby-panel-pane-4{
 		@include width;
+	}
+	.pane-tags-term-page{
+		position: relative;
 	}
 }
 
@@ -881,10 +894,10 @@ table.views-table {
 			position: relative;
 		}
 }
-
+*/
 .row-custom-lobby > td {
 	border: medium none !important;
-	font-size: 0.9em;
+	font-size: 16px;
 	a {
 		color: $black !important;
 	}
@@ -892,10 +905,10 @@ table.views-table {
 .lobby-term-left tbody {
 	border: medium none !important;
 }
-.lobby-title a {
+.lobby-title a, .lobby-title {
 	color: $black;
 	font-weight: 600;
-	margin-bottom: 2%;
+	font-size: 22px;
 }
 
 .view-share-this-pane .flag {
@@ -943,13 +956,20 @@ table.views-table {
 .panels-flexible-row.content .panels-flexible-region-node_page-content_region {
 	width: 100% !important;
 }
-button.toptix-purchase {
+.toptix-purchase, .sold-out {
 	@include bg-main-color();
 	color: $white;
 	font-size: .8em;
 	border: none;
-	padding: 4px 14px;
+	padding: 4px 10px;
 	text-transform: uppercase;
+	width: 77px;
+	text-align: center;
+}
+
+.sold-out{
+		padding: 4px 6px;
+		cursor: default;
 }
 
 .view-id-movie_group_ct {
@@ -1022,11 +1042,12 @@ table{
 			padding: 8px!important;
 		}
 	}
-	.purchase, .views-field-field-toptix-purchase, .views-field-field-toptix-purchase{
+	.purchase, .views-field-field-toptix-purchase, .views-field-field-toptix-purchase, .views-field-field-tickets-sold-out{
 		width: 88px!important;
 		display: block;
 		float: right;
 		height: 38px;
+		font-weight: normal;
 		box-sizing:border-box;
 		@include res(s-m){
 			vertical-align: middle !important;
@@ -1282,6 +1303,7 @@ table{
 }
 
 .page-user{
+	margin: 0 0 50px;
 	background-color: $color_fantasy_approx!important;
 	.container{
 		width: 100%;
@@ -1289,10 +1311,6 @@ table{
 	.panels-flexible-region-homepage_panel-center {
 	    width: 100%;
 	}
-	.header-right .favorite a{
-		pointer-events: none;
-   		cursor: default;
-   	}
    	#page-header .tabs{
    		display: none;
    	}
@@ -1304,6 +1322,7 @@ table{
 		&#user-pass{
 			width: 800px!important;
 			padding: 50px 5%;
+			overflow: hidden;
 		}
 	}
 	.panel-panel{
@@ -1422,6 +1441,104 @@ table{
 	}
 }
 
+.page-node-4878, .page-node-4879{
+	.field-name-body .favorite-icon{
+		background: url("../images/favorite.png") no-repeat center center;
+		height: 18px;
+		width: 20px;
+		display: inline-block;
+		margin: 0 5px;
+	}
+	#main-wrapper {
+		padding-bottom: 40px;
+	}
+	.header-right .favorite a{
+		pointer-events: none;
+   		cursor: default;
+   	}
+	#content{
+		@include width;
+		padding: 0 5%!important;
+		margin-top: 20px;
+	}
+	h3{
+		text-decoration: underline;
+	}
+	.register-block{
+		width: 45%;
+		float: right;
+		@include res(s-m){
+			width: 100%;
+		}
+	}
+	.login-block{
+		width: 45%;
+		float: left;
+		@include res(s-m){
+			width: 100%;
+		}
+		.item-list{
+			.first{
+				display: none;
+			}
+		}
+	}
+	.register-block{
+		.group-name-group{
+			> h3{
+				display: none;
+			}
+			.password-parent{
+				position: relative;
+				margin-bottom: 75px;
+			}
+			.password-strength{
+				float: none;
+				position: absolute;
+				bottom: -40px;
+			}
+			div.password-confirm{
+				margin-top: 0;
+				font-size: 15px;
+				width: auto;
+			}
+			.form-type-password{
+				width: 100%;
+			}
+			div.form-item div.password-suggestions{
+				width: 100%;
+			}
+		}
+	}
+	input{
+		width: 100%;
+		height: 40px;
+		padding: 10px;
+		border-radius: 0;
+		&.form-submit{
+			width: auto;
+			clear: both;
+			float: right;
+			padding: 10px 80px;
+			cursor: pointer;
+			@include res(s-m){
+				width: 100%;
+			}
+		}
+	}
+	label{
+		font-weight: normal;
+		font-size: 15px;
+		padding-bottom: 5px;
+	}
+	.help-block{
+		font-size: 12px;
+		display: block;	
+		line-height: 20px;
+		padding-top: 5px;
+	}
+}
+
 .page-user-reset{
 	form{
 		@include width;
@@ -1488,6 +1605,16 @@ table{
 		@include width;
 		overflow-y: hidden;
 		padding-bottom: 20px;
+	}
+	.view-empty{
+		@include width;
+		.favorite-icon{
+			background: url("../images/favorite.png") no-repeat center center;
+			height: 18px;
+			width: 20px;
+			display: inline-block;
+			margin: 0 5px;
+		}
 	}
 	.view-header{
 		float: left;
@@ -1620,14 +1747,27 @@ table{
 				width: 100%;
 			}
 			.lobby-summary{
-				padding: 10px 0 20px;
+				padding: 0px 0 20px;
 				font-size: 16px;
-				word-break: break-all;
 				p{
 					font-size: 16px;
 				}
 			}
 			.lobby-container{
+				&.event{
+					table{
+						margin-top: -8px;
+						font-weight: bold;
+						@include res(s-m){
+							margin-top: 0;
+						}
+						.time .only-mobile{
+							@include res(s-m){
+								display: none!important;
+							}
+						}
+					}
+				}
 				.lobby-term-left{
 					float: left;
 					width: 30%;
@@ -1685,7 +1825,7 @@ table{
 		border:none!important;
 	}
 	.date{
-		width: 25%;
+		width: 27%;
 	}
 	.time{
 		width: 11%;
@@ -1693,7 +1833,7 @@ table{
 	.hall{
 		width: 18%;
 	}
-	.purchase, .views-field-field-toptix-purchase{
+	.purchase, .views-field-field-toptix-purchase, .views-field-field-tickets-sold-out{
 		width: 88px;
 		padding: 6px 8px!important;
 		@include res(s-m){
@@ -1710,9 +1850,6 @@ table{
 		width: 30px;
 		height: 25px;
 		float: right;
-		.flag-throbber{
-			position: absolute;
-		}
 	}
 	.code, .views-field-field-cm-event-internal-id{
 		width: 10%;
@@ -1883,6 +2020,7 @@ table{
     z-index: 1;
     @include res(s-m){
     	display: none;
+    	height: 150px!important;
     }
 }
 
@@ -1939,7 +2077,7 @@ table{
 		thead{
 			display: none!important;
 		}
-		table{
+		table td{
 			font-size: 14px;
 		}
 		.views-field-field-cm-event-hall{
@@ -1957,13 +2095,13 @@ table{
 			padding-left: 0!important;
 			float: left;
 			display: block;
-			&.time, &.views-field-field-cm-event-time-3, &.views-field-field-cm-event-time{
+			&.time, &.views-field-field-cm-event-time-3, &.views-field-field-cm-event-time, &.date{
 				width: 70px!important;
 			}
-			&.purchase, &.views-field-field-toptix-purchase{
+			&.purchase, &.views-field-field-toptix-purchase, &.views-field-field-tickets-sold-out{
 				padding-left: 0!important;
 				padding-right: 0!important;
-				width: 66px!important;
+				width: 72px!important;
 				float: right;
 			}
 			&.views-field-field-cm-event-time-3{
@@ -2006,12 +2144,17 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	padding: 0;
 	z-index: 99;
 	direction: ltr;
-	width: 100%;
+	width: 90%;
+	left: 5%;
 	@include res(s-m){
 		bottom: 10px;
 	}
 	.wrapper{
 		@include width;
+		width: -webkit-calc(1355px - 10%)!important;
+    	width: -moz-calc(1355px - 10%)!important;
+    	width: calc(1355px - 10%)!important;
+    	padding: 0;
 		@include res(s-m){
 			@include center;
 			padding: 0 5%;
@@ -2188,7 +2331,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 		bottom: auto;
 		.wrapper{
 			a, a:hover{
-				color: #333;
+				color: #333!important;
 			}
 			.slide-right-ct{
 				margin-top: 0;
@@ -2201,7 +2344,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	}
 	.gradient{
 		display: none;
-		&.small{
+		&.small, &.very-small{
 			display: block;
 		}
 	}	
@@ -2251,7 +2394,8 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 		cursor: pointer;
 		@include main-color;
 		font-size: 0.8em;
-		margin: 0px 11px 15px 0;
+		margin: 0px 11px 6px 0;
+		display: block!important;
 		@include res(s-m){
 			margin: 10px auto;
 			float: none!important;
@@ -2289,10 +2433,17 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 			width: 100%;
 			text-align: left;
 			float: left;
+			@include res(s-m){
+				text-align: center;
+			}
 			.text-open-event{
 				padding-bottom: 0;
 				margin-top: 0;
 				float: left;
+				@include res(s-m){
+					float: left!important;
+					margin-bottom: 10px;
+				}
 			}
 			.text-close-event{
 				float: right;
@@ -2330,7 +2481,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
     	font-size: 15px;
     }
 	.profession, .views-field-field-cm-movie-credits-person-ro{
-		color: $color_nobel_approx;
+		color: #828282;
 		float: left;
 		clear: both;
 		padding-bottom: 5px;
@@ -2367,13 +2518,11 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	}
 	.translated-movie-title{
 		text-align: left;
-		color: $color_nobel_approx;
+		color: #828282;
 		position: relative;
 		padding-bottom: 10px;
 		a, span{	
 			color: #000;
-			position: absolute;;
-			left: 0;
 			&:hover{
 				@include main-color;
 			}
@@ -2403,7 +2552,8 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 			}
 		}
 		.translated-movie-title {
-			padding-bottom: 15px;
+			padding-bottom: 6px;
+			overflow: hidden;
 			margin-top: 40px;
 		}
 	}
@@ -2485,8 +2635,11 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 		padding-bottom: 30px;
 		@include res(s-m){
 			margin-top: 5px;
-			max-height: 56px;
     		overflow: hidden;
+    		font-size: 15px;
+    		p{
+    			font-size: 15px;
+    		}
 		}
 	}
 }
@@ -2494,7 +2647,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 //review 
 
 .view-reviews-field-collection-view {
-	margin-top: 50px;
+	margin-top: 27px;
 	background-color: $color_fantasy_approx;
 	overflow: hidden;
 	.view-content{
@@ -2504,7 +2657,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 			float: right;
 			box-sizing: border-box;
 			@include main-color;
-			padding: 50px 23% 50px 0;
+			padding: 50px 23% 25px 0;
 			overflow: hidden;
 			@include res(s-m){
 				width: 100%;
@@ -2526,7 +2679,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	.views-slideshow-controls-bottom{
 		clear: both;
 		text-align: center;
-		padding: 25px 0;
+		padding: 25px 0 0;
 		.views-slideshow-pager-field-item{
 			display: inline-block;
 		}
@@ -2631,8 +2784,55 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	z-index: 400;
 }
 
-.ui-dialog-title{
-	padding: 0 20px;	
+.ui-draggable .ui-dialog-titlebar{
+	height: 30px;
+	padding: 0px!important;
+	line-height: 17px;
+}
+
+.ui-dialog .ui-dialog-title{
+	width: 100%;
+	padding: 5px 10px 3px!important;
+	background-color: #323232;
+	height: 30px;
+}
+
+.ui-dialog-titlebar-close{
+	padding: 0;
+}
+
+.ui-button-icon-primary{
+	top: 7px!important;
+	right: 0;
+	left: auto!important;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr{
+	-moz-border-radius-topright: 0;
+	-webkit-border-top-right-radius: 0;
+	-khtml-border-top-right-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl{
+	-moz-border-radius-topleft: 0;
+	-webkit-border-top-left-radius: 0;
+	-khtml-border-top-left-radius: 0;
+	border-top-left-radius: 0;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl{
+	-moz-border-radius-bottomleft: 0;
+	-webkit-border-bottom-left-radius: 0;
+	-khtml-border-bottom-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-bl{
+	-moz-border-radius-bottomright: 0;
+	-webkit-border-bottom-right-radius: 0;
+	-khtml-border-bottom-right-radius: 0;
+	border-bottom-right-radius: 0;
 }
 
 .ui-dialog-content{
@@ -2651,7 +2851,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	.block{
 		display: none;
 	}
-	.block-search-api-page	form{
+	.block-search-api-page{
 			@include width;
 			margin: 100px auto 0!important;
 			position: relative;

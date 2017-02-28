@@ -13,6 +13,7 @@ function panopoly_seo_metatag_export_default() {
   // Exported Metatag config instance: node.
   $config['node'] = array(
     'instance' => 'node',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[node:title] | [site:name]',
@@ -35,6 +36,7 @@ function panopoly_seo_metatag_export_default() {
   // Exported Metatag config instance: node:panopoly_page.
   $config['node:panopoly_page'] = array(
     'instance' => 'node:panopoly_page',
+    'disabled' => FALSE,
     'config' => array(
       'image_src' => array(
         'value' => '[node:field_featured_image]',

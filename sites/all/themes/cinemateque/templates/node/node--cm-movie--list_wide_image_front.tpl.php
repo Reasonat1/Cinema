@@ -27,11 +27,17 @@
       </div>
       <div class="right-area">
         <h2 class="title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-        <div class="extra-text"><?php print render($content['field_homepage_extra_text']); ?></div>
         <div class="credit-duration">
-            <div class="credit-list"><?php print render($content['field_cm_movie_meta_credit']); ?></div>
-            <div class="duration"><?php print render($content['field_cm_movie_duration']); ?>  </div>
-        </div>
+            <?php if ($node->field_cm_movie_meta_credit) { ?>
+              <div class="credit-list"><?php print render($content['field_cm_movie_meta_credit']); ?></div>
+            <?php } ?>
+            <?php if(!empty($node->field_cm_movie_duration)){
+              $length_interval = t($node->field_cm_movie_duration['und'][0]['interval']);
+              $length_period = t($node->field_cm_movie_duration['und'][0]['period'].'s');
+              $length = ' | '.$length_interval.' '.$length_period; ?>
+              <div class="duration"><?php print $length; ?>  </div>
+            <?php } ?>
+          </div>
         <div class="short-summary"><?php print render($content['field_cm_movie_short_summary']); ?>  </div>
         <div class="screaning"><?php print screaning_output($node->nid); ?></div>
       </div>

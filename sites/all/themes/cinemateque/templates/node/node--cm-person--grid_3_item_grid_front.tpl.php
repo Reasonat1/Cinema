@@ -8,7 +8,7 @@
             else{
               print '<img src="/sites/all/themes/cinemateque/images/default-image-pane-2.png">';
             } ?>
-            <div class="gradient very-small"></div>
+            <div class="gradient small"></div>
       </div>
       <a class="all-image" href="<?php print $node_url; ?>">
         <div class="on-image">

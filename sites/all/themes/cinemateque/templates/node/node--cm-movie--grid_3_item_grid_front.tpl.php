@@ -9,7 +9,7 @@
             else{
               print '<img src="/sites/all/themes/cinemateque/images/default-image-pane-2.png">';
             } ?>
-            <div class="gradient very-small"></div>
+            <div class="gradient small"></div>
             <div class="top-text-blk-wht">
               <?php  if(!empty($node->field_mc_teaser_toptxt_blk)){ ?>
                 <span class="black"><?php print render($content['field_mc_teaser_toptxt_blk']);?></span>
@@ -30,7 +30,7 @@
             </div>
           </div>
         <div class="extra-text"><?php print render($content['field_homepage_extra_text']); ?></div>
-		  <div class="screaning"><?php print screaning_output($node->nid); ?></div>
+		  <div class="screaning"><?php print screaning_output($node->nid, 1); ?></div>
         </div>
   </div>
 

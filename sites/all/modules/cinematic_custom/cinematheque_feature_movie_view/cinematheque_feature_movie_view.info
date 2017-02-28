@@ -1,0 +1,17 @@
+name = Cinematheque Feature Movie View
+description = View - Movie CT, Movie Credit View, events by movie
+core = 7.x
+package = Views
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = panels_mini
+dependencies[] = strongarm
+dependencies[] = views
+dependencies[] = views_content
+dependencies[] = views_slideshow
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = events_by_movie
+features[views_view][] = movie_top_pane_view
+features[views_view][] = test_view_for_movie_credit
+project path = sites/all/modules/cinematic_custom

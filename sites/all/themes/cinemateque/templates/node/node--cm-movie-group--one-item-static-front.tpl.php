@@ -8,6 +8,8 @@
           } 
           else if(!empty($node->field_cm_moviegroup_pictures)){ 
             print render($content['field_cm_moviegroup_pictures']);
+          } else {
+              print '<img src="/sites/all/themes/cinemateque/images/default-one-item.png">';
           } ?>
           <div class="gradient small"></div>
         </div>
