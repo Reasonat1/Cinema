@@ -23,9 +23,25 @@ function cinematic_toptix_menu() {
 }
 
 function cinematic_toptix_cron() {
-  return;
-  $message = TopTixImport::import();
-  watchdog('toptix import', $message); 
+  $last_time = variable_get('cinematic_toptix_cron', '');
+  $this_time = new DateTime();
+  $run = FALSE;
+  if ($last_time) {
+    $last_time = new DateTime($last_time);
+    $week = new DateInterval('P1W');
+    $run = ($last_time->add($week) <= $this_time);
+  }
+  else {
+    $run = TRUE;
+  }
+  if ($run) {
+    $hour = $this_time->format('G');
+    if ($hour >= 23 or $hour <= 6) {
+      $message = TopTixImport::import();
+      watchdog('toptix import', $message);
+      variable_set('cinematic_toptix_cron', $this_time->format('c'));
+    }
+  }
 }
 
 function cinematic_toptix_theme() {
