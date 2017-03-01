@@ -22,12 +22,12 @@ function cinematic_toptix_import($form, &$form_state) {
 
 function cinematic_toptix_import_submit($form, &$form_state) {
   $message = TopTixImport::import();
+  variable_set('toptix_import', date('c'));
   drupal_set_message($message);
 }
 
 class TopTixImport {
   public static function import() {
-    variable_set('toptix_import', date('Y-m-d H:i:s'));
     $url = 'http://' . TOPTIX_HOST . '/feed/events/?groupby=show&withfutureevents=true';
     $context = stream_context_create(array('http' => array('timeout' => 1200)));
     $in = file_get_contents($url, false, $context);

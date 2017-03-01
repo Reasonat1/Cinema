@@ -23,7 +23,7 @@ function cinematic_toptix_menu() {
 }
 
 function cinematic_toptix_cron() {
-  $last_time = variable_get('cinematic_toptix_cron', '');
+  $last_time = variable_get('toptix_import', '');
   $this_time = new DateTime();
   $run = FALSE;
   if ($last_time) {
@@ -39,7 +39,7 @@ function cinematic_toptix_cron() {
     if ($hour >= 23 or $hour <= 6) {
       $message = TopTixImport::import();
       watchdog('toptix import', $message);
-      variable_set('cinematic_toptix_cron', $this_time->format('c'));
+      variable_set('toptix_import', $this_time->format('c'));
     }
   }
 }
