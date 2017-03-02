@@ -3,6 +3,7 @@ var toptix_basket_url = null;
   if ($.cookie('toptix_basket') == null) {
     $.cookie('toptix_basket', 0);
   }
+  // this will run on $(document).ready()
   Drupal.behaviors.toptix_basket_frame = {
     
     attach: function(context, settings) {
@@ -14,6 +15,7 @@ var toptix_basket_url = null;
           message.dialog({modal: true, title: Drupal.t('Tickets basket')});
           return;
         }
+        // ulr is : http://tickets.jer-cin.org.il/Order.aspx%26culture=en-US
         toptix_basket_url = this.dataset.url;
         $esro.getCustomerDetails('toptix_callback_basket_get_customer');
       });
@@ -31,6 +33,7 @@ $esro.attachEventHandler('basketChanged', function(basket) {
 
 function toptix_navigationHandler(pageName) {
   console.log('esro navigation:' + pageName);
+  // i disbled this because it made a redirection look
   return;
   if (pageName == 'DEFAULT') {
     var target_page = Drupal.settings.basePath + 'user';
@@ -51,6 +54,7 @@ function toptix_callback_basket_get_customer(result) {
 }
 
 function toptix_open_basket_frame() {
+  // wrapper div for <esro:frame
   var frame = jQuery('#toptix-frame-wrapper');
   $esro.gotoUrl(toptix_basket_url);
   frame.dialog({
@@ -59,8 +63,8 @@ function toptix_open_basket_frame() {
     'height': 768,
     'modal': true,
     'open': function(event, ui) {
-      //event.target.style.width = "1024px";
-      //event.target.style.height = "768px";
+      event.target.style.width = "1024px";
+      event.target.style.height = "768px";
     }
   });
 }
