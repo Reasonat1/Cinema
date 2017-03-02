@@ -24,10 +24,14 @@
 
 <script type="text/javascript" src="http://tickets.jer-cin.org.il/iframe/esrojsapi.js"></script>
 
-<script type="text/javascript" src="http://jer-cin.reasonat.com/event.js"></script>
+<script type="text/javascript" src="http://jer-cin.reasonat.com/esro/event.js"></script>
 <style>
   #toptix-frame-wrapper {
     display:none;
+  }
+  body {
+    width: 1024px;
+    height: 768px;
   }
 </style>
 <style type="text/css" media="all">
@@ -37,13 +41,16 @@
 </head>
 <body>
   <?php 
-    $url = 'http://tickets.jer-cin.org.il/loader.aspx/';
-    $url .= '?target=hall.aspx&event=23027&culture=en-US';
+    $base_url = 'http://tickets.jer-cin.org.il/loader.aspx/';
+    $url = $base_url . '?target=hall.aspx?event=23027&culture=en-US';
   ?>
   <button class="purchase" data-url="<?php print $url;?>"> Purchase </button>
+  <?php 
+    $url = $base_url . 'Order.aspx&culture=en-US';
+  ?>
   <button class="basket" data-url="<?php print $url;?>"> Basket </button>
   <div id="toptix-frame-wrapper">
-    <esro:frame href="http://tickets.jer-cin.org.il/integrationsample/info.htm" width="800" height="100" />
+    <esro:frame href="http://tickets.jer-cin.org.il/integrationsample/info.htm" width="1024" height="768" />
   </div>
 </body>
 </html>
