@@ -69,7 +69,7 @@ function cinematic_toptix_block_view($delta) {
   $block = array('title' => '');
 
   global $language;
-  $langadd =  ($language->language == 'en') ? '%26culture=en-US' : '';
+  $langadd =  ($language->language == 'en') ? '?culture=en-US' : '';
   
   $output = '<button class="toptix-basket" data-url="http://' . TOPTIX_HOST . '/Order.aspx' . $langadd . '"> ' . t('My cart') . '</button>';
   $esro_frame = '<esro:frame href="http://' . TOPTIX_HOST . '/integrationsample/info.htm" ';
