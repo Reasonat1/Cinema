@@ -6,8 +6,11 @@
 <head profile="http://www.w3.org/1999/xhtml/vocab">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title> example page </title>
-  <script type="text/javascript" src="http://jer-cin.reasonat.com/profiles/panopoly/modules/contrib/jquery_update/replace/jquery/1.8/jquery.min.js?v=1.8.3"></script>
+<script type="text/javascript" src="http://jer-cin.reasonat.com/profiles/panopoly/modules/contrib/jquery_update/replace/jquery/1.8/jquery.min.js?v=1.8.3"></script>
 <script type="text/javascript" src="http://jer-cin.reasonat.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="http://jer-cin.reasonat.com/profiles/panopoly/modules/contrib/jquery_update/replace/ui/ui/minified/jquery.ui.core.min.js?v=1.10.2"></script>
+<script type="text/javascript" src="http://jer-cin.reasonat.com/profiles/panopoly/modules/contrib/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="http://jer-cin.reasonat.com/profiles/panopoly/modules/contrib/jquery_update/replace/ui/ui/minified/jquery.ui.dialog.min.js?v=1.10.2"></script>
 <script type="text/javascript" src="http://tickets.jer-cin.org.il/iframe/esrojsapi.js"></script>
 <script type="text/javascript" src="http://jer-cin.reasonat.com/esro/event.js"></script>
 <style>
