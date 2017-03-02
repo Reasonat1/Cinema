@@ -24,11 +24,15 @@
 
 <script type="text/javascript" src="http://tickets.jer-cin.org.il/iframe/esrojsapi.js"></script>
 
-<script type="text/javascript" src="http://jer-cin.reasonat.com/esro/event.js"></script>
+<script type="text/javascript" src="http://jer-cin.reasonat.com/event.js"></script>
 <style>
   #toptix-frame-wrapper {
     display:none;
   }
+</style>
+<style type="text/css" media="all">
+@import url("http://jer-cin.reasonat.com/profiles/panopoly/modules/panopoly/panopoly_core/css/panopoly-jquery-ui-theme.css?om504h");
+@import url("http://jer-cin.reasonat.com/profiles/panopoly/modules/contrib/jquery_update/replace/ui/themes/base/minified/jquery.ui.accordion.min.css?om504h");
 </style>
 </head>
 <body>
