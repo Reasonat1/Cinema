@@ -9,7 +9,8 @@ var toptix_active_button = {original_text:'', item: null};
         toptix_active_button.item = this;
         toptix_active_button.original_text = $(this).text();
         $(this).text(Drupal.t('Loading...'));
-        $esro.getCustomerDetails('toptix_callback_get_customer');
+        toptix_open_frame();
+        //$esro.getCustomerDetails('toptix_callback_get_customer');
       });
     },
   };
