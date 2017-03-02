@@ -10,26 +10,21 @@
 <script type="text/javascript" src="http://jer-cin.reasonat.com/misc/jquery.once.js?v=1.2"></script>
 <script type="text/javascript" src="http://tickets.jer-cin.org.il/iframe/esrojsapi.js"></script>
 <script type="text/javascript" src="http://jer-cin.reasonat.com/esro/event.js"></script>
+<style>
+  #toptix-frame-wrapper {
+    display:none;
+  }
+</style>
 </head>
 <body>
-  <div>
+  <?php 
+    $url = 'http://tickets.jer-cin.org.il/loader.aspx/';
+    $url .= '?target=hall.aspx&event=23027&culture=en-US';
+  ?>
+  <button class="purchase" data-url="<?php print $url;?>"> Purchase </button>
+  <button class="basket" data-url="<?php print $url;?>"> Basket </button>
+  <div id="toptix-frame-wrapper">
     <esro:frame href="http://tickets.jer-cin.org.il/integrationsample/info.htm" width="800" height="100" />
   </div>
-  <form enctype="multipart/form-data" action="/example_esro.php" method="post" accept-charset="UTF-8">
-    <?php
-      $incr = 0;
-      $error = '';
-      if (isset($_POST) and isset($_POST['incr'])) {
-        $incr = $_POST['incr'] + 1;
-        $error = $_POST['error'];
-      }
-    ?>
-    <label> incr: <input type="text" value="<?php print $incr;?>" name="incr"/> </label>
-    <br>
-    <label> error: <input type="text" value="<?php print $error;?>" name="error"/> </label>
-    <br>
-    <input type="submit" id="edit-submit" name="op" value="Increment" class="form-submit" />
-    <a href="/example_esro.php"> reset </a>
-  </form>
 </body>
 </html>

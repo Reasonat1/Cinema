@@ -1,86 +1,77 @@
-var toptix_form_incr = null;
-var toptix_form_item = null;
-var toptix_form_processed = false;
 (function($) {
   $(document).ready(function() {
-      $('form').submit(function(event) {
-        if (toptix_form_processed) {
-          return;
-        }
-        toptix_form_processed = true;
-
-        toptix_form_item = $(this).find('input[name^="incr"]');
-        toptix_form_incr = toptix_form_item.val();
-        toptix_form_item.addClass('throbbing').css('background-repeat', 'no-repeat');
-        event.stopPropagation();
-        $esro.getEmptyCustomer('toptix_callback_create');
-        return false;
-      });
+    toptix_basket_setup();
+    toptix_purchase_setup();
   });
 }) (jQuery);
 
-function toptix_callback_create(result) {
-  var Customer = result.Result;
-  var form_data = {incr: toptix_form_incr};
-  toptix_alter_customer(Customer, form_data);
-  Customer.Login.Password = Math.random().toString(36).slice(-8);
-  $esro.createCustomer(Customer, 'toptix_callback_save');
-};
-
-function toptix_callback_save(result) {
-  if (result.HasError) {
-    jQuery('input[name="error"]').val(result.ErrorDescription);
+var toptix_basket_setup = null;
+(function($) {
+  if ($.cookie('toptix_basket') == null) {
+    $.cookie('toptix_basket', 0);
   }
-  else {
-    toptix_form_item.removeClass('throbbing');
-    jQuery('form').submit();
-  }
-}
+  toptix_basket_setup = function(context, settings) {
+    $('button.basket').click(function(event) {
+      if ($.cookie('toptix_basket') == 0) {
+        var message = $('<div></div>');
+        message.text(Drupal.t('You have not added any items to purchase yet'));
+        message.dialog({modal: true, title: Drupal.t('Tickets basket')});
+        return;
+      }
+      toptix_open_basket_frame(this.dataset.url);
+    });
+  };
+})(jQuery);
 
-function toptix_alter_customer(Customer, form) {
-  Customer.Login.Name = 'example_test' + form['incr'].value;
+$esro.attachEventHandler('basketChanged', function(basket) {
+  console.log('my basket handler');
+  console.log(basket);
+  jQuery.cookie('toptix_basket', basket.Tickets.length);
+});
 
-  Customer.Name.First = Customer.Login.Name;
-  Customer.Name.Last = Customer.Login.Name;
 
-  var contact_details = [];
-  contact_details[0] = '076553323';
-  contact_details[1] = '0573322113';
-  contact_details[3] = Customer.Login.Name + '@example_mail.com';
-  contact_details.forEach (function(value, idx) {
-    if (value) {
-      Customer.ContactDetails[idx].Detail = value;
+function toptix_open_basket_frame(basket_url) {
+  // wrapper div for <esro:frame
+  var frame = jQuery('#toptix-frame-wrapper');
+  $esro.gotoUrl(basket_url);
+  frame.dialog({
+    'title': Drupal.t('Tickets basket'),
+    'width': 1024,
+    'height': 768,
+    'modal': true,
+    'open': function(event, ui) {
+      event.target.style.width = "1024px";
+      event.target.style.height = "768px";
     }
   });
-  toptix_clean_customer(Customer);
 }
 
-function toptix_clean_customer(obj) {
-  delete obj.AddressDetails[0].Address.CountryName;
-  delete obj.AddressDetails[0].Address.CountryId;
-  delete obj.AddressDetails[0].Address.StateName;
-  delete obj.AddressDetails[0].Address.StateId;
-  delete obj.AddressDetails[0].Address.ZipCode;
-  delete obj.AddressDetails[0].Address.CityId;
-  delete obj.AddressDetails[0].Address.CityName;
-  return;
+var toptix_active_button = {original_text:'', item: null};
+var toptix_purchase_setup = null;
+(function($) {
+  toptix_purchase_setup = function(context, settings) {
+    var self = this;
+    $('button.purchase').click(function(event) {
+      toptix_active_button.item = this;
+      toptix_active_button.original_text = $(this).text();
+      $(this).text(Drupal.t('Loading...'));
+      toptix_open_frame(this.dataset.url);
+    });
+  };
+})(jQuery);
 
-  // ignored
-  delete obj.AddressDetailIds;
-  delete obj.AssociationIds;
-  delete obj.Birthday;
-  delete obj.BlackListItems;
-  delete obj.ClientTypes;
-  delete obj.ContactMeByServiceIds;
-  delete obj.DataProtectionDetails;
-  delete obj.DisplayName;
-  delete obj.Gender;
-  delete obj.Note;
-  delete obj.OrganizationUnitIds;
-  delete obj.PreferenceDetails;
-  delete obj.PreferenceIds;
-  delete obj.RelatedClients;
-  delete obj.Remarks;
-  delete obj.StronglyRelatedClients;
+function toptix_open_frame(event_url) {
+  var frame = jQuery('#toptix-frame-wrapper');
+  $esro.gotoUrl(event_url);
+  frame.dialog({
+    'title': Drupal.t('Purchase tickets'),
+    'width': 1024,
+    'height': 768,
+    'modal': true,
+    'open': function(event, ui) {
+      event.target.style.width = "1024px";
+      event.target.style.height = "768px";
+    }
+  });
+  jQuery(toptix_active_button.item).text(toptix_active_button.original_text);
 }
-
