@@ -14,8 +14,8 @@ var toptix_basket_setup = null;
     $('button.basket').click(function(event) {
       if ($.cookie('toptix_basket') == 0) {
         var message = $('<div></div>');
-        message.text(Drupal.t('You have not added any items to purchase yet'));
-        message.dialog({modal: true, title: Drupal.t('Tickets basket')});
+        message.text('You have not added any items to purchase yet');
+        message.dialog({modal: true, title: 'Tickets basket'});
         return;
       }
       toptix_open_basket_frame(this.dataset.url);
@@ -35,7 +35,7 @@ function toptix_open_basket_frame(basket_url) {
   var frame = jQuery('#toptix-frame-wrapper');
   $esro.gotoUrl(basket_url);
   frame.dialog({
-    'title': Drupal.t('Tickets basket'),
+    'title': 'Tickets basket',
     'width': 1024,
     'height': 768,
     'modal': true,
@@ -54,7 +54,7 @@ var toptix_purchase_setup = null;
     $('button.purchase').click(function(event) {
       toptix_active_button.item = this;
       toptix_active_button.original_text = $(this).text();
-      $(this).text(Drupal.t('Loading...'));
+      $(this).text('Loading...');
       toptix_open_frame(this.dataset.url);
     });
   };
@@ -64,7 +64,7 @@ function toptix_open_frame(event_url) {
   var frame = jQuery('#toptix-frame-wrapper');
   $esro.gotoUrl(event_url);
   frame.dialog({
-    'title': Drupal.t('Purchase tickets'),
+    'title': 'Purchase tickets',
     'width': 1024,
     'height': 768,
     'modal': true,
