@@ -162,6 +162,7 @@ function cinematic_toptix_rdf_namespaces() {
   );
 }
 
+
 function cinematic_toptix_field_formatter_view(
   $entity_type, $entity, $field, $instance, $langcode, $items, $display) {
   $element = array();
@@ -170,14 +171,26 @@ function cinematic_toptix_field_formatter_view(
     return $element;
   }
 
+  $sale_period = field_get_items($entity_type, $entity, 'field_cm_sale_time');
+
+
   global $language;
   $langadd = ($language->language == 'en') ? '%26culture=en-US' : '';
   
   foreach ($items as $delta => $item) {
+    if ($sale_period) {
+      $disabled = cinematic_toptix_active_sale($sale_period);
+      if ($disabled) {
+        $output = '<button class="toptix-purchase" disabled>' . $disabled . '</button';
+        $element[$delta] = array(
+          '#markup' => $output,
+        );
+        continue;
+      }
+    }
     $event_id = $item['value'];
     $url = 'http://' . TOPTIX_HOST . '/loader.aspx/?target=hall.aspx?event=' . $event_id . $langadd;
     $output = '<button class="toptix-purchase" data-url="' . $url . '">' . t('Tickets') . '</button>';
-
     $element[$delta] = array(
       '#markup' => $output,
       '#attached' => array(
@@ -194,4 +207,24 @@ function cinematic_toptix_field_formatter_view(
   }
 
   return $element;
+}
+
+function cinematic_toptix_active_sale($sale_period) {
+  $time_zone = new DateTimeZone($sale_period[0]['timezone']);
+  $now = new DateTime('now', $time_zone);
+  $date_check = new DateTime('now', $time_zone);
+  $date_check->setTimestamp($sale_period[0]['value']);
+  $disabled = '';
+  if ($now < $date_check) {
+    $date_text = $date_check->format('d M Y');
+    $disabled = t('Sale opens at @date', array('@date' => $date_text));
+  }
+  else {
+    $date_check->setTimestamp($sale_period[0]['value2']);
+    if ($now > $date_check) {
+      $date_text = $date_check->format('d M Y');
+      $disabled = t('Sale has ended at @date', array('@date' => $date_text));
+    }
+  }
+  return $disabled;
 }
