@@ -97,11 +97,11 @@ toptix_dialog.setup_dates = function(data) {
     window.alert(Drupal.t('Please set Sale end date manually'));
   }
   dates.push({
-    raw_date: data.EndSaleAt,
+    raw_date: data.StartSaleFrom,
     name: 'field_cm_sale_time[und][0][value]'
   });
   dates.push({
-    raw_date: data.StartSaleFrom,
+    raw_date: data.EndSaleAt,
     name: 'field_cm_sale_time[und][0][value2]'
   });
   return dates;
