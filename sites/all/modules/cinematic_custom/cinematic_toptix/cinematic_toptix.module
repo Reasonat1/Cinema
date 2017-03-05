@@ -181,7 +181,8 @@ function cinematic_toptix_field_formatter_view(
     if ($sale_period) {
       $disabled = cinematic_toptix_active_sale($sale_period);
       if ($disabled) {
-        $output = '<button class="toptix-purchase" disabled>' . $disabled . '</button';
+        $output = '<button class="toptix-purchase" disabled title="' . $disabled . '">';
+        $output .= t('Tickets') . '</button';
         $element[$delta] = array(
           '#markup' => $output,
         );
