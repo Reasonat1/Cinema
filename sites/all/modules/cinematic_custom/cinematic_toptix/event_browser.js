@@ -57,7 +57,7 @@ toptix_dialog.show_results = function(respone) {
     if (target.dataset.hasOwnProperty('id')) {
       self.hidden.val(target.dataset.id);
       // better to dispatch event
-      toptix_temp_update_date(target.dataset.id);
+      self.update_date(target.dataset.id);
       self.anchor.value = target.textContent;
       self.win.dialog('close');
     }
@@ -82,9 +82,7 @@ toptix_dialog.update_results = function() {
   });
 }
 
-function toptix_temp_update_date(id) {
-  var data = toptix_dialog.data[id];
-
+toptix_dialog.setup_dates = function(data) {
   var dates = [];
   dates.push({
     raw_date: data.ActualEventDate,
@@ -94,26 +92,45 @@ function toptix_temp_update_date(id) {
     raw_date: data.EndDate,
     name: 'field_cm_event_time[und][0][value2]'
   });
+  if (typeof(data.EndSaleAt) == 'undefined') {
+    data.EndSaleAt = '';
+    window.alert(Drupal.t('Please set Sale end date manually'));
+  }
+  dates.push({
+    raw_date: data.EndSaleAt,
+    name: 'field_cm_sale_time[und][0][value]'
+  });
+  dates.push({
+    raw_date: data.StartSaleFrom,
+    name: 'field_cm_sale_time[und][0][value2]'
+  });
+  return dates;
+}
+
+toptix_dialog.update_date = function (id) {
+  var data = this.data[id];
+  var dates = this.setup_dates(data);
 
   for (var iter = 0; iter < dates.length; iter++) {
-    var actual_date = new Date(dates[iter].raw_date);
-    var minutes = actual_date.getMinutes();
-    if (minutes < 10) {
-      minutes = '0' + minutes;
-    }
-    var time = actual_date.getHours() + ':' + minutes;
-
+    var actual_date = '';
+    var time = '';
     var datefield = jQuery('input[name="' + dates[iter].name + '[date]"]');
-
-    //datefield.datepicker('setDate', actual_date);
-    var format = datefield.datepicker('option', 'dateFormat');
-    if (format == null) {
-      format = 'd M yy';
-    }
-    var actual_date = jQuery.datepicker.formatDate(format, actual_date);
-    datefield.val(actual_date);
-
     var timefield = jQuery('input[name="' + dates[iter].name + '[time]"]');
+    if (dates[iter].raw_date) {
+      actual_date = new Date(dates[iter].raw_date);
+      var minutes = actual_date.getMinutes();
+      if (minutes < 10) {
+        minutes = '0' + minutes;
+      }
+      time = actual_date.getHours() + ':' + minutes;
+
+      var format = datefield.datepicker('option', 'dateFormat');
+      if (format == null) {
+        format = 'd M yy';
+      }
+      actual_date = jQuery.datepicker.formatDate(format, actual_date);
+    }
+    datefield.val(actual_date);
     timefield.val(time);
   }
 }

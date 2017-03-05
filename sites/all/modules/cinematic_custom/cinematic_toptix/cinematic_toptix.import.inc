@@ -144,11 +144,8 @@ class TopTixReader extends XMLReader {
       $interval = new DateInterval('PT' . $show['LongMinutes']. 'M');
       foreach ($show['events'] as $event) {
         $this->toptix->total_events++;
-        $date = new DateTime($event['ActualEventDate'], $time_zone);
         $mysql_ActualEventDate = $event['ActualEventDate'];
-        $event['ActualEventDate'] = $date->format('c'); // add +02:00
-        $end_date = $date->add($interval);
-        $event['EndDate'] = $end_date->format('c');
+        $this->alter_dates($event, $time_zone, $interval);
         $event['LongMinutes'] = $show['LongMinutes'];
         db_merge('toptix_events')
           ->key(array('local_id' => $event['EventLocalId']))
@@ -168,5 +165,31 @@ class TopTixReader extends XMLReader {
           ->execute();
       }
     }
+  }
+  
+  private function alter_dates(&$event, $time_zone, $interval) {
+    $date = new DateTime($event['ActualEventDate'], $time_zone);
+    $event['ActualEventDate'] = $date->format('c'); // add +02:00
+    $end_date = $date->add($interval);
+    $event['EndDate'] = $end_date->format('c');
+    unset($date, $end_date);
+
+    if (isset($event['EndSaleAt'])) {
+      $end_date = new DateTime($event['EndSaleAt'], $time_zone);
+      $event['EndSaleAt'] = $end_date->format('c');
+    }
+    elseif(0) {
+      $params = "{$event['ActualEventDate']}, {$event['EventLocalId']}";
+      watchdog('toptix import', 'end sale not set:' . $params);
+    }
+    if (isset($event['StartSaleFrom'])) {
+      $start_date = new DateTime($event['StartSaleFrom'], $time_zone);
+      $event['StartSaleFrom'] = $start_date->format('c');
+    }
+    elseif (0) {
+      $params = "{$event['ActualEventDate']}, {$event['EventLocalId']}";
+      watchdog('toptix import', 'start sale not set:' . $params);
+    }
+    unset($end_date, $start_date);
   }
 }
