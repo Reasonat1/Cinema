@@ -232,7 +232,7 @@ function cinematic_toptix_active_sale($sale_period, $sold_out, $sale_open) {
     $disabled = t('Sold out');
   }
   if ($sale_open and !($sale_open[0]['value'])) {
-    $disabled = t('Sale closd');
+    $disabled = t('Sale closed');
   }
   return $disabled;
 }
