@@ -170,8 +170,9 @@ function calendar_full_width_block_content(){
         }else{
             $lineup_name = $lineup_summary = $lineup_duration = $lineup_leading = $lineup_lang = $lineup_subtitle = '';
         }
-        $purchase = field_view_field('node', $node, 'field_toptix_purchase');
-        $purchase = drupal_render($purchase);
+        $purchase = field_view_field('node', $node, 'field_toptix_purchase', 'full');
+        //$purchase = drupal_render($purchase);
+        $purchase = 'TODO';
         if(!empty($node->field_cm_event_short_description['und'][0]['value'])){
           $summary_event = truncate_utf8($node->field_cm_event_short_description['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
         }else{
@@ -343,8 +344,9 @@ function ajax_calender_full_width_filter(){
         }else{
             $lineup_name = $lineup_summary = $lineup_duration = $lineup_leading = $lineup_lang = $lineup_subtitle = '';
         }
-        $purchase = field_view_field('node', $node, 'field_toptix_purchase');
-        $purchase = drupal_render($purchase);
+        $purchase = field_view_field('node', $node, 'field_toptix_purchase', 'full');
+        //$purchase = drupal_render($purchase);
+        $purchase = 'TODO';
         if(!empty($node->field_cm_event_short_description['und'][0]['value'])){
           $summary_event = truncate_utf8($node->field_cm_event_short_description['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
         }else{
