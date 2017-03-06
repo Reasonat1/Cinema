@@ -58,6 +58,7 @@ toptix_dialog.show_results = function(respone) {
       self.hidden.val(target.dataset.id);
       // better to dispatch event
       self.update_date(target.dataset.id);
+      self.update_status(target.dataset.id);
       self.anchor.value = target.textContent;
       self.win.dialog('close');
     }
@@ -135,3 +136,10 @@ toptix_dialog.update_date = function (id) {
   }
 }
 
+toptix_dialog.update_status = function (id) {
+  var data = this.data[id];
+  jQuery('input[name="field_tickets_sold_out[und]"]')
+    .prop('checked', (data.SoldOut == 'False'));
+  jQuery('input[name="field_include_ticket_sale[und]"]').
+    .prop('checked', (data.SaleStatus == 'Open'));
+}
