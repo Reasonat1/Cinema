@@ -139,7 +139,7 @@ toptix_dialog.update_date = function (id) {
 toptix_dialog.update_status = function (id) {
   var data = this.data[id];
   jQuery('input[name="field_tickets_sold_out[und]"]')
-    .prop('checked', (data.SoldOut == 'False'));
-  jQuery('input[name="field_include_ticket_sale[und]"]').
-    .prop('checked', (data.SaleStatus == 'Open'));
+    .prop('checked', (data.SoldOut != 'False'));
+  jQuery('input[name="field_include_ticket_sale[und]"]')
+    .prop('checked', !(data.SaleStatus != 'Open'));
 }
