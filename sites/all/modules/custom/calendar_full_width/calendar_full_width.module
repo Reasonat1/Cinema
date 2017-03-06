@@ -150,57 +150,32 @@ function calendar_full_width_block_content(){
             $hall_name = '';
         }
 		    $lobbytitle = l($node->title, $path);
-		    if(!empty($node->field_cm_event_lineup['und'])){
+    if(!empty($node->field_cm_event_lineup['und'])){
             $lineup_id = node_load($node->field_cm_event_lineup['und'][0]['target_id']);
+            $lineup_name = $lineup_id->title;
+            $lineup_path = drupal_get_path_alias('node/'.$lineup_id->nid, $lang_name);
+            $lineup_summary = $lineup_id->field_cm_movie_short_summary['und'][0]['value'];
+            if(!empty($lineup_id->field_cm_movie_duration['und'])){
+              $lineup_duration = $lineup_id->field_cm_movie_duration['und'][0]['interval'].' '.t($lineup_id->field_cm_movie_duration['und'][0]['period'].'s');
+            } else{
+              $lineup_duration = '';
+            }
+            $lineup_leading = $lineup_id->field_cm_movie_meta_credit['und'][0]['value'];
+            $lineup_lang = (!empty($lineup_id->field_cm_movie_language['und']) && false)?t(taxonomy_term_load($lineup_id->field_cm_movie_language['und'][0]['target_id'])->name):'';
+            $lineup_subtitle = (!empty($lineup_id->field_cm_movie_subtitle['und']) && false)?t('@languages subtitles', array('@languages' => t(taxonomy_term_load($lineup_id->field_cm_movie_subtitle['und'][0]['target_id'])->name))):'';
             if((strtolower($lineup_id->title))==(strtolower($node->title))){
               $lineup_name = l($lineup_id->title, $path);
               $lobbytitle = '';
             }
-            else{
-              $lineup_name = $lineup_id->title;
-            }
-			      $lineup_path = drupal_get_path_alias('node/'.$lineup_id->nid);
-            if(!empty($node->field_cm_movie_short_summary['und'])){
-              $lineup_summary = $lineup_id->field_cm_movie_short_summary['und'][0]['value'];
-            }
-            else{
-              $lineup_summary = '';
-            }
-            if(!empty($node->field_cm_movie_duration['und'])){
-            $lineup_duration = $lineup_id->field_cm_movie_duration['und'][0]['interval'].' '.t($lineup_id->field_cm_movie_duration['und'][0]['period'].'s');
-            }
-            else{
-              $lineup_duration = '';
-            }
-            if(!empty($node->field_cm_movie_meta_credit['und'])){
-              $lineup_leading = $lineup_id->field_cm_movie_meta_credit['und'][0]['value'];
-            }
-            else{
-              $lineup_leading = '';
-            }
-
-        if(!empty($lineup_id->field_cm_movie_language['und']) && false){
-            $lineup_lang = t(taxonomy_term_load($lineup_id->field_cm_movie_language['und'][0]['target_id'])->name);
-		}else{
-              $lineup_lang = '';
-            }
-			$lineup_subtitle = (!empty($lineup_id->field_cm_movie_subtitle['und']) && false)?t('@languages subtitles', array('@languages' => t(taxonomy_term_load($lineup_id->field_cm_movie_subtitle['und'][0]['target_id'])->name))):'';
         }else{
             $lineup_name = $lineup_summary = $lineup_duration = $lineup_leading = $lineup_lang = $lineup_subtitle = '';
         }
-		
-
-
-
-
-
-
         if(!empty($node->field_toptix_purchase['und'])){
             $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
             $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
             if(empty($node->field_tickets_sold_out['und'][0]['value'])){
               $purchase = '<button data-url="'.$top_link.'" class="toptix-purchase">'.t('Tickets').'</button>';
-            } else {
+            } else{
               $purchase = '<button class="sold-out">'.t('sold out').'</button>';
             }
         }else{
@@ -224,6 +199,8 @@ function calendar_full_width_block_content(){
                 $file_ext_movie = file_load($picture_path_ext_movie);
                 $picture_path_ext_movie = $file_ext_movie->uri;
                 $image_event= '<img src="' . image_style_url('lobby', $picture_path_ext_movie) . '" alt="" />';
+              } else{
+                  $image_event = $default_image;
               }
           
         }
@@ -246,12 +223,12 @@ function calendar_full_width_block_content(){
                                       <div class="time">'.$event_time.'</div>
                                       <div class="hall">'.$hall_name.'</div>
                                       <div class="calendar-flag">';
-                                    $event_start_date=(!empty($node->field_cm_event_time['und']))?$node->field_cm_event_time['und'][0]['value']:'';
+      $event_start_date=(!empty($node->field_cm_event_time['und']))?$node->field_cm_event_time['und'][0]['value']:'';
                                     if((!empty($node->field_toptix_purchase['und'])) && ($event_start_date>time())){ 
-                                      $output .= '<div class="purchase">'.$purchase.'</div>';
-                                      $output .=  '<span class="add-event only-desktop">'._return_addthisevent_markup($node).'</span><span class="like-flag only-desktop">'.$flag.'</span>';
-                                    }
-                                     $output .=  '</div></div>';
+                                         $output .= '<div class="purchase">'.$purchase.'</div>';
+                                         $output .= '<span class="add-event only-desktop">'._return_addthisevent_markup($node).'</span><span class="like-flag only-desktop">'.$flag.'</span>';
+                                      }
+                                      $output .= '</div></div>';
             $output .='</div>';
             $output .='<div class="lobby-term-left">';
                 $output .= '<div class="image-lobby">';
@@ -263,28 +240,27 @@ function calendar_full_width_block_content(){
             $output .="</div>";
             $output .= '<div class="lobby-term-right">';
                 $output .= '<div class="lobby-title">'.$lobbytitle.'</div>';
-				$output .= '<div class="lobby-summary">'.strip_tags($summary_event).'</div>';
-				$output .= ($summary_event)?'<div class="lobby-title second">'.$lineup_name.'</div>':'';
-				 if((!empty($lineup_id->field_cm_movie_duration['und'])) || (!empty($lineup_id->field_cm_movie_meta_credit['und']))){
-               $output .= '<div class="calendar-below-title-content">';
-               if($lineup_leading != ''){
-                $output .= '<span class="cal-hall">'.$lineup_leading.'</span>';
-               }
-               if($lineup_duration != ''){
-                $output .= '<span class="cal-length">'.$lineup_duration.'</span>';
-               }
-               if(($lineup_lang != '') || ($lineup_subtitle != '')){
-                $output .= '<span class="cal-lang">'.$lineup_lang.', '.$lineup_subtitle.'</span>';
-               }
-               $output .= '</div>';
-				}
-				$output .= '<div class="lobby-summary">'.strip_tags($lineup_summary).'</div>';
-       
+        $output .= '<div class="lobby-summary">'.strip_tags($summary_event).'</div>';
+        $output .= '<div class="lobby-title second">'.$lineup_name.'</div>';
+        if((!empty($lineup_id->field_cm_movie_duration['und'])) || (!empty($lineup_id->field_cm_movie_meta_credit['und']))){
+                $output .= '<div class="calendar-below-title-content">';
+                if($lineup_leading != ''){
+                  $output .= '<span class="cal-hall">'.$lineup_leading.'</span>';
+                }
+                if($lineup_duration != ''){
+                  $output .= '<span class="cal-length">'.$lineup_duration.'</span>';
+                }
+                if(($lineup_lang != '') || ($lineup_subtitle != '')){
+                  $output .= '<span class="cal-lang">'.$lineup_lang.', '.$lineup_subtitle.'</span>';
+                }
+                $output .= '</div>';
+        }
+        $output .= '<div class="lobby-summary">'.strip_tags($lineup_summary).'</div>';
             $output .= '</div>';
             $output .='<div class="clr"></div>';
         $output .="</div>";
       }
-     $output.= "</div></div></div>";
+    $output.= "</div></div>";
      return $output;
 }
 
@@ -361,7 +337,11 @@ function ajax_calender_full_width_filter(){
             $lineup_name = $lineup_id->title;
             $lineup_path = drupal_get_path_alias('node/'.$lineup_id->nid, $lang_name);
             $lineup_summary = $lineup_id->field_cm_movie_short_summary['und'][0]['value'];
-            $lineup_duration = $lineup_id->field_cm_movie_duration['und'][0]['interval'].' '.t($lineup_id->field_cm_movie_duration['und'][0]['period'].'s');
+            if(!empty($lineup_id->field_cm_movie_duration['und'])){
+              $lineup_duration = $lineup_id->field_cm_movie_duration['und'][0]['interval'].' '.t($lineup_id->field_cm_movie_duration['und'][0]['period'].'s');
+            } else{
+              $lineup_duration = '';
+            }
             $lineup_leading = $lineup_id->field_cm_movie_meta_credit['und'][0]['value'];
 			      $lineup_lang = (!empty($lineup_id->field_cm_movie_language['und']) && false)?t(taxonomy_term_load($lineup_id->field_cm_movie_language['und'][0]['target_id'])->name):'';
 			      $lineup_subtitle = (!empty($lineup_id->field_cm_movie_subtitle['und']) && false)?t('@languages subtitles', array('@languages' => t(taxonomy_term_load($lineup_id->field_cm_movie_subtitle['und'][0]['target_id'])->name))):'';
@@ -372,17 +352,7 @@ function ajax_calender_full_width_filter(){
         }else{
             $lineup_name = $lineup_summary = $lineup_duration = $lineup_leading = $lineup_lang = $lineup_subtitle = '';
         }
-        if(!empty($node->field_toptix_purchase['und'])){
-            $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
-            $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
-            if(empty($node->field_tickets_sold_out['und'][0]['value'])){
-              $purchase = '<button data-url="'.$top_link.'" class="toptix-purchase">'.t('Tickets').'</button>';
-            } else{
-              $purchase = '<button class="sold-out">'.t('sold out').'</button>';
-            }
-        }else{
-            $purchase = '';
-        }
+        $purchase = field_view_field('node', $node, 'field_toptix_purchase');
         if(!empty($node->field_cm_event_short_description['und'][0]['value'])){
           $summary_event = truncate_utf8($node->field_cm_event_short_description['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
         }else{
@@ -401,6 +371,8 @@ function ajax_calender_full_width_filter(){
                 $file_ext_movie = file_load($picture_path_ext_movie);
                 $picture_path_ext_movie = $file_ext_movie->uri;
                 $image_event= '<img src="' . image_style_url('lobby', $picture_path_ext_movie) . '" alt="" />';
+              } else{
+                  $image_event = $default_image;
               }
           
         }
