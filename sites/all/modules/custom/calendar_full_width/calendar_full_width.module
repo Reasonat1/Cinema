@@ -170,17 +170,7 @@ function calendar_full_width_block_content(){
         }else{
             $lineup_name = $lineup_summary = $lineup_duration = $lineup_leading = $lineup_lang = $lineup_subtitle = '';
         }
-        if(!empty($node->field_toptix_purchase['und'])){
-            $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
-            $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
-            if(empty($node->field_tickets_sold_out['und'][0]['value'])){
-              $purchase = '<button data-url="'.$top_link.'" class="toptix-purchase">'.t('Tickets').'</button>';
-            } else{
-              $purchase = '<button class="sold-out">'.t('sold out').'</button>';
-            }
-        }else{
-            $purchase = '';
-        }
+        $purchase = field_view_field('node', $node, 'field_toptix_purchase');
         if(!empty($node->field_cm_event_short_description['und'][0]['value'])){
           $summary_event = truncate_utf8($node->field_cm_event_short_description['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
         }else{
