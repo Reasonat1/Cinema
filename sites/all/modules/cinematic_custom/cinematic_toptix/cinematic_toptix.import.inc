@@ -168,21 +168,15 @@ class TopTixReader extends XMLReader {
   }
   
   private function alter_dates(&$event, $time_zone, $interval) {
-    $info = field_info_instance('node', 'field_cm_event_time', 'cm_event');
-    $input_format = 'm.d.Y - H:i:s';
-    if ($info) {
-      $input_format = $info['widget']['settings']['input_format'];
-    }
-
     $date = new DateTime($event['ActualEventDate'], $time_zone);
-    $event['ActualEventDate'] = $date->format($input_format);
+    $event['ActualEventDate'] = $date->format('c'); // add +02:00
     $end_date = $date->add($interval);
-    $event['EndDate'] = $end_date->format($input_format);
+    $event['EndDate'] = $end_date->format('c');
     unset($date, $end_date);
 
     if (isset($event['EndSaleAt'])) {
       $end_date = new DateTime($event['EndSaleAt'], $time_zone);
-      $event['EndSaleAt'] = $end_date->format($input_format);
+      $event['EndSaleAt'] = $end_date->format('c');
     }
     elseif(0) {
       $params = "{$event['ActualEventDate']}, {$event['EventLocalId']}";
@@ -190,7 +184,7 @@ class TopTixReader extends XMLReader {
     }
     if (isset($event['StartSaleFrom'])) {
       $start_date = new DateTime($event['StartSaleFrom'], $time_zone);
-      $event['StartSaleFrom'] = $start_date->format($input_format);
+      $event['StartSaleFrom'] = $start_date->format('c');
     }
     elseif (0) {
       $params = "{$event['ActualEventDate']}, {$event['EventLocalId']}";
