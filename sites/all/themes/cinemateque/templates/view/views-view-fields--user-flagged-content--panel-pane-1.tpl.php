@@ -283,110 +283,15 @@
             }
             $output_event .='<td class="views-field-ops only-desktop">'. $flag . '</td>';
             $output_event .='<td class="add-event only-desktop">'. $addevent . '</td>';
-            if(!empty($node->field_toptix_purchase['und'])){
-              $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
-              $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
-              if(empty($node->field_tickets_sold_out['und'][0]['value'])){
-                $output_event .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t("TICKETS").'</button>'.'</td>';
-              } else{
-                $output_event .= '<td class="purchase">'.'<button class="sold-out">'.t("sold out").'</button>'.'</td>';
-              }
-            } 
-            else{
-              $output_event .= '<td class="purchase"></td>';
-            }            
+            $toptix_button = field_view_field('node', $node, 'field_toptix_purchase', 'full');
+            $toptix_button = drupal_render($toptix_button);
+            $output_event .= '<td class="purchase">' . $toptix_button . '</td>';
            $output_event .= '</tr>';
          $output_event .= '</table>';
        $output_event .= '</div>';
     }else{
      $output ='';
 	 $output .= screaning_output($node->nid);
-     // $output .='<div class="table-responsive">';
-        // $output .= '<table class="table">';
-         // $output .= ' <tbody>';
-         // /********For Movie****/
-        // if(!empty($node->field_event_corresponding_ref['und'])){
-            // $movie_node_info = node_load($node->field_event_corresponding_ref['und'][0]['target_id']);
-            // $line_event = $movie_node_info->field_cm_event_lineup['und'];       
-        // }
-        // /****Movie Group Nid****/ 
-        // if(!empty($node->field_movie_referenced['und'])){
-            // $movie_node = node_load($node->field_movie_referenced['und'][0]['target_id']);
-        // }
-        // if(!empty($movie_node->field_event_corresponding_ref['und'])){
-          // $event_node = node_load($movie_node->field_event_corresponding_ref['und'][0]['target_id']);
-           // $line_event = $event_node->field_cm_event_lineup['und'];
-        // }
-		
-        // /****Movie Group Nid****/
-        // if(!empty($line_event)){
-            // foreach ($line_event as $row) {
-              // $event_ref_nid = $row['target_id'];
-              // if(!empty($row['target_id'])){
-                // $node_movie = node_load($event_ref_nid);
-              // } 
-			  // $node_event = '';
-			  // $flags = '';
-              // if(!empty($node_movie->field_event_corresponding_ref['und'])){
-                // $node_event = node_load($node_movie->field_event_corresponding_ref['und'][0]['target_id']);
-				
-				// //if (!empty($node_event->field_cm_event_time) && $node_event->field_cm_event_time['und'][0]['value']<time()) {dpm($node_event->field_cm_event_time); dpm(time()); continue;}
-                // if(!empty($node_event->field_cm_event_short_title['und'])){
-                 // $event_title = $node_event->field_cm_event_short_title['und'][0]['value'];
-                // }
-                // $path = drupal_get_path_alias('node/'.$node_event->nid);
-                // $flags = flag_create_link('favorite_', $node_event->nid);
-              // }
-              // $addevent = '<div class="views-field views-field-php">'._return_addthisevent_markup($node_event).'</div>';
-              // if(!empty($node_event->field_cm_event_time['und'])){
-                  // $event_date = format_date($node_event->field_cm_event_time['und'][0]['value'], 'custom', 'l | d.m.y');
-                  // $event_date_mobile = date('d.m.y', $node_event->field_cm_event_time['und'][0]['value']);
-                  // $event_time = date('G:i', $node_event->field_cm_event_time['und'][0]['value']);
-              // }
-              // else{
-                  // $event_date = '';
-                  // $event_date_mobile = '';
-                  // $event_time = '';           
-              // }
-              // $output .= '<tr class="row-custom-lobby">';
-                // $output .= '<td class="date only-desktop">'.$event_date.'</td>';
-                // $output .= '<td class="time"><div class="only-mobile">'.$event_date_mobile.'</div>'.$event_time.'</td>';
-                // if(!empty($node_event->field_cm_event_hall['und'])){
-                  // $hall_id = taxonomy_term_load($node_event->field_cm_event_hall['und'][0]['target_id']);
-                  // $hall_name = $hall_id->name;
-                  // $output .= '<td class="hall only-desktop">'.$hall_name.'</td>';
-                // }
-                // else{
-                  // $hall_name = '';
-                  // $output .= '<td class="hall only-desktop"></td>';
-                // }
-                // $output .= '<td class="title only-desktop">';
-                // if(!empty($event_title)){
-                  // $output .= l($event_title, $path);
-                // }
-                // $output .= '</td>';
-                // if(!empty($node_event->field_cm_event_internal_id['und'])){
-                  // $event_code = $node_event->field_cm_event_internal_id['und'][0]['value'];
-                  // $output .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div>'.$event_code.'</td>';
-                // }
-                // else{
-                // $output .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div></td>';
-                // }
-                // $output .='<td class="views-field-ops only-desktop">'. $flags . '</td>';
-                // $output .='<td class="add-event only-desktop">'. $addevent . '</td>';
-                // if(!empty($node_event->field_toptix_purchase['und'])){
-                  // $toptix_code = $node_event->field_toptix_purchase['und'][0]['value'];
-                  // $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
-                  // $output .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">' . t("TICKETS") . '</button>'.'</td>';
-                // }
-                // else{
-                  // $output .= '<td class="purchase"></td>';
-                // }
-                // $output .= '</tr>';
-            // }
-        // }
-         // $output .= '</table>';
-       // $output .= '</div>';
     }  
       switch ($node->type) {
         case "cm_person":
@@ -433,7 +338,6 @@
           $duration_info = '';
           $top_text = '';
       }
-
       switch ($node->type) {
       case "cm_event":
         print '<div class="lobby-container event">';
