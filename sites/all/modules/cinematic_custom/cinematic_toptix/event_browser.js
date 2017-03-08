@@ -118,9 +118,10 @@ toptix_dialog.update_date = function (id) {
     var datefield = jQuery('input[name="' + dates[iter].name + '[date]"]');
     var timefield = jQuery('input[name="' + dates[iter].name + '[time]"]');
     if (dates[iter].raw_date) {
-      var extract = dates[iter].raw_date.match(/(.+) - ([^:]+:[^:]+)/);
-      input_date = extract[1];
-      input_time = extract[2];
+      var date = new Date(dates[iter].raw_date);
+      input_date = jQuery.datepicker.formatDate('d M yy', date);
+      extract = dates[iter].raw_date.match(/T([^:]+:[^:]+)/);
+      input_time = extract[1];
     }
     datefield.val(input_date);
     timefield.val(input_time);

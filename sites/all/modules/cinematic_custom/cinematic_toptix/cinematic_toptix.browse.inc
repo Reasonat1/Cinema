@@ -7,7 +7,6 @@ function cinematic_toptix_browse() {
   $page = isset($_GET['page']) ? $_GET['page'] : 0;
 
   list($shows, $total, $data) = cinematic_toptix_browse_query($page);
-  cinematic_toptix_process_dates($data);
 
   $filters = cinematic_toptix_browse_control($page, $total);
   $output = theme('cinematic_browser', array('shows' => $shows, 'filters' => $filters));
@@ -129,23 +128,4 @@ function cinematic_toptix_browse_query($page) {
   }
 
   return array($shows, $count, $data);
-}
-
-function cinematic_toptix_process_dates(&$data) {
-  $dates = array('ActualEventDate','EndDate','StartSaleFrom','EndSaleAt');
-  $info = field_info_instance('node', 'field_cm_event_time', 'cm_event');
-  $input_format = 'm.d.Y - H:i:s';
-  if ($info) {
-    $input_format = $info['widget']['settings']['input_format'];
-  }
-  $time_zone = new DateTimeZone('Asia/Jerusalem');
-  foreach ($data as &$event) {
-    foreach ($dates as $name) {
-      if (!isset($event[$name])) {
-        continue;
-      }
-      $date = new DateTime($event[$name], $time_zone);
-      $event[$name] = $date->format($input_format);
-    }
-  }
 }
