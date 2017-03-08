@@ -113,33 +113,28 @@ toptix_dialog.update_date = function (id) {
   var dates = this.setup_dates(data);
 
   for (var iter = 0; iter < dates.length; iter++) {
-    var actual_date = '';
-    var time = '';
+    var input_date = '';
+    var inputtime = '';
     var datefield = jQuery('input[name="' + dates[iter].name + '[date]"]');
     var timefield = jQuery('input[name="' + dates[iter].name + '[time]"]');
     if (dates[iter].raw_date) {
-      actual_date = new Date(dates[iter].raw_date);
-      var minutes = actual_date.getMinutes();
-      if (minutes < 10) {
-        minutes = '0' + minutes;
-      }
-      time = actual_date.getHours() + ':' + minutes;
-
-      var format = datefield.datepicker('option', 'dateFormat');
-      if (format == null) {
-        format = 'd M yy';
-      }
-      actual_date = jQuery.datepicker.formatDate(format, actual_date);
+      var extract = dates[iter].raw_date.match(/(.+) - ([^:]+:[^:]+)/);
+      input_date = extract[1];
+      input_time = extract[2];
     }
-    datefield.val(actual_date);
-    timefield.val(time);
+    datefield.val(input_date);
+    timefield.val(input_time);
   }
 }
 
 toptix_dialog.update_status = function (id) {
   var data = this.data[id];
-  jQuery('input[name="field_tickets_sold_out[und]"]')
-    .prop('checked', (data.SoldOut != 'False'));
-  jQuery('input[name="field_include_ticket_sale[und]"]')
-    .prop('checked', !(data.SaleStatus != 'Open'));
+  var field = jQuery('input[name="field_tickets_sold_out[und]"]');
+  if (field.length) {
+    field.prop('checked', (data.SoldOut != 'False'));
+  }
+  field = jQuery('input[name="field_include_ticket_sale[und]"]');
+  if (field.length) {
+    field.prop('checked', !(data.SaleStatus != 'Open'));
+  }
 }
