@@ -283,18 +283,9 @@
             }
             $output_event .='<td class="views-field-ops only-desktop">'. $flag . '</td>';
             $output_event .='<td class="add-event only-desktop">'. $addevent . '</td>';
-            if(!empty($node->field_toptix_purchase['und'])){
-              $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
-              $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
-              if(empty($node->field_tickets_sold_out['und'][0]['value'])){
-                $output_event .= '<td class="purchase">'.'<button data-url="'.$top_link.'" class="toptix-purchase">'.t("TICKETS").'</button>'.'</td>';
-              } else{
-                $output_event .= '<td class="purchase">'.'<button class="sold-out">'.t("sold out").'</button>'.'</td>';
-              }
-            } 
-            else{
-              $output_event .= '<td class="purchase"></td>';
-            }            
+            $purchase = field_view_field('node', $node, 'field_toptix_purchase', 'full');
+            $purchase = drupal_render($purchase);
+            $output_event .= '<td class="purchase">' . $purchase . '</td>';
            $output_event .= '</tr>';
          $output_event .= '</table>';
        $output_event .= '</div>';
