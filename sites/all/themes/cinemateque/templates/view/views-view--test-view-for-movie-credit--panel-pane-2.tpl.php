@@ -8,11 +8,15 @@ $title_eng='';
 if(!empty($trans)){
       if($node->language == 'he')  {
         $titles = $trans['en']->title;  
-       $path = drupal_get_path_alias('/en/node/'.$node->tnid);  
+        $path = drupal_get_path_alias('/en/node/'.$node->tnid);  
         $title_eng = '<div class="translated-movie-title"><div class="field-content profession">'. t('Movie title'). ':</div>  ';
         $title_eng .= '<div class="views-field-views-conditional"><a href="'.$path.'">'.  $titles .'</a></div>';
         $title_eng .=  '</div>';
-    }	
+      }	else if ($node->field_original_title){
+        $title_eng = '<div class="translated-movie-title"><div class="field-content profession">'. t('Original title'). ':</div>  ';
+        $title_eng .= '<div class="views-field-views-conditional">'.$node->field_original_title['und'][0]['value'].'</a></div>';
+        $title_eng .=  '</div>';
+      }
 $rows = '<div class="credit-area"><div class="credits-view"><div class="inside">'.$title_eng.$rows.'</div></div></div>';	
 } 
 else{
