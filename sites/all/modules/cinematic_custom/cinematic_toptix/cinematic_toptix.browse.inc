@@ -29,23 +29,23 @@ function cinematic_toptix_browse_control($page, $total) {
     $options .= " > $iter </option>";
   }
   $label = '<label>' . t('Pager') . '</label>';
-  $filters['select_page'] = $label . '<select name="pager">' . $options . '</select>';
+  $filters['select_page'] = '<div class="filter">'.$label . '<select name="pager">' . $options . '</select></div>';
 
   $label = '<label>' . t('Title') . '</label>';
   $default = isset($_GET['title']) ? 'value="' . $_GET['title'] . '"' : '';
-  $filters['title_search'] = $label . '<input ' . $default . ' class="form-text" type="text" size="15" name="title"></input>';
+  $filters['title_search'] = '<div class="filter">'.$label . '<input ' . $default . ' class="form-text" type="text" size="15" name="title"></input></div>';
 
 
   $date_range = isset($_GET['date_range']) ? explode(':', $_GET['date_range']) : array(0, 0);
 
-  $from = '<labe>' . t('From date') . '</label>';
+  $from = '<label>' . t('From date') . '</label>';
   $default = $date_range[0] ? 'value=' . $date_range[0] : '';
   $from .= '<input ' . $default . ' class="form-text" type="text" size="15" name="date_from"></input>';
 
-  $to = '<labe>' . t('To date') . '</label>';
+  $to = '<label>' . t('To date') . '</label>';
   $default = $date_range[1] ? 'value=' . $date_range[1] : '';
   $to .= '<input ' . $default . ' class="form-text" type="text" size="15" name="date_to"></input>';
-  $filters['date_range'] = $from . $to;
+  $filters['date_range'] = '<div class="filter">'.$from.'</div><div class="filter">'.$to.'</div>';
 
   return $filters; 
 }

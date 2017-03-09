@@ -3,14 +3,34 @@
 }
 
 .browser-wrapper .filters {
-  position: absolute;
-  width: 25%;
-  padding: 0 10px;
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+}
+.browser-wrapper .filter{
+  display: inline-block;
+  width: 110px;
+  margin-right: 20px;
+}
+
+.browser-wrapper .filter input{
+  width: 100%;
+}
+
+.browser-wrapper .date-range{
+  display: inline-block;
+}
+
+.browser-wrapper .filter select{
+    height: 26px;
+    border: 1px solid #ddd;
+    width: 100%; 
 }
 
 .browser-wrapper .browser-results {
-  width: 70%;
-  margin-left: 30%;
+  width: 100%;
+  padding: 0 10px;
 }
 
 [dir="rtl"] .browser-wrapper .browser-results {
@@ -22,3 +42,4 @@
   color: #0074bd;
   cursor: pointer;
 }
+
