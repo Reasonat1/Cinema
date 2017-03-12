@@ -26,6 +26,31 @@ toptix_dialog.setup = function(anchor) {
 
 toptix_dialog.show_results = function(respone) {
   var results = jQuery(respone.results);
+
+  var check_active_input = function() {
+    var filter_input = jQuery(this);
+    if (filter_input.val()) {
+      filter_input.prev().addClass('active');
+    }
+    else {
+      filter_input.prev().removeClass('active');
+    }
+  };
+  results.find('.filters input')
+    .each(check_active_input)
+    .change(check_active_input);
+  results.find('.filters').click(function(event) {
+    if (event.target.nodeName != 'LABEL') {
+      return;
+    }
+    var input_label = jQuery(event.target);
+    if (!input_label.hasClass('active')) {
+      return;
+    }
+    input_label.removeClass('active');
+    input_label.next().val('');
+  });
+
   this.data = respone.data;
   if (this.win) {
     this.win.dialog('destroy');

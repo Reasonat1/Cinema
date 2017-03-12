@@ -8,10 +8,16 @@
   padding: 10px;
   overflow: hidden;
 }
+
 .browser-wrapper .filter{
   display: inline-block;
   width: 110px;
   margin-right: 20px;
+}
+
+.browser-wrapper .filter label.active {
+  cursor: pointer;
+  color: red;
 }
 
 .browser-wrapper .filter input{
