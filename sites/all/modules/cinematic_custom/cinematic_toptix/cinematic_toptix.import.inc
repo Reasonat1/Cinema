@@ -37,6 +37,66 @@ class TopTixImport {
     $holders = array('@count1' => $total_shows, '@count2' => $total_events);
     return t('imported @count1 shows and @count2 events', $holders);
   }
+
+  public static function create_events($movie) {
+    $show_id = field_get_items('node', $movie, 'field_toptix_purchase');
+    if (!$show_id) {
+      return;
+    }
+    $show_id = $show_id[0]['value'];
+
+    $query = db_select('field_data_field_cm_event_lineup', 'el');
+    $query->condition('field_cm_event_lineup_target_id', $movie->nid);
+    $query->condition('el.entity_type', 'node');
+    $query->join('field_data_field_toptix_purchase', 'tp', 'tp.entity_id = el.entity_id');
+    $query->condition('tp.bundle', 'cm_event');
+    $query->addField('tp', 'field_toptix_purchase_value');
+    $query->addExpression('1');
+    $existing_events = $query->execute()->fetchAllKeyed();
+
+    $query = db_select('toptix_shows', 'ts');
+    $query->condition('te.show_id', $show_id);
+    $query->join('toptix_events', 'te', 'ts.id = te.show_id');
+    $query->join('toptix_events_data', 'ted', 'ted.local_id = te.local_id');
+    $query->fields('te', array('local_id', 'event_date'));
+    $query->fields('ted', array('data'));
+    $events = $query->execute()->fetchAll();
+
+    foreach ($events as &$event) {
+      if ($existing_events and isset($existing_events[$event->local_id])) {
+        continue;
+      }
+      $event->data = unserialize($event->data);
+      $event_node = entity_create('node', array('type' => 'cm_event'));
+      $event_node->uid = $movie->uid;
+      $wrapper = entity_metadata_wrapper('node', $event_node);
+      $wrapper->title = $movie->title;
+      $wrapper->field_toptix_purchase = $event->local_id;
+      $wrapper->field_cm_event_lineup->set(array($movie->nid));
+      $start_date = new DateTime($event->data['ActualEventDate']);
+      $end_date = new DateTime($event->data['EndDate']);
+      $event_time = array(
+        'value' => $start_date->getTimestamp(), 
+        'value2' => $end_date->getTimestamp(),
+        'timezone' => 'Asia/Jerusalem',
+      );
+      $wrapper->field_cm_event_time->set($event_time);
+
+      if (isset($event->data['EndSaleAt'])) {
+        $start_date = new DateTime($event->data['StartSaleFrom']);
+        $end_date = new DateTime($event->data['EndSaleAt']);
+        $sale_time = array(
+          'value' => $start_date->getTimestamp(), 
+          'value2' => $end_date->getTimestamp(),
+          'timezone' => 'Asia/Jerusalem',
+        );
+        $wrapper->field_cm_sale_time->set($sale_time);
+      }
+
+      $wrapper->save();
+      drupal_set_message('event id=' . $wrapper->getIdentifier());
+    }
+  }
 }
 
 class TopTixContext {
@@ -89,6 +149,7 @@ class TopTixReader extends XMLReader {
       case 'EventLocalId':
       case 'ActualEventDate':
       case 'LongMinutes':
+      case 'Code':
       default:
         $this->toptix->key = $this->name;
         break;
@@ -122,11 +183,14 @@ class TopTixReader extends XMLReader {
   private function write_shows() {
     $ids = array();
     $transaction = db_transaction();
+    $fields = array();
     foreach ($this->toptix->shows as $show) {
       $ids[] = $show['ID'];
+      $fields['title'] = $show['Name'];
+      $fields['code'] = $show['Code'];
       db_merge('toptix_shows')
         ->key(array('external_id' => $show['ID']))
-        ->fields(array('title' => $show['Name']))
+        ->fields($fields)
         ->execute();
     }
     $query = db_select('toptix_shows', 'ts');

@@ -99,28 +99,30 @@ function cinematic_toptix_browse_query($page) {
   $events_query->condition('te.event_date', $today, '>');
   $events_query->join('toptix_shows', 'ts', 'ts.id = te.show_id');
   $events_query->condition('te.show_id', $show_ids, 'IN');
-  $events_query->fields('ts', array('title'));
+  $events_query->fields('ts', array('title', 'code'));
   $events_query->fields('te', array('show_id', 'local_id', 'event_date'));
   $events = $events_query->execute()->fetchAll();
 
   $shows = array();
   $event_ids = array();
   foreach ($events as $event) {
-    $event_ids[$event->local_id] = $event->title;
+    $event_ids[] = $event->local_id;
     if (!isset($shows[$event->show_id])) {
-      $shows[$event->show_id] = array('title' => $event->title, 'events' => '');
+      $shows[$event->show_id] = array(
+        'title' => "{$event->title} : {$event->code}",
+        'events' => ''
+      );
     }
     $shows[$event->show_id]['events'] .= "<div data-id=\"$event->local_id\"> $event->local_id : $event->event_date </div>";
   }
 
   if ($event_ids) {
     $query = db_select('toptix_events_data', 'ted');
-    $query->condition('local_id', array_keys($event_ids), 'IN');
+    $query->condition('local_id', $event_ids, 'IN');
     $query->fields('ted', array('local_id', 'data'));
     $data = $query->execute()->fetchAllKeyed();
     foreach ($data as $id => &$event_data) {
       $event_data = unserialize($event_data);
-      $event_data['title'] = $event_ids[$id];
     }
   }
   else {

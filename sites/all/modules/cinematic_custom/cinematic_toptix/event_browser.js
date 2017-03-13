@@ -15,6 +15,8 @@
 var toptix_dialog = {anchor: null, win: null, hidden: null};
 
 toptix_dialog.setup = function(anchor) {
+  this.bundle = anchor.dataset.bundle;
+  this.update_form = (this.bundle == 'cm_movie' ? this.update_movie : this.update_event);
   var url = Drupal.settings.basePath + 'content/events-browser';
   this.anchor = anchor;
   var self = this;
@@ -26,30 +28,7 @@ toptix_dialog.setup = function(anchor) {
 
 toptix_dialog.show_results = function(respone) {
   var results = jQuery(respone.results);
-
-  var check_active_input = function() {
-    var filter_input = jQuery(this);
-    if (filter_input.val()) {
-      filter_input.prev().addClass('active');
-    }
-    else {
-      filter_input.prev().removeClass('active');
-    }
-  };
-  results.find('.filters input')
-    .each(check_active_input)
-    .change(check_active_input);
-  results.find('.filters').click(function(event) {
-    if (event.target.nodeName != 'LABEL') {
-      return;
-    }
-    var input_label = jQuery(event.target);
-    if (!input_label.hasClass('active')) {
-      return;
-    }
-    input_label.removeClass('active');
-    input_label.next().val('');
-  });
+  this.process_results(results);
 
   this.data = respone.data;
   if (this.win) {
@@ -77,17 +56,6 @@ toptix_dialog.show_results = function(respone) {
   date_fields.datepicker({dateFormat: 'yy-mm-dd'});
 
   var self = this;
-  results.click(function(event){
-    var target = event.target;
-    if (target.dataset.hasOwnProperty('id')) {
-      self.hidden.val(target.dataset.id);
-      // better to dispatch event
-      self.update_date(target.dataset.id);
-      self.update_status(target.dataset.id);
-      self.anchor.value = target.textContent;
-      self.win.dialog('close');
-    }
-  });
 
   this.win.find('.filters button').click(function(){
     self.update_results();
@@ -98,6 +66,55 @@ toptix_dialog.show_results = function(respone) {
   this.date_to = this.win.find('input[name="date_to"]');
 };
 
+toptix_dialog.update_movie = function(target) {
+  var show = jQuery(target).parent().prev().get(0);
+  this.hidden.val(show.dataset.showId);
+  this.anchor.value = show.textContent;
+};
+
+toptix_dialog.update_event = function(target) {
+  this.hidden.val(target.dataset.id);
+  this.anchor.value = target.textContent;
+  this.update_date(target.dataset.id);
+  this.update_status(target.dataset.id);
+};
+
+toptix_dialog.process_results = function(results) {
+  var self = this;
+
+  results.click(function(event){
+    var target = event.target;
+    if (target.dataset.hasOwnProperty('id')) {
+      self.update_form(target);
+      self.win.dialog('close');
+    }
+  });
+
+  var check_active_input = function() {
+    var filter_input = jQuery(this);
+    if (filter_input.val()) {
+      filter_input.prev().addClass('active');
+    }
+    else {
+      filter_input.prev().removeClass('active');
+    }
+  };
+  results.find('.filters input')
+    .each(check_active_input)
+    .change(check_active_input);
+  results.find('.filters').click(function(event) {
+    if (event.target.nodeName != 'LABEL') {
+      return;
+    }
+    var input_label = jQuery(event.target);
+    if (!input_label.hasClass('active')) {
+      return;
+    }
+    input_label.removeClass('active');
+    input_label.next().val('');
+  });
+};
+
 toptix_dialog.update_results = function() {
   var url = Drupal.settings.basePath + 'content/events-browser?';
   url += 'page=' + this.pager.val() + '&title=' + this.title_search.val();
@@ -106,7 +123,7 @@ toptix_dialog.update_results = function() {
   jQuery.get(url, function (data) {
     self.show_results(data);
   });
-}
+};
 
 toptix_dialog.setup_dates = function(data) {
   var dates = [];
@@ -131,7 +148,7 @@ toptix_dialog.setup_dates = function(data) {
     name: 'field_cm_sale_time[und][0][value2]'
   });
   return dates;
-}
+};
 
 toptix_dialog.update_date = function (id) {
   var data = this.data[id];
@@ -151,7 +168,7 @@ toptix_dialog.update_date = function (id) {
     datefield.val(input_date);
     timefield.val(input_time);
   }
-}
+};
 
 toptix_dialog.update_status = function (id) {
   var data = this.data[id];
@@ -163,4 +180,4 @@ toptix_dialog.update_status = function (id) {
   if (field.length) {
     field.prop('checked', !(data.SaleStatus != 'Open'));
   }
-}
+};

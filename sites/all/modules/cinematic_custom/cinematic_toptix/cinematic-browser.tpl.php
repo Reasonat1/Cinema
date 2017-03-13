@@ -10,7 +10,7 @@
 
   <div class="browser-results">
   <?php foreach ($shows as $show_id => $show) : ?>
-    <h3> <?php print check_plain($show['title']); ?> </h3>
+    <h3 data-show-id="<?php print $show_id;?>"> <?php print check_plain($show['title']); ?> </h3>
     <div class="events"> <?php print $show['events']; ?> </div>
   <?php endforeach; ?>
   </div>

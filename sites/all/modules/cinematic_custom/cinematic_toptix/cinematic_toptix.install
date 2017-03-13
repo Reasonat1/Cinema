@@ -9,6 +9,11 @@ function cinematic_toptix_schema() {
         'unsigned' => TRUE,
         'not null' => TRUE,
       ),
+      'code' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
       'external_id' => array(
         'type' => 'varchar',
         'length' => 64,

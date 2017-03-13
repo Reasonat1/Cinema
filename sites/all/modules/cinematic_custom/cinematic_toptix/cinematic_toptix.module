@@ -106,39 +106,75 @@ function cinematic_toptix_user_submit($form, &$form_state) {
 }
 
 function cinematic_toptix_field_widget_form_alter(&$element, &$form_state, $context) {
-  if ($context['instance']['field_name'] == 'field_toptix_purchase') {
-    $element['value']['#type'] = 'hidden';
-    $element['browser'] = array(
-      '#attributes' => array('class' => array('browser'), 'title' => ''),
-      '#type' => 'textfield',
-      '#title' => t('Event purchase'),
-      '#description' => t('Click to open browser'),
-      '#size' => 16,
-      '#attached' => array(
-        'library' => array(
-          array('system', 'ui.accordion'),
-          array('system', 'ui.dialog'),
-          array('system', 'ui.datepicker'),
-        ),
-        'js' => array(
-          drupal_get_path('module', 'cinematic_toptix') . '/event_browser.js',
-        ),
-        'css' => array(
-          drupal_get_path('module', 'cinematic_toptix') . '/event_browser.css',
-        ),
+  if ($context['instance']['field_name'] != 'field_toptix_purchase') {
+    return;
+  }
+
+  $bundle = $context['instance']['bundle'];
+
+  $element['value']['#type'] = 'hidden';
+  $element['browser'] = array(
+    '#attributes' => array(
+      'class' => array('browser'),
+      'data-bundle' => $bundle,
+    ),
+    '#type' => 'textfield',
+    '#title' => t('Event purchase'),
+    '#description' => t('Click to open browser'),
+    '#size' => 16,
+    '#attached' => array(
+      'library' => array(
+        array('system', 'ui.accordion'),
+        array('system', 'ui.dialog'),
+        array('system', 'ui.datepicker'),
       ),
-    );
-    if ($element['value']['#default_value']) {
-      $event_id = $element['value']['#default_value'];
+      'js' => array(
+        drupal_get_path('module', 'cinematic_toptix') . '/event_browser.js',
+      ),
+      'css' => array(
+        drupal_get_path('module', 'cinematic_toptix') . '/event_browser.css',
+      ),
+    ),
+  );
+  if ($element['value']['#default_value']) {
+    $id = $element['value']['#default_value'];
+    if ($bundle == 'cm_event') {
       $event = db_select('toptix_events', 'te')
-        ->condition('te.local_id', $event_id)
+        ->condition('te.local_id', $id)
         ->fields('te')
         ->execute()->fetchObject();
       if ($event) {
         $element['browser']['#default_value'] = "$event->event_date : $event->local_id";
       }
     }
+    else {
+      $show = db_select('toptix_shows', 'ts')
+        ->condition('ts.id', $id)
+        ->fields('ts')
+        ->execute()->fetchObject();
+      if ($show) {
+        $element['browser']['#default_value'] = "{$show->title} : {$show->code}";
+      }
+      $element['events'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Create events'),
+        '#default_value' => TRUE,
+      );
+    }
   }
+}
+
+function cinematic_toptix_node_insert($node) {
+  if ($node->type != 'cm_movie') {
+    return;
+  }
+  TopTixImport::create_events($node);
+}
+function cinematic_toptix_node_update($node) {
+  if ($node->type != 'cm_movie') {
+    return;
+  }
+  TopTixImport::create_events($node);
 }
 
 function cinematic_toptix_field_formatter_info() {
