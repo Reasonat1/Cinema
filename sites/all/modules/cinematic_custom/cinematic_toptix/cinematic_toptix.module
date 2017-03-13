@@ -106,12 +106,6 @@ function cinematic_toptix_user_submit($form, &$form_state) {
 }
 
 function cinematic_toptix_field_widget_form_alter(&$element, &$form_state, $context) {
-  if ($context['instance']['field_name'] == 'field_toptix') {
-    if (user_access('administer users')) {
-      return;
-    }
-    $element['value']['#type'] = 'hidden';
-  }
   if ($context['instance']['field_name'] == 'field_toptix_purchase') {
     $element['value']['#type'] = 'hidden';
     $element['browser'] = array(
