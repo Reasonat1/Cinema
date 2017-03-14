@@ -158,6 +158,7 @@ function cinematic_toptix_field_widget_form_alter(&$element, &$form_state, $cont
     }
   }
   if ($bundle == 'cm_movie') {
+    $element['browser']['#title'] = t('Toptix show');
     $element['events'] = array(
       '#type' => 'checkbox',
       '#title' => t('Create events'),
