@@ -49,64 +49,78 @@ class TopTixImport {
       return;
     }
 
-    $query = db_select('field_data_field_cm_event_lineup', 'el');
-    $query->condition('field_cm_event_lineup_target_id', $movie->nid);
-    $query->condition('el.entity_type', 'node');
-    $query->join('field_data_field_toptix_purchase', 'tp', 'tp.entity_id = el.entity_id');
-    $query->condition('tp.bundle', 'cm_event');
-    $query->addField('tp', 'field_toptix_purchase_value');
-    $query->addExpression('1');
-    $existing_events = $query->execute()->fetchAllKeyed();
-
-    $query = db_select('toptix_shows', 'ts');
-    $query->condition('te.show_id', $show_id);
-    $query->join('toptix_events', 'te', 'ts.id = te.show_id');
-    $query->join('toptix_events_data', 'ted', 'ted.local_id = te.local_id');
-    $query->fields('te', array('local_id', 'event_date'));
-    $query->fields('ted', array('data'));
-    $events = $query->execute()->fetchAll();
+    $existing_events = self::fetch_existing_events($movie->nid);
+    $events = self::fetch_toptix_events($show_id);
 
     foreach ($events as &$event) {
       if ($existing_events and isset($existing_events[$event->local_id])) {
         continue;
       }
       $event->data = unserialize($event->data);
-
-      $event_node = entity_create('node', array('type' => 'cm_event'));
-      $event_node->uid = $movie->uid;
-      $wrapper = entity_metadata_wrapper('node', $event_node);
-      $wrapper->title = $movie->title;
-      $wrapper->field_toptix_purchase = $event->local_id;
-      $wrapper->field_cm_event_lineup->set(array($movie->nid));
-      $start_date = new DateTime($event->data['ActualEventDate']);
-      $end_date = new DateTime($event->data['EndDate']);
-      $event_time = array(
-        'value' => $start_date->getTimestamp(), 
-        'value2' => $end_date->getTimestamp(),
-        'timezone' => 'Asia/Jerusalem',
-      );
-      $wrapper->field_cm_event_time->set($event_time);
-
-      if (isset($event->data['EndSaleAt'])) {
-        $start_date = new DateTime($event->data['StartSaleFrom']);
-        $end_date = new DateTime($event->data['EndSaleAt']);
-        $sale_time = array(
-          'value' => $start_date->getTimestamp(), 
-          'value2' => $end_date->getTimestamp(),
-          'timezone' => 'Asia/Jerusalem',
-        );
-        $wrapper->field_cm_sale_time->set($sale_time);
-      }
-      $wrapper->field_tickets_sold_out->set($event->data['SoldOut'] != 'False');
-      $wrapper->field_include_ticket_sale->set($event->data['SaleStatus'] == 'Open');
-
-      $wrapper->save();
+      $new_id = self::create_event($event, $movie);
       $params = array(
-        '!link' => l($wrapper->getIdentifier(), 'node/' . $wrapper->getIdentifier()),
+        '!link' => l($new_id, 'node/' . $new_id),
       );
       drupal_set_message(t('Created event !link', $params));
     }
   }
+
+  public static function create_event($event, $movie) {
+    $event_node = entity_create('node', array('type' => 'cm_event'));
+    $event_node->uid = $movie->uid;
+    $event_node->language = $movie->language;
+    $wrapper = entity_metadata_wrapper('node', $event_node);
+    $wrapper->title = $movie->title;
+    $wrapper->field_toptix_purchase = $event->local_id;
+    $wrapper->field_cm_event_lineup->set(array($movie->nid));
+    $start_date = new DateTime($event->data['ActualEventDate']);
+    $end_date = new DateTime($event->data['EndDate']);
+    $event_time = array(
+      'value' => $start_date->getTimestamp(), 
+      'value2' => $end_date->getTimestamp(),
+      'timezone' => 'Asia/Jerusalem',
+    );
+    $wrapper->field_cm_event_time->set($event_time);
+
+    if (isset($event->data['EndSaleAt'])) {
+      $start_date = new DateTime($event->data['StartSaleFrom']);
+      $end_date = new DateTime($event->data['EndSaleAt']);
+      $sale_time = array(
+        'value' => $start_date->getTimestamp(), 
+        'value2' => $end_date->getTimestamp(),
+        'timezone' => 'Asia/Jerusalem',
+      );
+      $wrapper->field_cm_sale_time->set($sale_time);
+    }
+    $wrapper->field_tickets_sold_out->set($event->data['SoldOut'] != 'False');
+    $wrapper->field_include_ticket_sale->set($event->data['SaleStatus'] == 'Open');
+    $wrapper->field_cm_event_onsale->set(TRUE);
+
+    $wrapper->save();
+    return $wrapper->getIdentifier();
+  }
+
+  public static function fetch_existing_events($movie_nid) {
+    $query = db_select('field_data_field_cm_event_lineup', 'el');
+    $query->condition('field_cm_event_lineup_target_id', $movie_nid);
+    $query->condition('el.entity_type', 'node');
+    $query->join('field_data_field_toptix_purchase', 'tp', 'tp.entity_id = el.entity_id');
+    $query->condition('tp.bundle', 'cm_event');
+    $query->addField('tp', 'field_toptix_purchase_value');
+    $query->addExpression('1');
+    return $query->execute()->fetchAllKeyed();
+  }
+
+  public static function fetch_toptix_events($show_id) {
+    $query = db_select('toptix_shows', 'ts');
+    $query->condition('te.show_id', $show_id);
+    $query->join('toptix_events', 'te', 'ts.id = te.show_id');
+    $query->join('toptix_events_data', 'ted', 'ted.local_id = te.local_id');
+    $query->fields('te', array('local_id', 'event_date'));
+    $query->fields('ted', array('data'));
+    return $query->execute()->fetchAll();
+  }
+
 }
 
 class TopTixContext {
