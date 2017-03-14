@@ -39,11 +39,15 @@ class TopTixImport {
   }
 
   public static function create_events($movie) {
-    $show_id = field_get_items('node', $movie, 'field_toptix_purchase');
-    if (!$show_id) {
+    $toptix_purchase = field_get_items('node', $movie, 'field_toptix_purchase');
+    if (!$toptix_purchase) {
       return;
     }
-    $show_id = $show_id[0]['value'];
+    $show_id = $toptix_purchase[0]['value'];
+    $create_events = $toptix_purchase[0]['events'];
+    if (!$show_id or !$create_events) {
+      return;
+    }
 
     $query = db_select('field_data_field_cm_event_lineup', 'el');
     $query->condition('field_cm_event_lineup_target_id', $movie->nid);
