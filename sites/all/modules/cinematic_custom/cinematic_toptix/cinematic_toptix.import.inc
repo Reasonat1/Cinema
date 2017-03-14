@@ -67,6 +67,7 @@ class TopTixImport {
         continue;
       }
       $event->data = unserialize($event->data);
+
       $event_node = entity_create('node', array('type' => 'cm_event'));
       $event_node->uid = $movie->uid;
       $wrapper = entity_metadata_wrapper('node', $event_node);
@@ -92,6 +93,8 @@ class TopTixImport {
         );
         $wrapper->field_cm_sale_time->set($sale_time);
       }
+      $wrapper->field_tickets_sold_out->set($event->data['SoldOut'] != 'False');
+      $wrapper->field_include_ticket_sale->set($event->data['SaleStatus'] == 'Open');
 
       $wrapper->save();
       drupal_set_message('event id=' . $wrapper->getIdentifier());
