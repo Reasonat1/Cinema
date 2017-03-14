@@ -8,6 +8,11 @@
           toptix_dialog.setup(anchor);
         });
       toptix_dialog.hidden = $('.field-name-field-toptix-purchase input[type="hidden"]')
+      $('.field-name-field-toptix-purchase input.browser').change(function(){
+        if (this.value == '') {
+          toptix_dialog.hidden.val('');
+        }
+      });
     },
   };
 })(jQuery);
