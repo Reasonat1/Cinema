@@ -155,12 +155,14 @@ function cinematic_toptix_field_widget_form_alter(&$element, &$form_state, $cont
       if ($show) {
         $element['browser']['#default_value'] = "{$show->title} : {$show->code}";
       }
-      $element['events'] = array(
-        '#type' => 'checkbox',
-        '#title' => t('Create events'),
-        '#default_value' => TRUE,
-      );
     }
+  }
+  if ($bundle == 'cm_movie') {
+    $element['events'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Create events'),
+      '#default_value' => TRUE,
+    );
   }
 }
 
