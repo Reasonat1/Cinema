@@ -218,7 +218,7 @@ function cinematic_toptix_field_formatter_view(
       continue;
     }
     if ($disabled) {
-      $output = '<button class="toptix-purchase">' . $disabled . '</button>';
+      $output = '<button class="toptix-purchase" disabled >' . $disabled . '</button>';
       $element[$delta] = array(
         '#markup' => $output,
       );
