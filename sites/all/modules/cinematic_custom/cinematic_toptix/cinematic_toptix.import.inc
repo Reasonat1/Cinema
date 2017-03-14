@@ -21,6 +21,8 @@ function cinematic_toptix_import($form, &$form_state) {
 }
 
 function cinematic_toptix_import_submit($form, &$form_state) {
+  ToptixImport::process_data();
+  return;
   $message = TopTixImport::import();
   variable_set('toptix_import', date('c'));
   drupal_set_message($message);
@@ -36,6 +38,27 @@ class TopTixImport {
     list($total_shows, $total_events) = $xml->read_shows();
     $holders = array('@count1' => $total_shows, '@count2' => $total_events);
     return t('imported @count1 shows and @count2 events', $holders);
+  }
+
+  public static function process_data() {
+    $query = db_select('toptix_events_data', 'ed');
+    $query->fields('ed');
+    $events = $query->execute()->fetchAll();
+    $time_zone = new DateTimeZone('Asia/Jerusalem');
+    $interval = new DateInterval('PT180M');
+    $reader = new TopTixReader();
+    foreach ($events as $event) {
+      $event = unserialize($event->data);
+      $reader->alter_dates($event, $time_zone, $interval);
+      $event['LongMinutes'] = 180;
+      db_merge('toptix_events_data')
+        ->key(array('local_id' => $event['EventLocalId']))
+        ->fields(array(
+          'local_id' => $event['EventLocalId'],
+          'data' => serialize($event),
+        ))
+     ->execute();
+    }
   }
 
   public static function create_events($movie) {
@@ -255,7 +278,7 @@ class TopTixReader extends XMLReader {
     }
   }
   
-  private function alter_dates(&$event, $time_zone, $interval) {
+  public function alter_dates(&$event, $time_zone, $interval) {
     $date = new DateTime($event['ActualEventDate'], $time_zone);
     $event['ActualEventDate'] = $date->format('c'); // add +02:00
     $end_date = $date->add($interval);
