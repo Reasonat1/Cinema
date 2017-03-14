@@ -92,18 +92,8 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
             }else{
               $hall_name = '<div class="hide-div"></div>';
             }
-            if(!empty($node->field_toptix_purchase['und'])){
-                 $toptix_code = $node->field_toptix_purchase['und'][0]['value'];
-                 $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';
-                 if(empty($node->field_tickets_sold_out['und'][0]['value'])){
-                    $puchase = '<button data-url="'.$top_link.'" class="toptix-purchase">'.t('TICKETS').'</button>';
-                  }
-                  else{
-                    $puchase = '<button class="sold-out">'.t('sold out').'</button>';
-                  }
-            }else{
-               $puchase = '<div class="hide-div"></div>';
-            }
+            $toptix_button = field_view_field('node', $node, 'field_toptix_purchase', 'full');
+            $purchase = drupal_render($toptix_button);
             
           $output .= '<tr class="odd views-row-first up-events-item-movie views-row-last item-show-'.$a.'">';
            $output .= '<td class="views-field views-field-field-cm-event-time-1 only-desktop date">'. $event_date. '</td>';
@@ -113,7 +103,7 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
            $output .= '<td class="views-field views-field-field-cm-event-internal-id only-desktop code">'.$event_code.'</td>';
            $output .= '<td class="views-field views-field-ops only-desktop like-flag">' .$flag .'</td>';
            $output .= '<td class="views-field views-field-php add-event only-desktop">' ._return_addthisevent_markup($node) .'</td>';
-           $output .= '<td class="views-field views-field-field-toptix-purchase last-mobile purchase">'.$puchase.'</td>';
+           $output .= '<td class="views-field views-field-field-toptix-purchase last-mobile purchase">'.$purchase.'</td>';
           $output .= '</tr>';
          }
        }
