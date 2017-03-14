@@ -163,6 +163,7 @@ function cinematic_toptix_field_widget_form_alter(&$element, &$form_state, $cont
       '#type' => 'checkbox',
       '#title' => t('Create events'),
       '#default_value' => TRUE,
+      '#description' => t('Existing events won\'t be duplicated'),
     );
   }
 }
