@@ -21,8 +21,6 @@ function cinematic_toptix_import($form, &$form_state) {
 }
 
 function cinematic_toptix_import_submit($form, &$form_state) {
-  ToptixImport::process_data();
-  return;
   $message = TopTixImport::import();
   variable_set('toptix_import', date('c'));
   drupal_set_message($message);
