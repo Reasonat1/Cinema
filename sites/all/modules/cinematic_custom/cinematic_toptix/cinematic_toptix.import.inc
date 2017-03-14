@@ -101,7 +101,10 @@ class TopTixImport {
       $wrapper->field_include_ticket_sale->set($event->data['SaleStatus'] == 'Open');
 
       $wrapper->save();
-      drupal_set_message('event id=' . $wrapper->getIdentifier());
+      $params = array(
+        '!link' => l($wrapper->getIdentifier(), 'node/' . $wrapper->getIdentifier()),
+      );
+      drupal_set_message(t('Created event !link', $params));
     }
   }
 }
