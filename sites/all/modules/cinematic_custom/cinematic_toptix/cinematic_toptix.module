@@ -269,8 +269,7 @@ function cinematic_toptix_active_sale($sale_period, $sold_out, $sale_open) {
     $hidden = FALSE;
   }
   if ($sale_open and !($sale_open[0]['value'])) {
-    $disabled = t('Sale closed');
-    $hidden = FALSE;
+    $hidden = TRUE;
   }
   return array($hidden, $disabled);
 }
