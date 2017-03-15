@@ -22,7 +22,9 @@ function cinematic_toptix_import($form, &$form_state) {
 
 function cinematic_toptix_import_submit($form, &$form_state) {
   $message = TopTixImport::import();
-  variable_set('toptix_import', date('c'));
+  $time_zone = new DateTimeZone('Asia/Jerusalem');
+  $now = new DateTime('now', $time_zone);
+  variable_set('toptix_import', $now->format('c'));
   drupal_set_message($message);
 }
 

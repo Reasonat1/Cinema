@@ -24,10 +24,11 @@ function cinematic_toptix_menu() {
 
 function cinematic_toptix_cron() {
   $last_time = variable_get('toptix_import', '');
-  $this_time = new DateTime();
+  $time_zone = new DateTimeZone('Asia/Jerusalem');
+  $this_time = new DateTime('now', $time_zone);
   $run = FALSE;
   if ($last_time) {
-    $last_time = new DateTime($last_time);
+    $last_time = new DateTime($last_time, $time_zone);
     $week = new DateInterval('P1W');
     $run = ($last_time->add($week) <= $this_time);
   }
