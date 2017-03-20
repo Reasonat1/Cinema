@@ -9,9 +9,11 @@
   </div>
 
   <div class="browser-results">
-  <?php foreach ($shows as $show_id => $show) : ?>
-    <h3 data-show-id="<?php print $show_id;?>"> <?php print check_plain($show['title']); ?> </h3>
-    <div class="events"> <?php print $show['events']; ?> </div>
+  <?php foreach ($items as $item_id => $item) : ?>
+    <h3 data-item-id="<?php print $item_id;?>"> <?php print check_plain($item['title']); ?> </h3>
+    <?php if (!empty($item['options'])) : ?>
+      <div class="item-options"> <?php print $item['options']; ?> </div>
+    <?php endif; ?>
   <?php endforeach; ?>
   </div>
 </div>

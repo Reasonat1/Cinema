@@ -72,5 +72,66 @@ function cinematic_toptix_schema() {
     'primary key' => array('local_id'),
   );
 
+  $schema['toptix_halls'] = array(
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'local_id' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'external_id' => array(
+        'type' => 'varchar',
+        'length' => 64,
+      ),
+      'title' => array(
+        'type' => 'varchar',
+        'length' => 256,
+      ),
+    ),
+    'primary key' => array('id'),
+    'indexes' => array(
+      'external' => array('external_id'),
+    ),
+  );
+
   return $schema;
+}
+
+/**
+ * add toptix_halls
+ */
+function cinematic_toptix_update_7001() {
+  $schema = array(
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'local_id' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'external_id' => array(
+        'type' => 'varchar',
+        'length' => 64,
+      ),
+      'title' => array(
+        'type' => 'varchar',
+        'length' => 256,
+      ),
+    ),
+    'primary key' => array('id'),
+    'indexes' => array(
+      'external' => array('external_id'),
+    ),
+  );
+
+  db_create_table('toptix_halls', $schema);
 }

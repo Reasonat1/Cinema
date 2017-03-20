@@ -3,15 +3,20 @@ define('TOPTIX_TITLE_ORDER', 0);
 define('TOPTIX_DATE_ORDER', 1);
 define('TOPTIX_PAGER', 30);
 
-function cinematic_toptix_browse() {
+function cinematic_toptix_browse($bundle) {
   $page = isset($_GET['page']) ? $_GET['page'] : 0;
 
-  list($shows, $total, $data) = cinematic_toptix_browse_query($page);
+  list($items, $total, $data) = cinematic_toptix_browse_query($page, $bundle);
 
-  $filters = cinematic_toptix_browse_control($page, $total);
-  $output = theme('cinematic_browser', array('shows' => $shows, 'filters' => $filters));
+  $filters = cinematic_toptix_browse_control($page, $total, $bundle);
+  $output = theme('cinematic_browser', array('items' => $items, 'filters' => $filters));
   if (isset($_GET['html'])) {
-    dpm($data);
+    if ($data) {
+      dpm($data);
+    }
+    else {
+      dpm($items);
+    }
     return 'output';
   }
   else {
@@ -19,7 +24,7 @@ function cinematic_toptix_browse() {
   }
 }
 
-function cinematic_toptix_browse_control($page, $total) {
+function cinematic_toptix_browse_control($page, $total, $bundle) {
   $filters = array();
 
   $options = '';
@@ -50,7 +55,10 @@ function cinematic_toptix_browse_control($page, $total) {
   return $filters; 
 }
 
-function cinematic_toptix_browse_query($page) {
+function cinematic_toptix_browse_query($page, $bundle) {
+  if ($bundle == 'hall') {
+    return cinematic_toptix_browse_query_hall($page);
+  }
   $now = new DateTime();
   $today = $now->format('Y-m-d');
   $query = db_select('toptix_events', 'te');
@@ -110,10 +118,10 @@ function cinematic_toptix_browse_query($page) {
     if (!isset($shows[$event->show_id])) {
       $shows[$event->show_id] = array(
         'title' => "{$event->title} : {$event->code}",
-        'events' => ''
+        'options' => ''
       );
     }
-    $shows[$event->show_id]['events'] .= "<div data-id=\"$event->local_id\"> $event->local_id : $event->event_date </div>";
+    $shows[$event->show_id]['options'] .= "<div data-id=\"$event->local_id\"> $event->local_id : $event->event_date </div>";
   }
 
   if ($event_ids) {
@@ -130,4 +138,31 @@ function cinematic_toptix_browse_query($page) {
   }
 
   return array($shows, $count, $data);
+}
+
+function cinematic_toptix_browse_query_hall($page) {
+
+  $query = db_select('toptix_halls', 'ha');
+  if (isset($_GET['title'])) {
+    $query->condition('ha.title', '%' . $_GET['title'] . '%', 'LIKE');
+  }
+  $count = $query->countQuery()->execute()->fetchField();
+
+  $query->fields('ha');
+
+  $offset = $page * 30;
+  $query->range($offset, 30);
+  $halls = $query->execute()->fetchAll();
+  if (!$halls) {
+    return array(array(), 0, array());
+  }
+
+  $halls_items = array();
+  foreach ($halls as $hall) {
+    $halls_items[$hall->id] = array(
+      'title' => $hall->title,
+    );
+  }
+  $data = '';
+  return array($halls_items, $count, $data);
 }

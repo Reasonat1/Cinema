@@ -21,23 +21,40 @@ function cinematic_toptix_import($form, &$form_state) {
 }
 
 function cinematic_toptix_import_submit($form, &$form_state) {
-  $message = TopTixImport::import();
+  $messages = TopTixImport::import();
+  drupal_set_message($messages[0]);
+  drupal_set_message($messages[1]);
   $time_zone = new DateTimeZone('Asia/Jerusalem');
   $now = new DateTime('now', $time_zone);
   variable_set('toptix_import', $now->format('c'));
-  drupal_set_message($message);
 }
 
 class TopTixImport {
+
   public static function import() {
+    $messages = array();
+    $messages[] = self::import_halls();
     $url = 'http://' . TOPTIX_HOST . '/feed/events/?groupby=show&withfutureevents=true';
     $context = stream_context_create(array('http' => array('timeout' => 1200)));
     $in = file_get_contents($url, false, $context);
     $xml = new TopTixReader();
     $xml->xml($in);
     list($total_shows, $total_events) = $xml->read_shows();
+    unset($in);
     $holders = array('@count1' => $total_shows, '@count2' => $total_events);
-    return t('imported @count1 shows and @count2 events', $holders);
+    $messages[] = t('imported @count1 shows and @count2 events', $holders);
+    return $messages;
+  }
+
+  public static function import_halls() {
+    $url = 'http://' . TOPTIX_HOST . '/feed/halls';
+    $context = stream_context_create(array('http' => array('timeout' => 1200)));
+    $in = file_get_contents($url, false, $context);
+    $xml = new TopTixHallReader();
+    $xml->xml($in);
+    $total = $xml->read_halls();
+    unset($in);
+    return t('imported @count halls', array('@count' => $total));
   }
 
   public static function process_data() {
@@ -302,5 +319,80 @@ class TopTixReader extends XMLReader {
       watchdog('toptix import', 'start sale not set:' . $params);
     }
     unset($end_date, $start_date);
+  }
+}
+
+class TopTixHallsContext {
+  public $halls;
+  public $hall;
+  public $key = '';
+  public $batch = 0;
+  public $total_halls = 0;
+}
+
+class TopTixHallReader extends XMLReader {
+  private $toptix;
+
+  public function read_halls() {
+    $this->toptix = new TopTixHallsContext();
+    $this->toptix->halls = array();
+    while ($this->read()) {
+      if ($this->nodeType == XMLReader::ELEMENT) {
+        $this->process_element();
+      }
+      if ($this->nodeType == XMLReader::TEXT and $this->toptix->key != '') {
+        $this->toptix->hall[$this->toptix->key] = $this->value;
+        $this->toptix->key = '';
+      }
+      if ($this->nodeType == XMLReader::END_ELEMENT) {
+        $this->process_end_element();
+      }
+    }
+    if ($this->toptix->batch > 0) {
+      $this->toptix->total_halls += $this->toptix->batch;
+      $this->write_halls();
+    }
+    return $this->toptix->total_halls;
+  }
+
+  private function process_element() {
+    switch ($this->name) {
+      case 'Name':
+      case 'Id':
+      case 'LocalId':
+        $this->toptix->key = $this->name;
+        break;
+    }
+  }
+
+  private function process_end_element() {
+    switch ($this->name) {
+      case 'Hall':
+        $this->toptix->halls[] = $this->toptix->hall;
+        if ($this->toptix->batch++ > 16) {
+          $this->toptix->total_halls += $this->toptix->batch;
+          $this->toptix->batch = 0;
+          $this->write_halls();
+          unset($this->toptix->halls);
+          $this->toptix->halls = array();
+        }
+        unset($this->toptix->hall);
+        $this->toptix->hall = array();
+        break;
+    }
+  }
+
+  private function write_halls() {
+    $ids = array();
+    $transaction = db_transaction();
+    $fields = array();
+    foreach ($this->toptix->halls as $hall) {
+      $fields['title'] = $hall['Name'];
+      $fields['local_id'] = $hall['LocalId'];
+      db_merge('toptix_halls')
+        ->key(array('external_id' => $hall['Id']))
+        ->fields($fields)
+        ->execute();
+    }
   }
 }

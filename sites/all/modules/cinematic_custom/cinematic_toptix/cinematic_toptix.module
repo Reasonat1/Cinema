@@ -13,10 +13,11 @@ function cinematic_toptix_menu() {
     'file' => 'cinematic_toptix.import.inc',
     'type' => MENU_LOCAL_TASK,
   );
-  $items['content/events-browser'] = array(
+  $items['content/toptix-browser/%'] = array(
     'title' => 'toptix',
     'access arguments' => array('administer nodes'),
     'page callback' => 'cinematic_toptix_browse',
+    'page arguments' => array(2),
     'file' => 'cinematic_toptix.browse.inc',
   );
   return $items;
@@ -38,8 +39,9 @@ function cinematic_toptix_cron() {
   if ($run) {
     $hour = $this_time->format('G');
     if ($hour >= 23 or $hour <= 6) {
-      $message = TopTixImport::import();
-      watchdog('toptix import', $message);
+      $messages = TopTixImport::import();
+      watchdog('toptix import', $message[0]);
+      watchdog('toptix import', $message[1]);
       variable_set('toptix_import', $this_time->format('c'));
     }
   }
@@ -48,7 +50,7 @@ function cinematic_toptix_cron() {
 function cinematic_toptix_theme() {
   $themes = array();
   $themes['cinematic_browser'] = array(
-    'variables' => array('filters' => array(), 'shows' => array()),
+    'variables' => array('filters' => array(), 'items' => array()),
     'template' => 'cinematic-browser',
   );
   return $themes;
