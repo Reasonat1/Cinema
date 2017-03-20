@@ -91,9 +91,10 @@ class TopTixImport {
 
     $existing_events = self::fetch_existing_events($movie->nid);
     $events = self::fetch_toptix_events($show_id);
+    self::fetch_hall_terms($events, $movie->language);
 
-    foreach ($events as &$event) {
-      if ($existing_events and isset($existing_events[$event->local_id])) {
+    foreach ($events as $id => &$event) {
+      if ($existing_events and isset($existing_events[$id])) {
         continue;
       }
       $event->data = unserialize($event->data);
@@ -136,8 +137,29 @@ class TopTixImport {
     $wrapper->field_include_ticket_sale->set($event->data['SaleStatus'] == 'Open');
     $wrapper->field_cm_event_onsale->set(TRUE);
 
+    if (isset($event->hall_tid)) {
+      $wrapper->field_cm_event_hall->set($event->hall_tid);
+    }
+
     $wrapper->save();
     return $wrapper->getIdentifier();
+  }
+  
+  public static function fetch_hall_terms(&$events, $language) {
+    $query = db_select('toptix_events', 'te');
+    $query->condition('te.local_id', array_keys($events), 'IN');
+    $query->join('field_data_field_toptix_purchase', 'tp', 'tp.field_toptix_purchase_value = te.hall_id');
+    $query->condition('tp.bundle', 'hall');
+    $query->join('taxonomy_term_data', 'td', 'td.tid = tp.entity_id');
+    if ($language != 'und') {
+      $query->condition('td.language', $language);
+    }
+    $query->fields('td', array('tid', 'name'));
+    $query->addField('te', 'local_id', 'event_id');
+    $hall_terms = $query->execute()->fetchAll();
+    foreach ($hall_terms as $hall_term) {
+      $events[$hall_term->event_id]->hall_tid = $hall_term->tid;
+    }
   }
 
   public static function fetch_existing_events($movie_nid) {
@@ -158,7 +180,13 @@ class TopTixImport {
     $query->join('toptix_events_data', 'ted', 'ted.local_id = te.local_id');
     $query->fields('te', array('local_id', 'event_date'));
     $query->fields('ted', array('data'));
-    return $query->execute()->fetchAll();
+
+    $events = $query->execute()->fetchAll();
+    $keyed_events = array();
+    foreach ($events as $event) {
+      $keyed_events[$event->local_id] = $event;
+    }
+    return $keyed_events;
   }
 
 }
