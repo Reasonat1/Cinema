@@ -150,7 +150,7 @@ toptix_dialog.update_event = function(target) {
   this.anchor.value = target.textContent;
   this.update_date(target.dataset.id);
   this.update_status(target.dataset.id);
-  this.update_hall(target.dataset.id);
+  this.update_event_hall(target.dataset.id);
 };
 
 toptix_dialog.setup_dates = function(data) {
@@ -210,7 +210,7 @@ toptix_dialog.update_status = function (id) {
   }
 };
 
-toptix_dialog.update_hall = function (id) {
+toptix_dialog.update_event_hall = function (id) {
   var data = this.data[id];
   var field = jQuery('input[name="field_cm_event_hall[und][0][target_id]"');
   field.val(data.hall_term);
