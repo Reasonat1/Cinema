@@ -21,8 +21,18 @@ var toptix_dialog = {anchor: null, win: null, hidden: null};
 
 toptix_dialog.setup = function(anchor) {
   this.bundle = anchor.dataset.bundle;
-  this.update_form = (this.bundle == 'cm_movie' ? this.update_movie : this.update_event);
+
+  if (this.bundle != 'hall') {
+    this.update_form = (this.bundle != 'cm_movie' ? this.update_event : this.update_movie);
+  }
+  else {
+    this.update_form = this.update_hall;
+  }
+  var lang = jQuery('select[name="language"]');
+  this.lang = lang.length ? lang.val() : 'en';
+
   var url = Drupal.settings.basePath + 'content/toptix-browser/' + this.bundle;
+  url += '?language=' + this.lang;
   this.anchor = anchor;
   var self = this;
   jQuery.get(url, function (respone) {
@@ -55,13 +65,8 @@ toptix_dialog.show_results = function(respone) {
     height: 600,
     width: 600,
   });
-  results = this.win.find('.browser-results');
-  results.accordion({active: false});
-  var date_fields = this.win.find('.filters .date-range input');
-  date_fields.datepicker({dateFormat: 'yy-mm-dd'});
 
   var self = this;
-
   this.win.find('.filters button').click(function(){
     self.update_results();
   });
@@ -69,27 +74,22 @@ toptix_dialog.show_results = function(respone) {
   this.title_search = this.win.find('input[name="title"]');
   this.date_from = this.win.find('input[name="date_from"]');
   this.date_to = this.win.find('input[name="date_to"]');
-};
 
-toptix_dialog.update_movie = function(target) {
-  var show = jQuery(target).parent().prev().get(0);
-  this.hidden.val(show.dataset.itemId);
-  this.anchor.value = show.textContent;
-};
-
-toptix_dialog.update_event = function(target) {
-  this.hidden.val(target.dataset.id);
-  this.anchor.value = target.textContent;
-  this.update_date(target.dataset.id);
-  this.update_status(target.dataset.id);
+  if (this.bundle != 'hall') {
+    results = this.win.find('.browser-results');
+    results.accordion({active: false});
+    var date_fields = this.win.find('.filters .date-range input');
+    date_fields.datepicker({dateFormat: 'yy-mm-dd'});
+  }
 };
 
 toptix_dialog.process_results = function(results) {
   var self = this;
+  var id_property = this.bundle != 'hall' ? 'id' : 'itemId';
 
   results.click(function(event){
     var target = event.target;
-    if (target.dataset.hasOwnProperty('id')) {
+    if (target.dataset.hasOwnProperty(id_property)) {
       self.update_form(target);
       self.win.dialog('close');
     }
@@ -122,12 +122,35 @@ toptix_dialog.process_results = function(results) {
 
 toptix_dialog.update_results = function() {
   var url = Drupal.settings.basePath + 'content/toptix-browser/' + this.bundle + '?';
-  url += 'page=' + this.pager.val() + '&title=' + this.title_search.val();
-  url += '&date_range=' + this.date_from.val() + ':' + this.date_to.val();
+  url += '?language=' + this.lang;
+  url += '&page=' + this.pager.val() + '&title=' + this.title_search.val();
+  if (this.bundle != 'hall') {
+    url += '&date_range=' + this.date_from.val() + ':' + this.date_to.val();
+  }
   var self = this;
   jQuery.get(url, function (data) {
     self.show_results(data);
   });
+};
+
+toptix_dialog.update_hall = function(target) {
+  var hall = jQuery(target).get(0);
+  this.hidden.val(hall.dataset.itemId);
+  this.anchor.value = hall.textContent;
+};
+
+toptix_dialog.update_movie = function(target) {
+  var show = jQuery(target).parent().prev().get(0);
+  this.hidden.val(show.dataset.itemId);
+  this.anchor.value = show.textContent;
+};
+
+toptix_dialog.update_event = function(target) {
+  this.hidden.val(target.dataset.id);
+  this.anchor.value = target.textContent;
+  this.update_date(target.dataset.id);
+  this.update_status(target.dataset.id);
+  this.update_hall(target.dataset.id);
 };
 
 toptix_dialog.setup_dates = function(data) {
@@ -185,4 +208,10 @@ toptix_dialog.update_status = function (id) {
   if (field.length) {
     field.prop('checked', !(data.SaleStatus != 'Open'));
   }
+};
+
+toptix_dialog.update_hall = function (id) {
+  var data = this.data[id];
+  var field = jQuery('input[name="field_cm_event_hall[und][0][target_id]"');
+  field.val(data.hall_term);
 };

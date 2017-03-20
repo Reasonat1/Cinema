@@ -44,10 +44,21 @@
   margin-right: 30%;
 }
 
+.browser-wrapper.hall .browser-results h3,
 .browser-wrapper .browser-results .item-options div[data-id] {
   cursor: pointer;
   margin: 1ex 0;
   font-size: 16px;
+}
+
+.browser-wrapper.hall .browser-results h3:hover,
+.browser-wrapper .browser-results .item-options div[data-id]:hover {
+  background-color:gray;
+}
+
+.browser-wrapper.hall .browser-results h3 {
+  border: 1px solid #ccc;
+  padding: .5em;
 }
 
 .field-name-field-toptix-purchase input.browser + .description {

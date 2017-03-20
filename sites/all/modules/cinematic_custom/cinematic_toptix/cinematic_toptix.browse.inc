@@ -9,7 +9,8 @@ function cinematic_toptix_browse($bundle) {
   list($items, $total, $data) = cinematic_toptix_browse_query($page, $bundle);
 
   $filters = cinematic_toptix_browse_control($page, $total, $bundle);
-  $output = theme('cinematic_browser', array('items' => $items, 'filters' => $filters));
+  $variables = array( 'items' => $items, 'filters' => $filters, 'bundle' => $bundle);
+  $output = theme('cinematic_browser', $variables);
   if (isset($_GET['html'])) {
     if ($data) {
       dpm($data);
@@ -40,17 +41,18 @@ function cinematic_toptix_browse_control($page, $total, $bundle) {
   $default = isset($_GET['title']) ? 'value="' . $_GET['title'] . '"' : '';
   $filters['title_search'] = '<div class="filter">'.$label . '<input ' . $default . ' class="form-text" type="text" size="15" name="title"></input></div>';
 
+  if ($bundle != 'hall') {
+    $date_range = isset($_GET['date_range']) ? explode(':', $_GET['date_range']) : array(0, 0);
 
-  $date_range = isset($_GET['date_range']) ? explode(':', $_GET['date_range']) : array(0, 0);
+    $from = '<label>' . t('From date') . '</label>';
+    $default = $date_range[0] ? 'value=' . $date_range[0] : '';
+    $from .= '<input ' . $default . ' class="form-text" type="text" size="15" name="date_from"></input>';
 
-  $from = '<label>' . t('From date') . '</label>';
-  $default = $date_range[0] ? 'value=' . $date_range[0] : '';
-  $from .= '<input ' . $default . ' class="form-text" type="text" size="15" name="date_from"></input>';
-
-  $to = '<label>' . t('To date') . '</label>';
-  $default = $date_range[1] ? 'value=' . $date_range[1] : '';
-  $to .= '<input ' . $default . ' class="form-text" type="text" size="15" name="date_to"></input>';
-  $filters['date_range'] = '<div class="filter">'.$from.'</div><div class="filter">'.$to.'</div>';
+    $to = '<label>' . t('To date') . '</label>';
+    $default = $date_range[1] ? 'value=' . $date_range[1] : '';
+    $to .= '<input ' . $default . ' class="form-text" type="text" size="15" name="date_to"></input>';
+    $filters['date_range'] = '<div class="filter">'.$from.'</div><div class="filter">'.$to.'</div>';
+  }
 
   return $filters; 
 }
@@ -132,12 +134,36 @@ function cinematic_toptix_browse_query($page, $bundle) {
     foreach ($data as $id => &$event_data) {
       $event_data = unserialize($event_data);
     }
+    cinematic_toptix_browse_event_halls($event_ids, $data);
   }
   else {
     $data = array();
   }
 
   return array($shows, $count, $data);
+}
+
+function cinematic_toptix_browse_event_halls($event_ids, &$data) {
+
+  $language = isset($_GET['language']) ? $_GET['language'] : 'en';
+  
+  $query = db_select('toptix_events', 'te');
+  $query->condition('te.local_id', $event_ids, 'IN');
+  $query->join('field_data_field_toptix_purchase', 'tp', 'tp.field_toptix_purchase_value = te.hall_id');
+  $query->condition('tp.bundle', 'hall');
+  $query->join('taxonomy_term_data', 'td', 'td.tid = tp.entity_id');
+  if ($language != 'und') {
+    $query->condition('td.language', $language);
+  }
+  $query->fields('td', array('tid', 'name'));
+  $query->addField('te', 'local_id', 'event_id');
+  $hall_terms = $query->execute()->fetchAll();
+
+  foreach ($hall_terms as $term) {
+    $name = check_plain($term->name);
+    $match = "$name ({$term->tid})";
+    $data[$term->event_id]['hall_term'] = $match;
+  }
 }
 
 function cinematic_toptix_browse_query_hall($page) {
@@ -163,6 +189,7 @@ function cinematic_toptix_browse_query_hall($page) {
       'title' => $hall->title,
     );
   }
+
   $data = '';
   return array($halls_items, $count, $data);
 }

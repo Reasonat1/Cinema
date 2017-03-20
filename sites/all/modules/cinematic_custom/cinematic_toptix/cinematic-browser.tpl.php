@@ -1,4 +1,4 @@
-<div class="browser-wrapper">
+<div class="browser-wrapper <?php print $bundle;?>">
   <div class="filters">
     <?php print render($filters['select_page']); ?>
     <?php print render($filters['title_search']); ?>

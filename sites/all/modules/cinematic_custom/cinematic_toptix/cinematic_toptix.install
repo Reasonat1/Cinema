@@ -44,6 +44,11 @@ function cinematic_toptix_schema() {
         'type' => 'varchar',
         'length' => 64,
       ),
+      'hall_id' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+      ),
       'event_date' => array(
         'mysql_type' => 'datetime',
         'pgsql_type' => 'timestamp',
@@ -54,6 +59,7 @@ function cinematic_toptix_schema() {
       'external' => array('external_id'),
       'show' => array('show_id'),
       'bydate' => array('event_date'),
+      'halljoin' => array('hall_id'),
     ),
   );
 
@@ -102,6 +108,22 @@ function cinematic_toptix_schema() {
   return $schema;
 }
 
+/**
+ * add event hall id
+ */
+function cinematic_toptix_update_7002() {
+  $spec = array(
+    'type' => 'int',
+    'unsigned' => TRUE,
+    'not null' => FALSE,
+  );
+  $index = array(
+    'indexes' => array(
+      'halljoin' => array('hall_id'),
+    ),
+  );
+  db_add_field('toptix_events', 'hall_id', $spec, $index);
+}
 /**
  * add toptix_halls
  */

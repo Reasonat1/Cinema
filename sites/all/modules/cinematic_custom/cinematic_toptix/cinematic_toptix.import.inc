@@ -275,14 +275,19 @@ class TopTixReader extends XMLReader {
         $mysql_ActualEventDate = $event['ActualEventDate'];
         $this->alter_dates($event, $time_zone, $interval);
         $event['LongMinutes'] = $show['LongMinutes'];
+        $fields = array(
+          'local_id' => $event['EventLocalId'],
+          'external_id' => $event['EventId'],
+          'show_id' => $show_id,
+          'event_date' => $mysql_ActualEventDate,
+        );
+        $hall_id = $this->fetch_hall($event['HallGuid']);
+        if ($hall_id) {
+          $fields['hall_id'] = $hall_id;
+        }
         db_merge('toptix_events')
           ->key(array('local_id' => $event['EventLocalId']))
-          ->fields(array(
-            'local_id' => $event['EventLocalId'],
-            'external_id' => $event['EventId'],
-            'show_id' => $show_id,
-            'event_date' => $mysql_ActualEventDate,
-          ))
+          ->fields($fields)
           ->execute();
         db_merge('toptix_events_data')
           ->key(array('local_id' => $event['EventLocalId']))
@@ -295,6 +300,14 @@ class TopTixReader extends XMLReader {
     }
   }
   
+  public function fetch_hall($hall_guid) {
+    $query = db_select('toptix_halls', 'th');
+    $query->condition('external_id', $hall_guid);
+    $query->addField('th', 'id');
+    $id = $query->execute()->fetchField();
+    return $id;
+  }
+
   public function alter_dates(&$event, $time_zone, $interval) {
     $date = new DateTime($event['ActualEventDate'], $time_zone);
     $event['ActualEventDate'] = $date->format('c'); // add +02:00
