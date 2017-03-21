@@ -83,8 +83,9 @@ class TopTixImport {
     if (!$toptix_purchase) {
       return;
     }
+
     $show_id = $toptix_purchase[0]['value'];
-    $create_events = $toptix_purchase[0]['events'];
+    $create_events = isset($toptix_purchase[0]['events']) ? $toptix_purchase[0]['events'] : FALSE;
     if (!$show_id or !$create_events) {
       return;
     }
