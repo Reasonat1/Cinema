@@ -1,8 +1,23 @@
 <article class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
+   <?php if(!empty($node->field_cm_event_lineup['und'])){
+       $event_ext_nodes = node_load($node->field_cm_event_lineup['und'][0]['target_id']);
+    } ?>
     <?php if(!empty($node->field_cm_event_images) || !empty($node->field_cm_event_lineup)){ ?>
       <div class="one-item-static with-image">
         <div class="image">
+        <?php if(!empty($node->field_cm_event_lineup['und'])){
+         if(!empty($event_ext_nodes->field_cm_movie_videos)){ ?>
+           <div class="video-link">
+             <?php print movie_video_output($event_ext_nodes->nid); ?>
+          </div>
+        <?php } 
+        } ?>
+        <?php if(!empty($node->field_cm_event_lineup['und'])){
+         if(!empty($event_ext_nodes->field_cm_movie_videos)){ ?>
+              <div class="gradient very-small"></div>
+        <?php } 
+        } ?>
+
           <?php 
         if(!empty($node->field_low_and_wide_for_home_page)) {
           print render($content['field_low_and_wide_for_home_page']); 
@@ -38,6 +53,7 @@
                     <?php } 
                   }?>
           </div>
+        </div>
         <div class="top-text-blk-wht">
           <?php  if(!empty($node->field_event_top_text_black)){ ?>
             <span class="black"><?php print render($content['field_event_top_text_black']);?></span>
@@ -47,6 +63,5 @@
           <?php } ?>
         </div> 
         <div class="views-field-ops"><?php print flag_create_link('favorite_', $node->nid); ?> </div>
-      </div>
     <?php } ?>
 </article>

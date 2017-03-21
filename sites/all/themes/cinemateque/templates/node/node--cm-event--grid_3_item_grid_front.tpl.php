@@ -1,5 +1,7 @@
 <article class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
+   <?php if(!empty($node->field_cm_event_lineup['und'])){
+       $event_ext_nodes = node_load($node->field_cm_event_lineup['und'][0]['target_id']);
+    } ?>
   <div class="grid_3_item">
       <div class="image">
         <a class="all-image" href="<?php print $node_url; ?>"></a>
@@ -23,12 +25,21 @@
         <div class="views-field-ops"><?php print flag_create_link('favorite_', $node->nid); ?> </div>
       </div>
       <div class="on-image">
-        <?php $movie_tile=(!empty($content['field_cm_event_lineup'][0]['#markup']))?$content['field_cm_event_lineup'][0]['#markup']:''; 
-        if (($movie_tile!=$title) && (!empty($content['field_cm_event_lineup'][0]['#markup']))): ?>
-          <div class="slide-small-text film-title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></div>
-        <?php endif;?>
-        <div class="slide-big-text film-title"><a href="<?php print $node_url; ?>"><?php print (render($content['field_cm_event_lineup']))?render($content['field_cm_event_lineup']):$title; ?></a></div>
-        <div class="extra-text"><?php print render($content['field_homepage_extra_text']); ?></div>
+        <?php if(!empty($node->field_cm_event_lineup['und'])){
+            if(!empty($event_ext_nodes->field_cm_movie_videos)){ ?>
+              <div class="video-link">
+                <?php print movie_video_output($event_ext_nodes->nid); ?>
+              </div>
+            <?php } 
+          } ?>
+        <div class="title-area">
+          <?php $movie_tile=(!empty($content['field_cm_event_lineup'][0]['#markup']))?$content['field_cm_event_lineup'][0]['#markup']:''; 
+          if (($movie_tile!=$title) && (!empty($content['field_cm_event_lineup'][0]['#markup']))): ?>
+            <div class="slide-small-text film-title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></div>
+          <?php endif;?>
+          <div class="slide-big-text film-title"><a href="<?php print $node_url; ?>"><?php print (render($content['field_cm_event_lineup']))?render($content['field_cm_event_lineup']):$title; ?></a></div>
+          <div class="extra-text"><?php print render($content['field_homepage_extra_text']); ?></div>
+        </div>
         <div class="screaning">
           <div class="table-responsive">
             <table class="table">

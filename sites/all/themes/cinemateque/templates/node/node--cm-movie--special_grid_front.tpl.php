@@ -28,6 +28,7 @@
                 <div class="screaning"><?php print screaning_output($node->nid, 1); ?></div>
               </div>
       </div>
+    </div>
       <div class="short-text">
         <?php print render($content['field_cm_movie_short_summary']);?>
       </div>

@@ -26,7 +26,7 @@
         </a>
       </div>
       <div class="short-text">
-        <?php print render($content['body']);?>
+        <?php print render($content['field_short_sammary_article']); ?>
       </div>
   </div>
 
