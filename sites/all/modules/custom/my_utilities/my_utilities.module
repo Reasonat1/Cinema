@@ -189,7 +189,7 @@ function my_utilities_admin_paths() {
 }
 
 
-function screaning_output ($element_id, $qnt=100) {
+function screaning_output ($element_id, $qnt=100, $filter = FALSE) {
 	global $language ;
     $language_name = isset($language->language) ? $language->language : 'en';
 	$now=time();
@@ -217,9 +217,19 @@ function screaning_output ($element_id, $qnt=100) {
         $output_movie_event .= ' <tbody>';
 		$current_qnt=0;
         foreach($results as $val){
-			if ($current_qnt>=$qnt) break;
+                        if ($current_qnt>=$qnt) break;
           $movie_event_nid = $val->nid;
           $movie_event_info = node_load($movie_event_nid);
+          if ($filter) {
+            $sale_period = field_get_items('node', $movie_event_info, 'field_cm_sale_time');
+            $sold_out = field_get_items('node', $movie_event_info, 'field_tickets_sold_out');
+            $sale_open = field_get_items('node', $movie_event_info, 'field_include_ticket_sale');
+            list($hidden, $disabled) = 
+              cinematic_toptix_active_sale($sale_period, $sold_out, $sale_open);
+            if ($hidden or $disabled) {
+              continue;
+            }
+          }
           $flag_moviegroup_event = flag_create_link('favorite_', $movie_event_info->nid);
           //$event_title = t($movie_event_info->title);
           $event_title = '';
