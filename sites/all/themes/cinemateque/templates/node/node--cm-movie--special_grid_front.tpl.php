@@ -25,7 +25,7 @@
                 <div class="video-link">
                   <?php print movie_video_output($node->nid); ?>
                 </div>
-                <div class="screaning"><?php print screaning_output($node->nid, 1); ?></div>
+                <div class="screaning"><?php print screaning_output($node->nid, 1, TRUE); ?></div>
               </div>
       </div>
     </div>
