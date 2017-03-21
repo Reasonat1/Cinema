@@ -23,14 +23,14 @@
       </div>
       <a class="all-image" href="<?php print $node_url; ?>"></a>
         <div class="on-image">
-          <div class="title-area">
-            <h2 class="title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
             <div class="video-link">
               <?php print movie_video_output($node->nid); ?>
             </div>
+          <div class="title-area">
+            <h2 class="title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
           </div>
         <div class="extra-text"><?php print render($content['field_homepage_extra_text']); ?></div>
-		  <div class="screaning"><?php print screaning_output($node->nid, 1); ?></div>
+		  <div class="screaning"> <?php print screaning_output($node->nid, 1); ?></div>
         </div>
   </div>
 
