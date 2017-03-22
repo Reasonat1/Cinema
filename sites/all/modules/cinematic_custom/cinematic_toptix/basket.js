@@ -32,17 +32,17 @@ $esro.attachEventHandler('basketChanged', function(basket) {
 function toptix_navigationHandler(pageName) {
   console.log('esro navigation:' + pageName);
   // i disbled this because it made a redirection look
-  return;
+  //return;
   if (pageName == 'DEFAULT') {
     var target_page = Drupal.settings.basePath + 'user';
     var target_address = 'http://' + window.location.hostname + target_page;
     if (target_address != window.location.href) {
       console.log('navigating to ' + target_page);
-      //window.location.href = target_address;
+      window.location.href = target_address;
     }
   }
 }
-//$esro.attachEventHandler('navigationRequired', toptix_navigationHandler);
+$esro.attachEventHandler('navigationRequired', toptix_navigationHandler);
 
 function toptix_callback_basket_get_customer(result) {
   if (result.HasError) {
