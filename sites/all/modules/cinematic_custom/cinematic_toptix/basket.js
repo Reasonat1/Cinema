@@ -26,8 +26,6 @@ var toptix_basket_url = null;
 })(jQuery);
 
 $esro.attachEventHandler('basketChanged', function(basket) {
-  console.log('my basket handler');
-  console.log(basket);
   jQuery.cookie('toptix_basket', basket.Tickets.length);
 });
 
