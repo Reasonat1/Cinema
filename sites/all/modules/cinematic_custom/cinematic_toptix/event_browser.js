@@ -31,7 +31,8 @@ toptix_dialog.setup = function(anchor) {
   var lang = jQuery('select[name="language"]');
   this.lang = lang.length ? lang.val() : 'en';
 
-  var url = Drupal.settings.basePath + 'content/toptix-browser/' + this.bundle;
+  var url = Drupal.settings.basePath + Drupal.settings.pathPrefix;
+  url += 'content/toptix-browser/' + this.bundle;
   url += '?language=' + this.lang;
   this.anchor = anchor;
   var self = this;
@@ -121,8 +122,9 @@ toptix_dialog.process_results = function(results) {
 };
 
 toptix_dialog.update_results = function() {
-  var url = Drupal.settings.basePath + 'content/toptix-browser/' + this.bundle + '?';
-  url += '?language=' + this.lang;
+  var url = Drupal.settings.basePath + Drupal.settings.pathPrefix;
+  url += 'content/toptix-browser/' + this.bundle + '?';
+  url += 'language=' + this.lang;
   url += '&page=' + this.pager.val() + '&title=' + this.title_search.val();
   if (this.bundle != 'hall') {
     url += '&date_range=' + this.date_from.val() + ':' + this.date_to.val();
