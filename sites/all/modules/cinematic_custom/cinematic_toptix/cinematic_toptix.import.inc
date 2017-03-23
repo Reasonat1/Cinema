@@ -92,6 +92,7 @@ class TopTixImport {
 
     $existing_events = self::fetch_existing_events($movie->nid);
     $events = self::fetch_toptix_events($show_id);
+    $t_events = self::fetch_events_translation(array_keys($events), $movie->language);
     self::fetch_hall_terms($events, $movie->language);
 
     foreach ($events as $id => &$event) {
@@ -99,7 +100,8 @@ class TopTixImport {
         continue;
       }
       $event->data = unserialize($event->data);
-      $new_id = self::create_event($event, $movie);
+      $event_translation = isset($t_events[$id]) ? $t_events[$id] : NULL;
+      $new_id = self::create_event($event, $movie, $event_translation);
       $params = array(
         '!link' => l($new_id, 'node/' . $new_id),
       );
@@ -107,10 +109,14 @@ class TopTixImport {
     }
   }
 
-  public static function create_event($event, $movie) {
+  public static function create_event($event, $movie, $event_translation) {
     $event_node = entity_create('node', array('type' => 'cm_event'));
     $event_node->uid = $movie->uid;
     $event_node->language = $movie->language;
+    if ($event_translation and $event_translation->tnid == 0) {
+      $event_node->translation_source = $event_translation;
+    }
+
     $wrapper = entity_metadata_wrapper('node', $event_node);
     $wrapper->title = $movie->title;
     $wrapper->field_toptix_purchase = $event->local_id;
@@ -172,6 +178,22 @@ class TopTixImport {
     $query->addField('tp', 'field_toptix_purchase_value');
     $query->addExpression('1');
     return $query->execute()->fetchAllKeyed();
+  }
+
+  public static function fetch_events_translation($toptix_ids, $language) {
+    $query = db_select('field_data_field_toptix_purchase', 'tp');
+    $query->condition('tp.bundle', 'cm_event');
+    $query->condition('field_toptix_purchase_value', $toptix_ids, 'IN');
+    $query->join('node', 'n', 'n.nid = tp.entity_id');
+    $query->condition('n.language', $language, '!=');
+    $query->addField('tp', 'field_toptix_purchase_value', 'toptix_id');
+    $query->fields('n');
+    $results = $query->execute()->fetchAll();
+    $events = array();
+    foreach ($results as $result) {
+      $events[$result->toptix_id] = $result;
+    }
+    return $events;
   }
 
   public static function fetch_toptix_events($show_id) {
