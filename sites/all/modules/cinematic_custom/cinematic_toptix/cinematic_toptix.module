@@ -219,6 +219,10 @@ function cinematic_toptix_field_formatter_view(
   }
 
   $sale_period = field_get_items($entity_type, $entity, 'field_cm_sale_time');
+  if (empty($sale_period)) {
+    $sale_period = field_get_items($entity_type, $entity, 'field_cm_event_time');
+    $sale_period[0]['value'] = time();
+  }
   $sold_out = field_get_items($entity_type, $entity, 'field_tickets_sold_out');
   $sale_open = field_get_items($entity_type, $entity, 'field_include_ticket_sale');
 
@@ -276,6 +280,7 @@ function cinematic_toptix_active_sale($sale_period, $sold_out, $sale_open) {
       }
     }
   }
+
   if ($sold_out and $sold_out[0]['value']) {
     $disabled = t('Sold out');
     $hidden = FALSE;
