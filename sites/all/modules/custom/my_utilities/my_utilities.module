@@ -309,7 +309,7 @@ function screaning_output ($element_id, $qnt=100, $filter = FALSE) {
              $output_movie_event .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div></td>';
            }
            $output_movie_event .='<td class="like-flag only-desktop">'. $flag_moviegroup_event . '</td>';
-           $output_movie_event .='<td class="add-event only-desktop">'. $addevent . '</td>';
+           $output_movie_event .='<td class="add-event">'. $addevent . '</td>';
            $toptix_button = field_view_field('node', $movie_event_info, 'field_toptix_purchase', 'full');
            $toptix_button = drupal_render($toptix_button);
            $output_movie_event .= '<td class="purchase">' . $toptix_button . '</td>';
