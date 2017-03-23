@@ -29,6 +29,24 @@ $esro.attachEventHandler('basketChanged', function(basket) {
   jQuery.cookie('toptix_basket', basket.Tickets.length);
 });
 
+$esro.attachEventHandler('navigationRequired', function (pageName) {
+  console.log('esro navigation:' + pageName);
+  if (pageName == 'DEFAULT') {
+    var target_page = '/esro/event.php';
+    var target_address = 'http://' + window.location.hostname + target_page;
+
+    if (target_address != window.location.href) {
+      console.log('navigating to ' + target_address);
+      window.location.href = target_address;
+    }
+    else {
+      console.log('target=' + target_address);
+      console.log('href=' + window.location.href);
+      // disabled because it causes redirect loop
+      //window.location.href = target_address;
+    }
+  }
+});
 
 function toptix_open_basket_frame(basket_url) {
   // wrapper div for <esro:frame

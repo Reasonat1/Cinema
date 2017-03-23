@@ -41,12 +41,12 @@
 </head>
 <body>
   <?php 
-    $base_url = 'http://tickets.jer-cin.org.il/loader.aspx/';
+    $base_url = 'http://tickets.jer-cin.org.il/loader.aspx';
     $url = $base_url . '?target=hall.aspx?event=23027&culture=en-US';
   ?>
   <button class="purchase" data-url="<?php print $url;?>"> Purchase </button>
   <?php 
-    $url = $base_url . 'Order.aspx&culture=en-US';
+    $url = $base_url . '/Order.aspx'; //?culture=en-US
   ?>
   <button class="basket" data-url="<?php print $url;?>"> Basket </button>
   <div id="toptix-frame-wrapper">
