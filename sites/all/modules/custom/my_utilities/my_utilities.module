@@ -75,8 +75,8 @@ $text =
             <var class="atc_title">'.$summery.'</var>
             <var class="atc_description">'.$desc.'</var>
 			<var class="atc_location">'.t('Cinematheque').'</var>
-            <var class="atc_organizer">'.$owner->name.'</var>
-            <var class="atc_organizer_email">'.$owner->mail.'</var>
+            <var class="atc_organizer">'.check_plain($owner->name).'</var>
+            <var class="atc_organizer_email">'.check_plain($owner->mail).'</var>
         </var>
     </span>'; 
    $output = $text;
