@@ -116,6 +116,15 @@ class TopTixImport {
     if ($event_translation and $event_translation->tnid == 0) {
       $event_node->translation_source = $event_translation;
     }
+    static $domain_id;
+    if (module_exist('domain')) {
+      if (!$domain_id) {
+        $domain = domain_get_domain();
+        $domain_id = $domain['domain_id'];
+      }
+      $event_node->domain_site = FALSE;
+      $event_node->domains = array($domain_id => $domain_id);
+    }
 
     $wrapper = entity_metadata_wrapper('node', $event_node);
     $wrapper->title = $movie->title;
