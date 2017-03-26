@@ -432,3 +432,18 @@ switch ($node->type) {
 	
 	
 }
+
+function my_utilities_menu_alter(&$items) {
+  if (isset($items['node/%/events'])) {
+    $items['node/%/events']['access callback'] = 'my_utitlities_access_events_tab';
+    $items['node/%/events']['access arguments'] = array(1);
+  }
+}
+
+function my_utitlities_access_events_tab($nid) {
+  if (!user_access('administer nodes')) {
+    return FALSE;
+  }
+  $node = node_load($nid);
+  return $node and $node->type == 'cm_event';
+}
