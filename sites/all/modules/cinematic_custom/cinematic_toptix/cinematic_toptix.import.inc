@@ -117,7 +117,7 @@ class TopTixImport {
       $event_node->translation_source = $event_translation;
     }
     static $domain_id;
-    if (module_exist('domain')) {
+    if (module_exists('domain')) {
       if (!$domain_id) {
         $domain = domain_get_domain();
         $domain_id = $domain['domain_id'];
