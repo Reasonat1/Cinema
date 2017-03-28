@@ -109,7 +109,7 @@ class TopTixImport {
         '!link' => l($new_id, 'node/' . $new_id),
       );
       $message = 'Created event !link';
-      if (!$event_translation and $movie->movie_translation) {
+      if (!$event_translation and !empty($movie->movie_translation)) {
         $event_translation = (object) array('nid' => $new_id, 'tnid' => 0);
         $new_id = self::create_event($event, $movie->movie_translation, $event_translation);
         $params['!link_t'] = l($new_id, 'node/' . $new_id);
