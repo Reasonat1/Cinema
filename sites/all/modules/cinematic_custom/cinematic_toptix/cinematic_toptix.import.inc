@@ -258,6 +258,7 @@ class TopTixReader extends XMLReader {
   public function read_shows() {
     $this->toptix = new TopTixContext();
     $this->toptix->shows = array();
+    $this->empty_tables();
     while ($this->read()) {
       if ($this->nodeType == XMLReader::ELEMENT) {
         $this->process_element();
@@ -275,6 +276,12 @@ class TopTixReader extends XMLReader {
       $this->write_shows();
     }
     return array($this->toptix->total_shows, $this->toptix->total_events);
+  }
+
+  private function empty_tables() {
+    db_delete('toptix_events')->execute();
+    db_delete('toptix_events_data')->execute();
+    db_delete('toptix_shows')->execute();
   }
 
   private function process_element() {
@@ -325,25 +332,28 @@ class TopTixReader extends XMLReader {
   private function write_shows() {
     $ids = array();
     $transaction = db_transaction();
-    $fields = array();
+
+    $shows_insert = db_insert('toptix_shows');
+    $shows_insert->fields(array('external_id', 'title', 'code'));
     foreach ($this->toptix->shows as $show) {
-      $ids[] = $show['ID'];
-      $fields['title'] = $show['Name'];
-      $fields['code'] = $show['Code'];
-      db_merge('toptix_shows')
-        ->key(array('external_id' => $show['ID']))
-        ->fields($fields)
-        ->execute();
+      $shows_insert->values(array($show['ID'], $show['Name'], $show['Code']));
     }
+    $shows_insert->execute();
+
     $query = db_select('toptix_shows', 'ts');
     $query->fields('ts', array('external_id', 'id'));
-    $query->condition('external_id', $ids, 'IN');
     $show_ids = $query->execute()->fetchAllKeyed();
 
     $this->write_events($show_ids);
   }
 
   private function write_events($show_ids) {
+    $events_insert = db_insert('toptix_events');
+    $events_insert->fields(array('local_id', 'external_id', 'show_id', 'event_date', 'hall_id'));
+
+    $data_insert = db_insert('toptix_events_data');
+    $data_insert->fields(array('local_id', 'data'));
+
     $time_zone = new DateTimeZone('Asia/Jerusalem');
     foreach ($this->toptix->shows as $show) {
       $show_id = $show_ids[ $show['ID'] ];
@@ -358,24 +368,22 @@ class TopTixReader extends XMLReader {
           'external_id' => $event['EventId'],
           'show_id' => $show_id,
           'event_date' => $mysql_ActualEventDate,
+          'hall_id' => '',
         );
         $hall_id = $this->fetch_hall($event['HallGuid']);
         if ($hall_id) {
           $fields['hall_id'] = $hall_id;
         }
-        db_merge('toptix_events')
-          ->key(array('local_id' => $event['EventLocalId']))
-          ->fields($fields)
-          ->execute();
-        db_merge('toptix_events_data')
-          ->key(array('local_id' => $event['EventLocalId']))
-          ->fields(array(
-            'local_id' => $event['EventLocalId'],
-            'data' => serialize($event),
-          ))
-          ->execute();
+        $events_insert->values($fields);
+
+        $data_insert->values(array(
+          $event['EventLocalId'],
+          serialize($event),
+        ));
       }
     }
+    $events_insert->execute();
+    $data_insert->execute();
   }
   
   public function fetch_hall($hall_guid) {
