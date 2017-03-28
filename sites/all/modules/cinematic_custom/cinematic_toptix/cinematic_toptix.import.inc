@@ -213,6 +213,7 @@ class TopTixImport {
     $query->condition('field_toptix_purchase_value', $toptix_ids, 'IN');
     $query->join('node', 'n', 'n.nid = tp.entity_id');
     $query->condition('n.language', $language, '!=');
+    $query->condition('n.tnid', 0);
     $query->addField('tp', 'field_toptix_purchase_value', 'toptix_id');
     $query->fields('n');
     $results = $query->execute()->fetchAll();
