@@ -1,0 +1,105 @@
+<?php
+
+function festival_calendar_block_view_content(){
+    global $language ;
+    $lang_name = isset($language->language) ? $language->language : '';
+    if($lang_name == ''){
+        $lang_name = 'en';
+    }
+    global $base_url;
+    $output = $filter = $selected_filter = $day = "";
+    $term_page = arg(0);
+    if($term_page == 'taxonomy'){
+        $tid =arg(2);
+        $texonomy = taxonomy_term_load($tid);     
+        $start_date = isset($texonomy->field_cm_festival_date['und'][0]['value']) ? $texonomy->field_cm_festival_date['und'][0]['value'] : '';
+        $end_date = isset($texonomy->field_cm_festival_date['und'][0]['value2']) ? $texonomy->field_cm_festival_date['und'][0]['value2'] : '';
+        $start_date = strtotime($start_date);
+        $end_date = strtotime($end_date);
+        if(!empty($start_date)){
+            $day = date( 'Y-m-d', $start_date );
+        }
+        $filter.= " <div class ='calender-filter'>" ;
+        $filter.= " <span class ='prevday filter-cantrol' ><i class='fa fa-angle-left '></i></span>" ;
+        if(!empty($end_date) && !empty($start_date)){
+             $a = 1; $filter_class = '';
+             if($a == '1'){ $filter_class = 'active';}
+            for ( $i = $start_date; $i <= $end_date; $i = $i + 86400 ) {
+                   $Date = date( 'j.n', $i ); 
+                   $Day = date( 'l', $i );
+                   $filter.="<p class='$filter_class'>$Date<br /><span>$Day</span><span class='filter-date element-invisible'>$i</span></p>";
+                   $a++;
+                   $filter_class  = '';
+            }
+        }else{
+                drupal_set_message('Start date and End date are not set in texonomy term', $type = 'error');
+         }
+         $filter.= " <span class ='nextday filter-cantrol'><i class='fa fa-angle-right'></i></span>" ;
+        $filter.= " </div>" ;
+        
+        if(!empty($start_date)){
+            $selected_filter = date( 'l | d.m.y', $start_date );
+        }
+    }else{
+          if(!empty(arg(1))){
+            $node = node_load(arg(1));
+            if(!empty($node)){
+                global $_domain;
+                $domains = $node->domains;
+               foreach($domains as $domain){
+                    if($_domain['domain_id'] == $domain){
+                        $term_tid = db_query("SELECT `entity_id` FROM `field_data_field_cm_domain` WHERE `field_cm_domain_value` =$domain")->fetchField();
+                        break;
+                    }
+                }
+                if($term_tid != ''){
+                    $texonomy = taxonomy_term_load($term_tid);
+                    
+                    $start_date = isset($texonomy->field_cm_festival_date['und'][0]['value']) ? $texonomy->field_cm_festival_date['und'][0]['value'] : '';
+                    $end_date = isset($texonomy->field_cm_festival_date['und'][0]['value2']) ? $texonomy->field_cm_festival_date['und'][0]['value2'] : '';  
+                    if(!empty($start_date)){
+                       $start_date = strtotime($start_date);
+                    }
+                    if(!empty($end_date)){
+                       $end_date = strtotime($end_date);
+                    }
+                    if(!empty($start_date)){
+                        $day = date( 'Y-m-d', $start_date );
+                    }
+                    $filter.= " <div class ='calender-filter'>" ;
+                    $filter.= " <span class ='prevday filter-cantrol' ><i class='fa fa-angle-left '></i></span>" ;
+                    if(!empty($end_date) && !empty($start_date)){
+                        $a = 1; $filter_class = '';
+                        for ( $i = $start_date; $i <= $end_date; $i = $i + 86400 ) {
+                            if($a == '1'){ $filter_class = 'active';}
+                               $Date = date( 'j.n', $i ); 
+                               $Day = date( 'l', $i );
+                               $filter.="<p class='$filter_class'>$Date<br /><span>$Day</span><span class='filter-date element-invisible'>$i</span></p>";
+                               $a++;
+                               $filter_class  = '';
+                        }
+                    }else{
+                                drupal_set_message('Start date and End date are not set in texonomy term', $type = 'error');
+                     }
+                     $filter.= " <span class ='nextday filter-cantrol'><i class='fa fa-angle-right'></i></span>" ;
+                    $filter.= " </div>" ;
+
+                    if(!empty($start_date)){
+                        $selected_filter = date( 'l | d.m.y', $start_date );
+                    }
+                }else{
+                    drupal_set_message('Current domain or node not connected to texonomy term', $type = 'status');
+                }
+            }
+        }else{
+          return;
+        }
+    }
+	
+	$output.="<div class='col-sm-12 calender'>";
+     $output.= $filter;
+     $output.= '</div>';
+	 
+	 return $output;
+}
+	 
