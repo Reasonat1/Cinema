@@ -90,6 +90,9 @@ class TopTixImport {
       return;
     }
 
+    if (!empty($movie->tnid)) {
+      self::fetch_movie_translation($movie);
+    }
     $existing_events = self::fetch_existing_events($movie->nid);
     $events = self::fetch_toptix_events($show_id);
     $t_events = self::fetch_events_translation(array_keys($events), $movie->language);
@@ -105,7 +108,14 @@ class TopTixImport {
       $params = array(
         '!link' => l($new_id, 'node/' . $new_id),
       );
-      drupal_set_message(t('Created event !link', $params));
+      $message = 'Created event !link';
+      if (!$event_translation and $movie->movie_translation) {
+        $event_translation = (object) array('nid' => $new_id, 'tnid' => 0);
+        $new_id = self::create_event($event, $movie->movie_translation, $event_translation);
+        $params['!link_t'] = l($new_id, 'node/' . $new_id);
+        $message .= ' with translation !link_t';
+      }
+      drupal_set_message(t($message, $params));
     }
   }
 
@@ -117,7 +127,7 @@ class TopTixImport {
       $event_node->translation_source = $event_translation;
     }
     static $domain_id;
-    if (module_exist('domain')) {
+    if (module_exists('domain')) {
       if (!$domain_id) {
         $domain = domain_get_domain();
         $domain_id = $domain['domain_id'];
@@ -187,6 +197,14 @@ class TopTixImport {
     $query->addField('tp', 'field_toptix_purchase_value');
     $query->addExpression('1');
     return $query->execute()->fetchAllKeyed();
+  }
+
+  public static function fetch_movie_translation($movie) {
+    $query = db_select('node', 'n');
+    $query->condition('tnid', $movie->tnid);
+    $query->condition('language', $movie->language, '!=');
+    $query->fields('n');
+    $movie->movie_translation = $query->execute()->fetchObject();
   }
 
   public static function fetch_events_translation($toptix_ids, $language) {
