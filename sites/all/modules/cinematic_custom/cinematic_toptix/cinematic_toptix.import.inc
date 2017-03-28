@@ -163,28 +163,28 @@ class TopTixImport {
     $wrapper->field_include_ticket_sale->set($event->data['SaleStatus'] == 'Open');
     $wrapper->field_cm_event_onsale->set(TRUE);
 
-    if (isset($event->hall_tid)) {
-      $wrapper->field_cm_event_hall->set($event->hall_tid);
+    if (isset($event->hall_tid) and isset($event->hall_tid[$movie->language])) {
+      $wrapper->field_cm_event_hall->set($event->hall_tid[$movie->language]);
     }
 
     $wrapper->save();
     return $wrapper->getIdentifier();
   }
   
-  public static function fetch_hall_terms(&$events, $language) {
+  public static function fetch_hall_terms(&$events) {
     $query = db_select('toptix_events', 'te');
     $query->condition('te.local_id', array_keys($events), 'IN');
     $query->join('field_data_field_toptix_purchase', 'tp', 'tp.field_toptix_purchase_value = te.hall_id');
     $query->condition('tp.bundle', 'hall');
     $query->join('taxonomy_term_data', 'td', 'td.tid = tp.entity_id');
-    if ($language != 'und') {
-      $query->condition('td.language', $language);
-    }
-    $query->fields('td', array('tid', 'name'));
+    $query->fields('td', array('tid', 'name', 'language'));
     $query->addField('te', 'local_id', 'event_id');
     $hall_terms = $query->execute()->fetchAll();
     foreach ($hall_terms as $hall_term) {
-      $events[$hall_term->event_id]->hall_tid = $hall_term->tid;
+      if (!isset($events[$hall_term->event_id]->hall_tid)) {
+        $events[$hall_term->event_id]->hall_tid = array();
+      }
+      $events[$hall_term->event_id]->hall_tid[$hall_term->language] = $hall_term->tid;
     }
   }
 
