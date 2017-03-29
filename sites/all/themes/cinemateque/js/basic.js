@@ -243,7 +243,7 @@ if ($("div").hasClass("movie-group-list")){
 
 /*******  calendar fixed  area*********/
 
-if ($("body").hasClass("page-node-4284") || $("body").hasClass("page-node-4285") || $("body").hasClass("page-festival-calendar")){
+if ($("body").hasClass("page-node-4284") || $("body").hasClass("page-node-4285") || $("body").hasClass("page-festival-calendar") && $(".calender-filter p").size()>10){
         if ($(window).width() < 768){
           $squarewidth = 80;
         }
