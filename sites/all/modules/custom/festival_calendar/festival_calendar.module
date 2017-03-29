@@ -2,37 +2,26 @@
 
 function festival_calendar_block_view_content(){
     global $language ;
-    $lang_name = isset($language->language) ? $language->language : '';
-    if($lang_name == ''){
-        $lang_name = 'en';
-    }
     global $base_url;
     $output = $filter =  "";
     if(true){
-        $tid =12;
+        $tid = festival_calendar_get_current_festival();
         $texonomy = taxonomy_term_load($tid);     
         $start_date = isset($texonomy->field_cm_festival_date['und'][0]['value']) ? $texonomy->field_cm_festival_date['und'][0]['value'] : '';
         $end_date = isset($texonomy->field_cm_festival_date['und'][0]['value2']) ? $texonomy->field_cm_festival_date['und'][0]['value2'] : '';
         $start_date = strtotime($start_date);
         $end_date = strtotime($end_date);
-		$filter_day=(!empty(arg(1)))?strtotime(arg(1)):$start_date;
+		$filter_day=(!empty(arg(1)))?strtotime(arg(1)):strtotime(_get_festival_day());
         $filter.= " <div class ='calender-filter'>" ;
         if(!empty($end_date) && !empty($start_date)){
              $filter_class = '';
 			 $a=1;
             for ( $i = $start_date; $i <= $end_date; $i = $i + 86400 ) {
-				$query = new EntityFieldQuery();
-				$query->entityCondition('entity_type', 'node')
-					->entityCondition('bundle', 'cm_event')
-					->propertyCondition('status', 1)
-					->propertyCondition('language', $language->language, '=')
-					->fieldCondition('field_cm_event_time', 'value', array($i,$i + 86400), 'BETWEEN'); 
-					$eventResult = $query->execute();
-			if (!count($eventResult)) continue;
+			if (!festival_calendar_chek_date($i)) continue;
 			$filter_class = ($i == $filter_day)?'active':'';
                    $Date = date( 'j.n', $i ); 
                    $Day = date( 'l', $i );
-                   $filter.="<p class='$filter_class'><a href='/festival-calendar/".date( 'Y-m-d', $i)."'>$Date<br /><span>$Day</span></a></p>";
+                   $filter.="<p class='$filter_class'><a href='/festival-calendar/".date( 'Y-m-d', $i)."'>$Date<br /><span>".t($Day)."</span></a></p>";
             }
         }else{
                 drupal_set_message('Start date and End date are not set in texonomy term', $type = 'error');
@@ -54,4 +43,34 @@ function festival_calendar_block_view_content(){
 	 
 	 return $output;
 }
-	 
+
+function _get_festival_day() {
+	$now=mktime(0,0,0);$tid = festival_calendar_get_current_festival();
+		$tid = festival_calendar_get_current_festival();
+        $taxonomy = taxonomy_term_load($tid);     
+        $start_date = isset($taxonomy->field_cm_festival_date['und'][0]['value']) ? $taxonomy->field_cm_festival_date['und'][0]['value'] : '';
+        $end_date = isset($taxonomy->field_cm_festival_date['und'][0]['value2']) ? $taxonomy->field_cm_festival_date['und'][0]['value2'] : '';
+		$start_date = strtotime($start_date);
+        $end_date = strtotime($end_date);
+	if ($now>$start_date && $now<$end_date)
+	if (festival_calendar_chek_date($now)) return date( 'Y-m-d',$now);
+	return date('Y-m-d',$start_date);
+}
+
+function festival_calendar_chek_date($day) {
+	global $language ;
+				$query = new EntityFieldQuery();
+				$query->entityCondition('entity_type', 'node')
+					->entityCondition('bundle', 'cm_event')
+					->propertyCondition('status', 1)
+					->propertyCondition('language', $language->language, '=')
+					->fieldCondition('field_cm_event_time', 'value', array($day,$day + 86400), 'BETWEEN'); 
+					$eventResult = $query->execute();
+					
+			if (count($eventResult)) return true;
+			return false;
+}
+function festival_calendar_get_current_festival() {
+	//TODO return nearest festival for today
+	return 12;
+}
