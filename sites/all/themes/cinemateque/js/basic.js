@@ -241,10 +241,9 @@ if ($("div").hasClass("movie-group-list")){
 
 
 
-
 /*******  calendar fixed  area*********/
 
-if ($("body").hasClass("page-node-4284") || $("body").hasClass("page-node-4285")){
+if ($("body").hasClass("page-node-4284") || $("body").hasClass("page-node-4285") || $("body").hasClass("page-festival-calendar")){
         if ($(window).width() < 768){
           $squarewidth = 80;
         }
@@ -262,7 +261,7 @@ if ($("body").hasClass("page-node-4284") || $("body").hasClass("page-node-4285")
 
           $filterwidth = $(".calender-filter p").size()*$squarewidth+30;
           $(".calender-filter").css("width",$filterwidth);
-          $maxleft = ($filterwidth - $(".filter-wrapper .inner").width())*(-1)-30; 
+          $maxleft = ($filterwidth - $(".filter-wrapper .inner").width())*(-1)-30;
           $left = 0;
           $i = 0;
           $('.calender-filter p').each(function () {
@@ -501,6 +500,7 @@ function handleTouchMove(evt) {
         $(window).load(function() {
           $grouppimage = $(".paragraphs-item-special-grid .group-item3 img").height();
           $(".field-name-field-item-special-grid-2").css("height",$grouppimage);
+          $(".field-name-field-lobby-special-grid-2").css("height",$grouppimage);
           $(".special-group").css("height",$grouppimage*2+20);
           $(".group-item3 .short-text").css("height",$grouppimage+20-($grouppimage%24));
           $(".group-item1").each(function() {
@@ -510,12 +510,17 @@ function handleTouchMove(evt) {
           $(".group-item2 .field-name-field-item-special-grid-2").each(function() {
             $topheight = $(this).find(".image-wrapper").height();
             $(this).find(".short-text").css("height",$grouppimage-$topheight-(($grouppimage-$topheight)%24));
-          });  
+          }); 
+          $(".group-item2 .field-name-field-lobby-special-grid-2").each(function() {
+            $topheight = $(this).find(".image-wrapper").height();
+            $(this).find(".short-text").css("height",$grouppimage-$topheight-(($grouppimage-$topheight)%24));
+          });   
         });
         
         $(window).resize(function() {
           $grouppimage = $(".paragraphs-item-special-grid .group-item3 img").height();
           $(".field-name-field-item-special-grid-2").css("height",$grouppimage);
+          $(".field-name-field-lobby-special-grid-2").css("height",$grouppimage);
           $(".special-group").css("height",$grouppimage*2+20);
           $(".group-item3 .short-text").css("height",$grouppimage+20-($grouppimage%24));
           $(".group-item1").each(function() {
@@ -526,6 +531,10 @@ function handleTouchMove(evt) {
             $topheight = $(this).find(".image-wrapper").height();
             $(this).find(".short-text").css("height",$grouppimage-$topheight-(($grouppimage-$topheight)%24));
           });  
+          $(".group-item2 .field-name-field-lobby-special-grid-2").each(function() {
+            $topheight = $(this).find(".image-wrapper").height();
+            $(this).find(".short-text").css("height",$grouppimage-$topheight-(($grouppimage-$topheight)%24));
+          }); 
         });
 
 /******  dinamic special grid  *******/
@@ -766,7 +775,9 @@ function handleTouchMove(evt) {
         $('.group-alttab').hide();
     }
 
-
+    if($('.node-type-cm-event .sub-lang').text().length == 0){
+        $('.node-type-cm-event .sub-title').hide();
+    }
 
     /********  english name of the movie  *******/
 

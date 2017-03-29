@@ -3,7 +3,7 @@
 function festival_calendar_block_view_content(){
     global $language ;
     global $base_url;
-    $output = $filter =  "";
+    $output = $filter =  $filter_control = $filter_inner="";
     if(true){
         $tid = festival_calendar_get_current_festival();
         $texonomy = taxonomy_term_load($tid);     
@@ -12,7 +12,10 @@ function festival_calendar_block_view_content(){
         $start_date = strtotime($start_date);
         $end_date = strtotime($end_date);
 		$filter_day=(!empty(arg(1)))?strtotime(arg(1)):strtotime(_get_festival_day());
-        $filter.= " <div class ='calender-filter'>" ;
+        $filter.= " <div class ='filter'>";
+        $filter.= " <div class ='filter-wrapper'>";
+        $filter.= " <div class ='inner'>" ;
+        $filter_inner.= " <div class ='calender-filter'>" ;
         if(!empty($end_date) && !empty($start_date)){
              $filter_class = '';
 			 $a=1;
@@ -21,15 +24,21 @@ function festival_calendar_block_view_content(){
 			$filter_class = ($i == $filter_day)?'active':'';
                    $Date = date( 'j.n', $i ); 
                    $Day = date( 'l', $i );
-                   $filter.="<p class='$filter_class'><a href='/festival-calendar/".date( 'Y-m-d', $i)."'>$Date<br /><span>".t($Day)."</span></a></p>";
+                   $filter_inner.="<p class='$filter_class'><a href='/festival-calendar/".date( 'Y-m-d', $i)."'>$Date<br /><span>".t($Day)."</span></a></p>";
+				   $a++;
             }
         }else{
                 drupal_set_message('Start date and End date are not set in texonomy term', $type = 'error');
          }
 		 if ($a>12) {
-		 $filter.= " <span class ='prevday filter-cantrol' ><i class='fa fa-angle-left '></i></span>" ;
-         $filter.= " <span class ='nextday filter-cantrol'><i class='fa fa-angle-right'></i></span>" ;
+		 $filter_control.= " <span class ='prevday filter-cantrol' ><i class='fa fa-angle-left '></i></span>" ;
+         $filter_control.= " <span class ='nextday filter-cantrol'><i class='fa fa-angle-right'></i></span>" ;
 		 }
+        $filter.= $filter_control;
+        $filter.= $filter_inner;
+        $filter.= " </div>" ;
+        $filter.= " </div>" ;
+        $filter.= " </div>" ;
         $filter.= " </div>" ;
         
     }else{
@@ -37,7 +46,7 @@ function festival_calendar_block_view_content(){
         }
     
 	
-	$output.="<div class='col-sm-12 calender'>";
+	$output.="<div class='calenders'>";
      $output.= $filter;
      $output.= '</div>';
 	 
