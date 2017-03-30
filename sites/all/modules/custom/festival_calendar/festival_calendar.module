@@ -15,7 +15,7 @@ function festival_calendar_block_view_content(){
         $filter.= " <div class ='filter'>";
         $filter.= " <div class ='filter-wrapper'>";
         $filter.= " <div class ='inner'>" ;
-        $filter_inner.= " <div class ='calender-filter'>" ;
+        $filter_inner.= " <div class ='calender-filter' id ='calender-filter'>" ;
         if(!empty($end_date) && !empty($start_date)){
              $filter_class = '';
 			 $a=1;
