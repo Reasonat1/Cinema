@@ -154,7 +154,20 @@ function calendar_full_width_block_content(){
             $lineup_id = node_load($node->field_cm_event_lineup['und'][0]['target_id']);
             $lineup_name = $lineup_id->title;
             $lineup_path = drupal_get_path_alias('node/'.$lineup_id->nid, $lang_name);
-            $lineup_summary = $lineup_id->field_cm_movie_short_summary['und'][0]['value'];
+            if ($GLOBALS['_domain']['domain_id'] == 1 ){ 
+              if(!empty($lineup_id->field_cm_movie_short_summary['und'])){
+                $lineup_summary = $lineup_id->field_cm_movie_short_summary['und'][0]['value'];
+              } else {
+                 $lineup_summary= '';
+              }
+            } else if(!empty($lineup_id->field_short_summary_festival['und'])){
+                $lineup_summary = $lineup_id->field_short_summary_festival['und'][0]['value'];
+              } else if(!empty($lineup_id->field_cm_movie_short_summary['und'])){
+                $lineup_summary = $lineup_id->field_cm_movie_short_summary['und'][0]['value'];
+              } else {
+                 $lineup_summary= '';
+              }
+
             if(!empty($lineup_id->field_cm_movie_duration['und'])){
               $lineup_duration = $lineup_id->field_cm_movie_duration['und'][0]['interval'].' '.t($lineup_id->field_cm_movie_duration['und'][0]['period'].'s');
             } else{
@@ -172,7 +185,6 @@ function calendar_full_width_block_content(){
         }
         $purchase = field_view_field('node', $node, 'field_toptix_purchase', 'full');
         $purchase = drupal_render($purchase);
-        //$purchase = 'TODO';
         if(!empty($node->field_cm_event_short_description['und'][0]['value'])){
           $summary_event = truncate_utf8($node->field_cm_event_short_description['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
         }else{
@@ -218,7 +230,7 @@ function calendar_full_width_block_content(){
       $event_start_date=(!empty($node->field_cm_event_time['und']))?$node->field_cm_event_time['und'][0]['value']:'';
                                     if((!empty($node->field_toptix_purchase['und'])) && ($event_start_date>time())){ 
                                          $output .= '<div class="purchase">'.$purchase.'</div>';
-                                         $output .= '<span class="add-event only-desktop">'._return_addthisevent_markup($node).'</span><span class="like-flag only-desktop">'.$flag.'</span>';
+                                         $output .= '<span class="add-event">'._return_addthisevent_markup($node).'</span><span class="like-flag only-desktop">'.$flag.'</span>';
                                       }
                                       $output .= '</div></div>';
             $output .='</div>';
@@ -328,7 +340,19 @@ function ajax_calender_full_width_filter(){
             $lineup_id = node_load($node->field_cm_event_lineup['und'][0]['target_id']);
             $lineup_name = $lineup_id->title;
             $lineup_path = drupal_get_path_alias('node/'.$lineup_id->nid, $lang_name);
-            $lineup_summary = $lineup_id->field_cm_movie_short_summary['und'][0]['value'];
+            if ($GLOBALS['_domain']['domain_id'] == 1 ){ 
+              if(!empty($lineup_id->field_cm_movie_short_summary['und'])){
+                $lineup_summary = $lineup_id->field_cm_movie_short_summary['und'][0]['value'];
+              } else{
+                $lineup_summary = '';
+              }
+            } else if(!empty($lineup_id->field_short_summary_festival['und'])){
+                $lineup_summary = $lineup_id->field_short_summary_festival['und'][0]['value'];
+              } else if(!empty($lineup_id->field_cm_movie_short_summary['und'])){
+                $lineup_summary = $lineup_id->field_cm_movie_short_summary['und'][0]['value'];
+              } else{
+                $lineup_summary = '';
+              }
             if(!empty($lineup_id->field_cm_movie_duration['und'])){
               $lineup_duration = $lineup_id->field_cm_movie_duration['und'][0]['interval'].' '.t($lineup_id->field_cm_movie_duration['und'][0]['period'].'s');
             } else{
@@ -345,8 +369,7 @@ function ajax_calender_full_width_filter(){
             $lineup_name = $lineup_summary = $lineup_duration = $lineup_leading = $lineup_lang = $lineup_subtitle = '';
         }
         $purchase = field_view_field('node', $node, 'field_toptix_purchase', 'full');
-        //$purchase = drupal_render($purchase);
-        $purchase = 'TODO';
+        $purchase = drupal_render($purchase);
         if(!empty($node->field_cm_event_short_description['und'][0]['value'])){
           $summary_event = truncate_utf8($node->field_cm_event_short_description['und'][0]['value'], 250, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
         }else{
@@ -392,7 +415,7 @@ function ajax_calender_full_width_filter(){
       $event_start_date=(!empty($node->field_cm_event_time['und']))?$node->field_cm_event_time['und'][0]['value']:'';
                                     if((!empty($node->field_toptix_purchase['und'])) && ($event_start_date>time())){ 
                                          $output .= '<div class="purchase">'.$purchase.'</div>';
-                                         $output .= '<span class="add-event only-desktop">'._return_addthisevent_markup($node).'</span><span class="like-flag only-desktop">'.$flag.'</span>';
+                                         $output .= '<span class="add-event">'._return_addthisevent_markup($node).'</span><span class="like-flag only-desktop">'.$flag.'</span>';
                                       }
                                       $output .= '</div></div>';
             $output .='</div>';
