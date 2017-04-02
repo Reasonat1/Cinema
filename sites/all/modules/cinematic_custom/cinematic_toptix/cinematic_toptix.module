@@ -243,7 +243,10 @@ function cinematic_toptix_field_formatter_view(
     }
     $event_id = $item['value'];
     $url = 'http://' . TOPTIX_HOST . '/loader.aspx/?target=hall.aspx?event=' . $event_id . $langadd;
-    $output = '<button class="toptix-purchase" data-url="' . $url . '">' . t('Tickets') . '</button>';
+    $label = t('Tickets');
+    $output = <<<HTML
+    <button class="toptix-purchase" data-url="{$url}" data-event-id="{$event_id}"> $label </button>
+HTML;
     $element[$delta] = array(
       '#markup' => $output,
       '#attached' => array(
