@@ -26,6 +26,7 @@ var toptix_basket_url = null;
 })(jQuery);
 
 $esro.attachEventHandler('basketChanged', function(basket) {
+  console.log(basket);
   jQuery.cookie('toptix_basket', basket.Tickets.length);
 });
 
@@ -42,7 +43,7 @@ function toptix_navigationHandler(pageName) {
     }
   }
 }
-//$esro.attachEventHandler('navigationRequired', toptix_navigationHandler);
+$esro.attachEventHandler('navigationRequired', toptix_navigationHandler);
 
 function toptix_callback_basket_get_customer(result) {
   if (result.HasError) {

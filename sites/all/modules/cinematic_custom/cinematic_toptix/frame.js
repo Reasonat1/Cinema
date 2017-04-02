@@ -54,3 +54,19 @@ function toptix_open_frame() {
   });
   jQuery(toptix_active_button.item).text(toptix_active_button.original_text);
 }
+
+function toptix_navigation_analytics(pageName) {
+  if (toptix_active_button.item == null) {
+    return;
+  }
+  var event_fields = {
+    'eventCategory': 'toptix',
+    'eventAction': pageName != 'DEFAULT' ? pageName : 'back_to_site',
+    'eventLabel': toptix_active_button.item.dataset.eventTitle,
+    'eventValue': parseInt(toptix_active_button.item.dataset.eventId),
+  };
+  console.log(event_fields);
+  ga('send', 'event', event_fields);
+}
+
+$esro.attachEventHandler('navigationRequired', toptix_navigation_analytics);
