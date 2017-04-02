@@ -225,6 +225,7 @@ function cinematic_toptix_field_formatter_view(
   }
   $sold_out = field_get_items($entity_type, $entity, 'field_tickets_sold_out');
   $sale_open = field_get_items($entity_type, $entity, 'field_include_ticket_sale');
+  $event_title = check_plain($entity->title);
 
   global $language;
   $langadd = ($language->language == 'en') ? '%26culture=en-US' : '';
@@ -243,7 +244,15 @@ function cinematic_toptix_field_formatter_view(
     }
     $event_id = $item['value'];
     $url = 'http://' . TOPTIX_HOST . '/loader.aspx/?target=hall.aspx?event=' . $event_id . $langadd;
-    $output = '<button class="toptix-purchase" data-url="' . $url . '">' . t('Tickets') . '</button>';
+    $label = t('Tickets');
+    $output = <<<HTML
+    <button class="toptix-purchase" 
+      data-url="{$url}" 
+      data-event-id="{$event_id}"
+      data-event-title="{$event_title}"
+    > 
+    $label </button>
+HTML;
     $element[$delta] = array(
       '#markup' => $output,
       '#attached' => array(
