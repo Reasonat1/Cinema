@@ -21,7 +21,8 @@
             },
             success: function (data) {
                 var path_url = Drupal.settings.basePath + 'sites/all/modules/flag/theme/flag.js';
-                var cal_path = Drupal.settings.basePath + 'sites/all/modules/custom/my_utilities/include/atemay.js';
+                var cal_path = Drupal.settings.basePath + 'sites/all/modules/custom/my_utilities/include/atc.min.js';
+                var cal_patha = Drupal.settings.basePath + 'sites/all/modules/custom/my_utilities/include/addcalendar.js';
                 var cal_path_ticket = Drupal.settings.basePath + 'sites/all/modules/cinematic_custom/cinematic_toptix/frame.js';
                 jQuery('.ajax-inner').replaceWith(data.output);
                 jQuery(".load-inner").removeClass('loading');
@@ -29,6 +30,7 @@
                     Drupal.behaviors.flagLink.attach(document);
                 });
                 jQuery.getScript(cal_path);
+                jQuery.getScript(cal_patha);
                 jQuery.getScript(cal_path_ticket, function(){Drupal.behaviors.toptix_frame.attach(document);});
             }
         });
