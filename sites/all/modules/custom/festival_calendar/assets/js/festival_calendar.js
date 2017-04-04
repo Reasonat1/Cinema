@@ -245,3 +245,31 @@ function toptix_purchase_event(){
       $esro.getCustomerDetails('toptix_callback_get_customer');
     });
 }
+
+(function ($) {
+	$(document).ready(function(){
+	var hallPanel =$('.view-festival-calendar .view-display-id-block_1');
+	var hall =$('.view-festival-calendar .view-display-id-block_1').find('.views-row');
+	var hallWidth=hall.width();
+	var hallHeight=hall.height();
+	var hallPanelWidth = hallWidth*6*1.1;
+	var hallCount=hall.length;
+	var hallLength=hallCount*hallWidth;
+	hallPanel.width(hallPanelWidth).height(hallHeight)
+	if (hallCount>6){
+		var controlButtons = '<div class="hall-next">Next</div><div class="hall-prev">Prev</div>';
+	hallPanel.after(controlButtons);
+	}
+	$('.view-header').delegate('.hall-next', 'click',function(){
+		var panelPosition=parseInt(hallPanel.find('.view-content').css('margin-left'));
+		if(panelPosition>0-hallLength+hallWidth*6)
+		hallPanel.find('.view-content').css('margin-left', panelPosition-hallWidth+'px');
+	});
+	$('.view-header').delegate('.hall-prev', 'click',function(){
+		var panelPosition=parseInt(hallPanel.find('.view-content').css('margin-left'));
+		if(panelPosition<0)
+		hallPanel.find('.view-content').css('margin-left', panelPosition+hallWidth+'px');
+	});
+	
+	});
+})(jQuery);
