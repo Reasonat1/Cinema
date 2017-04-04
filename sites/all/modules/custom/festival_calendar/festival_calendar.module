@@ -75,8 +75,12 @@ function festival_calendar_chek_date($day) {
 					->propertyCondition('language', $language->language, '=')
 					->fieldCondition('field_cm_event_time', 'value', array($day,$day + 86400), 'BETWEEN'); 
 					$eventResult = $query->execute();
-					
-			if (count($eventResult)) return true;
+					if (!empty($eventResult['node']))
+					foreach ($eventResult['node'] as $key=>$value) {
+						$domain=domain_get_node_domains($key);
+						if (!empty($domain['domain_id']) && array_key_exists(2, $domain['domain_id']))
+							return true;
+					}
 			return false;
 }
 function festival_calendar_get_current_festival() {
