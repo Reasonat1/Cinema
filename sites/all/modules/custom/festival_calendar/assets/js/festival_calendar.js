@@ -264,12 +264,27 @@ function toptix_purchase_event(){
 		var panelPosition=parseInt(hallPanel.find('.view-content').css('margin-left'));
 		if(panelPosition>0-hallLength+hallWidth*6)
 		hallPanel.find('.view-content').css('margin-left', panelPosition-hallWidth+'px');
+	events_table();
 	});
 	$('.view-header').delegate('.hall-prev', 'click',function(){
 		var panelPosition=parseInt(hallPanel.find('.view-content').css('margin-left'));
 		if(panelPosition<0)
 		hallPanel.find('.view-content').css('margin-left', panelPosition+hallWidth+'px');
+	events_table();
 	});
+	events_table();
 	
 	});
+function events_table(){
+	var myPanels=$("div[class*='hall-panel-']");
+	$.each(myPanels, function(index, item) {
+		var classList = $(item).attr('class').split(/\s+/);
+	$.each(classList, function(ind, item_class) {
+		if (~item_class.indexOf("hall-panel-")){
+			var event_position=$('.'+item_class).position().left;
+			var event_class=item_class.replace("hall-panel-","");
+			$('.'+event_class).offset({ left : event_position});
+		}
+		});
+});}
 })(jQuery);
