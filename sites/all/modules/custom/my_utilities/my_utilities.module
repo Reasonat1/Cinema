@@ -52,7 +52,7 @@ function _return_addthisevent_markup($node) {
   $output = '';
   drupal_add_js(drupal_get_path('module', 'my_utilities') . '/include/addcalendar.js');
   drupal_add_js(drupal_get_path('module', 'my_utilities') . '/include/atc.min.js');
-  drupal_add_css(drupal_get_path('module', 'my_utilities') . '/include/atc-style-button-icon.css');
+  //drupal_add_css(drupal_get_path('module', 'my_utilities') . '/include/atc-style-button-icon.css');
   if(isset($node->field_cm_event_time) && !empty($node->field_cm_event_time['und'][0]['value'])){
    $start   = date('Y-m-d', $node->field_cm_event_time['und'][0]['value']);
    $start_time = date('H:i:s', $node->field_cm_event_time['und'][0]['value']);
@@ -193,6 +193,9 @@ function share_this_view_block_content(){
     case 'cm_event':
        $favorite_type = t('Add to my events');
        break;
+	case 'cm_movie_group':
+       $favorite_type = t('Add to my movies');
+       break; 
     }
     $output .='<div class="share-pane-container">';
     if (( $user->uid ) && ($type != 'cm_article')) {
