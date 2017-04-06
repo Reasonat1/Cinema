@@ -232,6 +232,10 @@ function cm_extra_node_translate_after_submit($form, &$form_state) {
 }
 
 function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
+	if (!empty($entity->field_cm_event_lineup['und']) && empty($context['not_new']) && $entity->type=='cm_event') {
+		$lineup=node_load($entity->field_cm_event_lineup['und'][0]['target_id']);
+		if (!empty($lineup->title) && $lineup->title==$entity->title) {$entity->title='';}
+	}
   static $original_collections = array();
   $source_entity = $context['source_entity'];
   $langcode = $context['langcode'];
@@ -239,7 +243,6 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
   $info_instances = field_info_instances($context['entity_type'], $bundle);
   $references = array();
   $nids = array();
-
   foreach ($info_instances as $prop_name => $instance) {
     $field_info = field_info_field($instance['field_name']);
 
@@ -250,8 +253,12 @@ function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
         $entity->{$prop_name} = $original_collection->{$prop_name};
       }
     }
-
-    if ($field_info['type'] == 'entityreference') {
+	if (empty($context['not_new'])) { unset($entity->field_title_for_indexing);}
+    if ($field_info['field_name'] == 'field_title_for_indexing') {
+        continue;
+      }
+	  
+	  if ($field_info['type'] == 'entityreference') {
       if (empty($source_entity->{$prop_name})) {
         $entity->{$prop_name} = NULL;
         continue;
@@ -409,6 +416,7 @@ function cm_extra_i18n_sync_translation($entity_type, $translation, $translation
     'langcode' => $langcode,
     'source_entity' => $source, 
     'source_langcode' => $source_language,
+	'not_new'=>true,
   );
   cm_extra_field_attach_prepare_translation_alter($entity, $context);
 }
