@@ -281,9 +281,13 @@ function events_table(){
 		var classList = $(item).attr('class').split(/\s+/);
 	$.each(classList, function(ind, item_class) {
 		if (~item_class.indexOf("hall-panel-")){
-			var event_position=$('.'+item_class).position().left;
+			var event_position=$('.'+item_class).position();
+			var hall_top=event_position.top;
+			var hall_panel=$('.view-festival-calendar .view-display-id-block_1').find('.view-content');
+			var hal_panel_y=hall_panel.position().top;
 			var event_class=item_class.replace("hall-panel-","");
-			$('.'+event_class).offset({ left : event_position});
+			$('.'+event_class).offset({ left : event_position.left});
+			if (hall_top != hal_panel_y) {$('.'+event_class).hide();} else {$('.'+event_class).show();}
 		}
 		});
 });}
