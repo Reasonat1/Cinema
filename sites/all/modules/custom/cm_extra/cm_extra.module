@@ -196,6 +196,30 @@ function cm_extra_form_node_form_alter(&$form, &$form_state, $form_id) {
 
 }
 
+
+function cm_extra_views_post_execute(&$view) {
+  dpm($view->name);
+  if ($view->name != 'user_flagged_content') {
+    return;
+  }
+  dpm($view->result);
+  return;
+  $tids = array();
+  $nids = array();
+  foreach ($view->result as $result_item) {
+    foreach ($result_item->field_field_tags as $term) {
+      $tid = $term['raw']['tid'];
+      $tids[$tid] = TRUE;
+    }
+    $nid = $result_item->nid;
+    $nids[$nid] = TRUE;
+  }
+  $tids = implode('+', array_keys($tids));
+  $nids = implode('+', array_keys($nids));
+  $similar = views_embed_view('similar_by_terms', 'default', $tids, $nids);
+  $view->attachment_after = '<h2>similar</h2>' . $similar;
+}
+
 //redirect user to the add node form of the translation for it
 function cm_extra_views_pre_render(&$view) {
 	//hide event title if it equals to movie title
