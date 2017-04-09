@@ -73,6 +73,7 @@ function festival_calendar_chek_date($day) {
 					->entityCondition('bundle', 'cm_event')
 					->propertyCondition('status', 1)
 					->propertyCondition('language', $language->language, '=')
+					->fieldCondition('field_cm_hide_from_festival', 'value', 1, '<>') 
 					->fieldCondition('field_cm_event_time', 'value', array($day,$day + 86400), 'BETWEEN'); 
 					$eventResult = $query->execute();
 					if (!empty($eventResult['node']))
