@@ -160,7 +160,7 @@ function my_backend_menu() {
    $items['my_backend/autocomplete'] = array(
       'title' => 'Autocomplete for my_backend',
       'page callback' => '_my_backend_autocomplete',
-      'access arguments' => array('use autocomplete'),  //or whatever permission makes sense
+      'access callback' => TRUE,  //or whatever permission makes sense
       'type' => MENU_CALLBACK
     );
   return $items;

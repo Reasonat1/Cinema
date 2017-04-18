@@ -1,14 +1,59 @@
 /********  mixin *********/
-/* line 105, ../sass/init.scss */
-.domain-1 a {
-  color: #e41145;
+/*
+@mixin main-color(){
+  .domain-1 &{
+    color: #e41145!important;
+  }
+  .domain-2 &{
+    color:#b59d70!important;
+  }
 }
 
-/* line 109, ../sass/init.scss */
-.domain-2 a {
-  color: #b59d70;
+@mixin bg-main-color(){
+  .domain-1 &, &.domain-1 &{
+    background-color: #e41145!important;
+  }
+  .domain-2 &{
+    background-color: #b59d70!important;
+  }
 }
 
+@mixin bg-second-color(){
+  .domain-1 &{
+    background-color: #b20033!important;
+  }
+  .domain-2 &{
+    background-color: #96825d!important;
+  }
+}
+
+@mixin border-main-color(){
+  .domain-1 &{
+    border-color:#e41145!important;
+  }
+  .domain-2 &{
+    border-color:#b59d70!important;
+  }
+}
+
+@mixin border-4-main-color(){
+  .domain-1 &{
+    border-color: transparent transparent transparent #e41145;
+  }
+  .domain-2 &{
+    border-color: transparent transparent transparent #b59d70;
+  }
+}
+
+@mixin border-2-main-color(){
+  .domain-1 &{
+    border-color: transparent #e41145 transparent transparent;
+  }
+  .domain-2 &{
+    border-color: transparent #b59d70 transparent transparent;
+  }
+}
+*/
 /****  fonts  ********/
 @font-face {
   font-family: Open-Sans;
@@ -52,11 +97,11 @@
   background: url("../images/unlike-red.png") no-repeat right 0 !important;
 }
 /* line 41, ../sass/icons.scss */
-.domain-1 .add-event a {
+.domain-1 .add-event a.atcb-link {
   background: url("../images/add-event-red.png") no-repeat !important;
 }
-/* line 43, ../sass/icons.scss */
-.domain-1 .add-event a.addthisevent-selected {
+/* line 44, ../sass/icons.scss */
+.domain-1 .add-event a.atcb-link:focus, .domain-1 .add-event a.atcb-link:active {
   background: url("../images/add-event-red-active.png") no-repeat !important;
 }
 /* line 48, ../sass/icons.scss */
@@ -137,8 +182,8 @@
 .domain-2 .add-event a {
   background: url("../images/add-event-gold.png") no-repeat !important;
 }
-/* line 127, ../sass/icons.scss */
-.domain-2 .add-event a.addthisevent-selected {
+/* line 128, ../sass/icons.scss */
+.domain-2 .add-event a.atcb-link:focus, .domain-2 .add-event a.atcb-link:active {
   background: url("../images/add-event-gold-active.png") no-repeat !important;
 }
 /* line 132, ../sass/icons.scss */

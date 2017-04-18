@@ -38,6 +38,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#admin-menu .dropdown li li li {
+  width: 260px;
+}
+
 a {
   color:#0074BD;
   text-decoration:none;
@@ -3192,15 +3196,77 @@ fieldset.date-combo .container-inline-date .date-padding{
   padding-top: 20px;
 }
 
-
-.popup-layout article{
-  width: 100%;
+#modalContent #modal-content .form-item{
+  margin: 0!important;
+  padding: 0;
 }
 
-.popup-layout article .title{
-  float: left;
-}
-
-.popup-layout article .edit{
+#block-locale-language{
   float: right;
+}
+
+#block-locale-language li.active{
+    display: none;
+}
+
+.screaning-only .time .only-mobile,
+.screaning-only .title,
+.screaning-only .code .only-mobile,
+.screaning-only .like-flag,
+.screaning-only .add-event{
+  display: none;
+}
+
+.screaning-only .hall, .screaning-only .date-wrapper{
+  min-width: 150px;
+}
+
+.screaning-only .purchase button{
+  text-transform: lowercase;
+  width: 60px;
+}
+
+.screaning-only td{
+  padding: 10px!important;
+}
+
+.screaning-only .row-count{
+  padding: 0 10px;
+}
+
+.screaning-only tr{
+  border-bottom: 1px solid;
+}
+
+.screaning-only table td, .screaning-only table th{
+  vertical-align: top;
+}
+
+.view-events-manager #edit-field-cm-event-time-value-wrapper{
+  clear: both;
+} 
+
+.form-type-date-popup .form-type-textfield{
+  padding-top: 0;
+}
+
+#views-savedsearches-delete-search-form .form-checkboxes-horizontal div.form-item {
+    float: left;
+    width: auto;
+    margin-right: 2em;
+}
+
+#views-savedsearches-delete-search-form .form-checkboxes-horizontal div.form-item a{
+  font-size: 13px;
+}
+
+
+/******  dialog box **********/
+
+.ui-dialog{
+  border: 1px solid!important;
+}
+
+.ui-dialog-title{
+  padding: 0 11px;
 }

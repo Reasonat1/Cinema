@@ -21,18 +21,32 @@ function panopoly_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'User Profile',
-    'weight' => '1',
+    'weight' => '3',
     'children' => array(
       0 => 'field_user_about',
+      1 => 'field_user_picture',
+      2 => 'field_first_name',
+      3 => 'field_last_name',
+      4 => 'field_mobile',
+      5 => 'field_address',
+      6 => 'field_city',
+      7 => 'field_zip',
+      8 => 'picture',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'div',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'User Profile',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-user-profile',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'none',
       ),
+      'formatter' => 'open',
     ),
   );
   $field_groups['group_user_profile|user|user|form'] = $field_group;

@@ -63,7 +63,9 @@ function _get_festival_day() {
         $end_date = strtotime($end_date);
 	if ($now>$start_date && $now<$end_date)
 	if (festival_calendar_chek_date($now)) return date( 'Y-m-d',$now);
-	return date('Y-m-d',$start_date);
+		for ( $i = $start_date; $i <= $end_date; $i = $i + 86400 ) {
+			if (festival_calendar_chek_date($i)) return date('Y-m-d',$i);
+		}
 }
 
 function festival_calendar_chek_date($day) {

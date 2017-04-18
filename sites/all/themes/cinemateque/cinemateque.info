@@ -10,10 +10,12 @@ base theme  = radix
 ; Regions
 regions[header] = Header
 regions[help] = Help
+regions[messages] = Messages
 regions[page_top] = Page top
 regions[page_bottom] = Page bottom
 regions[highlighted] = Highlighted
 regions[overlay] = Overlay
+regions[site_name] = Site Name
 regions[float_calendar] = Float Calendar
 regions[featured] = Featured
 regions[content] = Content
@@ -50,7 +52,6 @@ plugins[panels][styles] = panels/styles
 ;stylesheets[all][]  = css/ricky.css
 ;;stylesheets[all][]  = css/select2.min.css
 stylesheets[all][]     = stylesheets/styles.css
-
 
 ; Javascript
 scripts[] = js/basic.js

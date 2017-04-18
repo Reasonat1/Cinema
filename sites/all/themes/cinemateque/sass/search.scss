@@ -149,7 +149,6 @@
 			}
 		}
 		.form-submit {
-			@include bg-main-color;
 			margin: 0;
 			border-radius: 0 !important;
 			padding: 9px 25px 11px;
@@ -338,15 +337,10 @@
 			    padding-top: 1px;
 			}
 		}
-		li:hover{
-			&:before{
-				@include main-color;
-			}			
-		}
 	}
 	.pane-panopoly-database-search-search-database-results{
 		background-color: $color_fantasy_approx;
-		padding-bottom: 50px;
+		padding-bottom: 100px;
 		overflow: hidden;
 		.pane-content{
 			@include width;
@@ -422,7 +416,7 @@
 									text-align: center;
 								}
 								a{
-									color: #000;
+									color: #000!important;
 								}
 							}
 							.name{
@@ -450,9 +444,12 @@
 								display: table-row!important;
 							}
 						}
+						.content-type{
+							font-size: 12px;
+						}
 						.lobby-title a,	.lobby-title{
 							font-weight: bold;
-							color: #000;
+							color: #000!important;
 						}
 						.lobby-summary, .enhan-summary{
 							padding: 0px 0 20px;
@@ -521,15 +518,10 @@
 		border-bottom: 1px solid;
 		color: #c9c9c9;
 		a{
-			color: #c9c9c9;
+			color: #c9c9c9!important;
 		}
 	}
-	.item-list li:hover{
-		@include main-color;
-		a{
-			@include main-color;
-		}
-	}
+
 }
 
 .select2-results__options{
@@ -545,7 +537,6 @@
 .select2-container--default .select2-selection--single .select2-selection__arrow b:before{
 		content: "\f107";
 		font: normal normal normal 14px/1 FontAwesome;
-		@include main-color();
 	    position: absolute;
 	    right: -4px;
 	    top: -4px;
@@ -567,11 +558,6 @@
 
 .select2-container--default .select2-selection--single .select2-selection__arrow b{
 	border:none;
-}
-
-input:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]), input[type="email"]:focus:not([readonly]), input[type="number"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), input[type="search-md"]:focus:not([readonly]), input[type="tel"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="time"]:focus:not([readonly]), input[type="url"]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
-	border-bottom: 1px solid;
-	@include border-main-color();
 }
 
 .page-search-search-results #main #content .search_new, .page-search-search-results #main #content .region-content .views-field-php a {

@@ -14,6 +14,8 @@
 
 <!--<script src="/misc/jquery.js" type="text/javascript"></script>-->
 <?php print render($page['overlay']); ?>
+<?php print render($page['messages']); ?>
+
 <div class="float-calendar-wrapper hide-float">
     <?php print render($page['float_calendar']); ?>
     <div class="close-button">
@@ -55,15 +57,18 @@
                 if (!empty($festival_site_logo)) {
                     $logo = $festival_site_logo;
                 }
-        if ($site_name || $logo): ?>
+                if ($site_name || $logo): ?>
                     <a href="<?php print $front_page; ?>" class="navbar-brand" rel="home" title="<?php print t('Home'); ?>">
                         <?php if ($logo): ?>
                             <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" id="logo" />
                         <?php endif; ?>
-                        <?php if ($site_name && $GLOBALS['_domain']['domain_id'] == 1 ): ?>
-                            <span class="site-name"><?php print t('Jerusalem Cinematheque Israel Film Archive
-'); ?></span>
-                        <?php endif; ?>
+                        <span class="site-name">
+                            <?php if ($GLOBALS['_domain']['domain_id'] == 1 ){ 
+                                print t('Jerusalem Cinematheque Israel Film Archive'); 
+                            } else {
+                                print render($page['site_name']); 
+                            } ?>
+                        </span>
                     </a>
                 <?php endif; ?>
                 <?php

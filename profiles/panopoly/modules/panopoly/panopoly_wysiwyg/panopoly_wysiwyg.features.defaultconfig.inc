@@ -27,6 +27,7 @@ function panopoly_wysiwyg_defaultconfig_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
     ),
     'module' => 'media_wysiwyg',
   );

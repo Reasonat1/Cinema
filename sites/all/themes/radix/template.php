@@ -216,11 +216,11 @@ function radix_preprocess_page(&$variables) {
 			$logo_image =$base_url.'/sites/default/files/'.$logo_image['und'][0]['filename'];	
 			$variables['festival_site_logo'] = $logo_image;
 		}
-
+/*
 		$output = "<div class='festival-site'>";
-		$output.="   <span class='festive-site-name'>$name</span>";
-		$output.="   <span class='festive-time'>$festivaldates</span>";
-		$output.= "</div>";
+		$output.= "<span class='festive-site-name'>". t($name) ."</span>";
+		$output.= "<span class='festive-time'>$festivaldates</span>";
+		$output.= "</div>";*/
 		$variables['festival_site_info'] = $output;
 
 		// render festival accssociated menu

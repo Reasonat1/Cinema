@@ -316,7 +316,6 @@ table{
 
 .view-person-ct-view.view-display-id-panel_pane_2 .node-title-teaser-content-type:hover{
 	background: url("../images/more-white-left.png") no-repeat scroll left 10px center;
-	@include bg-main-color;
 }
 
 /****  share blcok  *****/
@@ -349,7 +348,7 @@ table{
 
 /******  tags  *******/
 
-.pane-node-field-tag, .pane-node-field-cm-article-tags, .pane-node-field-cm-movie-tags, .pane-node-field-cm-person-tags {
+.pane-node-field-tag, .pane-node-field-cm-article-tags, .pane-node-field-cm-movie-tags, .pane-node-field-cm-person-tags, .pane-node-field-cm-moviegroup-tags {
 	.pane-content {
 		.field-item{
 		    float: right;
@@ -581,6 +580,12 @@ table{
 	a{
 		float: left;
 	}
+	.atcb-list{
+    	@include res(s-m){
+    		right: auto;
+    		left: -60px;
+    	}
+    }
 }
 
 /********  table with date **********/
@@ -590,7 +595,7 @@ table{
 		float: left;
 	}
 	.day-same-width{
-		width: 38px;
+		width: 48px;
 	}
 }
 

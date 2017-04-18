@@ -107,10 +107,17 @@
                 $duration = ' | '.$length_interval.' '.$length_period; ?>
                 <div class="duration"><?php print $duration; ?></div>
               <?php } 
+              if ($GLOBALS['_domain']['domain_id'] == 1 ){ 
               if(!empty($event_ext_nodes->field_cm_movie_short_summary['und'])){ 
-                $summary = $event_ext_nodes->field_cm_movie_short_summary['und'][0]['value']; ?>
-                <div class="summary"><?php print $summary; ?></div>
-              <?php }
+                  $summary = $event_ext_nodes->field_cm_movie_short_summary['und'][0]['value']; ?>
+                  <div class="summary"><?php print $summary; ?></div>
+                <?php }
+              } else if(!empty($event_ext_nodes->field_short_summary_festival ['und'])){ 
+                 $summary = $event_ext_nodes->field_short_summary_festival  ['und'][0]['value']; 
+               } else if(!empty($event_ext_nodes->field_cm_movie_short_summary ['und'])){ 
+                 $summary = $event_ext_nodes->field_cm_movie_short_summary  ['und'][0]['value'];?>
+                  <div class="summary"><?php print $summary; ?></div>
+                <?php }
             }
             ?>
           </div>

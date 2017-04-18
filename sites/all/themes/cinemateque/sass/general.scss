@@ -107,6 +107,18 @@ table td{
 .flag-throbber{
 	display: none;
 }
+
+.hide-row{
+	display: none!important;
+}
+
+body.adminimal-menu #admin-menu-menu a{
+	color: #fff!important;
+}
+
+#admin-menu .dropdown li li li {
+	width: 260px;
+}
 /*******  panels margin  *********/
 
 .panels-flexible-row{
@@ -140,7 +152,6 @@ table td{
 }
 
 .btn-default{
-	@include bg-main-color;
 	color: #fff !important;
 	&.pane{
 		background-color: #fff!important;
@@ -149,7 +160,7 @@ table td{
 
 #modalContent{
 	.btn-default{
-		background-color: #fff;
+		background-color: #fff!important;
 		color: #000 !important;
 	}	
 }
@@ -211,7 +222,8 @@ table td{
 	}
 }
 
-.pane-node-field-tag, .pane-node-field-cm-article-tags, .pane-node-field-cm-movie-tags, .pane-node-field-cm-person-tags, .pane-node-field-cm-movie-tags {
+.pane-node-field-tag, .pane-node-field-cm-article-tags, .pane-node-field-cm-movie-tags, 
+.pane-node-field-cm-person-tags, .pane-node-field-cm-movie-tags, .pane-node-field-cm-moviegroup-tags{
 	.pane-content {
 		@include res(s-m){
 			border:none;
@@ -232,22 +244,20 @@ table td{
 		}
 		a{
 		    border-bottom: 1px solid;
-		    color: #828282;
+		    color: #828282!important;
 		    display: block;
 		    float: left;
 		    font-size: 14px;
 		    padding-bottom: 5px;
 		    margin-bottom: 15px;
-		    &:hover{
-		    	@include main-color;
-		    }
 		}
 	}
 	h2.pane-title {
 		display: none;
 	}
 }
-		
+
+
 .pane-node-field-cm-movie-tags{
 	clear: both;
 	@include res(s-m){
@@ -421,7 +431,7 @@ table td{
 	}
 	.link a{
 	    border-top: 1px solid #afafaf;
-	    color: #333;
+	    color: #333!important;
 	    display: block;
 	    font-size: 16px;
 	    padding: 10px 30px;
@@ -467,7 +477,7 @@ table td{
 .share-this-pane-mobile{
 	display: none;
 	@include width;
-	padding: 10px 5%;
+	padding: 10px 5%!important;
 	margin: 0px auto;
 	height: 50px;
 	overflow: visible;
@@ -494,11 +504,9 @@ table td{
 	.flag-wrapper a{
 		&.flag-action{
 			background: url("../images/like-white.png") no-repeat scroll top 8px center!important;
-			@include bg-main-color;
 		}
 		&.unflag-action{
 			background: url("../images/unlike-white.png") no-repeat scroll top 8px center!important;
-			@include bg-main-color;
 		}
 	}
 	.facebook a{
@@ -525,9 +533,6 @@ table td{
 		padding-bottom: 5px;
 		margin-bottom: 10px;
 		display: inline-block;
-		&:hover{
-			@include main-color;
-		}
 	}
 	.field-item {
 		min-width: 48%;
@@ -651,7 +656,7 @@ table td{
 		.panels-flexible-region-node_page-content_right-inside{
 			padding: 0;
 			.panel-pane:nth-child(2){
-				border-top: 5px solid;
+				border-top: 5px solid #000;
 				padding-top: 20px;
 				@include res(s-m){
 					border-top: none;
@@ -705,7 +710,7 @@ table.views-table {
 	width: 53px!important;
 	padding-right: 7px!important;
 	padding-top: 6px!important;
-	a {
+	a.atcb-link {
 		float: right;
 		border: medium none;
 		display: block;
@@ -727,6 +732,26 @@ table.views-table {
 			width: auto;
 		}
 	}
+	.atcb-list{
+	    border: 1px solid rgb(186,186,186);
+    	box-shadow: 0 0 5px #AAA;
+    	font-size: 13px;
+    	padding: 10px 10px 0;
+    	margin-top: 10px;
+    	z-index: 50;
+    	@include res(s-m){
+    		left: auto;
+    		right: -60px;
+    	}
+    	li{
+    		padding-bottom: 10px;
+    		overflow: hidden;
+    		a{
+    			font-weight: normal;
+    			color: #000!important;
+    		}
+    	}
+  	}
 }
 
 .addthisevent_dropdown{
@@ -906,7 +931,7 @@ table.views-table {
 	border: medium none !important;
 }
 .lobby-title a, .lobby-title {
-	color: $black;
+	color: $black!important;
 	font-weight: 600;
 	font-size: 22px;
 }
@@ -957,13 +982,12 @@ table.views-table {
 	width: 100% !important;
 }
 .toptix-purchase, .sold-out {
-	@include bg-main-color();
 	color: $white;
 	font-size: .8em;
 	border: none;
-	padding: 4px 10px;
+	padding: 4px 8px;
 	text-transform: uppercase;
-	width: 77px;
+	width: 80px;
 	text-align: center;
 }
 
@@ -1031,7 +1055,6 @@ table.views-table {
 
 input:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]), input[type="email"]:focus:not([readonly]), input[type="number"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), input[type="search-md"]:focus:not([readonly]), input[type="tel"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="time"]:focus:not([readonly]), input[type="url"]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
 	border-bottom: 1px solid;
-	@include border-main-color();
 }
 
 table{
@@ -1046,9 +1069,9 @@ table{
 		width: 88px!important;
 		display: block;
 		float: right;
-		height: 38px;
 		font-weight: normal;
 		box-sizing:border-box;
+		height: 38px;
 		@include res(s-m){
 			vertical-align: middle !important;
 		}
@@ -1251,11 +1274,9 @@ table{
 			float: right;
 			.webform-submit{
 				box-shadow: none;;
-				@include bg-main-color();
 				color: #fff;
 				margin: 0;
 				&:hover{
-					@include bg-main-color();
 					opacity: 0.9;
 				}
 			}
@@ -1270,6 +1291,15 @@ table{
 }
 
 /*******  user profile  ********/
+
+.pane-similar-user-flagged-content-panel-pane-1{
+	@include width;
+	margin-bottom: 100px;
+	.views-row{
+		margin-top: 30px;
+		background-color: #fff;
+	}
+}
 
 #user-login{
 	@include width;
@@ -1571,7 +1601,7 @@ table{
 		top: 0;
 		padding: 15px 0 30px 0;
 		a{
-			color: #000;
+			color: #000!important;
 			border:1px solid #fff;
 			padding: 5px 10px;
 			display: block;	
@@ -1581,10 +1611,6 @@ table{
             border: 1px solid #000;
 			&:hover{
 				background-color: $color_fantasy_approx;
-			}
-			&.active{
-				@include border-main-color;
-				@include main-color;
 			}
 		}
 		.form-item{
@@ -1672,7 +1698,6 @@ table{
 					display: inline-block;
 				}
 				a{
-					@include main-color();
 					border: 1px solid;
 					padding: 5px 10px;
 					transition: all 0.5s;
@@ -1691,12 +1716,9 @@ table{
 			.form-item{
 				display: inline-block;
 				a{
-					color: #000;
+					color: #000!important;
 					transition: all 0.5s;
         			-webkit-transition: all 0.5s;
-					&.active, &:hover{
-						@include main-color();
-					}
 				}
 			}
 			.form-item-edit-type-1{
@@ -1800,7 +1822,7 @@ table{
 						border: none;
 					}
 					.lobby-title a{
-						color: #000;
+						color: #000!important;
 					}
 					.lobby-length{
 						color: #919191;
@@ -1941,7 +1963,7 @@ table{
 					margin-right: 0;
 				}
 				a{
-					color: #333;
+					color: #333!important;
 				}
 			}
 		}
@@ -1998,7 +2020,6 @@ table{
 	background-color: #fff!important;
 	&:hover{
 		background: url("../images/more-white-right.png") no-repeat scroll right 10px center;
-		@include bg-main-color;	
 		h3{
 			color: #fff!important;	
 		}
@@ -2072,7 +2093,6 @@ table{
 @include res(s-m){
 	.table-responsive{
 		border:none;
-		overflow: hidden;
 		margin-bottom: 0;
 		thead{
 			display: none!important;
@@ -2089,9 +2109,9 @@ table{
 			display: none;
 		}
 		td{
-			width: -webkit-calc(100% - 145px)!important;
-    		width: -moz-calc(100% - 145px)!important;
-    		width: calc(100% - 145px)!important;
+			width: -webkit-calc(100% - 182px)!important;
+    		width: -moz-calc(100% - 182px)!important;
+    		width: calc(100% - 182px)!important;
 			padding-left: 0!important;
 			float: left;
 			display: block;
@@ -2101,8 +2121,12 @@ table{
 			&.purchase, &.views-field-field-toptix-purchase, &.views-field-field-tickets-sold-out{
 				padding-left: 0!important;
 				padding-right: 0!important;
-				width: 72px!important;
+				width: 77px!important;
 				float: right;
+			}
+			&.add-event{
+				width: 32px!important;
+				margin-top: 3px;
 			}
 			&.views-field-field-cm-event-time-3{
 				position: relative;
@@ -2112,7 +2136,6 @@ table{
 				margin-top: 10px;
 				cursor: pointer;
 				span.circle{
-					@include bg-main-color;
 					border-radius: 50%;
 					width: 4px;
 					height: 4px;
@@ -2148,6 +2171,9 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	left: 5%;
 	@include res(s-m){
 		bottom: 10px;
+		right: auto!important;
+		left: auto!important;
+		width: 100%;
 	}
 	.wrapper{
 		@include width;
@@ -2206,7 +2232,6 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
   				font-size: 14px;
   				padding: 5px 12px;
     			margin: 22px 0 0 0;
-    			@include bg-main-color;
     			float: left;
     			@include res(s-m){
     				float: none;
@@ -2214,7 +2239,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
     				margin: 22px auto;
     			}
     			a{
-    				color: #fff;
+    				color: #fff!important;
     			}
 			}
 		}
@@ -2392,7 +2417,6 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	.more-event{
 		float: right;
 		cursor: pointer;
-		@include main-color;
 		font-size: 0.8em;
 		margin: 0px 11px 6px 0;
 		display: block!important;
@@ -2498,17 +2522,14 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
     	max-width: -moz-calc(100% - 115px);
     	max-width: calc(100% - 115px);
 		a{
-			color: #000;
+			color: #000!important;
 		}
 	}
 	table tr{
 		border:none!important;
 	}
 	a{
-		color: #000;
-	}
-	a:hover{
-		@include main-color;
+		color: #000!important;
 	}
 	.view-movie-person-bio a:hover{
 		color: #000!important;
@@ -2520,12 +2541,10 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 		text-align: left;
 		color: #828282;
 		position: relative;
-		padding-bottom: 10px;
-		a, span{	
+		padding-bottom: 8px;
+		overflow: hidden;
+		a, span, .views-field-views-conditional{	
 			color: #000;
-			&:hover{
-				@include main-color;
-			}
 		}
 	}
 }
@@ -2656,7 +2675,6 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 			width: 77%;
 			float: right;
 			box-sizing: border-box;
-			@include main-color;
 			padding: 50px 23% 25px 0;
 			overflow: hidden;
 			@include res(s-m){
@@ -2671,7 +2689,6 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 		    width: 100%
 		}
 		.views-field-field-cm-review-qoute {
-			@include main-color();
 			font-size: 1.35em !important;
 			line-height: 1.35em;
 		}
@@ -2689,9 +2706,6 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 			background-color: #b0b0b0;
 			border-radius: 50%;
 		}
-		.active .circle{
-			@include bg-main-color;
-		}
 	}
 	.views-slideshow-cycle-main-frame-row{
 		width: 100%!important;
@@ -2701,7 +2715,6 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 .view-review-mobile, .reviews-mobile{
 	background-color: $color_fantasy_approx;
 	position: relative;
-	@include main-color;
 	text-align: center;
 	padding: 30px  0;
 	.review-owl-carousel, .owl-carousel{
@@ -2887,7 +2900,6 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 			.form-submit {
 				margin: 0;
 				border-radius: 0 !important;
-				@include bg-main-color();
 				padding: 9px 25px 11px;
 				font-size: 18px;
 				width: 20%;
@@ -2904,7 +2916,6 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 		}
 		.popup-close{
 		    background: url("../images/close42.png") no-repeat scroll center center !important;
-			@include bg-main-color;
 		    border-radius: 50%;
 		    height: 25px !important;
 			left: auto;
@@ -2940,6 +2951,16 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 		}
 	}
 }
-.front #content .field-name-field-date-expiration {
-	display:none;
+
+
+
+
+.view-lobby.view-display-id-page_1{
+	@include width;
+	margin-top: 30px;
+	thead{
+		th{
+			font-size: 16px!important;
+		}
+	}
 }

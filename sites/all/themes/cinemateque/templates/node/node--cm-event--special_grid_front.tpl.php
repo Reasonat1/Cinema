@@ -67,9 +67,15 @@
         <?php print render($content['field_cm_event_short_description']);
         if(!empty($node->field_cm_event_lineup['und'])){
           $event_ext_nodes = node_load($node->field_cm_event_lineup['und'][0]['target_id']);
-          if(!empty($event_ext_nodes->field_cm_movie_short_summary['und'])){ 
-            print $event_ext_nodes->field_cm_movie_short_summary['und'][0]['value'];
-          }
+          if ($GLOBALS['_domain']['domain_id'] == 1 ){ 
+            if(!empty($event_ext_nodes->field_cm_movie_short_summary['und'])){ 
+              print $event_ext_nodes->field_cm_movie_short_summary['und'][0]['value'];
+            }
+          } else if(!empty($event_ext_nodes->field_short_summary_festival['und'])){ 
+              print $event_ext_nodes->field_short_summary_festival['und'][0]['value'];
+            } else  if(!empty($event_ext_nodes->field_cm_movie_short_summary['und'])){ 
+              print $event_ext_nodes->field_cm_movie_short_summary['und'][0]['value'];
+            }        
         } ?>
       </div>
 </div>

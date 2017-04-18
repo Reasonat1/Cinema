@@ -43,7 +43,6 @@ function panopoly_pages_defaultconfig_user_default_permissions() {
     'name' => 'create panopoly_landing_page content',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -53,7 +52,6 @@ function panopoly_pages_defaultconfig_user_default_permissions() {
     'name' => 'create panopoly_page content',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -63,7 +61,6 @@ function panopoly_pages_defaultconfig_user_default_permissions() {
     'name' => 'delete any panopoly_landing_page content',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -83,7 +80,6 @@ function panopoly_pages_defaultconfig_user_default_permissions() {
     'name' => 'delete own panopoly_landing_page content',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -103,7 +99,6 @@ function panopoly_pages_defaultconfig_user_default_permissions() {
     'name' => 'edit any panopoly_landing_page content',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -123,7 +118,6 @@ function panopoly_pages_defaultconfig_user_default_permissions() {
     'name' => 'edit own panopoly_landing_page content',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
     ),
     'module' => 'node',
   );

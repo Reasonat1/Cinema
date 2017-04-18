@@ -43,6 +43,7 @@ function panopoly_wysiwyg_wysiwyg_default_profiles() {
       'css_path' => '',
       'css_classes' => '',
     ),
+    'rdf_mapping' => array(),
   );
 
   // Exported profile: panopoly_wysiwyg_text
@@ -71,6 +72,7 @@ function panopoly_wysiwyg_wysiwyg_default_profiles() {
           'indent' => 1,
           'undo' => 1,
           'redo' => 1,
+          'link' => 1,
           'unlink' => 1,
           'formatselect' => 1,
           'forecolor' => 1,
@@ -78,12 +80,22 @@ function panopoly_wysiwyg_wysiwyg_default_profiles() {
           'removeformat' => 1,
           'charmap' => 1,
         ),
+        'directionality' => array(
+          'ltr' => 1,
+          'rtl' => 1,
+        ),
         'fullscreen' => array(
           'fullscreen' => 1,
         ),
         'paste' => array(
           'pastetext' => 1,
           'pasteword' => 1,
+        ),
+        'table' => array(
+          'tablecontrols' => 1,
+        ),
+        'xhtmlxtras' => array(
+          'cite' => 1,
         ),
         'linkit' => array(
           'linkit' => 1,
@@ -117,6 +129,7 @@ function panopoly_wysiwyg_wysiwyg_default_profiles() {
       'css_path' => '',
       'css_classes' => '',
     ),
+    'rdf_mapping' => array(),
   );
 
   return $profiles;

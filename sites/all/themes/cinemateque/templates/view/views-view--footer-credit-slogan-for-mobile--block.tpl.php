@@ -73,11 +73,7 @@
       autoPlaySpeed: 5000,
       navigation:false,
       nav: true,
-			responsive:{
-				0:{
-					items:1
-				}
-			}
+			items:1
 		});	
 });
 

@@ -38,11 +38,11 @@
             background: url("../images/unlike-red.png") no-repeat right 0 !important;
         }
     }
-    .add-event a {
+    .add-event a.atcb-link {
 	    background: url("../images/add-event-red.png") no-repeat !important;
-        &.addthisevent-selected{
-            background: url("../images/add-event-red-active.png") no-repeat !important;
-        }
+    }
+    .add-event a.atcb-link:focus, .add-event a.atcb-link:active{
+        background: url("../images/add-event-red-active.png") no-repeat !important;
     }
     .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1{
             .col-1{
@@ -124,9 +124,9 @@
     }
     .add-event a {
         background: url("../images/add-event-gold.png") no-repeat !important;
-        &.addthisevent-selected{
-            background: url("../images/add-event-gold-active.png") no-repeat !important;
-        }
+    }
+    .add-event a.atcb-link:focus, .add-event a.atcb-link:active{
+        background: url("../images/add-event-gold-active.png") no-repeat !important;
     }
     .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1{
             .col-1{

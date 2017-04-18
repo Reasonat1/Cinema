@@ -2,7 +2,7 @@
 
 
  .node-type-cm-movie{
- 	.views-field-field-cm-movie-body{
+ 	.views-field-field-cm-movie-body, .views-field-field-long-summary-festival{
  		line-height: 1.8;
  	}
  	h3.movie-title-heder{
@@ -10,7 +10,7 @@
  		font-size: 18px;
  		font-weight: bold;
  	}
- 	.pane-test-view-for-movie-credit-panel-pane-1{
+ 	.pane-test-view-for-movie-credit-panel-pane-1, .pane-test-view-for-movie-credit-panel-pane-3{
  		@include width;
  	}
  	.panels-flexible-row-node_page-3{
@@ -56,15 +56,11 @@
 			font-weight: 600;
 			margin-bottom: 2%;
 		}
-		.views-field-field-cm-movie-body {
+		.views-field-field-cm-movie-body, .views-field-field-long-summary-festival {
 			color: $color_mine_shaft_approx;
 			font-size: 1.1rem;
 			line-height: 28px;
 		}
-	}
-	.view-movie-top-pane-view.view-display-id-panel_pane_4{
-		float: right;
-		box-sizing: border-box;
 	}
 	.panels-flexible-row-node_page-5{
 		padding-top: 50px!important;
@@ -115,7 +111,7 @@
 			width: 100%!important;
 		}
 	}
-	.view-id-movie_top_pane_view.view-display-id-panel_pane_4{
+	.view-id-movie_top_pane_view.view-display-id-panel_pane_4, .view-id-movie_top_pane_view.view-display-id-panel_pane_8{
 		.views-field-title, .views-field-nothing{
 			color: #000000;
 		    font-weight: 600;
@@ -221,14 +217,12 @@
 				margin: 70px 23%;
 			}
 			.views-field-field-cm-review-qoute{
-				@include main-color;
 				font-size: 25px;
 				width: 100%;
 			}
 			.views-field-field-cm-review-source{
 				font-size: 12px;
 				margin-top: 30px;
-				@include main-color;
 			}
 			.views-slideshow-pager-fields{
 				clear: both;
@@ -251,9 +245,6 @@
 					border-radius: 50%;
 					height: 6px;
 					width: 6px;
-				}
-				&.active .circle{
-					@include bg-main-color;
 				}
 			}
 		}

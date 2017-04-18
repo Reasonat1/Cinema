@@ -2,6 +2,7 @@ name = Panopoly Admin
 description = Administrative dashboard and related editing interfaces.
 core = 7.x
 package = Panopoly
+version = 7.x-1.40
 project = panopoly_admin
 dependencies[] = admin_views
 dependencies[] = ctools
@@ -15,6 +16,7 @@ dependencies[] = views_bulk_operations
 scripts[] = panopoly-admin.js
 stylesheets[all][] = panopoly-admin.css
 stylesheets[all][] = panopoly-admin-navbar.css
+datestamp = 1471712356
 features[ctools][] = page_manager:pages_default:1
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
@@ -23,7 +25,6 @@ features[defaultconfig][] = strongarm:user_register
 features[defaultconfig][] = user_default_permissions:access administration pages
 features[defaultconfig][] = user_default_permissions:access content
 features[defaultconfig][] = user_default_permissions:access content overview
-features[defaultconfig][] = user_default_permissions:access navbar
 features[defaultconfig][] = user_default_permissions:administer menu
 features[defaultconfig][] = user_default_permissions:administer taxonomy
 features[defaultconfig][] = user_default_permissions:delete revisions
@@ -36,10 +37,3 @@ features[page_manager_handlers][] = node_edit_panel_context
 features[page_manager_pages][] = panopoly_admin_layout_library
 features[page_manager_pages][] = panopoly_admin_page_library
 features[page_manager_pages][] = panopoly_admin_pane_library
-
-; Information added by Drupal.org packaging script on 2016-08-20
-version = "7.x-1.40"
-core = "7.x"
-project = "panopoly_admin"
-datestamp = "1471712356"
-

@@ -30,7 +30,15 @@
       </div>
     </div>
       <div class="short-text">
-        <?php print render($content['field_cm_movie_short_summary']);?>
+              <?php if ($GLOBALS['_domain']['domain_id'] == 1 ){ 
+                if(!empty($node->field_cm_movie_short_summary['und'])){ 
+                  print render($content['field_cm_movie_short_summary']);
+                }
+              } else if(!empty($node->field_short_summary_festival['und'])){ 
+                  print $node->field_short_summary_festival['und'][0]['value'];
+                } else if(!empty($node->field_cm_movie_short_summary['und'])){ 
+                  print render($content['field_cm_movie_short_summary']);
+                }?>
       </div>
   </div>
 

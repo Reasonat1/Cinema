@@ -29,7 +29,8 @@ function panopoly_wysiwyg_strongarm() {
   $strongarm->value = array(
     0 => 'upload',
     1 => 'media_default--media_browser_1',
-    2 => 'media_internet',
+    2 => 'media_default--media_browser_my_files',
+    3 => 'media_internet',
   );
   $export['media_wysiwyg_wysiwyg_browser_plugins'] = $strongarm;
 

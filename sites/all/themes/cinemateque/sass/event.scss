@@ -86,13 +86,13 @@
 		}
 	}
 	.pane-event-ct-view-panel-pane-6 {
-		.views-field-field-cm-movie-body {
+		.views-field-field-cm-movie-body, .views-field-field-long-summary-festival {
 			color: $color_mine_shaft_approx;
 			line-height: 28px;
 		}
 		.views-field-title a {
 			font-weight: bold;
-			color: $black;
+			color: $black!important;
 		}
 		.views-field-nothing{
 			font-weight: bold;
@@ -155,7 +155,6 @@
 
 	.more-screening-pane{
 		clear: both;
-		overflow: hidden;
 		@include width;
 		.view-event-ct-view{
 			overflow: visible;
@@ -168,7 +167,6 @@
 		}
 		.pane-title{
 			margin-bottom: 15px;
-			@include main-color;
 			cursor: pointer;
 			font-size: 0.8em;
 			font-weight: normal;

@@ -2,8 +2,8 @@ name = Panopoly Core
 description = The magical core of the Panopoly framework.
 core = 7.x
 package = Panopoly
+version = 7.x-1.40
 project = panopoly_core
-dependencies[] = taxonomy
 dependencies[] = ctools
 dependencies[] = date
 dependencies[] = date_api
@@ -14,7 +14,6 @@ dependencies[] = entity
 dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = field_group
-dependencies[] = field_sql_storage
 dependencies[] = fieldable_panels_panes
 dependencies[] = image
 dependencies[] = jquery_update
@@ -29,12 +28,14 @@ dependencies[] = panels_ipe
 dependencies[] = pathauto
 dependencies[] = pm_existing_pages
 dependencies[] = strongarm
+dependencies[] = taxonomy
 dependencies[] = token
 dependencies[] = transliteration
 dependencies[] = views
 dependencies[] = views_autocomplete_filters
 dependencies[] = views_content
 stylesheets[all][] = css/panopoly-dropbutton.css
+datestamp = 1471712370
 features[ctools][] = panelizer:panelizer:1
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
@@ -80,10 +81,3 @@ features_exclude[variable][panelizer_taxonomy_term:panopoly_categories_default] 
 features_exclude[variable][panelizer_taxonomy_term:panopoly_categories_allowed_layouts] = panelizer_taxonomy_term:panopoly_categories_allowed_layouts
 features_exclude[variable][panelizer_taxonomy_term:panopoly_categories_allowed_types] = panelizer_taxonomy_term:panopoly_categories_allowed_types
 features_exclude[variable][panelizer_defaults_taxonomy_term_panopoly_categories] = panelizer_defaults_taxonomy_term_panopoly_categories
-
-; Information added by Drupal.org packaging script on 2016-08-20
-version = "7.x-1.40"
-core = "7.x"
-project = "panopoly_core"
-datestamp = "1471712370"
-

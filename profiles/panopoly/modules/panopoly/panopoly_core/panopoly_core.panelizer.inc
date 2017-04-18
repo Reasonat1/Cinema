@@ -20,7 +20,7 @@ function panopoly_core_panelizer_defaults() {
   $panelizer->view_mode = 'page_manager';
   $panelizer->name = 'taxonomy_term:panopoly_categories:default';
   $panelizer->css_id = 'taxonomy-term';
-  $panelizer->css_class = '';
+  $panelizer->css_class = 'page-term-category';
   $panelizer->css = '';
   $panelizer->no_blocks = FALSE;
   $panelizer->title_element = 'H2';

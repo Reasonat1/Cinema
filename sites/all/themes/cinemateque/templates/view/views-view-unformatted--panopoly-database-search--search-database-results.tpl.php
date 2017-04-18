@@ -115,20 +115,40 @@
     }else{
       $summary_movie_group = '';
     }
-    if(!empty($node->field_cm_movie_short_summary)){
-      $summary_movie = $node->field_cm_movie_short_summary['und'][0]['value'];
-    }else{
-      $summary_movie = '';
-    }
+
+    if ($GLOBALS['_domain']['domain_id'] == 1 ){ 
+      if(!empty($node->field_cm_movie_short_summary)){
+        $summary_movie = $node->field_cm_movie_short_summary['und'][0]['value'];
+      }else{
+        $summary_movie = '';
+      }
+    } else if(!empty($node->field_short_summary_festival)){
+        $summary_movie = $node->field_short_summary_festival['und'][0]['value'];
+      } else if(!empty($node->field_cm_movie_short_summary)){
+        $summary_movie = $node->field_cm_movie_short_summary['und'][0]['value'];
+      } else{
+        $summary_movie = '';
+      }
+
+
 	$summary_event = '';
     if(!empty($node->field_cm_event_short_description['und'][0]['value'])){
         $summary_event = $node->field_cm_event_short_description['und'][0]['value'];
     }else{
       if(!empty($node->field_cm_event_lineup['und']) && false){
         if($event_ext_nodes->type == 'cm_movie'){
-          if(!empty($event_ext_nodes->field_cm_movie_short_summary)){
-            $summary_event = $event_ext_nodes->field_cm_movie_short_summary['und'][0]['value'];
+          if ($GLOBALS['_domain']['domain_id'] == 1 ){ 
+            if(!empty($event_ext_nodes->field_cm_movie_short_summary)){
+              $summary_event = $event_ext_nodes->field_cm_movie_short_summary['und'][0]['value'];
+            }
+          } else {
+             if(!empty($event_ext_nodes->field_short_summary_festival)){
+              $summary_event = $event_ext_nodes->field_short_summary_festival['und'][0]['value'];
+            } else if(!empty($event_ext_nodes->field_cm_movie_short_summary)){
+              $summary_event = $event_ext_nodes->field_cm_movie_short_summary['und'][0]['value'];
+            }           
           }
+
         }else if($event_ext_nodes->type == 'cm_movie_group'){
           if(!empty($event_ext_nodes->field_cm_moviegroup_short_summar)){
               $summary_event =  $event_ext_nodes->field_cm_moviegroup_short_summar['und'][0]['value'];
@@ -171,11 +191,22 @@
       }else{
         $summary_movie_group_enhancement = '';
       }
-      if(!empty($event_ext_nodes->field_cm_movie_short_summary)){
-        $summary_movie_enhancement = $event_ext_nodes->field_cm_movie_short_summary['und'][0]['value'];
-      }else{
-        $summary_movie_enhancement = '';
-      }
+
+      if ($GLOBALS['_domain']['domain_id'] == 1 ){ 
+        if(!empty($event_ext_nodes->field_cm_movie_short_summary)){
+          $summary_movie_enhancement = $event_ext_nodes->field_cm_movie_short_summary['und'][0]['value'];
+        }else{
+          $summary_movie_enhancement = '';
+        }
+      } else if(!empty($event_ext_nodes->field_short_summary_festival)){
+          $summary_movie_enhancement = $event_ext_nodes->field_short_summary_festival['und'][0]['value'];
+        } else if(!empty($event_ext_nodes->field_cm_movie_short_summary)){
+          $summary_movie_enhancement = $event_ext_nodes->field_cm_movie_short_summary['und'][0]['value'];
+        }else{
+          $summary_movie_enhancement = '';
+        }
+
+
       $sub_lang_title =array();
       $sub_lang_name = '';
       if(!empty($node->field_cm_event_lineup['und'])){
@@ -377,7 +408,7 @@
               $output_event .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div></td>';
           }
           $output_event .='<td class="views-field-ops only-desktop">'. $flag . '</td>';
-          $output_event .='<td class="add-event only-desktop">'. $addevent . '</td>';
+          $output_event .='<td class="add-event">'. $addevent . '</td>';
           
           $toptix_button = field_view_field('node', $node, 'field_toptix_purchase', 'full');
           $toptix_button = drupal_render($toptix_button);
@@ -453,10 +484,8 @@
              $output .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div></td>';
            }
            $output .='<td class="views-field-ops only-desktop">'. $flag_moviegroup_event . '</td>';
-           $output .='<td class="add-event only-desktop">'. $addevent . '</td>';
+           $output .='<td class="add-event">'. $addevent . '</td>';
            if(!empty($movie_group_event_info->field_toptix_purchase['und'])){
-           /*$toptix_code = $movie_group_event_info->field_toptix_purchase['und'][0]['value'];
-           $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.'';*/
               if(empty($movie_group_event_info->field_tickets_sold_out['und'][0]['value'])){
 		            $myOutputgroup = field_view_field('node', $movie_group_event_info, 'field_toptix_purchase', array('type'=>'toptix_purchase','label' => 'hidden'));
                 $output .= '<td class="purchase">'.drupal_render($myOutputgroup).'</td>';
@@ -543,10 +572,8 @@
              $output_movie_event .= '<td class="code"><div class="only-mobile">'.$hall_name.'</div></td>';
            }
            $output_movie_event .='<td class="views-field-ops only-desktop">'. $flag_moviegroup_event . '</td>';
-           $output_movie_event .='<td class="add-event only-desktop">'. $addevent . '</td>';
+           $output_movie_event .='<td class="add-event">'. $addevent . '</td>';
            if(!empty($movie_event_info->field_toptix_purchase['und'])){
-           /*$toptix_code = $movie_event_info->field_toptix_purchase['und'][0]['value'];
-           $top_link = 'http://tickets.jer-cin.org.il/loader.aspx/?target=hall.aspx?event='.$toptix_code.''; //old toptix code*/
               if(empty($movie_event_info->field_tickets_sold_out['und'][0]['value'])){
 		            $myOutput = field_view_field('node', $movie_event_info, 'field_toptix_purchase', array('type'=>'toptix_purchase','label' => 'hidden'));
                 $output_movie_event .= '<td class="purchase">'.drupal_render($myOutput).'</td>';
@@ -657,6 +684,9 @@
                       print '</div>';
                   print '</div>';
                   print'<div class="lobby-term-right">';
+                      print '<div class="content-type">';
+                          print t(node_type_get_name($node));
+                      print '</div>';
                       print'<div class="only-desktop">';
 			                    print $event_info;
 			                    print $event_info_movie_group;
@@ -687,6 +717,9 @@
                       print '</div>';
                   print '</div>';
                   print'<div class="lobby-term-right">';
+                      print '<div class="content-type">';
+                          print t(node_type_get_name($node));
+                      print '</div>';
                       print'<div class="only-desktop">';
                           print $event_info;
                           print $event_info_movie_group;

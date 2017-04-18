@@ -21,6 +21,9 @@ function panopoly_core_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
           'image_link' => '',
           'image_style' => 'panopoly_image_quarter',
         ),
@@ -28,6 +31,12 @@ function panopoly_core_field_default_field_instances() {
         'weight' => 0,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'special_grid_front' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',

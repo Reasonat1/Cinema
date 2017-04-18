@@ -29,6 +29,44 @@ if (($("body").hasClass("page-node-4879")) || ($("body").hasClass("page-node-487
       $(this).val("");
     });
 }
+
+/******  message area  ******/
+
+$(".region-messages").css("display","block");
+
+function setAgreeCookie() {
+    var expire=new Date();
+    expire=new Date(expire.getTime()+86400000);
+    document.cookie="MSG=yes; expires="+expire+"; path=/";
+}
+
+var visit=GetCookie("MSG");
+if (visit=="yes"){
+   $('body').addClass('close-message-cookies');
+}
+
+$('.view-global-message.view-display-id-block .close-message').click(function(){ 
+    setAgreeCookie();
+    $('body').addClass('close-message-cookies');
+});
+
+function GetCookie(name) {
+    var arg=name+"=";
+    var arglen=arg.length;
+    var dclen=document.cookie.length;
+    var i=0;
+
+    while (i<dclen) {
+        var j=i+arglen;
+            if (document.cookie.substring(i,j)==arg)
+                return "yes";
+                i=document.cookie.indexOf(" ",i)+1;
+            if (i==0) 
+                break;
+    }
+    return null;
+}
+
 /****click shopping card***/
 
 $(".shopping-cart button").click(function(){
@@ -310,9 +348,9 @@ if ($("body").hasClass("page-node-4284") || $("body").hasClass("page-node-4285")
             }
             $(".i18n-en .calender-filter").css("margin-left",$left);
             $(".i18n-he .calender-filter").css("margin-right",$left);
-            $( document ).ajaxComplete(function() {
-              /*$("html, body").animate({ scrollTop: $(".pane-calendar-full-width-calendar .ajax-inner").offset().top - 200},500);*/
-            });
+            /*$( document ).ajaxComplete(function() {
+              $("html, body").animate({ scrollTop: $(".pane-calendar-full-width-calendar .ajax-inner").offset().top - 200},500);
+            });*/
           });
           $(".nextday").click(function(){
             if ($left > $maxleft){
@@ -369,9 +407,7 @@ if ($("body").hasClass("page-node-4284") || $("body").hasClass("page-node-4285")
         });
 
         $(".calender-filter p").click(function(){
-          $( document ).ajaxComplete(function() {
             $("html, body").animate({ scrollTop: 0},0);
-          });
         });
 
 
@@ -543,100 +579,116 @@ function handleTouchMove(evt) {
     
 
           $division1 = $(".division-1 .field-name-field-item-special-dynamic > .field-items > .field-item .image").height();
-          $(".division-1 .withoutimage .image").hide();
-          $(".division-1 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-1 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division1*2); 
-          $(".division-1 .field-name-field-item-special-dynamic .withimage .short-text").css("height",$division1-(($division1-40)%24)); 
-          $(".division-1 .field-name-field-item-special-dynamic .withoutimage").each(function() {
-            $(this).parent().parent().parent().addClass("withoutimage");
-            $topheight = $(this).find(".image-wrapper").height();
-            $(this).find(".short-text").css("height",$division1*2-$topheight-((($division1*2-$topheight))-40)%24);
-          });
+          if ($division1 > 0){
+            $(".division-1 .withoutimage .image").hide();
+            $(".division-1 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-1 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division1*2); 
+            $(".division-1 .field-name-field-item-special-dynamic .withimage .short-text").css("height",$division1-(($division1-40)%24)); 
+            $(".division-1 .field-name-field-item-special-dynamic .withoutimage").each(function() {
+              $(this).parent().parent().parent().addClass("withoutimage");
+              $topheight = $(this).find(".image-wrapper").height();
+              $(this).find(".short-text").css("height",$division1*2-$topheight-((($division1*2-$topheight))-40)%24);
+            });
+          }
 
           $division2 = $(".division-2 .field-name-field-item-special-dynamic > .field-items > .field-item:nth-child(1) .image").height();
-          $(".division-2 .withoutimage .image").hide();
-          $(".division-2 .image").css("max-height",0.7*2*$division2);
-          $(".division-2 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-2 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division2*2); 
-          $(".division-2 .field-name-field-item-special-dynamic > .field-items > .field-item").each(function() {
-            $div2imageheight = $(this).find(".image").height();
-            $(this).find(".short-text").css("height",$division2*2-$div2imageheight-(($division2*2-$div2imageheight-40)%24)); 
-          });
-          $(".division-2 .field-name-field-item-special-dynamic .withoutimage").each(function() {
-            $(this).parent().parent().parent().addClass("withoutimage");
-            $topheight2 = $(this).find(".image-wrapper").height();
-            $(this).find(".short-text").css("height",$division2*2-$topheight2-((($division2*2-$topheight2))-40)%24);
-          });
+          if ($division2 > 0){
+            $(".division-2 .withoutimage .image").hide();
+            $(".division-2 .image").css("max-height",0.7*2*$division2);
+            $(".division-2 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-2 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division2*2); 
+            $(".division-2 .field-name-field-item-special-dynamic > .field-items > .field-item").each(function() {
+              $div2imageheight = $(this).find(".image").height();
+              $(this).find(".short-text").css("height",$division2*2-$div2imageheight-(($division2*2-$div2imageheight-40)%24)); 
+            });
+            $(".division-2 .field-name-field-item-special-dynamic .withoutimage").each(function() {
+              $(this).parent().parent().parent().addClass("withoutimage");
+              $topheight2 = $(this).find(".image-wrapper").height();
+              $(this).find(".short-text").css("height",$division2*2-$topheight2-((($division2*2-$topheight2))-40)%24);
+            });
+          }
 
           $division3 = $(".division-3 .field-name-field-item-special-dynamic > .field-items > .field-item:nth-child(2) .image").height();
-          $(".division-3 .withoutimage .image").hide();
-          $(".division-3 .image").css("max-height",0.7*2*$division3);
-          $(".division-3 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-3 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division3*2); 
-          $(".division-3 .field-name-field-item-special-dynamic > .field-items > .field-item").each(function() {
-            $div3imageheight = $(this).find(".image").height();
-            $(this).find(".short-text").css("height",$division3*2-$div3imageheight-(($division3*2-$div3imageheight-40)%24)); 
-          });
-          $(".division-3 .field-name-field-item-special-dynamic .withoutimage").each(function() {
-            $(this).parent().parent().parent().addClass("withoutimage");
-            $topheight3 = $(this).find(".image-wrapper").height();
-            $(this).find(".short-text").css("height",$division3*2-$topheight3-((($division3*2-$topheight3))-40)%24);
-          });
+          if ($division3 > 0){
+            $(".division-3 .withoutimage .image").hide();
+            $(".division-3 .image").css("max-height",0.7*2*$division3);
+            $(".division-3 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-3 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division3*2); 
+            $(".division-3 .field-name-field-item-special-dynamic > .field-items > .field-item").each(function() {
+              $div3imageheight = $(this).find(".image").height();
+              $(this).find(".short-text").css("height",$division3*2-$div3imageheight-(($division3*2-$div3imageheight-40)%24)); 
+            });
+            $(".division-3 .field-name-field-item-special-dynamic .withoutimage").each(function() {
+              $(this).parent().parent().parent().addClass("withoutimage");
+              $topheight3 = $(this).find(".image-wrapper").height();
+              $(this).find(".short-text").css("height",$division3*2-$topheight3-((($division3*2-$topheight3))-40)%24);
+            });
+          }
 
           $division4 = $(".division-4 .field-name-field-item-special-dynamic > .field-items > .field-item .image").height();
-          $(".division-4 .withoutimage .image").hide();
-          $(".division-4 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-4 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division4*2); 
-          $(".division-4 .field-name-field-item-special-dynamic .withimage .short-text").css("height",$division4-(($division4-40)%24)); 
-          $(".division-4 .field-name-field-item-special-dynamic .withoutimage").each(function() {
-            $(this).parent().parent().parent().addClass("withoutimage");
-            $topheight4 = $(this).find(".image-wrapper").height();
-            $(this).find(".short-text").css("height",$division4*2-$topheight4-((($division4*2-$topheight4))-40)%24);
-          });
+          if ($division4 > 0){
+            $(".division-4 .withoutimage .image").hide();
+            $(".division-4 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-4 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division4*2); 
+            $(".division-4 .field-name-field-item-special-dynamic .withimage .short-text").css("height",$division4-(($division4-40)%24)); 
+            $(".division-4 .field-name-field-item-special-dynamic .withoutimage").each(function() {
+              $(this).parent().parent().parent().addClass("withoutimage");
+              $topheight4 = $(this).find(".image-wrapper").height();
+              $(this).find(".short-text").css("height",$division4*2-$topheight4-((($division4*2-$topheight4))-40)%24);
+            });
+          }
 
 
         });
 
         $(window).resize(function() {
           $division1 = $(".division-1 .field-name-field-item-special-dynamic > .field-items > .field-item .image").height();
-          $(".division-1 .withoutimage .image").hide();
-          $(".division-1 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-1 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division1*2); 
-          $(".division-1 .field-name-field-item-special-dynamic .withimage .short-text").css("height",$division1-(($division1-40)%24)); 
-          $(".division-1 .field-name-field-item-special-dynamic .withoutimage").each(function() {
-            $topheight = $(this).find(".image-wrapper").height();
-            $(this).find(".short-text").css("height",$division1*2-$topheight-((($division1*2-$topheight))-40)%24);
-          });
+          if ($division1 > 0){
+            $(".division-1 .withoutimage .image").hide();
+            $(".division-1 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-1 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division1*2); 
+            $(".division-1 .field-name-field-item-special-dynamic .withimage .short-text").css("height",$division1-(($division1-40)%24)); 
+            $(".division-1 .field-name-field-item-special-dynamic .withoutimage").each(function() {
+              $topheight = $(this).find(".image-wrapper").height();
+              $(this).find(".short-text").css("height",$division1*2-$topheight-((($division1*2-$topheight))-40)%24);
+            });
+          }
 
           $division2 = $(".division-2 .field-name-field-item-special-dynamic > .field-items > .field-item:nth-child(1) .image").height();
-          $(".division-2 .withoutimage .image").hide();
-          $(".division-2 .image").css("max-height",0.7*2*$division2);
-          $(".division-2 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-2 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division2*2); 
-          $(".division-2 .field-name-field-item-special-dynamic > .field-items > .field-item").each(function() {
-            $div2imageheight = $(this).find(".image").height();
-            $(this).find(".short-text").css("height",$division2*2-$div2imageheight-(($division2*2-$div2imageheight-40)%24)); 
-          });
-          $(".division-2 .field-name-field-item-special-dynamic .withoutimage").each(function() {
-            $topheight2 = $(this).find(".image-wrapper").height();
-            $(this).find(".short-text").css("height",$division2*2-$topheight2-((($division2*2-$topheight2))-40)%24);
-          });
+          if ($division2 > 0){
+            $(".division-2 .withoutimage .image").hide();
+            $(".division-2 .image").css("max-height",0.7*2*$division2);
+            $(".division-2 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-2 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division2*2); 
+            $(".division-2 .field-name-field-item-special-dynamic > .field-items > .field-item").each(function() {
+              $div2imageheight = $(this).find(".image").height();
+              $(this).find(".short-text").css("height",$division2*2-$div2imageheight-(($division2*2-$div2imageheight-40)%24)); 
+            });
+            $(".division-2 .field-name-field-item-special-dynamic .withoutimage").each(function() {
+              $topheight2 = $(this).find(".image-wrapper").height();
+              $(this).find(".short-text").css("height",$division2*2-$topheight2-((($division2*2-$topheight2))-40)%24);
+            });
+          }
 
           $division3 = $(".division-3 .field-name-field-item-special-dynamic > .field-items > .field-item:nth-child(2) .image").height();
-          $(".division-3 .withoutimage .image").hide();
-          $(".division-3 .image").css("max-height",0.7*2*$division3);
-          $(".division-3 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-3 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division3*2); 
-          $(".division-3 .field-name-field-item-special-dynamic > .field-items > .field-item").each(function() {
-            $div3imageheight = $(this).find(".image").height();
-            $(this).find(".short-text").css("height",$division3*2-$div3imageheight-(($division3*2-$div3imageheight-40)%24)); 
-          });
-          $(".division-3 .field-name-field-item-special-dynamic .withoutimage").each(function() {
-            $topheight3 = $(this).find(".image-wrapper").height();
-            $(this).find(".short-text").css("height",$division3*2-$topheight3-((($division3*2-$topheight3))-40)%24);
-          });
+          if ($division3 > 0){
+            $(".division-3 .withoutimage .image").hide();
+            $(".division-3 .image").css("max-height",0.7*2*$division3);
+            $(".division-3 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-3 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division3*2); 
+            $(".division-3 .field-name-field-item-special-dynamic > .field-items > .field-item").each(function() {
+              $div3imageheight = $(this).find(".image").height();
+              $(this).find(".short-text").css("height",$division3*2-$div3imageheight-(($division3*2-$div3imageheight-40)%24)); 
+            });
+            $(".division-3 .field-name-field-item-special-dynamic .withoutimage").each(function() {
+              $topheight3 = $(this).find(".image-wrapper").height();
+              $(this).find(".short-text").css("height",$division3*2-$topheight3-((($division3*2-$topheight3))-40)%24);
+            });
+          }
 
           $division4 = $(".division-4 .field-name-field-item-special-dynamic > .field-items > .field-item .image").height();
-          $(".division-4 .withoutimage .image").hide();
-          $(".division-4 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-4 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division4*2); 
-          $(".division-4 .field-name-field-item-special-dynamic .withimage .short-text").css("height",$division4-(($division4-40)%24)); 
-          $(".division-4 .field-name-field-item-special-dynamic .withoutimage").each(function() {
-            $topheight4 = $(this).find(".image-wrapper").height();
-            $(this).find(".short-text").css("height",$division4*2-$topheight4-((($division4*2-$topheight4))-40)%24);
-          });
+          if ($division4 > 0){
+            $(".division-4 .withoutimage .image").hide();
+            $(".division-4 .field-name-field-item-special-dynamic > .field-items > .field-item, .division-4 .field-name-field-item-special-dynamic .grid_special_3_item").css("height",$division4*2); 
+            $(".division-4 .field-name-field-item-special-dynamic .withimage .short-text").css("height",$division4-(($division4-40)%24)); 
+            $(".division-4 .field-name-field-item-special-dynamic .withoutimage").each(function() {
+              $topheight4 = $(this).find(".image-wrapper").height();
+              $(this).find(".short-text").css("height",$division4*2-$topheight4-((($division4*2-$topheight4))-40)%24);
+            });
+          }
         });
 
 

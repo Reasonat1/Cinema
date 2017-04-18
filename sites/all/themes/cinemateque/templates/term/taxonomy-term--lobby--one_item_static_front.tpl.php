@@ -58,13 +58,13 @@
           } ?>
           <div class="gradient small"></div>
         </div>
-        <a class="all-image" href="<?php print $term_url; ?>">
+        <a class="all-image" href="<?php print $term_url; ?>"></a>
 	        <div class="on-image">
 		        <h2 class="title"><?php print $term_name; ?></h2>
         <div class="extra-text"><?php print render($content['field_homepage_extra_text']); ?></div>
 		       	<div class="sub-title"><?php print render($content['field_sub_title']); ?>  </div>
 	        </div>
-	    </a>
+	    
       </div>
     <?php } ?>
 

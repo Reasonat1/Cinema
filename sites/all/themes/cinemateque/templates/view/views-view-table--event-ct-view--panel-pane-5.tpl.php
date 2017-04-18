@@ -102,7 +102,7 @@ ORDER BY field_data_field_cm_event_time_field_cm_event_time_value ASC")->fetchAl
            $output .= '<td class="views-field views-field-title views-field-field-cm-event-short-title only-desktop title">'. l($title_new, $path) .'</td>';
            $output .= '<td class="views-field views-field-field-cm-event-internal-id only-desktop code">'.$event_code.'</td>';
            $output .= '<td class="views-field views-field-ops only-desktop like-flag">' .$flag .'</td>';
-           $output .= '<td class="views-field views-field-php add-event only-desktop">' ._return_addthisevent_markup($node) .'</td>';
+           $output .= '<td class="views-field views-field-php add-event">' ._return_addthisevent_markup($node) .'</td>';
            $output .= '<td class="views-field views-field-field-toptix-purchase last-mobile purchase">'.$purchase.'</td>';
           $output .= '</tr>';
          }

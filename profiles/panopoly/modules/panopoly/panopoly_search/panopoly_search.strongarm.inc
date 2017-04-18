@@ -48,6 +48,10 @@ function panopoly_search_strongarm() {
       'search_api_views:panopoly_database_search:panel_pane_1' => 'search_api_views:panopoly_database_search:panel_pane_1',
       'search_api_views:panopoly_database_search:search_database_results' => 'search_api_views:panopoly_database_search:search_database_results',
       'search_api_views:panopoly_database_search:page_1' => 'search_api_views:panopoly_database_search:page_1',
+      'search_api_page:search/search_results/%' => 'search_api_page:search/search_results/%',
+      'search_api_page:search/search_results' => 'search_api_page:search/search_results',
+      'search_api_page:search_results' => 'search_api_page:search_results',
+      'search_api_page:search/results/!keywords' => 'search_api_page:search/results/!keywords',
     ),
   );
   $export['search_api_facets_search_ids'] = $strongarm;

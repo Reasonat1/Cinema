@@ -33,6 +33,7 @@ function panopoly_admin_defaultconfig_strongarm() {
     'blocks' => array(
       'admin-create' => -1,
       'admin-menu' => 1,
+      'menu-menu-manager-view' => -1,
     ),
   );
   $export['admin_toolbar'] = $strongarm;
@@ -41,7 +42,7 @@ function panopoly_admin_defaultconfig_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_register';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['user_register'] = $strongarm;
 
   return $export;
@@ -70,6 +71,7 @@ function panopoly_admin_defaultconfig_user_default_permissions() {
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -82,16 +84,6 @@ function panopoly_admin_defaultconfig_user_default_permissions() {
       'editor' => 'editor',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: 'access navbar'.
-  $permissions['access navbar'] = array(
-    'name' => 'access navbar',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-    ),
-    'module' => 'navbar',
   );
 
   // Exported permission: 'administer menu'.

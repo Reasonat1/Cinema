@@ -24,26 +24,14 @@ function cinemateque_preprocess_panels_pane(&$variables) {
 	if($display == 'List Lobby View') {
 	  $output = views_embed_view('lobby', 'panel_pane_1' ,$tid); 
 	}
-	else if($display == 'List Lobby View a-z') {
-	  $output = views_embed_view('lobby', 'panel_pane_8' ,$tid); 
-	}
 	else if($display == 'Wide List Lobby View') {
 	  $output = views_embed_view('lobby', 'panel_pane_7' ,$tid); 
-	}
-	else if($display == 'Wide List Lobby View a-z') {
-	  $output = views_embed_view('lobby', 'panel_pane_9' ,$tid); 
 	}
 	else if($display == 'Grid Lobby View') {
 	  $output = views_embed_view('lobby', 'panel_pane_2' ,$tid);  
 	}
-	else if($display == 'Grid Lobby View a-z') {
-	  $output = views_embed_view('lobby', 'panel_pane_10' ,$tid);  
-	}
 	else if($display == 'One Item Lobby View') {
 	  $output = views_embed_view('lobby', 'panel_pane_5' ,$tid);  
-	}
-	else if($display == 'One Item Lobby View a-z') {
-	  $output = views_embed_view('lobby', 'panel_pane_11' ,$tid);  
 	}		
 	//dpm(get_defined_vars());
 	$variables['content'] = array('the_only_output' => array('#markup' => $output));

@@ -88,11 +88,20 @@
     }else{
       $summary_movie_group = '';
     }
-    if(!empty($node->field_cm_movie_short_summary)){
-      $summary_movie = $node->field_cm_movie_short_summary['und'][0]['value'];
-    }else{
-      $summary_movie = '';
-    }
+    if ($GLOBALS['_domain']['domain_id'] == 1 ){ 
+      if(!empty($node->field_cm_movie_short_summary)){
+        $summary_movie = $node->field_cm_movie_short_summary['und'][0]['value'];
+      }else{
+        $summary_movie = '';
+      }
+    } else 
+      if(!empty($node->field_short_summary_festival)){
+        $summary_movie = $node->field_short_summary_festival['und'][0]['value'];
+      } else if(!empty($node->field_cm_movie_short_summary)){
+        $summary_movie = $node->field_cm_movie_short_summary['und'][0]['value'];
+      } else {
+        $summary_movie = '';
+      }
     $summary_event = '';
 	$summary_event_movie='';
     if(!empty($node->field_cm_event_short_description['und'][0]['value'])){
@@ -137,9 +146,21 @@
 			$movie_duration_info = $movie_credit . $movie_length;
 			$summary_event_movie .='<div class="lobby-length">'.$movie_duration_info.'</div>';
 			
-          if(!empty($event_ext_nodes->field_cm_movie_short_summary)){
-            $summary_event_movie .= '<div class="lobby-summary">'.$event_ext_nodes->field_cm_movie_short_summary['und'][0]['value'].'</div>';
+
+          if ($GLOBALS['_domain']['domain_id'] == 1 ){ 
+            if(!empty($event_ext_nodes->field_cm_movie_short_summary)){
+              $summary_event_movie .= '<div class="lobby-summary">'.$event_ext_nodes->field_cm_movie_short_summary['und'][0]['value'].'</div>';
+            }
+          } else {
+            if(!empty($event_ext_nodes->field_short_summary_festival)){
+              $summary_event_movie .= '<div class="lobby-summary">'.$event_ext_nodes->field_short_summary_festival['und'][0]['value'].'</div>';
+            } else if(!empty($event_ext_nodes->field_cm_movie_short_summary)){
+              $summary_event_movie .= '<div class="lobby-summary">'.$event_ext_nodes->field_cm_movie_short_summary['und'][0]['value'].'</div>';
+            }
           }
+
+
+
         }else if($event_ext_nodes->type == 'cm_movie_group'){
           if(!empty($event_ext_nodes->field_cm_moviegroup_short_summar)){
               $summary_event_movie .=  '<div class="lobby-summary">'.$event_ext_nodes->field_cm_moviegroup_short_summar['und'][0]['value'].'</div>';
@@ -282,7 +303,7 @@
               $output_event .= '</td>';
             }
             $output_event .='<td class="views-field-ops only-desktop">'. $flag . '</td>';
-            $output_event .='<td class="add-event only-desktop">'. $addevent . '</td>';
+            $output_event .='<td class="add-event">'. $addevent . '</td>';
 
             $toptix_button = field_view_field('node', $node, 'field_toptix_purchase', 'full');
             $toptix_button = drupal_render($toptix_button);

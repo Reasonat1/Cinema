@@ -4,8 +4,8 @@
     <div class="full-screen-image-front movie-group">
       <div class="gallery">
             <?php if (render($content['field_cm_movie_pictures'])){
-               print render($content['field_cm_movie_pictures']); ?>
-            <?php } else{
+               print render($content['field_cm_movie_pictures']);
+            } else {
               print '<img src="/sites/all/themes/cinemateque/images/default-image-pane-2.png">';
               } ?>
       </div>

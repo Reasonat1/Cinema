@@ -81,7 +81,6 @@
 }
 .tickets {
 	> a {
-		@include bg-main-color;
 		color: $white;
 		font-weight: bold;
 		padding: 6px 26px;
@@ -144,7 +143,6 @@
 			    right: -10px;
 			    top: 16px;
 			    width: 0;
-				@include border-4-main-color;
 			}
 		}
 		.toptix-purchase, .sold-out{
@@ -186,7 +184,6 @@
 			padding-bottom: 5px;
 		}
 		&:hover {
-			@include bg-main-color();
 			box-shadow: 0 0 3px 2px $wild_sand;
 			color: $white;
 			cursor: pointer;
@@ -195,7 +192,6 @@
 			}
 		}
 		&.active {
-			@include bg-main-color;
 			box-shadow: 0 0 3px 2px $wild_sand;
 			color: $white;
 			cursor: pointer;
@@ -218,7 +214,6 @@
 
 .calenders{
 		.filter-cantrol{
-    		@include main-color;
     		position: absolute;
     		z-index: 199;
     		font-size: 35px;
@@ -499,6 +494,9 @@
 		max-height: 100%;
 		background-color: #ececec;
 	}
+	.toptix-purchase, .sold-out{
+		width: 62px;
+	}
 	button{
 		margin: 0!important;
 	}
@@ -513,7 +511,6 @@
 		overflow: hidden;
 		border: 1px solid #B3B3B3;
 		.close{
-			@include main-color;
 			opacity: 1;
 			background-position: left center!important;
 			padding-left: 30px;
@@ -552,9 +549,6 @@
 
 #main-menu .mini-calendar {
 	cursor: pointer;
-	&:hover{
-		@include main-color;
-	}
 }
 
 .view-custom-calendar-floating-pane{
@@ -573,12 +567,13 @@
 	}
 	.views-field-field-toptix-purchase, .views-field-field-tickets-sold-out{
 		float: right;
-		width: 52px!important;
+		width: 62px!important;
 		margin: 0!important;
 		font-size: 13px;
+		height: 20px;
 		button{
 			margin: 0;
-			width: 52px!important;
+			width: 62px!important;
 		}
 	}
 	.views-field-views-conditional{
@@ -613,10 +608,7 @@
 		color: #333;
 		width: 100%;
 		a{
-			color: #333;
-			&:hover{
-				@include main-color;
-			}
+			color: #333!important;
 		}
 	}
 	.toptix-purchase, .sold-out{
@@ -684,9 +676,9 @@
 					font-size: 12px;
 				}
 				@include res(s-m){
-					width: -webkit-calc(100% - 132px)!important;
-    				width: -moz-calc(100% - 132px)!important;
-    				width: calc(100% - 132px)!important;
+					width: -webkit-calc(100% - 163px)!important;
+    				width: -moz-calc(100% - 163px)!important;
+    				width: calc(100% - 163px)!important;
 					text-align: center!important;
 					float: none!important;
 					display: inline-block;
@@ -695,10 +687,13 @@
 			}
 			.row-custom-lobby .calendar-flag{
 				@include res(s-m){
-					width: 78px!important;
+					width: 111px!important;
 					float: right!important;
 					padding: 8px 0!important;
 					font-size: 14px;
+					.purchase{
+						float: right;
+					}
 				}
 			}
 			.row-custom-lobby{
@@ -799,6 +794,10 @@
 			}
 			.lobby-summary{
 				font-size: 16px;
+				p{
+				  font-size: 16px;
+				  margin-bottom: 0;
+				}
 			}
 			table tbody{
 				border: none;
@@ -939,7 +938,7 @@
 .pane-calendar-full-width-calendar .calendar-floating-top-content span,
 .pane-calendar-full-width-calendar .lobby-title a,
 .pane-calendar-full-width-calendar .lobby-title{
-    color: #000000;
+    color: #000000!important;
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 2%;
@@ -1067,3 +1066,126 @@
 	border-top: none;
 }
 
+
+/**
+ * AddToCalendar Icon Style
+ */
+
+.addtocalendar var{
+    display: none;
+}
+
+.addtocalendar {
+    position: relative;
+    display: inline-block;
+    background: transparent!important;
+}
+
+.atcb-link {
+    display: block;
+    outline: none!important;
+    cursor: pointer;
+}
+
+.atcb-link:focus~ul,
+.atcb-link:active~ul,
+.atcb-list:hover{
+    visibility:visible;
+}
+
+.atcb-list {
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 170px;
+    z-index: 900;
+}
+
+.atcb-list,
+.atcb-item
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+.atcb-item {
+    float: none;
+    text-align: left;
+}
+
+.atcb-item-link
+{
+    text-decoration: none;
+    outline: none;
+    display: block;
+}
+
+.atcb-item.hover,
+.atcb-item:hover {
+    position: relative;
+    z-index: 900;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+}
+
+
+/* Icon */
+
+.atc-style-button-icon .atcb-link,
+.atc-style-button-icon .atcb-link:hover,
+.atc-style-button-icon .atcb-link:active,
+.atc-style-button-icon .atcb-link:focus
+{
+    text-decoration: none;
+    outline: none;
+    padding: 2px 2px;
+}
+
+/*Festival calendar*/
+.page-festival-calendar {
+.region-content{
+	width: 1355px !important;
+    max-width: 100%;
+	margin: 0 auto;
+	padding: 0 5%;
+    box-sizing: border-box;
+}	
+.view-festival-calendar {
+	overflow:hidden;
+	.view-display-id-block_1 {
+	margin-top:150px;
+	overflow:hidden;
+	.views-row {
+		display:inline-block;
+		width:190px;
+		height:25px;
+		overflow:hidden;
+	}
+	}
+.filter{
+	.filter-wrapper{
+		.inner{
+	    	width: 1152px!important;
+			}
+		}
+	}
+.time-group {
+	display:inline-block;
+	width:190px;
+	}
+}
+
+.popup-style-bent_white .popup-element-body .top .left {
+	padding-left: 55px !important;
+}
+#popup-active-overlay {
+	z-index:0;
+}
+a.popup-element-title{
+	color:#000000!important;
+}
+}

@@ -74,12 +74,23 @@
     }else{
       $summary_movie_group = '';
     }
-    if(!empty($node->field_cm_movie_short_summary)){
-      $summary_movie = truncate_utf8($node->field_cm_movie_short_summary['und'][0]['value'], 100, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
-      //$summary_movie = $node->field_cm_movie_short_summary['und'][0]['value'];
-    }else{
-      $summary_movie = '';
-    }
+
+    if ($GLOBALS['_domain']['domain_id'] == 1 ){ 
+      if(!empty($node->field_cm_movie_short_summary)){
+        $summary_movie = truncate_utf8($node->field_cm_movie_short_summary['und'][0]['value'], 100, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+        //$summary_movie = $node->field_cm_movie_short_summary['und'][0]['value'];
+      } else{
+        $summary_movie = '';
+      }
+    } else if(!empty($node->field_short_summary_festival)){
+        $summary_movie = truncate_utf8($node->field_short_summary_festival['und'][0]['value'], 100, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+      } else if(!empty($node->field_cm_movie_short_summary)){
+        $summary_movie = truncate_utf8($node->field_cm_movie_short_summary['und'][0]['value'], 100, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
+      } else{
+        $summary_movie = '';
+      }
+
+
     if(!empty($node->field_cm_event_body['und'][0]['value'])){
       $summary_event = truncate_utf8($node->field_cm_event_body['und'][0]['value'], 100, $wordsafe = FALSE, $add_ellipsis = true, $min_wordsafe_length = 1);
     }else{

@@ -7870,6 +7870,12 @@ function entity_info_cache_clear() {
 function entity_extract_ids($entity_type, $entity) {
   $info = entity_get_info($entity_type);
 
+static $once = 0;
+if (!isset($info['entity keys']) and !$once) {
+  $once = 0;
+  //$trace = debug_backtrace(0, 10);
+  //dpm($trace);
+}
   // Objects being created might not have id/vid yet.
   $id = isset($entity->{$info['entity keys']['id']}) ? $entity->{$info['entity keys']['id']} : NULL;
   $vid = ($info['entity keys']['revision'] && isset($entity->{$info['entity keys']['revision']})) ? $entity->{$info['entity keys']['revision']} : NULL;
