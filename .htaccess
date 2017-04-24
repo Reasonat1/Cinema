@@ -29,8 +29,6 @@ DirectoryIndex index.php index.html index.htm
   php_flag magic_quotes_sybase              off
   php_flag register_globals                 off
   php_flag session.auto_start               off
-  php_value mbstring.http_input             pass
-  php_value mbstring.http_output            pass
   php_flag mbstring.encoding_translation    off
 </IfModule>
 
@@ -147,5 +145,3 @@ DirectoryIndex index.php index.html index.htm
   # Disable content sniffing, since it's an attack vector.
   Header always set X-Content-Type-Options nosniff
 </IfModule>
-
-php_value max_input_vars 6000
