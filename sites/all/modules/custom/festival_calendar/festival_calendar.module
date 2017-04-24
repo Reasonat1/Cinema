@@ -75,13 +75,15 @@ function _get_festival_day() {
 
 function festival_calendar_chek_date($day) {
 	global $language ;
+	global $user;
 				$query = new EntityFieldQuery();
 				$query->entityCondition('entity_type', 'node')
 					->entityCondition('bundle', 'cm_event')
 					->propertyCondition('status', 1)
 					->propertyCondition('language', $language->language, '=')
 					->fieldCondition('field_cm_hide_from_festival', 'value', 1, '<>') 
-					->fieldCondition('field_cm_event_time', 'value', array($day,$day + 86400), 'BETWEEN'); 
+					->fieldCondition('field_cm_event_time', 'value', array($day,$day + 86400), 'BETWEEN');
+					if ($user->uid==0)$query->fieldCondition('field_cm_event_onsale', 'value', 1, '=');
 					$eventResult = $query->execute();
 					if (!empty($eventResult['node']))
 					foreach ($eventResult['node'] as $key=>$value) {
