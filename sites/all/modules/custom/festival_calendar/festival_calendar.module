@@ -24,7 +24,7 @@ function festival_calendar_block_view_content(){
 			$filter_class = ($i == $filter_day)?'active':'';
                    $Date = date( 'j.n', $i ); 
                    $Day = date( 'l', $i );
-                   $filter_inner.="<p class='$filter_class'><a href='/festival-calendar/".date( 'Y-m-d', $i)."'>$Date<br /><span>".t($Day)."</span></a></p>";
+                   $filter_inner.="<p class='$filter_class'><a class='calendar-filter' href='/festival-calendar/".date( 'Y-m-d', $i)."'>$Date<br /><span>".t($Day)."</span></a></p>";
 				   $a++;
             }
         }else{
@@ -49,12 +49,17 @@ function festival_calendar_block_view_content(){
 	$output.="<div class='calenders'>";
      $output.= $filter;
      $output.= '</div>';
+     $output.= '<div class="load-inner"><div class="image"></div></div>';
 	 
 	 return $output;
 }
 
 function _get_festival_day() {
 	$now=mktime(0,0,0);$tid = festival_calendar_get_current_festival();
+	if(	!empty($_GET['field_cm_event_time_value']['value']['month'])&&
+		!empty($_GET['field_cm_event_time_value']['value']['day'])&&
+		!empty($_GET['field_cm_event_time_value']['value']['year']))
+	return $_GET['field_cm_event_time_value']['value']['year'].'-'.$_GET['field_cm_event_time_value']['value']['month'].'-'.$_GET['field_cm_event_time_value']['value']['day'];
 		$tid = festival_calendar_get_current_festival();
         $taxonomy = taxonomy_term_load($tid);     
         $start_date = isset($taxonomy->field_cm_festival_date['und'][0]['value']) ? $taxonomy->field_cm_festival_date['und'][0]['value'] : '';
@@ -89,4 +94,13 @@ function festival_calendar_chek_date($day) {
 function festival_calendar_get_current_festival() {
 	//TODO return nearest festival for today
 	return 12;
+}
+
+function festival_calendar_views_pre_view(&$view, &$display_id, &$args) {
+  if ($view->name == 'festival_calendar' && $view->current_display == 'page') {
+	  if(	!empty($_GET['field_cm_event_time_value']['value']['month'])&&
+		!empty($_GET['field_cm_event_time_value']['value']['day'])&&
+		!empty($_GET['field_cm_event_time_value']['value']['year']))
+	$view->args[0]=$_GET['field_cm_event_time_value']['value']['year'].'-'.$_GET['field_cm_event_time_value']['value']['month'].'-'.$_GET['field_cm_event_time_value']['value']['day'];
+  }
 }

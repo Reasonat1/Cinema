@@ -62,11 +62,7 @@
                             <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" id="logo" />
                         <?php endif; ?>
                         <span class="site-name">
-                            <?php if ($GLOBALS['_domain']['domain_id'] == 1 ){ 
-                                print t('Jerusalem Cinematheque Israel Film Archive'); 
-                            } else {
-                                print render($page['site_name']); 
-                            } ?>
+                                <?php print render($page['site_name']);  ?>
                         </span>
                     </a>
                 <?php endif; ?>

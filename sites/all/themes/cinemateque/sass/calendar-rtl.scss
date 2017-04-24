@@ -265,7 +265,10 @@
 			}
 			.row-custom-lobby .calendar-flag{
 				@include res(s-m){
-					width: 73px!important;
+					width: 121px!important;
+					.purchase{
+						float: left;
+					}
 				}
 			}
 		}

@@ -256,8 +256,8 @@
     .calender-filter{
     	margin-bottom: 0!important;
     }
-}*/
-
+}
+*/
 .filter{
 	width: 100%;
 	padding: 0;
@@ -293,7 +293,7 @@
 	    }
 	}
 }
-
+/*
 .calendar-dayview-hour {
 	float: left;
 	height: 30px;
@@ -471,7 +471,7 @@
 			width: 100%!important;
 		}
 	}
-}
+}*/
 
 /******  float-calendar  ***********/
 
@@ -676,9 +676,9 @@
 					font-size: 12px;
 				}
 				@include res(s-m){
-					width: -webkit-calc(100% - 163px)!important;
-    				width: -moz-calc(100% - 163px)!important;
-    				width: calc(100% - 163px)!important;
+					width: -webkit-calc(100% - 176px)!important;
+    				width: -moz-calc(100% - 176px)!important;
+    				width: calc(100% - 176px)!important;
 					text-align: center!important;
 					float: none!important;
 					display: inline-block;
@@ -1147,45 +1147,246 @@
 
 /*Festival calendar*/
 .page-festival-calendar {
-.region-content{
-	width: 1355px !important;
-    max-width: 100%;
-	margin: 0 auto;
-	padding: 0 5%;
-    box-sizing: border-box;
-}	
-.view-festival-calendar {
-	overflow:hidden;
-	.view-display-id-block_1 {
-	margin-top:150px;
-	overflow:hidden;
-	.views-row {
-		display:inline-block;
-		width:190px;
-		height:25px;
-		overflow:hidden;
+	.region-content{
+		width: 1355px !important;
+	    max-width: 100%;
+		margin: 0 auto;
+		padding: 0 5%;
+	    box-sizing: border-box;
+	}	
+	.view-festival-calendar {
+		.view-filters{
+			position:absolute;
+			opacity: 0;
+			height: 0;
+			
+		}
+		.view-display-id-block_1 {
+			margin-top:120px;
+			overflow:hidden;
+			font-weight: bold;
+			.views-row {
+				height: 42px!important;
+				display:inline-block;
+				width:190px;
+				overflow:hidden;
+			}
+			.view-content{
+				position: fixed;
+				overflow:hidden;
+				background-color: #fff;
+				z-index: 100;
+				.views-row{
+					text-align: center;
+				}
+				.views-row-firsts{
+					transition: margin-left 0.5s;
+    				-webkit-transition: margin-left 0.5s;
+				}
+			}	
+		}
+		.filter{
+			.filter-wrapper{
+				height: 171px;
+				.inner{
+		    		width: 1152px!important;
+					}
+				}
+			}
+			.calender-filter{
+				.active a{
+					color: #fff!important;
+				}
+			}
+		.time-group {
+			display:inline-block;
+			width:190px;
+			height: 160px;
+			vertical-align: top;
+		}
+		.group {
+			height: 160px;
+			position: relative;
+		}
 	}
+	.popup-style-bent_white .popup-element-body .top .left {
+		padding-left: 55px !important;
 	}
-.filter{
-	.filter-wrapper{
-		.inner{
-	    	width: 1152px!important;
+	#popup-active-overlay {
+		z-index:0;
+	}
+	a.popup-element-title{
+		color:#000000!important;
+	}
+	.view-festival-calendar.view-display-id-page > .view-header{
+		position: relative;
+		.hall-next, .hall-prev{
+			position: absolute;
+			top: 0;
+			z-index: 101;
+			cursor: pointer;
+			font-size: 12px;
+			background-color: #fff;
+			i{
+				font-size: 28px;
+			}
+		}
+		.hall-next{
+			right: -71px;
+			span{
+				margin: 6px 10px 0 0;
+				float: left;
+			}
+		}
+		.hall-prev{
+			left: -71px;
+			span{
+				margin: 6px 0px 0 10px;
+				float: right;
 			}
 		}
 	}
-.time-group {
-	display:inline-block;
-	width:190px;
+	.view-festival-calendar.view-display-id-page > .view-content{
+		overflow: hidden;
+		h3{
+			opacity: 0;
+			height: 0;
+		}
+		.views-row{
+			box-shadow: 0px 1px 3px #c2c2c2;
+			border: 1px solid #dededf;
+			padding: 10px;
+			font-size: 14px;
+			transition: left 0.5s;
+    		-webkit-transition: left 0.5s;
+			a{
+				font-size: 14px;
+			}
+			.views-field-field-cm-event-time-1{
+				float: left;
+				font-weight: bold;
+				margin-right: 6px;
+			}
+			.views-field-field-cm-event-duration{
+				float: left;
+				.interval-value{
+					float: right;
+					margin-left: 6px;
+				}
+			}
+			.views-field-ops{
+				float: right;
+				padding-top: 3px;
+			}
+			.views-field-popup{
+				font-weight: bold;
+				padding-top: 7px;
+				clear: both;
+			}
+			.views-field-field-cm-event-comment{
+				height: 34px;
+			}
+			.views-field-field-cm-event-comment, .views-field-field-cm-event-internal-id{
+				font-size: 12px;
+				color: #b1aeae;
+			}
+			.views-field-field-cm-event-internal-id{
+				float: left;
+				padding-top: 13px;
+			}
+			.views-field-field-toptix-purchase{
+				float: right;
+				height: 24px;
+				margin-top: 10px;
+				button{
+					width: 71px;
+				}
+			}
+		}
 	}
-}
-
-.popup-style-bent_white .popup-element-body .top .left {
-	padding-left: 55px !important;
-}
-#popup-active-overlay {
-	z-index:0;
-}
-a.popup-element-title{
-	color:#000000!important;
-}
+	#popup-active-overlay{
+		table td{
+			background: none!important;
+		}
+		table.popup-layout{
+			background-color: #fdf9f9;
+			border: 1px solid #c7c8c8;
+			box-shadow: 0px 1px 3px #c2c2c2;
+			.table-responsive{
+				table{
+					margin-bottom: 0;
+				}
+				.title, .table_remark, .code, .like-flag, .add-event{
+					display: none;
+				}
+				.date, .hall{
+					width: auto;
+				}
+				.time{
+					padding-right: 10px;
+				}
+				.purchase{
+					padding-top: 0!important;
+				}
+				td{
+					font-size: 14px;
+				}
+				button{
+					width: 71px;
+				}
+				.view-footer{
+					overflow: hidden;
+				}
+			}
+			> tbody{
+				> .top, > .bottom{
+					display: none;
+				}
+			}
+		}
+		.center .center .inner{
+			margin: 0;
+			padding: 30px;
+			.title{
+				margin-bottom: 20px;
+				a{
+					font-weight: bold;
+					font-size: 20px;
+				}
+			}
+			.description{
+				font-size: 16px;
+			}
+			.title-link{
+				padding: 20px 0;
+				a{
+					position: relative;
+				}
+				a:after{
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 4px 0 4px 6px;
+					display: block;
+					content: "";
+					position: absolute;
+    				right: -17px;
+    				top: 9px;
+    				border-top-color: transparent!important;
+					border-right-color: transparent!important;
+					border-bottom-color: transparent!important;
+				}
+			}
+		}
+		.popup-close{
+			background: url("../images/close42.png") no-repeat center center;
+			border-radius: 50%;
+		    height: 30px;
+		    position: absolute;
+		    right: -10px;
+		    top: -10px;
+		    width: 30px;
+		    background-size: 15px;
+		}
+	}
 }

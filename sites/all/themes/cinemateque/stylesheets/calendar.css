@@ -369,7 +369,8 @@
     .calender-filter{
     	margin-bottom: 0!important;
     }
-}*/
+}
+*/
 /* line 261, ../sass/calendar.scss */
 .filter {
   width: 100%;
@@ -414,207 +415,185 @@
   opacity: 0;
 }
 
-/* line 297, ../sass/calendar.scss */
+/*
 .calendar-dayview-hour {
-  float: left;
-  height: 30px;
-  width: 100px;
-  margin: 0;
+	float: left;
+	height: 30px;
+	width: 100px;
+	margin: 0;
 }
 
-/* line 305, ../sass/calendar.scss */
-.pane-complex-calender-view-pane .ajax-inner {
-  float: left;
-  overflow: hidden;
-  width: 100%;
-}
-/* line 310, ../sass/calendar.scss */
-.pane-complex-calender-view-pane .flag-wrapper {
-  float: right;
-}
-/* line 312, ../sass/calendar.scss */
-.pane-complex-calender-view-pane .flag-wrapper .flag {
-  margin: 0;
-  background-size: 100% 100%;
-  float: left;
-  font-size: 0;
-  height: 16px;
-  overflow: hidden;
-  width: 18px;
+.pane-complex-calender-view-pane{
+	.ajax-inner {
+		float: left;
+		overflow: hidden;
+		width: 100%;
+	}
+	.flag-wrapper{
+		float: right;
+		.flag {
+			margin: 0;
+			background-size: 100% 100%;
+			float: left;
+			font-size: 0;
+			height: 16px;
+			overflow: hidden;
+			width: 18px;
+		}
+	}
 }
 
-/* line 324, ../sass/calendar.scss */
 #calender-top-popup {
-  float: left;
-  left: 40%;
-  position: absolute;
-  top: 50%;
-  width: 500px;
-  display: none;
-}
-/* line 331, ../sass/calendar.scss */
-#calender-top-popup .close-calender-popup {
-  position: absolute;
-  right: -10px;
-  top: -10px;
-  cursor: pointer;
-}
-/* line 337, ../sass/calendar.scss */
-#calender-top-popup.visible {
-  display: block;
-  z-index: 99;
-}
-/* line 341, ../sass/calendar.scss */
-#calender-top-popup .tickets {
-  float: left;
-  padding-top: 10px;
-  width: 100%;
-}
-/* line 345, ../sass/calendar.scss */
-#calender-top-popup .tickets span {
-  box-sizing: border-box;
-  display: inline-block;
-  padding: 8px 8px 8px 0;
-  width: 20%;
-}
-/* line 352, ../sass/calendar.scss */
-#calender-top-popup .title {
-  font-size: 14px;
-  padding-bottom: 20px;
-  padding-top: 25px;
-}
-/* line 357, ../sass/calendar.scss */
-#calender-top-popup .calender-row.inner {
-  width: 500px;
-  cursor: default;
-  padding: 20px;
-}
-/* line 362, ../sass/calendar.scss */
-#calender-top-popup .body > p {
-  font-size: 14px;
+	float: left;
+	left: 40%;
+	position: absolute;
+	top: 50%;
+	width: 500px;
+	display: none;
+	.close-calender-popup {
+		position: absolute;
+		right: -10px;
+		top: -10px;
+		cursor: pointer;
+	}
+	&.visible {
+		display: block;
+		z-index: 99;
+	}
+	.tickets {
+		float: left;
+		padding-top: 10px;
+		width: 100%;
+		span {
+		    box-sizing: border-box;
+		    display: inline-block;
+		    padding: 8px 8px 8px 0;
+		    width: 20%;
+  		}
+	}
+	.title {
+		font-size: 14px;
+		padding-bottom: 20px;
+		padding-top: 25px;
+	}
+	.calender-row.inner {
+		width: 500px;
+		cursor: default;
+		padding: 20px;
+	}
+	.body > p {
+		font-size: 14px;
+	}
 }
 
-/* line 367, ../sass/calendar.scss */
-.scroll-date {
-  position: relative;
-  padding: 0;
-  overflow: hidden;
-  width: 100%;
-  border-bottom: 2px solid #f4f4f4;
-  padding-bottom: 8px;
-}
-/* line 374, ../sass/calendar.scss */
-.scroll-date .wrapper {
-  width: 1355px !important;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 5%;
-  box-sizing: border-box;
+.scroll-date{
+	position: relative;
+	padding: 0;
+	overflow: hidden;
+	width: 100%;
+	border-bottom: 2px solid $wild_sand;
+	padding-bottom: 8px;
+	.wrapper{
+		@include width;
+	}
 }
 
-/* line 379, ../sass/calendar.scss */
-.calender-filter-date {
-  float: left;
-  margin-top: 10px;
-  width: 30%;
-  padding: 0;
+.calender-filter-date{
+	float: left;
+	margin-top: 10px;
+	width: 30%;
+	padding: 0;
 }
 
-/* line 386, ../sass/calendar.scss */
-.calender-scroll {
-  width: 30%;
-  float: right;
-  background: none;
-  text-align: right;
-  margin-top: 13px;
-}
-/* line 392, ../sass/calendar.scss */
-.calender-scroll p {
-  margin: 0;
-  display: inline-block;
-  font-size: 0px;
-  height: 19px;
-  width: 10px;
-  cursor: pointer;
-  margin-top: 5px;
-  position: relative;
-  top: -16px;
-}
-/* line 403, ../sass/calendar.scss */
-.calender-scroll > span {
-  font-size: 18px;
-  font-weight: bold;
-  margin-right: 5px;
-}
-/* line 408, ../sass/calendar.scss */
-.calender-scroll .scrollright {
-  background: url("../images/more-gold-right.png") no-repeat center center;
-  margin-left: 20px;
-}
-/* line 412, ../sass/calendar.scss */
-.calender-scroll .scrollleft {
-  background: url("../images/more-gold-left.png") no-repeat center center;
-  margin-right: 20px;
+.calender-scroll{
+	width: 30%;
+	float: right;
+	background: none;
+	text-align: right;
+	margin-top: 13px;
+	p{
+		margin: 0;
+		display: inline-block;
+		font-size: 0px;
+		height: 19px;
+	    width: 10px;
+	    cursor: pointer;
+	    margin-top: 5px;
+	    position: relative;
+	    top: -16px;
+	}
+	> span {
+		  font-size: 18px;
+		  font-weight: bold;
+		  margin-right: 5px;
+	}
+	.scrollright{
+		background: url("../images/more-gold-right.png") no-repeat center center;
+		margin-left: 20px;
+	}
+	.scrollleft{
+		background: url("../images/more-gold-left.png") no-repeat center center;
+		margin-right: 20px;
+	}
 }
 
-/* line 419, ../sass/calendar.scss */
-.pane-complex-calender-view-pane .pane-title {
-  font-size: 50px;
-  font-weight: normal;
-  margin-top: 70px;
-  padding: 0 3%;
-  text-align: center;
+.pane-complex-calender-view-pane{
+	.pane-title{
+	   font-size: 50px;
+	    font-weight: normal;
+	    margin-top: 70px;
+	    padding: 0 3%;
+	    text-align: center;
+	}
 }
 
-/* line 429, ../sass/calendar.scss */
-.page-node-3261 .panel-panel, .page-node-3284 .panel-panel {
-  padding: 0;
-}
-/* line 432, ../sass/calendar.scss */
-.page-node-3261 #main-wrapper, .page-node-3284 #main-wrapper {
-  background-color: #fff;
-}
-/* line 435, ../sass/calendar.scss */
-.page-node-3261 #page-header .page-header, .page-node-3284 #page-header .page-header {
-  display: block;
-  border: none;
-}
-
-/* line 441, ../sass/calendar.scss */
-.fixed-header-calendar .calender-filter {
-  position: fixed;
+.page-node-3261, .page-node-3284{
+	.panel-panel{
+		padding: 0;
+	}
+	#main-wrapper{
+		background-color: #fff;
+	}
+	#page-header .page-header{
+		display: block;
+		border: none;
+	}
 }
 
-/* line 446, ../sass/calendar.scss */
-.scroll-calendar .calender-filter {
-  position: fixed;
-  z-index: 400;
-  padding-bottom: 96px;
-  top: 0;
-}
-/* line 452, ../sass/calendar.scss */
-.scroll-calendar .scroll-date {
-  position: fixed;
-  top: 132px;
-  z-index: 500;
-}
-/* line 457, ../sass/calendar.scss */
-.scroll-calendar .calender-header {
-  position: fixed;
-  top: 183px;
-  z-index: 400;
-}
-/* line 461, ../sass/calendar.scss */
-.scroll-calendar .calender-header .calendar-agenda-items {
-  left: 60px;
-  position: relative;
+.fixed-header-calendar .calender-filter{
+	position: fixed;
 }
 
-/* line 470, ../sass/calendar.scss */
-.node-type-cm-article.page-node-3261 .panel-panel-inner .panel-pane, .node-type-cm-article.page-node-3284 .panel-panel-inner .panel-pane {
-  width: 100% !important;
+.scroll-calendar{
+	.calender-filter{
+		position: fixed;
+		z-index: 400;
+		padding-bottom: 96px;
+		top: 0;
+	}
+	.scroll-date{
+		position: fixed;
+		top: 132px;
+		z-index: 500;
+	}
+	.calender-header{
+		position: fixed;
+		top: 183px;
+		z-index: 400;
+		.calendar-agenda-items{
+			left: 60px;
+			position: relative;
+		}		
+	}
 }
 
+.node-type-cm-article{
+	&.page-node-3261, &.page-node-3284{
+		.panel-panel-inner .panel-pane{
+			width: 100%!important;
+		}
+	}
+}*/
 /******  float-calendar  ***********/
 /* line 478, ../sass/calendar.scss */
 .float-calendar-wrapper {
@@ -871,9 +850,9 @@
 @media (max-width: 767px) {
   /* line 673, ../sass/calendar.scss */
   .pane-calendar-full-width-calendar .ticket-details .hall {
-    width: -webkit-calc(100% - 163px) !important;
-    width: -moz-calc(100% - 163px) !important;
-    width: calc(100% - 163px) !important;
+    width: -webkit-calc(100% - 176px) !important;
+    width: -moz-calc(100% - 176px) !important;
+    width: calc(100% - 176px) !important;
     text-align: center !important;
     float: none !important;
     display: inline-block;
@@ -1456,40 +1435,279 @@
   padding: 0 5%;
   box-sizing: border-box;
 }
-/* line 1157, ../sass/calendar.scss */
-.page-festival-calendar .view-festival-calendar {
-  overflow: hidden;
+/* line 1158, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar .view-filters {
+  position: absolute;
+  opacity: 0;
+  height: 0;
 }
-/* line 1159, ../sass/calendar.scss */
+/* line 1164, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar .view-display-id-block_1 {
-  margin-top: 150px;
+  margin-top: 120px;
   overflow: hidden;
+  font-weight: bold;
 }
-/* line 1162, ../sass/calendar.scss */
+/* line 1168, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar .view-display-id-block_1 .views-row {
+  height: 42px !important;
   display: inline-block;
   width: 190px;
-  height: 25px;
   overflow: hidden;
 }
-/* line 1171, ../sass/calendar.scss */
+/* line 1174, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar .view-display-id-block_1 .view-content {
+  position: fixed;
+  overflow: hidden;
+  background-color: #fff;
+  z-index: 100;
+}
+/* line 1179, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar .view-display-id-block_1 .view-content .views-row {
+  text-align: center;
+}
+/* line 1182, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar .view-display-id-block_1 .view-content .views-row-firsts {
+  transition: margin-left 0.5s;
+  -webkit-transition: margin-left 0.5s;
+}
+/* line 1189, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar .filter .filter-wrapper {
+  height: 171px;
+}
+/* line 1191, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar .filter .filter-wrapper .inner {
   width: 1152px !important;
 }
-/* line 1176, ../sass/calendar.scss */
+/* line 1197, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar .calender-filter .active a {
+  color: #fff !important;
+}
+/* line 1201, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar .time-group {
   display: inline-block;
   width: 190px;
+  height: 160px;
+  vertical-align: top;
 }
-/* line 1182, ../sass/calendar.scss */
+/* line 1207, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar .group {
+  height: 160px;
+  position: relative;
+}
+/* line 1212, ../sass/calendar.scss */
 .page-festival-calendar .popup-style-bent_white .popup-element-body .top .left {
   padding-left: 55px !important;
 }
-/* line 1185, ../sass/calendar.scss */
+/* line 1215, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay {
   z-index: 0;
 }
-/* line 1188, ../sass/calendar.scss */
+/* line 1218, ../sass/calendar.scss */
 .page-festival-calendar a.popup-element-title {
   color: #000000 !important;
+}
+/* line 1221, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar.view-display-id-page > .view-header {
+  position: relative;
+}
+/* line 1223, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar.view-display-id-page > .view-header .hall-next, .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-header .hall-prev {
+  position: absolute;
+  top: 0;
+  z-index: 101;
+  cursor: pointer;
+  font-size: 12px;
+  background-color: #fff;
+}
+/* line 1230, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar.view-display-id-page > .view-header .hall-next i, .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-header .hall-prev i {
+  font-size: 28px;
+}
+/* line 1234, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar.view-display-id-page > .view-header .hall-next {
+  right: -71px;
+}
+/* line 1236, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar.view-display-id-page > .view-header .hall-next span {
+  margin: 6px 10px 0 0;
+  float: left;
+}
+/* line 1241, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar.view-display-id-page > .view-header .hall-prev {
+  left: -71px;
+}
+/* line 1243, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar.view-display-id-page > .view-header .hall-prev span {
+  margin: 6px 0px 0 10px;
+  float: right;
+}
+/* line 1249, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content {
+  overflow: hidden;
+}
+/* line 1251, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content h3 {
+  opacity: 0;
+  height: 0;
+}
+/* line 1255, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row {
+  box-shadow: 0px 1px 3px #c2c2c2;
+  border: 1px solid #dededf;
+  padding: 10px;
+  font-size: 14px;
+  transition: left 0.5s;
+  -webkit-transition: left 0.5s;
+}
+/* line 1262, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row a {
+  font-size: 14px;
+}
+/* line 1265, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-field-cm-event-time-1 {
+  float: left;
+  font-weight: bold;
+  margin-right: 6px;
+}
+/* line 1270, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-field-cm-event-duration {
+  float: left;
+}
+/* line 1272, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-field-cm-event-duration .interval-value {
+  float: right;
+  margin-left: 6px;
+}
+/* line 1277, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-ops {
+  float: right;
+  padding-top: 3px;
+}
+/* line 1281, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-popup {
+  font-weight: bold;
+  padding-top: 7px;
+  clear: both;
+}
+/* line 1286, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-field-cm-event-comment {
+  height: 34px;
+}
+/* line 1289, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-field-cm-event-comment, .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-field-cm-event-internal-id {
+  font-size: 12px;
+  color: #b1aeae;
+}
+/* line 1293, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-field-cm-event-internal-id {
+  float: left;
+  padding-top: 13px;
+}
+/* line 1297, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-field-toptix-purchase {
+  float: right;
+  height: 24px;
+  margin-top: 10px;
+}
+/* line 1301, ../sass/calendar.scss */
+.page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-field-toptix-purchase button {
+  width: 71px;
+}
+/* line 1308, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay table td {
+  background: none !important;
+}
+/* line 1311, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay table.popup-layout {
+  background-color: #fdf9f9;
+  border: 1px solid #c7c8c8;
+  box-shadow: 0px 1px 3px #c2c2c2;
+}
+/* line 1316, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive table {
+  margin-bottom: 0;
+}
+/* line 1319, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive .title, .page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive .table_remark, .page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive .code, .page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive .like-flag, .page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive .add-event {
+  display: none;
+}
+/* line 1322, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive .date, .page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive .hall {
+  width: auto;
+}
+/* line 1325, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive .time {
+  padding-right: 10px;
+}
+/* line 1328, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive .purchase {
+  padding-top: 0 !important;
+}
+/* line 1331, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive td {
+  font-size: 14px;
+}
+/* line 1334, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive button {
+  width: 71px;
+}
+/* line 1337, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive .view-footer {
+  overflow: hidden;
+}
+/* line 1342, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay table.popup-layout > tbody > .top, .page-festival-calendar #popup-active-overlay table.popup-layout > tbody > .bottom {
+  display: none;
+}
+/* line 1347, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay .center .center .inner {
+  margin: 0;
+  padding: 30px;
+}
+/* line 1350, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay .center .center .inner .title {
+  margin-bottom: 20px;
+}
+/* line 1352, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay .center .center .inner .title a {
+  font-weight: bold;
+  font-size: 20px;
+}
+/* line 1357, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay .center .center .inner .description {
+  font-size: 16px;
+}
+/* line 1360, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay .center .center .inner .title-link {
+  padding: 20px 0;
+}
+/* line 1362, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay .center .center .inner .title-link a {
+  position: relative;
+}
+/* line 1365, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay .center .center .inner .title-link a:after {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 0 4px 6px;
+  display: block;
+  content: "";
+  position: absolute;
+  right: -17px;
+  top: 9px;
+  border-top-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+}
+/* line 1381, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay .popup-close {
+  background: url("../images/close42.png") no-repeat center center;
+  border-radius: 50%;
+  height: 30px;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  width: 30px;
+  background-size: 15px;
 }

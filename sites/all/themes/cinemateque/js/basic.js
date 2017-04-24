@@ -434,6 +434,7 @@ function handleTouchMove(evt) {
     var yDiff = yDown - yUp;
 
     if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+      if ($("body").hasClass("i18n-en")){
         if ( xDiff > 0 ) {
             if ($left > $maxleft){
               $left = $left - $squarewidth;
@@ -445,7 +446,6 @@ function handleTouchMove(evt) {
                   $(".filter-wrapper .inner").removeClass("noleft");
               }
               $(".i18n-en .calender-filter").css("margin-left",$left);
-              $(".i18n-he .calender-filter").css("margin-right",$left);   
             }
         } else {
             if ($left < 0){
@@ -458,9 +458,36 @@ function handleTouchMove(evt) {
                   $(".filter-wrapper .inner").removeClass("noright");
               }
               $(".i18n-en .calender-filter").css("margin-left",$left);
+            }
+        } 
+      }                      
+      else{
+          if ( xDiff > 0 ) {
+            if ($left > $maxleft){
+              $left = $left + $squarewidth;
+              if ($left <= $maxleft){
+                $left = $maxleft;
+                $(".filter-wrapper .inner").addClass("noright");
+              }
+              if ($left < 0){
+                  $(".filter-wrapper .inner").removeClass("noleft");
+              }
+              $(".i18n-he .calender-filter").css("margin-right",$left); 
+            }
+        } else {
+            if ($left < 0){
+              $left = $left - $squarewidth;
+              if ($left >= 0){
+                $left = 0;
+                $(".filter-wrapper .inner").addClass("noleft");
+              }
+              if ($left > $maxleft){
+                  $(".filter-wrapper .inner").removeClass("noright");
+              }
               $(".i18n-he .calender-filter").css("margin-right",$left);
             }
-        }                       
+        } 
+      }
     } 
     /* reset values */
     xDown = null;

@@ -223,7 +223,7 @@ function cm_extra_views_post_execute(&$view) {
   $tids = implode('+', array_keys($tids));
   $nids = implode('+', array_keys($nids));
   $similar = views_embed_view('similar_user_flagged_content', 'default', $tids, $nids);
-  $view->attachment_after = '<h2>similar</h2>' . $similar;
+  $view->attachment_after = '<h2>'.t("Similar movies/events").'</h2>' . $similar;
 }
 
 //redirect user to the add node form of the translation for it

@@ -1292,7 +1292,7 @@ table{
 
 /*******  user profile  ********/
 
-.pane-similar-user-flagged-content-panel-pane-1{
+.view-user-flagged-content.view-display-id-panel_pane_1 .attachment-after{
 	@include width;
 	margin-bottom: 100px;
 	.views-row{
@@ -2795,6 +2795,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 
 .ui-widget-overlay, .ui-dialog{
 	z-index: 400;
+	max-width: 100%;
 }
 
 .ui-draggable .ui-dialog-titlebar{
@@ -2851,6 +2852,10 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 .ui-dialog-content{
 	width: 100%!important;
 	height: 100%!important;
+	max-width: 100%!important;
+	iframe{
+		max-width: 100%;
+	}
 }
 .region-overlay{
 	position: fixed;
