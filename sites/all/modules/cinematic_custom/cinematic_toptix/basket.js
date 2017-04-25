@@ -10,16 +10,14 @@ var toptix_basket_url = null;
       var self = this;
       $('.toptix-basket').click(function(event) {
         if ($.cookie('toptix_basket') == 0) {
-          var message = $('<div></div>');
-          message.text(Drupal.t('You have not added any items to purchase yet'));
-          message.dialog({modal: true, title: Drupal.t('Tickets basket')});
-          return;
+          toptix_basket_url = settings.toptix_userpage;
         }
-        // ulr is : http://tickets.jer-cin.org.il/Order.aspx%26culture=en-US
-        toptix_basket_url = this.dataset.url;
+        else {
+          // url is : http://tickets.jer-cin.org.il/Order.aspx%26culture=en-US
+          toptix_basket_url = this.dataset.url;
+        }
         $esro.getCustomerDetails('toptix_callback_basket_get_customer');
       });
-
     },
   };
 
