@@ -324,61 +324,6 @@
 			}
 		}
 	}
-	.field-name-field-item-grid-3 > .field-items > .field-item, .view-lobby.view-display-id-panel_pane_4 .views-row, .view-lobby.view-display-id-panel_pane_2 .views-row, .view-lobby.view-display-id-panel_pane_10 .views-row{
-		margin-right: 0;
-		margin-left: 2%;
-		float: right;
-		@include res(s-m){
-			width: 100%;
-		}
-		@include res(l){
-			margin-left: 4%!important;
-			margin-right: 0!important;
-			&:nth-child(2n){
-				margin-left: 0!important;
-			}	
-		}
-		&:nth-child(3n){
-			margin-left: 0;
-		}
-		.video-link{
-			float: left;
-			right: auto;
-			left: 20px;
-			right: auto;
-		}
-		.node-cm-movie .date-wrapper:after{
-			padding-left: 0px;
-			padding-right: 5px;
-		}
-		.screaning{
-			.table{
-				td{
-					float: right;
-					@include res(s-m){
-						float: right!important;
-					}
-				}
-			}
-			.time{
-				@include res(s-m){
-					padding-right: 0px;
-					padding-left: 10px;
-				}
-			}
-			.purchase{
-				float: left!important;
-				button{
-					float: left;
-				}
-			}
-		}
-		.title-area{
-			.title{
-				float: right;
-			}
-		}
-	}
 	.paragraphs-item-special-grid{
 		.video-link{
 			right: auto;
@@ -676,6 +621,62 @@
 
 	}
 
+	.field-name-field-item-grid-3 > .field-items > .field-item, .view-lobby.view-display-id-panel_pane_4 .views-row, .view-lobby.view-display-id-panel_pane_2 .views-row, 
+	.view-lobby.view-display-id-panel_pane_10 .views-row, .view-id-similar_user_flagged_content .views-row{
+		margin-right: 0;
+		margin-left: 2%;
+		float: right;
+		@include res(s-m){
+			width: 100%;
+		}
+		@include res(l){
+			margin-left: 4%!important;
+			margin-right: 0!important;
+			&:nth-child(2n){
+				margin-left: 0!important;
+			}	
+		}
+		&:nth-child(3n){
+			margin-left: 0;
+		}
+		.video-link{
+			float: left;
+			right: auto;
+			left: 20px;
+			right: auto;
+		}
+		.node-cm-movie .date-wrapper:after{
+			padding-left: 0px;
+			padding-right: 5px;
+		}
+		.screaning{
+			.table{
+				td{
+					float: right;
+					@include res(s-m){
+						float: right!important;
+					}
+				}
+			}
+			.time{
+				@include res(s-m){
+					padding-right: 0px;
+					padding-left: 10px;
+				}
+			}
+			.purchase{
+				float: left!important;
+				button{
+					float: left;
+				}
+			}
+		}
+		.title-area{
+			.title{
+				float: right;
+			}
+		}
+	}
 /****  taxonomy page  *******/
 
 .page-taxonomy #main-wrapper{
@@ -701,4 +702,17 @@
 		margin-left: 9px !important;
 		margin-right: 0!important;
 	}
+}
+
+/*****  message area  *******/
+
+.region-messages{
+    .view-content{
+    	padding-right: 33px;
+    	padding-left: 0;
+    }
+    .views-field-title{
+    	margin-right: 10px;
+    	margin-left: 0;
+    }
 }

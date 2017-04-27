@@ -189,9 +189,7 @@ body.adminimal-menu #admin-menu-menu a{
 .panels-flexible-region-58-center{
 	width: 100%;
 }
-#main-wrapper {
-	margin-top: 50px !important;
-}
+
 
 .table-responsive{
 	table{
@@ -1293,11 +1291,23 @@ table{
 /*******  user profile  ********/
 
 .view-user-flagged-content.view-display-id-panel_pane_1 .attachment-after{
-	@include width;
-	margin-bottom: 100px;
+	overflow: hidden;
+	padding: 20px 5% 50px;
+	background-color: #fff;
+	> h2{
+		text-align: center;
+	}
 	.views-row{
 		margin-top: 30px;
 		background-color: #fff;
+	}
+}
+
+.domain-1{
+	.view-user-flagged-content.view-display-id-panel_pane_1 .attachment-after{
+		h2{
+			display: none;
+		}
 	}
 }
 
@@ -1626,7 +1636,6 @@ table{
 }
 .view-user-flagged-content{
 	font-size: 18px;
-	padding-bottom: 130px;
 	.header-wrapper{
 		@include width;
 		overflow-y: hidden;
@@ -2863,7 +2872,7 @@ input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not
 	width: 100%;
 	background-color: #000;
 	opacity: 0.98;
-	z-index: 400;
+	z-index: 500;
 	display: none;
 	top: 0;
 	.block{

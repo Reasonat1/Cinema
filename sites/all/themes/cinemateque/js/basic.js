@@ -34,6 +34,22 @@ if (($("body").hasClass("page-node-4879")) || ($("body").hasClass("page-node-487
 
 $(".region-messages").css("display","block");
 
+$(".not-front #main-wrapper").css("margin-top",$("header").height());
+$(".front #main-wrapper").css("margin-top","0");
+$(".float-calendar-wrapper").css("top",$("header").height()+10);
+$(".filter .filter-wrapper").css("margin-top",$("header").height());
+$(window).load(function() {
+  $(".more-halls").css("top",$("header").height()+120);
+});
+
+$( document ).ajaxComplete(function() {
+  $(".not-front #main-wrapper").css("margin-top",$("header").height());
+  $(".front #main-wrapper").css("margin-top","0");
+  $(".float-calendar-wrapper").css("top",$("header").height()+10);
+  $(".filter .filter-wrapper").css("margin-top",$("header").height());
+  $(".more-halls").css("top",$("header").height()+120);
+});
+
 function setAgreeCookie() {
     var expire=new Date();
     expire=new Date(expire.getTime()+86400000);
@@ -43,11 +59,21 @@ function setAgreeCookie() {
 var visit=GetCookie("MSG");
 if (visit=="yes"){
    $('body').addClass('close-message-cookies');
+   $(".not-front #main-wrapper").css("margin-top",$("header").height());
+  $(".float-calendar-wrapper").css("top",$("header").height()+10);
+  $(".filter .filter-wrapper").css("margin-top",$("header").height());
+  $(window).load(function() {
+    $(".more-halls").css("top",$("header").height()+120);
+  });
 }
 
 $('.view-global-message.view-display-id-block .close-message').click(function(){ 
     setAgreeCookie();
     $('body').addClass('close-message-cookies');
+    $(".not-front #main-wrapper").css("margin-top",$("header").height());
+    $(".float-calendar-wrapper").css("top",$("header").height()+10);
+    $(".filter .filter-wrapper").css("margin-top",$("header").height());
+    $(".more-halls").css("top",$("header").height()+120);
 });
 
 function GetCookie(name) {
@@ -250,29 +276,29 @@ if ($("div").hasClass("movie-group-list")){
 
         /*$(".calendar-agenda-items").css("width",$(".view-custom-calendar-floating-pane").width());*/
         if ($(window).width() > 767){
-          var halfscreen = $(window).height()-240; 
+          var halfscreen = $(window).height()-240-$(".region-messages").height(); 
         }
         else{
-          var halfscreen = $(window).height()-139; 
+          var halfscreen = $(window).height()-139-$(".region-messages").height(); 
         }
         $(".view-custom-calendar-floating-pane.view-display-id-block_1 .view-content").css("max-height",halfscreen);
 
         $( document ).ajaxComplete(function() {
           if ($(window).width() > 767){
-            var halfscreen = $(window).height()-240; 
+            var halfscreen = $(window).height()-240-$(".region-messages").height(); 
           }
           else{
-            var halfscreen = $(window).height()-139; 
+            var halfscreen = $(window).height()-139-$(".region-messages").height(); 
           }
           $(".view-custom-calendar-floating-pane.view-display-id-block_1 .view-content").css("max-height",halfscreen);        
         });
 
         $(window).resize(function() {
           if ($(window).width() > 767){
-            var halfscreen = $(window).height()-240; 
+            var halfscreen = $(window).height()-240-$(".region-messages").height(); 
           }
           else{
-            var halfscreen = $(window).height()-139; 
+            var halfscreen = $(window).height()-139-$(".region-messages").height(); 
           }
            $(".view-custom-calendar-floating-pane.view-display-id-block_1 .view-content").css("max-height",halfscreen);
         });
@@ -281,7 +307,15 @@ if ($("div").hasClass("movie-group-list")){
 
 /*******  calendar fixed  area*********/
 
-if ($("body").hasClass("page-node-4284") || $("body").hasClass("page-node-4285") || $("body").hasClass("page-festival-calendar") && $(".calender-filter p").size()>10){
+$(window).load(function() {
+  $(".calender-filter > p").css("opacity","1");
+});
+
+$( document ).ajaxComplete(function() {
+  $(".calender-filter > p").css("opacity","1");
+});
+
+if ($("body").hasClass("page-node-4284") || $("body").hasClass("page-node-4285") || $("body").hasClass("page-festival-calendar") || $("body").hasClass("page-festival-calendar-mobile")){
         if ($(window).width() < 768){
           $squarewidth = 80;
         }
@@ -406,10 +440,56 @@ if ($("body").hasClass("page-node-4284") || $("body").hasClass("page-node-4285")
           $(".i18n-he .calender-filter").css("margin-right",$left);
         });
 
+        $( document ).ajaxComplete(function() {
+          if ($("body").hasClass("page-festival-calendar")){
+            $filterwidth = $(".calender-filter p").size()*$squarewidth+30;
+            $(".calender-filter").css("width",$filterwidth);
+            $maxleft = ($filterwidth - $(".filter-wrapper .inner").width())*(-1)-30; 
+            $left = 0;
+            $i = 0;
+            $('.calender-filter p').each(function () {
+              if (!$(this).hasClass("active")){
+                $i ++;
+              }
+              if ($(this).hasClass("active")){
+                return false;            
+              }
+            });
+            $left = $left + (-$squarewidth)*($i-1);
+            if ($left < $maxleft){
+                $left = $maxleft;
+            }
+            if ($left > 0){
+                $left = 0;
+            }
+            $(".i18n-en .calender-filter").css("margin-left",$left);
+            $(".i18n-he .calender-filter").css("margin-right",$left);
+          }
+        });
+
         $(".calender-filter p").click(function(){
             $("html, body").animate({ scrollTop: 0},0);
         });
 
+
+if ($("#calender-filter").width()<$(".filter-wrapper .inner").width()){
+  $(".filter-wrapper .inner").addClass("noright noleft");
+  $("#calender-filter").css("margin","0 auto");
+}
+
+$( document ).ajaxComplete(function() {
+  if ($("#calender-filter").width()<$(".filter-wrapper .inner").width()){
+    $(".filter-wrapper .inner").addClass("noright noleft");
+    $("#calender-filter").css("margin","0 auto");
+  }
+});
+
+$(window).resize(function() {
+  if ($("#calender-filter").width()<$(".filter-wrapper .inner").width()){
+    $(".filter-wrapper .inner").addClass("noright noleft");
+    $("#calender-filter").css("margin","0 auto");
+  }
+});
 
 document.getElementById("calender-filter").addEventListener('touchstart', handleTouchStart, false);        
 document.getElementById("calender-filter").addEventListener('touchmove', handleTouchMove, false);
@@ -496,6 +576,21 @@ function handleTouchMove(evt) {
 
 
 }
+
+$(".page-festival-calendar-mobile caption").click(function(){
+  if($(this).parent().hasClass("hide-table")){
+    $(this).children(".fa-angle-down").css("display","none")
+    $(this).children(".fa-angle-up").css("display","block")
+    $(this).parent().removeClass("hide-table");
+  }
+  else{
+    $(this).children(".fa-angle-down").css("display","block")
+    $(this).children(".fa-angle-up").css("display","none")
+    $(this).parent().addClass("hide-table");
+  }
+});
+
+
 /********  items of review  *******/
           
         if ($(".view-review-mobile .views-row").length == '1') { 

@@ -188,6 +188,10 @@ function radix_preprocess_page(&$variables) {
     'min_depth' => 1,
     'max_depth' => 2,
   ));
+    $variables['festival_site_main_menu'] = _radix_dropdown_menu_tree(variable_get('menu-site-main-menu_links_source', 'cinematic-festival-12'), array(
+    'min_depth' => 1,
+    'max_depth' => 2,
+  ));
 // if ternonmy page is views
     global $base_url;
     global $_domain;

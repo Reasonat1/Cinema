@@ -14,7 +14,6 @@
 
 <!--<script src="/misc/jquery.js" type="text/javascript"></script>-->
 <?php print render($page['overlay']); ?>
-<?php print render($page['messages']); ?>
 
 <div class="float-calendar-wrapper hide-float">
     <?php print render($page['float_calendar']); ?>
@@ -38,10 +37,16 @@
 </script> 
 <div class="responsive-menu-wrapper">
     <ul id="site-main-menu" class="site-custom-menu menu nav navbar-nav col-md-4">
-        <?php print render($site_main_menu); ?>
+        <?php global $_domain;
+        if ($_domain['domain_id']==1){
+            print render($site_main_menu); 
+        } else {
+            print render($festival_site_main_menu);  
+        } ?>
     </ul>
 </div>
 <header id="header" class="header" role="header">
+    <?php print render($page['messages']); ?>
     <div class="container-fluid">
         <nav class="navbar navbar-default" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -85,9 +90,17 @@
                     $main_menu = $festival_site_menu;
                 }
         if ($main_menu): ?>
-                    <ul id="main-menu" class="site-custom-menu menu nav navbar-nav col-md-4">
-                        <?php print render($main_menu); ?>
-                    </ul>
+                    <?php  global $_domain;
+                    if ($_domain['domain_id']==1){?>
+                        <ul id="main-menu" class="site-custom-menu menu nav navbar-nav col-md-4">
+                            <?php print render($main_menu); ?>                       
+                        </ul>
+                    <?php } else { ?>
+                        <div id="main-menu" class="site-custom-menu menu nav navbar-nav col-md-4">
+                            <?php $blockt = module_invoke('menu', 'block_view', 'menu-main-menu---festival');
+                            print render($blockt['content']); ?>
+                        </div>
+                    <?php } ?>
                     <ul class="col-md-3 header-right">
                         <li class="today">
                             <span>Today</span>

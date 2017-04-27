@@ -18,9 +18,13 @@
         <div class="slide-right-ct"></div>
         <div class="slide-left-ct">
           <?php if ($node->field_show_title){
-            if ($node->field_show_title['und'][0]['value'] != 0) { ?>
-              <div class="slide-big-text title"><a href="<?php print $node->field_link['und'][0]['display_url']; ?>"><?php print $title; ?></a></div>
-            <?php } ?>
+            if ($node->field_show_title['und'][0]['value'] != 0) { 
+              if ($node->field_link) { ?>
+                <div class="slide-big-text title"><a href="<?php print $node->field_link['und'][0]['display_url']; ?>"><?php print $title; ?></a></div>
+              <?php } else { ?>
+                <div class="slide-big-text title"><?php print $title; ?></div>
+              <?php }
+            } ?>
           <?php }?>
           <div class="slide-small-text sub-title"><?php print render($content['field_sub_title']); ?></div>
 		  <?php $event_start_date=(!empty($node->field_cm_event_time['und']))?$node->field_cm_event_time['und'][0]['value']:'';

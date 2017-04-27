@@ -310,3 +310,105 @@
 			}
 		}
 }
+
+/*Festival calendar*/
+.page-festival-calendar {
+	.popup-style-bent_white .popup-element-body .top .left {
+		padding-right: 55px !important;
+		padding-left: 0!important;
+	}
+	.view-festival-calendar.view-display-id-page > .view-header{
+		.more-halls{
+			right: 0;
+			left: auto;
+		}
+		.hall-next{
+			float: left;
+			.fa-angle-left{
+				display: inline;
+			}
+			.fa-angle-right{
+				display: none;
+			}
+			span{
+				margin: 6px 0px 0 6px;
+				float: right;
+			}
+		}
+		.hall-prev{
+			float: right;
+			.fa-angle-right{
+				display: inline;
+			}
+			.fa-angle-left{
+				display: none;
+			}
+			span{
+				margin: 6px 10px 0 0px;
+				float: left;
+			}
+		}
+	}
+	.view-festival-calendar.view-display-id-page > .view-content{
+		.views-row{
+			margin-left: -78px;
+			.views-field-field-cm-event-time-1{
+				float: right;
+				margin-left: 6px;
+				margin-right: 0;
+			}
+			.views-field-field-cm-event-duration{
+				float: right;
+				.interval-value{
+					float: left;
+					margin-right: 6px;
+					margin-left: 0;
+				}
+			}
+			.views-field-ops{
+				float: left;
+			}
+			.views-field-field-cm-event-internal-id{
+				float: right;
+			}
+			.views-field-field-toptix-purchase{
+				float: left;
+			}
+		}
+	}
+	#popup-active-overlay{
+		table.popup-layout{
+			.table-responsive{
+				.time{
+					padding-left: 10px;
+					padding-right: 0;
+				}
+			}
+		}
+		.center .center .inner{
+			.title-link{
+				a:after{
+    				left: -17px;
+    				right: auto;
+    				top: 9px;
+    				border-top-color: transparent!important;
+					border-left-color: transparent!important;
+					border-bottom-color: transparent!important;
+				}
+			}
+		}
+		.popup-close{
+		    left: -10px;
+		    right: auto;
+		}
+	}
+}
+
+.view-festival-calendar.view-display-id-page_1{
+	caption{
+		text-align: right;
+		i{
+			float: left;
+		}
+	}
+}

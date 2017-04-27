@@ -83,7 +83,7 @@ foreach ($node->field_movie_referenced['und'] as $movie_array) {
         }else{
             $summary_movie = '';
         }
- $output .= '<div class="lobby-summary">'.strip_tags($summary_movie).'</div>';
+ $output .= '<div class="lobby-summary">'.$summary_movie.'</div>';
  //credits
 
 
