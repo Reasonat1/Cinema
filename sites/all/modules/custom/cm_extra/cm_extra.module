@@ -214,7 +214,7 @@ function cm_extra_views_post_execute(&$view) {
       $tids[$tid] = TRUE;
     }
     foreach ($result_item->field_field_cm_moviegroup_tags as $term) {
-      $tid = $term['raw']['target_id'];
+      $tid = isset($term['raw']['target_id']) ? $term['raw']['target_id'] : $term['raw']['tid'];
       $tids[$tid] = TRUE;
     }
     $nid = $result_item->nid;

@@ -20,22 +20,38 @@
 	var hallLength=hallCount*hallWidth;
 	hallPanel.width(hallPanelWidth).height(hallHeight);
 	hallPanel.find('.view-content').width(hallPanelWidth).height(hallHeight);
+	var morehalls = Drupal.t('More Halls');
 	if (hallCount>6){
-		var controlButtons = '<div class="hall-next"><span>More Halls</span><i class="fa fa-angle-right" aria-hidden="true"></i></div><div class="hall-prev"><i class="fa fa-angle-left" aria-hidden="true"></i><span>More Halls</span></div>';
+		var controlButtons = '<div class="more-halls"><div class="wrapper"><div class="hall-next"><i class="fa fa-angle-left" aria-hidden="true"></i><span>'+morehalls+'</span><i class="fa fa-angle-right" aria-hidden="true"></i></div><div class="hall-prev"><i class="fa fa-angle-left" aria-hidden="true"></i><span>'+morehalls+'</span><i class="fa fa-angle-right" aria-hidden="true"></i></div></div></div>';
 	hallPanel.after(controlButtons);
 	}
-	$('.view-header', context).delegate('.hall-next', 'click',function(){
-		var panelPosition=parseInt(hallPanel.find('.views-row-first').css('margin-left'));
-		if(panelPosition>0-hallLength+hallWidth*6) {
-		hallPanel.find('.views-row-first').css('margin-left', panelPosition-hallWidth+'px');
-		events_table(hallLength, hallWidth);}
-	});
-	$('.view-header', context).delegate('.hall-prev', 'click',function(){
-		var panelPosition=parseInt(hallPanel.find('.views-row-first').css('margin-left'));
-		if(panelPosition<0) {
-		hallPanel.find('.views-row-first').css('margin-left', panelPosition+hallWidth+'px');
-		 events_table(hallLength, hallWidth);}
-	});
+	if ($("body").hasClass("i18n-en")){
+		$('.view-header', context).delegate('.hall-next', 'click',function(){
+			var panelPosition=parseInt(hallPanel.find('.views-row-first').css('margin-left'));
+			if(panelPosition>0-hallLength+hallWidth*6) {
+			hallPanel.find('.views-row-first').css('margin-left', panelPosition-hallWidth+'px');
+			events_table(hallLength, hallWidth);}
+		});
+		$('.view-header', context).delegate('.hall-prev', 'click',function(){
+			var panelPosition=parseInt(hallPanel.find('.views-row-first').css('margin-left'));
+			if(panelPosition<0) {
+			hallPanel.find('.views-row-first').css('margin-left', panelPosition+hallWidth+'px');
+			 events_table(hallLength, hallWidth);}
+		});
+	} else{
+		$('.view-header', context).delegate('.hall-next', 'click',function(){
+			var panelPosition=parseInt(hallPanel.find('.views-row-first').css('margin-right'));
+			if(panelPosition>0-hallLength+hallWidth*6) {
+			hallPanel.find('.views-row-first').css('margin-right', panelPosition-hallWidth+'px');
+			events_table(hallLength, hallWidth);}
+		});
+		$('.view-header', context).delegate('.hall-prev', 'click',function(){
+			var panelPosition=parseInt(hallPanel.find('.views-row-first').css('margin-right'));
+			if(panelPosition<0) {
+			hallPanel.find('.views-row-first').css('margin-right', panelPosition+hallWidth+'px');
+			 events_table(hallLength, hallWidth);}
+		});
+	}
 	
 	$('*').click(function(e) {
 		if($(e.target).closest('.popup-layout').length === 0 && $(e.target).closest('.popup-element-title').length === 0 && $(e.target).closest('.ui-dialog-titlebar').length === 0) {
@@ -56,12 +72,14 @@ $('.calendar-filter').click(function(event) {
 	var pathName = window.location.pathname;
 	if (pathName.indexOf("20")>0){
 	localStorage.setItem('eventLinktemp', eventLink);
-	document.location.href = '/festival-calendar';
+	var myLink='/festival-calendar';
+	if (pathName.indexOf("mobile")>0) myLink='/festival-calendar-mobile';
+	document.location.href = myLink;
 	return false;
 	}
-	$('#edit-field-cm-event-time-value-value-day').val(eventLink[2]);
+	$('#edit-field-cm-event-time-value-value-day').val(parseInt(eventLink[2]));
 	$('#edit-field-cm-event-time-value-value-month').val(parseInt(eventLink[1]));
-	$('#edit-field-cm-event-time-value-value-year').val(eventLink[0]).change();
+	$('#edit-field-cm-event-time-value-value-year').val(parseInt(eventLink[0])).change();
 	return false;
 });
 
@@ -76,13 +94,21 @@ $(document)
 function events_table(hallLength, hallWidth){
 	var hallPanel =$('.view-festival-calendar .view-display-id-block_1');
 	var myPanels=$("div[class*='hall-panel-']");
-	var panelPosition=parseInt(hallPanel.find('.views-row-first').css('margin-left'));
+	if ($("body").hasClass("i18n-en")){
+		var panelPosition=parseInt(hallPanel.find('.views-row-first').css('margin-left'));
+	} else {
+		var panelPosition=parseInt(hallPanel.find('.views-row-first').css('margin-right'));
+	}
 	$.each(myPanels, function(index, item) {
 		var classList = $(item).attr('class').split(/\s+/);
 	$.each(classList, function(ind, item_class) {
 		if (~item_class.indexOf("hall-panel-")){
 			var event_position=$('.'+item_class).position();
-			var event_position_l=parseInt($('.'+item_class).css('margin-left'));
+			if ($("body").hasClass("i18n-en")){
+				var event_position_l=parseInt($('.'+item_class).css('margin-left'));
+			} else {
+				var event_position_l=parseInt($('.'+item_class).css('margin-right'));
+			}
 			var hall_top=event_position.top;
 			var hall_panel=$('.view-festival-calendar .view-display-id-block_1').find('.views-row-first');
 			var hal_panel_y=hall_panel.position().top;

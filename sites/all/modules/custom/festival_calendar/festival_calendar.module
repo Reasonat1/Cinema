@@ -15,6 +15,7 @@ function festival_calendar_block_view_content(){
         $filter.= " <div class ='filter'>";
         $filter.= " <div class ='filter-wrapper'>";
         $filter.= " <div class ='inner'>" ;
+        $filter_inner.= '<span class="prevday filter-cantrol"><i class="fa fa-angle-left "></i></span><span class="nextday filter-cantrol"><i class="fa fa-angle-right"></i></span>';
         $filter_inner.= " <div class ='calender-filter' id ='calender-filter'>" ;
         if(!empty($end_date) && !empty($start_date)){
              $filter_class = '';
@@ -99,7 +100,7 @@ function festival_calendar_get_current_festival() {
 }
 
 function festival_calendar_views_pre_view(&$view, &$display_id, &$args) {
-  if ($view->name == 'festival_calendar' && $view->current_display == 'page') {
+  if ($view->name == 'festival_calendar' && ($view->current_display == 'page' || $view->current_display == 'page_1')) {
 	  if(	!empty($_GET['field_cm_event_time_value']['value']['month'])&&
 		!empty($_GET['field_cm_event_time_value']['value']['day'])&&
 		!empty($_GET['field_cm_event_time_value']['value']['year']))

@@ -173,7 +173,9 @@ function calendar_full_width_block_content(){
             } else{
               $lineup_duration = '';
             }
-            $lineup_leading = $lineup_id->field_cm_movie_meta_credit['und'][0]['value'];
+            if(!empty($lineup_id->field_cm_movie_meta_credit['und'])){
+              $lineup_leading = $lineup_id->field_cm_movie_meta_credit['und'][0]['value'];
+            }
             $lineup_lang = (!empty($lineup_id->field_cm_movie_language['und']) && false)?t(taxonomy_term_load($lineup_id->field_cm_movie_language['und'][0]['target_id'])->name):'';
             $lineup_subtitle = (!empty($lineup_id->field_cm_movie_subtitle['und']) && false)?t('@languages subtitles', array('@languages' => t(taxonomy_term_load($lineup_id->field_cm_movie_subtitle['und'][0]['target_id'])->name))):'';
             if((strtolower($lineup_id->title))==(strtolower($node->title))){
