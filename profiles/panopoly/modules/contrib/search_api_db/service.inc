@@ -859,7 +859,7 @@ class SearchApiDbService extends SearchApiAbstractService {
           ->condition('item_id', $id)
           ->execute();
         // Don't index null values
-        if ($field['value'] === NULL) {
+        if (!isset($field['value']) or $field['value'] === NULL) {
           continue;
         }
         $type = $field['type'];
