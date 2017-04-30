@@ -2720,13 +2720,28 @@ div[id^="panels-ipe-paneid-22"] > * select {
 			}
 		}
 		.on-image{
-			z-index: 210;
+			z-index: 210!important;
 			bottom: 0;
 		    color: #fff;
 		    font-size: 16px;
 		    padding: 20px;
 		    position: absolute;
 		    width: 100%;
+		    .title{
+		    	margin-bottom: 0!important;
+		    }
+		    .extra-text > div{
+		    	margin-top: 8px;
+		    }
+		    table{
+		    	margin-bottom: 0!important;
+		    	td{
+		    		padding-bottom: 0!important;
+		    		&.purchase{
+		    			height: 32px!important;
+		    		}
+		    	}
+		    }
 		}
 		.title-area{
 			position: relative;

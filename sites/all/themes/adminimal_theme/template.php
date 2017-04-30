@@ -459,3 +459,19 @@ function adminimal_table($variables) {
   $output .= "</div>\n";
   return $output;
 }
+
+function adminimal_form_alter(&$form, &$form_state, $form_id)
+{
+  if($form_id == 'cm-person-node-form')
+  {
+    $form['actions']['submit']['#edit-submit'][] = 'adminimal_redirect_handler';
+  }
+}
+
+function adminimal_redirect_handler($form, &$form_state)
+{
+  unset($_REQUEST['destination']); // this doesn't seem to work though
+  unset($form['#redirect']); // i think this doesnt do anything because $form is not a reference
+
+  $form_state['redirect'] = 'admin/persons-manager';
+}

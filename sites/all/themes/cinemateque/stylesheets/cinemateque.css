@@ -3413,7 +3413,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
 /* line 2722, ../sass/cinemateque.scss */
 .field-name-field-item-grid-3 > .field-items > .field-item .on-image, .view-lobby.view-display-id-panel_pane_4 .views-row .on-image, .view-lobby.view-display-id-panel_pane_2 .views-row .on-image,
 .view-lobby.view-display-id-panel_pane_10 .views-row .on-image, .view-id-similar_user_flagged_content .views-row .on-image {
-  z-index: 210;
+  z-index: 210 !important;
   bottom: 0;
   color: #fff;
   font-size: 16px;
@@ -3421,14 +3421,39 @@ div[id^="panels-ipe-paneid-22"] > * select {
   position: absolute;
   width: 100%;
 }
-/* line 2731, ../sass/cinemateque.scss */
+/* line 2730, ../sass/cinemateque.scss */
+.field-name-field-item-grid-3 > .field-items > .field-item .on-image .title, .view-lobby.view-display-id-panel_pane_4 .views-row .on-image .title, .view-lobby.view-display-id-panel_pane_2 .views-row .on-image .title,
+.view-lobby.view-display-id-panel_pane_10 .views-row .on-image .title, .view-id-similar_user_flagged_content .views-row .on-image .title {
+  margin-bottom: 0 !important;
+}
+/* line 2733, ../sass/cinemateque.scss */
+.field-name-field-item-grid-3 > .field-items > .field-item .on-image .extra-text > div, .view-lobby.view-display-id-panel_pane_4 .views-row .on-image .extra-text > div, .view-lobby.view-display-id-panel_pane_2 .views-row .on-image .extra-text > div,
+.view-lobby.view-display-id-panel_pane_10 .views-row .on-image .extra-text > div, .view-id-similar_user_flagged_content .views-row .on-image .extra-text > div {
+  margin-top: 8px;
+}
+/* line 2736, ../sass/cinemateque.scss */
+.field-name-field-item-grid-3 > .field-items > .field-item .on-image table, .view-lobby.view-display-id-panel_pane_4 .views-row .on-image table, .view-lobby.view-display-id-panel_pane_2 .views-row .on-image table,
+.view-lobby.view-display-id-panel_pane_10 .views-row .on-image table, .view-id-similar_user_flagged_content .views-row .on-image table {
+  margin-bottom: 0 !important;
+}
+/* line 2738, ../sass/cinemateque.scss */
+.field-name-field-item-grid-3 > .field-items > .field-item .on-image table td, .view-lobby.view-display-id-panel_pane_4 .views-row .on-image table td, .view-lobby.view-display-id-panel_pane_2 .views-row .on-image table td,
+.view-lobby.view-display-id-panel_pane_10 .views-row .on-image table td, .view-id-similar_user_flagged_content .views-row .on-image table td {
+  padding-bottom: 0 !important;
+}
+/* line 2740, ../sass/cinemateque.scss */
+.field-name-field-item-grid-3 > .field-items > .field-item .on-image table td.purchase, .view-lobby.view-display-id-panel_pane_4 .views-row .on-image table td.purchase, .view-lobby.view-display-id-panel_pane_2 .views-row .on-image table td.purchase,
+.view-lobby.view-display-id-panel_pane_10 .views-row .on-image table td.purchase, .view-id-similar_user_flagged_content .views-row .on-image table td.purchase {
+  height: 32px !important;
+}
+/* line 2746, ../sass/cinemateque.scss */
 .field-name-field-item-grid-3 > .field-items > .field-item .title-area, .view-lobby.view-display-id-panel_pane_4 .views-row .title-area, .view-lobby.view-display-id-panel_pane_2 .views-row .title-area,
 .view-lobby.view-display-id-panel_pane_10 .views-row .title-area, .view-id-similar_user_flagged_content .views-row .title-area {
   position: relative;
   overflow: hidden;
   padding-top: 10px;
 }
-/* line 2735, ../sass/cinemateque.scss */
+/* line 2750, ../sass/cinemateque.scss */
 .field-name-field-item-grid-3 > .field-items > .field-item .title-area .title, .view-lobby.view-display-id-panel_pane_4 .views-row .title-area .title, .view-lobby.view-display-id-panel_pane_2 .views-row .title-area .title,
 .view-lobby.view-display-id-panel_pane_10 .views-row .title-area .title, .view-id-similar_user_flagged_content .views-row .title-area .title {
   float: left;
@@ -3436,13 +3461,13 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: -moz-calc(100% - 45px) !important;
   width: calc(100% - 45px) !important;
 }
-/* line 2741, ../sass/cinemateque.scss */
+/* line 2756, ../sass/cinemateque.scss */
 .field-name-field-item-grid-3 > .field-items > .field-item .title-area a, .view-lobby.view-display-id-panel_pane_4 .views-row .title-area a, .view-lobby.view-display-id-panel_pane_2 .views-row .title-area a,
 .view-lobby.view-display-id-panel_pane_10 .views-row .title-area a, .view-id-similar_user_flagged_content .views-row .title-area a {
   color: #fff !important;
   font-weight: bold;
 }
-/* line 2746, ../sass/cinemateque.scss */
+/* line 2761, ../sass/cinemateque.scss */
 .field-name-field-item-grid-3 > .field-items > .field-item .views-field-ops, .view-lobby.view-display-id-panel_pane_4 .views-row .views-field-ops, .view-lobby.view-display-id-panel_pane_2 .views-row .views-field-ops,
 .view-lobby.view-display-id-panel_pane_10 .views-row .views-field-ops, .view-id-similar_user_flagged_content .views-row .views-field-ops {
   position: absolute;
@@ -3452,29 +3477,29 @@ div[id^="panels-ipe-paneid-22"] > * select {
 }
 
 /****  taxonomy page  *******/
-/* line 2756, ../sass/cinemateque.scss */
+/* line 2771, ../sass/cinemateque.scss */
 .page-taxonomy #main-wrapper #main {
   background-color: #fff;
 }
-/* line 2759, ../sass/cinemateque.scss */
+/* line 2774, ../sass/cinemateque.scss */
 .page-taxonomy #main-wrapper .summary, .page-taxonomy #main-wrapper .summary p, .page-taxonomy #main-wrapper .short-summary p, .page-taxonomy #main-wrapper .short-summary, .page-taxonomy #main-wrapper .field-name-field-cm-event-short-description, .page-taxonomy #main-wrapper .field-name-field-cm-event-short-description p, .page-taxonomy #main-wrapper .details, .page-taxonomy #main-wrapper .details p {
   font-size: 16px;
 }
-/* line 2762, ../sass/cinemateque.scss */
+/* line 2777, ../sass/cinemateque.scss */
 .page-taxonomy #main-wrapper .field-name-field-cm-event-short-description p, .page-taxonomy #main-wrapper .details p {
   margin-bottom: 0;
 }
-/* line 2765, ../sass/cinemateque.scss */
+/* line 2780, ../sass/cinemateque.scss */
 .page-taxonomy #main-wrapper .panels-flexible-region-node_page-header {
   width: 100%;
 }
-/* line 2768, ../sass/cinemateque.scss */
+/* line 2783, ../sass/cinemateque.scss */
 .page-taxonomy #main-wrapper .panels-flexible-region.content {
   width: 90% !important;
   position: relative;
   left: 5%;
 }
-/* line 2772, ../sass/cinemateque.scss */
+/* line 2787, ../sass/cinemateque.scss */
 .page-taxonomy #main-wrapper .panels-flexible-region.content .inside {
   width: 1355px !important;
   max-width: 100%;
@@ -3485,43 +3510,43 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: -moz-calc(1355px - 10%) !important;
   width: calc(1355px - 10%) !important;
 }
-/* line 2777, ../sass/cinemateque.scss */
+/* line 2792, ../sass/cinemateque.scss */
 .page-taxonomy #main-wrapper .panels-flexible-region.content .inside .description {
   background-color: #fff;
   line-height: 1.8;
   margin: 15px 0;
 }
-/* line 2782, ../sass/cinemateque.scss */
+/* line 2797, ../sass/cinemateque.scss */
 .page-taxonomy #main-wrapper .panels-flexible-region.content .inside .pane-content {
   width: 54% !important;
   margin: 0 auto;
   padding: 0;
 }
 @media (max-width: 767px) {
-  /* line 2782, ../sass/cinemateque.scss */
+  /* line 2797, ../sass/cinemateque.scss */
   .page-taxonomy #main-wrapper .panels-flexible-region.content .inside .pane-content {
     width: 100% !important;
   }
 }
-/* line 2792, ../sass/cinemateque.scss */
+/* line 2807, ../sass/cinemateque.scss */
 .page-taxonomy #main-wrapper .panels-flexible-region.bottom-content {
   padding-top: 30px;
   background-color: #f9f4ee;
 }
-/* line 2796, ../sass/cinemateque.scss */
+/* line 2811, ../sass/cinemateque.scss */
 .page-taxonomy #main-wrapper .view-lobby {
   clear: both;
   padding-top: 20px;
 }
-/* line 2800, ../sass/cinemateque.scss */
+/* line 2815, ../sass/cinemateque.scss */
 .page-taxonomy #main-wrapper .pane-term-description {
   padding-top: 30px;
 }
-/* line 2803, ../sass/cinemateque.scss */
+/* line 2818, ../sass/cinemateque.scss */
 .page-taxonomy #main-wrapper .pane-bundle-lobby {
   clear: both;
 }
-/* line 2805, ../sass/cinemateque.scss */
+/* line 2820, ../sass/cinemateque.scss */
 .page-taxonomy #main-wrapper .pane-bundle-lobby .pane-title {
   width: 1355px !important;
   max-width: 100%;
@@ -3530,30 +3555,30 @@ div[id^="panels-ipe-paneid-22"] > * select {
   box-sizing: border-box;
   padding-bottom: 10px;
 }
-/* line 2811, ../sass/cinemateque.scss */
+/* line 2826, ../sass/cinemateque.scss */
 .page-taxonomy #main-wrapper .view-lobby.view-display-id-panel_pane_1 .views-row, .page-taxonomy #main-wrapper .view-lobby.view-display-id-panel_pane_8 .views-row, .page-taxonomy #main-wrapper .view-lobby.view-display-id-panel_pane_6 .views-row, .page-taxonomy #main-wrapper .view-lobby.view-display-id-panel_pane_7 .views-row, .page-taxonomy #main-wrapper .view-lobby.view-display-id-panel_pane_9 .views-row {
   background-color: #fff;
   margin-bottom: 30px;
 }
-/* line 2817, ../sass/cinemateque.scss */
+/* line 2832, ../sass/cinemateque.scss */
 .page-taxonomy #main-wrapper .view-lobby.view-display-id-panel_pane_5 .views-row, .page-taxonomy #main-wrapper .view-lobby.view-display-id-panel_pane_11 .views-row {
   margin-bottom: 30px;
 }
-/* line 2821, ../sass/cinemateque.scss */
+/* line 2836, ../sass/cinemateque.scss */
 .page-taxonomy #main-wrapper .panels-flexible-row {
   width: 100% !important;
   padding: 0 !important;
 }
-/* line 2825, ../sass/cinemateque.scss */
+/* line 2840, ../sass/cinemateque.scss */
 .page-taxonomy #main-wrapper .panels-flexible-region {
   width: 100%;
   padding: 0;
 }
-/* line 2828, ../sass/cinemateque.scss */
+/* line 2843, ../sass/cinemateque.scss */
 .page-taxonomy #main-wrapper .panels-flexible-region .panel-pane {
   background-color: #f9f4ee;
 }
-/* line 2830, ../sass/cinemateque.scss */
+/* line 2845, ../sass/cinemateque.scss */
 .page-taxonomy #main-wrapper .panels-flexible-region .panel-pane .pane-content {
   width: 1355px !important;
   max-width: 100%;
@@ -3563,27 +3588,27 @@ div[id^="panels-ipe-paneid-22"] > * select {
   padding-bottom: 80px;
   overflow: hidden;
 }
-/* line 2835, ../sass/cinemateque.scss */
+/* line 2850, ../sass/cinemateque.scss */
 .page-taxonomy #main-wrapper .panels-flexible-region .panel-pane.full-width {
   width: 100% !important;
   padding: 0;
   position: relative;
   background-color: #fff;
 }
-/* line 2840, ../sass/cinemateque.scss */
+/* line 2855, ../sass/cinemateque.scss */
 .page-taxonomy #main-wrapper .panels-flexible-region .panel-pane.full-width .pane-content {
   width: 100% !important;
   padding: 0 !important;
 }
 
-/* line 2851, ../sass/cinemateque.scss */
+/* line 2866, ../sass/cinemateque.scss */
 .page-taxonomy.noheaderimage .panels-flexible-row-node_page-1.Header {
   background-color: #fff;
   margin-bottom: 30px !important;
 }
 
 /*****  message area  *******/
-/* line 2861, ../sass/cinemateque.scss */
+/* line 2876, ../sass/cinemateque.scss */
 .region-messages {
   display: none;
   background-color: #c3c3c3;
@@ -3592,41 +3617,41 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: 100%;
   z-index: 450;
 }
-/* line 2868, ../sass/cinemateque.scss */
+/* line 2883, ../sass/cinemateque.scss */
 .region-messages p {
   font-size: 12px;
 }
-/* line 2871, ../sass/cinemateque.scss */
+/* line 2886, ../sass/cinemateque.scss */
 .region-messages .view-content {
   padding-left: 33px;
 }
-/* line 2874, ../sass/cinemateque.scss */
+/* line 2889, ../sass/cinemateque.scss */
 .region-messages .views-row {
   overflow: hidden;
   margin-bottom: 20px;
 }
-/* line 2878, ../sass/cinemateque.scss */
+/* line 2893, ../sass/cinemateque.scss */
 .region-messages .views-row-last {
   margin-bottom: 0;
 }
-/* line 2881, ../sass/cinemateque.scss */
+/* line 2896, ../sass/cinemateque.scss */
 .region-messages .views-field-title {
   font-weight: bold;
   display: inline;
   margin-left: 10px;
 }
-/* line 2885, ../sass/cinemateque.scss */
+/* line 2900, ../sass/cinemateque.scss */
 .region-messages .views-field-title a {
   color: #fff !important;
 }
-/* line 2889, ../sass/cinemateque.scss */
+/* line 2904, ../sass/cinemateque.scss */
 .region-messages .views-field-field-publish-date-range {
   color: #fff;
   border: 1px solid #fff;
   padding: 10px;
   display: inline-block;
 }
-/* line 2895, ../sass/cinemateque.scss */
+/* line 2910, ../sass/cinemateque.scss */
 .region-messages .close-message {
   cursor: pointer;
   background: url("../images/close42.png") no-repeat center center;
@@ -3636,21 +3661,21 @@ div[id^="panels-ipe-paneid-22"] > * select {
   width: 30px;
 }
 
-/* line 2905, ../sass/cinemateque.scss */
+/* line 2920, ../sass/cinemateque.scss */
 .close-message-cookies .region-messages {
   display: none !important;
 }
 
-/* line 2910, ../sass/cinemateque.scss */
+/* line 2925, ../sass/cinemateque.scss */
 .view-global-message.view-display-id-panel_pane_1 .views-row {
   margin-bottom: 30px;
 }
 
-/* line 2916, ../sass/cinemateque.scss */
+/* line 2931, ../sass/cinemateque.scss */
 .node-type-global-message .page-header {
   display: block !important;
 }
-/* line 2919, ../sass/cinemateque.scss */
+/* line 2934, ../sass/cinemateque.scss */
 .node-type-global-message #content {
   width: 1355px !important;
   max-width: 100%;
