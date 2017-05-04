@@ -1,5 +1,5 @@
 (function ($) {
-	Drupal.behaviors.festival_calendar = {
+	Drupal.behaviors.view_navigation = {
   attach: function (context, settings) {
 	  $('a.button-next-title').hide();
 	$('div.button-next').hover(function(){
@@ -17,7 +17,6 @@
 		$('a.button-prev').show();
 		$('a.button-prev-title').hide();
 	});
-
 }
 };
 })(jQuery);
