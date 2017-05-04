@@ -30,13 +30,8 @@ function toptix_open_basket_frame(basket_url) {
   frame.show();
 }
 
-var toptix_active_button = {original_text:'', item: null};
-var toptix_purchase_setup = null;
 toptix_setup.purchase = function() {
   $('button.purchase').click(function(event) {
-    toptix_active_button.item = this;
-    toptix_active_button.original_text = $(this).text();
-    $(this).text('Loading...');
     toptix_open_frame(this.dataset.url);
   });
 };
@@ -45,7 +40,6 @@ function toptix_open_frame(event_url) {
   var frame = jQuery('#toptix-frame-wrapper');
   $esro.gotoUrl(event_url);
   frame.show();
-  jQuery(toptix_active_button.item).text(toptix_active_button.original_text);
 }
 
 $esro.attachEventHandler('basketChanged', function(basket) {
