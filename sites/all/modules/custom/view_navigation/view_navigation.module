@@ -10,6 +10,14 @@ switch ($view->name) {
 	}
 	if (!empty($result_array))$_SESSION['link_node']=$result_array;
 	break;
+	case 'lobby':
+	if ($view->current_display !='panel_pane_1') return;
+	$result_array=array();
+	foreach ($view->result as $key=>$result_item){
+		if(!empty($result_item->node_taxonomy_index_nid))$result_array[]=$result_item->node_taxonomy_index_nid;
+	}
+	if (!empty($result_array))$_SESSION['link_node']=$result_array;
+	break;
 }
 }
 
@@ -22,7 +30,11 @@ function _get_node_next_link() {
 	if ($node = menu_get_object()) {
 	$nid = $node->nid;
 	}
-	if (strpos($prev, 'festival-calendar')!==FALSE) {
+	if (strpos($prev, 'festival-calendar')!==FALSE||
+		strpos($prev, 'article/4284')!==FALSE||
+		strpos($prev, 'article/4285')!==FALSE||
+		strpos($prev, 'lobby/')!==FALSE
+	) {
 		$_SESSION['link_prev']=$nid;
 	} elseif (!empty($_SESSION['link_prev']) && strpos($prev, $_SESSION['link_prev'])===FALSE){
 		//unset($_SESSION['link_node']);
