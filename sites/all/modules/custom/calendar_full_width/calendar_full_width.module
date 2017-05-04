@@ -64,6 +64,7 @@ function calendar_full_width_block_content(){
     
     global $base_url;
     $output = $filter = $selected_filter = $day = "";
+	$result_array=array();
         $current_date = date("Y-m-d");
         $prev_date =  strtotime('-360 day', strtotime($current_date));
         $prev = date("Y-m-d",$prev_date);
@@ -119,6 +120,7 @@ function calendar_full_width_block_content(){
      $output.="<div class='calendar-full-container'>";
       $output.="<div class='calenders-filter-date'><p class='pull-left'>$selected_filter</p></div>";
       foreach($result as $val){
+		 $result_array[]=$val->nid;
         $node = node_load($val->nid);
         //echo'<pre>'.print_r($node, 1).'</pre>';
         if(!empty($node->field_cm_event_short_title)){
@@ -266,6 +268,7 @@ function calendar_full_width_block_content(){
             $output .='<div class="clr"></div>';
         $output .="</div>";
       }
+	  if (!empty($result_array))$_SESSION['link_node']=$result_array;
     $output.= "</div></div>";
      return $output;
 }
