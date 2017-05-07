@@ -120,6 +120,8 @@ function calendar_full_width_block_content(){
      $output.="<div class='calendar-full-container'>";
       $output.="<div class='calenders-filter-date'><p class='pull-left'>$selected_filter</p></div>";
       foreach($result as $val){
+		 $domain=domain_get_node_domains($val->nid);
+		 if (!empty($domain['domain_id']) && !array_key_exists(1, $domain['domain_id'])) continue;
 		 $result_array[]=$val->nid;
         $node = node_load($val->nid);
         //echo'<pre>'.print_r($node, 1).'</pre>';
@@ -316,6 +318,9 @@ function ajax_calender_full_width_filter(){
       $output.="<div class='calendar-full-container'>";
       $output.="<div class='calenders-filter-date'><p class='pull-left'>$selected_filter</p></div>";
       foreach($result as $val){
+		$domain=domain_get_node_domains($val->nid);
+		if (!empty($domain['domain_id']) && !array_key_exists(1, $domain['domain_id'])) continue;
+		$result_array[]=$val->nid;
         $node = node_load($val->nid);
         $flag = '<span class="flag-event">'.flag_create_link('favorite_', $node->nid).'</span>';
         $event_title = $node->field_cm_event_short_title['und'][0]['value'];
@@ -462,6 +467,7 @@ function ajax_calender_full_width_filter(){
             $output .='<div class="clr"></div>';
         $output .="</div>";
       }
+	if (!empty($result_array))$_SESSION['link_node']=$result_array;
     $output.= "</div></div>";
 	
 	drupal_add_http_header('Cache-Control', 'public, max-age=3600');
