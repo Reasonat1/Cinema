@@ -1,3 +1,4 @@
+alert("hello");
 var toptix_setup = {};
 
 $(document).ready(function() {
@@ -42,17 +43,21 @@ function toptix_open_frame(event_url) {
   frame.show();
 }
 
-$esro.attachEventHandler('basketChanged', function(basket) {
+function basketHandler(basket) {
   console.log('my basket handler');
   console.log(basket);
   jQuery.cookie('toptix_basket', basket.Tickets.length);
 });
+//Attach the basket changed event handler
+$esro.attachEventHandler("basketChanged", basketHandler);
 
-$esro.attachEventHandler('navigationRequired', function (pageName) {
+function navigationHandler(pageName) {
   console.log('esro navigation:' + pageName);
   if (pageName == 'DEFAULT') {
     var target_page = '/esro/nav.html';
     var target_address = 'http://jer-cin.reasonat.com' + target_page;
     window.location.href = target_address;
   }
-});
+}
+//Attach the iframe navigated event handler
+$esro.attachEventHandler("navigationRequired", navigationHandler);
