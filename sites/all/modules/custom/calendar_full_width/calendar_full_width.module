@@ -159,6 +159,8 @@ function calendar_full_width_block_content(){
             if ($GLOBALS['_domain']['domain_id'] == 1 ){ 
               if(!empty($lineup_id->field_cm_movie_short_summary['und'])){
                 $lineup_summary = $lineup_id->field_cm_movie_short_summary['und'][0]['value'];
+              } else if(!empty($lineup_id->field_cm_moviegroup_short_summar['und'])){
+                $lineup_summary = $lineup_id->field_cm_moviegroup_short_summar['und'][0]['value'];
               } else {
                  $lineup_summary= '';
               }
@@ -166,7 +168,9 @@ function calendar_full_width_block_content(){
                 $lineup_summary = $lineup_id->field_short_summary_festival['und'][0]['value'];
               } else if(!empty($lineup_id->field_cm_movie_short_summary['und'])){
                 $lineup_summary = $lineup_id->field_cm_movie_short_summary['und'][0]['value'];
-              } else {
+              } else if(!empty($lineup_id->field_cm_moviegroup_short_summar['und'])){
+                $lineup_summary = $lineup_id->field_cm_moviegroup_short_summar['und'][0]['value'];
+              } else{
                  $lineup_summary= '';
               }
 
@@ -348,14 +352,18 @@ function ajax_calender_full_width_filter(){
             if ($GLOBALS['_domain']['domain_id'] == 1 ){ 
               if(!empty($lineup_id->field_cm_movie_short_summary['und'])){
                 $lineup_summary = $lineup_id->field_cm_movie_short_summary['und'][0]['value'];
-              } else{
+              } else if(!empty($lineup_id->field_cm_moviegroup_short_summar['und'])){
+                $lineup_summary = $lineup_id->field_cm_moviegroup_short_summar['und'][0]['value'];
+              } else {
                 $lineup_summary = '';
               }
             } else if(!empty($lineup_id->field_short_summary_festival['und'])){
                 $lineup_summary = $lineup_id->field_short_summary_festival['und'][0]['value'];
               } else if(!empty($lineup_id->field_cm_movie_short_summary['und'])){
                 $lineup_summary = $lineup_id->field_cm_movie_short_summary['und'][0]['value'];
-              } else{
+              } else if(!empty($lineup_id->field_cm_moviegroup_short_summar['und'])){
+                $lineup_summary = $lineup_id->field_cm_moviegroup_short_summar['und'][0]['value'];
+              } else {
                 $lineup_summary = '';
               }
             if(!empty($lineup_id->field_cm_movie_duration['und'])){
