@@ -47,7 +47,7 @@ function basketHandler(basket) {
   console.log('my basket handler');
   console.log(basket);
   jQuery.cookie('toptix_basket', basket.Tickets.length);
-});
+}
 //Attach the basket changed event handler
 $esro.attachEventHandler("basketChanged", basketHandler);
 
