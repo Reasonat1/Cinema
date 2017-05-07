@@ -51,7 +51,7 @@ function _get_node_next_link() {
 	$output.=(!empty($next_nid))?'<div class="button-next"><a class="button-next" href="'.url('node/'.$next_nid).'">'.t('Next').'</a>
 	<a class="button-next-title" href="'.url('node/'.$next_nid).'">'.node_load($next_nid)->title.'</a></div>':'';
 	$output.=(!empty($prev_nid))?'<div class="button-prev"><a class="button-prev" href="'.url('node/'.$prev_nid).'">'.t('Previous').'</a>
-	<a class="button-prev-title" href="'.url('node/'.$next_nid).'">'.node_load($prev_nid)->title.'</a></div>':'';
+	<a class="button-prev-title" href="'.url('node/'.$prev_nid).'">'.node_load($prev_nid)->title.'</a></div>':'';
 	$_SESSION['link_prev']=$nid;
 	return $output;
 }
