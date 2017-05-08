@@ -143,6 +143,16 @@ $color_mine_shaft_approx: #312f2f;
   url('../fonts/Open-Sans-hebrew.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: Open-Sans-hebrew-bold;
+  src: url('../fonts/OpenSansHebrew-Bold.eot?') format('eot'), 
+  url('../fonts/OpenSansHebrew-Bold.woff') format('woff'),
+  url('../fonts/OpenSansHebrew-Bold.eot?#iefix') format('embedded-opentype'), 
+  url('../fonts/OpenSansHebrew-Bold.ttf') format('truetype');
+}
+
+
+
  @mixin res($media) {
   @if $media == s {
     @media (max-width: 480px) { @content; }

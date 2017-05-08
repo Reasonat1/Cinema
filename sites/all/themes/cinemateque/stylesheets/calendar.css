@@ -63,6 +63,10 @@
   font-family: Open-Sans-hebrew;
   src: url("../fonts/Open-Sans-hebrew.eot?") format("eot"), url("../fonts/Open-Sans-hebrew.woff") format("woff"), url("../fonts/Open-Sans-hebrew.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans-hebrew.ttf") format("truetype");
 }
+@font-face {
+  font-family: Open-Sans-hebrew-bold;
+  src: url("../fonts/OpenSansHebrew-Bold.eot?") format("eot"), url("../fonts/OpenSansHebrew-Bold.woff") format("woff"), url("../fonts/OpenSansHebrew-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSansHebrew-Bold.ttf") format("truetype");
+}
 /* line 3, ../sass/calendar.scss */
 .calender {
   padding: 0;
@@ -253,12 +257,13 @@
   transition: margin-left 0.5s;
   -webkit-transition: margin-left 0.5s;
   position: relative;
+  padding-left: 30px;
 }
-/* line 164, ../sass/calendar.scss */
+/* line 165, ../sass/calendar.scss */
 .calender-filter.scroll-to-fixed-fixed {
   padding-bottom: 107px;
 }
-/* line 167, ../sass/calendar.scss */
+/* line 168, ../sass/calendar.scss */
 .calender-filter > p {
   opacity: 0;
   background-color: #f4f4f4;
@@ -273,7 +278,7 @@
   box-sizing: border-box;
 }
 @media (max-width: 767px) {
-  /* line 167, ../sass/calendar.scss */
+  /* line 168, ../sass/calendar.scss */
   .calender-filter > p {
     margin: 0;
     border-left: 1px solid;
@@ -281,33 +286,33 @@
     padding-bottom: 5px;
   }
 }
-/* line 185, ../sass/calendar.scss */
+/* line 186, ../sass/calendar.scss */
 .calender-filter > p:hover {
   box-shadow: 0 0 3px 2px #f4f4f4;
   color: #ffffff !important;
   cursor: pointer;
 }
-/* line 189, ../sass/calendar.scss */
+/* line 190, ../sass/calendar.scss */
 .calender-filter > p:hover span, .calender-filter > p:hover a {
   color: #ffffff !important;
 }
-/* line 193, ../sass/calendar.scss */
+/* line 194, ../sass/calendar.scss */
 .calender-filter > p.active {
   box-shadow: 0 0 3px 2px #f4f4f4;
   color: #ffffff;
   cursor: pointer;
 }
-/* line 197, ../sass/calendar.scss */
+/* line 198, ../sass/calendar.scss */
 .calender-filter > p.active span, .calender-filter > p.active a {
   color: #ffffff !important;
 }
 @media (max-width: 767px) {
-  /* line 201, ../sass/calendar.scss */
+  /* line 202, ../sass/calendar.scss */
   .calender-filter > p:last-child {
     border-right: 1px solid;
   }
 }
-/* line 207, ../sass/calendar.scss */
+/* line 208, ../sass/calendar.scss */
 .calender-filter span {
   color: #958080;
   float: left;
@@ -316,13 +321,13 @@
   width: 100%;
 }
 @media (max-width: 767px) {
-  /* line 207, ../sass/calendar.scss */
+  /* line 208, ../sass/calendar.scss */
   .calender-filter span {
     font-size: 12px;
   }
 }
 
-/* line 220, ../sass/calendar.scss */
+/* line 221, ../sass/calendar.scss */
 .calenders .filter-cantrol {
   position: absolute;
   z-index: 199;
@@ -331,11 +336,11 @@
   padding-bottom: 5px;
   cursor: pointer;
 }
-/* line 227, ../sass/calendar.scss */
+/* line 228, ../sass/calendar.scss */
 .calenders .filter-cantrol.no-active {
   opacity: 0.2;
 }
-/* line 231, ../sass/calendar.scss */
+/* line 232, ../sass/calendar.scss */
 .calenders .prevday {
   padding-left: 5px;
   padding-right: 12px;
@@ -343,13 +348,13 @@
   padding-bottom: 10px;
 }
 @media (max-width: 767px) {
-  /* line 231, ../sass/calendar.scss */
+  /* line 232, ../sass/calendar.scss */
   .calenders .prevday {
     padding-top: 0;
     padding-bottom: 5px;
   }
 }
-/* line 241, ../sass/calendar.scss */
+/* line 242, ../sass/calendar.scss */
 .calenders .nextday {
   padding-right: 5px;
   padding-left: 12px;
@@ -358,7 +363,7 @@
   padding-bottom: 10px;
 }
 @media (max-width: 767px) {
-  /* line 241, ../sass/calendar.scss */
+  /* line 242, ../sass/calendar.scss */
   .calenders .nextday {
     padding-top: 0;
     padding-bottom: 5px;
@@ -376,12 +381,12 @@
     }
 }
 */
-/* line 265, ../sass/calendar.scss */
+/* line 266, ../sass/calendar.scss */
 .filter {
   width: 100%;
   padding: 0;
 }
-/* line 268, ../sass/calendar.scss */
+/* line 269, ../sass/calendar.scss */
 .filter .filter-wrapper {
   background-color: #fff;
   position: fixed;
@@ -392,7 +397,7 @@
   overflow: hidden;
   padding-bottom: 36px;
 }
-/* line 277, ../sass/calendar.scss */
+/* line 278, ../sass/calendar.scss */
 .filter .filter-wrapper .inner {
   width: 1355px !important;
   max-width: 100%;
@@ -406,9 +411,8 @@
   margin-bottom: 10px;
 }
 @media (max-width: 767px) {
-  /* line 277, ../sass/calendar.scss */
+  /* line 278, ../sass/calendar.scss */
   .filter .filter-wrapper .inner {
-    border-bottom: 1px solid;
     margin-bottom: 0;
   }
 }
@@ -1688,27 +1692,37 @@
   padding: 30px;
 }
 /* line 1367, ../sass/calendar.scss */
-.page-festival-calendar #popup-active-overlay .center .center .inner .title {
+.page-festival-calendar #popup-active-overlay .center .center .inner .event-title, .page-festival-calendar #popup-active-overlay .center .center .inner .film-title {
   margin-bottom: 20px;
-}
-/* line 1369, ../sass/calendar.scss */
-.page-festival-calendar #popup-active-overlay .center .center .inner .title a {
   font-weight: bold;
   font-size: 20px;
 }
-/* line 1374, ../sass/calendar.scss */
+/* line 1371, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay .center .center .inner .event-title a, .page-festival-calendar #popup-active-overlay .center .center .inner .film-title a {
+  font-weight: bold;
+  font-size: 20px;
+}
+/* line 1376, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay .center .center .inner .description {
   font-size: 16px;
 }
-/* line 1377, ../sass/calendar.scss */
+/* line 1380, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay .center .center .inner .credit-duration .interval-value {
+  display: inline-block;
+}
+/* line 1384, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay .center .center .inner .more-label {
+  margin: 20px 0 10px;
+}
+/* line 1387, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay .center .center .inner .title-link {
   padding: 20px 0;
 }
-/* line 1379, ../sass/calendar.scss */
+/* line 1389, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay .center .center .inner .title-link a {
   position: relative;
 }
-/* line 1382, ../sass/calendar.scss */
+/* line 1392, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay .center .center .inner .title-link a:after {
   width: 0;
   height: 0;
@@ -1720,10 +1734,9 @@
   right: -17px;
   top: 9px;
   border-top-color: transparent !important;
-  border-right-color: transparent !important;
   border-bottom-color: transparent !important;
 }
-/* line 1398, ../sass/calendar.scss */
+/* line 1407, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay .popup-close {
   background: url("../images/close42.png") no-repeat center center;
   border-radius: 50%;
@@ -1735,29 +1748,34 @@
   background-size: 15px;
 }
 
-/* line 1411, ../sass/calendar.scss */
+/* line 1420, ../sass/calendar.scss */
+.page-festival-calendar.i18n-en #popup-active-overlay .center .center .inner .title-link a::after {
+  border-right-color: transparent !important;
+}
+
+/* line 1424, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 {
   margin-top: 85px;
 }
 @media (max-width: 767px) {
-  /* line 1411, ../sass/calendar.scss */
+  /* line 1424, ../sass/calendar.scss */
   .view-festival-calendar.view-display-id-page_1 {
     margin-top: 54px;
   }
 }
-/* line 1416, ../sass/calendar.scss */
+/* line 1429, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 .view-header {
   padding: 10px 5%;
 }
-/* line 1419, ../sass/calendar.scss */
+/* line 1432, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 .view-filters {
   display: none;
 }
-/* line 1422, ../sass/calendar.scss */
+/* line 1435, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 .filter-wrapper {
   padding-bottom: 0;
 }
-/* line 1425, ../sass/calendar.scss */
+/* line 1438, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 caption {
   background-color: #000;
   color: #fff;
@@ -1765,37 +1783,77 @@
   font-size: 16px;
   font-weight: bold;
 }
-/* line 1431, ../sass/calendar.scss */
+/* line 1444, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 caption i {
   float: right;
   padding-top: 3px;
   cursor: pointer;
 }
-/* line 1435, ../sass/calendar.scss */
+/* line 1448, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 caption i.fa-angle-down {
   display: none;
 }
-/* line 1441, ../sass/calendar.scss */
+/* line 1454, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 .table-responsive td {
   width: auto !important;
   color: #000;
 }
-/* line 1445, ../sass/calendar.scss */
+/* line 1458, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 .table-responsive tr {
   display: block;
   overflow: hidden;
   padding: 0 5%;
   width: 100%;
 }
-/* line 1450, ../sass/calendar.scss */
+/* line 1463, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 .table-responsive tr.even {
   background-color: #ededed !important;
 }
-/* line 1454, ../sass/calendar.scss */
+/* line 1467, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 .table-responsive .views-field-field-toptix-purchase {
   padding-top: 7px !important;
 }
-/* line 1457, ../sass/calendar.scss */
+/* line 1470, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 .table-responsive .hide-table tbody {
   display: none;
+}
+
+/*****  calendar notes  ******/
+/* line 1478, ../sass/calendar.scss */
+.bean-calendar-notes {
+  margin-top: 50px;
+}
+/* line 1481, ../sass/calendar.scss */
+.bean-calendar-notes .field-name-field-calendar-paragraph > .field-items > .field-item {
+  margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+  /* line 1485, ../sass/calendar.scss */
+  .bean-calendar-notes .paragraphs-item-content {
+    width: 1355px !important;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 5%;
+    box-sizing: border-box;
+  }
+}
+
+/* line 1493, ../sass/calendar.scss */
+.page-festival-calendar .region-content-bottom {
+  background-color: #fff;
+  z-index: 300;
+  position: relative;
+}
+/* line 1497, ../sass/calendar.scss */
+.page-festival-calendar .region-content-bottom .block-bean {
+  width: 1355px !important;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+/* line 1501, ../sass/calendar.scss */
+.page-festival-calendar #footer {
+  z-index: 300;
+  position: relative;
 }

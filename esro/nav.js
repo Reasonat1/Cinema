@@ -56,7 +56,9 @@ function navigationHandler(pageName) {
   if (pageName == 'DEFAULT') {
     var target_page = '/esro/nav.html';
     var target_address = 'http://jer-cin.reasonat.com' + target_page;
-    window.location.href = target_address;
+    //window.location.href = target_address;
+    var frame = $('#toptix-frame-wrapper');
+    frame.hide();
   }
 }
 //Attach the iframe navigated event handler

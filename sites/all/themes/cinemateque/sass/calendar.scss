@@ -161,6 +161,7 @@
 	transition: margin-left 0.5s;
     -webkit-transition: margin-left 0.5s;
     position: relative;
+    padding-left: 30px;
 	&.scroll-to-fixed-fixed{
 		padding-bottom: 107px;
 	}
@@ -282,7 +283,6 @@
 	    	position: relative;
 	    	margin-bottom: 10px;
 	    	@include res(s-m){
-	    		border-bottom: 1px solid;
 	    		margin-bottom: 0;
 	    	}
 	    	&.noleft{
@@ -1364,8 +1364,10 @@
 		.center .center .inner{
 			margin: 0;
 			padding: 30px;
-			.title{
+			.event-title, .film-title{
 				margin-bottom: 20px;
+				font-weight: bold;
+				font-size: 20px;
 				a{
 					font-weight: bold;
 					font-size: 20px;
@@ -1373,6 +1375,14 @@
 			}
 			.description{
 				font-size: 16px;
+			}
+			.credit-duration{
+				.interval-value{
+					display: inline-block;
+				}
+			}
+			.more-label{
+				margin: 20px 0 10px;
 			}
 			.title-link{
 				padding: 20px 0;
@@ -1390,7 +1400,6 @@
     				right: -17px;
     				top: 9px;
     				border-top-color: transparent!important;
-					border-right-color: transparent!important;
 					border-bottom-color: transparent!important;
 				}
 			}
@@ -1406,6 +1415,10 @@
 		    background-size: 15px;
 		}
 	}
+}
+
+.page-festival-calendar.i18n-en #popup-active-overlay .center .center .inner .title-link a::after{
+	border-right-color: transparent!important;
 }
 
 .view-festival-calendar.view-display-id-page_1{
@@ -1457,5 +1470,36 @@
 		.hide-table tbody{
 			display: none;
 		}
+	}
+}
+
+/*****  calendar notes  ******/
+
+.bean-calendar-notes{
+	margin-top: 50px;
+	.field-name-field-calendar-paragraph{
+		> .field-items > .field-item{
+			margin-bottom: 30px;
+		}
+	}
+	.paragraphs-item-content{
+		@include res(s-m){
+			@include width;
+		}
+	}
+}
+
+.page-festival-calendar{
+	.region-content-bottom{
+		background-color: #fff;
+		z-index: 300;
+		position: relative;
+		.block-bean{
+			@include width;
+		}
+	}
+	#footer{
+		z-index: 300;
+		position: relative;
 	}
 }

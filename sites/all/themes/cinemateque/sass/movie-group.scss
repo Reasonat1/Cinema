@@ -8,6 +8,16 @@
 	}
 	.panels-flexible-row-node_page-5{
 		padding-top: 40px!important;
+		> .inside{
+			z-index: 301;
+			position: relative;
+
+		}
+		.pane-node-body{
+			.field-name-body{
+				padding-bottom: 25px;
+			}
+		}
 	}
 	.content.middle .panels-flexible-region-node_page-content_left{
 		@include res(s-m){
@@ -23,6 +33,7 @@
 		.pane-node-body{
 			@include width;
 			margin-top: 30px;
+			padding-bottom: 27px;
 			.pane-title, .pane-content{
 				width: 100%;
 				margin: 0 auto;
@@ -80,7 +91,7 @@
 	}
 	.view-id-movie_group_ct {
 		&.view-display-id-panel_pane_1 {
-			padding-top: 30px;
+			padding-top: 3px;
 			.view-content{
 				width: 100%;
 				margin: 0 auto;
@@ -292,4 +303,8 @@
 		margin-top: 0 !important;
 		width: 100% !important;
 	}
+}
+
+.node-type-cm-movie-group .view-movie-group-ct.view-display-id-panel_pane_3 .table-responsive .views-field-field-cm-event-time-1{
+	width: 23%;
 }

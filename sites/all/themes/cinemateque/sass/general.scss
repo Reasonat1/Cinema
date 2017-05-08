@@ -1292,13 +1292,19 @@ table{
 
 .view-user-flagged-content.view-display-id-panel_pane_1 .attachment-after{
 	overflow: hidden;
-	padding: 20px 5% 50px;
+	padding: 0px 5% 0px;
 	background-color: #fff;
 	> h2{
 		text-align: center;
+		padding-top: 20px;
 	}
 	.views-row{
 		margin-top: 30px;
+		background-color: #fff;
+	}
+	> div{
+		overflow: hidden;
+		padding-bottom: 50px;
 		background-color: #fff;
 	}
 }
@@ -1643,6 +1649,7 @@ table{
 	}
 	.view-empty{
 		@include width;
+		padding-bottom: 50px;
 		.favorite-icon{
 			background: url("../images/favorite.png") no-repeat center center;
 			height: 18px;

@@ -26,6 +26,9 @@
 		padding: 0!important;
 		.inside{
 			@include width;
+			z-index: 301;
+			position: relative;
+
 		}
 		@include res(s-m){
 			padding: 0!important;

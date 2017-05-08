@@ -63,6 +63,10 @@
   font-family: Open-Sans-hebrew;
   src: url("../fonts/Open-Sans-hebrew.eot?") format("eot"), url("../fonts/Open-Sans-hebrew.woff") format("woff"), url("../fonts/Open-Sans-hebrew.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans-hebrew.ttf") format("truetype");
 }
+@font-face {
+  font-family: Open-Sans-hebrew-bold;
+  src: url("../fonts/OpenSansHebrew-Bold.eot?") format("eot"), url("../fonts/OpenSansHebrew-Bold.woff") format("woff"), url("../fonts/OpenSansHebrew-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSansHebrew-Bold.ttf") format("truetype");
+}
 /* line 3, ../sass/general-rtl.scss */
 body {
   font-family: Open-Sans-hebrew;
@@ -123,12 +127,14 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   float: right !important;
 }
 
-/* line 61, ../sass/general-rtl.scss */
-.popup-element-body .center {
-  width: 100% !important;
-  top: 55px;
-  left: 0;
-  position: fixed !important;
+/* line 60, ../sass/general-rtl.scss */
+.popup-element-body {
+  /*.center{
+  	width: 100%!important;
+  	top: 55px;
+  	left: 0;
+  	position: fixed!important;
+  }*/
 }
 /* line 67, ../sass/general-rtl.scss */
 .popup-element-body form .form-group .form-text {
@@ -193,29 +199,9 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   right: 0px;
   left: auto;
 }
-/* line 126, ../sass/general-rtl.scss */
-.page-taxonomy .view-lobby.view-display-id-panel_pane_2 .views-row {
-  margin-left: 5%;
-  margin-right: 0;
-  float: right;
-}
-/* line 131, ../sass/general-rtl.scss */
-.page-taxonomy .view-lobby.view-display-id-panel_pane_2 .views-row:nth-child(3n) {
-  margin-left: 0;
-}
-/* line 134, ../sass/general-rtl.scss */
-.page-taxonomy .view-lobby.view-display-id-panel_pane_2 .views-field-field-mc-teaser-toptxt-blk {
-  right: 0;
-  left: auto;
-}
-/* line 138, ../sass/general-rtl.scss */
-.page-taxonomy .view-lobby.view-display-id-panel_pane_2 .views-field-ops {
-  left: 15px;
-  right: auto;
-}
 
 /***  article page  ****/
-/* line 148, ../sass/general-rtl.scss */
+/* line 130, ../sass/general-rtl.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) {
   width: 1355px !important;
   max-width: 100%;
@@ -223,110 +209,110 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   padding: 0 5%;
   box-sizing: border-box;
 }
-/* line 150, ../sass/general-rtl.scss */
+/* line 132, ../sass/general-rtl.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) .radix-layouts-sidebar {
   padding-right: 0;
   padding-left: 100px;
   float: right;
 }
-/* line 156, ../sass/general-rtl.scss */
+/* line 138, ../sass/general-rtl.scss */
 .node-type-cm-article .container-fluid .row:nth-child(2) .radix-layouts-content .pane-node-body {
   margin-left: 23%;
   margin-right: 0;
 }
 
 /******   webform  *****/
-/* line 168, ../sass/general-rtl.scss */
+/* line 150, ../sass/general-rtl.scss */
 .node-type-webform form .form-actions {
   float: left;
 }
 
 /*******  user profile  ********/
-/* line 178, ../sass/general-rtl.scss */
+/* line 160, ../sass/general-rtl.scss */
 .page-user-edit .group-name-group, .page-user-register .group-name-group, .page-user-password .group-name-group {
   float: left;
 }
-/* line 181, ../sass/general-rtl.scss */
+/* line 163, ../sass/general-rtl.scss */
 .page-user-edit .group-user-profile, .page-user-register .group-user-profile, .page-user-password .group-user-profile {
   float: right;
 }
-/* line 184, ../sass/general-rtl.scss */
+/* line 166, ../sass/general-rtl.scss */
 .page-user-edit .group-user-profile .image-widget-data input.form-file, .page-user-register .group-user-profile .image-widget-data input.form-file, .page-user-password .group-user-profile .image-widget-data input.form-file {
   float: right;
   padding-right: 0;
 }
-/* line 188, ../sass/general-rtl.scss */
+/* line 170, ../sass/general-rtl.scss */
 .page-user-edit .group-user-profile .image-widget-data input.form-submit, .page-user-register .group-user-profile .image-widget-data input.form-submit, .page-user-password .group-user-profile .image-widget-data input.form-submit {
   float: right;
   clear: right;
 }
-/* line 192, ../sass/general-rtl.scss */
+/* line 174, ../sass/general-rtl.scss */
 .page-user-edit .group-user-profile .image-widget-data .manualcrop-style-button-holder, .page-user-register .group-user-profile .image-widget-data .manualcrop-style-button-holder, .page-user-password .group-user-profile .image-widget-data .manualcrop-style-button-holder {
   float: right;
 }
-/* line 195, ../sass/general-rtl.scss */
+/* line 177, ../sass/general-rtl.scss */
 .page-user-edit .group-user-profile .image-widget-data input[value="Remove"], .page-user-register .group-user-profile .image-widget-data input[value="Remove"], .page-user-password .group-user-profile .image-widget-data input[value="Remove"] {
   float: left;
 }
-/* line 201, ../sass/general-rtl.scss */
+/* line 183, ../sass/general-rtl.scss */
 .page-user-edit input.form-submit, .page-user-register input.form-submit, .page-user-password input.form-submit {
   float: left;
 }
 
-/* line 208, ../sass/general-rtl.scss */
+/* line 190, ../sass/general-rtl.scss */
 .page-node-4879 .register-block {
   float: left;
 }
-/* line 211, ../sass/general-rtl.scss */
+/* line 193, ../sass/general-rtl.scss */
 .page-node-4879 .login-block {
   float: right;
 }
-/* line 215, ../sass/general-rtl.scss */
+/* line 197, ../sass/general-rtl.scss */
 .page-node-4879 input.form-submit {
   float: left;
 }
 
-/* line 222, ../sass/general-rtl.scss */
+/* line 204, ../sass/general-rtl.scss */
 #views-exposed-form-user-flagged-content-panel-pane-1 .views-widget-filter-gid {
   right: 0;
   left: auto;
 }
-/* line 225, ../sass/general-rtl.scss */
+/* line 207, ../sass/general-rtl.scss */
 #views-exposed-form-user-flagged-content-panel-pane-1 .views-widget-filter-gid a {
   margin-right: 0px;
   margin-left: 5px;
 }
 
-/* line 233, ../sass/general-rtl.scss */
+/* line 215, ../sass/general-rtl.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .view-header {
   float: right;
 }
-/* line 235, ../sass/general-rtl.scss */
+/* line 217, ../sass/general-rtl.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .view-header .title {
   float: right;
   margin-right: 0;
   margin-left: 10px;
 }
-/* line 243, ../sass/general-rtl.scss */
+/* line 225, ../sass/general-rtl.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper form {
   float: right;
 }
-/* line 246, ../sass/general-rtl.scss */
+/* line 228, ../sass/general-rtl.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper .list {
   float: left;
 }
 @media (max-width: 767px) {
-  /* line 246, ../sass/general-rtl.scss */
+  /* line 228, ../sass/general-rtl.scss */
   .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper .list {
     float: none;
   }
 }
-/* line 252, ../sass/general-rtl.scss */
+/* line 234, ../sass/general-rtl.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper .edit, .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .wrapper .logout {
   padding-right: 10px;
   padding-left: 0;
 }
-/* line 258, ../sass/general-rtl.scss */
+/* line 240, ../sass/general-rtl.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .view-filters .views-widget-filter-type .form-item-edit-type-1 {
   border-left: 1px solid #000;
   margin-left: 40px;
@@ -335,26 +321,26 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   margin-right: 0;
   padding-right: 0;
 }
-/* line 269, ../sass/general-rtl.scss */
+/* line 251, ../sass/general-rtl.scss */
 .view-user-flagged-content.view-display-id-panel_pane_1 .text-center .pagination {
   float: left;
 }
 
-/* line 275, ../sass/general-rtl.scss */
+/* line 257, ../sass/general-rtl.scss */
 .pane-user-flagged-content-panel-pane-1 .view-content {
   padding-bottom: 20px;
 }
-/* line 279, ../sass/general-rtl.scss */
+/* line 261, ../sass/general-rtl.scss */
 .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-left {
   float: right;
 }
-/* line 282, ../sass/general-rtl.scss */
+/* line 264, ../sass/general-rtl.scss */
 .pane-user-flagged-content-panel-pane-1 .view-content .item-list .lobby-container .lobby-term-right {
   float: left;
 }
 
 /*********  person page  **********/
-/* line 294, ../sass/general-rtl.scss */
+/* line 276, ../sass/general-rtl.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col {
   float: right;
   padding-right: 44px;
@@ -363,51 +349,51 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   margin-left: 3.5%;
   background-position: right 4px !important;
 }
-/* line 301, ../sass/general-rtl.scss */
+/* line 283, ../sass/general-rtl.scss */
 .node-type-cm-person .view-person-ct-view.view-display-id-panel_pane_1 .views-field-nothing-1 .col.col-3 {
   margin-left: 0;
 }
-/* line 307, ../sass/general-rtl.scss */
+/* line 289, ../sass/general-rtl.scss */
 .node-type-cm-person .content.middle .panels-flexible-region-node_page-content_left {
   padding-left: 23%;
   padding-right: 0;
   float: left;
 }
 @media (max-width: 767px) {
-  /* line 307, ../sass/general-rtl.scss */
+  /* line 289, ../sass/general-rtl.scss */
   .node-type-cm-person .content.middle .panels-flexible-region-node_page-content_left {
     padding: 0 5%;
   }
 }
 
-/* line 317, ../sass/general-rtl.scss */
+/* line 299, ../sass/general-rtl.scss */
 .view-person-ct-view.view-display-id-panel_pane_2 .node-title-teaser-content-type:hover {
   background: url("../images/more-white-left.png") no-repeat scroll left 10px center;
 }
 
 /****  share blcok  *****/
-/* line 324, ../sass/general-rtl.scss */
+/* line 306, ../sass/general-rtl.scss */
 .share-this-pane .facebook a {
   background-position: right 3px center !important;
 }
-/* line 327, ../sass/general-rtl.scss */
+/* line 309, ../sass/general-rtl.scss */
 .share-this-pane .whatsapp a {
   background-position: right center !important;
 }
-/* line 330, ../sass/general-rtl.scss */
+/* line 312, ../sass/general-rtl.scss */
 .share-this-pane .flag-wrapper {
   float: right;
 }
-/* line 332, ../sass/general-rtl.scss */
+/* line 314, ../sass/general-rtl.scss */
 .share-this-pane .flag-wrapper a.flag-action, .share-this-pane .flag-wrapper a.unflag-action {
   background-position: right center !important;
 }
-/* line 336, ../sass/general-rtl.scss */
+/* line 318, ../sass/general-rtl.scss */
 .share-this-pane .flag-custom .title {
   float: left;
 }
 
-/* line 342, ../sass/general-rtl.scss */
+/* line 324, ../sass/general-rtl.scss */
 .share-this-pane-mobile .link {
   float: right;
   padding-left: 20px;
@@ -415,142 +401,142 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
 }
 
 /******  tags  *******/
-/* line 353, ../sass/general-rtl.scss */
+/* line 335, ../sass/general-rtl.scss */
 .pane-node-field-tag .pane-content .field-item, .pane-node-field-cm-article-tags .pane-content .field-item, .pane-node-field-cm-movie-tags .pane-content .field-item, .pane-node-field-cm-person-tags .pane-content .field-item, .pane-node-field-cm-moviegroup-tags .pane-content .field-item {
   float: right;
   margin-right: 0;
   margin-left: 2%;
 }
-/* line 358, ../sass/general-rtl.scss */
+/* line 340, ../sass/general-rtl.scss */
 .pane-node-field-tag .pane-content a, .pane-node-field-cm-article-tags .pane-content a, .pane-node-field-cm-movie-tags .pane-content a, .pane-node-field-cm-person-tags .pane-content a, .pane-node-field-cm-moviegroup-tags .pane-content a {
   float: right;
 }
 
 /******  responsive *********/
 @media (max-width: 767px) {
-  /* line 368, ../sass/general-rtl.scss */
+  /* line 350, ../sass/general-rtl.scss */
   .table-responsive td {
     padding-left: 8px !important;
     padding-right: 0 !important;
     float: right;
   }
-  /* line 372, ../sass/general-rtl.scss */
+  /* line 354, ../sass/general-rtl.scss */
   .table-responsive td.purchase, .table-responsive td.views-field-field-toptix-purchase, .table-responsive td .views-field-field-tickets-sold-out {
     float: left;
   }
 }
 /***** movie, movie group, event & article  ********/
-/* line 381, ../sass/general-rtl.scss */
+/* line 363, ../sass/general-rtl.scss */
 .text-main-image {
   direction: rtl;
   right: 5%;
   left: auto;
 }
-/* line 386, ../sass/general-rtl.scss */
+/* line 368, ../sass/general-rtl.scss */
 .text-main-image .wrapper .slide-right-ct {
   float: right;
   padding-right: 6%;
   padding-left: 10%;
 }
 @media (max-width: 767px) {
-  /* line 386, ../sass/general-rtl.scss */
+  /* line 368, ../sass/general-rtl.scss */
   .text-main-image .wrapper .slide-right-ct {
     padding-left: 3%;
     padding-right: 0;
   }
 }
-/* line 394, ../sass/general-rtl.scss */
+/* line 376, ../sass/general-rtl.scss */
 .text-main-image .wrapper .slide-right-ct .play-button {
   margin-right: 0px;
   margin-left: 15px;
 }
-/* line 399, ../sass/general-rtl.scss */
+/* line 381, ../sass/general-rtl.scss */
 .text-main-image .wrapper .slide-left-ct {
   text-align: right;
 }
 
-/* line 405, ../sass/general-rtl.scss */
+/* line 387, ../sass/general-rtl.scss */
 .top-text-blk-wht {
   right: 0;
   left: auto;
 }
-/* line 408, ../sass/general-rtl.scss */
+/* line 390, ../sass/general-rtl.scss */
 .top-text-blk-wht span {
   float: right;
 }
 
-/* line 413, ../sass/general-rtl.scss */
+/* line 395, ../sass/general-rtl.scss */
 .image-alt-title {
   left: auto;
   right: 0;
   direction: rtl;
 }
 
-/* line 419, ../sass/general-rtl.scss */
+/* line 401, ../sass/general-rtl.scss */
 .flag-new-links {
   left: 10px;
   right: auto;
 }
 
-/* line 425, ../sass/general-rtl.scss */
+/* line 407, ../sass/general-rtl.scss */
 .view-footer .more-event {
   float: left;
   margin: 0px 0px 15px 11px;
 }
 @media (max-width: 767px) {
-  /* line 428, ../sass/general-rtl.scss */
+  /* line 410, ../sass/general-rtl.scss */
   .view-footer .more-event span {
     float: right;
   }
 }
-/* line 433, ../sass/general-rtl.scss */
+/* line 415, ../sass/general-rtl.scss */
 .view-footer .more-event .text {
   float: left;
 }
-/* line 436, ../sass/general-rtl.scss */
+/* line 418, ../sass/general-rtl.scss */
 .view-footer .more-event.event-page {
   text-align: right;
   float: right;
 }
-/* line 439, ../sass/general-rtl.scss */
+/* line 421, ../sass/general-rtl.scss */
 .view-footer .more-event.event-page .text-open-event {
   float: right !important;
 }
-/* line 442, ../sass/general-rtl.scss */
+/* line 424, ../sass/general-rtl.scss */
 .view-footer .more-event.event-page .text-close-event {
   float: left;
 }
-/* line 445, ../sass/general-rtl.scss */
+/* line 427, ../sass/general-rtl.scss */
 .view-footer .more-event.event-page.open {
   float: left;
 }
 
-/* line 454, ../sass/general-rtl.scss */
+/* line 436, ../sass/general-rtl.scss */
 .credits-view {
   float: right;
   padding: 30px 23% 50px 0;
 }
 @media (max-width: 767px) {
-  /* line 454, ../sass/general-rtl.scss */
+  /* line 436, ../sass/general-rtl.scss */
   .credits-view {
     padding: 0 0 10px;
   }
 }
-/* line 460, ../sass/general-rtl.scss */
+/* line 442, ../sass/general-rtl.scss */
 .credits-view .translated-movie-title {
   text-align: right;
   padding-bottom: 10px;
 }
-/* line 463, ../sass/general-rtl.scss */
+/* line 445, ../sass/general-rtl.scss */
 .credits-view .translated-movie-title a {
   right: 0;
 }
-/* line 467, ../sass/general-rtl.scss */
+/* line 449, ../sass/general-rtl.scss */
 .credits-view .profession, .credits-view .views-field-field-cm-movie-credits-person-ro {
   float: right;
   min-width: 100px;
 }
-/* line 471, ../sass/general-rtl.scss */
+/* line 453, ../sass/general-rtl.scss */
 .credits-view .views-field-views-conditional {
   float: right;
   max-width: -webkit-calc(100% - 100px);
@@ -558,51 +544,51 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   max-width: calc(100% - 100px);
 }
 @media (max-width: 480px) {
-  /* line 471, ../sass/general-rtl.scss */
+  /* line 453, ../sass/general-rtl.scss */
   .credits-view .views-field-views-conditional {
     float: right;
   }
 }
 
-/* line 486, ../sass/general-rtl.scss */
+/* line 468, ../sass/general-rtl.scss */
 .view-director-bio .left-area, .view-movie-person-bio .left-area {
   float: right;
 }
-/* line 488, ../sass/general-rtl.scss */
+/* line 470, ../sass/general-rtl.scss */
 .view-director-bio .left-area img, .view-movie-person-bio .left-area img {
   border-radius: 50%;
   padding: 20px 30px;
 }
 @media (max-width: 767px) {
-  /* line 488, ../sass/general-rtl.scss */
+  /* line 470, ../sass/general-rtl.scss */
   .view-director-bio .left-area img, .view-movie-person-bio .left-area img {
     padding: 0;
   }
 }
 @media (max-width: 480px) {
-  /* line 488, ../sass/general-rtl.scss */
+  /* line 470, ../sass/general-rtl.scss */
   .view-director-bio .left-area img, .view-movie-person-bio .left-area img {
     margin-left: 20px;
     margin-right: 0;
   }
 }
-/* line 500, ../sass/general-rtl.scss */
+/* line 482, ../sass/general-rtl.scss */
 .view-director-bio .right-area, .view-movie-person-bio .right-area {
   float: left;
   padding-right: 0;
   padding-left: 23%;
 }
 @media (max-width: 767px) {
-  /* line 500, ../sass/general-rtl.scss */
+  /* line 482, ../sass/general-rtl.scss */
   .view-director-bio .right-area, .view-movie-person-bio .right-area {
     padding-left: 0;
   }
 }
-/* line 509, ../sass/general-rtl.scss */
+/* line 491, ../sass/general-rtl.scss */
 .view-director-bio .name-role .name, .view-movie-person-bio .name-role .name {
   float: right;
 }
-/* line 512, ../sass/general-rtl.scss */
+/* line 494, ../sass/general-rtl.scss */
 .view-director-bio .name-role .role, .view-movie-person-bio .name-role .role {
   border-right: 1px solid;
   border-left: none;
@@ -613,26 +599,26 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   padding-left: 0;
 }
 
-/* line 528, ../sass/general-rtl.scss */
+/* line 510, ../sass/general-rtl.scss */
 .view-reviews-field-collection-view .view-content > div {
   float: left;
   padding-left: 23%;
   padding-right: 0;
 }
 @media (max-width: 767px) {
-  /* line 528, ../sass/general-rtl.scss */
+  /* line 510, ../sass/general-rtl.scss */
   .view-reviews-field-collection-view .view-content > div {
     padding-left: 0;
   }
 }
-/* line 537, ../sass/general-rtl.scss */
+/* line 519, ../sass/general-rtl.scss */
 .view-reviews-field-collection-view .views-slideshow-cycle-main-frame-row {
   right: 0 !important;
   left: auto !important;
 }
 
 /******  node teaser  ******/
-/* line 545, ../sass/general-rtl.scss */
+/* line 527, ../sass/general-rtl.scss */
 .node-title-teaser-cm-movie .node-cm-movie-year {
   float: right;
   border-left: 2px solid #f9f4ee;
@@ -641,48 +627,48 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
   margin-right: 0;
 }
 
-/* line 553, ../sass/general-rtl.scss */
+/* line 535, ../sass/general-rtl.scss */
 .node-title-teaser-cm-movie a .node-title-teaser-title {
   padding: 26px 10px 23px 26px;
 }
 @media (max-width: 767px) {
-  /* line 553, ../sass/general-rtl.scss */
+  /* line 535, ../sass/general-rtl.scss */
   .node-title-teaser-cm-movie a .node-title-teaser-title {
     padding: 9px 10px 8px 26px;
   }
 }
 
 /*****  tag  *********/
-/* line 563, ../sass/general-rtl.scss */
+/* line 545, ../sass/general-rtl.scss */
 .field-name-field-tag .field-item {
   float: right;
 }
-/* line 565, ../sass/general-rtl.scss */
+/* line 547, ../sass/general-rtl.scss */
 .field-name-field-tag .field-item.even {
   float: right;
 }
-/* line 568, ../sass/general-rtl.scss */
+/* line 550, ../sass/general-rtl.scss */
 .field-name-field-tag .field-item.odd {
   float: left;
 }
 @media (min-width: 481px) and (max-width: 767px) {
-  /* line 568, ../sass/general-rtl.scss */
+  /* line 550, ../sass/general-rtl.scss */
   .field-name-field-tag .field-item.odd {
     float: right;
   }
 }
 
-/* line 577, ../sass/general-rtl.scss */
+/* line 559, ../sass/general-rtl.scss */
 .add-event {
   padding-left: 7px !important;
   padding-right: 4px !important;
 }
-/* line 580, ../sass/general-rtl.scss */
+/* line 562, ../sass/general-rtl.scss */
 .add-event a {
   float: left;
 }
 @media (max-width: 767px) {
-  /* line 583, ../sass/general-rtl.scss */
+  /* line 565, ../sass/general-rtl.scss */
   .add-event .atcb-list {
     right: auto;
     left: -60px;
@@ -690,47 +676,47 @@ table .purchase, table .views-field-field-toptix-purchase, table .views-field-fi
 }
 
 /********  table with date **********/
-/* line 594, ../sass/general-rtl.scss */
+/* line 576, ../sass/general-rtl.scss */
 .table-responsive .views-field-ops, .table-responsive .like-flag {
   float: left;
 }
-/* line 597, ../sass/general-rtl.scss */
+/* line 579, ../sass/general-rtl.scss */
 .table-responsive .day-same-width {
   width: 48px;
 }
 
 /*******  overlay region  *******/
-/* line 604, ../sass/general-rtl.scss */
+/* line 586, ../sass/general-rtl.scss */
 .ui-dialog .ui-dialog-title {
   float: right;
   padding-right: 55px;
 }
 
-/* line 609, ../sass/general-rtl.scss */
+/* line 591, ../sass/general-rtl.scss */
 .ui-dialog button.ui-dialog-titlebar-close {
   left: 15px;
   right: auto;
   float: left;
 }
 
-/* line 615, ../sass/general-rtl.scss */
+/* line 597, ../sass/general-rtl.scss */
 .ui-button-icon-primary {
   top: 7px !important;
   right: auto !important;
   left: 0 !important;
 }
 
-/* line 624, ../sass/general-rtl.scss */
+/* line 606, ../sass/general-rtl.scss */
 .region-overlay .block-search-api-page form .form-group .form-text {
   float: right;
   padding: 7px 2% 8px 22%;
 }
-/* line 629, ../sass/general-rtl.scss */
+/* line 611, ../sass/general-rtl.scss */
 .region-overlay .block-search-api-page form .form-submit {
   left: 0;
   right: auto;
 }
-/* line 634, ../sass/general-rtl.scss */
+/* line 616, ../sass/general-rtl.scss */
 .region-overlay .popup-close {
   right: auto;
   left: 10px !important;

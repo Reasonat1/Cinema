@@ -189,6 +189,7 @@
             <div class="search_new"> <div style="clear:both"> </div><?php print render($page['featured']); ?> </div>
 
             <?php print render($page['content']); ?>
+            <?php print render($page['content_bottom']); ?>
         </div>
     </div> <!-- /#main -->
 </div> <!-- /#main-wrapper -->

@@ -63,6 +63,10 @@
   font-family: Open-Sans-hebrew;
   src: url("../fonts/Open-Sans-hebrew.eot?") format("eot"), url("../fonts/Open-Sans-hebrew.woff") format("woff"), url("../fonts/Open-Sans-hebrew.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans-hebrew.ttf") format("truetype");
 }
+@font-face {
+  font-family: Open-Sans-hebrew-bold;
+  src: url("../fonts/OpenSansHebrew-Bold.eot?") format("eot"), url("../fonts/OpenSansHebrew-Bold.woff") format("woff"), url("../fonts/OpenSansHebrew-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSansHebrew-Bold.ttf") format("truetype");
+}
 /* line 4, ../sass/calendar-rtl.scss */
 .calender-header {
   float: right;
@@ -477,7 +481,7 @@
 }
 /* line 353, ../sass/calendar-rtl.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row {
-  margin-left: -78px;
+  margin-left: -82px;
 }
 /* line 355, ../sass/calendar-rtl.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-field-cm-event-time-1 {
@@ -520,18 +524,19 @@
   border-top-color: transparent !important;
   border-left-color: transparent !important;
   border-bottom-color: transparent !important;
+  border-width: 4px 6px 4px 0;
 }
-/* line 400, ../sass/calendar-rtl.scss */
+/* line 401, ../sass/calendar-rtl.scss */
 .page-festival-calendar #popup-active-overlay .popup-close {
-  left: -10px;
+  left: -27px !important;
   right: auto;
 }
 
-/* line 408, ../sass/calendar-rtl.scss */
+/* line 409, ../sass/calendar-rtl.scss */
 .view-festival-calendar.view-display-id-page_1 caption {
   text-align: right;
 }
-/* line 410, ../sass/calendar-rtl.scss */
+/* line 411, ../sass/calendar-rtl.scss */
 .view-festival-calendar.view-display-id-page_1 caption i {
   float: left;
 }

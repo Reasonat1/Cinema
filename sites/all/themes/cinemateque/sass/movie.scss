@@ -74,6 +74,10 @@
 				padding: 0 5% 25px!important;
 			}
 		}
+		> .inside{
+			z-index: 301;
+			position: relative;
+		}
 	}
 	.panels-flexible-row-node_page-5 .panels-flexible-region-node_page-content_right #panels-ipe-regionid-content_right {
 		.pane-movie-top-pane-view-panel-pane-6 {
@@ -205,6 +209,7 @@
 		padding: 0!important;
 		.panels-flexible-row-node_page-4-inside{
 			@include width();
+			width: 100%!important;
 			@include res(s-m){
 				padding: 0;
 				tr{
