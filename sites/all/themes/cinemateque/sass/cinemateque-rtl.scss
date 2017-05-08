@@ -275,6 +275,11 @@
 			.table{
 				td{
 					float: right;
+					@include res(s-m){
+						&.date{
+							padding: 0 0px 0 8px!important;
+						}
+					}
 				}
 			}
 			.purchase{
@@ -335,6 +340,11 @@
 			.table{
 				td{
 					float: right;
+					@include res(s-m){
+						&.date{
+							padding: 0px 0 0 8px!important;
+						}
+					}
 				}
 			}
 			.date, .time{
@@ -624,7 +634,7 @@
 	.field-name-field-item-grid-3 > .field-items > .field-item, .view-lobby.view-display-id-panel_pane_4 .views-row, .view-lobby.view-display-id-panel_pane_2 .views-row, 
 	.view-lobby.view-display-id-panel_pane_10 .views-row, .view-id-similar_user_flagged_content .views-row{
 		margin-right: 0;
-		margin-left: 2%;
+		margin-left: 2%!important;
 		float: right;
 		@include res(s-m){
 			width: 100%;
@@ -637,7 +647,12 @@
 			}	
 		}
 		&:nth-child(3n){
-			margin-left: 0;
+			margin-left: 0!important;
+			@include res(l){
+				&.views-row-odd{
+					margin-left: 4%!important;
+				}
+			}
 		}
 		.video-link{
 			float: left;
@@ -707,12 +722,50 @@
 /*****  message area  *******/
 
 .region-messages{
-    .view-content{
-    	padding-right: 33px;
-    	padding-left: 0;
+    .views-field-field-publish-date-range{
+    	margin-left: 10px;
+    	margin-right: 0;
     }
-    .views-field-title{
-    	margin-right: 10px;
-    	margin-left: 0;
+    .view-header{
+    	float: right;
+    }
+    .owl-controls{
+    	.owl-dot{
+    		margin-left: 5px;
+    		margin-right: 0;
+    	}
+    }
+}
+
+.node-type-global-message{
+	.page-header h1{
+    	text-align: right;
+    }
+}
+
+
+/******  next and prev navigation  *******/
+
+.pane-view-navigation-next-button-block{
+	padding: 47px 5%;
+    position: absolute;
+    width: 100%;
+    z-index: 300;
+    a.button-next, a.button-prev{
+    	color: #929292!important;
+    }
+    a.button-next-title, a.button-prev-title{
+    	color: #000;
+    }
+    div.button-next{
+    	float: left;
+    	border-radius: 0 10px 10px 0;
+    	a:before{
+    		text-align: left;
+    	}
+    }
+    div.button-prev{
+    	float: right;
+    	border-radius: 10px 0 0 10px;
     }
 }

@@ -34,16 +34,28 @@ if (($("body").hasClass("page-node-4879")) || ($("body").hasClass("page-node-487
 
 $(".region-messages").css("display","block");
 
-$(".not-front #main-wrapper").css("margin-top",$("header").height());
-$(".front #main-wrapper").css("margin-top","0");
+$("#main-wrapper").css("margin-top",$("header").height());
+if ($(window).width()>767){
+  $(".front #main-wrapper").css("margin-top","0");
+}
 $(".float-calendar-wrapper").css("top",$("header").height()+10);
 $(".filter .filter-wrapper").css("margin-top",$("header").height());
 $(window).load(function() {
   $(".more-halls").css("top",$("header").height()+120);
 });
 
+$(window).resize(function() {
+  $("#main-wrapper").css("margin-top",$("header").height());
+  if ($(window).width()>767){
+    $(".front #main-wrapper").css("margin-top","0");
+  }
+});
+
 $( document ).ajaxComplete(function() {
-  $(".not-front #main-wrapper").css("margin-top",$("header").height());
+  $("#main-wrapper").css("margin-top",$("header").height());
+  if ($(window).width()>767){
+    $(".front #main-wrapper").css("margin-top","0");
+  }
   $(".front #main-wrapper").css("margin-top","0");
   $(".float-calendar-wrapper").css("top",$("header").height()+10);
   $(".filter .filter-wrapper").css("margin-top",$("header").height());
@@ -59,18 +71,24 @@ function setAgreeCookie() {
 var visit=GetCookie("MSG");
 if (visit=="yes"){
    $('body').addClass('close-message-cookies');
-   $(".not-front #main-wrapper").css("margin-top",$("header").height());
-  $(".float-calendar-wrapper").css("top",$("header").height()+10);
-  $(".filter .filter-wrapper").css("margin-top",$("header").height());
-  $(window).load(function() {
-    $(".more-halls").css("top",$("header").height()+120);
-  });
+   $("#main-wrapper").css("margin-top",$("header").height());
+   if ($(window).width()>767){
+    $(".front #main-wrapper").css("margin-top","0");
+   }
+   $(".float-calendar-wrapper").css("top",$("header").height()+10);
+   $(".filter .filter-wrapper").css("margin-top",$("header").height());
+   $(window).load(function() {
+     $(".more-halls").css("top",$("header").height()+120);
+   });
 }
 
 $('.view-global-message.view-display-id-block .close-message').click(function(){ 
     setAgreeCookie();
     $('body').addClass('close-message-cookies');
-    $(".not-front #main-wrapper").css("margin-top",$("header").height());
+    $("#main-wrapper").css("margin-top",$("header").height());
+    if ($(window).width()>767){
+      $(".front #main-wrapper").css("margin-top","0");
+    }
     $(".float-calendar-wrapper").css("top",$("header").height()+10);
     $(".filter .filter-wrapper").css("margin-top",$("header").height());
     $(".more-halls").css("top",$("header").height()+120);
@@ -92,6 +110,14 @@ function GetCookie(name) {
     }
     return null;
 }
+/*
+$(window).load(function() {
+  var i = 1;
+  $('.view-global-message.view-display-id-block.more-items .owl-dot').each(function(){
+    $(this).children("span").text(i);
+    i++;
+  });
+});*/
 
 /****click shopping card***/
 
@@ -598,6 +624,13 @@ $(".page-festival-calendar-mobile caption").click(function(){
         }
         else{
           $(".view-review-mobile").addClass("more-items");
+        }
+
+        if ($(".view-global-message.view-display-id-block .views-row").length == '1') { 
+          $(".view-global-message.view-display-id-block").addClass("one-item");
+        }
+        else{
+          $(".view-global-message.view-display-id-block").addClass("more-items");
         }
 
         if ($(".full-screen-image .views-row").length == '1') { 
@@ -1234,4 +1267,30 @@ if (jQuery(window).width() > 767){
       }); 
     })
 }
+
+    jQuery(function(){ 
+      isRtl=false;
+      if  (jQuery("body").hasClass("i18n-he")){
+        isRtl=true;
+      } 
+      jQuery('.view-global-message.view-display-id-block.more-items .view-content').owlCarousel({
+        rtl: isRtl,
+        autoplay:true,
+        autoplayTimeout:5000,
+        autoplayHoverPause:true,
+        loop:true,
+        dots: true,
+        margin:0,
+        nav: false,
+        animateIn: 'fadeIn', 
+        animateOut: 'fadeOut',
+        slideSpeed: 300,
+        responsive:{
+          0:{
+            items:1
+          }
+        }
+      }); 
+    })
+
 
