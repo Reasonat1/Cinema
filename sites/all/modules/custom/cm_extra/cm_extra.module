@@ -222,7 +222,8 @@ function cm_extra_views_post_execute(&$view) {
   }
   $tids = implode('+', array_keys($tids));
   $nids = implode('+', array_keys($nids));
-  $similar = views_embed_view('similar_user_flagged_content', 'default', $tids, $nids);
+  $similar = views_embed_view('similar_user_flagged_content', 'block_1', $tids, $nids);
+  //$similar = views_embed_view('yakoub_similar_by_terms', 'default', $tids, $nids);
   $view->attachment_after = '<h2>'.t("Similar movies/events").'</h2>' . $similar;
 }
 
