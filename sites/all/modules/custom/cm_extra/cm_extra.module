@@ -262,14 +262,18 @@ function cm_extra_node_translate_after_submit($form, &$form_state) {
 	
 }
 
-function cm_extra_preprocess_html(&$variables) {
+function cm_extra_dev_domain() {
   $domain = domain_get_domain();
   if (!isset($domain['active_alias_id'])) {
     return;
   }
   $active = $domain['active_alias_id'];
   $alias = $domain['aliases'][$active]['pattern'];
-  if (strpos($alias, 'dev.') === 0) {
+  return (strpos($alias, 'dev.') === 0);
+}
+
+function cm_extra_preprocess_html(&$variables) {
+  if (cm_extra_dev_domain()) {
     $variables['classes_array'][] = 'dev-site';
   }
 }
