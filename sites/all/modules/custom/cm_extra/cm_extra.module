@@ -261,6 +261,18 @@ function cm_extra_node_translate_after_submit($form, &$form_state) {
 	
 }
 
+function cm_extra_preprocess_html(&$variables) {
+  $domain = domain_get_domain();
+  if (!isset($domain['active_alias_id'])) {
+    return;
+  }
+  $active = $domain['active_alias_id'];
+  $alias = $domain['aliases'][$active]['pattern'];
+  if (strpos($alias, 'dev.') === 0) {
+    $variables['classes_array'][] = 'dev-site';
+  }
+}
+
 function cm_extra_field_attach_prepare_translation_alter(&$entity, $context) {
 	if (!empty($entity->field_cm_event_lineup['und']) && empty($context['not_new']) && $entity->type=='cm_event') {
 		$lineup=node_load($entity->field_cm_event_lineup['und'][0]['target_id']);
