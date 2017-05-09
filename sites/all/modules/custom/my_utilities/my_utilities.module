@@ -435,3 +435,24 @@ switch ($node->type) {
 	
 	
 }
+
+function my_utilities_views_pre_view(&$view, &$display_id, &$args) {
+    // Get the existing filters
+	$filters = $view->display_handler->get_option('filters');
+	if(!empty($filters['current_all'])) return;
+	$domain = domain_get_domain();
+	$domaine_filter=array(
+    'id' =>'current_all',
+    'field' =>'current_all',
+    'operator' =>'=',
+    'value' =>$domain['domain_id'],
+    'group' =>1,
+);
+$view->add_item(
+        $view->current_display,
+        'filter',
+		'domain_access',
+        'current_all',
+        $domaine_filter
+      );
+}
