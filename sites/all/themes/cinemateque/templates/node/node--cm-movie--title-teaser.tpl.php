@@ -6,11 +6,11 @@ unset($content['language']);
 //dpm(get_defined_vars());
 ?>
 <div class="node-title-teaser node-title-teaser-cm-movie node-title-teaser-content-type">
-	<div class="node-cm-movie-year">
-          <?php if (!empty($content['field_cm_movie_year'])):?>
+    <?php if (!empty($content['field_cm_movie_year'])):?>
+		<div class="node-cm-movie-year">
           <?php print $content['field_cm_movie_year'][0]['#markup'];?>
-          <?php endif; ?>
-        </div>
+    	</div>
+    <?php endif; ?>
 	<?php $nodeurl = url('node/'. $node->nid);?>
 	<a href="<?php print $nodeurl;?>">
 		<div class="node-title-teaser-title">

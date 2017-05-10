@@ -48,7 +48,12 @@
 	  <div class="top_gallert_front">
 	    <div class="full-screen-image-front movie-group">
 	      <div class="gallery">
-	            <?php print render($content['field_cm_lobby_media']); ?>
+	              <?php if (render($content['field_cm_lobby_media'])){
+	                print render($content['field_cm_lobby_media']); 
+	              }
+	              else{
+	                print '<img src="/sites/all/themes/cinemateque/images/default-image-big.jpg">';
+	              } ?>
 	      </div>
 	    </div>
 	    <div class="text-main-image">
