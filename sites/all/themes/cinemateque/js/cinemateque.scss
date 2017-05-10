@@ -2915,7 +2915,6 @@ div[id^="panels-ipe-paneid-22"] > * select {
     font-size: 14px;
     width: 100%;
     z-index: 450;
-    padding: 0 30px;
     p{
     	font-size: 12px;
     }
@@ -2929,7 +2928,9 @@ div[id^="panels-ipe-paneid-22"] > * select {
     	margin-bottom: 0;
     }
     .views-field-title{
-    	display: inline-block;
+    	font-weight: bold;
+    	display: inline;
+    	margin-left: 10px;
     	a{
     		color: #fff!important;
     	}
@@ -2939,39 +2940,20 @@ div[id^="panels-ipe-paneid-22"] > * select {
     	border:1px solid #fff;
     	padding: 10px;
     	display: inline-block;
-    	margin-right: 10px;
     }
     .close-message{
     	cursor: pointer;
     	background: url("../images/close42.png") no-repeat center center;
     	background-size: 14px;
     	border-radius: 50%;
-	    height: 23px;
-	    width: 23px;
-	    z-index: 300;
-	    position: relative;
+	    height: 30px;
+	    width: 30px;
     }
     .view-header{
     	float: left;
     	padding-top: 5px;
     }
-    .view-footer{
-    	display: inline-block;
-    	padding: 0 11px 10px;
-    	text-align: inherit;
-    	a{
-    		color: #fff!important;
-
-    	}
-    }
-    .one-item{
-    	.view-footer{
-    		padding: 0 40px 10px;
-    	}
-    }
     .owl-controls{
-    	float: left;
-    	margin-top: 6px;
     	.owl-dot{
     		border-radius: 50%;
     		width: 10px;

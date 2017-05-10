@@ -9244,14 +9244,13 @@ div[id^="panels-ipe-paneid-22"] > * select {
 }
 /* line 2931, ../sass/cinemateque.scss */
 .region-messages .views-field-title {
-  font-weight: bold;
   display: inline-block;
 }
-/* line 2934, ../sass/cinemateque.scss */
+/* line 2933, ../sass/cinemateque.scss */
 .region-messages .views-field-title a {
   color: #fff !important;
 }
-/* line 2938, ../sass/cinemateque.scss */
+/* line 2937, ../sass/cinemateque.scss */
 .region-messages .views-field-field-publish-date-range {
   color: #fff;
   border: 1px solid #fff;
@@ -9259,7 +9258,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   display: inline-block;
   margin-right: 10px;
 }
-/* line 2945, ../sass/cinemateque.scss */
+/* line 2944, ../sass/cinemateque.scss */
 .region-messages .close-message {
   cursor: pointer;
   background: url("../images/close42.png") no-repeat center center;
@@ -9270,14 +9269,15 @@ div[id^="panels-ipe-paneid-22"] > * select {
   z-index: 300;
   position: relative;
 }
-/* line 2955, ../sass/cinemateque.scss */
+/* line 2954, ../sass/cinemateque.scss */
 .region-messages .view-header {
   float: left;
   padding-top: 5px;
 }
-/* line 2959, ../sass/cinemateque.scss */
+/* line 2958, ../sass/cinemateque.scss */
 .region-messages .view-footer {
-  padding: 0 40px 10px;
+  display: inline-block;
+  padding: 0 11px 10px;
   text-align: inherit;
 }
 /* line 2962, ../sass/cinemateque.scss */
@@ -9285,6 +9285,15 @@ div[id^="panels-ipe-paneid-22"] > * select {
   color: #fff !important;
 }
 /* line 2968, ../sass/cinemateque.scss */
+.region-messages .one-item .view-footer {
+  padding: 0 40px 10px;
+}
+/* line 2972, ../sass/cinemateque.scss */
+.region-messages .owl-controls {
+  float: left;
+  margin-top: 6px;
+}
+/* line 2975, ../sass/cinemateque.scss */
 .region-messages .owl-controls .owl-dot {
   border-radius: 50%;
   width: 10px;
@@ -9294,33 +9303,33 @@ div[id^="panels-ipe-paneid-22"] > * select {
   margin-right: 5px;
   display: inline-block;
 }
-/* line 2976, ../sass/cinemateque.scss */
+/* line 2983, ../sass/cinemateque.scss */
 .region-messages .owl-controls .owl-dot.active {
   background-color: #fff;
 }
 
-/* line 2983, ../sass/cinemateque.scss */
+/* line 2990, ../sass/cinemateque.scss */
 .close-message-cookies .region-messages {
   display: none !important;
 }
 
-/* line 2987, ../sass/cinemateque.scss */
+/* line 2994, ../sass/cinemateque.scss */
 .view-global-message.view-display-id-panel_pane_1 {
   width: 54%;
   margin: 0 auto;
 }
 @media (max-width: 767px) {
-  /* line 2987, ../sass/cinemateque.scss */
+  /* line 2994, ../sass/cinemateque.scss */
   .view-global-message.view-display-id-panel_pane_1 {
     width: 100%;
   }
 }
-/* line 2993, ../sass/cinemateque.scss */
+/* line 3000, ../sass/cinemateque.scss */
 .view-global-message.view-display-id-panel_pane_1 .views-row {
   margin-bottom: 30px;
 }
 
-/* line 2999, ../sass/cinemateque.scss */
+/* line 3006, ../sass/cinemateque.scss */
 .node-type-global-message .page-header {
   display: block !important;
   width: 1355px !important;
@@ -9331,7 +9340,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   margin: 40px auto 20px;
   padding-bottom: 9px;
 }
-/* line 3004, ../sass/cinemateque.scss */
+/* line 3011, ../sass/cinemateque.scss */
 .node-type-global-message .page-header h1 {
   width: 54%;
   text-align: left;
@@ -9339,16 +9348,16 @@ div[id^="panels-ipe-paneid-22"] > * select {
   padding: 0;
 }
 @media (max-width: 767px) {
-  /* line 3004, ../sass/cinemateque.scss */
+  /* line 3011, ../sass/cinemateque.scss */
   .node-type-global-message .page-header h1 {
     width: 100%;
   }
 }
-/* line 3014, ../sass/cinemateque.scss */
+/* line 3021, ../sass/cinemateque.scss */
 .node-type-global-message .pane-custom {
   margin: 40px 0;
 }
-/* line 3017, ../sass/cinemateque.scss */
+/* line 3024, ../sass/cinemateque.scss */
 .node-type-global-message #content {
   width: 1355px !important;
   max-width: 100%;
@@ -9358,42 +9367,42 @@ div[id^="panels-ipe-paneid-22"] > * select {
   padding: 0 5% !important;
   margin-bottom: 100px;
 }
-/* line 3021, ../sass/cinemateque.scss */
+/* line 3028, ../sass/cinemateque.scss */
 .node-type-global-message #content .region-content {
   width: 54%;
   margin: 0 auto;
 }
 @media (max-width: 767px) {
-  /* line 3021, ../sass/cinemateque.scss */
+  /* line 3028, ../sass/cinemateque.scss */
   .node-type-global-message #content .region-content {
     width: 100%;
   }
 }
 
 /******  next and prev navigation  *******/
-/* line 3034, ../sass/cinemateque.scss */
+/* line 3041, ../sass/cinemateque.scss */
 .pane-view-navigation-next-button-block {
   padding: 47px 5%;
   position: absolute;
   width: 100%;
   z-index: 300;
 }
-/* line 3039, ../sass/cinemateque.scss */
+/* line 3046, ../sass/cinemateque.scss */
 .pane-view-navigation-next-button-block a.button-next, .pane-view-navigation-next-button-block a.button-prev {
   color: #929292 !important;
 }
-/* line 3042, ../sass/cinemateque.scss */
+/* line 3049, ../sass/cinemateque.scss */
 .pane-view-navigation-next-button-block a.button-next-title, .pane-view-navigation-next-button-block a.button-prev-title {
   color: #000;
 }
-/* line 3045, ../sass/cinemateque.scss */
+/* line 3052, ../sass/cinemateque.scss */
 .pane-view-navigation-next-button-block div.button-next {
   float: right;
   background-color: #fff;
   border-radius: 10px 0 0 10px;
   padding: 15px 10px;
 }
-/* line 3050, ../sass/cinemateque.scss */
+/* line 3057, ../sass/cinemateque.scss */
 .pane-view-navigation-next-button-block div.button-next a:before {
   content: "\f105";
   font-family: FontAwesome;
@@ -9401,14 +9410,14 @@ div[id^="panels-ipe-paneid-22"] > * select {
   text-align: right;
   font-size: 35px;
 }
-/* line 3058, ../sass/cinemateque.scss */
+/* line 3065, ../sass/cinemateque.scss */
 .pane-view-navigation-next-button-block div.button-prev {
   float: left;
   background-color: #fff;
   border-radius: 0 10px 10px 0;
   padding: 15px 10px;
 }
-/* line 3063, ../sass/cinemateque.scss */
+/* line 3070, ../sass/cinemateque.scss */
 .pane-view-navigation-next-button-block div.button-prev a:before {
   content: "\f104";
   font-family: FontAwesome;
@@ -9416,7 +9425,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   font-size: 35px;
 }
 
-/* line 3073, ../sass/cinemateque.scss */
+/* line 3080, ../sass/cinemateque.scss */
 .node-type-cm-movie .pane-view-navigation-next-button-block {
   padding: 0;
 }
@@ -11335,7 +11344,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
 }
 /* line 1172, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar .view-display-id-block_1 .views-row {
-  height: 42px !important;
+  height: 30px !important;
   display: inline-block;
   width: 190px;
   overflow: hidden;
@@ -11377,24 +11386,29 @@ div[id^="panels-ipe-paneid-22"] > * select {
 }
 /* line 1214, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay {
-  z-index: 0;
+  left: calc(50% + 240px);
+  margin-top: -38px;
 }
 /* line 1217, ../sass/calendar.scss */
+.page-festival-calendar #popup-active-overlay .popup-element-origin {
+  left: 0 !important;
+}
+/* line 1221, ../sass/calendar.scss */
 .page-festival-calendar a.popup-element-title {
   color: #000000 !important;
 }
-/* line 1220, ../sass/calendar.scss */
+/* line 1224, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-header {
   position: relative;
 }
-/* line 1222, ../sass/calendar.scss */
+/* line 1226, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-header .more-halls {
   left: 0;
   position: fixed;
   width: 100%;
   z-index: 200;
 }
-/* line 1227, ../sass/calendar.scss */
+/* line 1231, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-header .more-halls .wrapper {
   width: 1355px !important;
   max-width: 100%;
@@ -11403,54 +11417,54 @@ div[id^="panels-ipe-paneid-22"] > * select {
   box-sizing: border-box;
   padding: 0;
 }
-/* line 1232, ../sass/calendar.scss */
+/* line 1236, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-header .hall-next, .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-header .hall-prev {
   z-index: 101;
   cursor: pointer;
   font-size: 12px;
 }
-/* line 1236, ../sass/calendar.scss */
+/* line 1240, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-header .hall-next i, .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-header .hall-prev i {
   font-size: 28px;
 }
-/* line 1240, ../sass/calendar.scss */
+/* line 1244, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-header .hall-next {
   float: right;
 }
-/* line 1242, ../sass/calendar.scss */
+/* line 1246, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-header .hall-next .fa-angle-left {
   display: none;
 }
-/* line 1245, ../sass/calendar.scss */
+/* line 1249, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-header .hall-next span {
   margin: 6px 10px 0 0;
   float: left;
 }
-/* line 1250, ../sass/calendar.scss */
+/* line 1254, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-header .hall-prev {
   float: left;
 }
-/* line 1252, ../sass/calendar.scss */
+/* line 1256, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-header .hall-prev .fa-angle-right {
   display: none;
 }
-/* line 1255, ../sass/calendar.scss */
+/* line 1259, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-header .hall-prev span {
   margin: 6px 0px 0 10px;
   float: right;
 }
-/* line 1261, ../sass/calendar.scss */
+/* line 1265, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content {
   overflow: hidden;
   padding-bottom: 30px;
   width: 100.7%;
 }
-/* line 1265, ../sass/calendar.scss */
+/* line 1269, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content h3 {
   opacity: 0;
   height: 0;
 }
-/* line 1269, ../sass/calendar.scss */
+/* line 1273, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row {
   box-shadow: 0px 1px 3px #c2c2c2;
   border: 1px solid #dededf;
@@ -11459,147 +11473,147 @@ div[id^="panels-ipe-paneid-22"] > * select {
   			/*transition: left 0.5s;
       		-webkit-transition: left 0.5s;*/
 }
-/* line 1276, ../sass/calendar.scss */
+/* line 1280, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row a {
   font-size: 14px;
 }
-/* line 1279, ../sass/calendar.scss */
+/* line 1283, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-field-cm-event-time-1 {
   float: left;
   font-weight: bold;
   margin-right: 6px;
 }
-/* line 1284, ../sass/calendar.scss */
+/* line 1288, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-field-cm-event-duration {
   float: left;
 }
-/* line 1286, ../sass/calendar.scss */
+/* line 1290, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-field-cm-event-duration .interval-value {
   float: right;
   margin-left: 6px;
 }
-/* line 1291, ../sass/calendar.scss */
+/* line 1295, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-ops {
   float: right;
   padding-top: 3px;
 }
-/* line 1295, ../sass/calendar.scss */
+/* line 1299, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-popup {
   font-weight: bold;
   padding-top: 7px;
   clear: both;
 }
-/* line 1299, ../sass/calendar.scss */
+/* line 1303, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-popup a {
   padding: 0;
 }
-/* line 1303, ../sass/calendar.scss */
+/* line 1307, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-field-cm-event-comment {
   height: 34px;
 }
-/* line 1306, ../sass/calendar.scss */
+/* line 1310, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-field-cm-event-comment, .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-field-cm-event-internal-id {
   font-size: 12px;
   color: #b1aeae;
 }
-/* line 1310, ../sass/calendar.scss */
+/* line 1314, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-field-cm-event-internal-id {
   float: left;
   padding-top: 13px;
 }
-/* line 1314, ../sass/calendar.scss */
+/* line 1318, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-field-toptix-purchase {
   float: right;
   height: 24px;
   margin-top: 10px;
 }
-/* line 1318, ../sass/calendar.scss */
+/* line 1322, ../sass/calendar.scss */
 .page-festival-calendar .view-festival-calendar.view-display-id-page > .view-content .views-row .views-field-field-toptix-purchase button {
   width: 71px;
 }
-/* line 1325, ../sass/calendar.scss */
+/* line 1329, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay table td {
   background: none !important;
 }
-/* line 1328, ../sass/calendar.scss */
+/* line 1332, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay table.popup-layout {
   background-color: #fdf9f9;
   border: 1px solid #c7c8c8;
   box-shadow: 0px 1px 3px #c2c2c2;
 }
-/* line 1333, ../sass/calendar.scss */
+/* line 1337, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive table {
   margin-bottom: 0;
 }
-/* line 1336, ../sass/calendar.scss */
+/* line 1340, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive .title, .page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive .table_remark, .page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive .code, .page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive .like-flag, .page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive .add-event {
   display: none;
 }
-/* line 1339, ../sass/calendar.scss */
+/* line 1343, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive .date, .page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive .hall {
   width: auto;
 }
-/* line 1342, ../sass/calendar.scss */
+/* line 1346, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive .time {
   padding-right: 10px;
 }
-/* line 1345, ../sass/calendar.scss */
+/* line 1349, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive .purchase {
   padding-top: 0 !important;
 }
-/* line 1348, ../sass/calendar.scss */
+/* line 1352, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive td {
   font-size: 14px;
 }
-/* line 1351, ../sass/calendar.scss */
+/* line 1355, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive button {
   width: 71px;
 }
-/* line 1354, ../sass/calendar.scss */
+/* line 1358, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay table.popup-layout .table-responsive .view-footer {
   overflow: hidden;
 }
-/* line 1359, ../sass/calendar.scss */
+/* line 1363, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay table.popup-layout > tbody > .top, .page-festival-calendar #popup-active-overlay table.popup-layout > tbody > .bottom {
   display: none;
 }
-/* line 1364, ../sass/calendar.scss */
+/* line 1368, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay .center .center .inner {
   margin: 0;
   padding: 30px;
 }
-/* line 1367, ../sass/calendar.scss */
+/* line 1371, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay .center .center .inner .event-title, .page-festival-calendar #popup-active-overlay .center .center .inner .film-title {
   margin-bottom: 20px;
   font-weight: bold;
   font-size: 20px;
 }
-/* line 1371, ../sass/calendar.scss */
+/* line 1375, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay .center .center .inner .event-title a, .page-festival-calendar #popup-active-overlay .center .center .inner .film-title a {
   font-weight: bold;
   font-size: 20px;
 }
-/* line 1376, ../sass/calendar.scss */
+/* line 1380, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay .center .center .inner .description {
   font-size: 16px;
 }
-/* line 1380, ../sass/calendar.scss */
+/* line 1384, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay .center .center .inner .credit-duration .interval-value {
   display: inline-block;
 }
-/* line 1384, ../sass/calendar.scss */
+/* line 1388, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay .center .center .inner .more-label {
   margin: 20px 0 10px;
 }
-/* line 1387, ../sass/calendar.scss */
+/* line 1391, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay .center .center .inner .title-link {
   padding: 20px 0;
 }
-/* line 1389, ../sass/calendar.scss */
+/* line 1393, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay .center .center .inner .title-link a {
   position: relative;
 }
-/* line 1392, ../sass/calendar.scss */
+/* line 1396, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay .center .center .inner .title-link a:after {
   width: 0;
   height: 0;
@@ -11613,7 +11627,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   border-top-color: transparent !important;
   border-bottom-color: transparent !important;
 }
-/* line 1407, ../sass/calendar.scss */
+/* line 1411, ../sass/calendar.scss */
 .page-festival-calendar #popup-active-overlay .popup-close {
   background: url("../images/close42.png") no-repeat center center;
   border-radius: 50%;
@@ -11625,34 +11639,34 @@ div[id^="panels-ipe-paneid-22"] > * select {
   background-size: 15px;
 }
 
-/* line 1420, ../sass/calendar.scss */
+/* line 1424, ../sass/calendar.scss */
 .page-festival-calendar.i18n-en #popup-active-overlay .center .center .inner .title-link a::after {
   border-right-color: transparent !important;
 }
 
-/* line 1424, ../sass/calendar.scss */
+/* line 1428, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 {
   margin-top: 85px;
 }
 @media (max-width: 767px) {
-  /* line 1424, ../sass/calendar.scss */
+  /* line 1428, ../sass/calendar.scss */
   .view-festival-calendar.view-display-id-page_1 {
     margin-top: 54px;
   }
 }
-/* line 1429, ../sass/calendar.scss */
+/* line 1433, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 .view-header {
   padding: 10px 5%;
 }
-/* line 1432, ../sass/calendar.scss */
+/* line 1436, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 .view-filters {
   display: none;
 }
-/* line 1435, ../sass/calendar.scss */
+/* line 1439, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 .filter-wrapper {
   padding-bottom: 0;
 }
-/* line 1438, ../sass/calendar.scss */
+/* line 1442, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 caption {
   background-color: #000;
   color: #fff;
@@ -11660,52 +11674,52 @@ div[id^="panels-ipe-paneid-22"] > * select {
   font-size: 16px;
   font-weight: bold;
 }
-/* line 1444, ../sass/calendar.scss */
+/* line 1448, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 caption i {
   float: right;
   padding-top: 3px;
   cursor: pointer;
 }
-/* line 1448, ../sass/calendar.scss */
+/* line 1452, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 caption i.fa-angle-down {
   display: none;
 }
-/* line 1454, ../sass/calendar.scss */
+/* line 1458, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 .table-responsive td {
   width: auto !important;
   color: #000;
 }
-/* line 1458, ../sass/calendar.scss */
+/* line 1462, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 .table-responsive tr {
   display: block;
   overflow: hidden;
   padding: 0 5%;
   width: 100%;
 }
-/* line 1463, ../sass/calendar.scss */
+/* line 1467, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 .table-responsive tr.even {
   background-color: #ededed !important;
 }
-/* line 1467, ../sass/calendar.scss */
+/* line 1471, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 .table-responsive .views-field-field-toptix-purchase {
   padding-top: 7px !important;
 }
-/* line 1470, ../sass/calendar.scss */
+/* line 1474, ../sass/calendar.scss */
 .view-festival-calendar.view-display-id-page_1 .table-responsive .hide-table tbody {
   display: none;
 }
 
 /*****  calendar notes  ******/
-/* line 1478, ../sass/calendar.scss */
+/* line 1482, ../sass/calendar.scss */
 .bean-calendar-notes {
   margin-top: 50px;
 }
-/* line 1481, ../sass/calendar.scss */
+/* line 1485, ../sass/calendar.scss */
 .bean-calendar-notes .field-name-field-calendar-paragraph > .field-items > .field-item {
   margin-bottom: 30px;
 }
 @media (max-width: 767px) {
-  /* line 1485, ../sass/calendar.scss */
+  /* line 1489, ../sass/calendar.scss */
   .bean-calendar-notes .paragraphs-item-content {
     width: 1355px !important;
     max-width: 100%;
@@ -11715,13 +11729,13 @@ div[id^="panels-ipe-paneid-22"] > * select {
   }
 }
 
-/* line 1493, ../sass/calendar.scss */
+/* line 1497, ../sass/calendar.scss */
 .page-festival-calendar .region-content-bottom {
   background-color: #fff;
   z-index: 300;
   position: relative;
 }
-/* line 1497, ../sass/calendar.scss */
+/* line 1501, ../sass/calendar.scss */
 .page-festival-calendar .region-content-bottom .block-bean {
   width: 1355px !important;
   max-width: 100%;
@@ -11729,7 +11743,7 @@ div[id^="panels-ipe-paneid-22"] > * select {
   padding: 0 5%;
   box-sizing: border-box;
 }
-/* line 1501, ../sass/calendar.scss */
+/* line 1505, ../sass/calendar.scss */
 .page-festival-calendar #footer {
   z-index: 300;
   position: relative;

@@ -36,11 +36,15 @@ $(".region-messages").css("display","block");
 
 $("#main-wrapper").css("margin-top",$("header").height());
 if ($(window).width()>767){
-  $(".front #main-wrapper").css("margin-top","0");
+  $(".front #main-wrapper").css("margin-top",$(".region-messages").height());
 }
 $(".float-calendar-wrapper").css("top",$("header").height()+10);
 $(".filter .filter-wrapper").css("margin-top",$("header").height());
 $(window).load(function() {
+  $("#main-wrapper").css("margin-top",$("header").height());
+  if ($(window).width()>767){
+    $(".front #main-wrapper").css("margin-top",$(".region-messages").height());
+  }
   $(".more-halls").css("top",$("header").height()+120);
 });
 
@@ -54,7 +58,7 @@ $(window).resize(function() {
 $( document ).ajaxComplete(function() {
   $("#main-wrapper").css("margin-top",$("header").height());
   if ($(window).width()>767){
-    $(".front #main-wrapper").css("margin-top","0");
+    $(".front #main-wrapper").css("margin-top",$(".region-messages").height());
   }
   $(".front #main-wrapper").css("margin-top","0");
   $(".float-calendar-wrapper").css("top",$("header").height()+10);
@@ -616,6 +620,27 @@ $(".page-festival-calendar-mobile caption").click(function(){
   }
 });
 
+$("*").click(function(){
+  $(".view-festival-calendar .views-field-popup .popup-element").each(function(){
+    if ($(this).hasClass("popup-element-active")){
+      $(this).parent().parent().parent().addClass("popup-open");
+    } else{
+      $(this).parent().parent().parent().removeClass("popup-open");
+    }
+  });
+});
+
+$( document ).ajaxComplete(function() {
+  $("*").click(function(){
+    $(".view-festival-calendar .views-field-popup .popup-element").each(function(){
+      if ($(this).hasClass("popup-element-active")){
+        $(this).parent().parent().parent().addClass("popup-open");
+      } else{
+        $(this).parent().parent().parent().removeClass("popup-open");
+      }
+    });
+  });
+});
 
 /********  items of review  *******/
           
