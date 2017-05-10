@@ -175,6 +175,9 @@ a, a:hover, a:focus{
 
 /*****  footer   **********/
 
+#footer{
+	background-color: #fff;
+}
 .checkbox input[type="checkbox"] {
 	margin-right: 6px;
 	margin-left: 0;
@@ -2929,7 +2932,6 @@ div[id^="panels-ipe-paneid-22"] > * select {
     	margin-bottom: 0;
     }
     .views-field-title{
-    	font-weight: bold;
     	display: inline-block;
     	a{
     		color: #fff!important;
@@ -2957,14 +2959,22 @@ div[id^="panels-ipe-paneid-22"] > * select {
     	padding-top: 5px;
     }
     .view-footer{
-    	padding: 0 40px 10px;
+    	display: inline-block;
+    	padding: 0 11px 10px;
     	text-align: inherit;
     	a{
     		color: #fff!important;
 
     	}
     }
+    .one-item{
+    	.view-footer{
+    		padding: 0 40px 10px;
+    	}
+    }
     .owl-controls{
+    	float: left;
+    	margin-top: 6px;
     	.owl-dot{
     		border-radius: 50%;
     		width: 10px;

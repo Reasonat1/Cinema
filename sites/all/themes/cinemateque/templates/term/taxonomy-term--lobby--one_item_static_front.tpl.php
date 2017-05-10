@@ -46,7 +46,6 @@
   <div class="content">
 
 	  <a class="all-image" href="<?php print $term_url; ?>"></a>
-	  <?php if (render($content['field_cm_lobby_media'])){ ?>
       <div class="one-item-static">
         <div class="image">
           <?php 
@@ -55,6 +54,8 @@
           } 
           else if (render($content['field_cm_lobby_media'])){ 
             print render($content['field_cm_lobby_media']);
+          } else{
+                  print '<img src="/sites/all/themes/cinemateque/images/default-one-item.png">';
           } ?>
           <div class="gradient small"></div>
         </div>
@@ -66,7 +67,6 @@
 	        </div>
 	    
       </div>
-    <?php } ?>
 
 
   </div>
