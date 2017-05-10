@@ -72,6 +72,7 @@ function _get_festival_day() {
 		for ( $i = $start_date; $i <= $end_date; $i = $i + 86400 ) {
 			if (festival_calendar_chek_date($i)) return date('Y-m-d',$i);
 		}
+		return date( 'Y-m-d',$now);
 }
 
 function festival_calendar_chek_date($day) {
