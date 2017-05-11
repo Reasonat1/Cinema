@@ -30,15 +30,9 @@ $esro.attachEventHandler('basketChanged', function(basket) {
 
 function toptix_navigationHandler(pageName) {
   console.log('esro navigation:' + pageName);
-  //i disbled this because it made a redirection look
-  return;
   if (pageName == 'DEFAULT') {
-    var target_page = Drupal.settings.basePath + 'user';
-    var target_address = 'http://' + window.location.hostname + target_page;
-    if (target_address != window.location.href) {
-      console.log('navigating to ' + target_page);
-      window.location.href = target_address;
-    }
+    var frame = jQuery('#toptix-frame-wrapper');
+    frame.dialog('close');
   }
 }
 $esro.attachEventHandler('navigationRequired', toptix_navigationHandler);

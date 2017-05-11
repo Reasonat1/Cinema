@@ -2,8 +2,9 @@
  * @file
  * Custom scripts for theme.
  */
+
 (function ($) {
-		Drupal.behaviors.basicjs = {
+  Drupal.behaviors.basicjs = {
   attach: function (context, settings) {
     // Add your code here.
     /**
@@ -38,14 +39,14 @@ $(".region-messages").css("display","block");
 
 $("#main-wrapper").css("margin-top",$("header").height());
 if ($(window).width()>767){
-    $(".front #main-wrapper").css("margin-top",$("header").height())-50;
+    $(".front #main-wrapper").css("margin-top",$("header").height()-50);
 }
 $(".float-calendar-wrapper").css("top",$("header").height()+10);
 $(".filter .filter-wrapper").css("margin-top",$("header").height());
 $(window).load(function() {
   $("#main-wrapper").css("margin-top",$("header").height());
   if ($(window).width()>767){
-    $(".front #main-wrapper").css("margin-top",$("header").height())-50;
+    $(".front #main-wrapper").css("margin-top",$("header").height()-50);
   }
   $(".more-halls").css("top",$("header").height()+120);
 });
@@ -53,14 +54,14 @@ $(window).load(function() {
 $(window).resize(function() {
   $("#main-wrapper").css("margin-top",$("header").height());
   if ($(window).width()>767){
-    $(".front #main-wrapper").css("margin-top",$("header").height())-50;
+    $(".front #main-wrapper").css("margin-top",$("header").height()-50);
   }
 });
 
 $( document ).ajaxComplete(function() {
   $("#main-wrapper").css("margin-top",$("header").height());
   if ($(window).width()>767){
-    $(".front #main-wrapper").css("margin-top",$("header").height())-50;
+    $(".front #main-wrapper").css("margin-top",$("header").height()-50);
   }
   $(".float-calendar-wrapper").css("top",$("header").height()+10);
   $(".filter .filter-wrapper").css("margin-top",$("header").height());
@@ -383,7 +384,7 @@ if ($("body").hasClass("page-node-4284") || $("body").hasClass("page-node-4285")
               $left = 0;
               $(".filter-wrapper .inner").addClass("noleft");
           }
-		  if ($left <= $maxleft){
+		   if ($left <= $maxleft){
               $left = $maxleft;
               $(".filter-wrapper .inner").addClass("noright");
             }
@@ -1272,7 +1273,6 @@ $( document ).ajaxComplete(function() {
        //    $('td.views-field-field-toptix-purchase').hide();
 		}
 	}
-
 
   }
 	}
