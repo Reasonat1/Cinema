@@ -3,6 +3,8 @@
  * Custom scripts for theme.
  */
 (function ($) {
+		Drupal.behaviors.basicjs = {
+  attach: function (context, settings) {
     // Add your code here.
     /**
      * Hamburger menu popup
@@ -36,14 +38,14 @@ $(".region-messages").css("display","block");
 
 $("#main-wrapper").css("margin-top",$("header").height());
 if ($(window).width()>767){
-  $(".front #main-wrapper").css("margin-top",$(".region-messages").height());
+    $(".front #main-wrapper").css("margin-top",$("header").height())-50;
 }
 $(".float-calendar-wrapper").css("top",$("header").height()+10);
 $(".filter .filter-wrapper").css("margin-top",$("header").height());
 $(window).load(function() {
   $("#main-wrapper").css("margin-top",$("header").height());
   if ($(window).width()>767){
-    $(".front #main-wrapper").css("margin-top",$(".region-messages").height());
+    $(".front #main-wrapper").css("margin-top",$("header").height())-50;
   }
   $(".more-halls").css("top",$("header").height()+120);
 });
@@ -51,16 +53,15 @@ $(window).load(function() {
 $(window).resize(function() {
   $("#main-wrapper").css("margin-top",$("header").height());
   if ($(window).width()>767){
-    $(".front #main-wrapper").css("margin-top","0");
+    $(".front #main-wrapper").css("margin-top",$("header").height())-50;
   }
 });
 
 $( document ).ajaxComplete(function() {
   $("#main-wrapper").css("margin-top",$("header").height());
   if ($(window).width()>767){
-    $(".front #main-wrapper").css("margin-top",$(".region-messages").height());
+    $(".front #main-wrapper").css("margin-top",$("header").height())-50;
   }
-  $(".front #main-wrapper").css("margin-top","0");
   $(".float-calendar-wrapper").css("top",$("header").height()+10);
   $(".filter .filter-wrapper").css("margin-top",$("header").height());
   $(".more-halls").css("top",$("header").height()+120);
@@ -374,14 +375,18 @@ if ($("body").hasClass("page-node-4284") || $("body").hasClass("page-node-4285")
               return false;            
             }
           });
-          $left = $left + (-$squarewidth)*($i);
+          $left = $left + (-$squarewidth)*($i-1);
           if ($left < $maxleft){
               $left = $maxleft;
           }
-          if ($left > 0){
+          if ($left >= 0){
               $left = 0;
               $(".filter-wrapper .inner").addClass("noleft");
           }
+		  if ($left <= $maxleft){
+              $left = $maxleft;
+              $(".filter-wrapper .inner").addClass("noright");
+            }
           $(".i18n-en .calender-filter").css("margin-left",$left);
           $(".i18n-he .calender-filter").css("margin-right",$left);
           $(".calender-filter p").click(function(){
@@ -1269,7 +1274,8 @@ $( document ).ajaxComplete(function() {
 	}
 
 
-
+  }
+	}
 
 })(jQuery);
 
