@@ -1,0 +1,17 @@
+<?php
+
+function reasonat_dev_page_delivery_callback_alter(&$callback) {
+  if ($callback == 'drupal_deliver_html_page') {
+    $callback = 'reasonat_dev_deliver_html_page';
+  }
+}
+
+function reasonat_dev_deliver_html_page($page_callback_result) {
+  $reasonat_dev = variable_get('reasonat_dev', FALSE);
+  if (!$reasonat_dev or isset($_COOKIE['reasonat_norobot'])) {
+    drupal_deliver_html_page($page_callback_result);
+    return;
+  }
+  $path = drupal_get_path('module', 'reasonat_dev');
+  include DRUPAL_ROOT . '/' . $path . '/norobot.php';
+}
