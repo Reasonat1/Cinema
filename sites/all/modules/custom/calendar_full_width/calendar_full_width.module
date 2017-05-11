@@ -292,7 +292,7 @@ function ajax_calender_full_width_filter(){
 	$myLang=array();
 	$myLang = split('/', str_replace($base_url, '', $_SERVER['HTTP_REFERER']));
 	$languages = language_list();
-	if (isset($myLang[1]) && $myLang[1]=='he') $language_url=$language = $languages[$myLang[1]];
+	if (isset($myLang[1]) && $myLang[1]=='he') {$language_url=$language = $languages[$myLang[1]];} else {$language_url=$language = $languages['en'];}
     $lang_name = isset($language->language) ? $language->language : '';
     if($lang_name == ''){
         $lang_name = 'en';
