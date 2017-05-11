@@ -3,6 +3,8 @@
  * Custom scripts for theme.
  */
 (function ($) {
+	Drupal.behaviors.basicjs = {
+  attach: function (context, settings) {
     // Add your code here.
     /**
      * Hamburger menu popup
@@ -374,14 +376,18 @@ if ($("body").hasClass("page-node-4284") || $("body").hasClass("page-node-4285")
               return false;            
             }
           });
-          $left = $left + (-$squarewidth)*($i);
+          $left = $left + (-$squarewidth)*($i-1);
           if ($left < $maxleft){
               $left = $maxleft;
           }
-          if ($left > 0){
+          if ($left >= 0){
               $left = 0;
               $(".filter-wrapper .inner").addClass("noleft");
           }
+		   if ($left <= $maxleft){
+              $left = $maxleft;
+              $(".filter-wrapper .inner").addClass("noright");
+            }
           $(".i18n-en .calender-filter").css("margin-left",$left);
           $(".i18n-he .calender-filter").css("margin-right",$left);
           $(".calender-filter p").click(function(){
@@ -1268,8 +1274,8 @@ $( document ).ajaxComplete(function() {
 		}
 	}
 
-
-
+  }
+	}
 
 })(jQuery);
 
